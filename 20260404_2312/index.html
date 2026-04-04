@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI 新聞專題 | AI News 專題報道</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <style>
+        :root {
+            --primary-blue: #00d4ff;
+            --primary-purple: #7b2cbf;
+            --accent-red: #ff4757;
+            --dark-bg: #0a0a0f;
+            --card-bg: #12121a;
+            --text-primary: #ffffff;
+            --text-secondary: #a0a0b0;
+            --gradient-1: linear-gradient(135deg, #00d4ff 0%, #7b2cbf 100%);
+            --gradient-2: linear-gradient(135deg, #7b2cbf 0%, #ff4757 100%);
+            --glow-blue: 0 0 20px rgba(0, 212, 255, 0.5);
+            --glow-purple: 0 0 20px rgba(123, 44, 191, 0.5);
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Noto Sans TC', sans-serif; background-color: var(--dark-bg); color: var(--text-primary); line-height: 1.8; overflow-x: hidden; }
+        @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-20px); } }
+        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.6; } }
+        @keyframes slideIn { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes codeRain { 0% { transform: translateY(-100%); opacity: 0; } 10% { opacity: 1; } 90% { opacity: 1; } 100% { transform: translateY(100vh); opacity: 0; } }
+        .code-rain { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; overflow: hidden; }
+        .code-char { position: absolute; color: var(--primary-blue); font-family: 'Courier New', monospace; font-size: 14px; opacity: 0; animation: codeRain 4s linear infinite; }
+        .hero { position: relative; min-height: 80vh; display: flex; align-items: center; justify-content: center; padding: 80px 20px; background: linear-gradient(180deg, var(--dark-bg) 0%, #1a1a2e 100%); overflow: hidden; }
+        .hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(ellipse at center, rgba(123, 44, 191, 0.15) 0%, transparent 70%); z-index: 1; }
+        .hero-content { position: relative; z-index: 2; max-width: 1200px; text-align: center; animation: slideIn 1s ease-out; }
+        .hero-badge { display: inline-block; padding: 8px 24px; background: var(--gradient-1); border-radius: 50px; font-size: 14px; font-weight: 600; margin-bottom: 24px; box-shadow: var(--glow-blue); }
+        .hero h1 { font-size: clamp(2rem, 5vw, 4rem); font-weight: 900; margin-bottom: 24px; background: var(--gradient-1); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; line-height: 1.2; }
+        .hero-subtitle { font-size: clamp(1rem, 2vw, 1.3rem); color: var(--text-secondary); max-width: 800px; margin: 0 auto 40px; }
+        .hero-images  display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; margin-top: 60px; }
+        .hero-image-card { position: relative; border-radius: 20px; overflow: hidden; aspect-ratio: 16/9; box-shadow: var(--glow-purple); transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .hero-image-card:hover { transform: scale(1.02); box-shadow: 0 0 40px rgba(123, 44, 191, 0.7); }
+        .hero-image-card img { width: 100%; height: 100%; object-fit: cover; }
+        .scroll-indicator { position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%); animation: float 2s ease-in-out infinite; z-index: 2; }
+        .scroll-indicator span { display: block; width: 30px; height: 50px; border: 2px solid var(--primary-blue); border-radius: 25px; position: relative; }
+        .scroll-indicator span::before { content: ''; position: absolute; top: 8px; left: 50%; transform: translateX(-50%); width: 6px; height: 10px; background: var(--primary-blue); border-radius: 3px; animation: pulse 1.5s infinite; }
+        section { padding: 100px 20px; position: relative; z-index: 1; }
+        .section-title { text-align: center; margin-bottom: 60px; }
+        .section-title h2 { font-size: clamp(2rem, 4vw, 3rem); font-weight: 700; margin-bottom: 16px; background: var(--gradient-1); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .section-title p { color: var(--text-secondary); font-size: 1.1rem; max-width: 600px; margin: 0 auto; }
+        .content-section { background: var(--card-bg); padding: 50px; border-radius: 24px; border: 1px solid rgba(0, 212, 255, 0.2); max-width: 1000px; margin: 0 auto 60px; }
+        .content-section h2 { font-size: 1.8rem; margin-bottom: 30px; color: var(--primary-blue); display: flex; align-items: center; gap: 12px; }
+        .content-section .markdown-content { color: var(--text-secondary); line-height: 2; font-size: 1.05rem; }
+        .content-section .markdown-content h2 { font-size: 1.5rem; margin: 30px 0 20px; color: var(--primary-blue); }
+        .content-section .markdown-content h3 { font-size: 1.3rem; margin: 25px 0 15px; color: var(--text-primary); }
+        .content-section .markdown-content p { margin: 15px 0; }
+        .content-section .markdown-content ul { margin: 15px 0; padding-left: 30px; }
+        .content-section .markdown-content li { margin: 10px 0; }
+        .content-section .markdown-content strong { color: var(--text-primary); font-weight: 600; }
+        .meta-info { background: rgba(0, 212, 255, 0.1); padding: 20px; border-radius: 12px; margin-bottom: 30px; border-left: 4px solid var(--primary-blue); }
+        .meta-info p { margin: 8px 0; color: var(--text-secondary); }
+        .meta-info strong { color: var(--primary-blue); }
+        footer { background: #050508; padding: 60px 20px; text-align: center; border-top: 1px solid rgba(255, 255, 255, 0.1); }
+        footer p { color: var(--text-secondary); margin-bottom: 20px; }
+        .footer-links { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; }
+        .footer-links a { color: var(--primary-blue); text-decoration: none; transition: color 0.3s ease; }
+        .footer-links a:hover { color: var(--text-primary); }
+        @media (max-width: 768px) { .hero-images { grid-template-columns: 1fr; } .content-section { padding: 30px 20px; } .key-points-grid { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <div class="code-rain" id="codeRain"></div>
+
+    <section class="hero">
+        <div class="hero-content">
+            <span class="hero-badge">📰 AI News 專題報道</span>
+            <h1>AI 新聞專題</h1>
+            <p class="hero-subtitle">## 內容摘要
+
+本影片探討 **AI 新聞專題** 相關主題。以下是內容重點整理：
+
+## 重點整理
+
+- 十年前，当谷歌DeepMind的AlphaGo 会为后续十年AI从实验室走向现实世界、从游戏领域迈向科学前沿 主持人汉娜·弗莱与DeepMind的科学家索雷·格雷佩尔、科学研究副总裁普什米特...</p>
+            <div class="hero-images"><div class="hero-image-card"><img src="./20260404_2312_img1.png" alt="AI 新聞專題 插圖"></div>
+</div>
+        </div>
+        <div class="scroll-indicator"><span></span></div>
+    </section>
+
+    <section>
+        <div class="content-section">
+            <div class="meta-info">
+                <p><strong>📺 來源</strong>：https://www.youtube.com/watch?v=UKPARZZGxqk</p>
+                <p><strong>📅 日期</strong>：2026-04-04</p>
+                <p><strong>🤖 處理</strong>：AI 摘要生成</p>
+            </div>
+            
+            <h2>📖 內容摘要</h2>
+            <div class="markdown-content" id="markdown-content">
+                ## 內容摘要
+
+本影片探討 **AI 新聞專題** 相關主題。以下是內容重點整理：
+
+## 重點整理
+
+- 十年前，当谷歌DeepMind的AlphaGo 会为后续十年AI从实验室走向现实世界、从游戏领域迈向科学前沿 主持人汉娜·弗莱与DeepMind的科学家索雷·格雷佩尔、科学研究副总裁普什米特·科利展开了一场深度对话 不仅带我们重新回顾了AlphaGo的诞生、开发、对决时刻 也为我们描绘了AI与人类协...
+
+## 結論
+
+※ 本摘要由 AI 自動生成，詳情請觀看完整影片。
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2026-04-04 AI News Archive | 由 AI 技術生成</p>
+        <div class="footer-links">
+            <a href="../index.html">返回主頁</a>
+            <a href="https://github.com/hklamsir/ai_news" target="_blank">GitHub</a>
+        </div>
+    </footer>
+
+    <script>
+        function createCodeRain() {
+            const codeRain = document.getElementById('codeRain');
+            const chars = '01アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン';
+            for (let i = 0; i < 50; i++) {
+                const char = document.createElement('div');
+                char.className = 'code-char';
+                char.textContent = chars[Math.floor(Math.random() * chars.length)];
+                char.style.left = Math.random() * 100 + '%';
+                char.style.animationDelay = Math.random() * 4 + 's';
+                char.style.animationDuration = (Math.random() * 2 + 3) + 's';
+                codeRain.appendChild(char);
+            }
+        }
+        
+        function renderMarkdown() {
+            const content = document.getElementById('markdown-content');
+            if (content && window.marked) {
+                content.innerHTML = marked.parse(content.innerHTML);
+            }
+        }
+        
+        document.addEventListener('DOMContentLoaded', () => { 
+            createCodeRain(); 
+            renderMarkdown();
+        });
+        
+        window.addEventListener('resize', () => {
+            document.getElementById('codeRain').innerHTML = '';
+            createCodeRain();
+        });
+    </script>
+</body>
+</html>
