@@ -3,7 +3,7 @@
     {
       "dir": "20260405_2246",
       "title": "提示詞工程完整教學：Anthropic 六大架構 + 五個實戰技巧 Prompt Engineering",
-      "summary_short": "## 新聞導語隨著人工智能技術的不斷進步，提示詞工程（Prompt Engineering）成為了AI應用中不可或缺的一環。本次報告深入探討了Anthropic提出的六大架構和五個實戰技巧，旨在幫助",
+      "summary_short": "隨著人工智能技術的不斷進步，提示詞工程（Prompt Engineering）成為了 AI 應用中不可或缺的一環。本次報告深入探討了 Anthropic 提出的六大架構和五個實戰技巧，旨在幫助用戶更有效地與 AI 溝通。",
       "images": [
         "20260405_2246_img1.png"
       ],
@@ -11,49 +11,9 @@
       "url": "./20260405_2246/index.html"
     },
     {
-      "dir": "20260405_2237",
-      "title": "提示詞工程完整教學：Anthropic 六大架構 + 五個實戰技巧 Prompt Engineering",
-      "summary_short": "## 新聞導語隨著人工智能技術的快速發展，提示詞工程（Prompt Engineering）成為了一個熱門話題。本次報告指出，儘管AI的理解能力日益增強，但如何有效地與AI溝通仍然是每個人都需要掌握",
-      "images": [
-        "20260405_2237_img1.png"
-      ],
-      "date": "2026-04-05",
-      "url": "./20260405_2237/index.html"
-    },
-    {
-      "dir": "20260405_2223",
-      "title": "提示詞工程完整教學：Anthropic 六大架構 + 五個實戰技巧 Prompt Engineering",
-      "summary_short": "## 新聞導語隨著人工智慧（AI）技術的不斷進步，提示詞工程成為了提升人機互動效率的重要工具。本次報告深入探討了Anthropic公司提出的六大提示詞架構和五個實戰技巧，旨在幫助用戶更有效地與AI溝",
-      "images": [
-        "20260405_2223_img1.png"
-      ],
-      "date": "2026-04-05",
-      "url": "./20260405_2223/index.html"
-    },
-    {
-      "dir": "20260405_2210",
-      "title": "提示詞工程完整教學：Anthropic 六大架構 + 五個實戰技巧 Prompt Engineering",
-      "summary_short": "## 新聞導語本次報道主題為「提示詞工程完整教學：Anthropic 六大架構 + 五個實戰技巧 Prompt Engineering」，探討相關領域的重要發展。## 重點摘要- 涵蓋多個",
-      "images": [
-        "20260405_2210_img1.png"
-      ],
-      "date": "2026-04-05",
-      "url": "./20260405_2210/index.html"
-    },
-    {
-      "dir": "20260405_2151",
-      "title": "提示詞工程完整教學：Anthropic 六大架構 + 五個實戰技巧 Prompt Engineering",
-      "summary_short": "## 新聞導語隨著人工智能技術的不斷進步，如何有效地與AI進行溝通成為了當前時代的一個重要課題。近期，業界觀察指出，提示詞工程（Prompt Engineering）在過去一兩年內被廣泛討論，儘管A",
-      "images": [
-        "20260405_2151_img1.png"
-      ],
-      "date": "2026-04-05",
-      "url": "./20260405_2151/index.html"
-    },
-    {
       "dir": "20260405_2116",
       "title": "7 個 Claude Code 開發技巧，讓你超越 90% 的人｜AI 寫程式 2026",
-      "summary_short": "## 新聞導語隨著人工智能技術的不斷進步，AI 在程式開發領域的應用日益廣泛。本次報告揭示了七個使用 Claude Code 開發技巧，旨在幫助開發者提高效率並超越多數同行。這些技巧涵蓋從初期概念設",
+      "summary_short": "隨著人工智能技術的不斷進步，AI 在程式開發領域的應用日益廣泛。本次報告揭示了七個使用 Claude Code 開發技巧，涵蓋從初期概念設定到進階調試的完整流程，幫助開發者提升工作效率。",
       "images": [
         "20260405_2116_img1.png"
       ],
@@ -61,13 +21,13 @@
       "url": "./20260405_2116/index.html"
     },
     {
-      "dir": "20260405_2055",
-      "title": "7 個 Claude Code 開發技巧，讓你超越 90% 的人｜AI 寫程式 2026",
-      "summary_short": "無法獲取影片內容，請手動補充。",
+      "dir": "20260404_2045",
+      "title": "AI 新聞專題",
+      "summary_short": "AI 技術發展最新動態與業界觀察。",
       "images": [],
-      "date": "2026-04-05",
-      "url": "./20260405_2055/index.html"
+      "date": "2026-04-04",
+      "url": "./20260404_2045/index.html"
     }
   ],
-  "last_updated": "2026-04-05T22:55:50.378991"
+  "last_updated": "2026-04-05T23:09:00"
 }
