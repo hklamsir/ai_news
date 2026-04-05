@@ -1,6 +1,16 @@
 {
   "archives": [
     {
+      "dir": "20260405_2223",
+      "title": "提示詞工程完整教學：Anthropic 六大架構 + 五個實戰技巧 Prompt Engineering",
+      "summary_short": "## 新聞導語隨著人工智慧（AI）技術的不斷進步，提示詞工程成為了提升人機互動效率的重要工具。本次報告深入探討了Anthropic公司提出的六大提示詞架構和五個實戰技巧，旨在幫助用戶更有效地與AI溝",
+      "images": [
+        "20260405_2223_img1.png"
+      ],
+      "date": "2026-04-05",
+      "url": "./20260405_2223/index.html"
+    },
+    {
       "dir": "20260405_2210",
       "title": "提示詞工程完整教學：Anthropic 六大架構 + 五個實戰技巧 Prompt Engineering",
       "summary_short": "## 新聞導語本次報道主題為「提示詞工程完整教學：Anthropic 六大架構 + 五個實戰技巧 Prompt Engineering」，探討相關領域的重要發展。## 重點摘要- 涵蓋多個",
@@ -39,5 +49,5 @@
       "url": "./20260405_2055/index.html"
     }
   ],
-  "last_updated": "2026-04-05T22:10:59.207931"
+  "last_updated": "2026-04-05T22:25:15.868010"
 }

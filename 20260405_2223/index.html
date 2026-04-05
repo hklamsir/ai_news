@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>提示詞工程完整教學：Anthropic 六大架構 + 五個實戰技巧 Prompt Engineering</title>
+    <style>
+        :root {
+            --primary-blue: #00d4ff;
+            --primary-purple: #7b2cbf;
+            --accent-green: #00ff88;
+            --dark-bg: #0a0a0f;
+            --card-bg: #12121a;
+            --text-primary: #ffffff;
+            --text-secondary: #a0a0b0;
+        }
+
+        body { font-family: 'Noto Sans TC', sans-serif; background-color: var(--dark-bg); color: var(--text-primary); }
+
+        .hero { min-height: 80vh; display: flex; align-items: center; justify-content: center; background: linear-gradient(180deg, var(--dark-bg) 0%, #1a1a2e 100%); }
+        .hero-badge { display: inline-block; padding: 12px 32px; background: linear-gradient(135deg, #00d4ff 0%, #7b2cbf 100%); border-radius: 50px; font-size: 18px; font-weight: 700; margin-bottom: 24px; }
+        .hero h1 { font-size: clamp(2rem, 5vw, 4rem); font-weight: 900; background: linear-gradient(135deg, #00d4ff 0%, #7b2cbf 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .hero-subtitle { font-size: clamp(1.2rem, 2.2vw, 1.6rem); color: var(--text-primary); max-width: 900px; margin: 0 auto 40px; line-height: 1.6; }
+
+        .content-section { background: var(--card-bg); padding: 60px 50px; border-radius: 24px; max-width: 1100px; margin: 0 auto; }
+        .content-section h3 { font-size: 1.6rem; margin: 40px 0 20px; color: var(--accent-green); }
+        .content-section p { color: var(--text-secondary); line-height: 2; font-size: 1.08rem; margin: 15px 0; }
+        .content-section ul { margin: 20px 0; padding-left: 30px; }
+        .content-section li { margin: 10px 0; color: var(--text-secondary); }
+
+        .meta-info { background: linear-gradient(135deg, rgba(0, 212, 255, 0.15) 0%, rgba(123, 44, 191, 0.15) 100%); padding: 30px; border-radius: 16px; margin-bottom: 40px; }
+        .meta-info p { margin: 12px 0; color: var(--text-secondary); }
+        .meta-info a { color: var(--primary-blue); word-break: break-all; }
+
+        .highlight-box { background: linear-gradient(135deg, rgba(0, 255, 136, 0.08) 0%, rgba(0, 212, 255, 0.08) 100%); padding: 30px; border-radius: 16px; border-left: 5px solid var(--accent-green); margin: 40px 0; }
+    </style>
+</head>
+<body>
+
+<div class="hero">
+    <div class="hero-badge">AI News</div>
+    <h1>提示詞工程完整教學：Anthropic 六大架構 + 五個實戰技巧 Prompt Engineering</h1>
+    <p class="hero-subtitle">隨著人工智慧（AI）技術的不斷進步，提示詞工程成為了提升人機互動效率的重要工具。本次報告深入探討了Anthropic公司提出的六大提示詞架構和五個實戰技巧，旨在幫助用戶更有效地與AI溝通，從而獲得更符合預期的產出結果。</p>
+    <img src="20260405_2223_img1.png" alt="新聞圖片" style="max-width: 100%; height: auto;">
+</div>
+
+<div class="content-section">
+    <div class="meta-info">
+        <p><strong>📺 資料來源</strong>：<a href="https://www.youtube.com/watch?v=TiQOnrbVje0&t=148s" target="_blank">https://www.youtube.com/watch?v=TiQOnrbVje0&t=148s</a></p>
+        <p><strong>📅 發布日期</strong>：2026-04-05</p>
+        <p><strong>🤖 處理方式</strong>：AI 智能摘要生成</p>
+    </div>
+
+    <h3>🎯 核心觀點</h3>
+    <p>隨著AI技術的不斷發展，提示詞工程變得越來越重要。正確的提示詞設計能夠確保任務成功完成，並提高與AI溝通的效率。研究指出，儘管AI的理解能力日益增強，但清晰且具體的指示仍然是關鍵。</p>
+
+    <h3>💡 重點解析</h3>
+    <p>為了幫助用戶更有效地與AI溝通，Anthropic提出了六個主要部分的提示詞架構：</p>
+    <ul>
+        <li>Starter - 為AI設定角色和任務目標；</li>
+        <li>Contacts - 提供相關背景資料；</li>
+        <li>Task Instruction - 明確具體的操作指南；</li>
+        <li>Examples - 通過範例展示期望的成果樣式；</li>
+        <li>Output Format - 指定最終文件的形式；</li>
+        <li>Repeat Critical Instruction - 在結尾重申最重要的要求。</li>
+    </ul>
+    <p>此外，報告還分享了五項實用技巧，其中“定義輸出格式”被認為是特別重要的一步，它能有效避免AI在執行過程中對結構做出不必要的更改。“要求AI進行問題澄清”則鼓勵使用者在指令中加入允許AI提問的條款，以確保雙方對任務有共同的理解。“展開思考過程”則通過讓AI逐步展示其推理邏輯，增加了解決方案的透明度和可靠性。最後，“Meta prompting”作為一種高級應用方式，通過讓AI參與到提示詞的撰寫過程中，進一步提高了整體工作效率。</p>
+
+    <h3>📊 數據分析</h3>
+    <p>數據顯示，越來越多的工作可以交由智能系統處理。然而，在這一過程中，如何高效地與AI進行交流變得尤為重要。根據業界觀察，即使是最先進的模型，如果沒有得到恰當的指導信息，也很難產生令人滿意的結果。這主要是因為AI缺乏對特定情境下細節知識的理解，容易根據有限的信息做出錯誤假設或過度推測。</p>
+
+    <h3>🔮 未來展望</h3>
+    <p>未來，隨著更多組織開始認識到良好提示詞設計對於釋放AI潛力的重要性，相關培訓和工具的需求預計將持續增長。專家建議，企業不僅需要投資於最新的AI技術本身，也應注重提升員工在此領域內的能力，從而實現更高效的人機協作模式。同時，隨著技術不斷迭代升級，開發者們也應保持開放態度，積極探索新的方法來改進現有的提示詞框架，使之更加適應不斷變化的業務需求。</p>
+
+    <div class="highlight-box">
+        <h4>✨ 關鍵洞察</h4>
+        <p>正確的提示詞設計能夠顯著提升與AI溝通的效率，並確保任務的成功完成。Anthropic提出的六大提示詞架構和五個實戰技巧為用戶提供了有效的指導，有助於提高最終產出質量。</p>
+    </div>
+</div>
+
+<footer>
+    <p style="text-align: center; padding: 20px; color: var(--text-secondary);">版權所有 © 2026 AI News. 保留所有權利。</p>
+</footer>
+
+</body>
+</html>
