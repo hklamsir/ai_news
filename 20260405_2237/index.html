@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>提示詞工程完整教學：Anthropic 六大架構 + 五個實戰技巧 Prompt Engineering | AI News 專題報道</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-blue: #00d4ff;
+            --primary-purple: #7b2cbf;
+            --accent-green: #00ff88;
+            --accent-orange: #ff9500;
+            --dark-bg: #0a0a0f;
+            --card-bg: #12121a;
+            --card-bg-light: #1a1a28;
+            --text-primary: #ffffff;
+            --text-secondary: #a0a0b0;
+            --gradient-1: linear-gradient(135deg, #00d4ff 0%, #7b2cbf 100%);
+            --gradient-2: linear-gradient(135deg, #00d4ff 0%, #00ff88 100%);
+            --glow-blue: 0 0 20px rgba(0, 212, 255, 0.5);
+            --glow-purple: 0 0 20px rgba(123, 44, 191, 0.5);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Noto Sans TC', sans-serif; background-color: var(--dark-bg); color: var(--text-primary); line-height: 1.8; overflow-x: hidden; }
+
+        @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-20px); } }
+        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.6; } }
+        @keyframes slideIn { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes codeRain { 0% { transform: translateY(-100%); opacity: 0; } 10% { opacity: 1; } 90% { opacity: 1; } 100% { transform: translateY(100vh); opacity: 0; } }
+
+        /* 代碼雨背景 */
+        .code-rain { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; overflow: hidden; }
+        .code-char { position: absolute; color: var(--primary-blue); font-family: 'Courier New', monospace; font-size: 14px; opacity: 0; animation: codeRain 4s linear infinite; }
+
+        /* Hero Section */
+        .hero { position: relative; min-height: 80vh; display: flex; align-items: center; justify-content: center; padding: 80px 20px; background: linear-gradient(180deg, var(--dark-bg) 0%, #1a1a2e 100%); overflow: hidden; }
+        .hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(ellipse at center, rgba(123, 44, 191, 0.15) 0%, transparent 70%); z-index: 1; }
+        .hero-content { position: relative; z-index: 2; max-width: 1200px; text-align: center; animation: slideIn 1s ease-out; }
+        .hero-badge { display: inline-block; padding: 12px 32px; background: var(--gradient-1); border-radius: 50px; font-size: 18px; font-weight: 700; margin-bottom: 24px; box-shadow: var(--glow-blue); letter-spacing: 1px; }
+        .hero h1 { font-size: clamp(2rem, 5vw, 4rem); font-weight: 900; margin-bottom: 24px; background: var(--gradient-1); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; line-height: 1.2; }
+        .hero-subtitle { font-size: clamp(1.2rem, 2.2vw, 1.6rem); color: var(--text-primary); max-width: 900px; margin: 0 auto 40px; line-height: 1.6; font-weight: 400; }
+        .hero-images { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; margin-top: 60px; }
+        .hero-image-card { position: relative; border-radius: 20px; overflow: hidden; aspect-ratio: 16/9; box-shadow: var(--glow-purple); transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .hero-image-card:hover { transform: scale(1.02); box-shadow: 0 0 40px rgba(123, 44, 191, 0.7); }
+        .hero-image-card img { width: 100%; height: 100%; object-fit: cover; }
+        .scroll-indicator { position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%); animation: float 2s ease-in-out infinite; z-index: 2; }
+        .scroll-indicator span { display: block; width: 30px; height: 50px; border: 2px solid var(--primary-blue); border-radius: 25px; position: relative; }
+        .scroll-indicator span::before { content: ''; position: absolute; top: 8px; left: 50%; transform: translateX(-50%); width: 6px; height: 10px; background: var(--primary-blue); border-radius: 3px; animation: pulse 1.5s infinite; }
+
+        /* Content Section */
+        section { padding: 80px 20px; position: relative; z-index: 1; }
+        .content-section { background: var(--card-bg); padding: 60px 50px; border-radius: 24px; border: 1px solid rgba(0, 212, 255, 0.2); max-width: 1100px; margin: 0 auto; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3); }
+        
+        .content-section h2 { font-size: 2rem; margin-bottom: 40px; color: var(--primary-blue); display: flex; align-items: center; gap: 15px; padding-bottom: 20px; border-bottom: 2px solid rgba(0, 212, 255, 0.3); }
+        .content-section h2::before { content: '📖'; font-size: 2.5rem; }
+        
+        .content-section h3 { font-size: 1.6rem; margin: 50px 0 25px; color: var(--accent-green); display: flex; align-items: center; gap: 12px; }
+        .content-section h3::before { content: '🎯'; font-size: 2rem; }
+        
+        .content-section h3:nth-of-type(2)::before { content: '💡'; }
+        .content-section h3:nth-of-type(3)::before { content: '📊'; }
+        .content-section h3:nth-of-type(4)::before { content: '🔮'; }
+        
+        .content-section p { color: var(--text-secondary); line-height: 2.2; font-size: 1.08rem; margin: 25px 0; text-align: justify; }
+        
+        .content-section ul, .content-section ol { margin: 30px 0; padding-left: 40px; }
+        .content-section li { margin: 15px 0; line-height: 2; color: var(--text-secondary); font-size: 1.05rem; }
+        .content-section ul li { list-style-type: none; position: relative; padding-left: 25px; }
+        .content-section ul li::before { content: '▸'; color: var(--primary-blue); font-size: 1.5rem; position: absolute; left: 0; top: -5px; }
+        
+        .content-section strong { color: var(--text-primary); font-weight: 600; }
+        
+        /* Highlight Boxes */
+        .highlight-box { background: linear-gradient(135deg, rgba(0, 255, 136, 0.08) 0%, rgba(0, 212, 255, 0.08) 100%); padding: 30px; border-radius: 16px; border-left: 5px solid var(--accent-green); margin: 40px 0; }
+        .highlight-box h4 { color: var(--accent-green); margin-bottom: 15px; font-size: 1.3rem; display: flex; align-items: center; gap: 10px; }
+        .highlight-box h4::before { content: '✨'; }
+        .highlight-box p { color: var(--text-secondary); margin: 0; }
+        
+        /* Info Box */
+        .info-box { background: linear-gradient(135deg, rgba(0, 212, 255, 0.1) 0%, rgba(123, 44, 191, 0.1) 100%); padding: 25px; border-radius: 16px; border: 1px solid rgba(0, 212, 255, 0.3); margin: 35px 0; }
+        .info-box p { margin: 10px 0; color: var(--text-secondary); }
+        .info-box strong { color: var(--primary-blue); }
+        
+        /* Meta Info */
+        .meta-info { background: linear-gradient(135deg, rgba(0, 212, 255, 0.15) 0%, rgba(123, 44, 191, 0.15) 100%); padding: 30px; border-radius: 16px; margin-bottom: 40px; border-left: 5px solid var(--primary-blue); }
+        .meta-info p { margin: 12px 0; color: var(--text-secondary); font-size: 1.05rem; }
+        .meta-info strong { color: var(--primary-blue); font-weight: 600; }
+        .meta-info a { color: var(--primary-blue); text-decoration: none; border-bottom: 1px dashed var(--primary-blue); }
+        
+        /* Footer */
+        footer { background: #050508; padding: 60px 20px; text-align: center; border-top: 1px solid rgba(255, 255, 255, 0.1); }
+        footer p { color: var(--text-secondary); margin-bottom: 20px; }
+        .footer-links { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; }
+        .footer-links a { color: var(--primary-blue); text-decoration: none; transition: color 0.3s ease; }
+        .footer-links a:hover { color: var(--text-primary); }
+
+        /* RWD */
+        @media (max-width: 768px) {
+            .content-section { padding: 40px 25px; }
+            .hero-images { grid-template-columns: 1fr; }
+            .content-section h2 { font-size: 1.6rem; }
+            .content-section h3 { font-size: 1.3rem; }
+        }
+    </style>
+</head>
+<body>
+    <!-- 代碼雨背景 -->
+    <div class="code-rain" id="codeRain"></div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <span class="hero-badge">📰 AI News 專題報道</span>
+            <h1>提示詞工程完整教學：Anthropic 六大架構 + 五個實戰技巧 Prompt Engineering</h1>
+            <p class="hero-subtitle">新聞導語 隨著人工智能技術的快速發展，提示詞工程（Prompt Engineering）成為了一個熱門話題。本次報告指出，儘管AI的理解能力日益增強，但如何有效地與AI溝通仍然是每個人都需要掌握的基礎技能。專家分析認為，了解提示詞編寫的原理和底層邏輯，能夠顯著提高使用AI的效率。研究顯示，一份好的提示詞應該包含明確的角色設定、背景資訊、具體任務指令、範例參考、輸出格式以及重複關鍵要求等六個區</p>
+            <div class="hero-images"><div class="hero-image-card"><img src="./20260405_2237_img1.png" alt="新聞插圖"></div>
+</div>
+        </div>
+        <div class="scroll-indicator"><span></span></div>
+    </section>
+
+    <!-- Content Section -->
+    <section>
+        <div class="content-section">
+            <!-- Meta Info -->
+            <div class="meta-info">
+                <p><strong>📺 資料來源</strong>：<a href="https://www.youtube.com/watch?v=TiQOnrbVje0&t=148s" target="_blank" style="word-break: break-all; font-size: 0.95rem;">https://www.youtube.com/watch?v=TiQOnrbVje0&t=148s</a></p>
+                <p><strong>📅 發布日期</strong>：2026-04-05</p>
+                <p><strong>🤖 處理方式</strong>：AI 智能摘要生成</p>
+            </div>
+            
+            <!-- Main Content -->
+            <div class="markdown-content"><h2>新聞導語</h2>
+隨著人工智能技術的快速發展，提示詞工程（Prompt Engineering）成為了一個熱門話題。本次報告指出，儘管AI的理解能力日益增強，但如何有效地與AI溝通仍然是每個人都需要掌握的基礎技能。專家分析認為，了解提示詞編寫的原理和底層邏輯，能夠顯著提高使用AI的效率。研究顯示，一份好的提示詞應該包含明確的角色設定、背景資訊、具體任務指令、範例參考、輸出格式以及重複關鍵要求等六個區塊。此外，報告還分享了五個實戰技巧，包括定義輸出格式、要求AI澄清問題、展開思考過程、定義好壞產出標準以及利用元提示法（Meta Prompting）來提高提示詞的品質。
+<h2>重點摘要</h2>
+<ul>
+<li>提示詞工程的重要性在於提高與AI溝通的效率。</li>
+<li>一份好的提示詞應包含六個主要區塊：角色設定、背景資訊、任務指令、範例參考、輸出格式及重複關鍵要求。</li>
+<li>模糊不清的輸入會導致AI產生不符合預期的結果，因此需提供足夠且精確的資訊。</li>
+<li>實戰技巧如定義輸出格式、要求AI提問澄清、展開思考過程、定義好壞產出標準以及元提示法能有效提升AI產出質量。</li>
+<li>專家建議將這些技巧結合起來使用，以達到最佳效果。</li>
+</ul>
+<h2>詳細分析</h2>
+隨著AI技術的日趨成熟，人們對其期望也越來越高。然而，在實際應用中，許多用戶發現即便使用了先進的模型，AI所生成的內容往往仍難以完全符合預期。這主要是因為AI缺乏人類特有的情境理解能力，無法像真人一樣根據上下文進行合理推斷。因此，如何設計有效的提示詞成為了決定AI表現的關鍵因素之一。
+<p>根據業界觀察，一份專業的提示詞通常由六個部分組成：首先是Starter，用於設置AI的角色與任務；其次是Contacts，提供必要的背景信息；接著是Task Instruction，詳細描述具體的工作指示；Examples或Few-Shot Learning則通過提供範例來幫助AI理解期望的輸出形式；Output Format明確規定了最終成果的形式；最後，Repeat Critical Instruction再次強調最重要的要求，確保AI不會忽略任何關鍵點。</p>
+<p>除了上述基本框架之外，報告還提出了五種實用技巧以進一步優化提示詞設計。首先，清晰地定義輸出格式可以避免AI自行發揮而偏離目標；其次，鼓勵AI在遇到疑惑時主動求證而非擅自假設，有助於減少誤差；再者，採用Chain of Thought方法促使AI逐步展示其推理過程，從而提高決策透明度；第四，通過設定好壞標準讓AI明白何為可接受的結果；最後，利用Meta Prompting技術讓AI自身參與到提示詞的構建過程中，不僅節省時間而且往往能獲得更佳的效果。</p>
+<h2>業界展望</h2>
+未來，隨著AI技術不斷進步及其應用範圍擴大，提示詞工程將變得越來越重要。對於企業而言，培養員工掌握高效編寫提示詞的能力將成為提升工作效率的重要途徑之一。同時，開發更多輔助工具和支持係統，幫助非專業人士也能輕鬆創建高質量提示詞，也是值得關注的方向。總之，只有當人機交互界面更加友好、直觀時，才能真正釋放AI潛力，實現技術與業務之間無縫連接。</div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2026-04-05 AI News Archive | 由 AI 技術生成</p>
+        <div class="footer-links">
+            <a href="../index.html">返回主頁</a>
+            <a href="https://github.com/hklamsir/ai_news" target="_blank">GitHub</a>
+            <a href="https://hklamsir.github.io/ai_news/" target="_blank">瀏覽所有專題</a>
+        </div>
+    </footer>
+
+    <script>
+        // 代碼雨效果
+        function createCodeRain() {
+            const codeRain = document.getElementById('codeRain');
+            const chars = '01 アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン';
+            for (let i = 0; i < 50; i++) {
+                const char = document.createElement('div');
+                char.className = 'code-char';
+                char.textContent = chars[Math.floor(Math.random() * chars.length)];
+                char.style.left = Math.random() * 100 + '%';
+                char.style.animationDelay = Math.random() * 4 + 's';
+                char.style.animationDuration = (Math.random() * 2 + 3) + 's';
+                codeRain.appendChild(char);
+            }
+        }
+
+        // 滾動動畫
+        function handleScrollAnimation() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('.content-section, .hero-content').forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(30px)';
+                el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(el);
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            createCodeRain();
+            handleScrollAnimation();
+        });
+
+        window.addEventListener('resize', () => {
+            document.getElementById('codeRain').innerHTML = '';
+            createCodeRain();
+        });
+    </script>
+</body>
+</html>
