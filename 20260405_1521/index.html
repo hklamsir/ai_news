@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Language   Name                               Formats | AI News</title>
+    <title>AI 與人類工作的未來：傑文斯悖論的啟示 | AI News</title>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
     <style>
-        :root { --primary-blue: #00d4ff; --primary-purple: #7b2cbf; --accent-green: #00ff88; --dark-bg: #0a0a0f; --card-bg: #12121a; --card-bg-light: #1a1a28; --text-primary: #ffffff; --text-secondary: #a0a0b0; --gradient-1: linear-gradient(135deg, #00d4ff 0%, #7b2cbf 100%); }
+        :root { --primary-blue: #00d4ff; --primary-purple: #7b2cbf; --accent-green: #00ff88; --accent-orange: #ff9500; --dark-bg: #0a0a0f; --card-bg: #12121a; --card-bg-light: #1a1a28; --text-primary: #ffffff; --text-secondary: #a0a0b0; --gradient-1: linear-gradient(135deg, #00d4ff 0%, #7b2cbf 100%); --glow-blue: 0 0 20px rgba(0, 212, 255, 0.5); }
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Noto Sans TC', sans-serif; background-color: var(--dark-bg); color: var(--text-primary); line-height: 1.8; }
         .hero { min-height: 85vh; display: flex; align-items: center; justify-content: center; padding: 80px 20px; background: linear-gradient(180deg, var(--dark-bg) 0%, #1a1a2e 100%); }
@@ -14,73 +14,105 @@
         .hero-badge { display: inline-block; padding: 10px 28px; background: var(--gradient-1); border-radius: 50px; font-size: 14px; font-weight: 600; margin-bottom: 24px; }
         .hero h1 { font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 900; margin-bottom: 24px; background: var(--gradient-1); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
         .hero-subtitle { font-size: clamp(1rem, 2vw, 1.3rem); color: var(--text-secondary); max-width: 800px; margin: 0 auto 40px; }
-        .hero-image { margin-top: 50px; border-radius: 20px; overflow: hidden; max-width: 900px; margin-left: auto; margin-right: auto; }
-        .hero-image img { width: 100%; height: auto; display: block; }
         section { padding: 80px 20px; }
         .content-section { background: var(--card-bg); padding: 50px 40px; border-radius: 24px; border: 1px solid rgba(0, 212, 255, 0.2); max-width: 1000px; margin: 0 auto 40px; }
         .content-section h2 { font-size: 1.8rem; margin-bottom: 30px; color: var(--primary-blue); padding-bottom: 15px; border-bottom: 2px solid rgba(0, 212, 255, 0.3); }
         .content-section h3 { font-size: 1.4rem; margin: 35px 0 18px; color: var(--accent-green); font-weight: 600; }
         .content-section p { color: var(--text-secondary); line-height: 1.9; margin-bottom: 16px; }
         .content-section ul { margin: 20px 0; padding-left: 30px; color: var(--text-secondary); }
-        .content-section li { margin: 10px 0; line-height: 1.8; }
+        .content-section li { margin: 12px 0; line-height: 1.8; }
         .content-section strong { color: var(--text-primary); font-weight: 600; }
         .content-section a { color: var(--primary-blue); text-decoration: none; border-bottom: 1px dashed var(--primary-blue); }
         .meta-info { background: linear-gradient(135deg, rgba(0, 212, 255, 0.15) 0%, rgba(123, 44, 191, 0.15) 100%); padding: 25px 30px; border-radius: 16px; margin-bottom: 35px; border-left: 5px solid var(--primary-blue); }
-        .meta-info p { margin: 10px 0; color: var(--text-secondary); font-size: 1rem; }
+        .meta-info p { margin: 10px 0; color: var(--text-secondary); }
         .meta-info strong { color: var(--primary-blue); font-weight: 600; }
-        .model-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; margin: 40px 0; }
-        .model-card { background: var(--card-bg-light); padding: 30px; border-radius: 16px; border: 1px solid rgba(255, 255, 255, 0.1); }
-        .model-card h4 { color: var(--accent-green); margin-bottom: 15px; font-size: 1.2rem; }
-        .model-card .spec { display: flex; gap: 15px; margin-bottom: 15px; flex-wrap: wrap; }
-        .model-card .spec span { background: rgba(0, 212, 255, 0.15); padding: 5px 12px; border-radius: 20px; font-size: 0.85rem; color: var(--primary-blue); }
-        .model-card ul { padding-left: 20px; margin: 0; }
-        .model-card li { margin: 8px 0; font-size: 0.95rem; }
         .highlight-box { background: linear-gradient(135deg, rgba(0, 255, 136, 0.1) 0%, rgba(0, 212, 255, 0.1) 100%); padding: 25px; border-radius: 16px; border-left: 5px solid var(--accent-green); margin: 30px 0; }
+        .highlight-box h4 { color: var(--accent-green); margin-bottom: 15px; }
+        .key-points-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin: 30px 0; }
+        .key-point-card { background: var(--card-bg-light); padding: 25px; border-radius: 16px; border: 1px solid rgba(255, 255, 255, 0.1); }
+        .key-point-card .icon { font-size: 2rem; margin-bottom: 12px; }
+        .key-point-card h4 { color: var(--accent-green); margin-bottom: 10px; }
         footer { background: #050508; padding: 60px 20px; text-align: center; border-top: 1px solid rgba(255, 255, 255, 0.1); }
         footer p { color: var(--text-secondary); margin-bottom: 20px; }
         .footer-links { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; }
         .footer-links a { color: var(--primary-blue); text-decoration: none; }
-        @media (max-width: 768px) { .content-section { padding: 40px 25px; } .model-cards { grid-template-columns: 1fr; } }
+        @media (max-width: 768px) { .content-section { padding: 40px 25px; } .key-points-grid { grid-template-columns: 1fr; } }
     </style>
 </head>
 <body>
     <section class="hero">
         <div class="hero-content">
             <span class="hero-badge">📰 AI News 專題報道</span>
-            <h1>Language   Name                               Formats</h1>
-            <p class="hero-subtitle">1. 內容概述   影片探討人工智能（AI）對人類工作與社會的影響，特別是針對「AI將取代人類工作」的觀點進行分析。影片以傑弗瑞·赫恩（Jeffrey Henno）在2016年預言放射科醫生將被AI取代為例，指出實際情況並非如此，反而AI帶...</p>
-            <div class="hero-image" style="display:none;"></div>
+            <h1>AI 與人類工作的未來：傑文斯悖論的啟示</h1>
+            <p class="hero-subtitle">探討人工智能對勞動市場的真實影響，揭示效率提升如何創造更多而非更少的工作機會</p>
         </div>
     </section>
+
     <section>
         <div class="content-section">
             <div class="meta-info">
-                <p><strong>📺 來源</strong>：<a href="https://youtu.be/XVNH8MPRgVY?si=h5_t2rCbaWZfK_38" target="_blank">YouTube 影片</a></p>
-                <p><strong>📅 日期</strong>：2026-04-05</p>
-                <p><strong>🤖 處理</strong>：AI 摘要生成</p>
+                <p><strong>📺 來源</strong>：<a href="https://youtu.be/XVNH8MPRgVY" target="_blank">YouTube 影片</a> | How Smart Organizations Will Use AI</p>
+                <p><strong>📅 發布日期</strong>：2026-04-05</p>
+                <p><strong>🤖 處理方式</strong>：AI 語音轉錄與摘要生成</p>
             </div>
-            1. 內容概述  
-影片探討人工智能（AI）對人類工作與社會的影響，特別是針對「AI將取代人類工作」的觀點進行分析。影片以傑弗瑞·赫恩（Jeffrey Henno）在2016年預言放射科醫生將被AI取代為例，指出實際情況並非如此，反而AI帶來了新的職業機會與產業變革。透過「傑文斯悖論」（Jevon's Paradox）解釋效率提升後，需求與工作機會不減反增的現象，強調AI不會導致人類失業，而是創造更多高階、需要人腦參與的工作。
-
-2. 重點整理  
-- AI不會導致人類失業，反而會創造新職業與產業機會。  
-- 傑文斯悖論說明效率提升後，成本降低，需求增加，進而創造更多工作。  
-- AI推動新興職務如AI產品經理、安全工程師等，並擴展長尾服務。  
-- 高階工作需求增加，包括問題定義、決策、監督與創新能力。  
-- 未來人才需具備適應力、終身學習、批判思考與創造力。  
-- 聰明企業將利用AI開拓新業務，而落後者可能錯過機遇。
-
-3. 詳細內容  
-影片首先提到一段看似荒謬的預言：2016年有人認為AI將取代放射科醫生，但十年後，放射科醫生不僅未消失，反而人數增加。這顯示AI並未導致人類失業，反而促進了更高效的醫療技術發展。此現象與「傑文斯悖論」有關，該理論指出，當某種資源變得更高效時，其使用量反而增加，而非減少。例如，蒸汽機效率提高後，能源消耗反而上升，因為人們用它來做更多事情。
-
-類比至AI，當自動化工具降低工作成本時，人們能從事更高階的任務，例如財務分析、創新設計等。這導致對專業人才的需求增加，而非減少。AI也催生了新職業，如AI產品經理、提示工程師等，這些職位在過去並不存在。此外，AI使原本昂貴的服務（如個別 Tutor、專門法律諮詢）變得更具可及性，進一步擴展了市場需求。
-
-影片進一步指出，AI不會完全取代人類，而是轉移工作內容。人類將更多參與高層次、需要判斷與創意的工作，如系統監督、決策制定與顧客關係管理。這類工作需要情感智慧、跨領域協調能力與批判思維。因此，未來的人才必須具備高度適應力、持續學習能力與創造力，才能在AI時代中脫穎而出。
-
-4. 結論  
-AI雖然改變了傳統工作模式，但並非導致失業的元兇，反而創造了更多高價值的工作機會。透過傑文斯悖論的觀點，我們可以理解效率提升後，需求與人力需求同步增長的趨勢。未來的成功關鍵在於個人與組織能否適應變化，掌握新技能，並善用AI作為創新與成長的工具。唯有具備靈活思維與終身學習態度的人員，才能在AI時代中持續發揮價值。
+            
+            <h2>📋 內容概述</h2>
+            <p>影片探討人工智能（AI）對人類工作與社會的影響，特別是針對「AI將取代人類工作」的觀點進行深入分析。影片以傑弗瑞·赫恩（Jeffrey Henno）在2016年預言放射科醫生將被AI取代為例，指出實際情況並非如此，反而AI帶來了新的職業機會與產業變革。</p>
+            <p>透過「傑文斯悖論」（Jevons Paradox）解釋效率提升後，需求與工作機會不減反增的現象，強調AI不會導致人類失業，而是創造更多高階、需要人腦參與的工作。</p>
+            
+            <h2>💡 核心觀點：傑文斯悖論</h2>
+            <div class="highlight-box">
+                <h4>🔍 什麼是傑文斯悖論？</h4>
+                <p>當某種資源變得更高效時，其使用量反而增加，而非減少。例如，蒸汽機效率提高後，能源消耗反而上升，因為人們用它來做更多事情。</p>
+                <p><strong>AI 時代的應用</strong>：當自動化工具降低工作成本時，人們能從事更高階的任務，例如財務分析、創新設計等，導致對專業人才的需求增加，而非減少。</p>
+            </div>
+            
+            <h2>🎯 重點整理</h2>
+            <div class="key-points-grid">
+                <div class="key-point-card">
+                    <div class="icon">💼</div>
+                    <h4>新職業誕生</h4>
+                    <p>AI催生新職業如AI產品經理、提示工程師等，這些職位在過去並不存在</p>
+                </div>
+                <div class="key-point-card">
+                    <div class="icon">📈</div>
+                    <h4>需求增加</h4>
+                    <p>效率提升後成本降低，需求增加，進而創造更多工作機會</p>
+                </div>
+                <div class="key-point-card">
+                    <div class="icon">🎯</div>
+                    <h4>高階工作</h4>
+                    <p>人類將更多參與需要判斷、創意與情感智慧的高層次工作</p>
+                </div>
+                <div class="key-point-card">
+                    <div class="icon">🚀</div>
+                    <h4>長尾服務</h4>
+                    <p>AI使原本昂貴的服務變得更具可及性，擴展市場需求</p>
+                </div>
+            </div>
+            
+            <h2>📝 詳細內容</h2>
+            <h3>放射科醫生的案例</h3>
+            <p>影片首先提到一段看似荒謬的預言：2016年有人認為AI將取代放射科醫生，但十年後，放射科醫生不僅未消失，反而人數增加。這顯示AI並未導致人類失業，反而促進了更高效的醫療技術發展。</p>
+            
+            <h3>類比與啟示</h3>
+            <p>此現象與「傑文斯悖論」有關，該理論指出，當某種資源變得更高效時，其使用量反而增加，而非減少。例如，蒸汽機效率提高後，能源消耗反而上升，因為人們用它來做更多事情。</p>
+            
+            <h3>未來人才特質</h3>
+            <ul>
+                <li><strong>適應力</strong>：能夠快速適應新技術與工作模式</li>
+                <li><strong>終身學習</strong>：持續更新知識與技能</li>
+                <li><strong>批判思考</strong>：能夠分析與評估AI輸出</li>
+                <li><strong>創造力</strong>：提出創新解決方案</li>
+                <li><strong>情感智慧</strong>：處理人際關係與複雜情境</li>
+            </ul>
+            
+            <h2>🔮 結論</h2>
+            <p>AI雖然改變了傳統工作模式，但並非導致失業的元兇，反而創造了更多高價值的工作機會。透過傑文斯悖論的觀點，我們可以理解效率提升後，需求與人力需求同步增長的趨勢。</p>
+            <p>未來的成功關鍵在於個人與組織能否適應變化，掌握新技能，並善用AI作為創新與成長的工具。唯有具備靈活思維與終身學習態度的人員，才能在AI時代中持續發揮價值。</p>
         </div>
     </section>
+
     <footer>
         <p>© 2026-04-05 AI News Archive | 由 AI 技術生成</p>
         <div class="footer-links">
