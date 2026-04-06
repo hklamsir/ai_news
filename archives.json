@@ -1,6 +1,16 @@
 {
   "archives": [
     {
+      "dir": "20260406_1453",
+      "title": "AutoResearch explained..",
+      "summary_short": "## 新聞導語AutoResearch，一種新興的自動化研究工具，正在改變傳統的軟體開發模式。通過自我優化演算法，AutoResearch能夠在無需人類直接介入的情況下，進行多種實驗以改善特定問題的",
+      "images": [
+        "20260406_1453_img1.png"
+      ],
+      "date": "2026-04-06",
+      "url": "./20260406_1453/index.html"
+    },
+    {
       "dir": "20260406_1331",
       "title": "🎯強大到被迫下架！微軟 VibeVoice 語音 AI 全解析｜技術的雙面刃與開源的責任 , GitHub 33,000 ⭐ VibeVoice 語音 AI — 耳朵聽 60 分鐘、嘴巴說 90 分鐘",
       "summary_short": "## 新聞導語本次報道主題為「🎯強大到被迫下架！微軟 VibeVoice 語音 AI 全解析｜技術的雙面刃與開源的責任 , GitHub 33,000 ⭐ VibeVoice 語音 AI — 耳朵",
@@ -39,5 +49,5 @@
       "url": "./20260404_2045/index.html"
     }
   ],
-  "last_updated": "2026-04-06T13:40:00.061215"
+  "last_updated": "2026-04-06T15:00:17.252600"
 }
