@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AutoResearch explained.. | AI News 專題報道</title>
+    <title>Andrej Karpathy 的 AutoResearch｜自主 AI 研究循環系統全解析 | AI News 專題報道</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
@@ -33,17 +33,18 @@
         @keyframes slideIn { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
         @keyframes codeRain { 0% { transform: translateY(-100%); opacity: 0; } 10% { opacity: 1; } 90% { opacity: 1; } 100% { transform: translateY(100vh); opacity: 0; } }
 
-        /* 代碼雨背景 */
         .code-rain { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; overflow: hidden; }
         .code-char { position: absolute; color: var(--primary-blue); font-family: 'Courier New', monospace; font-size: 14px; opacity: 0; animation: codeRain 4s linear infinite; }
 
-        /* Hero Section */
         .hero { position: relative; min-height: 80vh; display: flex; align-items: center; justify-content: center; padding: 80px 20px; background: linear-gradient(180deg, var(--dark-bg) 0%, #1a1a2e 100%); overflow: hidden; }
         .hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(ellipse at center, rgba(123, 44, 191, 0.15) 0%, transparent 70%); z-index: 1; }
         .hero-content { position: relative; z-index: 2; max-width: 1200px; text-align: center; animation: slideIn 1s ease-out; }
         .hero-badge { display: inline-block; padding: 12px 32px; background: var(--gradient-1); border-radius: 50px; font-size: 18px; font-weight: 700; margin-bottom: 24px; box-shadow: var(--glow-blue); letter-spacing: 1px; }
-        .hero h1 { font-size: clamp(2rem, 5vw, 4rem); font-weight: 900; margin-bottom: 24px; background: var(--gradient-1); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; line-height: 1.2; }
+        .hero h1 { font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 900; margin-bottom: 24px; background: var(--gradient-1); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; line-height: 1.2; }
         .hero-subtitle { font-size: clamp(1.2rem, 2.2vw, 1.6rem); color: var(--text-primary); max-width: 900px; margin: 0 auto 40px; line-height: 1.6; font-weight: 400; }
+        .hero-meta { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-bottom: 40px; }
+        .hero-meta-item { display: flex; align-items: center; gap: 8px; color: var(--text-secondary); font-size: 1rem; }
+        .hero-meta-item strong { color: var(--primary-blue); }
         .hero-images { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; margin-top: 60px; }
         .hero-image-card { position: relative; border-radius: 20px; overflow: hidden; aspect-ratio: 16/9; box-shadow: var(--glow-purple); transition: transform 0.3s ease, box-shadow 0.3s ease; }
         .hero-image-card:hover { transform: scale(1.02); box-shadow: 0 0 40px rgba(123, 44, 191, 0.7); }
@@ -52,7 +53,6 @@
         .scroll-indicator span { display: block; width: 30px; height: 50px; border: 2px solid var(--primary-blue); border-radius: 25px; position: relative; }
         .scroll-indicator span::before { content: ''; position: absolute; top: 8px; left: 50%; transform: translateX(-50%); width: 6px; height: 10px; background: var(--primary-blue); border-radius: 3px; animation: pulse 1.5s infinite; }
 
-        /* Content Section */
         section { padding: 80px 20px; position: relative; z-index: 1; }
         .content-section { background: var(--card-bg); padding: 60px 50px; border-radius: 24px; border: 1px solid rgba(0, 212, 255, 0.2); max-width: 1100px; margin: 0 auto; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3); }
         
@@ -60,86 +60,235 @@
         .content-section h2::before { content: '📖'; font-size: 2.5rem; }
         
         .content-section h3 { font-size: 1.6rem; margin: 50px 0 25px; color: var(--accent-green); display: flex; align-items: center; gap: 12px; }
-        .content-section h3::before { content: '🎯'; font-size: 2rem; }
-        
-        .content-section h3:nth-of-type(2)::before { content: '💡'; }
-        .content-section h3:nth-of-type(3)::before { content: '📊'; }
-        .content-section h3:nth-of-type(4)::before { content: '🔮'; }
         
         .content-section p { color: var(--text-secondary); line-height: 2.2; font-size: 1.08rem; margin: 25px 0; text-align: justify; }
         
-        .content-section ul, .content-section ol { margin: 30px 0; padding-left: 40px; }
-        .content-section li { margin: 15px 0; line-height: 2; color: var(--text-secondary); font-size: 1.05rem; }
-        .content-section ul li { list-style-type: none; position: relative; padding-left: 25px; }
+        .content-section ul { margin: 30px 0; padding-left: 40px; }
+        .content-section li { margin: 15px 0; line-height: 2; color: var(--text-secondary); font-size: 1.05rem; list-style-type: none; position: relative; padding-left: 25px; }
         .content-section ul li::before { content: '▸'; color: var(--primary-blue); font-size: 1.5rem; position: absolute; left: 0; top: -5px; }
         
         .content-section strong { color: var(--text-primary); font-weight: 600; }
-        
-        /* Highlight Boxes */
+
+        .tech-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin: 40px 0; }
+        .tech-card { background: var(--card-bg-light); padding: 30px; border-radius: 16px; border: 1px solid rgba(0, 212, 255, 0.15); transition: transform 0.3s ease, border-color 0.3s ease; }
+        .tech-card:hover { transform: translateY(-5px); border-color: var(--primary-blue); }
+        .tech-card h4 { color: var(--primary-blue); font-size: 1.3rem; margin-bottom: 15px; display: flex; align-items: center; gap: 10px; }
+        .tech-card p { color: var(--text-secondary); font-size: 1rem; line-height: 1.8; margin: 0; }
+
         .highlight-box { background: linear-gradient(135deg, rgba(0, 255, 136, 0.08) 0%, rgba(0, 212, 255, 0.08) 100%); padding: 30px; border-radius: 16px; border-left: 5px solid var(--accent-green); margin: 40px 0; }
         .highlight-box h4 { color: var(--accent-green); margin-bottom: 15px; font-size: 1.3rem; display: flex; align-items: center; gap: 10px; }
-        .highlight-box h4::before { content: '✨'; }
         .highlight-box p { color: var(--text-secondary); margin: 0; }
-        
-        /* Info Box */
+
         .info-box { background: linear-gradient(135deg, rgba(0, 212, 255, 0.1) 0%, rgba(123, 44, 191, 0.1) 100%); padding: 25px; border-radius: 16px; border: 1px solid rgba(0, 212, 255, 0.3); margin: 35px 0; }
         .info-box p { margin: 10px 0; color: var(--text-secondary); }
         .info-box strong { color: var(--primary-blue); }
-        
-        /* Meta Info */
+
         .meta-info { background: linear-gradient(135deg, rgba(0, 212, 255, 0.15) 0%, rgba(123, 44, 191, 0.15) 100%); padding: 30px; border-radius: 16px; margin-bottom: 40px; border-left: 5px solid var(--primary-blue); }
         .meta-info p { margin: 12px 0; color: var(--text-secondary); font-size: 1.05rem; }
         .meta-info strong { color: var(--primary-blue); font-weight: 600; }
         .meta-info a { color: var(--primary-blue); text-decoration: none; border-bottom: 1px dashed var(--primary-blue); }
-        
-        /* Footer */
+
+        .comparison-table { width: 100%; border-collapse: collapse; margin: 40px 0; }
+        .comparison-table th, .comparison-table td { padding: 15px; text-align: left; border-bottom: 1px solid rgba(255, 255, 255, 0.1); }
+        .comparison-table th { background: var(--card-bg-light); color: var(--primary-blue); font-weight: 600; }
+        .comparison-table tr:hover { background: rgba(0, 212, 255, 0.05); }
+        .comparison-table .check { color: var(--accent-green); }
+        .comparison-table .cross { color: #ff4757; }
+
         footer { background: #050508; padding: 60px 20px; text-align: center; border-top: 1px solid rgba(255, 255, 255, 0.1); }
         footer p { color: var(--text-secondary); margin-bottom: 20px; }
         .footer-links { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; }
         .footer-links a { color: var(--primary-blue); text-decoration: none; transition: color 0.3s ease; }
         .footer-links a:hover { color: var(--text-primary); }
 
-        /* RWD */
         @media (max-width: 768px) {
             .content-section { padding: 40px 25px; }
             .hero-images { grid-template-columns: 1fr; }
             .content-section h2 { font-size: 1.6rem; }
             .content-section h3 { font-size: 1.3rem; }
+            .tech-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
-    <!-- 代碼雨背景 -->
     <div class="code-rain" id="codeRain"></div>
 
-    <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
             <span class="hero-badge">📰 AI News 專題報道</span>
-            <h1>AutoResearch explained..</h1>
-            <p class="hero-subtitle">## 新聞導語 AutoResearch，一種新興的自動化研究工具，正在改變傳統的軟體開發模式。通過自我優化演算法，AutoResearch能夠在無需人類直接介入的情況下，進行多種實驗以改善特定問題的解決方案。本次報告將深入探討AutoResearch如何在餐廳庫存管理及國際象棋引擎兩大應用場景中發揮作用，並分析其潛力與局限性。  ## 重點摘要 - AutoResearch能在無人干預下自行優化</p>
-            <div class="hero-images"><div class="hero-image-card"><img src="./20260406_1453_img1.png" alt="新聞插圖"></div>
-</div>
+            <h1>Andrej Karpathy 的 AutoResearch</h1>
+            <p class="hero-subtitle">自主 AI 研究循環系統全解析｜AI 編輯 PyTorch 代碼、自動運行實驗、持續自我優化，開啟機器自主研究新紀元</p>
+            <div class="hero-meta">
+                <div class="hero-meta-item"><strong>📅</strong> 2026-04-06</div>
+                <div class="hero-meta-item"><strong>👨‍💻</strong> Andrej Karpathy</div>
+                <div class="hero-meta-item"><strong>🔗</strong> GitHub 開源</div>
+            </div>
+            <div class="hero-images">
+                <div class="hero-image-card">
+                    <img src="./20260406_1453_img1.png" alt="AutoResearch AI 科技感插圖">
+                </div>
+            </div>
         </div>
         <div class="scroll-indicator"><span></span></div>
     </section>
 
-    <!-- Content Section -->
     <section>
         <div class="content-section">
-            <!-- Meta Info -->
             <div class="meta-info">
-                <p><strong>📺 資料來源</strong>：<a href="https://www.youtube.com/watch?v=5-ekc3eXNvs&pp=ugUEEgJlbg%3D%3D" target="_blank" style="word-break: break-all; font-size: 0.95rem;">https://www.youtube.com/watch?v=5-ekc3eXNvs&pp=ugUEEgJlbg%3D%3D</a></p>
-                <p><strong>📅 發布日期</strong>：2026-04-06</p>
-                <p><strong>🤖 處理方式</strong>：AI 智能摘要生成</p>
+                <p><strong>📺 影片來源</strong>：<a href="https://www.youtube.com/watch?v=5-ekc3eXNvs" target="_blank">YouTube 專題解析</a></p>
+                <p><strong>🔗 GitHub</strong>：<a href="https://github.com/karpathy/autoresearch" target="_blank">karpathy/autoresearch</a></p>
+                <p><strong>📄 相關資源</strong>：<a href="https://www.datacamp.com/tutorial/guide-to-autoresearch" target="_blank">DataCamp 教程</a></p>
             </div>
+
+            <h2>新聞導語</h2>
+            <p>前 Tesla AI 總監、OpenAI 創始成員 <strong>Andrej Karpathy</strong> 近日開源了一個名為 <strong>AutoResearch</strong> 的實驗性專案，展示了一個能夠自主進行機器學習研究的 AI 系統。該系統能夠在無人干預的情況下，自動編輯 PyTorch 訓練代碼、運行 5 分鐘訓練實驗、並持續優化自身的驗證損失（val_bpb）。Karpathy 幽默地表示：「誰知道早期奇點會這麼有趣？」</p>
             
-            <!-- Main Content -->
-            <div class="markdown-content"><p> 新聞導語</p><p>AutoResearch，一種新興的自動化研究工具，正在改變傳統的軟體開發模式。通過自我優化演算法，AutoResearch能夠在無需人類直接介入的情況下，進行多種實驗以改善特定問題的解決方案。本次報告將深入探討AutoResearch如何在餐廳庫存管理及國際象棋引擎兩大應用場景中發揮作用，並分析其潛力與局限性。</p><p></p><p> 重點摘要</p><p>- AutoResearch能在無人干預下自行優化演算法，從而提高係統效能。</p><p>- 在餐廳庫存管理案例中，該技術成功降低了因庫存不足導致的訂單失敗率。</p><p>- 研究指出，AutoResearch亦能大幅提高國際象棋引擎的Elo評分。</p><p>- 數據顯示，透過調整評估標準，AutoResearch還可實現工作資本的最大化。</p><p>- 專家分析認為，雖然AutoResearch表現出色，但其應用範圍仍受限於具體問題定義和目標設置。</p><p>- 業界觀察指出，此技術代表了未來軟體開發的一個重要趨勢，即更多地依賴於對問題深刻理解而非編碼技巧本身。</p><p></p><p> 詳細分析</p><p>根據最新研究，AutoResearch展示了其在複雜決策環境下的巨大潛力。以餐廳庫存管理為例，初始情況下由於補貨不及時，超過半數的訂單無法被滿足。然而，在引入AutoResearch後，係統能夠自動學習到最佳的訂購策略——不僅提前下單避免短缺，還學會了批量採購而非單品訂購，從而顯著提升了庫存穩定性。進一步地，當研究者將注意力轉向財務健康指標時（如保持足夠的工作資本），AutoResearch再次證明了其靈活性，通過調整內部邏輯來平衡庫存水平與現金流之間的關係。</p><p></p><p>同樣令人印象深刻的是其在遊戲領域的應用成果。一個基於AutoResearch構建的國際象棋程序從最初的750 Elo分數迅速提升至2600分，這表明該技術對於需要大量試錯過程才能找到最佳解法的問題尤其有效。值得注意的是，整個過程中不需要人工參與調整代碼；相反，AI係統通過不斷嘗試不同的變量組合來自我改進，直至達成設定目標。</p><p></p><p>然而，儘管AutoResearch展現出了強大的能力，但它並非萬能。首先，其效果很大程度上取決於問題描述的清晰度以及目標函數的準確設定。其次，目前這種方法主要適用於那些可以通過量化指標來衡量進步並且存在明確邊界的任務。對於更加開放或模糊的需求，AutoResearch可能難以發揮應有作用。</p><p></p><p> 業界展望</p><p>隨著AutoResearch等自動化工具日益成熟，未來的軟體工程可能會經歷一場革命性的變化。開發者將不再僅僅是代碼的撰寫者，而是成為問題定義者與解決方案設計師。不過，要充分釋放這些技術的潛力，還需進一步探索如何將其應用範圍擴展到更廣泛、更複雜的現實世界挑戰之中。此外，相關機構也應密切關注由此帶來的倫理考量與安全風險，確保技術發展始終服務於人類社會的長遠利益。</p></div>
+            <p>這項技術的核心在於建立了一個<strong>自主研究循環</strong>：AI 根據人類定義的高層目標，自動生成假說、修改代碼、運行實驗、評估結果，並保留表現更好的版本。整個過程無需人類編寫具體的實驗代碼，只需在 Markdown 文件中描述研究方向即可。</p>
+
+            <h2>核心技術突破</h2>
+            
+            <div class="tech-grid">
+                <div class="tech-card">
+                    <h4>🔄 自主研究循環</h4>
+                    <p>實驗 → 評估 → 保留/丟棄 → 迭代，AI 自主完成整個研究流程，人類只需設定目標和約束條件。</p>
+                </div>
+                <div class="tech-card">
+                    <h4>📝 LLM 驅動代碼編輯</h4>
+                    <p>使用外部 LLM（如 Claude、Codex）自主編輯 train.py，嘗試不同的架構、優化器、超參數組合。</p>
+                </div>
+                <div class="tech-card">
+                    <h4>⏱️ 5 分鐘快速實驗</h4>
+                    <p>每個實驗運行約 5 分鐘，在固定時間預算內找到最適合您硬體平台的最優模型配置。</p>
+                </div>
+                <div class="tech-card">
+                    <h4>✅ 驗證驅動防作弊</h4>
+                    <p>所有改進必須在驗證集上表現更好才能保留，防止模型通過記憶訓練數據來「作弊」。</p>
+                </div>
+            </div>
+
+            <h2>工作原理詳解</h2>
+            
+            <p><strong>AutoResearch 的核心架構：</strong>該系統採用了一種類似遺傳演算法的方法，但使用 LLM 進行突變而非隨機擾動。人類在 program.md 文件中定義高層研究方向，AI 代理則負責具體的實驗執行。</p>
+
+            <ul>
+                <li><strong>步驟 1 - 實驗生成：</strong>AI 閱讀 program.md，理解目標後生成新的實驗代碼（修改模型架構、學習率、批量大小等）</li>
+                <li><strong>步驟 2 - 自動運行：</strong>系統自動執行訓練腳本，運行約 5 分鐘，記錄驗證集損失（val_bpb）</li>
+                <li><strong>步驟 3 - 結果評估：</strong>如果新實驗的驗證損失低於當前最佳值，則保留該更改；否則丟棄</li>
+                <li><strong>步驟 4 - 持續迭代：</strong>重複上述過程，形成一個持續優化的研究循環</li>
+            </ul>
+
+            <div class="highlight-box">
+                <h4>Karpathy 的設計理念</h4>
+                <p>「這個設計有兩個關鍵優勢：第一，無論 AI 改變什麼（模型大小、批量大小、架構等），實驗結果都可直接比較；第二，AutoResearch 會在您的時間預算內找到最適合您平台的最優模型。缺點是您的結果無法與其他人在不同硬體平台上運行的結果進行比較。」</p>
+            </div>
+
+            <h2>應用案例展示</h2>
+
+            <div class="info-box">
+                <p><strong>📌 案例 1：餐廳庫存管理優化</strong></p>
+                <p>• <strong>初始問題：</strong>超過 50% 訂單因庫存不足無法滿足</p>
+                <p>• <strong>AI 發現的策略：</strong>提前下單避免短缺、批量採購而非單品訂購</p>
+                <p>• <strong>結果：</strong>庫存穩定性顯著提升，訂單失敗率大幅下降</p>
+                <br>
+                <p><strong>📌 案例 2：國際象棋引擎優化</strong></p>
+                <p>• <strong>初始 Elo 評分：</strong>750 分</p>
+                <p>• <strong>優化後評分：</strong>2600 分（大師級水平）</p>
+                <p>• <strong>關鍵：</strong>AI 通過不斷嘗試不同的評估函數和搜索策略實現自我改進</p>
+                <br>
+                <p><strong>📌 案例 3：工作資本最大化</strong></p>
+                <p>• <strong>目標：</strong>平衡庫存水平與現金流</p>
+                <p>• <strong>方法：</strong>調整評估標準，讓 AI 學習財務健康指標</p>
+                <p>• <strong>結果：</strong>AI 成功學會在保持足夠工作資本的前提下優化庫存</p>
+            </div>
+
+            <h2>技術對比</h2>
+
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>特性</th>
+                        <th>AutoResearch</th>
+                        <th>傳統自動化</th>
+                        <th>手動研究</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>假說生成</strong></td>
+                        <td class="check">✅ AI 自主生成</td>
+                        <td class="cross">❌ 人類定義</td>
+                        <td class="cross">❌ 人類定義</td>
+                    </tr>
+                    <tr>
+                        <td><strong>代碼編輯</strong></td>
+                        <td class="check">✅ LLM 自動修改</td>
+                        <td class="cross">❌ 預定義腳本</td>
+                        <td class="cross">❌ 手動編寫</td>
+                    </tr>
+                    <tr>
+                        <td><strong>實驗執行</strong></td>
+                        <td class="check">✅ 全自動</td>
+                        <td class="check">✅ 全自動</td>
+                        <td class="cross">❌ 手動啟動</td>
+                    </tr>
+                    <tr>
+                        <td><strong>結果評估</strong></td>
+                        <td class="check">✅ 自動保留最佳</td>
+                        <td class="check">✅ 可配置</td>
+                        <td class="cross">❌ 人類判斷</td>
+                    </tr>
+                    <tr>
+                        <td><strong>持續迭代</strong></td>
+                        <td class="check">✅ 無限循環</td>
+                        <td class="cross">❌ 固定流程</td>
+                        <td class="cross">❌ 依賴人類</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h2>優勢與局限</h2>
+            
+            <p><strong>核心優勢：</strong>AutoResearch 代表了一種全新的研究範式——人類從代碼編寫者轉變為問題定義者和解決方案設計師。這種模式特別適合具有可量化目標和明確邊界的任務。</p>
+
+            <ul>
+                <li><strong>效率提升：</strong>AI 可在人類睡眠時持續運行實驗，大幅加速研究進程</li>
+                <li><strong>探索空間擴大：</strong>AI 能嘗試人類可能忽略的變量組合，發現非直觀的最優解</li>
+                <li><strong>降低門檻：</strong>研究人員無需精通編程即可進行複雜的 ML 實驗</li>
+                <li><strong>可重複性：</strong>所有實驗記錄在 Git 中，便於追蹤和覆現</li>
+            </ul>
+
+            <div class="highlight-box">
+                <h4>當前局限性</h4>
+                <p>• 每次運行從零開始，無法累積先前實驗的知識</p>
+                <p>• 僅適用於可通過量化指標衡量進步的任務</p>
+                <p>• 對於開放式或模糊定義的問題效果有限</p>
+                <p>• 結果與硬體平台綁定，不同平台間無法直接比較</p>
+            </div>
+
+            <h2>業界影響與展望</h2>
+            
+            <p>AutoResearch 的出現引發了學界和業界的廣泛討論。Reddit 用戶在 r/singularity 版塊表示：「這展示了我們已經進入了一個時代——AI 代理在給出明確指令和可測量目標的情況下，能夠自主進行有意義的實驗。」</p>
+
+            <p>數據科學教育平台 DataCamp 指出：「Andrej Karpathy 的 AutoResearch 是一個開源工具，它在循環中運行 ML 實驗，只保留擊敗當前最佳結果的更改。你在 Markdown 文件中描述研究方向，指向 AI 編碼代理，然後就可以離開了。」</p>
+
+            <div class="info-box">
+                <p><strong>📌 未來發展方向：</strong></p>
+                <p>• <strong>知識累積：</strong>讓 AI 能夠從先前實驗中學習，避免重複錯誤</p>
+                <p>• <strong>多目標優化：</strong>同時優化多個相互衝突的目標（如準確性 vs 推理速度）</p>
+                <p>• <strong>跨平台通用：</strong>開發標準化基準，使不同平台的結果可比較</p>
+                <p>• <strong>領域擴展：</strong>從 ML 訓練擴展到其他研究領域（如藥物發現、材料科學）</p>
+            </div>
+
+            <h2>結語</h2>
+            
+            <p>AutoResearch 不僅是一個技術演示，更代表了 AI 輔助研究的新範式。正如 Karpathy 所說，這個專案帶有戲謔成分，但其背後的問題是真實的：我們已經進入了一個 AI 能夠自主進行有意義實驗的時代。</p>
+
+            <p>對於研究人員和開發者而言，這意味著角色的轉變——從繁瑣的代碼編寫和實驗調試中解放出來，專注於更高層次的問題定義和策略規劃。當然，這也帶來了新的挑戰：如何確保 AI 生成的研究結果可靠？如何定義恰當的約束條件？如何平衡自動化與人類的判斷力？</p>
+
+            <p>無論如何，AutoResearch 為我們提供了一個窺探未來研究模式的窗口。在這個未來中，人類與 AI 將形成更緊密的協作關係，共同推動科學和技術的邊界。</p>
         </div>
     </section>
 
-    <!-- Footer -->
     <footer>
         <p>© 2026-04-06 AI News Archive | 由 AI 技術生成</p>
         <div class="footer-links">
@@ -150,7 +299,6 @@
     </footer>
 
     <script>
-        // 代碼雨效果
         function createCodeRain() {
             const codeRain = document.getElementById('codeRain');
             const chars = '01 アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン';
@@ -165,7 +313,6 @@
             }
         }
 
-        // 滾動動畫
         function handleScrollAnimation() {
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
