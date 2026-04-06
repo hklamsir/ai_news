@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>新手學 AI 一定要知道的 20 件事｜AI 知識懶人包全解析 | AI News 專題報道</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-blue: #00d4ff;
+            --primary-purple: #7b2cbf;
+            --accent-green: #00ff88;
+            --accent-orange: #ff9500;
+            --dark-bg: #0a0a0f;
+            --card-bg: #12121a;
+            --card-bg-light: #1a1a28;
+            --text-primary: #ffffff;
+            --text-secondary: #a0a0b0;
+            --gradient-1: linear-gradient(135deg, #00d4ff 0%, #7b2cbf 100%);
+            --gradient-2: linear-gradient(135deg, #00d4ff 0%, #00ff88 100%);
+            --glow-blue: 0 0 20px rgba(0, 212, 255, 0.5);
+            --glow-purple: 0 0 20px rgba(123, 44, 191, 0.5);
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Noto Sans TC', sans-serif; background-color: var(--dark-bg); color: var(--text-primary); line-height: 1.8; overflow-x: hidden; }
+        @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-20px); } }
+        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.6; } }
+        @keyframes slideIn { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes codeRain { 0% { transform: translateY(-100%); opacity: 0; } 10% { opacity: 1; } 90% { opacity: 1; } 100% { transform: translateY(100vh); opacity: 0; } }
+        .code-rain { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; overflow: hidden; }
+        .code-char { position: absolute; color: var(--primary-blue); font-family: 'Courier New', monospace; font-size: 14px; opacity: 0; animation: codeRain 4s linear infinite; }
+        .hero { position: relative; min-height: 80vh; display: flex; align-items: center; justify-content: center; padding: 80px 20px; background: linear-gradient(180deg, var(--dark-bg) 0%, #1a1a2e 100%); overflow: hidden; }
+        .hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(ellipse at center, rgba(123, 44, 191, 0.15) 0%, transparent 70%); z-index: 1; }
+        .hero-content { position: relative; z-index: 2; max-width: 1200px; text-align: center; animation: slideIn 1s ease-out; }
+        .hero-badge { display: inline-block; padding: 12px 32px; background: var(--gradient-1); border-radius: 50px; font-size: 18px; font-weight: 700; margin-bottom: 24px; box-shadow: var(--glow-blue); letter-spacing: 1px; }
+        .hero h1 { font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 900; margin-bottom: 24px; background: var(--gradient-1); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; line-height: 1.2; }
+        .hero-subtitle { font-size: clamp(1.2rem, 2.2vw, 1.6rem); color: var(--text-primary); max-width: 900px; margin: 0 auto 40px; line-height: 1.6; font-weight: 400; }
+        .hero-meta { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-bottom: 40px; }
+        .hero-meta-item { display: flex; align-items: center; gap: 8px; color: var(--text-secondary); font-size: 1rem; }
+        .hero-meta-item strong { color: var(--primary-blue); }
+        .hero-images { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; margin-top: 60px; }
+        .hero-image-card { position: relative; border-radius: 20px; overflow: hidden; aspect-ratio: 16/9; box-shadow: var(--glow-purple); transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .hero-image-card:hover { transform: scale(1.02); box-shadow: 0 0 40px rgba(123, 44, 191, 0.7); }
+        .hero-image-card img { width: 100%; height: 100%; object-fit: cover; }
+        .scroll-indicator { position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%); animation: float 2s ease-in-out infinite; z-index: 2; }
+        .scroll-indicator span { display: block; width: 30px; height: 50px; border: 2px solid var(--primary-blue); border-radius: 25px; position: relative; }
+        .scroll-indicator span::before { content: ''; position: absolute; top: 8px; left: 50%; transform: translateX(-50%); width: 6px; height: 10px; background: var(--primary-blue); border-radius: 3px; animation: pulse 1.5s infinite; }
+        section { padding: 80px 20px; position: relative; z-index: 1; }
+        .content-section { background: var(--card-bg); padding: 60px 50px; border-radius: 24px; border: 1px solid rgba(0, 212, 255, 0.2); max-width: 1100px; margin: 0 auto; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3); }
+        .content-section h2 { font-size: 2rem; margin-bottom: 40px; color: var(--primary-blue); display: flex; align-items: center; gap: 15px; padding-bottom: 20px; border-bottom: 2px solid rgba(0, 212, 255, 0.3); }
+        .content-section h2::before { content: '📖'; font-size: 2.5rem; }
+        .content-section h3 { font-size: 1.6rem; margin: 50px 0 25px; color: var(--accent-green); display: flex; align-items: center; gap: 12px; }
+        .content-section p { color: var(--text-secondary); line-height: 2.2; font-size: 1.08rem; margin: 25px 0; text-align: justify; }
+        .content-section ul { margin: 30px 0; padding-left: 40px; }
+        .content-section li { margin: 15px 0; line-height: 2; color: var(--text-secondary); font-size: 1.05rem; list-style-type: none; position: relative; padding-left: 25px; }
+        .content-section ul li::before { content: '▸'; color: var(--primary-blue); font-size: 1.5rem; position: absolute; left: 0; top: -5px; }
+        .content-section strong { color: var(--text-primary); font-weight: 600; }
+        .tech-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin: 40px 0; }
+        .tech-card { background: var(--card-bg-light); padding: 30px; border-radius: 16px; border: 1px solid rgba(0, 212, 255, 0.15); transition: transform 0.3s ease, border-color 0.3s ease; }
+        .tech-card:hover { transform: translateY(-5px); border-color: var(--primary-blue); }
+        .tech-card h4 { color: var(--primary-blue); font-size: 1.3rem; margin-bottom: 15px; display: flex; align-items: center; gap: 10px; }
+        .tech-card p { color: var(--text-secondary); font-size: 1rem; line-height: 1.8; margin: 0; }
+        .highlight-box { background: linear-gradient(135deg, rgba(0, 255, 136, 0.08) 0%, rgba(0, 212, 255, 0.08) 100%); padding: 30px; border-radius: 16px; border-left: 5px solid var(--accent-green); margin: 40px 0; }
+        .highlight-box h4 { color: var(--accent-green); margin-bottom: 15px; font-size: 1.3rem; display: flex; align-items: center; gap: 10px; }
+        .highlight-box p { color: var(--text-secondary); margin: 0; }
+        .info-box { background: linear-gradient(135deg, rgba(0, 212, 255, 0.1) 0%, rgba(123, 44, 191, 0.1) 100%); padding: 25px; border-radius: 16px; border: 1px solid rgba(0, 212, 255, 0.3); margin: 35px 0; }
+        .info-box p { margin: 10px 0; color: var(--text-secondary); }
+        .info-box strong { color: var(--primary-blue); }
+        .meta-info { background: linear-gradient(135deg, rgba(0, 212, 255, 0.15) 0%, rgba(123, 44, 191, 0.15) 100%); padding: 30px; border-radius: 16px; margin-bottom: 40px; border-left: 5px solid var(--primary-blue); }
+        .meta-info p { margin: 12px 0; color: var(--text-secondary); font-size: 1.05rem; }
+        .meta-info strong { color: var(--primary-blue); font-weight: 600; }
+        .meta-info a { color: var(--primary-blue); text-decoration: none; border-bottom: 1px dashed var(--primary-blue); }
+        .comparison-table { width: 100%; border-collapse: collapse; margin: 40px 0; }
+        .comparison-table th, .comparison-table td { padding: 15px; text-align: left; border-bottom: 1px solid rgba(255, 255, 255, 0.1); }
+        .comparison-table th { background: var(--card-bg-light); color: var(--primary-blue); font-weight: 600; }
+        .comparison-table tr:hover { background: rgba(0, 212, 255, 0.05); }
+        .comparison-table .check { color: var(--accent-green); }
+        .comparison-table .cross { color: #ff4757; }
+        footer { background: #050508; padding: 60px 20px; text-align: center; border-top: 1px solid rgba(255, 255, 255, 0.1); }
+        footer p { color: var(--text-secondary); margin-bottom: 20px; }
+        .footer-links { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; }
+        .footer-links a { color: var(--primary-blue); text-decoration: none; transition: color 0.3s ease; }
+        .footer-links a:hover { color: var(--text-primary); }
+        @media (max-width: 768px) {
+            .content-section { padding: 40px 25px; }
+            .hero-images { grid-template-columns: 1fr; }
+            .content-section h2 { font-size: 1.6rem; }
+            .content-section h3 { font-size: 1.3rem; }
+            .tech-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <div class="code-rain" id="codeRain"></div>
+    <section class="hero">
+        <div class="hero-content">
+            <span class="hero-badge">📰 AI News 專題報道</span>
+            <h1>新手學 AI 一定要知道的 20 件事</h1>
+            <p class="hero-subtitle">AI 知識懶人包全解析｜從 LLM 到 AI Agent，一次搞懂 20 個核心名詞，建立完整 AI 知識框架</p>
+            <div class="hero-meta">
+                <div class="hero-meta-item"><strong>📅</strong> 2026-04-06</div>
+                <div class="hero-meta-item"><strong>📺</strong> 泛科學院</div>
+                <div class="hero-meta-item"><strong>👁️</strong> 24,881 觀看</div>
+            </div>
+            <div class="hero-images">
+                <div class="hero-image-card">
+                    <img src="./20260406_1732_img1.png" alt="AI 知識懶人包科技感插圖">
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator"><span></span></div>
+    </section>
+    <section>
+        <div class="content-section">
+            <div class="meta-info">
+                <p><strong>📺 影片來源</strong>：<a href="https://youtu.be/tVdJojeRQN8?si=LvM0VU6MlaCpyNP-" target="_blank">YouTube 泛科學院</a></p>
+                <p><strong>📄 相關資源</strong>：<a href="https://rd.coach/ai-llm-agent/" target="_blank">20 個 AI 名詞入門指南</a></p>
+            </div>
+            <h2>新聞導語</h2>
+            <p>泛科學院最新推出的 AI 入門課程「新手學 AI 一定要知道的 20 件事」，為 AI 初學者提供了一份完整的知識懶人包。影片涵蓋了從基礎概念到進階應用的 20 個核心 AI 名詞，包括 <strong>LLM</strong>、<strong>Prompt</strong>、<strong>Embedding</strong>、<strong>Token</strong>、<strong>Context</strong> 等基礎概念，以及 <strong>RAG</strong>、<strong>CoT</strong>、<strong>AI Agent</strong> 等進階技術。</p>
+            <h2>核心技術突破</h2>
+            <div class="tech-grid">
+                <div class="tech-card"><h4>🧠 LLM 大語言模型</h4><p>Large Language Model，可理解、生成語言的大型神經網絡模型，如 ChatGPT、Claude、Gemini。</p></div>
+                <div class="tech-card"><h4>✨ Prompt 提示語</h4><p>用戶輸入給 AI 的指令或問題，相當於 AI 的魔法咒語，引導 AI 思考和回應。</p></div>
+                <div class="tech-card"><h4>🔗 Embedding 嵌入</h4><p>將文字轉換為數值向量的技術，讓 AI 能夠理解內容的語義關係和相似性。</p></div>
+                <div class="tech-card"><h4>🔢 Token 符元</h4><p>AI 處理文字的基本單位，類似於文字的「數字分身」，決定 AI 的計算量。</p></div>
+            </div>
+            <h2>20 個 AI 名詞完整解析</h2>
+            <p><strong>基礎概念層（1-7）：</strong>LLM、Prompt、Embedding、Token、Context、Zero/One/Few-shot、Markdown & Parser</p>
+            <p><strong>提示語技術層（8-10）：</strong>提示框架（CLEAR、PEAS）、RAG、CAG、Fine-tune</p>
+            <p><strong>進階應用層（11-20）：</strong>CoT、ToT、RE2、MCP、A2A、Function Calling、RPA 自動化、AI Agent、Computer Use、LLMOS、A2A、AI 安全性、Alignment 對齊、模型評測、AGI/ANI/ASI</p>
+            <div class="info-box">
+                <p><strong>📌 學習建議：</strong>初學者先掌握基礎概念層 7 個名詞 → 進階使用者學習提示語技術層 → 開發者深入研究進階應用層</p>
+            </div>
+            <h2>業界展望</h2>
+            <p>隨著 AI 技術的快速發展，掌握這些核心概念已成為數位素養的基本要求。未來趨勢包括：AI Agent 普及化、RAG 成為標配、多模態整合、AI 安全性重視。</p>
+        </div>
+    </section>
+    <footer>
+        <p>© 2026-04-06 AI News Archive | 由 AI 技術生成</p>
+        <div class="footer-links">
+            <a href="../index.html">返回主頁</a>
+            <a href="https://github.com/hklamsir/ai_news" target="_blank">GitHub</a>
+            <a href="https://hklamsir.github.io/ai_news/" target="_blank">瀏覽所有專題</a>
+        </div>
+    </footer>
+    <script>
+        function createCodeRain() {
+            const codeRain = document.getElementById('codeRain');
+            const chars = '01 アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン';
+            for (let i = 0; i < 50; i++) {
+                const char = document.createElement('div');
+                char.className = 'code-char';
+                char.textContent = chars[Math.floor(Math.random() * chars.length)];
+                char.style.left = Math.random() * 100 + '%';
+                char.style.animationDelay = Math.random() * 4 + 's';
+                char.style.animationDuration = (Math.random() * 2 + 3) + 's';
+                codeRain.appendChild(char);
+            }
+        }
+        document.addEventListener('DOMContentLoaded', () => { createCodeRain(); });
+        window.addEventListener('resize', () => {
+            document.getElementById('codeRain').innerHTML = '';
+            createCodeRain();
+        });
+    </script>
+</body>
+</html>
