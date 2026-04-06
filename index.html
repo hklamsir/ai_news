@@ -12,9 +12,9 @@
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Noto Sans TC', sans-serif; background-color: var(--dark-bg); color: var(--text-primary); line-height: 1.8; min-height: 100vh; }
         .hero { background: linear-gradient(180deg, #1a1a2e 0%, var(--dark-bg) 100%); padding: 80px 20px 60px; text-align: center; position: relative; overflow: hidden; }
-        .hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(ellipse at center, rgba(123, 44, 191, 0.15) 0%, transparent 70%); }
+        .hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(ellipse at center, rgba(123,44,191,0.15) 0%, transparent 70%); }
         .hero-content { position: relative; z-index: 1; }
-        .hero h1 { font-size: clamp(2.5rem, 6vw, 4rem); font-weight: 900; margin-bottom: 16px; background: var(--gradient-1); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .hero h1 { font-size: clamp(2.5rem,6vw,4rem); font-weight: 900; margin-bottom: 16px; background: var(--gradient-1); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
         .hero p { font-size: 1.2rem; color: var(--text-secondary); max-width: 600px; margin: 0 auto; }
         .hero-badge { display: inline-block; padding: 8px 24px; background: var(--gradient-1); border-radius: 50px; font-size: 14px; font-weight: 600; margin-bottom: 24px; box-shadow: var(--glow-blue); }
         .stats { display: flex; justify-content: center; gap: 40px; margin-top: 40px; flex-wrap: wrap; }
@@ -23,21 +23,21 @@
         .stat-label { color: var(--text-secondary); font-size: 0.9rem; }
         .container { max-width: 1200px; margin: 0 auto; padding: 60px 20px; }
         .month-section { margin-bottom: 60px; }
-        .month-header { display: flex; align-items: center; gap: 16px; margin-bottom: 30px; padding-bottom: 16px; border-bottom: 2px solid rgba(0, 212, 255, 0.3); }
+        .month-header { display: flex; align-items: center; gap: 16px; margin-bottom: 30px; padding-bottom: 16px; border-bottom: 2px solid rgba(0,212,255,0.3); }
         .month-icon { font-size: 2rem; }
         .month-title { font-size: 1.8rem; font-weight: 700; color: var(--primary-blue); }
-        .month-count { background: rgba(0, 212, 255, 0.2); color: var(--primary-blue); padding: 4px 12px; border-radius: 20px; font-size: 0.9rem; font-weight: 600; }
-        .archive-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 24px; }
-        .archive-card { background: var(--card-bg); border-radius: 16px; padding: 30px; border: 1px solid rgba(0, 212, 255, 0.2); transition: all 0.3s ease; position: relative; overflow: hidden; }
+        .month-count { background: rgba(0,212,255,0.2); color: var(--primary-blue); padding: 4px 12px; border-radius: 20px; font-size: 0.9rem; font-weight: 600; }
+        .archive-grid { display: grid; grid-template-columns: repeat(auto-fill,minmax(320px,1fr)); gap: 24px; }
+        .archive-card { background: var(--card-bg); border-radius: 16px; padding: 30px; border: 1px solid rgba(0,212,255,0.2); transition: all 0.3s ease; position: relative; overflow: hidden; }
         .archive-card::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 4px; background: var(--gradient-1); }
         .archive-card:hover { transform: translateY(-5px); box-shadow: var(--glow-blue); border-color: var(--primary-blue); }
-        .archive-card h3 { font-size: 1.3rem; margin-bottom: 12px; line-height: 1.4; }
-        .archive-card p { color: var(--text-secondary); font-size: 0.95rem; margin-bottom: 20px; line-height: 1.6; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+        .archive-card h3 { font-size: 1.3rem; margin-bottom: 12px; }
+        .archive-card p { color: var(--text-secondary); font-size: 0.95rem; margin-bottom: 20px; }
         .archive-link { display: inline-flex; align-items: center; gap: 8px; color: var(--primary-blue); text-decoration: none; font-weight: 600; transition: gap 0.3s ease; }
         .archive-link:hover { gap: 12px; }
-        .archive-meta { display: flex; gap: 16px; margin-top: 16px; padding-top: 16px; border-top: 1px solid rgba(255, 255, 255, 0.1); font-size: 0.85rem; color: var(--text-secondary); }
+        .archive-meta { display: flex; gap: 16px; margin-top: 16px; padding-top: 16px; border-top: 1px solid rgba(255,255,255,0.1); font-size: 0.85rem; color: var(--text-secondary); }
         .meta-item { display: flex; align-items: center; gap: 6px; }
-        footer { background: #050508; padding: 40px 20px; text-align: center; border-top: 1px solid rgba(255, 255, 255, 0.1); margin-top: 60px; }
+        footer { background: #050508; padding: 40px 20px; text-align: center; border-top: 1px solid rgba(255,255,255,0.1); margin-top: 60px; }
         footer p { color: var(--text-secondary); }
         @media (max-width: 768px) { .stats { gap: 20px; } .archive-grid { grid-template-columns: 1fr; } .month-header { flex-wrap: wrap; } }
     </style>
@@ -49,8 +49,8 @@
             <h1>AI News Archive</h1>
             <p>收錄人工智能領域重要新聞、專題報道與深度分析</p>
             <div class="stats">
-                <div class="stat-item"><div class="stat-number">7</div><div class="stat-label">專題報道</div></div>
-                <div class="stat-item"><div class="stat-number">1</div><div class="stat-label">月份</div></div>
+                <div class="stat-item"><div class="stat-number" id="totalArchives">8</div><div class="stat-label">專題報道</div></div>
+                <div class="stat-item"><div class="stat-number" id="totalMonths">1</div><div class="stat-label">月份</div></div>
             </div>
         </div>
     </section>
@@ -59,9 +59,18 @@
             <div class="month-header">
                 <span class="month-icon">📅</span>
                 <h2 class="month-title">2026 年 04 月</h2>
-                <span class="month-count">7 個專題</span>
+                <span class="month-count">8 個專題</span>
             </div>
             <div class="archive-grid">
+                <article class="archive-card">
+                    <h3>🔥 Linux 藏了 23 年的漏洞，Claude Code 用一個指令碼就找到了</h3>
+                    <p>## 新聞導語近期，一項由AI公司Anthropic的研究員進行的報告揭示了一個在Linux核心中潛藏了23年的嚴重漏洞。該研究員使用自家開發的AI模型Claude Code，透過一個簡單的自動化指...</p>
+                    <a href="./news_20260407_004928/index.html" class="archive-link">查看專題報道 <span>→</span></a>
+                    <div class="archive-meta">
+                        <span class="meta-item">📁 news_20260407_004928</span>
+                        <span class="meta-item">📄 AI 生成</span>
+                    </div>
+                </article>
                 <article class="archive-card">
                     <h3>🔥 人類文明倒數 5 年？前 OpenAI 專家絕望吹哨：7 成機率滅絕，我們已無路可退！🚨</h3>
                     <p>前 OpenAI 核心安全團隊成員丹尼爾·科科塔基洛發出驚人警告：人類文明可能在 5-8 年內面臨滅絕風險，概率高達 70%。他選擇放棄數百萬美元股權，成為揭露行業真相的吹哨人。...</p>
@@ -129,8 +138,7 @@
         </section>
     </div>
     <footer>
-        <p>© 2026 AI News Archive | 由 AI 技術生成</p>
-        <p>GitHub: <a href="https://github.com/hklamsir/ai_news" style="color: #00d4ff;">hklamsir/ai_news</a></p>
+        <p>&copy; 2026 AI News Archive | 由 AI 技術騅動的新聞檔案庫</p>
     </footer>
 </body>
 </html>
