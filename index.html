@@ -31,8 +31,8 @@
         .archive-card { background: var(--card-bg); border-radius: 16px; padding: 30px; border: 1px solid rgba(0, 212, 255, 0.2); transition: all 0.3s ease; position: relative; overflow: hidden; }
         .archive-card::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 4px; background: var(--gradient-1); }
         .archive-card:hover { transform: translateY(-5px); box-shadow: var(--glow-blue); border-color: var(--primary-blue); }
-        .archive-card h3 { font-size: 1.3rem; margin-bottom: 12px; }
-        .archive-card p { color: var(--text-secondary); font-size: 0.95rem; margin-bottom: 20px; }
+        .archive-card h3 { font-size: 1.3rem; margin-bottom: 12px; line-height: 1.4; }
+        .archive-card p { color: var(--text-secondary); font-size: 0.95rem; margin-bottom: 20px; line-height: 1.6; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
         .archive-link { display: inline-flex; align-items: center; gap: 8px; color: var(--primary-blue); text-decoration: none; font-weight: 600; transition: gap 0.3s ease; }
         .archive-link:hover { gap: 12px; }
         .archive-meta { display: flex; gap: 16px; margin-top: 16px; padding-top: 16px; border-top: 1px solid rgba(255, 255, 255, 0.1); font-size: 0.85rem; color: var(--text-secondary); }
@@ -49,8 +49,8 @@
             <h1>AI News Archive</h1>
             <p>收錄人工智能領域重要新聞、專題報道與深度分析</p>
             <div class="stats">
-                <div class="stat-item"><div class="stat-number" id="totalArchives">6</div><div class="stat-label">專題報道</div></div>
-                <div class="stat-item"><div class="stat-number" id="totalMonths">1</div><div class="stat-label">月份</div></div>
+                <div class="stat-item"><div class="stat-number">7</div><div class="stat-label">專題報道</div></div>
+                <div class="stat-item"><div class="stat-number">1</div><div class="stat-label">月份</div></div>
             </div>
         </div>
     </section>
@@ -59,9 +59,18 @@
             <div class="month-header">
                 <span class="month-icon">📅</span>
                 <h2 class="month-title">2026 年 04 月</h2>
-                <span class="month-count">6 個專題</span>
+                <span class="month-count">7 個專題</span>
             </div>
             <div class="archive-grid">
+                <article class="archive-card">
+                    <h3>🔥 人類文明倒數 5 年？前 OpenAI 專家絕望吹哨：7 成機率滅絕，我們已無路可退！🚨</h3>
+                    <p>前 OpenAI 核心安全團隊成員丹尼爾·科科塔基洛發出驚人警告：人類文明可能在 5-8 年內面臨滅絕風險，概率高達 70%。他選擇放棄數百萬美元股權，成為揭露行業真相的吹哨人。...</p>
+                    <a href="./20260406_1919/index.html" class="archive-link">查看專題報道 <span>→</span></a>
+                    <div class="archive-meta">
+                        <span class="meta-item">📁 20260406_1919</span>
+                        <span class="meta-item">📄 AI 生成</span>
+                    </div>
+                </article>
                 <article class="archive-card">
                     <h3>🔥 新手學 AI 一定要知道的 20 件事｜AI 知識懶人包全解析</h3>
                     <p>## 新聞導語泛科學院最新推出的 AI 入門課程「新手學 AI 一定要知道的 20 件事」，為 AI 初學者提供了一份完整的知識懶人包。影片涵蓋了從基礎概念到進階應用的 20 個核心 AI 名詞，...</p>
@@ -120,7 +129,8 @@
         </section>
     </div>
     <footer>
-        <p>© 2026 AI News Archive | 由 AI 技術驅動的新聞檔案庫</p>
+        <p>© 2026 AI News Archive | 由 AI 技術生成</p>
+        <p>GitHub: <a href="https://github.com/hklamsir/ai_news" style="color: #00d4ff;">hklamsir/ai_news</a></p>
     </footer>
 </body>
 </html>
