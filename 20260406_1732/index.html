@@ -79,6 +79,10 @@
         .comparison-table tr:hover { background: rgba(0, 212, 255, 0.05); }
         .comparison-table .check { color: var(--accent-green); }
         .comparison-table .cross { color: #ff4757; }
+        .term-list { margin: 30px 0; }
+        .term-item { background: var(--card-bg-light); padding: 20px; border-radius: 12px; margin: 15px 0; border-left: 4px solid var(--primary-blue); }
+        .term-item h4 { color: var(--primary-blue); font-size: 1.2rem; margin-bottom: 10px; }
+        .term-item p { color: var(--text-secondary); line-height: 1.8; margin: 0; }
         footer { background: #050508; padding: 60px 20px; text-align: center; border-top: 1px solid rgba(255, 255, 255, 0.1); }
         footer p { color: var(--text-secondary); margin-bottom: 20px; }
         .footer-links { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; }
@@ -120,23 +124,138 @@
                 <p><strong>📄 相關資源</strong>：<a href="https://rd.coach/ai-llm-agent/" target="_blank">20 個 AI 名詞入門指南</a></p>
             </div>
             <h2>新聞導語</h2>
-            <p>泛科學院最新推出的 AI 入門課程「新手學 AI 一定要知道的 20 件事」，為 AI 初學者提供了一份完整的知識懶人包。影片涵蓋了從基礎概念到進階應用的 20 個核心 AI 名詞，包括 <strong>LLM</strong>、<strong>Prompt</strong>、<strong>Embedding</strong>、<strong>Token</strong>、<strong>Context</strong> 等基礎概念，以及 <strong>RAG</strong>、<strong>CoT</strong>、<strong>AI Agent</strong> 等進階技術。</p>
-            <h2>核心技術突破</h2>
-            <div class="tech-grid">
-                <div class="tech-card"><h4>🧠 LLM 大語言模型</h4><p>Large Language Model，可理解、生成語言的大型神經網絡模型，如 ChatGPT、Claude、Gemini。</p></div>
-                <div class="tech-card"><h4>✨ Prompt 提示語</h4><p>用戶輸入給 AI 的指令或問題，相當於 AI 的魔法咒語，引導 AI 思考和回應。</p></div>
-                <div class="tech-card"><h4>🔗 Embedding 嵌入</h4><p>將文字轉換為數值向量的技術，讓 AI 能夠理解內容的語義關係和相似性。</p></div>
-                <div class="tech-card"><h4>🔢 Token 符元</h4><p>AI 處理文字的基本單位，類似於文字的「數字分身」，決定 AI 的計算量。</p></div>
+            <p>泛科學院最新推出的 AI 入門課程「新手學 AI 一定要知道的 20 件事」，為 AI 初學者提供了一份完整的知識懶人包。影片涵蓋了從基礎概念到進階應用的 20 個核心 AI 名詞，包括 <strong>LLM</strong>、<strong>Prompt</strong>、<strong>Embedding</strong>、<strong>Token（詞元）</strong>、<strong>Context</strong> 等基礎概念，以及 <strong>RAG</strong>、<strong>CoT</strong>、<strong>AI Agent</strong> 等進階技術。這份懶人包旨在幫助新手快速建立 AI 知識框架，不再被專業術語嚇退。</p>
+            
+            <h2>基礎概念層（名詞 1-7）</h2>
+            <p>這些是理解 AI 運作的基石，掌握後就能看懂大部分 AI 討論。</p>
+            
+            <div class="term-list">
+                <div class="term-item">
+                    <h4>01. LLM（大語言模型）</h4>
+                    <p>Large Language Model 的縮寫，是一種可理解、生成語言的大型神經網絡模型。像是 ChatGPT、Claude、Gemini 都屬於此類。LLM 通過大量文本數據訓練，能夠理解人類語言的語義、語法和上下文關係，並生成流暢自然的回應。</p>
+                </div>
+                <div class="term-item">
+                    <h4>02. Prompt（提示語）</h4>
+                    <p>指我們給 AI 的輸入指令，用來引導它思考、回應或產出內容。好的 Prompt 設計能大幅提升 AI 輸出的品質。Prompt 工程（Prompt Engineering）已成為一門專門技術，研究如何設計有效的提示語來獲得理想的 AI 回應。</p>
+                </div>
+                <div class="term-item">
+                    <h4>03. Embedding（嵌入）</h4>
+                    <p>將文字轉換為數值向量的技術，讓 AI 能夠理解內容的語義關係。相似的概念在向量空間中會彼此靠近。Embedding 是現代 AI 理解語言的關鍵技術，讓機器能夠計算詞語之間的相似度，進行語義搜尋和推薦。</p>
+                </div>
+                <div class="term-item">
+                    <h4>04. Token（詞元）</h4>
+                    <p><strong>正確中文名稱為「詞元」</strong>，是 AI 處理文字的基本單位。AI 不是逐字處理，而是將文字切分成一個個詞元。英文可能是一個單字或字根，中文則可能是一個字或詞。Token 數量決定了 AI 的計算量和成本。</p>
+                </div>
+                <div class="term-item">
+                    <h4>05. Context（上下文）</h4>
+                    <p>讓 AI 擁有記憶力的關鍵，決定 AI 能記住多少對話歷史。Context Window（上下文窗口）越大，AI 能處理的文本就越長。現代 LLM 的上下文窗口可達數萬至數十萬詞元，能夠處理整本書籍或長篇文件。</p>
+                </div>
+                <div class="term-item">
+                    <h4>06. Zero/One/Few-shot（零/一/少樣本學習）</h4>
+                    <p>給 AI 不同數量範例的學習方式。<strong>Zero-shot</strong> 是不給範例直接提問；<strong>One-shot</strong> 是給一個範例；<strong>Few-shot</strong> 是給多個範例。範例越多，AI 通常能更好地理解任務要求，但也會消耗更多 Token。</p>
+                </div>
+                <div class="term-item">
+                    <h4>07. Markdown & Parser（標記語言與解析器）</h4>
+                    <p>提示語中的特殊符號黑魔法，用於結構化輸入。Markdown 是一種輕量級標記語言，Parser 則負責解析這些標記。在 Prompt 中使用 Markdown 可以幫助 AI 更好地理解內容結構，提升輸出品質。</p>
+                </div>
             </div>
-            <h2>20 個 AI 名詞完整解析</h2>
-            <p><strong>基礎概念層（1-7）：</strong>LLM、Prompt、Embedding、Token、Context、Zero/One/Few-shot、Markdown & Parser</p>
-            <p><strong>提示語技術層（8-10）：</strong>提示框架（CLEAR、PEAS）、RAG、CAG、Fine-tune</p>
-            <p><strong>進階應用層（11-20）：</strong>CoT、ToT、RE2、MCP、A2A、Function Calling、RPA 自動化、AI Agent、Computer Use、LLMOS、A2A、AI 安全性、Alignment 對齊、模型評測、AGI/ANI/ASI</p>
+
+            <h2>提示語技術層（名詞 8-10）</h2>
+            <p>掌握這些技術能讓你的 Prompt 更有效，大幅提升 AI 輸出品質。</p>
+            
+            <div class="term-list">
+                <div class="term-item">
+                    <h4>08. 提示框架（Prompt Frameworks）</h4>
+                    <p>結構化的提示語設計方法，常見的有<strong>CLEAR</strong>（Concise 簡潔、Logical 邏輯、Explicit 明確、Adaptive 適應、Reflective 反思）和<strong>PEAS</strong>（Performance 表現、Environment 環境、Actuators 執行器、Sensors 感測器）。這些框架幫助用戶系統化地設計有效的提示語。</p>
+                </div>
+                <div class="term-item">
+                    <h4>09. RAG、CAG、Fine-tune（檢索增強、上下文增強、微調）</h4>
+                    <p>三種讓 AI 獲得新知識的方法。<strong>RAG</strong>（Retrieval-Augmented Generation）通過檢索外部數據庫增強 AI 回答；<strong>CAG</strong>（Context-Augmented Generation）通過提供上下文增強；<strong>Fine-tune</strong> 則是重新訓練模型適應特定領域。RAG 適合需要最新數據的應用，Fine-tune 適合專業領域。</p>
+                </div>
+                <div class="term-item">
+                    <h4>10. CAG（上下文增強生成）</h4>
+                    <p>Context-Augmented Generation 的縮寫，通過在 Prompt 中提供相關上下文來增強 AI 的生成能力。與 RAG 不同，CAG 的上下文通常由用戶直接提供，而非自動檢索。這在處理特定任務或需要精確控制的場景中非常有用。</p>
+                </div>
+            </div>
+
+            <h2>進階應用層（名詞 11-20）</h2>
+            <p>這些技術代表了 AI 應用的前沿，正在改變我們與 AI 互動的方式。</p>
+            
+            <div class="term-list">
+                <div class="term-item">
+                    <h4>11. CoT（思維鏈）</h4>
+                    <p>Chain-of-Thought 的縮寫，讓 AI 展示思考過程的技術。通過要求 AI「一步步思考」，可以大幅提升複雜推理任務的準確率。CoT 特別適合數學問題、邏輯推理等需要多步驟思考的任務。</p>
+                </div>
+                <div class="term-item">
+                    <h4>12. ToT（思維樹）</h4>
+                    <p>Tree-of-Thought 的縮寫，CoT 的進階版本。讓 AI 同時探索多個思考路徑，然後選擇最佳方案。ToT 適合需要權衡多個可能性的複雜決策任務，如策略規劃、創意寫作等。</p>
+                </div>
+                <div class="term-item">
+                    <h4>13. RE2（推理增強引擎）</h4>
+                    <p>Reasoning Engine Enhanced 的縮寫，通過系統化的推理框架增強 AI 的邏輯能力。RE2 結合了 CoT 和 ToT 的優點，提供更結構化的推理流程。</p>
+                </div>
+                <div class="term-item">
+                    <h4>14. MCP（模型上下文協議）</h4>
+                    <p>Model Context Protocol 的縮寫，讓 AI 能夠連接外部工具和數據源的協議。MCP 使 AI 能夠讀取文件、查詢數據庫、調用 API，大幅擴展了 AI 的能力邊界。</p>
+                </div>
+                <div class="term-item">
+                    <h4>15. A2A（AI 對 AI）</h4>
+                    <p>Agent-to-Agent 的縮寫，指多個 AI Agent 之間的協作。A2A 讓不同的 AI 能夠分工合作，各自發揮專長，共同完成複雜任務。</p>
+                </div>
+                <div class="term-item">
+                    <h4>16. Function Calling（函數調用）</h4>
+                    <p>讓 AI 能夠調用外部函數或 API 的技術。通過 Function Calling，AI 可以執行計算、查詢數據、發送郵件等實際操作，從純對話工具轉變為行動助手。</p>
+                </div>
+                <div class="term-item">
+                    <h4>17. RPA 自動化（流程自動化）</h4>
+                    <p>Robotic Process Automation 的縮寫，結合 AI 的自動化技術。常見工具包括<strong>Langchain</strong>（AI 應用開發框架）、<strong>n8n</strong>（工作流自動化）、<strong>Zapier</strong>（應用整合平台）。這些工具讓 AI 能夠自動化執行重複性任務。</p>
+                </div>
+                <div class="term-item">
+                    <h4>18. AI Agent（AI 代理人）</h4>
+                    <p>能夠自主執行任務的 AI 系統。與傳統 AI 不同，Agent 能夠感知環境、制定計劃、執行行動並評估結果。AI Agent 代表了 AI 從被動回應到主動行動的轉變。</p>
+                </div>
+                <div class="term-item">
+                    <h4>19. Computer Use / MM1（電腦使用 / 多模態模型）</h4>
+                    <p>讓 AI 能夠操作電腦界面的技術。AI 可以看懂螢幕內容、移動滑鼠、點擊按鈕、輸入文字，真正實現「用電腦」的能力。MM1 是多模態模型的代表，能夠同時處理文字、圖像等多種輸入。</p>
+                </div>
+                <div class="term-item">
+                    <h4>20. LLMOS（語言模型作業系統）</h4>
+                    <p>LLM Operating System 的縮寫，管理多個 AI 任務和資源的系統層。LLMOS 負責調度不同的 AI 模型、管理上下文、協調資源使用，是大型 AI 應用的基礎設施。</p>
+                </div>
+            </div>
+
+            <div class="highlight-box">
+                <h4>補充名詞：AI 安全性與評測</h4>
+                <p><strong>AI 安全性：</strong>確保 AI 系統不會造成傷害的技術和實踐，包括防止惡意使用、保護隱私、避免偏見等。</p>
+                <p><strong>Alignment（對齊）：</strong>確保 AI 的行為符合人類價值觀和意圖。這是 AI 安全的核心議題，防止 AI「欺騙」或偏離目標。</p>
+                <p><strong>模型評測：</strong><strong>LMArena</strong> 是開放的 AI 模型競賽平台，讓用戶投票評比不同模型；<strong>TMMLU</strong> 是繁體中文的模型評測基準，專門評估模型在中文場景的能力。</p>
+                <p><strong>AGI、ANI、ASI：</strong><strong>ANI</strong>（人工狹義智慧）是當前 AI 的水平，擅長特定任務；<strong>AGI</strong>（人工一般智慧）是具有人類水平智慧的 AI；<strong>ASI</strong>（人工超級智慧）是超越人類的 AI，目前仍屬理論階段。</p>
+            </div>
+
             <div class="info-box">
-                <p><strong>📌 學習建議：</strong>初學者先掌握基礎概念層 7 個名詞 → 進階使用者學習提示語技術層 → 開發者深入研究進階應用層</p>
+                <p><strong>📌 學習建議：</strong></p>
+                <p>• <strong>初學者：</strong>先掌握基礎概念層的 7 個名詞，這是理解 AI 的基礎</p>
+                <p>• <strong>進階使用者：</strong>學習提示語技術層，提升與 AI 溝通的效率</p>
+                <p>• <strong>開發者：</strong>深入研究進階應用層，打造強大的 AI 應用</p>
             </div>
+
             <h2>業界展望</h2>
-            <p>隨著 AI 技術的快速發展，掌握這些核心概念已成為數位素養的基本要求。未來趨勢包括：AI Agent 普及化、RAG 成為標配、多模態整合、AI 安全性重視。</p>
+            <p>隨著 AI 技術的快速發展，掌握這些核心概念已成為數位素養的基本要求。泛科學院這份懶人包為初學者提供了清晰的學習路徑，幫助用戶從被動使用 AI 工具，進階到主動設計 AI 工作流程。</p>
+
+            <div class="highlight-box">
+                <h4>未來趨勢</h4>
+                <p>• <strong>AI Agent 普及化：</strong>越來越多的企業將採用 AI Agent 自動化工作流程</p>
+                <p>• <strong>RAG 成為標配：</strong>企業級 AI 應用將普遍採用 RAG 技術連接內部知識庫</p>
+                <p>• <strong>多模態整合：</strong>文字、圖像、語音的整合應用將成為主流</p>
+                <p>• <strong>AI 安全性重視：</strong>隨著 AI 應用普及，安全性和對齊問題將受到更多關注</p>
+            </div>
+
+            <p>未來，AI 教育將更加注重實戰應用，讓學習者能夠將這些概念應用於實際工作和生活中。無論你是學生、職場人士還是企業決策者，建立清晰的 AI 基本概念，都是邁向數位素養與應用實踐的第一步。</p>
+
+            <h2>結語</h2>
+            <p>這份 AI 知識懶人包涵蓋了從基礎到進階的 20 個核心概念，為新手提供了一條清晰的學習路徑。記住，學習 AI 不需要一次搞懂所有內容，而是應該循序漸進，從基礎概念開始，逐步深入到進階應用。</p>
+            <p>特別注意：<strong>Token 的正確中文名稱是「詞元」</strong>，而非「符元」或「令牌」。這是 AI 領域的標準譯名，在閱讀相關文獻時請使用正確名稱。</p>
+            <p>當你再次遇到這些 AI 術語時，希望這份懶人包能幫助你快速理解它們的含義和應用場景。AI 世界充滿無限可能，讓我們一起探索這個令人興奮的領域！</p>
         </div>
     </section>
     <footer>
