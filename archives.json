@@ -1,6 +1,16 @@
 {
   "archives": [
     {
+      "dir": "20260406_1331",
+      "title": "🎯強大到被迫下架！微軟 VibeVoice 語音 AI 全解析｜技術的雙面刃與開源的責任 , GitHub 33,000 ⭐ VibeVoice 語音 AI — 耳朵聽 60 分鐘、嘴巴說 90 分鐘",
+      "summary_short": "## 新聞導語本次報道主題為「🎯強大到被迫下架！微軟 VibeVoice 語音 AI 全解析｜技術的雙面刃與開源的責任 , GitHub 33,000 ⭐ VibeVoice 語音 AI — 耳朵",
+      "images": [
+        "20260406_1331_img1.png"
+      ],
+      "date": "2026-04-06",
+      "url": "./20260406_1331/index.html"
+    },
+    {
       "dir": "20260405_2246",
       "title": "提示詞工程完整教學：Anthropic 六大架構 + 五個實戰技巧 Prompt Engineering",
       "summary_short": "隨著人工智能技術的不斷進步，提示詞工程（Prompt Engineering）成為了 AI 應用中不可或缺的一環。本次報告深入探討了 Anthropic 提出的六大架構和五個實戰技巧，旨在幫助用戶更有效地與 AI 溝通。",
@@ -29,5 +39,5 @@
       "url": "./20260404_2045/index.html"
     }
   ],
-  "last_updated": "2026-04-05T23:09:00"
+  "last_updated": "2026-04-06T13:40:00.061215"
 }
