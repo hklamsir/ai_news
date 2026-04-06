@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🎯強大到被迫下架！微軟 VibeVoice 語音 AI 全解析｜技術的雙面刃與開源的責任 , GitHub 33,000 ⭐ VibeVoice 語音 AI — 耳朵聽 60 分鐘、嘴巴說 90 分鐘 | AI News 專題報道</title>
+    <title>微軟 VibeVoice 語音 AI 全解析｜90 分鐘多角色播客生成技術 | AI News 專題報道</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
@@ -33,17 +33,18 @@
         @keyframes slideIn { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
         @keyframes codeRain { 0% { transform: translateY(-100%); opacity: 0; } 10% { opacity: 1; } 90% { opacity: 1; } 100% { transform: translateY(100vh); opacity: 0; } }
 
-        /* 代碼雨背景 */
         .code-rain { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; overflow: hidden; }
         .code-char { position: absolute; color: var(--primary-blue); font-family: 'Courier New', monospace; font-size: 14px; opacity: 0; animation: codeRain 4s linear infinite; }
 
-        /* Hero Section */
         .hero { position: relative; min-height: 80vh; display: flex; align-items: center; justify-content: center; padding: 80px 20px; background: linear-gradient(180deg, var(--dark-bg) 0%, #1a1a2e 100%); overflow: hidden; }
         .hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(ellipse at center, rgba(123, 44, 191, 0.15) 0%, transparent 70%); z-index: 1; }
         .hero-content { position: relative; z-index: 2; max-width: 1200px; text-align: center; animation: slideIn 1s ease-out; }
         .hero-badge { display: inline-block; padding: 12px 32px; background: var(--gradient-1); border-radius: 50px; font-size: 18px; font-weight: 700; margin-bottom: 24px; box-shadow: var(--glow-blue); letter-spacing: 1px; }
-        .hero h1 { font-size: clamp(2rem, 5vw, 4rem); font-weight: 900; margin-bottom: 24px; background: var(--gradient-1); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; line-height: 1.2; }
+        .hero h1 { font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 900; margin-bottom: 24px; background: var(--gradient-1); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; line-height: 1.2; }
         .hero-subtitle { font-size: clamp(1.2rem, 2.2vw, 1.6rem); color: var(--text-primary); max-width: 900px; margin: 0 auto 40px; line-height: 1.6; font-weight: 400; }
+        .hero-meta { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-bottom: 40px; }
+        .hero-meta-item { display: flex; align-items: center; gap: 8px; color: var(--text-secondary); font-size: 1rem; }
+        .hero-meta-item strong { color: var(--primary-blue); }
         .hero-images { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; margin-top: 60px; }
         .hero-image-card { position: relative; border-radius: 20px; overflow: hidden; aspect-ratio: 16/9; box-shadow: var(--glow-purple); transition: transform 0.3s ease, box-shadow 0.3s ease; }
         .hero-image-card:hover { transform: scale(1.02); box-shadow: 0 0 40px rgba(123, 44, 191, 0.7); }
@@ -52,7 +53,6 @@
         .scroll-indicator span { display: block; width: 30px; height: 50px; border: 2px solid var(--primary-blue); border-radius: 25px; position: relative; }
         .scroll-indicator span::before { content: ''; position: absolute; top: 8px; left: 50%; transform: translateX(-50%); width: 6px; height: 10px; background: var(--primary-blue); border-radius: 3px; animation: pulse 1.5s infinite; }
 
-        /* Content Section */
         section { padding: 80px 20px; position: relative; z-index: 1; }
         .content-section { background: var(--card-bg); padding: 60px 50px; border-radius: 24px; border: 1px solid rgba(0, 212, 255, 0.2); max-width: 1100px; margin: 0 auto; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3); }
         
@@ -60,86 +60,208 @@
         .content-section h2::before { content: '📖'; font-size: 2.5rem; }
         
         .content-section h3 { font-size: 1.6rem; margin: 50px 0 25px; color: var(--accent-green); display: flex; align-items: center; gap: 12px; }
-        .content-section h3::before { content: '🎯'; font-size: 2rem; }
-        
-        .content-section h3:nth-of-type(2)::before { content: '💡'; }
-        .content-section h3:nth-of-type(3)::before { content: '📊'; }
-        .content-section h3:nth-of-type(4)::before { content: '🔮'; }
         
         .content-section p { color: var(--text-secondary); line-height: 2.2; font-size: 1.08rem; margin: 25px 0; text-align: justify; }
         
-        .content-section ul, .content-section ol { margin: 30px 0; padding-left: 40px; }
-        .content-section li { margin: 15px 0; line-height: 2; color: var(--text-secondary); font-size: 1.05rem; }
-        .content-section ul li { list-style-type: none; position: relative; padding-left: 25px; }
+        .content-section ul { margin: 30px 0; padding-left: 40px; }
+        .content-section li { margin: 15px 0; line-height: 2; color: var(--text-secondary); font-size: 1.05rem; list-style-type: none; position: relative; padding-left: 25px; }
         .content-section ul li::before { content: '▸'; color: var(--primary-blue); font-size: 1.5rem; position: absolute; left: 0; top: -5px; }
         
         .content-section strong { color: var(--text-primary); font-weight: 600; }
-        
-        /* Highlight Boxes */
+
+        .tech-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin: 40px 0; }
+        .tech-card { background: var(--card-bg-light); padding: 30px; border-radius: 16px; border: 1px solid rgba(0, 212, 255, 0.15); transition: transform 0.3s ease, border-color 0.3s ease; }
+        .tech-card:hover { transform: translateY(-5px); border-color: var(--primary-blue); }
+        .tech-card h4 { color: var(--primary-blue); font-size: 1.3rem; margin-bottom: 15px; display: flex; align-items: center; gap: 10px; }
+        .tech-card p { color: var(--text-secondary); font-size: 1rem; line-height: 1.8; margin: 0; }
+
         .highlight-box { background: linear-gradient(135deg, rgba(0, 255, 136, 0.08) 0%, rgba(0, 212, 255, 0.08) 100%); padding: 30px; border-radius: 16px; border-left: 5px solid var(--accent-green); margin: 40px 0; }
         .highlight-box h4 { color: var(--accent-green); margin-bottom: 15px; font-size: 1.3rem; display: flex; align-items: center; gap: 10px; }
-        .highlight-box h4::before { content: '✨'; }
         .highlight-box p { color: var(--text-secondary); margin: 0; }
-        
-        /* Info Box */
+
         .info-box { background: linear-gradient(135deg, rgba(0, 212, 255, 0.1) 0%, rgba(123, 44, 191, 0.1) 100%); padding: 25px; border-radius: 16px; border: 1px solid rgba(0, 212, 255, 0.3); margin: 35px 0; }
         .info-box p { margin: 10px 0; color: var(--text-secondary); }
         .info-box strong { color: var(--primary-blue); }
-        
-        /* Meta Info */
+
         .meta-info { background: linear-gradient(135deg, rgba(0, 212, 255, 0.15) 0%, rgba(123, 44, 191, 0.15) 100%); padding: 30px; border-radius: 16px; margin-bottom: 40px; border-left: 5px solid var(--primary-blue); }
         .meta-info p { margin: 12px 0; color: var(--text-secondary); font-size: 1.05rem; }
         .meta-info strong { color: var(--primary-blue); font-weight: 600; }
         .meta-info a { color: var(--primary-blue); text-decoration: none; border-bottom: 1px dashed var(--primary-blue); }
-        
-        /* Footer */
+
+        .comparison-table { width: 100%; border-collapse: collapse; margin: 40px 0; }
+        .comparison-table th, .comparison-table td { padding: 15px; text-align: left; border-bottom: 1px solid rgba(255, 255, 255, 0.1); }
+        .comparison-table th { background: var(--card-bg-light); color: var(--primary-blue); font-weight: 600; }
+        .comparison-table tr:hover { background: rgba(0, 212, 255, 0.05); }
+        .comparison-table .check { color: var(--accent-green); }
+        .comparison-table .cross { color: #ff4757; }
+
         footer { background: #050508; padding: 60px 20px; text-align: center; border-top: 1px solid rgba(255, 255, 255, 0.1); }
         footer p { color: var(--text-secondary); margin-bottom: 20px; }
         .footer-links { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; }
         .footer-links a { color: var(--primary-blue); text-decoration: none; transition: color 0.3s ease; }
         .footer-links a:hover { color: var(--text-primary); }
 
-        /* RWD */
         @media (max-width: 768px) {
             .content-section { padding: 40px 25px; }
             .hero-images { grid-template-columns: 1fr; }
             .content-section h2 { font-size: 1.6rem; }
             .content-section h3 { font-size: 1.3rem; }
+            .tech-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
-    <!-- 代碼雨背景 -->
     <div class="code-rain" id="codeRain"></div>
 
-    <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
             <span class="hero-badge">📰 AI News 專題報道</span>
-            <h1>🎯強大到被迫下架！微軟 VibeVoice 語音 AI 全解析｜技術的雙面刃與開源的責任 , GitHub 33,000 ⭐ VibeVoice 語音 AI — 耳朵聽 60 分鐘、嘴巴說 90 分鐘</h1>
-            <p class="hero-subtitle">## 新聞導語  本次報道主題為「🎯強大到被迫下架！微軟 VibeVoice 語音 AI 全解析｜技術的雙面刃與開源的責任 , GitHub 33,000 ⭐ VibeVoice 語音 AI — 耳朵聽 60 分鐘、嘴巴說 90 分鐘」，探討相關領域的重要發展。  ## 重點摘要  - 涵蓋多個重要觀點和發現 - 提供詳細的數據分析和說明 - 包含實際案例和業界觀察  ## 詳細分析  大家好,今</p>
-            <div class="hero-images"><div class="hero-image-card"><img src="./20260406_1331_img1.png" alt="新聞插圖"></div>
-</div>
+            <h1>微軟 VibeVoice 語音 AI 全解析</h1>
+            <p class="hero-subtitle">90 分鐘多角色播客生成技術，開源後 GitHub 狂攬 33,000+ Stars，重新定義語音合成新邊界</p>
+            <div class="hero-meta">
+                <div class="hero-meta-item"><strong>📅</strong> 2026-04-06</div>
+                <div class="hero-meta-item"><strong>⭐</strong> GitHub 33,000+ Stars</div>
+                <div class="hero-meta-item"><strong>🎯</strong> ICLR 2026 Oral</div>
+            </div>
+            <div class="hero-images">
+                <div class="hero-image-card">
+                    <img src="./20260406_1331_img1.png" alt="VibeVoice AI 科技感插圖">
+                </div>
+            </div>
         </div>
         <div class="scroll-indicator"><span></span></div>
     </section>
 
-    <!-- Content Section -->
     <section>
         <div class="content-section">
-            <!-- Meta Info -->
             <div class="meta-info">
-                <p><strong>📺 資料來源</strong>：<a href="https://youtu.be/oj3Y3O6ZE-g?si=0UpJeUfaYhTgvl_A" target="_blank" style="word-break: break-all; font-size: 0.95rem;">https://youtu.be/oj3Y3O6ZE-g?si=0UpJeUfaYhTgvl_A</a></p>
-                <p><strong>📅 發布日期</strong>：2026-04-06</p>
-                <p><strong>🤖 處理方式</strong>：AI 智能摘要生成</p>
+                <p><strong>📺 影片來源</strong>：<a href="https://youtu.be/oj3Y3O6ZE-g?si=0UpJeUfaYhTgvl_A" target="_blank">YouTube 專題解析</a></p>
+                <p><strong>🔗 GitHub</strong>：<a href="https://github.com/microsoft/VibeVoice" target="_blank">microsoft/VibeVoice</a></p>
+                <p><strong>📄 技術報告</strong>：<a href="https://arxiv.org/abs/2508.19205" target="_blank">arXiv:2508.19205</a></p>
+                <p><strong>🌐 專案頁面</strong>：<a href="https://microsoft.github.io/VibeVoice" target="_blank">microsoft.github.io/VibeVoice</a></p>
             </div>
+
+            <h2>新聞導語</h2>
+            <p>微軟亞洲研究院近日開源的 <strong>VibeVoice</strong> 語音 AI 模型，在 GitHub 上引發熱烈迴響，短短數日內突破 <strong>33,000 顆星</strong>。這項被定位為「Frontier Speech AI」的尖端技術，能夠生成長達 <strong>90 分鐘</strong>、支持最多 <strong>4 位不同說話者</strong> 的高質量對話式音頻，為播客製作、有聲書、虛擬助理等應用場景帶來革命性突破。</p>
             
-            <!-- Main Content -->
-            <div class="markdown-content"><p> 新聞導語</p><p></p><p>本次報道主題為「🎯強大到被迫下架！微軟 VibeVoice 語音 AI 全解析｜技術的雙面刃與開源的責任 , GitHub 33,000 ⭐ VibeVoice 語音 AI — 耳朵聽 60 分鐘、嘴巴說 90 分鐘」，探討相關領域的重要發展。</p><p></p><p> 重點摘要</p><p></p><p>- 涵蓋多個重要觀點和發現</p><p>- 提供詳細的數據分析和說明</p><p>- 包含實際案例和業界觀察</p><p></p><p> 詳細分析</p><p></p><p>大家好,今天我们来聊一个超酷的东西,它可能会完完全全改变我们跟声音互动的方式,它就是围软最新开源的一个超级强大的语音AI,叫做Vive Voice。 好,那今天我们会聊些什么呢?首先我们会先搞懂Vive Voice到底是什么? 接着来看看它的耳朵跟嘴巴是怎么运作的。 然后我们会来揭秘它背后最强大的技术。 最后再聊聊,当这么厉害的技术被开源出来之后会带来哪些影响跟问题。 好,我们马上开始吧,第一部分什么是Vive Voice。 简单来说,你可以想象一下有一个AI,它不只听了东西讲的每一个字,还可以用一种超级自然的声音来回答你,甚至帮你创造出全新的声音内容。 嗯,这就是Vive Voice想要做到的事。在我们深入去看那些技术细节之前,先来想一个情境。 你又没有过那种经验呢,为了一小时的会议录音要打足自搞,搞到头昏脑杖。 或者你又没有想过,只要丢一份稿子进去,AI就能自动帮你生成一段90分钟, 而且有好几个人在自然对话的podcast。 听起来是不是有点科幻,但这些就是Vive Voice现在要解决的问题。 好,所以Vive Voice到底是什么东西,它其实不是单一一个模型,把它想成是一个模型家族会更贴切。 这个家族呢,一手包办了听,也就是语音转文字,还有说,也就是文字转语音,而且最关键的一点是微软决定把它开源出来。 这个家族里主要有三个核心成员,一个是负责听的ASR模型,一个是负责说的TTS模型,还有一个是专门用来及时聊天的real time模型。 哎,你有没有注意到一个有趣的地方,这个TTS模型,目前状态是以停用。 嗯,这个我们等一下会讲,背后其实有个蛮重要的故事。 好,那我们就先从听的部分开始看起,来认识一下这位清听者Vive Voice ASR,它就是Vive Voice的耳朵,用来听懂我们这个世界上的各种声音。 60分钟,对,你没看错,就是整整一个小时,Vive Voice的听力超强,强到可以一口气吞下一整个小时的音档。 这代表什么意思,意思就是说,不管是一场完整的会议,一整堂课,还是一场长篇演长,它都可以一次从头听到尾,完全不用切成一小段一小段的。 那它厉害在哪,你想想看呢,以前的做法就有点像把一篇文章减成一堆小尺条,然后再一篇一篇拼回来,这样当然很容易搞不清楚前因后果嘛, 可是Vive Voice不一样,它是一次就把整篇文章看完,所以它更能掌握整个对话的脉落</p><p></p><p> 業界展望</p><p></p><p>相關領域持續發展，值得業界進一步關注和研究。</p><p></p><p>📰 資料來源：https://youtu.be/oj3Y3O6ZE-g?si=0UpJeUfaYhTgvl_A</p></div>
+            <p>然而，這項強大的技術在開源後不久，微軟便移除了 TTS（文字轉語音）代碼，僅保留 ASR（語音識別）模組。背後的原因，正反映出 AI 技術發展中「創新」與「責任」之間的微妙平衡。</p>
+
+            <h2>核心技術突破</h2>
+            
+            <div class="tech-grid">
+                <div class="tech-card">
+                    <h4>🎯 Next-Token Diffusion</h4>
+                    <p>採用 LatentLM 自回歸擴散框架，透過連續語音 tokenizers  operating at 7.5Hz 超低幀率，大幅提升長序列處理效率。</p>
+                </div>
+                <div class="tech-card">
+                    <h4>⏱️ 90 分鐘超長生成</h4>
+                    <p>突破傳統 TTS 幾分鐘限制，可一次性生成 90 分鐘連續高品質音頻，無需分段處理。</p>
+                </div>
+                <div class="tech-card">
+                    <h4>👥 4 角色協同</h4>
+                    <p>支持最多 4 位獨立音色說話者，每位角色保持音色一致性，自然呈現對話轉場。</p>
+                </div>
+                <div class="tech-card">
+                    <h4>🎙️ 細節擬真</h4>
+                    <p>自動生成呼吸聲、停頓、唇齒音等細節，甚至可加入背景音樂，增強氛圍感。</p>
+                </div>
+            </div>
+
+            <h2>技術架構解析</h2>
+            
+            <p><strong>傳統語音生成模型的局限：</strong>大多數現有系統基於離散化技術，將語音表示為梅爾頻譜圖等離散聲學特徵，再分階段預測基頻、時長、頻譜等參數。這類方案高度依賴特定說話人音色的訓練數據，難以泛化至新角色或多音色場景，因此大多數自動播客仍停留在「幾分鐘、兩人對話」階段。</p>
+
+            <p><strong>VibeVoice 的創新方案：</strong>微軟亞洲研究院的研究員們另闢蹊徑，將連續化的 LatentLM 模型算法引入語音生成任務。</p>
+
+            <ul>
+                <li><strong>變分自編碼器（VAE）：</strong>將語音波形編碼為連續的潛在向量序列，保留音色、語調、節奏等關鍵信息</li>
+                <li><strong>因果 Transformer 架構：</strong>以對話腳本（包括說話人標籤）和已生成的潛在向量為輸入，逐步預測下一個語音片段</li>
+                <li><strong>低幀率壓縮機制：</strong>將幀率壓縮至 7.5fps，生成 90 分鐘音頻只需處理約 6.4 萬個 token，計算量大幅降低</li>
+                <li><strong>角色標籤系統：</strong>透過輸入文本中加入角色標籤（如 [說話人_1]、[說話人_2]），實現自然音色切換</li>
+            </ul>
+
+            <div class="highlight-box">
+                <h4>專家觀點</h4>
+                <p>「這項技術的核心在於模型對上下文的深度理解能力。正是這種能力，使 VibeVoice 在語調控制和自發性語言生成方面展現出接近人類表現的自然度。」—— 微軟亞洲研究院研究員 彭智亮</p>
+            </div>
+
+            <h2>模型家族成員</h2>
+
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>模型名稱</th>
+                        <th>類型</th>
+                        <th>參數量</th>
+                        <th>主要功能</th>
+                        <th>狀態</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>VibeVoice-ASR-7B</strong></td>
+                        <td>語音識別</td>
+                        <td>7B</td>
+                        <td>60 分鐘長格式音頻轉文字，支持 50+ 語言</td>
+                        <td class="check">✅ 開源中</td>
+                    </tr>
+                    <tr>
+                        <td><strong>VibeVoice-TTS-1.5B</strong></td>
+                        <td>語音合成</td>
+                        <td>1.5B</td>
+                        <td>90 分鐘多角色語音生成</td>
+                        <td class="cross">⚠️ 已停用</td>
+                    </tr>
+                    <tr>
+                        <td><strong>VibeVoice-Realtime-0.5B</strong></td>
+                        <td>實時 TTS</td>
+                        <td>0.5B</td>
+                        <td>流式文本輸入，支持 9 國語言</td>
+                        <td class="check">✅ 開源中</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="info-box">
+                <p><strong>📌 重要時間軸：</strong></p>
+                <p>• <strong>2025-08-25</strong>：VibeVoice-TTS 開源，接受為 ICLR 2026 Oral</p>
+                <p>• <strong>2025-09-05</strong>：微軟移除 TTS 代碼（負責任使用考量）</p>
+                <p>• <strong>2025-12-03</strong>：VibeVoice-Realtime-0.5B 開源</p>
+                <p>• <strong>2026-01-21</strong>：VibeVoice-ASR 開源，支持 50+ 語言</p>
+                <p>• <strong>2026-03-06</strong>：ASR 整合至 Hugging Face Transformers v5.3.0</p>
+            </div>
+
+            <h2>開源與責任的平衡</h2>
+            
+            <p>2025 年 9 月 5 日，微軟在 GitHub 上發布聲明，表示在 VibeVoice 開源後發現「某些使用方式與既定意圖不符」，基於負責任 AI 原則，決定移除 TTS 代碼。這一決定引發社群熱烈討論。</p>
+
+            <p>微軟在官方研究部落格中強調：「如需使用真人且具有辨識度的聲音，建議事先獲得相關方的明確授權，並結合音頻內容真實性檢測機制，以降低非法使用風險。」</p>
+
+            <p>儘管 TTS 模組已停用，但 <strong>VibeVoice-ASR</strong> 持續開源並獲得社群廣泛採用。2026 年 3 月，基於 VibeVoice-ASR 開發的語音輸入法「Vibing」正式發布，支持 macOS 和 Windows 平台。</p>
+
+            <h2>應用前景</h2>
+            
+            <ul>
+                <li><strong>播客製作：</strong>創作者只需提供帶角色標註的腳本，即可自動生成高質量多角色對話音頻</li>
+                <li><strong>有聲書：</strong>支持多角色演繹，自動呈現對話場景的氛圍感</li>
+                <li><strong>虛擬助理：</strong>實時生成自然語音回應，支持多語言切換</li>
+                <li><strong>在线教育：</strong>自動生成教學音頻，支持多講師協同授課</li>
+                <li><strong>娛樂節目：</strong>快速製作廣播劇、音頻劇等內容</li>
+            </ul>
+
+            <div class="highlight-box">
+                <h4>未來發展方向</h4>
+                <p>研究團隊計劃在未來版本中引入<strong>情感控制</strong>功能，使生成內容更多元生動。同時探索「語音 + 音樂 + 音效」一體化的音頻生成模型，讓創作者只需輸入文字腳本，AI 即可自動生成包含對話、配樂和場景音效的完整音頻作品。</p>
+            </div>
+
+            <h2>結語</h2>
+            
+            <p>VibeVoice 的出現，標誌著語音合成技術邁向新的里程碑。它不僅在技術層面實現了超長時長、多角色協同的突破，更在產業層面引發了對 AI 負責任使用的深度思考。</p>
+
+            <p>正如微軟所強調的，這項技術的定位是「基礎研究框架」，旨在促進語音合成社群的協作與進步。在享受技術帶來的便利同時，如何建立完善的倫理規範和使用機制，將是整個 AI 社群需要共同面對的課題。</p>
         </div>
     </section>
 
-    <!-- Footer -->
     <footer>
         <p>© 2026-04-06 AI News Archive | 由 AI 技術生成</p>
         <div class="footer-links">
@@ -150,7 +272,6 @@
     </footer>
 
     <script>
-        // 代碼雨效果
         function createCodeRain() {
             const codeRain = document.getElementById('codeRain');
             const chars = '01 アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン';
@@ -165,7 +286,6 @@
             }
         }
 
-        // 滾動動畫
         function handleScrollAnimation() {
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
