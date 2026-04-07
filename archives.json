@@ -1,6 +1,16 @@
 {
   "archives": [
     {
+      "dir": "news_20260407_213011",
+      "title": "【手把手教程】Seedance 2.0五大免費入口曝光！無限量使用方法全公開 | 2026最新拆解11個Seedance 2.0爆款玩法，零成本複刻千萬播放影片| AI創業 AI廣告 AI短劇 即夢",
+      "summary_short": "## 新聞導語近日，Seedance 2.0 在網路上迅速走紅，成為眾多內容創作者和廣告商的熱門工具。本次報告揭示了五個免費使用 Seedance 2.0 的入口，並詳細拆解了11種當下最火的爆款玩",
+      "images": [
+        "img/img1.png"
+      ],
+      "date": "2026-04-07",
+      "url": "./news_20260407_213011/index.html"
+    },
+    {
       "dir": "news_20260407_184353",
       "title": "What is Multimodal AI? How LLMs Process Text, Images, and More",
       "summary_short": "## 新聞導語多模態人工智慧（Multimodal AI）近年來成為技術領域的熱門話題，其核心在於讓AI模型能夠處理和生成多種型別的資料，包括文字、影象、音訊等。本次報告將深入探討多模態AI的定義、",
@@ -119,5 +129,5 @@
       "url": "./20260404_2045/index.html"
     }
   ],
-  "last_updated": "2026-04-07T18:47:00.151102"
+  "last_updated": "2026-04-07T21:32:53.403117"
 }
