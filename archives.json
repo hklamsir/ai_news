@@ -1,6 +1,16 @@
 {
   "archives": [
     {
+      "dir": "news_20260407_184353",
+      "title": "What is Multimodal AI? How LLMs Process Text, Images, and More",
+      "summary_short": "## 新聞導語多模態人工智慧（Multimodal AI）近年來成為技術領域的熱門話題，其核心在於讓AI模型能夠處理和生成多種型別的資料，包括文字、影象、音訊等。本次報告將深入探討多模態AI的定義、",
+      "images": [
+        "img/img1.png"
+      ],
+      "date": "2026-04-07",
+      "url": "./news_20260407_184353/index.html"
+    },
+    {
       "dir": "news_20260407_182353",
       "title": "Grok收費、Gemini降智、Sora神隱！AI 發展的盡頭是變爛？科技巨頭如何把好服務變成收割陷阱？ |  科技快充",
       "summary_short": "## 新聞導語近期，多個AI服務如Grok、Gemini和Sora的政策調整引發了使用者的不滿。這些變化不僅影響了使用者體驗，也揭示了一種數位服務劣化的普遍趨勢。科技評論家Cory Doctorow",
@@ -109,5 +119,5 @@
       "url": "./20260404_2045/index.html"
     }
   ],
-  "last_updated": "2026-04-07T18:35:58.758893"
+  "last_updated": "2026-04-07T18:47:00.151102"
 }
