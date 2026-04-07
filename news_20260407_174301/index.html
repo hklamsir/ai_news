@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>別被忽悠了！Gemma 4 滿血版本地跑，真實體驗說人話</title>
+    <style>
+        :root {
+            --primary-blue: #00d4ff;
+            --primary-purple: #7b2cbf;
+            --accent-green: #00ff88;
+            --accent-orange: #ff9500;
+            --dark-bg: #0a0a0f;
+            --card-bg: #12121a;
+            --card-bg-light: #1a1a28;
+            --text-primary: #ffffff;
+            --text-secondary: #a0a0b0;
+            --gradient-1: linear-gradient(135deg, #00d4ff 0%, #7b2cbf 100%);
+            --gradient-2: linear-gradient(135deg, #00d4ff 0%, #00ff88 100%);
+            --glow-blue: 0 0 20px rgba(0, 212, 255, 0.5);
+            --glow-purple: 0 0 20px rgba(123, 44, 191, 0.5);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Noto Sans TC', sans-serif; background-color: var(--dark-bg); color: var(--text-primary); line-height: 1.8; overflow-x: hidden; }
+
+        @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-20px); } }
+        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.6; } }
+        @keyframes slideIn { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes codeRain { 0% { transform: translateY(-100%); opacity: 0; } 10% { opacity: 1; } 90% { opacity: 1; } 100% { transform: translateY(100vh); opacity: 0; } }
+
+        /* 代碼雨背景 */
+        .code-rain { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; overflow: hidden; }
+        .code-char { position: absolute; color: var(--primary-blue); font-family: 'Courier New', monospace; font-size: 14px; opacity: 0; animation: codeRain 4s linear infinite; }
+
+        /* Hero Section */
+        .hero { position: relative; min-height: 80vh; display: flex; align-items: center; justify-content: center; padding: 80px 20px; background: linear-gradient(180deg, var(--dark-bg) 0%, #1a1a2e 100%); overflow: hidden; }
+        .hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(ellipse at center, rgba(123, 44, 191, 0.15) 0%, transparent 70%); z-index: 1; }
+        .hero-content { position: relative; z-index: 2; max-width: 1200px; text-align: center; animation: slideIn 1s ease-out; }
+        .hero-badge { display: inline-block; padding: 12px 32px; background: var(--gradient-1); border-radius: 50px; font-size: 18px; font-weight: 700; margin-bottom: 24px; box-shadow: var(--glow-blue); letter-spacing: 1px; }
+        .hero h1 { font-size: clamp(2rem, 5vw, 4rem); font-weight: 900; margin-bottom: 24px; background: var(--gradient-1); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; line-height: 1.2; }
+        .hero-subtitle { font-size: clamp(1.2rem, 2.2vw, 1.6rem); color: var(--text-primary); max-width: 900px; margin: 0 auto 40px; line-height: 1.6; font-weight: 400; }
+        .hero-images { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; margin-top: 60px; }
+        .hero-image-card { position: relative; border-radius: 20px; overflow: hidden; aspect-ratio: 16/9; box-shadow: var(--glow-purple); transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .hero-image-card:hover { transform: scale(1.02); box-shadow: 0 0 40px rgba(123, 44, 191, 0.7); }
+        .hero-image-card img { width: 100%; height: 100%; object-fit: cover; }
+        .scroll-indicator { position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%); animation: float 2s ease-in-out infinite; z-index: 2; }
+        .scroll-indicator span { display: block; width: 30px; height: 50px; border: 2px solid var(--primary-blue); border-radius: 25px; position: relative; }
+        .scroll-indicator span::before { content: ''; position: absolute; top: 8px; left: 50%; transform: translateX(-50%); width: 6px; height: 10px; background: var(--primary-blue); border-radius: 3px; animation: pulse 1.5s infinite; }
+
+        /* Content Section */
+        section { padding: 80px 20px; position: relative; z-index: 1; }
+        .content-section { background: var(--card-bg); padding: 60px 50px; border-radius: 24px; border: 1px solid rgba(0, 212, 255, 0.2); max-width: 1100px; margin: 0 auto; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3); }
+
+        .content-section h3 { font-size: 1.6rem; margin: 40px 0 20px; color: var(--accent-green); }
+        .content-section p { color: var(--text-secondary); line-height: 2; font-size: 1.08rem; margin: 15px 0; }
+        .content-section ul { margin: 20px 0; padding-left: 30px; }
+        .content-section li { margin: 10px 0; color: var(--text-secondary); }
+
+        .meta-info { background: linear-gradient(135deg, rgba(0, 212, 255, 0.15) 0%, rgba(123, 44, 191, 0.15) 100%); padding: 30px; border-radius: 16px; margin-bottom: 40px; border-left: 5px solid var(--primary-blue); }
+        .meta-info p { margin: 12px 0; color: var(--text-secondary); font-size: 1.05rem; }
+        .meta-info strong { color: var(--primary-blue); font-weight: 600; }
+        .meta-info a { color: var(--primary-blue); text-decoration: none; word-break: break-all; }
+
+        .highlight-box { background: linear-gradient(135deg, rgba(0, 255, 136, 0.08) 0%, rgba(0, 212, 255, 0.08) 100%); padding: 30px; border-radius: 16px; border-left: 5px solid var(--accent-green); margin: 40px 0; }
+        .highlight-box h4 { color: var(--accent-green); margin-bottom: 15px; font-size: 1.3rem; }
+        .highlight-box p { color: var(--text-secondary); margin: 0; }
+
+        /* Footer */
+        footer { background: #050508; padding: 60px 20px; text-align: center; border-top: 1px solid rgba(255, 255, 255, 0.1); }
+        footer p { color: var(--text-secondary); margin-bottom: 20px; }
+        .footer-links { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; }
+        .footer-links a { color: var(--primary-blue); text-decoration: none; transition: color 0.3s ease; }
+        .footer-links a:hover { color: var(--text-primary); }
+
+        /* RWD */
+        @media (max-width: 768px) {
+            .content-section { padding: 40px 25px; }
+            .hero-images { grid-template-columns: 1fr; }
+            .hero h1 { font-size: 2rem; }
+            .hero-subtitle { font-size: 1.2rem; }
+        }
+    </style>
+</head>
+<body>
+    <section class="hero">
+        <div class="hero-content">
+            <span class="hero-badge">📰 AI News 專題報道</span>
+            <h1>別被忽悠了！Gemma 4 滿血版本地跑，真實體驗說人話</h1>
+            <p class="hero-subtitle">本次報告揭示了Gemma 4在本地執行時的真實效能表現，並透過實際測試資料來評估其效能。研究指出，儘管Gemma 4在理論上具有強大的能力，但在消費級硬體上的表現卻遠不如預期。</p>
+            <div class="hero-images">
+                <div class="hero-image-card">
+                    <img src="img/img1.png" alt="新聞插圖">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <div class="meta-info">
+            <p><strong>📺 資料來源</strong>：<a href="https://www.youtube.com/watch?v=-aL769n3fdU" target="_blank">https://www.youtube.com/watch?v=-aL769n3fdU</a></p>
+            <p><strong>📅 發布日期</strong>：2026-04-07</p>
+            <p><strong>🤖 處理方式</strong>：AI 智能摘要生成</p>
+        </div>
+
+        <h3>🎯 核心觀點</h3>
+        <p>隨著Gemma 4（簡稱G4）的釋出，市場上充斥著大量關於其效能和應用的討論。本次報告旨在揭示G4在本地執行時的真實體驗，並透過實際測試資料來評估其效能表現。研究指出，儘管G4在理論上具有強大的能力，但在消費級硬體上的表現卻遠不如預期。專家分析認為，消費者在考慮購買相關裝置前應謹慎評估其實際需求和成本效益。</p>
+
+        <h3>💡 重點解析</h3>
+        <p>根據本次報告的測試結果，G4在本地執行時的表現並未達到市場宣傳的效果。首先，我們分別測試了G4的31B和26B版本。31B版本被稱為“滿血版”，但實際上，在消費級GPU如RTX 4090和5090上執行時，其反應速度和推理能力均不如預期。資料顯示，即使是配備32GB視訊記憶體的雙RTX 5090，模型在處理簡單問題如“今天天氣如何”時，也需要近三分鐘才能回應。</p>
+        <ul>
+            <li>G4的31B和26B版本在本地執行時存在顯著效能差異。</li>
+            <li>使用消費級GPU如RTX 4090和5090進行測試，發現其反應速度和推理能力有限。</li>
+            <li>實際測試顯示，G4在處理複雜任務時需要較長時間，且對系統資源的需求較高。</li>
+            <li>模型的上下文視窗大小對其表現有重要影響，但過大的視窗會導致效率下降。</li>
+            <li>專家建議，對於大多數使用者而言，使用雲端服務可能比本地部署更具成本效益。</li>
+        </ul>
+
+        <h3>📊 數據分析</h3>
+        <p>模型的上下文視窗大小對其表現有重要影響。研究指出，G4的上下文視窗大小為131K，這意味著它能夠處理較長的文字輸入。然而，實際測試中發現，過大的上下文視窗會導致系統資源的大量消耗，從而降低整體效率。例如，在測試過程中，當模型需要呼叫多個工具來完成任務時，其反應速度明顯下降，甚至出現卡頓現象。</p>
+
+        <h3>🔮 未來展望</h3>
+        <p>未來，隨著技術的不斷進步，語言模型的本地執行能力有望得到進一步提升。然而，目前對於大多數消費者而言，使用雲端服務仍然是更為可行的選擇。業界觀察認為，硬體廠商和軟體開發商應共同努力，提高本地執行的效能和效率，以滿足更多使用者的需求。同時，消費者在選擇相關產品時，應充分考慮自身的實際需求和成本效益，避免盲目跟風。</p>
+    </section>
+
+    <footer>
+        <p>© 2026 AI News Archive | 由 AI 技術生成</p>
+        <div class="footer-links">
+            <a href="../index.html">返回主頁</a>
+            <a href="https://github.com/hklamsir/ai_news" target="_blank">GitHub</a>
+            <a href="https://hklamsir.github.io/ai_news/" target="_blank">瀏覽所有專題</a>
+        </div>
+    </footer>
+</body>
+</html>
