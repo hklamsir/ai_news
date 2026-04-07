@@ -1,6 +1,16 @@
 {
   "archives": [
     {
+      "dir": "news_20260407_140540",
+      "title": "AI breakthrough cuts energy use by 100x while boosting accuracy | ScienceDaily",
+      "summary_short": "# AI breakthrough cuts energy use by 100x while boosting accuracy | ScienceDaily## 新聞導語本文報導來自 SC",
+      "images": [
+        "img/img1.png"
+      ],
+      "date": "2026-04-07",
+      "url": "./news_20260407_140540/index.html"
+    },
+    {
       "dir": "20260407_1215",
       "title": "AI 虛擬試衣技術解決零售業退貨難題",
       "summary_short": "# AI 虛擬試衣技術解決零售業退貨難題## 新聞導語零售業正面臨嚴峻的退貨挑戰，2025 年美國零售業退貨率高達 15.8%，總金額達 8,499 億美元，線上退貨率更攀升至 19.3%。Z",
@@ -85,5 +95,5 @@
       "url": "./20260404_2045/index.html"
     }
   ],
-  "last_updated": "2026-04-07T13:57:28.516357"
+  "last_updated": "2026-04-07T14:15:51.781521"
 }
