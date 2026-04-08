@@ -48,9 +48,10 @@
         .scroll-indicator span::before { content: ''; position: absolute; top: 8px; left: 50%; transform: translateX(-50%); width: 6px; height: 10px; background: var(--primary-blue); border-radius: 3px; animation: pulse 1.5s infinite; }
 
         section { padding: 80px 20px; position: relative; z-index: 1; }
-        .content-section { background: var(--card-bg); padding: 60px 50px; border-radius: 24px; border: 1px solid rgba(0, 212, 255, 0.2); max-width: 1100px; margin: 0 auto; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3); }
+        .content-section { background: var(--card-bg); padding: 60px 50px; border-radius: 24px; border: 1px solid rgba(0, 212, 255, 0.2); max-width: 1100px; margin: 0 auto 60px; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3); }
 
-        .content-section h3 { font-size: 1.6rem; margin: 40px 0 20px; color: var(--accent-green); }
+        .content-section h2 { font-size: 2rem; margin-bottom: 30px; color: var(--primary-blue); text-align: center; }
+        .content-section h3 { font-size: 1.6rem; margin: 40px 0 20px; color: var(--accent-green); border-left: 4px solid var(--accent-green); padding-left: 15px; }
         .content-section p { color: var(--text-secondary); line-height: 2; font-size: 1.08rem; margin: 15px 0; }
         .content-section ul { margin: 20px 0; padding-left: 30px; }
         .content-section li { margin: 10px 0; color: var(--text-secondary); }
@@ -64,6 +65,35 @@
         .highlight-box h4 { color: var(--accent-green); margin-bottom: 15px; font-size: 1.3rem; }
         .highlight-box p { color: var(--text-secondary); margin: 0; }
 
+        .tech-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin: 40px 0; }
+        .tech-card { background: var(--card-bg-light); padding: 30px; border-radius: 16px; border: 1px solid rgba(0, 212, 255, 0.15); transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .tech-card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0, 212, 255, 0.2); }
+        .tech-card-icon { font-size: 2.5rem; margin-bottom: 15px; }
+        .tech-card h4 { color: var(--primary-blue); font-size: 1.2rem; margin-bottom: 12px; }
+        .tech-card p { color: var(--text-secondary); font-size: 0.95rem; line-height: 1.7; }
+
+        .comparison-table { width: 100%; border-collapse: collapse; margin: 30px 0; background: var(--card-bg-light); border-radius: 16px; overflow: hidden; }
+        .comparison-table th { background: var(--gradient-1); color: white; padding: 18px; text-align: left; font-weight: 700; }
+        .comparison-table td { padding: 15px 18px; border-bottom: 1px solid rgba(255, 255, 255, 0.1); color: var(--text-secondary); }
+        .comparison-table tr:last-child td { border-bottom: none; }
+        .comparison-table tr:hover { background: rgba(0, 212, 255, 0.05); }
+
+        .quote-box { background: linear-gradient(135deg, rgba(123, 44, 191, 0.1) 0%, rgba(0, 212, 255, 0.1) 100%); padding: 30px; border-radius: 16px; border-left: 5px solid var(--primary-purple); margin: 40px 0; font-style: italic; }
+        .quote-box p { color: var(--text-primary); font-size: 1.1rem; margin: 0; }
+        .quote-box cite { display: block; margin-top: 15px; color: var(--primary-blue); font-size: 0.95rem; }
+
+        .timeline { position: relative; padding-left: 40px; margin: 40px 0; }
+        .timeline::before { content: ''; position: absolute; left: 15px; top: 0; bottom: 0; width: 2px; background: var(--gradient-1); }
+        .timeline-item { position: relative; margin-bottom: 30px; }
+        .timeline-item::before { content: ''; position: absolute; left: -30px; top: 5px; width: 12px; height: 12px; background: var(--primary-blue); border-radius: 50%; box-shadow: var(--glow-blue); }
+        .timeline-item h4 { color: var(--accent-orange); margin-bottom: 8px; }
+        .timeline-item p { color: var(--text-secondary); }
+
+        .info-box { background: linear-gradient(135deg, rgba(255, 149, 0, 0.08) 0%, rgba(0, 212, 255, 0.08) 100%); padding: 25px; border-radius: 16px; border: 1px solid rgba(255, 149, 0, 0.3); margin: 30px 0; }
+        .info-box h4 { color: var(--accent-orange); margin-bottom: 15px; font-size: 1.2rem; }
+        .info-box ul { margin: 10px 0; padding-left: 25px; }
+        .info-box li { color: var(--text-secondary); margin: 8px 0; }
+
         footer { background: #050508; padding: 60px 20px; text-align: center; border-top: 1px solid rgba(255, 255, 255, 0.1); }
         footer p { color: var(--text-secondary); margin-bottom: 20px; }
         .footer-links { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; }
@@ -75,55 +105,188 @@
             .hero-images { grid-template-columns: 1fr; }
             .hero h1 { font-size: 2rem; }
             .hero-subtitle { font-size: 1.2rem; }
+            .tech-cards { grid-template-columns: 1fr; }
+            .comparison-table { font-size: 0.9rem; }
         }
     </style>
 </head>
 <body>
+    <div class="code-rain" id="codeRain"></div>
+
     <section class="hero">
         <div class="hero-content">
             <span class="hero-badge">📰 AI News 專題報道</span>
             <h1>別再讓 AI 寫出「機器感」：五個 Prompt 技巧，清除制式句法</h1>
-            <p class="hero-subtitle">最新科技新聞報導指出，研究人員提出了創新的技術方案，通過優化核心流程實現性能提升，為相關領域的發展提供了新的思路和方向。</p>
+            <p class="hero-subtitle">生成式 AI 走入大眾視野兩年，「AI 味」成為新困擾。本文深入解析 AI 語言指紋的技術根源，並提供五個實戰 Prompt 技巧，讓你的 AI 內容重獲人類靈魂。</p>
             <div class="hero-images">
                 <div class="hero-image-card">
-                    <img src="img/img1.png" alt="新聞插圖">
+                    <img src="img/img1.png" alt="AI Prompt 技巧插圖">
                 </div>
             </div>
         </div>
+        <div class="scroll-indicator">
+            <span></span>
+        </div>
     </section>
 
-    <section class="content-section">
-        <div class="meta-info">
-            <p><strong>📺 資料來源</strong>：<a href="https://technews.com" target="_blank">TECHNEWS</a></p>
-            <p><strong>📅 發布日期</strong>：2026-04-08</p>
-            <p><strong>🤖 處理方式</strong>：AI 智能摘要生成</p>
+    <section>
+        <div class="content-section">
+            <div class="meta-info">
+                <p><strong>📺 資料來源</strong>：<a href="https://technews.tw/2026/04/07/five-prompt-tips-to-eliminate-standard-syntax/" target="_blank">TECHNEWS 科技新報</a></p>
+                <p><strong>📅 發布日期</strong>：2026 年 4 月 7 日</p>
+                <p><strong>🤖 處理方式</strong>：AI 智能摘要生成 + LLM 深度優化</p>
+                <p><strong>🏷️ 標籤</strong>：AI、Prompt Engineering、生成式 AI、自然語言處理</p>
+            </div>
+
+            <h2>📖 新聞導語</h2>
+            <p>生成式 AI 走入大眾視野兩年，我們對它的新鮮感已逐漸被視覺疲勞取代。無論是看一篇分析報導或是一段社群貼文，讀者能察覺出那些隱藏在字裡行間的<strong>「AI 味」</strong>：過度禮貌的開場、機械化的條列以及制式化句法。</p>
+            <p>數位鑑識領域有種分析技術<strong>「語言指紋」（Linguistic Fingerprints）</strong>，指在書寫或口語表達展現出獨特、有個人辨識度的語言習慣和特徵。AI 語言指紋非常鮮明，它們熱愛使用「總結來說」、「首先、其次、最後」這類標準轉折詞，習慣在段落結尾下溫馨但空洞的建議。</p>
+
+            <div class="quote-box">
+                <p>「許多人抱怨 AI 寫出來的東西『看似很有深度，實則全是廢話』。」</p>
+                <cite>— TECHNEWS 專題分析</cite>
+            </div>
         </div>
 
-        <h3>🎯 核心觀點</h3>
-        <p>本次報告指出，新技術相比傳統方法有顯著改進，在多個測試場景中表現優異，具有廣泛的應用前景。研究團隊採用了先進的算法和架構，通過優化核心流程實現了性能提升。</p>
+        <div class="content-section">
+            <h2>🔍 技術根源解析：為什麼 AI 會有「機器感」？</h2>
+            <p>這背後有兩個技術原因，一是<strong>RLHF 的過度修正</strong>，一是<strong>注意力機制的副作用</strong>。</p>
+            
+            <div class="tech-cards">
+                <div class="tech-card">
+                    <div class="tech-card-icon">🎯</div>
+                    <h4>RLHF 過度修正</h4>
+                    <p>為使 AI 更像人類，工程師透過「從人類回饋強化學習」（RLHF）微調模型。但人類評價者多傾向給予「完整、有禮貌、解釋詳盡」的回答高分，導致 AI 學會用冗長的贅詞包裹簡單的答案，換取高滿意度。</p>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-card-icon">🔗</div>
+                    <h4>注意力機制副作用</h4>
+                    <p>Transformer 架構的注意力機制（Attention Mechanism）讓模型擅長建立邏輯連結，過度承上啟下，為確保語意連貫，會加入大量過渡句。</p>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-card-icon">✍️</div>
+                    <h4>寫作本質被抹殺</h4>
+                    <p>寫作本質在差異化與觀點，當 AI 抹平所有稜角，也同時抹殺了讀者的閱讀動機。</p>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-card-icon">👔</div>
+                    <h4>職場怕出錯心態</h4>
+                    <p>這就像是職場怕出錯的下屬，報告寫得洋洋灑灑，卻遲遲不敢下定論。AI 的廢話，是在「理解不夠深」與「怕說錯話」間的權衡產物。</p>
+                </div>
+            </div>
 
-        <h3>💡 重點解析</h3>
-        <p>研究人員通過分析大量數據和實驗，提出了創新的技術方案。該方案在測試中展現出顯著優勢，為相關領域的發展提供了新的思路和方向。</p>
-        <ul>
-            <li>新技術相比傳統方法有顯著改進</li>
-            <li>在多個測試場景中表現優異</li>
-            <li>具有廣泛的應用前景</li>
-        </ul>
+            <div class="highlight-box">
+                <h4>💡 關鍵洞察</h4>
+                <p>要解決廢話問題，關鍵不在於讓它寫多，在於給它<strong>「限制」</strong>。</p>
+            </div>
+        </div>
 
-        <h3>📊 數據分析</h3>
-        <p>數據顯示，新技術在多個測試場景中的表現遠超傳統方法，具體數據如下：</p>
-        <ul>
-            <li>在文本生成任務中，新技術的準確率提升了 20%</li>
-            <li>在語音識別任務中，新技術的錯誤率降低了 15%</li>
-            <li>在圖像處理任務中，新技術的處理速度提高了 30%</li>
-        </ul>
+        <div class="content-section">
+            <h2>🛠️ 五個 Prompt 技巧實戰指南</h2>
+            <p>對於使用 GPT-4o-mini 或 Gemini 等免費版模型的用戶，可用以下精確的 Prompt 技巧打破它的「罐頭慣性」：</p>
 
-        <h3>🔮 未來展望</h3>
-        <p>業界觀察人士指出，此項技術突破將對相關領域產生重要影響。隨著技術不斷完善，預計將在多個行業得到廣泛應用。專家分析認為，新技術將成為未來人工智能領域的重要趨勢。</p>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <h4>技巧 1：否定式約束</h4>
+                    <p>明確列出<strong>「禁語清單」</strong>。如：<code>「撰寫時請禁止使用：『總結來說』、『首先／其次／最後』、『不僅如此』、『這是一個……的過程』。直接進入重點，不要有過度禮貌的開場。」</code></p>
+                    <p>否定式指令能迫使 AI 繞開機率最高的字詞路徑，尋找較具創意或更直接的表達方式。</p>
+                </div>
+                <div class="timeline-item">
+                    <h4>技巧 2：調整寫作節奏</h4>
+                    <p>要求 AI 模擬人類的寫作節奏，人類寫作會有長短句交錯，而 AI 傾向每句長度相仿。例：<code>「請調整句式結構，使用 50% 短句（10 字以內）與 50% 長句交錯，避免節奏過於平穩」</code></p>
+                    <p>這指令打破 AI 等長步調，產出類似人類思考時的停頓感，提升閱讀的流暢度。</p>
+                </div>
+                <div class="timeline-item">
+                    <h4>技巧 3：引入「非共識」視角</h4>
+                    <p>這能強制 AI 脫離平庸。如：<code>「請從反直覺角度分析這個問題，不要提供大眾皆知的常識性建議，需引用非典型的案例。」</code></p>
+                    <p>要求 AI「不准說大家都知道的事」時，它會被迫檢索訓練數據權重較低但更具洞見的資訊，較符合專業寫作所需的深度。</p>
+                </div>
+                <div class="timeline-item">
+                    <h4>技巧 4：影子角色</h4>
+                    <p>與其叫它扮演「專家」，不如賦予它「文風」。如：<code>「請模仿《連線》（Wired）雜誌的冷峻、充滿科技感且略帶諷刺的口吻撰寫，避免使用激勵性質的語言。」</code></p>
+                    <p>特定媒體或作者風格擁有獨特的語彙庫，能壓過 AI 原本的罐頭語彙庫。</p>
+                </div>
+                <div class="timeline-item">
+                    <h4>技巧 5：場景化敘事</h4>
+                    <p>禁止 AI 使用抽象的形容詞，因為「機器感」常來自形容詞堆砌。如：<code>「描述這項技術的好處時，禁止使用『效率極高』、『革命性』或『非常便利』。請改用具體工作情境展示效果。」</code></p>
+                    <p>強制 AI 寫出「畫面感」非「結論」，文字才會產生靈魂。</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h2>📊 AI 寫作 vs 人類寫作對比</h2>
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>特徵</th>
+                        <th>AI 寫作</th>
+                        <th>人類寫作</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>開場方式</strong></td>
+                        <td>過度禮貌、冗長鋪墊</td>
+                        <td>直接切入主題</td>
+                    </tr>
+                    <tr>
+                        <td><strong>轉折詞</strong></td>
+                        <td>「總結來說」、「首先/其次/最後」</td>
+                        <td>多變、自然的過渡</td>
+                    </tr>
+                    <tr>
+                        <td><strong>句式節奏</strong></td>
+                        <td>每句長度相仿、平穩</td>
+                        <td>長短句交錯、有停頓感</td>
+                    </tr>
+                    <tr>
+                        <td><strong>結論風格</strong></td>
+                        <td>溫馨但空洞的建議</td>
+                        <td>明確觀點、敢於下定論</td>
+                    </tr>
+                    <tr>
+                        <td><strong>形容詞使用</strong></td>
+                        <td>堆砌抽象形容詞</td>
+                        <td>具體情境描述</td>
+                    </tr>
+                    <tr>
+                        <td><strong>觀點深度</strong></td>
+                        <td>常識性、平庸建議</td>
+                        <td>獨特見解、非共識視角</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="content-section">
+            <h2>🎯 專業人士的價值</h2>
+            <div class="info-box">
+                <h4>最後 20% 精準微調</h4>
+                <p>內容產生後微調，專業人士的價值是如何以高階 Prompt 篩選出有價值的觀點，再進行最後 20% 精準微調：</p>
+                <ul>
+                    <li><strong>語境微細捕捉</strong> — 理解細微的語境差異</li>
+                    <li><strong>堅持品牌骨架</strong> — 保持一致的品牌語調</li>
+                    <li><strong>共感讀者情緒</strong> — 觸及讀者的情感共鳴</li>
+                </ul>
+            </div>
+            <p>掌握 Prompt 技巧及 20% 微調，能在演算法時代，讓文字守住表達主體性及深度。</p>
+        </div>
+
+        <div class="content-section">
+            <h2>📚 延伸閱讀</h2>
+            <ul>
+                <li><a href="https://technews.tw/2025/05/08/prompt-ai/" target="_blank">形容詞不只是修飾：微調 Prompt，如何引導 AI 的創造方向</a></li>
+                <li><a href="https://technews.tw/2026/03/24/dont-add-youre-an-expert-to-your-prompts-anymore/" target="_blank">寫提示詞別再加「你是專家」，研究建議直接發送指令</a></li>
+                <li><a href="https://technews.tw/2026/03/26/strategic-thinking-is-difficult-for-ai-to-replace/" target="_blank">文字工作者將被淘汰？Google 主管：人文素養反而是 AI 時代的最強護城河</a></li>
+                <li><a href="https://technews.tw/2026/03/24/ai-is-already-in-classrooms-early-results-are-worrying/" target="_blank">專家警告：AI 太早進入學校教育，恐影響學生思考與學習品質</a></li>
+                <li><a href="https://technews.tw/2026/03/23/sycophantic-ai-decreases-prosocial-intentions-and-promotes-dependence/" target="_blank">聽 AI 的話更容易出錯！研究：AI 建議後錯誤決策率達 42%，是諮詢人類的 2.3 倍</a></li>
+            </ul>
+        </div>
 
         <div class="highlight-box">
-            <h4>✨ 關鍵洞察</h4>
-            <p>新技術通過優化核心流程實現了性能提升，為相關領域的發展提供了新的思路和方向。隨著技術的不斷完善，預計將在多個行業得到廣泛應用。</p>
+            <h4>✨ 關鍵總結</h4>
+            <p>生成式 AI 的「機器感」源於 RLHF 過度修正與注意力機制副作用。通過五個 Prompt 技巧——否定式約束、調整寫作節奏、引入非共識視角、影子角色、場景化敘事——可以有效清除制式句法。專業人士的價值在於最後 20% 的精準微調，讓文字在演算法時代守住表達主體性及深度。</p>
         </div>
     </section>
 
@@ -135,5 +298,19 @@
             <a href="https://hklamsir.github.io/ai_news/" target="_blank">瀏覽所有專題</a>
         </div>
     </footer>
+
+    <script>
+        const codeRain = document.getElementById('codeRain');
+        const chars = '01 アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン';
+        for (let i = 0; i < 50; i++) {
+            const char = document.createElement('div');
+            char.className = 'code-char';
+            char.textContent = chars[Math.floor(Math.random() * chars.length)];
+            char.style.left = Math.random() * 100 + '%';
+            char.style.animationDelay = Math.random() * 4 + 's';
+            char.style.animationDuration = (Math.random() * 2 + 3) + 's';
+            codeRain.appendChild(char);
+        }
+    </script>
 </body>
 </html>
