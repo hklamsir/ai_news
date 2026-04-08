@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI正以50倍速改寫人類壽命！別再只會問ChatGPT！DeepMind創辦人爆料：普通人翻盤機會就在這 🧬✨ | AI News 專題報道</title>
+    <title>AI 正以 50 倍速改寫人類壽命！DeepMind 創辦人爆料普通人翻盤機會 | AI News 專題報道</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
@@ -33,17 +33,15 @@
         @keyframes slideIn { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
         @keyframes codeRain { 0% { transform: translateY(-100%); opacity: 0; } 10% { opacity: 1; } 90% { opacity: 1; } 100% { transform: translateY(100vh); opacity: 0; } }
 
-        /* 代碼雨背景 */
         .code-rain { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; overflow: hidden; }
         .code-char { position: absolute; color: var(--primary-blue); font-family: 'Courier New', monospace; font-size: 14px; opacity: 0; animation: codeRain 4s linear infinite; }
 
-        /* Hero Section */
         .hero { position: relative; min-height: 80vh; display: flex; align-items: center; justify-content: center; padding: 80px 20px; background: linear-gradient(180deg, var(--dark-bg) 0%, #1a1a2e 100%); overflow: hidden; }
         .hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(ellipse at center, rgba(123, 44, 191, 0.15) 0%, transparent 70%); z-index: 1; }
         .hero-content { position: relative; z-index: 2; max-width: 1200px; text-align: center; animation: slideIn 1s ease-out; }
         .hero-badge { display: inline-block; padding: 12px 32px; background: var(--gradient-1); border-radius: 50px; font-size: 18px; font-weight: 700; margin-bottom: 24px; box-shadow: var(--glow-blue); letter-spacing: 1px; }
-        .hero h1 { font-size: clamp(2rem, 5vw, 4rem); font-weight: 900; margin-bottom: 24px; background: var(--gradient-1); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; line-height: 1.2; }
-        .hero-subtitle { font-size: clamp(1.2rem, 2.2vw, 1.6rem); color: var(--text-primary); max-width: 900px; margin: 0 auto 40px; line-height: 1.6; font-weight: 400; }
+        .hero h1 { font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 900; margin-bottom: 24px; background: var(--gradient-1); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; line-height: 1.2; }
+        .hero-subtitle { font-size: clamp(1.1rem, 2vw, 1.5rem); color: var(--text-primary); max-width: 900px; margin: 0 auto 40px; line-height: 1.6; font-weight: 300; }
         .hero-images { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; margin-top: 60px; }
         .hero-image-card { position: relative; border-radius: 20px; overflow: hidden; aspect-ratio: 16/9; box-shadow: var(--glow-purple); transition: transform 0.3s ease, box-shadow 0.3s ease; }
         .hero-image-card:hover { transform: scale(1.02); box-shadow: 0 0 40px rgba(123, 44, 191, 0.7); }
@@ -52,164 +50,271 @@
         .scroll-indicator span { display: block; width: 30px; height: 50px; border: 2px solid var(--primary-blue); border-radius: 25px; position: relative; }
         .scroll-indicator span::before { content: ''; position: absolute; top: 8px; left: 50%; transform: translateX(-50%); width: 6px; height: 10px; background: var(--primary-blue); border-radius: 3px; animation: pulse 1.5s infinite; }
 
-        /* Content Section */
         section { padding: 80px 20px; position: relative; z-index: 1; }
-        .content-section { background: var(--card-bg); padding: 60px 50px; border-radius: 24px; border: 1px solid rgba(0, 212, 255, 0.2); max-width: 1100px; margin: 0 auto; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3); }
+        .container { max-width: 1200px; margin: 0 auto; }
         
-        .content-section h2 { font-size: 2rem; margin-bottom: 40px; color: var(--primary-blue); display: flex; align-items: center; gap: 15px; padding-bottom: 20px; border-bottom: 2px solid rgba(0, 212, 255, 0.3); }
-        .content-section h2::before { content: '📖'; font-size: 2.5rem; }
+        .content-section { background: var(--card-bg); padding: 60px 50px; border-radius: 24px; border: 1px solid rgba(0, 212, 255, 0.2); margin: 40px auto; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3); }
         
-        .content-section h3 { font-size: 1.6rem; margin: 50px 0 25px; color: var(--accent-green); display: flex; align-items: center; gap: 12px; }
-        .content-section h3::before { content: '🎯'; font-size: 2rem; }
+        .section-title { font-size: 2.2rem; margin-bottom: 40px; color: var(--primary-blue); display: flex; align-items: center; gap: 15px; padding-bottom: 20px; border-bottom: 2px solid rgba(0, 212, 255, 0.3); }
         
-        .content-section h3:nth-of-type(2)::before { content: '💡'; }
-        .content-section h3:nth-of-type(3)::before { content: '📊'; }
-        .content-section h3:nth-of-type(4)::before { content: '🔮'; }
+        .news-lead { font-size: 1.3rem; line-height: 2.2; color: var(--text-secondary); margin-bottom: 50px; padding: 30px; background: linear-gradient(135deg, rgba(0, 212, 255, 0.08) 0%, rgba(123, 44, 191, 0.08) 100%); border-left: 5px solid var(--primary-blue); border-radius: 16px; }
         
-        .content-section p { color: var(--text-secondary); line-height: 2.2; font-size: 1.08rem; margin: 25px 0; text-align: justify; }
+        .tech-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin: 40px 0; }
+        .tech-card { background: var(--card-bg-light); padding: 30px; border-radius: 16px; border: 1px solid rgba(0, 212, 255, 0.15); transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .tech-card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0, 212, 255, 0.2); }
+        .tech-card-icon { font-size: 2.5rem; margin-bottom: 15px; }
+        .tech-card h3 { font-size: 1.4rem; color: var(--accent-green); margin-bottom: 12px; }
+        .tech-card p { color: var(--text-secondary); line-height: 1.8; font-size: 1rem; }
         
-        .content-section ul, .content-section ol { margin: 30px 0; padding-left: 40px; }
-        .content-section li { margin: 15px 0; line-height: 2; color: var(--text-secondary); font-size: 1.05rem; }
-        .content-section ul li { list-style-type: none; position: relative; padding-left: 25px; }
-        .content-section ul li::before { content: '▸'; color: var(--primary-blue); font-size: 1.5rem; position: absolute; left: 0; top: -5px; }
+        .comparison-table { width: 100%; border-collapse: collapse; margin: 40px 0; background: var(--card-bg-light); border-radius: 16px; overflow: hidden; }
+        .comparison-table th { background: var(--gradient-1); padding: 20px; text-align: left; font-weight: 700; font-size: 1.1rem; }
+        .comparison-table td { padding: 18px 20px; border-bottom: 1px solid rgba(255, 255, 255, 0.05); color: var(--text-secondary); }
+        .comparison-table tr:last-child td { border-bottom: none; }
+        .comparison-table tr:hover { background: rgba(0, 212, 255, 0.05); }
         
-        .content-section strong { color: var(--text-primary); font-weight: 600; }
+        .timeline { position: relative; padding: 20px 0; }
+        .timeline-item { position: relative; padding-left: 60px; margin-bottom: 30px; }
+        .timeline-item::before { content: ''; position: absolute; left: 0; top: 0; width: 3px; height: 100%; background: var(--gradient-1); }
+        .timeline-item::after { content: ''; position: absolute; left: -6px; top: 5px; width: 15px; height: 15px; background: var(--primary-blue); border-radius: 50%; box-shadow: var(--glow-blue); }
+        .timeline-date { font-size: 1.1rem; color: var(--primary-blue); font-weight: 700; margin-bottom: 8px; }
+        .timeline-content { color: var(--text-secondary); line-height: 1.8; }
         
-        /* Highlight Boxes */
-        .highlight-box { background: linear-gradient(135deg, rgba(0, 255, 136, 0.08) 0%, rgba(0, 212, 255, 0.08) 100%); padding: 30px; border-radius: 16px; border-left: 5px solid var(--accent-green); margin: 40px 0; }
-        .highlight-box h4 { color: var(--accent-green); margin-bottom: 15px; font-size: 1.3rem; display: flex; align-items: center; gap: 10px; }
-        .highlight-box h4::before { content: '✨'; }
-        .highlight-box p { color: var(--text-secondary); margin: 0; }
+        .info-box { background: linear-gradient(135deg, rgba(0, 212, 255, 0.1) 0%, rgba(123, 44, 191, 0.1) 100%); padding: 30px; border-radius: 16px; border: 1px solid rgba(0, 212, 255, 0.3); margin: 40px 0; }
+        .info-box h3 { color: var(--primary-blue); margin-bottom: 20px; font-size: 1.5rem; }
+        .info-box ul { padding-left: 25px; }
+        .info-box li { margin: 12px 0; color: var(--text-secondary); line-height: 1.8; }
         
-        /* Info Box */
-        .info-box { background: linear-gradient(135deg, rgba(0, 212, 255, 0.1) 0%, rgba(123, 44, 191, 0.1) 100%); padding: 25px; border-radius: 16px; border: 1px solid rgba(0, 212, 255, 0.3); margin: 35px 0; }
-        .info-box p { margin: 10px 0; color: var(--text-secondary); }
-        .info-box strong { color: var(--primary-blue); }
+        .quote-box { background: linear-gradient(135deg, rgba(0, 255, 136, 0.08) 0%, rgba(0, 212, 255, 0.08) 100%); padding: 35px; border-radius: 16px; border-left: 5px solid var(--accent-green); margin: 40px 0; position: relative; }
+        .quote-box::before { content: '"'; font-size: 5rem; color: var(--accent-green); opacity: 0.3; position: absolute; top: -10px; left: 20px; }
+        .quote-box p { color: var(--text-secondary); font-size: 1.2rem; line-height: 2; font-style: italic; margin-left: 30px; }
+        .quote-box cite { display: block; margin-top: 20px; color: var(--primary-blue); font-weight: 600; font-style: normal; margin-left: 30px; }
         
-        /* Meta Info */
         .meta-info { background: linear-gradient(135deg, rgba(0, 212, 255, 0.15) 0%, rgba(123, 44, 191, 0.15) 100%); padding: 30px; border-radius: 16px; margin-bottom: 40px; border-left: 5px solid var(--primary-blue); }
         .meta-info p { margin: 12px 0; color: var(--text-secondary); font-size: 1.05rem; }
         .meta-info strong { color: var(--primary-blue); font-weight: 600; }
         .meta-info a { color: var(--primary-blue); text-decoration: none; border-bottom: 1px dashed var(--primary-blue); }
         
-        /* Footer */
-        footer { background: #050508; padding: 60px 20px; text-align: center; border-top: 1px solid rgba(255, 255, 255, 0.1); }
+        footer { background: #050508; padding: 60px 20px; text-align: center; border-top: 1px solid rgba(255, 255, 255, 0.1); margin-top: 80px; }
         footer p { color: var(--text-secondary); margin-bottom: 20px; }
         .footer-links { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; }
         .footer-links a { color: var(--primary-blue); text-decoration: none; transition: color 0.3s ease; }
         .footer-links a:hover { color: var(--text-primary); }
 
-        /* RWD */
         @media (max-width: 768px) {
             .content-section { padding: 40px 25px; }
             .hero-images { grid-template-columns: 1fr; }
-            .content-section h2 { font-size: 1.6rem; }
-            .content-section h3 { font-size: 1.3rem; }
+            .section-title { font-size: 1.8rem; }
+            .tech-cards { grid-template-columns: 1fr; }
+            .comparison-table { font-size: 0.9rem; }
+            .timeline-item { padding-left: 40px; }
         }
     </style>
 </head>
 <body>
-    <!-- 代碼雨背景 -->
     <div class="code-rain" id="codeRain"></div>
 
-    <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
             <span class="hero-badge">📰 AI News 專題報道</span>
-            <h1>AI正以50倍速改寫人類壽命！別再只會問ChatGPT！DeepMind創辦人爆料：普通人翻盤機會就在這 🧬✨</h1>
-            <p class="hero-subtitle">創辦人戴密斯哈薩比斯在最新的一次深度訪談中揭示了技術如何以前所未有的速度推進人類醫學和科學的進步特別是在解決蛋白質折疊問題上取得了突破性成果透過等工具已經將原本需要數十年才能完成的研究工作縮短至幾分鐘內這不僅為藥物研發帶來革命性的變化也預示著一個全新的時代即將到來在這個時代裡將成為解開宇宙奧秘延長人...</p>
-            <div class="hero-images"><div class="hero-image-card"><img src="./img/img1.png" alt="新聞插圖"></div>
-</div>
+            <h1>AI 正以 50 倍速改寫人類壽命！DeepMind 創辦人爆料普通人翻盤機會 🧬✨</h1>
+            <p class="hero-subtitle">諾貝爾獎得主戴密斯·哈薩比斯揭示 AlphaFold 如何將數十年研究縮短至幾分鐘，AI 設計藥物已進入臨床試驗，普通人如何抓住這場生物醫學革命？</p>
+            <div class="hero-images">
+                <div class="hero-image-card">
+                    <img src="./img/img1.png" alt="AlphaFold 蛋白質結構預測 AI 科技風格插圖">
+                </div>
+            </div>
         </div>
         <div class="scroll-indicator"><span></span></div>
     </section>
 
-    <!-- Content Section -->
-    <section>
-        <div class="content-section">
-            <!-- Meta Info -->
+    <div class="container">
+        <section class="content-section">
             <div class="meta-info">
-                <p><strong>📌 資料來源</strong>：<a href="https://youtu.be/jqaEVlEoy8M?si=PQB_DoDHtAs3Jxj2" target="_blank" style="word-break: break-all;">https://youtu.be/jqaEVlEoy8M?si=PQB_DoDHtAs3Jxj2</a></p>
-                <p><strong>📅 發布日期</strong>：2026-04-08</p>
-                <p><strong>🤖 處理方式</strong>：AI 智能摘要生成</p>
+                <p><strong>📌 資料來源</strong>：<a href="https://youtu.be/jqaEVlEoy8M?si=PQB_DoDHtAs3Jxj2" target="_blank">YouTube 專題影片</a></p>
+                <p><strong>📅 發布日期</strong>：2026 年 4 月 8 日</p>
+                <p><strong>🤖 處理方式</strong>：AI 智能摘要 + 深度編輯</p>
+                <p><strong>🏆 相關榮譽</strong>：2024 年諾貝爾化學獎</p>
             </div>
-            
-            <!-- Main Content -->
-            <div class="markdown-content"><p>新聞導語 DeepMind創辦人戴密斯·哈薩比斯在最新的一次深度訪談中揭示了AI技術如何以前所未有的速度推進人類醫學和科學的進步，特別是在解決蛋白質折疊問題上取得了突破性成果。透過Alphafold等工具，AI已經將原本需要數十年才能完成的研究工作縮短至幾分鐘內，這不僅為藥物研發帶來革命性的變化，也預示著一個全新的時代即將到來，在這個時代裡，AI將成為解開宇宙奧秘、延長人類壽命甚至實現星際移民的關鍵力量。</p>
 
-<ul>
-<li><strong>AI加速生物醫學研究</strong>：Alphafold成功破解蛋白質結構預測難題，極大加快新藥開發流程。</li>
-<li><strong>創造力與直覺</strong>：透過自我學習和模擬對抗，AI展示出超越人類經驗範疇的創新能力。</li>
-<li><strong>潛在風險</strong>：隨著技術日益強大，如何確保其不被惡意利用成為亟待解決的問題。</li>
-<li><strong>未來藍圖</strong>：從根治疾病到實現可控核聚變，直至星際探索，AI將是推動這些變革的核心動力。</li>
-<li><strong>個人發展建議</strong>：普通民眾應積極學習並應用AI技術，以抓住新興機會。</li>
-</ul>
+            <h2 class="section-title">📖 新聞導語</h2>
+            <div class="news-lead">
+                Google DeepMind 創辦人兼 CEO 戴密斯·哈薩比斯（Demis Hassabis）在最新訪談中揭示了 AI 技術如何以前所未有的速度推進人類醫學和科學進步。AlphaFold 已成功預測 virtually all 2 億種已知蛋白質結構，這項工作若以傳統方法完成需要 10 億年。更令人興奮的是，<strong>AI 設計的藥物已於 2025 年進入臨床試驗階段</strong>，預計 2026 年初將開始針對癌症的臨床試驗。這不僅為藥物研發帶來革命性變化，更預示著 AI 將成為延長人類壽命、實現星際移民的關鍵力量。
+            </div>
 
-<p>詳細分析 根據本次報告，AI正以前所未有的速度改變著我們的生活方式乃至整個文明程序。其中最引人注目的成就之一便是DeepMind團隊開發的Alphafold系統，它能夠快速準確地預測蛋白質三維結構，這對於理解生命機制以及設計新型療法具有里程碑式的意義。在此之前，科學家們往往需要耗費大量時間和資源才能獲得少量資料；而現在，藉助於強大的計算能力和精確演算法，僅需短短幾分鐘就能完成過去數月甚至數年的工作量。</p>
+            <h2 class="section-title">🎯 核心技術突破</h2>
+            <div class="tech-cards">
+                <div class="tech-card">
+                    <div class="tech-card-icon">🧬</div>
+                    <h3>蛋白質結構預測</h3>
+                    <p>AlphaFold 2 以原子級精度預測蛋白質 3D 結構，誤差小於 1 埃（Ångström），準確度超越實驗方法 3 倍</p>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-card-icon">⚡</div>
+                    <h3>50 倍速研發</h3>
+                    <p>原本需要數十年的研究工作縮短至幾分鐘，AlphaFold Server 為科研人員提供免費的 AF3 結構預測服務</p>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-card-icon">💊</div>
+                    <h3>AI 設計藥物</h3>
+                    <p>2025 年已有 AI 設計藥物進入臨床試驗，AlphaFold 3 可模擬蛋白質與藥物、DNA、RNA 的相互作用</p>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-card-icon">🏆</div>
+                    <h3>諾貝爾獎認可</h3>
+                    <p>哈薩比斯與 John Jumper 榮獲 2024 年諾貝爾化學獎，表彰 AlphaFold 對科學的開創性貢獻</p>
+                </div>
+            </div>
 
-<p>此外，AI還展現出了令人驚嘆的創造性和直覺水平。例如，在圍棋比賽中，AlphaGo曾經下出了一手連專業選手都感到不可思議的好棋，充分證明瞭機器學習模型具備獨立思考並作出超乎常規決策的能力。這種特性使得AI不僅能在已知領域內最佳化現有解決方案，更有可能開創出全新方向，為人類社會帶來意想不到的突破。</p>
+            <h2 class="section-title">📊 AlphaFold 模型家族對比</h2>
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>模型版本</th>
+                        <th>發布時間</th>
+                        <th>核心能力</th>
+                        <th>準確度</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>AlphaFold 1</strong></td>
+                        <td>2018 年</td>
+                        <td>CASP13 競賽冠軍，首次證明 AI 可行性</td>
+                        <td>傳統方法水平</td>
+                    </tr>
+                    <tr>
+                        <td><strong>AlphaFold 2</strong></td>
+                        <td>2020 年</td>
+                        <td>解決 50 年蛋白質折疊問題，預測 2 億種結構</td>
+                        <td>&lt;1Å 誤差（原子級）</td>
+                    </tr>
+                    <tr>
+                        <td><strong>AlphaFold 3</strong></td>
+                        <td>2024-2025 年</td>
+                        <td>蛋白質 + 藥物+DNA+RNA 複合物模擬</td>
+                        <td>進一步提升</td>
+                    </tr>
+                    <tr>
+                        <td><strong>AlphaFold Server</strong></td>
+                        <td>2024 年</td>
+                        <td>免費科研平台，非商業研究使用</td>
+                        <td>AF3 引擎</td>
+                    </tr>
+                </tbody>
+            </table>
 
-<p>然而，隨著AI技術不斷進步，其所帶來的安全隱患也不容忽視。研究指出，若缺乏有效監管，則存在被用於製造生化武器或進行網路攻擊等非法活動的可能性。因此，如何平衡技術發展與道德約束之間的關係成為當前亟待解決的重要課題。</p>
+            <h2 class="section-title">📌 重要發展時間軸</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date">2016 年 3 月</div>
+                    <div class="timeline-content">AlphaGo 擊敗世界冠軍李世乭，證明 AI 具備解決科學難題的潛力，DeepMind 組建蛋白質折疊研究團隊</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2018 年 12 月</div>
+                    <div class="timeline-content">AlphaFold 1 在 CASP13 競賽中奪冠，方法論發表於《Nature》期刊</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2020 年 11 月</div>
+                    <div class="timeline-content">AlphaFold 2 在 CASP14 以壓倒性優勢獲勝，被評為「解決 50 年蛋白質折疊問題」</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2021 年 7 月</div>
+                    <div class="timeline-content">AlphaFold 完整方法論發表於《Nature》，開源代碼，論文被引用超過 40,000 次</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2024 年</div>
+                    <div class="timeline-content">哈薩比斯與 Jumper 榮獲諾貝爾化學獎，AlphaFold Server 上線提供免費服務</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2025 年</div>
+                    <div class="timeline-content">首批 AI 設計藥物進入臨床試驗階段</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2026 年初（預計）</div>
+                    <div class="timeline-content">AI 設計癌症藥物開始臨床試驗</div>
+                </div>
+            </div>
 
-<p>展望未來，專家分析認為AI將在更多方面發揮重要作用，包括尋找新能源、改進教育體系乃至實現星際旅行等宏偉目標。為了迎接這一變革，個人也需要適應新環境，透過掌握相關知識技能來提升自身競爭力。正如哈薩比斯所建議的那樣，“順流而下，全面武裝”，唯有如此方能在未來社會中站穩腳跟。</p>
+            <div class="info-box">
+                <h3>💡 應用前景</h3>
+                <ul>
+                    <li><strong>新藥研發</strong>：加速抗癌藥物、抗生素、罕見病治療方案開發</li>
+                    <li><strong>疾病根治</strong>：理解阿茲海默症、帕金森症等神經退化性疾病的蛋白質機制</li>
+                    <li><strong>合成生物學</strong>：設計人工蛋白質用於降解塑膠、生產生質燃料</li>
+                    <li><strong>個人化醫療</strong>：根據個人基因組設計定制化治療方案</li>
+                    <li><strong>可控核融合</strong>：AI 輔助設計更高效的材料與反應器</li>
+                    <li><strong>星際探索</strong>：開發適應太空環境的生物技術與生命維持系統</li>
+                </ul>
+            </div>
 
-<p>業界展望 面對AI技術日新月異的發展態勢，業界普遍看好其長期前景。不過，要真正實現上述美好願景，除了持續加大科研投入外，還需建立完善的法律框架與倫理標準，確保技術應用始終處於安全可控範圍之內。同時，跨國合作亦十分關鍵，只有全球共同努力才能克服挑戰，共同迎接一個更加光明的未來。</p></div>
-        </div>
-    </section>
+            <h2 class="section-title">⚠️ 潛在風險與挑戰</h2>
+            <div class="info-box" style="border-left: 5px solid var(--accent-orange); background: linear-gradient(135deg, rgba(255, 149, 0, 0.1) 0%, rgba(255, 95, 0, 0.1) 100%);">
+                <ul>
+                    <li><strong>生物安全</strong>：技術可能被濫用於製造生化武器或進行網路攻擊</li>
+                    <li><strong>倫理監管</strong>：需要建立完善的法律框架與倫理標準</li>
+                    <li><strong>技術壟斷</strong>：確保技術普及而非被少數機構壟斷</li>
+                    <li><strong>跨國合作</strong>：全球共同努力才能克服挑戰</li>
+                </ul>
+            </div>
 
-    <!-- Footer -->
+            <div class="quote-box">
+                <p>順流而下，全面武裝。普通人應該積極學習並應用 AI 技術，以抓住新興機會。AI 不僅是科學家的工具，它將成為每個人日常生活的一部分。</p>
+                <cite>— 戴密斯·哈薩比斯（Demis Hassabis），Google DeepMind 創辦人兼 CEO，2024 年諾貝爾化學獎得主</cite>
+            </div>
+
+            <h2 class="section-title">🚀 普通人如何抓住機會？</h2>
+            <div class="info-box">
+                <ul>
+                    <li><strong>學習 AI 基礎</strong>：掌握機器學習、深度學習的基本概念與工具</li>
+                    <li><strong>關注生物資訊</strong>：了解蛋白質結構、基因組學等前沿領域</li>
+                    <li><strong>使用開放資源</strong>：AlphaFold Server、Colab 等平台提供免費學習資源</li>
+                    <li><strong>跨領域整合</strong>：結合自身專業與 AI 技術，創造獨特價值</li>
+                    <li><strong>保持好奇心</strong>：AI 領域日新月異，持續學習是關鍵</li>
+                </ul>
+            </div>
+        </section>
+    </div>
+
     <footer>
-        <p>© 2026-04-08 AI News Archive | 由 AI 技術生成</p>
+        <p>© 2026 AI News 專題報道 | 由 AI 智能生成</p>
         <div class="footer-links">
-            <a href="../index.html">返回主頁</a>
-            <a href="https://github.com/hklamsir/ai_news" target="_blank">GitHub</a>
-            <a href="https://hklamsir.github.io/ai_news/" target="_blank">瀏覽所有專題</a>
+            <a href="https://github.com/hklamsir/ai_news" target="_blank">GitHub 倉庫</a>
+            <a href="https://hklamsir.github.io/ai_news/" target="_blank">主頁</a>
+            <a href="https://deepmind.google/science/alphafold/" target="_blank">DeepMind AlphaFold</a>
         </div>
     </footer>
 
     <script>
-        // 代碼雨效果
-        function createCodeRain() {
-            const codeRain = document.getElementById('codeRain');
-            const chars = '01 アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン';
-            for (let i = 0; i < 50; i++) {
-                const char = document.createElement('div');
-                char.className = 'code-char';
-                char.textContent = chars[Math.floor(Math.random() * chars.length)];
-                char.style.left = Math.random() * 100 + '%';
-                char.style.animationDelay = Math.random() * 4 + 's';
-                char.style.animationDuration = (Math.random() * 2 + 3) + 's';
-                codeRain.appendChild(char);
-            }
+        const codeRain = document.getElementById('codeRain');
+        const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%^&*()';
+        
+        function createCodeChar() {
+            const char = document.createElement('div');
+            char.className = 'code-char';
+            char.textContent = chars[Math.floor(Math.random() * chars.length)];
+            char.style.left = Math.random() * 100 + '%';
+            char.style.animationDelay = Math.random() * 4 + 's';
+            codeRain.appendChild(char);
+            
+            setTimeout(() => char.remove(), 4000);
         }
-
-        // 滾動動畫
-        function handleScrollAnimation() {
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.style.opacity = '1';
-                        entry.target.style.transform = 'translateY(0)';
-                    }
-                });
-            }, { threshold: 0.1 });
-
-            document.querySelectorAll('.content-section, .hero-content').forEach(el => {
-                el.style.opacity = '0';
-                el.style.transform = 'translateY(30px)';
-                el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-                observer.observe(el);
+        
+        setInterval(createCodeChar, 100);
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
             });
-        }
-
-        document.addEventListener('DOMContentLoaded', () => {
-            createCodeRain();
-            handleScrollAnimation();
-        });
-
-        window.addEventListener('resize', () => {
-            document.getElementById('codeRain').innerHTML = '';
-            createCodeRain();
+        }, { threshold: 0.1 });
+        
+        document.querySelectorAll('.tech-card, .timeline-item, .info-box, .quote-box').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
         });
     </script>
 </body>
