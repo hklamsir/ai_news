@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Claude Code 原始碼外洩事件！6 大底層設計揭秘：為什麼它比其它 AI 好用？ | AI News 專題報道</title>
+    <title>Claude Code 原始碼外洩事件！6 大底層設計揭秘 | AI News 專題報道</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
@@ -33,17 +33,15 @@
         @keyframes slideIn { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
         @keyframes codeRain { 0% { transform: translateY(-100%); opacity: 0; } 10% { opacity: 1; } 90% { opacity: 1; } 100% { transform: translateY(100vh); opacity: 0; } }
 
-        /* 代碼雨背景 */
         .code-rain { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; overflow: hidden; }
         .code-char { position: absolute; color: var(--primary-blue); font-family: 'Courier New', monospace; font-size: 14px; opacity: 0; animation: codeRain 4s linear infinite; }
 
-        /* Hero Section */
         .hero { position: relative; min-height: 80vh; display: flex; align-items: center; justify-content: center; padding: 80px 20px; background: linear-gradient(180deg, var(--dark-bg) 0%, #1a1a2e 100%); overflow: hidden; }
         .hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(ellipse at center, rgba(123, 44, 191, 0.15) 0%, transparent 70%); z-index: 1; }
         .hero-content { position: relative; z-index: 2; max-width: 1200px; text-align: center; animation: slideIn 1s ease-out; }
         .hero-badge { display: inline-block; padding: 12px 32px; background: var(--gradient-1); border-radius: 50px; font-size: 18px; font-weight: 700; margin-bottom: 24px; box-shadow: var(--glow-blue); letter-spacing: 1px; }
-        .hero h1 { font-size: clamp(2rem, 5vw, 4rem); font-weight: 900; margin-bottom: 24px; background: var(--gradient-1); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; line-height: 1.2; }
-        .hero-subtitle { font-size: clamp(1.2rem, 2.2vw, 1.6rem); color: var(--text-primary); max-width: 900px; margin: 0 auto 40px; line-height: 1.6; font-weight: 400; }
+        .hero h1 { font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 900; margin-bottom: 24px; background: var(--gradient-1); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; line-height: 1.2; }
+        .hero-subtitle { font-size: clamp(1.1rem, 2vw, 1.5rem); color: var(--text-primary); max-width: 900px; margin: 0 auto 40px; line-height: 1.6; font-weight: 300; }
         .hero-images { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; margin-top: 60px; }
         .hero-image-card { position: relative; border-radius: 20px; overflow: hidden; aspect-ratio: 16/9; box-shadow: var(--glow-purple); transition: transform 0.3s ease, box-shadow 0.3s ease; }
         .hero-image-card:hover { transform: scale(1.02); box-shadow: 0 0 40px rgba(123, 44, 191, 0.7); }
@@ -52,289 +50,340 @@
         .scroll-indicator span { display: block; width: 30px; height: 50px; border: 2px solid var(--primary-blue); border-radius: 25px; position: relative; }
         .scroll-indicator span::before { content: ''; position: absolute; top: 8px; left: 50%; transform: translateX(-50%); width: 6px; height: 10px; background: var(--primary-blue); border-radius: 3px; animation: pulse 1.5s infinite; }
 
-        /* Content Section */
         section { padding: 80px 20px; position: relative; z-index: 1; }
-        .content-section { background: var(--card-bg); padding: 60px 50px; border-radius: 24px; border: 1px solid rgba(0, 212, 255, 0.2); max-width: 1100px; margin: 0 auto; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3); }
+        .container { max-width: 1200px; margin: 0 auto; }
         
-        .content-section h2 { font-size: 2rem; margin-bottom: 40px; color: var(--primary-blue); display: flex; align-items: center; gap: 15px; padding-bottom: 20px; border-bottom: 2px solid rgba(0, 212, 255, 0.3); }
-        .content-section h2::before { content: '📖'; font-size: 2.5rem; }
+        .content-section { background: var(--card-bg); padding: 60px 50px; border-radius: 24px; border: 1px solid rgba(0, 212, 255, 0.2); margin: 40px auto; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3); }
         
-        .content-section h3 { font-size: 1.6rem; margin: 50px 0 25px; color: var(--accent-green); display: flex; align-items: center; gap: 12px; }
-        .content-section h3::before { content: '🎯'; font-size: 2rem; }
+        .section-title { font-size: 2.2rem; margin-bottom: 40px; color: var(--primary-blue); display: flex; align-items: center; gap: 15px; padding-bottom: 20px; border-bottom: 2px solid rgba(0, 212, 255, 0.3); }
         
-        .content-section h3:nth-of-type(2)::before { content: '💡'; }
-        .content-section h3:nth-of-type(3)::before { content: '📊'; }
-        .content-section h3:nth-of-type(4)::before { content: '🔮'; }
+        .news-lead { font-size: 1.3rem; line-height: 2.2; color: var(--text-secondary); margin-bottom: 50px; padding: 30px; background: linear-gradient(135deg, rgba(0, 212, 255, 0.08) 0%, rgba(123, 44, 191, 0.08) 100%); border-left: 5px solid var(--primary-blue); border-radius: 16px; }
         
-        .content-section p { color: var(--text-secondary); line-height: 2.2; font-size: 1.08rem; margin: 25px 0; text-align: justify; }
+        .tech-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin: 40px 0; }
+        .tech-card { background: var(--card-bg-light); padding: 30px; border-radius: 16px; border: 1px solid rgba(0, 212, 255, 0.15); transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .tech-card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0, 212, 255, 0.2); }
+        .tech-card-icon { font-size: 2.5rem; margin-bottom: 15px; }
+        .tech-card h3 { font-size: 1.4rem; color: var(--accent-green); margin-bottom: 12px; }
+        .tech-card p { color: var(--text-secondary); line-height: 1.8; font-size: 1rem; }
         
-        .content-section ul, .content-section ol { margin: 30px 0; padding-left: 40px; }
-        .content-section li { margin: 15px 0; line-height: 2; color: var(--text-secondary); font-size: 1.05rem; }
-        .content-section ul li { list-style-type: none; position: relative; padding-left: 25px; }
-        .content-section ul li::before { content: '▸'; color: var(--primary-blue); font-size: 1.5rem; position: absolute; left: 0; top: -5px; }
+        .comparison-table { width: 100%; border-collapse: collapse; margin: 40px 0; background: var(--card-bg-light); border-radius: 16px; overflow: hidden; }
+        .comparison-table th { background: var(--gradient-1); padding: 20px; text-align: left; font-weight: 700; font-size: 1.1rem; }
+        .comparison-table td { padding: 18px 20px; border-bottom: 1px solid rgba(255, 255, 255, 0.05); color: var(--text-secondary); }
+        .comparison-table tr:last-child td { border-bottom: none; }
+        .comparison-table tr:hover { background: rgba(0, 212, 255, 0.05); }
         
-        .content-section strong { color: var(--text-primary); font-weight: 600; }
+        .timeline { position: relative; padding: 20px 0; }
+        .timeline-item { position: relative; padding-left: 60px; margin-bottom: 30px; }
+        .timeline-item::before { content: ''; position: absolute; left: 0; top: 0; width: 3px; height: 100%; background: var(--gradient-1); }
+        .timeline-item::after { content: ''; position: absolute; left: -6px; top: 5px; width: 15px; height: 15px; background: var(--primary-blue); border-radius: 50%; box-shadow: var(--glow-blue); }
+        .timeline-date { font-size: 1.1rem; color: var(--primary-blue); font-weight: 700; margin-bottom: 8px; }
+        .timeline-content { color: var(--text-secondary); line-height: 1.8; }
         
-        /* Highlight Boxes */
-        .highlight-box { background: linear-gradient(135deg, rgba(0, 255, 136, 0.08) 0%, rgba(0, 212, 255, 0.08) 100%); padding: 30px; border-radius: 16px; border-left: 5px solid var(--accent-green); margin: 40px 0; }
-        .highlight-box h4 { color: var(--accent-green); margin-bottom: 15px; font-size: 1.3rem; display: flex; align-items: center; gap: 10px; }
-        .highlight-box h4::before { content: '✨'; }
-        .highlight-box p { color: var(--text-secondary); margin: 0; }
+        .info-box { background: linear-gradient(135deg, rgba(0, 212, 255, 0.1) 0%, rgba(123, 44, 191, 0.1) 100%); padding: 30px; border-radius: 16px; border: 1px solid rgba(0, 212, 255, 0.3); margin: 40px 0; }
+        .info-box h3 { color: var(--primary-blue); margin-bottom: 20px; font-size: 1.5rem; }
+        .info-box ul { padding-left: 25px; }
+        .info-box li { margin: 12px 0; color: var(--text-secondary); line-height: 1.8; }
         
-        /* Info Box */
-        .info-box { background: linear-gradient(135deg, rgba(0, 212, 255, 0.1) 0%, rgba(123, 44, 191, 0.1) 100%); padding: 25px; border-radius: 16px; border: 1px solid rgba(0, 212, 255, 0.3); margin: 35px 0; }
-        .info-box p { margin: 10px 0; color: var(--text-secondary); }
-        .info-box strong { color: var(--primary-blue); }
+        .quote-box { background: linear-gradient(135deg, rgba(0, 255, 136, 0.08) 0%, rgba(0, 212, 255, 0.08) 100%); padding: 35px; border-radius: 16px; border-left: 5px solid var(--accent-green); margin: 40px 0; position: relative; }
+        .quote-box::before { content: '"'; font-size: 5rem; color: var(--accent-green); opacity: 0.3; position: absolute; top: -10px; left: 20px; }
+        .quote-box p { color: var(--text-secondary); font-size: 1.2rem; line-height: 2; font-style: italic; margin-left: 30px; }
+        .quote-box cite { display: block; margin-top: 20px; color: var(--primary-blue); font-weight: 600; font-style: normal; margin-left: 30px; }
         
-        /* Meta Info */
         .meta-info { background: linear-gradient(135deg, rgba(0, 212, 255, 0.15) 0%, rgba(123, 44, 191, 0.15) 100%); padding: 30px; border-radius: 16px; margin-bottom: 40px; border-left: 5px solid var(--primary-blue); }
         .meta-info p { margin: 12px 0; color: var(--text-secondary); font-size: 1.05rem; }
         .meta-info strong { color: var(--primary-blue); font-weight: 600; }
         .meta-info a { color: var(--primary-blue); text-decoration: none; border-bottom: 1px dashed var(--primary-blue); }
         
-        /* Footer */
-        footer { background: #050508; padding: 60px 20px; text-align: center; border-top: 1px solid rgba(255, 255, 255, 0.1); }
+        .stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin: 40px 0; }
+        .stat-card { background: linear-gradient(135deg, rgba(0, 212, 255, 0.1) 0%, rgba(123, 44, 191, 0.1) 100%); padding: 25px; border-radius: 16px; text-align: center; border: 1px solid rgba(0, 212, 255, 0.2); }
+        .stat-number { font-size: 2.5rem; font-weight: 900; color: var(--primary-blue); margin-bottom: 10px; }
+        .stat-label { color: var(--text-secondary); font-size: 1rem; }
+        
+        footer { background: #050508; padding: 60px 20px; text-align: center; border-top: 1px solid rgba(255, 255, 255, 0.1); margin-top: 80px; }
         footer p { color: var(--text-secondary); margin-bottom: 20px; }
         .footer-links { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; }
         .footer-links a { color: var(--primary-blue); text-decoration: none; transition: color 0.3s ease; }
         .footer-links a:hover { color: var(--text-primary); }
 
-        /* RWD */
         @media (max-width: 768px) {
             .content-section { padding: 40px 25px; }
             .hero-images { grid-template-columns: 1fr; }
-            .content-section h2 { font-size: 1.6rem; }
-            .content-section h3 { font-size: 1.3rem; }
+            .section-title { font-size: 1.8rem; }
+            .tech-cards { grid-template-columns: 1fr; }
+            .comparison-table { font-size: 0.9rem; }
+            .timeline-item { padding-left: 40px; }
+            .stat-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
-    <!-- 代碼雨背景 -->
     <div class="code-rain" id="codeRain"></div>
 
-    <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
             <span class="hero-badge">📰 AI News 專題報道</span>
-            <h1>Claude Code 原始碼外洩事件！6 大底層設計揭秘：為什麼它比其它 AI 好用？</h1>
-            <p class="hero-subtitle">就在上週不小心把的原始碼外洩了一個年收估計億美金的產品多個檔案萬行程式碼全部被攤在陽光下的自己說過公司內部有的程式碼是寫的的創始工程師也表示自己已經好幾個月沒有</p>
-            <div class="hero-images"><div class="hero-image-card"><img src="./img/img1.png" alt="新聞插圖"></div>
-</div>
+            <h1>Claude Code 原始碼外洩事件！6 大底層設計揭秘 🚨💻</h1>
+            <p class="hero-subtitle">51 萬行程式碼、1900 多個檔案全部曝光！Anthropic 年收 25 億產品底層架構完整解析，揭示 AI Agent 為何真正好用</p>
+            <div class="hero-images">
+                <div class="hero-image-card">
+                    <img src="./img/img1.png" alt="Claude Code 原始碼外洩 AI 科技風格插圖">
+                </div>
+            </div>
         </div>
         <div class="scroll-indicator"><span></span></div>
     </section>
 
-    <!-- Content Section -->
-    <section>
-        <div class="content-section">
-            <!-- Meta Info -->
+    <div class="container">
+        <section class="content-section">
             <div class="meta-info">
-                <p><strong>📌 資料來源</strong>：<a href="https://youtu.be/-cnAz897A_0?si=Ez5290mBNzW39JLr" target="_blank" style="word-break: break-all;">https://youtu.be/-cnAz897A_0?si=Ez5290mBNzW39JLr</a></p>
-                <p><strong>📅 發布日期</strong>：2026-04-08</p>
-                <p><strong>🤖 處理方式</strong>：AI 智能摘要生成</p>
+                <p><strong>📌 資料來源</strong>：<a href="https://youtu.be/-cnAz897A_0?si=Ez5290mBNzW39JLr" target="_blank">YouTube 深度分析影片</a></p>
+                <p><strong>📅 發布日期</strong>：2026 年 4 月 8 日</p>
+                <p><strong>🔒 事件時間</strong>：2026 年 3 月 31 日 00:21-03:29 UTC</p>
+                <p><strong>🤖 處理方式</strong>：AI 智能摘要 + 深度編輯</p>
             </div>
-            
-            <!-- Main Content -->
-            <div class="markdown-content"><p>新聞導語 就在上週，Anthropic 不小心把 Claude Code 的原始碼外洩了，一個年收估計 25 億美金的產品，1900 多個檔案、51 萬行程式碼全部被攤在陽光下。Anthropic 的 CEO Dario Amodei 自己說過，公司內部有 70%-90% 的程式碼是 Claude 寫的。Claude Code 的創始工程師 Boris Power 也表示自己已經好幾個月沒有親手改過一行 code。這次外洩事件揭示了 AI 時代的真相：懂得跟 AI 協作的團隊，效率可以是別人的好幾倍，但風險也同樣放大。</p>
 
-<ul>
-<li><strong>原始碼外洩規模</strong>：1900 多個檔案，51 萬行程式碼，年收 25 億美金產品</li>
-<li><strong>AI 編程比例</strong>：Anthropic 內部 70%-90% 程式碼由 Claude 生成</li>
-<li><strong>核心發現</strong>：AI 模型只佔系統 20%，80% 是底層基礎建設</li>
-<li><strong>6 大底層設計</strong>：Permission 框架、Session 持久化、Budget 管理、系統日誌、系統瘦身、模組化</li>
-<li><strong>安全機制</strong>：單一命令需通過 18 個獨立安全模組檢查</li>
-<li><strong>深度防禦</strong>：分層安全檢查，任何一層漏掉下一層還有機會攔住</li>
-</ul>
+            <h2 class="section-title">📖 新聞導語</h2>
+            <div class="news-lead">
+                2026 年 3 月 31 日凌晨，Anthropic 在發布 Claude Code 時因打包失誤，將<strong>1900 多個檔案、51 萬行原始碼</strong>意外暴露於 npm 註冊表中。這段期間任何執行 npm install 的用戶都能下載到完整的客戶端架構代碼。Anthropic 發言人確認：<strong>「這是人為錯誤導致的發布包裝問題，非安全漏洞，無客戶數據或憑證外洩」</strong>。這次事件意外揭示了 AI Agent 框架的真正護城河——不是 Model 本身，而是那 80% 的底層基礎建設。
+            </div>
 
-<p>詳細分析</p>
+            <div class="stat-grid">
+                <div class="stat-card">
+                    <div class="stat-number">1,900+</div>
+                    <div class="stat-label">外洩檔案數</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">510,000</div>
+                    <div class="stat-label">程式碼行數</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">25 億</div>
+                    <div class="stat-label">年收估計 (USD)</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">70-90%</div>
+                    <div class="stat-label">Claude 編寫比例</div>
+                </div>
+            </div>
 
-<p>第一大設計：Permission 框架（權限管理）</p>
+            <h2 class="section-title">🎯 核心發現：20% vs 80% 法則</h2>
+            <div class="info-box">
+                <p style="font-size: 1.1rem; line-height: 2;"><strong>AI 模型本身只佔整個系統的 20%，剩下 80% 全部都是底層基礎建設。</strong>這 80% 決定了 Claude Code 用起來是「好用到報」還是「又一個 AI 玩具」。</p>
+            </div>
 
-<ul>
-<li><strong>Beware（最高信任）</strong>：內建核心功能，如讀檔案、搜尋程式碼，永遠可用</li>
-<li><strong>中等信任</strong>：第三方開發的擴充功能，可以被關掉</li>
-<li><strong>Skill（最低信任）</strong>：使用者自定義能力，預設最低信任</li>
-</ul>
+            <h2 class="section-title">🔐 第一大設計：Permission 框架（權限管理）</h2>
+            <div class="tech-cards">
+                <div class="tech-card">
+                    <div class="tech-card-icon">🛡️</div>
+                    <h3>三層信任等級</h3>
+                    <p><strong>Beware（最高）</strong>：內建核心功能，永遠可用<br><strong>中等</strong>：第三方擴充，可關閉<br><strong>Skill（最低）</strong>：用戶自定義，預設低信任</p>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-card-icon">🔒</div>
+                    <h3>18 道安全檢查</h3>
+                    <p>單一 Shell Command 需通過 18 個獨立安全模組：留德檢查、破壞性指令偵測、Git 安全、Sandbox 判定等</p>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-card-icon">📋</div>
+                    <h3>工具註冊表</h3>
+                    <p>207 個用戶工具 + 184 個 Model 工具，每個都要登記名字、來源、功能、描述，按需載入</p>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-card-icon">🏰</div>
+                    <h3>深度防禦</h3>
+                    <p>Defense in Depth：每一層負責不同風險類型，任何一層漏掉下一層還有機會攔住</p>
+                </div>
+            </div>
 
-<ul>
-<li>留德檢查：是否為安全指令（如 ls、git status）</li>
-<li>破壞性指令偵測：刪除資料、覆蓋檔案等不可復原操作</li>
-<li>Git 安全檢查：防止誤刪 Production Branch</li>
-<li>Sandbox 判定：決定是否需要在隔離環境執行</li>
-</ul>
+            <h2 class="section-title">💾 第二大設計：Session 持久化</h2>
+            <div class="info-box">
+                <h3>完整狀態保存</h3>
+                <ul>
+                    <li><strong>Session 是完整的可復原 State Object</strong>，用 JSON 存在本地磁碟</li>
+                    <li>包含：對話內容、Token 用量、已授權操作、當前設定</li>
+                    <li><strong>每個重要事件後都存檔</strong>，不是關閉才存</li>
+                    <li>可從一個 Session 完整重建整個對話引擎</li>
+                </ul>
+            </div>
 
-<p>這種設計叫「深度防禦」（Defense in Depth），就像機場安檢有多道關卡，每一層負責不同類型的風險。</p>
+            <div class="info-box" style="border-left: 5px solid var(--accent-orange); background: linear-gradient(135deg, rgba(255, 149, 0, 0.1) 0%, rgba(255, 95, 0, 0.1) 100%);">
+                <h3>⚠️ Conversation State vs Workflow State</h3>
+                <ul>
+                    <li><strong>Conversation State</strong>：我們聊到哪了（大部分 Agent 只存這個）</li>
+                    <li><strong>Workflow State</strong>：做到第幾步，哪些已實際執行（關鍵區別）</li>
+                    <li><strong>Checkpoint 機制</strong>：每個外部改變步驟都打 checkpoint，每個操作有唯一編號，避免重複執行</li>
+                </ul>
+            </div>
 
-<ul>
-<li>207 個面向用戶的工具</li>
-<li>184 個面向 Model 的工具</li>
-<li>每個工具都要登記名字、來源、功能、描述</li>
-<li>根據任務模式只載入需要的工具，不是每次都載入全部</li>
-</ul>
+            <h2 class="section-title">💰 第三大設計：Budget 管理</h2>
+            <div class="tech-cards">
+                <div class="tech-card">
+                    <div class="tech-card-icon">📊</div>
+                    <h3>事前預估</h3>
+                    <p>每輪對話前預估 Token 用量，超過 Budget 直接在 API 呼叫前擋掉</p>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-card-icon">🔔</div>
+                    <h3>主動通知</h3>
+                    <p>快用完時主動通知，進入收尾模式，不會突然斷在半路</p>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-card-icon">🎯</div>
+                    <h3>策略意義</h3>
+                    <p>短期對 Anthropic 營收不利，但換取長期信任，類似明碼標價</p>
+                </div>
+            </div>
 
-<p>第二大設計：Session 持久化（狀態保存）</p>
+            <h2 class="section-title">📝 第四大設計：系統日誌</h2>
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>日誌類型</th>
+                        <th>用途</th>
+                        <th>記錄內容</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Streaming Event</strong><br><span style="font-size:0.85rem;color:var(--text-secondary)">即時日誌</span></td>
+                        <td>即時介入</td>
+                        <td>選了哪個工具、決策是什麼、Token 用量、為什麼停下來</td>
+                    </tr>
+                    <tr>
+                        <td><strong>HitLog</strong><br><span style="font-size:0.85rem;color:var(--text-secondary)">系統日誌</span></td>
+                        <td>事後 Debug</td>
+                        <td>載入的資料、啟動的工具、系統決策、被拒絕的操作</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Doctor Pattern</strong><br><span style="font-size:0.85rem;color:var(--text-secondary)">健康檢查</span></td>
+                        <td>預防性維護</td>
+                        <td>API Credential、外部連線、設定檔完整性、工具載入狀態</td>
+                    </tr>
+                </tbody>
+            </table>
 
-<ul>
-<li>對話內容</li>
-<li>每一輪用了多少 Token</li>
-<li>哪些操作已經被授權</li>
-<li>當前設定是什麼</li>
-<li>每個重要事件發生後都會存檔</li>
-</ul>
+            <h2 class="section-title">✂️ 第五大設計：系統瘦身</h2>
+            <div class="info-box">
+                <h3>三個瘦身層面</h3>
+                <ul>
+                    <li><strong>工具瘦身</strong>：根據 Mode、Permission、Context 動態組裝，只載入需要的工具</li>
+                    <li><strong>對話歷史瘦身</strong>：超過一定 turn 數自動 Compact，是 Summarize 不是 Truncate，保留 Context</li>
+                    <li><strong>啟動流程優化</strong>：七個階段在用戶打第一個字之前已完成所有前置作業</li>
+                </ul>
+            </div>
 
-<ul>
-<li><strong>Conversation State</strong>：我們聊到哪了</li>
-<li><strong>Workflow State</strong>：做到第幾步，哪些事情已經實際執行</li>
-</ul>
+            <h2 class="section-title">🧩 第六大設計：模組化</h2>
+            <div class="tech-cards">
+                <div class="tech-card">
+                    <div class="tech-card-icon">🎭</div>
+                    <h3>角色分離</h3>
+                    <p>Explore、Plan、Verification、Guide 等 Agent 類型，每種有自己的 Prompt、Allow/Deny tools</p>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-card-icon">🧠</div>
+                    <h3>記憶系統</h3>
+                    <p>8 個記憶模組，每筆記憶打相關性分數，追溯來源（Provenance），分類管理</p>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-card-icon">⚡</div>
+                    <h3>Skill 系統</h3>
+                    <p>20+ 個 Skill 模組，自帶觸發條件、Prompt 模板，獨立可插拔</p>
+                </div>
+            </div>
 
-<strong>Checkpoint 機制</strong>： 每個會對外部世界產生改變的步驟都要打 checkpoint，每個操作都有唯一編號，重啟後系統看到編號就知道已做過，不會重複執行。
+            <div class="quote-box">
+                <p>AI 之所以能把效率拉高十倍，往往是因為我們願意讓它擔當更多決策、推動更多流程。就像 OpenClaw 一樣，越強大的 Agent，往往也是越危險的 Agent。</p>
+                <cite>— 影片分析師</cite>
+            </div>
 
-<p>第三大設計：Budget 管理（成本控制）</p>
+            <h2 class="section-title">📌 事件時間軸</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date">2026 年 3 月 31 日 00:21 UTC</div>
+                    <div class="timeline-content">Claude Code 發布，意外包含 source map 暴露原始碼</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2026 年 3 月 31 日 03:29 UTC</div>
+                    <div class="timeline-content">Anthropic 發現並修復問題，但已有用戶下載</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2026 年 3 月 31 日</div>
+                    <div class="timeline-content">GitHub 出現開源倉庫，完整代碼被分析</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2026 年 4 月 1 日</div>
+                    <div class="timeline-content">《衛報》、Axios 等主流媒體報道</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2026 年 4 月 8 日</div>
+                    <div class="timeline-content">YouTube 深度分析影片發布，解析 6 大底層設計</div>
+                </div>
+            </div>
 
-<strong>事前預估</strong>： 每一輪對話之前，先預估這一輪大概會用掉多少 Token，如果預估超過 Budget，直接在 API 呼叫發出之前擋掉。
+            <h2 class="section-title">💡 核心洞察</h2>
+            <div class="info-box">
+                <h3>真正的護城河在哪裡？</h3>
+                <ul>
+                    <li><strong>Model 能力只佔 20%</strong>：只要付錢就能使用最頂尖的模型</li>
+                    <li><strong>Harness 才是關鍵</strong>：把 Model 包起來的那一整套系統（安全、穩定、效率、擴展性）</li>
+                    <li><strong>Agent 教學的盲點</strong>：通常只教那 20%，剩下 80% 才是生產環境的關鍵</li>
+                    <li><strong>Aha Moment 的來源</strong>：不是 Model 多好，而是那 80% 的底層設計</li>
+                </ul>
+            </div>
 
-<ul>
-<li>短期對 Anthropic 營收不利，但換取長期信任</li>
-<li>類似明碼標價，讓使用者知道該付多少費用</li>
-<li>快要用完時主動通知，進入收尾模式</li>
-<li>不會突然斷在半路讓使用者不知所措</li>
-</ul>
+            <h2 class="section-title">🎓 給開發者的啟示</h2>
+            <div class="info-box">
+                <ul>
+                    <li><strong>不需要讀完 51 萬行 code</strong>：需要建立對 Harness 重要性的認知</li>
+                    <li><strong>理解深度防禦</strong>：多層安全檢查，每層負責不同風險</li>
+                    <li><strong>重視狀態管理</strong>：Conversation State 與 Workflow State 分開處理</li>
+                    <li><strong>成本透明化</strong>：事前預估、主動通知，建立用戶信任</li>
+                    <li><strong>模組化設計</strong>：角色分離、可插拔 Skill，便于擴展</li>
+                </ul>
+            </div>
+        </section>
+    </div>
 
-<p>第四大設計：系統日誌（System Logging）</p>
-
-<strong>兩層日誌系統</strong>：
-
-<ul>
-<li>每個動作都即時廣播狀態</li>
-<li>選了哪個工具、決策是什麼、Token 用了多少</li>
-<li>使用者可以即時介入修正方向</li>
-</ul>
-
-<ul>
-<li>獨立於對話之外</li>
-<li>記錄所有系統層級事件</li>
-<li>每個事件都有分類和結構化細節</li>
-<li>用於事後 Debug</li>
-</ul>
-
-<strong>健康檢查（Doctor Pattern）</strong>： 專門指令檢查 API Credential 是否過期、外部連線、設定檔完整性、工具載入狀態。
-
-<p>第五大設計：系統瘦身（Optimization）</p>
-
-<strong>三個瘦身層面</strong>：
-
-<ul>
-<li>根據 Mode、Permission、Context 動態組裝</li>
-<li>只載入本次對話需要的工具</li>
-</ul>
-
-<ul>
-<li>超過一定 turn 數自動 Compact</li>
-<li>是 Summarize 不是 Truncate</li>
-<li>保留 Context 同時減少 Token</li>
-</ul>
-
-<ul>
-<li>七個階段：帳號驗證 → 掃描 Project → 檢查環境 → 初始化工作區 → 載入 Plugin → 決定模式 → 進入主迴圈</li>
-<li>在用戶打第一個字之前已完成所有前置作業</li>
-</ul>
-
-<p>第六大設計：模組化（Modularity）</p>
-
-<ul>
-<li>Explore、Plan、Verification、Guide 等不同 Agent 類型</li>
-<li>每種有自己的 Prompt、Allow tools、Deny tools</li>
-<li>嚴格限制每個角色能做什麼</li>
-</ul>
-
-<ul>
-<li>8 個記憶模組</li>
-<li>每筆記憶打相關性分數</li>
-<li>分類：團隊共用、個人、Project 限定</li>
-<li>Precision Memory（長期）vs Section Memory（當次對話）</li>
-<li>每筆記憶都要追溯來源（Provenance）</li>
-</ul>
-
-<ul>
-<li>20+ 個 Skill 模組</li>
-<li>每個 Skill 自帶觸發條件、Prompt 模板、工具需求</li>
-<li>獨立可插拔模組，擴充新能力只需寫 Skill，不用改核心架構</li>
-</ul>
-
-<p>業界展望</p>
-
-<ul>
-<li>Model 本身能力只佔 20%，真正的護城河在應用層框架</li>
-<li>Harness（把 Model 包起來的系統）才是關鍵</li>
-<li>包含安全、穩定、效率、擴展性的所有設計</li>
-<li>讓 Model 能在真實世界可靠運作</li>
-</ul>
-
-<ul>
-<li>Agent 教學通常只教那 20%（Model 使用）</li>
-<li>剩下 80% 的底層設計才是生產環境的關鍵</li>
-<li>不需要讀完 51 萬行 code，需要建立對 Harness 重要性的認知</li>
-</ul>
-
-<p>結論</p>
-
-<p>Claude Code 之所以好用，不是因為 Claude 的 Model 比別人好多少，而是因為那 80% 的底層設計：18 道安全模組、完整的 Session Persistence、Budget Check、七階段啟動流程、模組化的 Skill 系統。這些設計創造了那個「這工具太好用了」的 Aha Moment。</p></div>
-        </div>
-    </section>
-
-    <!-- Footer -->
     <footer>
-        <p>© 2026-04-08 AI News Archive | 由 AI 技術生成</p>
+        <p>© 2026 AI News 專題報道 | 由 AI 智能生成</p>
         <div class="footer-links">
-            <a href="../index.html">返回主頁</a>
-            <a href="https://github.com/hklamsir/ai_news" target="_blank">GitHub</a>
-            <a href="https://hklamsir.github.io/ai_news/" target="_blank">瀏覽所有專題</a>
+            <a href="https://github.com/hklamsir/ai_news" target="_blank">GitHub 倉庫</a>
+            <a href="https://hklamsir.github.io/ai_news/" target="_blank">主頁</a>
+            <a href="https://www.theguardian.com/technology/2026/apr/01/anthropic-claudes-code-leaks-ai" target="_blank">衛報報道</a>
         </div>
     </footer>
 
     <script>
-        // 代碼雨效果
-        function createCodeRain() {
-            const codeRain = document.getElementById('codeRain');
-            const chars = '01 アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン';
-            for (let i = 0; i < 50; i++) {
-                const char = document.createElement('div');
-                char.className = 'code-char';
-                char.textContent = chars[Math.floor(Math.random() * chars.length)];
-                char.style.left = Math.random() * 100 + '%';
-                char.style.animationDelay = Math.random() * 4 + 's';
-                char.style.animationDuration = (Math.random() * 2 + 3) + 's';
-                codeRain.appendChild(char);
-            }
+        const codeRain = document.getElementById('codeRain');
+        const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%^&*()';
+        
+        function createCodeChar() {
+            const char = document.createElement('div');
+            char.className = 'code-char';
+            char.textContent = chars[Math.floor(Math.random() * chars.length)];
+            char.style.left = Math.random() * 100 + '%';
+            char.style.animationDelay = Math.random() * 4 + 's';
+            codeRain.appendChild(char);
+            
+            setTimeout(() => char.remove(), 4000);
         }
-
-        // 滾動動畫
-        function handleScrollAnimation() {
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.style.opacity = '1';
-                        entry.target.style.transform = 'translateY(0)';
-                    }
-                });
-            }, { threshold: 0.1 });
-
-            document.querySelectorAll('.content-section, .hero-content').forEach(el => {
-                el.style.opacity = '0';
-                el.style.transform = 'translateY(30px)';
-                el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-                observer.observe(el);
+        
+        setInterval(createCodeChar, 100);
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
             });
-        }
-
-        document.addEventListener('DOMContentLoaded', () => {
-            createCodeRain();
-            handleScrollAnimation();
-        });
-
-        window.addEventListener('resize', () => {
-            document.getElementById('codeRain').innerHTML = '';
-            createCodeRain();
+        }, { threshold: 0.1 });
+        
+        document.querySelectorAll('.tech-card, .timeline-item, .info-box, .quote-box, .stat-card').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
         });
     </script>
 </body>
