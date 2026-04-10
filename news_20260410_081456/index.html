@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI 網絡安全威脅：黑客與防禦的新時代 | AI News</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #00f0ff;
+            --secondary: #ff00ff;
+            --accent: #00ff88;
+            --dark: #0a0a0f;
+            --darker: #050508;
+            --light: #e0e0e0;
+            --gray: #888;
+            --gradient: linear-gradient(135deg, #00f0ff 0%, #ff00ff 100%);
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Noto Sans TC', sans-serif;
+            background: var(--darker);
+            color: var(--light);
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
+        .code-rain {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            pointer-events: none;
+            z-index: 0;
+            opacity: 0.15;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            position: relative;
+            z-index: 1;
+        }
+        .hero {
+            padding: 80px 0 60px;
+            text-align: center;
+            background: linear-gradient(180deg, rgba(0,240,255,0.1) 0%, transparent 100%);
+            margin-bottom: 40px;
+            position: relative;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 50%;
+            transform: translateX(-50%);
+            width: 200px; height: 2px;
+            background: var(--gradient);
+        }
+        .badge {
+            display: inline-block;
+            padding: 6px 16px;
+            background: rgba(0,240,255,0.15);
+            border: 1px solid var(--primary);
+            border-radius: 20px;
+            font-size: 12px;
+            color: var(--primary);
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        h1 {
+            font-size: 2.4em;
+            font-weight: 700;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 20px;
+            line-height: 1.3;
+        }
+        .meta {
+            color: var(--gray);
+            font-size: 14px;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+        .meta span { display: flex; align-items: center; gap: 6px; }
+        .meta svg { width: 16px; height: 16px; fill: var(--primary); }
+        .featured-image {
+            width: 100%;
+            max-height: 450px;
+            object-fit: cover;
+            border-radius: 12px;
+            margin: 30px 0;
+            border: 1px solid rgba(0,240,255,0.3);
+        }
+        .summary-box {
+            background: rgba(0,240,255,0.05);
+            border-left: 4px solid var(--primary);
+            padding: 24px 30px;
+            margin: 30px 0;
+            border-radius: 0 12px 12px 0;
+        }
+        .summary-box h3 {
+            color: var(--primary);
+            margin-bottom: 12px;
+            font-size: 1.1em;
+        }
+        .summary-box p { color: var(--light); font-size: 15px; }
+        .content h2 {
+            font-size: 1.6em;
+            color: var(--primary);
+            margin: 50px 0 25px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid rgba(0,240,255,0.2);
+        }
+        .content h3 {
+            font-size: 1.2em;
+            color: var(--accent);
+            margin: 30px 0 15px;
+        }
+        .content p {
+            margin: 15px 0;
+            color: var(--light);
+            font-size: 16px;
+        }
+        .content ul, .content ol {
+            margin: 15px 0 15px 25px;
+        }
+        .content li {
+            margin: 8px 0;
+            color: var(--light);
+        }
+        .highlight-box {
+            background: rgba(255,0,255,0.08);
+            border: 1px solid rgba(255,0,255,0.3);
+            border-radius: 12px;
+            padding: 25px;
+            margin: 25px 0;
+        }
+        .highlight-box h4 {
+            color: var(--secondary);
+            margin-bottom: 15px;
+        }
+        .quote-box {
+            background: linear-gradient(135deg, rgba(0,240,255,0.1) 0%, rgba(255,0,255,0.1) 100%);
+            border-radius: 12px;
+            padding: 30px;
+            margin: 30px 0;
+            text-align: center;
+            font-style: italic;
+            font-size: 1.15em;
+            color: var(--light);
+            position: relative;
+        }
+        .quote-box::before {
+            content: '"';
+            font-size: 80px;
+            color: var(--primary);
+            opacity: 0.3;
+            position: absolute;
+            top: 10px; left: 20px;
+        }
+        .quote-author {
+            margin-top: 15px;
+            font-size: 14px;
+            color: var(--gray);
+            font-style: normal;
+        }
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        .stat-card {
+            background: rgba(0,240,255,0.05);
+            border: 1px solid rgba(0,240,255,0.2);
+            border-radius: 12px;
+            padding: 25px;
+            text-align: center;
+        }
+        .stat-number {
+            font-family: 'Roboto Mono', monospace;
+            font-size: 2.5em;
+            font-weight: 700;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .stat-label {
+            color: var(--gray);
+            font-size: 14px;
+            margin-top: 8px;
+        }
+        .tech-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        .tech-card {
+            background: rgba(0,240,255,0.03);
+            border: 1px solid rgba(0,240,255,0.15);
+            border-radius: 12px;
+            padding: 25px;
+            transition: transform 0.3s, border-color 0.3s;
+        }
+        .tech-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary);
+        }
+        .tech-card h4 {
+            color: var(--primary);
+            margin-bottom: 12px;
+            font-size: 1.1em;
+        }
+        .tech-card p { color: var(--gray); font-size: 14px; }
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+            font-size: 14px;
+        }
+        .comparison-table th {
+            background: rgba(0,240,255,0.15);
+            color: var(--primary);
+            padding: 15px;
+            text-align: left;
+            border-bottom: 2px solid var(--primary);
+        }
+        .comparison-table td {
+            padding: 12px 15px;
+            border-bottom: 1px solid rgba(0,240,255,0.1);
+            color: var(--light);
+        }
+        .comparison-table tr:hover { background: rgba(0,240,255,0.05); }
+        .timeline {
+            position: relative;
+            margin: 30px 0;
+            padding-left: 30px;
+        }
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0; top: 0;
+            width: 2px;
+            height: 100%;
+            background: linear-gradient(180deg, var(--primary) 0%, var(--secondary) 100%);
+        }
+        .timeline-item {
+            position: relative;
+            margin: 25px 0;
+            padding-left: 25px;
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -35px;
+            top: 5px;
+            width: 12px; height: 12px;
+            border-radius: 50%;
+            background: var(--primary);
+            box-shadow: 0 0 10px var(--primary);
+        }
+        .timeline-date {
+            font-family: 'Roboto Mono', monospace;
+            color: var(--primary);
+            font-size: 13px;
+            margin-bottom: 5px;
+        }
+        .timeline-content { color: var(--light); font-size: 15px; }
+        .sources {
+            margin-top: 50px;
+            padding-top: 30px;
+            border-top: 1px solid rgba(0,240,255,0.2);
+        }
+        .sources h3 {
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+        .source-item {
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(0,240,255,0.1);
+            font-size: 14px;
+        }
+        .source-item a {
+            color: var(--accent);
+            text-decoration: none;
+            word-break: break-all;
+        }
+        .source-item a:hover { text-decoration: underline; }
+        .tag {
+            display: inline-block;
+            padding: 4px 12px;
+            background: rgba(0,255,136,0.1);
+            border: 1px solid rgba(0,255,136,0.3);
+            border-radius: 15px;
+            font-size: 12px;
+            color: var(--accent);
+            margin: 5px;
+        }
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: 50px;
+            color: var(--gray);
+            font-size: 13px;
+        }
+        footer a { color: var(--primary); text-decoration: none; }
+        @media (max-width: 768px) {
+            h1 { font-size: 1.8em; }
+            .hero { padding: 50px 0 40px; }
+            .stats-grid { grid-template-columns: 1fr 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <canvas class="code-rain" id="codeRain"></canvas>
+    <div class="container">
+        <header class="hero">
+            <span class="badge">🔥 深度報道</span>
+            <h1>AI 網絡安全威脅：黑客與防禦的新時代</h1>
+            <div class="meta">
+                <span>
+                    <svg viewBox="0 0 24 24"><path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zm0-12H5V6h14v2z"/></svg>
+                    2026 年 4 月 10 日
+                </span>
+                <span>
+                    <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+                    網絡安全 · AI 技術
+                </span>
+            </div>
+            <div style="margin-top:15px;">
+                <span class="tag">#AI</span>
+                <span class="tag">#網絡安全</span>
+                <span class="tag">#黑客</span>
+                <span class="tag">#深度偽造</span>
+                <span class="tag">#威脅情報</span>
+            </div>
+        </header>
+
+        <img src="img/img1.png" alt="AI 網絡安全威脅" class="featured-image">
+
+        <div class="summary-box">
+            <h3>📌 報道摘要</h3>
+            <p>根據《紐約時報》2026年4月6日報道，AI 技術正在徹底改變網絡安全領域的攻防格局。黑客正使用 AI 工具自動化網絡攻擊，而 Anthropic、OpenAI 等公司則推出更強大的 AI 防禦系統。這場「AI 網絡軍備競賽」已進入實質階段，本文結合深度研究報告，為你全面解析 AI 時代的網絡安全新常態。</p>
+        </div>
+
+        <article class="content">
+            <h2>🤖 一、AI 驅動的網絡攻擊：規模式、智能化的新常態</h2>
+            
+            <p>《紐約時報》報道指出，網絡攻擊者正愈來愈多地使用 AI 工具來發動更快、更精準、更大規模的攻擊。根據 CrowdStrike 2026 全球威脅報告，<strong>AI 賦能攻擊較 2024 年增長達 89%</strong>，網絡犯罪分子的平均「突破時間」已縮短至僅 29 分鐘，較前一年加快 65%。[1]</p>
+
+            <div class="quote-box">
+                人類黑客負責執行攻擊所需工作的大約 10% 到 20%。其餘 80-90% 的工作已由 AI 代理完成——這是已知首個主要依靠「AI 代理」技術發動的網絡攻擊案例。
+                <div class="quote-author">— 《紐約時報》，2026年4月6日[2]</div>
+            </div>
+
+            <p>研究顯示，<strong>魚叉式網絡釣魚攻擊因生成式 AI 工具的介入而飆升 1,265%</strong>。[3] AI 在網絡攻擊中的應用已覆蓋完整攻擊生命週期：</p>
+
+            <div class="tech-cards">
+                <div class="tech-card">
+                    <h4>🔍 偵察階段</h4>
+                    <p>AI 自動爬取社交媒體和公開資料，快速建立目標畫像，識別高價值員工及潛在攻擊向量。</p>
+                </div>
+                <div class="tech-card">
+                    <h4>⚔️ 武器化階段</h4>
+                    <p>AI 自動生成漏洞利用代碼或惡意軟件變種，實現「自適應躲避」，即時調整以繞過安全檢測。</p>
+                </div>
+                <div class="tech-card">
+                    <h4>📧 交付階段</h4>
+                    <p>AI 生成個性化釣魚郵件及深度偽造音視頻，實現大規模「精準欺騙」。</p>
+                </div>
+                <div class="tech-card">
+                    <h4>↔️ 橫向移動</h4>
+                    <p>AI 加速內網偵察，自動識別特權帳戶及敏感資產，大幅縮短突破時間。</p>
+                </div>
+            </div>
+
+            <h2>🎭 二、深度偽造與社交工程攻擊的演變</h2>
+
+            <p>AI 生成的內容正在抹去過去人們用來識別詐騙的明顯信號。過去，語法錯誤或可疑連結能幫助用戶識別詐騙——如今，這些信號正在消失。[4]</p>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">78%</div>
+                    <div class="stat-label">受訪者表示會打開 AI 生成的郵件</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">60%</div>
+                    <div class="stat-label">測試參與者被 AI 魚叉式釣魚欺騙</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">1,265%</div>
+                    <div class="stat-label">魚叉式釣魚攻擊增長率</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">46%</div>
+                    <div class="stat-label">AI 生成釣魚內容增長</div>
+                </div>
+            </div>
+
+            <h3>典型深度偽造攻擊場景</h3>
+
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>攻擊場景</th>
+                        <th>攻擊手法</th>
+                        <th>潛在損失</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>CEO 欺詐</td>
+                        <td>AI 生成視頻會議中冒充公司高管</td>
+                        <td>跨國公司數百萬美元</td>
+                    </tr>
+                    <tr>
+                        <td>供應商欺騙</td>
+                        <td>模仿供應商高管聲音通過電話確認</td>
+                        <td>供應鏈欺詐</td>
+                    </tr>
+                    <tr>
+                        <td>家庭成員欺騙</td>
+                        <td>克隆家人聲音報告「緊急」情況</td>
+                        <td>個人財務損失</td>
+                    </tr>
+                    <tr>
+                        <td>假新聞操縱</td>
+                        <td>生成虛假新聞視頻影響股價</td>
+                        <td>聲譽及市場操縱</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h2>🛡️ 三、AI 防禦：雙刃劍的另一面</h2>
+
+            <p>儘管 AI 帶來威脅，但 AI 同樣為防禦者提供了強大的工具。MIT Sloan 提出三層防御框架：[5]</p>
+
+            <div class="highlight-box">
+                <h4>MIT 三層防御框架</h4>
+                <p><strong>第一層：自動化安全衛生</strong><br>自我修復軟件代碼、自動化系統修補、持續攻擊面管理、零信任架構</p>
+                <p style="margin-top:12px;"><strong>第二層：自主防御系統</strong><br>機器學習驅動的實時威脅識別、動態威脅誤導技術、欺騙式防禦、主動威脅狩獵</p>
+                <p style="margin-top:12px;"><strong>第三層：增強型高管監督</strong><br>AI 驅動的實時風險分析、自動化的威脅預測與情景模擬</p>
+            </div>
+
+            <p>Anthropic 近日發布的新 AI 模型「Mythos」被稱為網絡安全的「清算時刻」。該公司表示，正在與 40 家公司合作，探索如何利用 AI 技術防止網絡攻擊。[6]</p>
+
+            <h2>📅 四、威脅演化時間軸</h2>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date">2024 年</div>
+                    <div class="timeline-content">AI 輔助攻擊增長 72%，魚叉式釣魚開始大規模 AI 化</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2025 年</div>
+                    <div class="timeline-content">首個主要依靠「AI 代理」技術發動的網絡攻擊案例曝光</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2026 年 Q1</div>
+                    <div class="timeline-content">Arctic Wolf 調查顯示 29% 安全主管將 AI 列為首要關注點，首次超越勒索軟件</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2026 年 4 月</div>
+                    <div class="timeline-content">Anthropic 發布 Mythos 模型，被稱為網絡安全「清算時刻」</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">未來 1-3 年</div>
+                    <div class="timeline-content">自主網絡攻擊 AI 系統可能出現，AI 安全運營中心（AISOC）成為標配</div>
+                </div>
+            </div>
+
+            <h2>⚠️ 五、風險提示</h2>
+
+            <ul>
+                <li><strong>攻守不對稱：</strong>攻擊者只需找到一個入口點，而防禦者必須堵住所有入口。AI 在很大程度上加劇了這種不對稱性。[5]</li>
+                <li><strong>技能缺口：</strong>全球 AI 安全專業人才嚴重短缺，即使有完善的工具，缺乏合格人員操作也難以充分發揮防禦效果。</li>
+                <li><strong>法規不確定性：</strong>各國對 AI 的監管政策仍在快速演變中，企業需要在合規成本和業務靈活性之間取得平衡。</li>
+                <li><strong>長期數據影響：</strong>任何上傳至 AI 系統的數據都可能被洩露，企業應假設最壞情況並據此設計數據處理策略。</li>
+            </ul>
+
+            <h2>💡 六、建議與行動方案</h2>
+
+            <h3>短期行動（0-3 個月）</h3>
+            <ul>
+                <li>🔴 實施全員 AI 社交工程攻擊意識培訓</li>
+                <li>🔴 建立 AI 系統資產清單</li>
+                <li>🔴 部署深度偽造檢測工具</li>
+                <li>🟠 審計現有 AI 工具的安全配置</li>
+            </ul>
+
+            <h3>中期行動（3-12 個月）</h3>
+            <ul>
+                <li>🟠 建立 AI 威脅情報能力</li>
+                <li>🟠 實施零信任架構改造</li>
+                <li>🟡 建立 AI 安全評估流程，納入開發生命週期</li>
+                <li>🟡 進行對抗性 AI 測試</li>
+            </ul>
+
+            <h3>長期策略（1-3 年）</h3>
+            <ul>
+                <li>🟡 建立 AI 安全運營中心（AISOC）</li>
+                <li>🟡 投資自動化漏洞發現與修復技術</li>
+                <li>🟢 參與行業 AI 安全標準制定</li>
+            </ul>
+
+            <div class="quote-box">
+                AI 將攻擊者能以前所未有的規模和速度運作，而防禦者面臨的法律和道德約束使這場競賽天然不對稱。
+                <div class="quote-author">— Michael Siegel，MIT Sloan 網絡安全中心主任[5]</div>
+            </div>
+
+            <div class="sources">
+                <h3>📚 參考資料</h3>
+                <p style="color:var(--gray);margin-bottom:15px;">以下為本專題引用的主要來源，涵蓋 18 個權威機構及 2 個 YouTube 視訊：</p>
+                
+                <div class="source-item">[1] <a href="https://www.crowdstrike.com/en-us/global-threat-report/" target="_blank">CrowdStrike, "2026 Global Threat Report"</a></div>
+                <div class="source-item">[2] <a href="https://www.nytimes.com/2026/04/06/technology/ai-cybersecurity-hackers.html" target="_blank">The New York Times, "A.I. Is on Its Way to Upending Cybersecurity" (2026-04-06)</a></div>
+                <div class="source-item">[3] <a href="https://arcticwolf.com/resources/press-releases/arctic-wolf-2025-trends-report-reveals-ai-is-now-the-leading-cybersecurity-concern-for-security-and-it-leaders/" target="_blank">Arctic Wolf, "State of Cybersecurity: 2025 Trends Report"</a></div>
+                <div class="source-item">[4] <a href="https://nyartlife.com/ai-cybersecurity-threats-rise-in-2026-raising-concerns-across-new-yorks-creative-industries/" target="_blank">New York Art Life, "AI Cybersecurity Threats Rise in 2026"</a></div>
+                <div class="source-item">[5] <a href="https://mitsloan.mit.edu/ideas-made-to-matter/ai-cyberattacks-three-pillars-defense" target="_blank">MIT Sloan, "AI cyberattacks and three pillars for defense"</a></div>
+                <div class="source-item">[6] <a href="https://www.nytimes.com/2026/04/07/technology/anthropic-claims-its-new-ai-model-mythos-is-a-cybersecurity-reckoning.html" target="_blank">The New York Times, "Anthropic Claims Its New A.I. Model, Mythos, Is a Cybersecurity 'Reckoning'" (2026-04-07)</a></div>
+                <div class="source-item">[7] <a href="https://purplesec.us/learn/cybercriminals-launching-ai-powered-cyber-attacks/" target="_blank">PurpleSec, "AI-Powered Cyber Attacks: The Future Of Cybercrime"</a></div>
+                <div class="source-item">[8] <a href="https://news.asu.edu/20241018-science-and-technology-aidriven-cyberattacks-more-sophisticated-and-scalable-asu-expert" target="_blank">ASU News, "AI-driven cyberattacks more sophisticated and scalable"</a></div>
+                <div class="source-item">[9] <a href="https://www.microsoft.com/en-us/security/blog/2025/10/30/the-5-generative-ai-security-threats-you-need-to-know-about-detailed-in-new-e-book/" target="_blank">Microsoft Security Blog, "The 5 Generative AI Security Threats"</a></div>
+                <div class="source-item">[10] <a href="https://www.paloaltonetworks.com/cyberpedia/generative-ai-security-risks" target="_blank">Palo Alto Networks, "Top GenAI Security Challenges"</a></div>
+                <div class="source-item">[11] <a href="https://www.fbi.gov/contact-us/field-offices/sanfrancisco/news/fbi-warns-of-increasing-threat-of-cyber-criminals-utilizing-artificial-intelligence" target="_blank">FBI, "FBI Warns of Increasing Threat of Cyber Criminals Utilizing AI"</a></div>
+                <div class="source-item">[12] <a href="https://www.youtube.com/watch?v=iGE7b_XQqtY" target="_blank">YouTube: IBM X-Force 2025 Threat Intelligence Index</a></div>
+                <div class="source-item">[13] <a href="https://www.youtube.com/watch?v=IAhU1AAqxcY" target="_blank">YouTube: Google Threat Intelligence × UAE | RSAC 2025</a></div>
+            </div>
+        </article>
+
+        <footer>
+            <p>📰 AI News 專題報道 | <a href="https://hklamsir.github.io/ai_news/" target="_blank">返回主頁</a></p>
+            <p style="margin-top:10px;">本報道內容由 AI 輔助生成，資料來源均已標註。如有侵權請聯繫刪除。</p>
+        </footer>
+    </div>
+
+    <script>
+        // Code Rain Animation
+        const canvas = document.getElementById('codeRain');
+        const ctx = canvas.getContext('2d');
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        
+        const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%^&*()';
+        const fontSize = 14;
+        const columns = canvas.width / fontSize;
+        const drops = Array(Math.floor(columns)).fill(1);
+        
+        function draw() {
+            ctx.fillStyle = 'rgba(5, 5, 8, 0.05)';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            ctx.fillStyle = '#00f0ff';
+            ctx.font = fontSize + 'px monospace';
+            
+            for (let i = 0; i < drops.length; i++) {
+                const text = chars[Math.floor(Math.random() * chars.length)];
+                ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+                if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+                    drops[i] = 0;
+                }
+                drops[i]++;
+            }
+        }
+        
+        setInterval(draw, 50);
+        window.addEventListener('resize', () => {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        });
+    </script>
+</body>
+</html>
