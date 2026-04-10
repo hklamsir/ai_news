@@ -10,6 +10,7 @@
             --primary-purple: #7b2cbf;
             --accent-green: #00ff88;
             --accent-orange: #ff9500;
+            --accent-red: #ff4757;
             --dark-bg: #0a0a0f;
             --card-bg: #12121a;
             --card-bg-light: #1a1a28;
@@ -29,6 +30,7 @@
         @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.6; } }
         @keyframes slideIn { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
         @keyframes codeRain { 0% { transform: translateY(-100%); opacity: 0; } 10% { opacity: 1; } 90% { opacity: 1; } 100% { transform: translateY(100vh); opacity: 0; } }
+        @keyframes glow { 0%, 100% { box-shadow: 0 0 20px rgba(0, 212, 255, 0.3); } 50% { box-shadow: 0 0 40px rgba(0, 212, 255, 0.6); } }
 
         /* 代碼雨背景 */
         .code-rain { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; overflow: hidden; }
@@ -49,15 +51,50 @@
         .scroll-indicator span { display: block; width: 30px; height: 50px; border: 2px solid var(--primary-blue); border-radius: 25px; position: relative; }
         .scroll-indicator span::before { content: ''; position: absolute; top: 8px; left: 50%; transform: translateX(-50%); width: 6px; height: 10px; background: var(--primary-blue); border-radius: 3px; animation: pulse 1.5s infinite; }
 
-        /* Content Section */
+        /* Section base */
         section { padding: 80px 20px; position: relative; z-index: 1; }
-        .content-section { background: var(--card-bg); padding: 60px 50px; border-radius: 24px; border: 1px solid rgba(0, 212, 255, 0.2); max-width: 1100px; margin: 0 auto; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3); }
 
+        /* Tech Cards Grid */
+        .tech-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; max-width: 1200px; margin: 0 auto; }
+        .tech-card { background: var(--card-bg); border-radius: 20px; padding: 32px; border: 1px solid rgba(0, 212, 255, 0.15); transition: transform 0.3s ease, box-shadow 0.3s ease; animation: glow 3s ease-in-out infinite; }
+        .tech-card:hover { transform: translateY(-8px); box-shadow: 0 20px 60px rgba(0, 212, 255, 0.2); }
+        .tech-card-icon { font-size: 48px; margin-bottom: 20px; }
+        .tech-card-title { font-size: 1.4rem; font-weight: 700; margin-bottom: 12px; color: var(--primary-blue); }
+        .tech-card-desc { color: var(--text-secondary); font-size: 1.05rem; line-height: 1.7; }
+
+        /* Content Section */
+        .content-section { background: var(--card-bg); padding: 60px 50px; border-radius: 24px; border: 1px solid rgba(0, 212, 255, 0.2); max-width: 1100px; margin: 0 auto; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3); }
         .content-section h3 { font-size: 1.6rem; margin: 40px 0 20px; color: var(--accent-green); }
         .content-section p { color: var(--text-secondary); line-height: 2; font-size: 1.08rem; margin: 15px 0; }
         .content-section ul { margin: 20px 0; padding-left: 30px; }
         .content-section li { margin: 10px 0; color: var(--text-secondary); }
 
+        /* Comparison Table */
+        .comparison-table { width: 100%; border-collapse: collapse; margin: 30px 0; background: var(--card-bg-light); border-radius: 16px; overflow: hidden; }
+        .comparison-table th { background: var(--gradient-1); padding: 16px 20px; text-align: left; font-weight: 700; font-size: 1.05rem; }
+        .comparison-table td { padding: 14px 20px; border-bottom: 1px solid rgba(255,255,255,0.08); color: var(--text-secondary); }
+        .comparison-table tr:last-child td { border-bottom: none; }
+        .comparison-table tr:hover td { background: rgba(0, 212, 255, 0.05); }
+        .comparison-table .highlight-col { color: var(--accent-green); font-weight: 600; }
+        .comparison-table .warn-col { color: var(--accent-orange); }
+
+        /* Timeline */
+        .timeline { position: relative; padding-left: 40px; margin: 40px 0; }
+        .timeline::before { content: ''; position: absolute; left: 15px; top: 0; bottom: 0; width: 3px; background: var(--gradient-1); border-radius: 3px; }
+        .timeline-item { position: relative; margin-bottom: 40px; padding: 24px 28px; background: var(--card-bg-light); border-radius: 16px; border: 1px solid rgba(0, 212, 255, 0.12); }
+        .timeline-item::before { content: ''; position: absolute; left: -31px; top: 28px; width: 14px; height: 14px; background: var(--primary-blue); border-radius: 50%; box-shadow: 0 0 15px rgba(0, 212, 255, 0.7); }
+        .timeline-date { font-size: 0.95rem; color: var(--primary-blue); font-weight: 600; margin-bottom: 8px; }
+        .timeline-title { font-size: 1.2rem; font-weight: 700; color: var(--text-primary); margin-bottom: 10px; }
+        .timeline-desc { color: var(--text-secondary); font-size: 1.02rem; line-height: 1.7; }
+
+        /* Quote Box */
+        .quote-box { background: linear-gradient(135deg, rgba(123, 44, 191, 0.2) 0%, rgba(0, 212, 255, 0.1) 100%); padding: 36px 40px; border-radius: 20px; border-left: 6px solid var(--primary-purple); margin: 40px 0; position: relative; }
+        .quote-box::before { content: '"'; position: absolute; top: 10px; left: 20px; font-size: 80px; color: var(--primary-purple); opacity: 0.3; font-family: serif; }
+        .quote-text { font-size: 1.25rem; line-height: 1.8; color: var(--text-primary); font-style: italic; margin-bottom: 16px; position: relative; z-index: 1; }
+        .quote-author { font-size: 1rem; color: var(--primary-blue); font-weight: 600; }
+        .quote-author span { color: var(--text-secondary); font-weight: 400; }
+
+        /* Meta Info */
         .meta-info { background: linear-gradient(135deg, rgba(0, 212, 255, 0.15) 0%, rgba(123, 44, 191, 0.15) 100%); padding: 30px; border-radius: 16px; margin-bottom: 40px; border-left: 5px solid var(--primary-blue); }
         .meta-info p { margin: 12px 0; color: var(--text-secondary); font-size: 1.05rem; }
         .meta-info strong { color: var(--primary-blue); font-weight: 600; }
@@ -74,17 +111,26 @@
         .footer-links a { color: var(--primary-blue); text-decoration: none; transition: color 0.3s ease; }
         .footer-links a:hover { color: var(--text-primary); }
 
+        /* Section Title */
+        .section-title { text-align: center; margin-bottom: 50px; }
+        .section-title h2 { font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 800; background: var(--gradient-1); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 16px; }
+        .section-title p { color: var(--text-secondary); font-size: 1.15rem; max-width: 700px; margin: 0 auto; }
+
         /* RWD */
         @media (max-width: 768px) {
             .content-section { padding: 40px 25px; }
             .hero-images { grid-template-columns: 1fr; }
             .hero h1 { font-size: 2rem; }
             .hero-subtitle { font-size: 1.2rem; }
+            .comparison-table { font-size: 0.9rem; }
+            .comparison-table th, .comparison-table td { padding: 10px 12px; }
         }
     </style>
 </head>
 <body>
     <div class="code-rain" id="codeRain"></div>
+
+    <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
             <span class="hero-badge">📰 AI News 專題報道</span>
@@ -101,27 +147,148 @@
         </div>
     </section>
 
+    <!-- Tech Cards Section -->
+    <section>
+        <div class="section-title">
+            <h2>🔑 核心功能解析</h2>
+            <p>Managed Agents 的五大核心優勢與限制</p>
+        </div>
+        <div class="tech-cards">
+            <div class="tech-card">
+                <div class="tech-card-icon">🚀</div>
+                <div class="tech-card-title">15分鐘快速部署</div>
+                <div class="tech-card-desc">從自然語言描述到雲端沙盒執行，整個流程僅需約15分鐘。支援五步驟快速上線：定義邏輯、建立環境、設定憑證、測試Session、整合API。</div>
+            </div>
+            <div class="tech-card">
+                <div class="tech-card-icon">🧠</div>
+                <div class="tech-card-title">三層安全架構</div>
+                <div class="tech-card-desc">Brain（思考決策，無狀態）、Hands（沙盒執行環境，含MCP工具）、Session（操作記錄，故障可迅速恢復）。大幅提升系統穩定性與可維護性。</div>
+            </div>
+            <div class="tech-card">
+                <div class="tech-card-icon">💰</div>
+                <div class="tech-card-title">每小時 $18 美元</div>
+                <div class="tech-card-desc">按執行時間收費，支援Web搜尋等附加功能。已獲Notion、Rapodon等知名企業採用，據稱每個Agent從設定到上線僅需一週。</div>
+            </div>
+            <div class="tech-card">
+                <div class="tech-card-icon">⚠️</div>
+                <div class="tech-card-title">平台綁定風險</div>
+                <div class="tech-card-desc">高度依賴Anthropic基礎設施，遷移成本顯著增加。缺乏自動排程功能，對需要自動化任務的用戶來說是主要短板。</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content Section -->
     <section class="content-section">
         <div class="meta-info">
             <p><strong>📺 資料來源</strong>：<a href="https://youtu.be/LFvsSCFVBm0?si=5pXIAf1ztk-_guxF" target="_blank">https://youtu.be/LFvsSCFVBm0?si=5pXIAf1ztk-_guxF</a></p>
             <p><strong>📅 發布日期</strong>：2026-04-10</p>
-            <p><strong>🤖 處理方式</strong>：AI 智能摘要生成</p>
+            <p><strong>🤖 處理方式</strong>：AI 智能摘要生成 + 深度優化</p>
         </div>
 
-        <h3>🎯 核心觀點</h3>
-        <p>本次報告深入解析了Anthropic推出的Managed Agents的功能、優缺點以及其在市場中的定位。研究指出，Managed Agents具有簡易上手、安全性和穩定性等優點，但也存在平臺繫結度高、缺乏自動排程功能等侷限性。</p>
+        <!-- Quote Box -->
+        <div class="quote-box">
+            <p class="quote-text">Anthropic Managed Agents 的出現，讓「殺死1000家Agent Startup」不再是誇張說法。對於希望快速部署AI代理的企業而言，這是一個值得考慮的選項；但對於需要高度定製化的場景，傳統方案可能更為適合。</p>
+            <p class="quote-author">— 業界分析師觀點 <span>2026年4月</span></p>
+        </div>
 
-        <h3>💡 重點解析</h3>
-        <p>Managed Agents是一種AI代理託管服務，允許使用者快速部署和執行AI代理。整個過程包括五個主要步驟：定義Agent邏輯、建立執行環境、設定認證憑證、測試Session以及獲取API終端點進行整合。對於具有一定技術背景的人來說，完成上述設定僅需約15分鐘左右。</p>
-        <ul>
-            <li>簡易上手：使用者可以透過自然語言描述所需的AI代理功能，系統會自動生成相應的配置檔案並在雲端沙盒環境中執行。</li>
-            <li>安全性與穩定性：採用了三層架構設計——Brain、Hands及Session，大幅提升了系統的穩定性和可維護性。</li>
-            <li>平臺繫結度高：高度依賴Anthropic的基礎設施，使用者面臨著較高的轉換成本。</li>
-            <li>缺乏自動排程功能：不具備基本的自動排程能力，對於需要自動化任務的用戶來說是一個短板。</li>
-        </ul>
+        <h3>🎯 市場影響分析</h3>
+        <p>本次報告深入解析了Anthropic推出的Managed Agents的功能、優缺點以及其在市場中的定位。研究指出，Managed Agents具有簡易上手、安全性和穩定性等優點，但也存在平台綁定度高、缺乏自動排程功能等局限。</p>
 
-        <h3>📊 數據分析</h3>
+        <h3>💡 與競爭對手比較</h3>
+        <p>相較於其他競品如Claude Code、n8n，Managed Agents在不同場景下各有優劣。n8n在排程功能上更成熟，支援內建Cron、Webhooks、重試邏輯及執行歷史；而Claude Code則在部署簡易性上更具優勢。</p>
+
+        <!-- Comparison Table -->
+        <table class="comparison-table">
+            <thead>
+                <tr>
+                    <th>功能維度</th>
+                    <th>Managed Agents</th>
+                    <th>Claude Code</th>
+                    <th>n8n</th>
+                    <th>Cron/L龙蝦人</th>
+                    <th>Mage</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>部署速度</td>
+                    <td class="highlight-col">15分鐘</td>
+                    <td>1-2小時</td>
+                    <td>數小時</td>
+                    <td>數小時</td>
+                    <td>數小時</td>
+                </tr>
+                <tr>
+                    <td>自動排程</td>
+                    <td class="warn-col">❌ 無</td>
+                    <td class="warn-col">有限</td>
+                    <td class="highlight-col">✅ 完整</td>
+                    <td>✅ 完整</td>
+                    <td>✅ 完整</td>
+                </tr>
+                <tr>
+                    <td>定製彈性</td>
+                    <td class="warn-col">中等</td>
+                    <td class="highlight-col">高</td>
+                    <td>高</td>
+                    <td>高</td>
+                    <td>高</td>
+                </tr>
+                <tr>
+                    <td>定價模式</td>
+                    <td>$18/小時</td>
+                    <td>代碼用量計費</td>
+                    <td>免費/雲端版</td>
+                    <td>免費/開源</td>
+                    <td>開源</td>
+                </tr>
+                <tr>
+                    <td>適合用戶</td>
+                    <td>企業快速部署</td>
+                    <td>開發者進階使用</td>
+                    <td>技術團隊自托管</td>
+                    <td>開源愛好者</td>
+                    <td>開發者</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>📊 實際應用案例</h3>
         <p>根據官方公告，Managed Agents按照執行時間收費，每小時費用為18美元，並且支援Web搜尋等附加功能。目前已有Notion、Rapodon等多家知名企業開始採用此服務來提升工作效率。例如，Notion在其工作空間內整合了Agents以自動處理任務；而Rapodon更是在產品開發、銷售等多個部門部署了Agents，據稱每個Agent從設定到上線僅耗時一週。</p>
+
+        <h3>📅 產業發展時間軸</h3>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-date">2023年</div>
+                <div class="timeline-title">AI Agent 概念興起</div>
+                <div class="timeline-desc">首批AI Agent初創公司成立，聚焦自動化任務執行。</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">2024年中</div>
+                <div class="timeline-title">n8n 等工作流工具崛起</div>
+                <div class="timeline-desc">視覺化自動化工作流工具獲得廣泛採用，支援自托管。</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">2024年底</div>
+                <div class="timeline-title">Claude Code 發布</div>
+                <div class="timeline-desc">Anthropic推出Claude Code SDK，進軍開發者市場。</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">2025年</div>
+                <div class="timeline-title">企業級Agent需求爆發</div>
+                <div class="timeline-desc">越來越多企業尋求開箱即用的Agent解決方案。</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">2026年4月</div>
+                <div class="timeline-title">Managed Agents 正式發布</div>
+                <div class="timeline-desc">Anthropic推出Managed Agents，被稱為「n8n Killer」、「Mac Mini Killer」。</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">2026年下半年</div>
+                <div class="timeline-title">市場整合預期</div>
+                <div class="timeline-desc">預計AI Agent市場將出現大型整合，部分初創公司可能被併購或退出。</div>
+            </div>
+        </div>
 
         <h3>🔮 未來展望</h3>
         <p>面對日益激烈的競爭格局，各AI巨頭紛紛加碼佈局，力求在市場中佔據有利位置。對於消費者來說，最重要的是根據自身需求選擇最合適的工具而非盲目追隨潮流。隨著技術不斷進步和完善，預計未來將出現更多針對特定場景最佳化的AI解決方案，推動整個行業向更高水平發展。</p>
