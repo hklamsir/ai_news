@@ -1,6 +1,17 @@
 {
   "archives": [
     {
+      "dir": "news_20260410_183339",
+      "title": "Anthropic Managed Agents 解析：真的殺死了 1000 家 AI Startup？",
+      "summary_short": "## 新聞導語近期，AI公司Anthropic推出了一項名為Managed Agents的新功能，旨在簡化AI代理的部署和管理過程。這一舉措引發了業界廣泛關注，有人認為這將對現有的AI初創企業構成威",
+      "images": [
+        "img/img1.png",
+        "img/img2.png"
+      ],
+      "date": "2026-04-10",
+      "url": "./news_20260410_183339/index.html"
+    },
+    {
       "dir": "news_20260409_200259",
       "title": "最強模型Claude Mythos出爐 | Anthropic | 暫不對公眾開放 | 玻璃之翼計劃 | 程式設計能力躍升 | HLE輕鬆第一 | token消耗20% | 網路攻擊風險加劇",
       "summary_short": "## 新聞導語Anthropic公司近日宣佈推出其最新的AI模型Claude Mythos，該模型在多項測評中表現卓越，特別是在程式設計和漏洞挖掘方面的能力遠超現有模型。然而，由於其強大的漏洞挖掘與",
@@ -209,5 +220,5 @@
       "url": "./20260404_2045/index.html"
     }
   ],
-  "last_updated": "2026-04-09T20:09:57.722343"
+  "last_updated": "2026-04-10T18:40:27.432767"
 }
