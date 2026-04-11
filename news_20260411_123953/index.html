@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>港大 DeepTutor 開源登場：將 PDF 教材轉化為互動個人化教學</title>
+    <style>
+        :root {
+            --primary-blue: #00d4ff;
+            --primary-purple: #7b2cbf;
+            --accent-green: #00ff88;
+            --accent-orange: #ff9500;
+            --dark-bg: #0a0a0f;
+            --card-bg: #12121a;
+            --card-bg-light: #1a1a28;
+            --text-primary: #ffffff;
+            --text-secondary: #a0a0b0;
+            --gradient-1: linear-gradient(135deg, #00d4ff 0%, #7b2cbf 100%);
+            --gradient-2: linear-gradient(135deg, #00d4ff 0%, #00ff88 100%);
+            --glow-blue: 0 0 20px rgba(0, 212, 255, 0.5);
+            --glow-purple: 0 0 20px rgba(123, 44, 191, 0.5);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Noto Sans TC', sans-serif; background-color: var(--dark-bg); color: var(--text-primary); line-height: 1.8; overflow-x: hidden; }
+
+        @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-20px); } }
+        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.6; } }
+        @keyframes slideIn { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes codeRain { 0% { transform: translateY(-100%); opacity: 0; } 10% { opacity: 1; } 90% { opacity: 1; } 100% { transform: translateY(100vh); opacity: 0; } }
+
+        .code-rain { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; overflow: hidden; }
+        .code-char { position: absolute; color: var(--primary-blue); font-family: 'Courier New', monospace; font-size: 14px; opacity: 0; animation: codeRain 4s linear infinite; }
+
+        .hero { position: relative; min-height: 80vh; display: flex; align-items: center; justify-content: center; padding: 80px 20px; background: linear-gradient(180deg, var(--dark-bg) 0%, #1a1a2e 100%); overflow: hidden; }
+        .hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(ellipse at center, rgba(123, 44, 191, 0.15) 0%, transparent 70%); z-index: 1; }
+        .hero-content { position: relative; z-index: 2; max-width: 1200px; text-align: center; animation: slideIn 1s ease-out; }
+        .hero-badge { display: inline-block; padding: 12px 32px; background: var(--gradient-1); border-radius: 50px; font-size: 18px; font-weight: 700; margin-bottom: 24px; box-shadow: var(--glow-blue); letter-spacing: 1px; }
+        .hero h1 { font-size: clamp(2rem, 5vw, 4rem); font-weight: 900; margin-bottom: 24px; background: var(--gradient-1); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; line-height: 1.2; }
+        .hero-subtitle { font-size: clamp(1.2rem, 2.2vw, 1.6rem); color: var(--text-primary); max-width: 900px; margin: 0 auto 40px; line-height: 1.6; font-weight: 400; }
+        .hero-images { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; margin-top: 60px; }
+        .hero-image-card { position: relative; border-radius: 20px; overflow: hidden; aspect-ratio: 16/9; box-shadow: var(--glow-purple); transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .hero-image-card:hover { transform: scale(1.02); box-shadow: 0 0 40px rgba(123, 44, 191, 0.7); }
+        .hero-image-card img { width: 100%; height: 100%; object-fit: cover; }
+        .scroll-indicator { position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%); animation: float 2s ease-in-out infinite; z-index: 2; }
+        .scroll-indicator span { display: block; width: 30px; height: 50px; border: 2px solid var(--primary-blue); border-radius: 25px; position: relative; }
+        .scroll-indicator span::before { content: ''; position: absolute; top: 8px; left: 50%; transform: translateX(-50%); width: 6px; height: 10px; background: var(--primary-blue); border-radius: 3px; animation: pulse 1.5s infinite; }
+
+        section { padding: 80px 20px; position: relative; z-index: 1; }
+
+        .tech-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; max-width: 1200px; margin: 0 auto; }
+        .tech-card { background: var(--card-bg); border-radius: 20px; padding: 32px; border: 1px solid rgba(0, 212, 255, 0.15); transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .tech-card:hover { transform: translateY(-8px); box-shadow: 0 20px 60px rgba(0, 212, 255, 0.2); }
+        .tech-card-icon { font-size: 48px; margin-bottom: 20px; }
+        .tech-card-title { font-size: 1.4rem; font-weight: 700; margin-bottom: 12px; color: var(--primary-blue); }
+        .tech-card-desc { color: var(--text-secondary); font-size: 1.05rem; line-height: 1.7; }
+
+        .content-section { background: var(--card-bg); padding: 60px 50px; border-radius: 24px; border: 1px solid rgba(0, 212, 255, 0.2); max-width: 1100px; margin: 0 auto; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3); }
+        .content-section h3 { font-size: 1.6rem; margin: 40px 0 20px; color: var(--accent-green); }
+        .content-section p { color: var(--text-secondary); line-height: 2; font-size: 1.08rem; margin: 15px 0; }
+        .content-section ul { margin: 20px 0; padding-left: 30px; }
+        .content-section li { margin: 10px 0; color: var(--text-secondary); }
+
+        .comparison-table { width: 100%; border-collapse: collapse; margin: 30px 0; background: var(--card-bg-light); border-radius: 16px; overflow: hidden; }
+        .comparison-table th { background: var(--gradient-1); padding: 16px 20px; text-align: left; font-weight: 700; font-size: 1.05rem; }
+        .comparison-table td { padding: 14px 20px; border-bottom: 1px solid rgba(255,255,255,0.08); color: var(--text-secondary); }
+        .comparison-table tr:last-child td { border-bottom: none; }
+        .comparison-table tr:hover td { background: rgba(0, 212, 255, 0.05); }
+        .comparison-table .highlight-col { color: var(--accent-green); font-weight: 600; }
+
+        .timeline { position: relative; padding-left: 40px; margin: 40px 0; }
+        .timeline::before { content: ''; position: absolute; left: 15px; top: 0; bottom: 0; width: 3px; background: var(--gradient-1); border-radius: 3px; }
+        .timeline-item { position: relative; margin-bottom: 40px; padding: 24px 28px; background: var(--card-bg-light); border-radius: 16px; border: 1px solid rgba(0, 212, 255, 0.12); }
+        .timeline-item::before { content: ''; position: absolute; left: -31px; top: 28px; width: 14px; height: 14px; background: var(--primary-blue); border-radius: 50%; box-shadow: 0 0 15px rgba(0, 212, 255, 0.7); }
+        .timeline-date { font-size: 0.95rem; color: var(--primary-blue); font-weight: 600; margin-bottom: 8px; }
+        .timeline-title { font-size: 1.2rem; font-weight: 700; color: var(--text-primary); margin-bottom: 10px; }
+        .timeline-desc { color: var(--text-secondary); font-size: 1.02rem; line-height: 1.7; }
+
+        .quote-box { background: linear-gradient(135deg, rgba(123, 44, 191, 0.2) 0%, rgba(0, 212, 255, 0.1) 100%); padding: 36px 40px; border-radius: 20px; border-left: 6px solid var(--primary-purple); margin: 40px 0; }
+        .quote-text { font-size: 1.25rem; line-height: 1.8; color: var(--text-primary); font-style: italic; margin-bottom: 16px; }
+        .quote-author { font-size: 1rem; color: var(--primary-blue); font-weight: 600; }
+
+        .meta-info { background: linear-gradient(135deg, rgba(0, 212, 255, 0.15) 0%, rgba(123, 44, 191, 0.15) 100%); padding: 30px; border-radius: 16px; margin-bottom: 40px; border-left: 5px solid var(--primary-blue); }
+        .meta-info p { margin: 12px 0; color: var(--text-secondary); font-size: 1.05rem; }
+        .meta-info strong { color: var(--primary-blue); font-weight: 600; }
+        .meta-info a { color: var(--primary-blue); text-decoration: none; word-break: break-all; }
+
+        .highlight-box { background: linear-gradient(135deg, rgba(0, 255, 136, 0.08) 0%, rgba(0, 212, 255, 0.08) 100%); padding: 30px; border-radius: 16px; border-left: 5px solid var(--accent-green); margin: 40px 0; }
+        .highlight-box h4 { color: var(--accent-green); margin-bottom: 15px; font-size: 1.3rem; }
+        .highlight-box p { color: var(--text-secondary); margin: 0; }
+
+        footer { background: #050508; padding: 60px 20px; text-align: center; border-top: 1px solid rgba(255, 255, 255, 0.1); }
+        footer p { color: var(--text-secondary); margin-bottom: 20px; }
+        .footer-links { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; }
+        .footer-links a { color: var(--primary-blue); text-decoration: none; transition: color 0.3s ease; }
+        .footer-links a:hover { color: var(--text-primary); }
+
+        .section-title { text-align: center; margin-bottom: 50px; }
+        .section-title h2 { font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 800; background: var(--gradient-1); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 16px; }
+        .section-title p { color: var(--text-secondary); font-size: 1.15rem; max-width: 700px; margin: 0 auto; }
+
+        @media (max-width: 768px) {
+            .content-section { padding: 40px 25px; }
+            .hero-images { grid-template-columns: 1fr; }
+            .hero h1 { font-size: 2rem; }
+            .hero-subtitle { font-size: 1.2rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="code-rain" id="codeRain"></div>
+
+    <section class="hero">
+        <div class="hero-content">
+            <span class="hero-badge">📰 AI News 專題報道</span>
+            <h1>港大 DeepTutor 開源登場：將 PDF 教材轉化為互動個人化教學</h1>
+            <p class="hero-subtitle">香港大學數據科學實驗室推出開源 AI 學習助手 DeepTutor，採用多 Agent 協作架構，將 PDF 教材轉化為互動個人化教學，GitHub 累積逾 12,700 顆星。</p>
+            <div class="hero-images">
+                <div class="hero-image-card">
+                    <img src="img/img1.png" alt="DeepTutor AI 學習平台">
+                </div>
+                <div class="hero-image-card">
+                    <img src="img/img2.png" alt="多 Agent 協作架構">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="section-title">
+            <h2>🔑 核心功能解析</h2>
+            <p>DeepTutor 的五大技術優勢與創新特點</p>
+        </div>
+        <div class="tech-cards">
+            <div class="tech-card">
+                <div class="tech-card-icon">🤖</div>
+                <div class="tech-card-title">多 Agent 協作架構</div>
+                <div class="tech-card-desc">3 個專用 Agent 模組分工協作：逐步解題與評估、深度研究與引導學習、概念創意生成。各司其職，模擬真實補習過程。</div>
+            </div>
+            <div class="tech-card">
+                <div class="tech-card-icon">📚</div>
+                <div class="tech-card-title">PDF 教材智能解析</div>
+                <div class="tech-card-desc">一鍵上傳 PDF 教材，系統自動分析內容結構，轉化為互動式個人化教學。支援知識點拆解、概念視覺化及難度自適應調整。</div>
+            </div>
+            <div class="tech-card">
+                <div class="tech-card-icon">✍️</div>
+                <div class="tech-card-title">自動模擬試卷生成</div>
+                <div class="tech-card-desc">上傳一份考古題，系統自動分析風格與難度，生成風格一致的全新練習題。告別題庫不足的煩惱，輕鬆備考。</div>
+            </div>
+            <div class="tech-card">
+                <div class="tech-card-icon">🔍</div>
+                <div class="tech-card-title">多源交叉驗證</div>
+                <div class="tech-card-desc">整合 RAG 混合檢索、知識圖譜、即時網絡搜尋、學術論文資料庫及 Python 程式碼執行，回應時同步交叉驗證最新資料。</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <div class="meta-info">
+            <p><strong>📺 資料來源</strong>：<a href="https://unwire.hk/2026/04/10/deeptutor-hku-open-source-ai-tutor/software/" target="_blank">unwire.hk</a></p>
+            <p><strong>📅 發布日期</strong>：2026-04-10</p>
+            <p><strong>🤖 處理方式</strong>：AI 智能摘要生成 + 深度優化</p>
+        </div>
+
+        <div class="quote-box">
+            <p class="quote-text">DeepTutor 設計核心是讓學生真正理解知識，而非單純取得答案。與 ChatGPT 式問答截然不同，這是一個真正以學習者為中心的 AI 系統。</p>
+            <p class="quote-author">— HKUDS 官方定位</p>
+        </div>
+
+        <h3>🎯 產品定位：「Agent 原生智能學習平台」</h3>
+        <p>DeepTutor v1.0 於 2026 年 4 月 3 日正式推出，官方將其定位為「Agent 原生智能學習平台」。工具整合層涵蓋知識庫檢索、即時網絡搜尋、程式碼執行、深度推理、腦力激盪、論文搜尋及 PDF 檔案解析等核心功能。</p>
+
+        <h3>🧠 三層 Agent 架構各司其職</h3>
+        <p>DeepTutor 底層並非單一模型處理所有任務，而是由 3 個專用 Agent 模組分工協作：</p>
+        <ul>
+            <li><strong>解題 Agent</strong>：負責逐步解題與評估，模仿真人補習老師的解題思路</li>
+            <li><strong>研究 Agent</strong>：負責深度研究與引導學習，幫助學生建立系統性知識框架</li>
+            <li><strong>創意 Agent</strong>：負責概念創意生成，以多元角度解釋抽象概念</li>
+        </ul>
+
+        <h3>📊 與傳統 AI 問答工具比較</h3>
+        <table class="comparison-table">
+            <thead>
+                <tr>
+                    <th>功能維度</th>
+                    <th>DeepTutor</th>
+                    <th>ChatGPT</th>
+                    <th>傳統題庫軟件</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>學習方式</td>
+                    <td class="highlight-col">互動式引導</td>
+                    <td>被動問答</td>
+                    <td>機械刷題</td>
+                </tr>
+                <tr>
+                    <td>PDF 教材整合</td>
+                    <td class="highlight-col">✅ 原生支援</td>
+                    <td>需手動粘貼</td>
+                    <td>❌ 不支援</td>
+                </tr>
+                <tr>
+                    <td>試卷自動生成</td>
+                    <td class="highlight-col">✅ AI 模擬風格</td>
+                    <td>❌ 不支援</td>
+                    <td>有限模板</td>
+                </tr>
+                <tr>
+                    <td>知識圖譜建構</td>
+                    <td class="highlight-col">✅ 自動建構</td>
+                    <td>❌ 不支援</td>
+                    <td>❌ 不支援</td>
+                </tr>
+                <tr>
+                    <td>難度自適應</td>
+                    <td class="highlight-col">✅ 雙迴圈推理</td>
+                    <td>被動響應</td>
+                    <td>固定難度</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>🔮 應用場景與未來展望</h3>
+        <p>對於複雜概念，DeepTutor 能將知識和演算法拆解為步驟，製作互動式逐步講解頁面，並結合雙迴圈推理架構，配合學生程度調整學習節奏。這個系統特別適合：</p>
+        <ul>
+            <li>大學生備考：自動分析 past paper 生成相似風格練習題</li>
+            <li>在職進修：將專業論文轉化為個人化學習教材</li>
+            <li>自學愛好者：建立個人知識圖譜，系統化掌握新領域</li>
+        </ul>
+
+        <h3>📅 發展歷程</h3>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-date">2025年</div>
+                <div class="timeline-title">HKUDS 啟動 AI 教育研究</div>
+                <div class="timeline-desc">香港大學數據科學實驗室開始探索 AI 在個人化教育的應用。</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">2026年3月</div>
+                <div class="timeline-title">DeepTutor 內部測試</div>
+                <div class="timeline-desc">邀請部分學生進行封測，收集反饋優化系統。</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">2026年4月3日</div>
+                <div class="timeline-title">DeepTutor v1.0 正式發布</div>
+                <div class="timeline-desc">GitHub 開源，當日即獲逾 5,000 顆星，累計已超 12,700 顆。</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">2026年4月10日</div>
+                <div class="timeline-title">媒體廣泛報導</div>
+                <div class="timeline-desc">UNWIRE 等科技媒體深入報導，引發教育科技圈熱議。</div>
+            </div>
+        </div>
+
+        <div class="highlight-box">
+            <h4>✨ 關鍵洞察</h4>
+            <p>DeepTutor 的出現標誌著 AI 教育從「答題工具」向「學習導師」的轉變。其多 Agent 協作架構和以理解為核心的設計理念，有望成為個人化教育的標杆方案。</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2026 AI News Archive | 由 AI 技術生成</p>
+        <div class="footer-links">
+            <a href="../index.html">返回主頁</a>
+            <a href="https://github.com/hklamsir/ai_news" target="_blank">GitHub</a>
+            <a href="https://hklamsir.github.io/ai_news/" target="_blank">瀏覽所有專題</a>
+        </div>
+    </footer>
+
+    <script>
+        function createCodeRain() {
+            const codeRain = document.getElementById('codeRain');
+            if (!codeRain) return;
+            const chars = '01 アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン';
+            for (let i = 0; i < 50; i++) {
+                const char = document.createElement('div');
+                char.className = 'code-char';
+                char.textContent = chars[Math.floor(Math.random() * chars.length)];
+                char.style.left = Math.random() * 100 + '%';
+                char.style.animationDelay = Math.random() * 4 + 's';
+                char.style.animationDuration = (Math.random() * 2 + 3) + 's';
+                codeRain.appendChild(char);
+            }
+        }
+        document.addEventListener('DOMContentLoaded', () => { createCodeRain(); });
+    </script>
+</body>
+</html>
