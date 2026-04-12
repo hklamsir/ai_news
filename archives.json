@@ -1,6 +1,16 @@
 {
   "archives": [
     {
+      "dir": "news_20260412_182201",
+      "title": "The Next Evolution of AI Coding Is Harnesses - Here's How to Build Them",
+      "summary_short": "## 新聞導語經過數月的幕後努力，全新的ARCON正式亮相，這是一個開源的AI編碼Harness Builder，旨在為開發者提供一個強大的工具來構建和管理AI編碼流程。ARCON透過將不同的編碼代",
+      "images": [
+        "img/img1.png"
+      ],
+      "date": "2026-04-12",
+      "url": "./news_20260412_182201/index.html"
+    },
+    {
       "dir": "news_20260411_123953",
       "title": "港大 DeepTutor 開源登場：將 PDF 教材轉化為互動個人化教學",
       "summary_short": "香港大學數據科學實驗室推出開源 AI 學習助手 DeepTutor，採用多 Agent 協作架構，將 PDF 教材轉化為互動個人化教學。系統由 3 個專用 Agent 模組分工協作：逐步解題與評估、深度研究與引導學習、概念創意生成。GitHub 累積逾 12,700 顆星。",
@@ -231,5 +241,5 @@
       "url": "./20260404_2045/index.html"
     }
   ],
-  "last_updated": "2026-04-11T12:42:00.000000"
+  "last_updated": "2026-04-12T18:25:22.626599"
 }
