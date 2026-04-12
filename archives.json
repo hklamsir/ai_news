@@ -1,6 +1,16 @@
 {
   "archives": [
     {
+      "dir": "news_20260412_202440",
+      "title": "DeepSeek V4 正式登場：成本僅 GPT 百分之一 企業 AI 市場大洗牌 - UNWIRE.PRO 香港",
+      "summary_short": "# DeepSeek V4 正式登場：成本僅 GPT 百分之一 企業 AI 市場大洗牌 - UNWIRE.PRO 香港## 📖 新聞導語本文報導來自 **UNWIRE**，發布於 **2026",
+      "images": [
+        "img/img1.png"
+      ],
+      "date": "2026-04-12",
+      "url": "./news_20260412_202440/index.html"
+    },
+    {
       "dir": "news_20260412_182201",
       "title": "The Next Evolution of AI Coding Is Harnesses - Here's How to Build Them",
       "summary_short": "## 新聞導語經過數月的幕後努力，全新的ARCON正式亮相，這是一個開源的AI編碼Harness Builder，旨在為開發者提供一個強大的工具來構建和管理AI編碼流程。ARCON透過將不同的編碼代",
@@ -241,5 +251,5 @@
       "url": "./20260404_2045/index.html"
     }
   ],
-  "last_updated": "2026-04-12T18:25:22.626599"
+  "last_updated": "2026-04-12T20:28:25.779091"
 }
