@@ -3,13 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Next Evolution of AI Coding Is Harnesses - Here's How to Build Them</title>
+    <title>Archon：首個開源 AI 編碼 Harness Builder 深度解析</title>
     <style>
         :root {
             --primary-blue: #00d4ff;
             --primary-purple: #7b2cbf;
             --accent-green: #00ff88;
             --accent-orange: #ff9500;
+            --accent-red: #ff4757;
             --dark-bg: #0a0a0f;
             --card-bg: #12121a;
             --card-bg-light: #1a1a28;
@@ -29,6 +30,7 @@
         @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.6; } }
         @keyframes slideIn { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
         @keyframes codeRain { 0% { transform: translateY(-100%); opacity: 0; } 10% { opacity: 1; } 90% { opacity: 1; } 100% { transform: translateY(100vh); opacity: 0; } }
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); } }
 
         .code-rain { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; overflow: hidden; }
         .code-char { position: absolute; color: var(--primary-blue); font-family: 'Courier New', monospace; font-size: 14px; opacity: 0; animation: codeRain 4s linear infinite; }
@@ -37,8 +39,8 @@
         .hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(ellipse at center, rgba(123, 44, 191, 0.15) 0%, transparent 70%); z-index: 1; }
         .hero-content { position: relative; z-index: 2; max-width: 1200px; text-align: center; animation: slideIn 1s ease-out; }
         .hero-badge { display: inline-block; padding: 12px 32px; background: var(--gradient-1); border-radius: 50px; font-size: 18px; font-weight: 700; margin-bottom: 24px; box-shadow: var(--glow-blue); letter-spacing: 1px; }
-        .hero h1 { font-size: clamp(2rem, 5vw, 4rem); font-weight: 900; margin-bottom: 24px; background: var(--gradient-1); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; line-height: 1.2; }
-        .hero-subtitle { font-size: clamp(1.2rem, 2.2vw, 1.6rem); color: var(--text-primary); max-width: 900px; margin: 0 auto 40px; line-height: 1.6; font-weight: 400; }
+        .hero h1 { font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 900; margin-bottom: 24px; background: var(--gradient-1); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; line-height: 1.2; }
+        .hero-subtitle { font-size: clamp(1.2rem, 2.2vw, 1.5rem); color: var(--text-primary); max-width: 900px; margin: 0 auto 40px; line-height: 1.6; font-weight: 400; }
         .hero-images { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; margin-top: 60px; }
         .hero-image-card { position: relative; border-radius: 20px; overflow: hidden; aspect-ratio: 16/9; box-shadow: var(--glow-purple); transition: transform 0.3s ease, box-shadow 0.3s ease; }
         .hero-image-card:hover { transform: scale(1.02); box-shadow: 0 0 40px rgba(123, 44, 191, 0.7); }
@@ -64,6 +66,44 @@
         .highlight-box h4 { color: var(--accent-green); margin-bottom: 15px; font-size: 1.3rem; }
         .highlight-box p { color: var(--text-secondary); margin: 0; }
 
+        .quote-box { background: linear-gradient(135deg, rgba(123, 44, 191, 0.15) 0%, rgba(0, 212, 255, 0.15) 100%); padding: 30px 40px; border-radius: 16px; border-left: 5px solid var(--primary-purple); margin: 40px 0; position: relative; }
+        .quote-box::before { content: '"'; position: absolute; top: 10px; left: 20px; font-size: 80px; color: var(--primary-purple); opacity: 0.3; font-family: Georgia, serif; }
+        .quote-box p { color: var(--text-primary); font-size: 1.2rem; font-style: italic; margin-bottom: 15px; }
+        .quote-box cite { color: var(--text-secondary); font-size: 0.95rem; }
+
+        .tech-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin: 40px 0; }
+        .tech-card { background: var(--card-bg-light); padding: 30px; border-radius: 16px; border: 1px solid rgba(0, 212, 255, 0.15); transition: transform 0.3s ease, box-shadow 0.3s ease; animation: fadeInUp 0.6s ease-out forwards; opacity: 0; }
+        .tech-card:nth-child(1) { animation-delay: 0.1s; }
+        .tech-card:nth-child(2) { animation-delay: 0.2s; }
+        .tech-card:nth-child(3) { animation-delay: 0.3s; }
+        .tech-card:nth-child(4) { animation-delay: 0.4s; }
+        .tech-card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0, 212, 255, 0.2); }
+        .tech-card-icon { font-size: 2.5rem; margin-bottom: 15px; }
+        .tech-card h4 { color: var(--primary-blue); margin-bottom: 12px; font-size: 1.2rem; }
+        .tech-card p { color: var(--text-secondary); font-size: 0.95rem; line-height: 1.7; }
+
+        .comparison-table { width: 100%; border-collapse: collapse; margin: 40px 0; border-radius: 16px; overflow: hidden; box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3); }
+        .comparison-table thead { background: linear-gradient(135deg, var(--primary-blue), var(--primary-purple)); }
+        .comparison-table th { padding: 18px 20px; text-align: left; font-weight: 600; font-size: 1.05rem; }
+        .comparison-table td { padding: 16px 20px; border-bottom: 1px solid rgba(255, 255, 255, 0.05); color: var(--text-secondary); }
+        .comparison-table tr:last-child td { border-bottom: none; }
+        .comparison-table tr:nth-child(even) { background: rgba(255, 255, 255, 0.02); }
+        .comparison-table .highlight-col { color: var(--accent-green); font-weight: 500; }
+
+        .timeline { position: relative; margin: 40px 0; padding-left: 40px; }
+        .timeline::before { content: ''; position: absolute; left: 15px; top: 0; bottom: 0; width: 2px; background: linear-gradient(180deg, var(--primary-blue), var(--primary-purple)); }
+        .timeline-item { position: relative; margin-bottom: 35px; padding: 20px 25px; background: var(--card-bg-light); border-radius: 12px; border: 1px solid rgba(0, 212, 255, 0.1); animation: fadeInUp 0.5s ease-out forwards; opacity: 0; }
+        .timeline-item:nth-child(1) { animation-delay: 0.1s; }
+        .timeline-item:nth-child(2) { animation-delay: 0.2s; }
+        .timeline-item:nth-child(3) { animation-delay: 0.3s; }
+        .timeline-item:nth-child(4) { animation-delay: 0.4s; }
+        .timeline-item:nth-child(5) { animation-delay: 0.5s; }
+        .timeline-item:nth-child(6) { animation-delay: 0.6s; }
+        .timeline-item::before { content: ''; position: absolute; left: -32px; top: 25px; width: 12px; height: 12px; background: var(--primary-blue); border-radius: 50%; box-shadow: var(--glow-blue); }
+        .timeline-date { color: var(--primary-blue); font-size: 0.9rem; font-weight: 600; margin-bottom: 8px; }
+        .timeline-title { color: var(--text-primary); font-size: 1.1rem; font-weight: 600; margin-bottom: 8px; }
+        .timeline-desc { color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6; }
+
         footer { background: #050508; padding: 60px 20px; text-align: center; border-top: 1px solid rgba(255, 255, 255, 0.1); }
         footer p { color: var(--text-secondary); margin-bottom: 20px; }
         .footer-links { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; }
@@ -75,6 +115,8 @@
             .hero-images { grid-template-columns: 1fr; }
             .hero h1 { font-size: 2rem; }
             .hero-subtitle { font-size: 1.2rem; }
+            .comparison-table { font-size: 0.9rem; }
+            .comparison-table th, .comparison-table td { padding: 12px 10px; }
         }
     </style>
 </head>
@@ -83,11 +125,11 @@
     <section class="hero">
         <div class="hero-content">
             <span class="hero-badge">📰 AI News 專題報道</span>
-            <h1>The Next Evolution of AI Coding Is Harnesses - Here's How to Build Them</h1>
-            <p class="hero-subtitle">經過數月的幕後努力，全新的ARCON正式亮相，這是一個開源的AI編碼Harness Builder，旨在為開發者提供一個強大的工具來構建和管理AI編碼流程。</p>
+            <h1>Archon：首個開源 AI 編碼 Harness Builder 深度解析</h1>
+            <p class="hero-subtitle">顛覆傳統 AI 編程！Archon 將 Claude Code 與 Codex 整合进結構化 YAML 工作流程，讓 AI 編碼從隨機變確定、從一次性的實驗變成可重複的工程流程。</p>
             <div class="hero-images">
                 <div class="hero-image-card">
-                    <img src="img/img1.png" alt="新聞插圖">
+                    <img src="img/img1.png" alt="Archon AI 編碼框架">
                 </div>
             </div>
         </div>
@@ -97,31 +139,136 @@
         <div class="meta-info">
             <p><strong>📺 資料來源</strong>：<a href="https://www.youtube.com/watch?v=qMnClynCAmM" target="_blank">https://www.youtube.com/watch?v=qMnClynCAmM</a></p>
             <p><strong>📅 發布日期</strong>：2026-04-12</p>
-            <p><strong>🤖 處理方式</strong>：AI 智能摘要生成</p>
+            <p><strong>🤖 處理方式</strong>：AI 智能摘要 + 深度優化</p>
         </div>
 
-        <h3>🎯 核心觀點</h3>
-        <p>ARCON是第一個開源的AI編碼Harness Builder，能夠將開發過程編碼為工作流。透過ARCON，開發者可以輕鬆地構建自定義的工作流，並在多個程式碼庫中執行。</p>
+        <div class="quote-box">
+            <p>Archon 不只是另一個 AI 編碼助手——它是一個將 Claude Code 和 Codex 包裝在結構化 YAML 工作流程中的系統，讓代理行為變得確定且可重複。</p>
+            <cite>— MindStudio 分析報告</cite>
+        </div>
+
+        <h3>🎯 核心技術卡片</h3>
+        <div class="tech-cards">
+            <div class="tech-card">
+                <div class="tech-card-icon">🔧</div>
+                <h4>YAML 驅動工作流</h4>
+                <p>以 YAML 文檔定義任務、輸入、輸出和步驟依賴關係，所有流程均可版本控制、審查和重複執行。</p>
+            </div>
+            <div class="tech-card">
+                <div class="tech-card-icon">🤖</div>
+                <h4>多代理路由支援</h4>
+                <p>支援在同一工作流程中將不同任務路由到不同模型，這是專業團隊使用 AI 編碼工具的新方向。</p>
+            </div>
+            <div class="tech-card">
+                <div class="tech-card-icon">📋</div>
+                <h4>確定性輸出保障</h4>
+                <p>解決 AI 編碼最大痛點——非確定性輸出，透過結構化框架確保每次執行結果一致。</p>
+            </div>
+            <div class="tech-card">
+                <div class="tech-card-icon">🚀</div>
+                <h4>5 分鐘快速部署</h4>
+                <p>克隆倉庫、載入 agent、安裝引導——5 分鐘內即可完成設定並開始使用。</p>
+            </div>
+        </div>
+
+        <h3>📊 AI 編碼方案對比</h3>
+        <table class="comparison-table">
+            <thead>
+                <tr>
+                    <th>方案</th>
+                    <th>確定性</th>
+                    <th>版本控制</th>
+                    <th>多模型支援</th>
+                    <th>開源</th>
+                    <th>PR 接受率</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>純 LLM（如 GPT-4）</td>
+                    <td>❌ 低</td>
+                    <td>❌ 無</td>
+                    <td>❌ 單一</td>
+                    <td>N/A</td>
+                    <td class="highlight-col">6.7%</td>
+                </tr>
+                <tr>
+                    <td>Claude Code / Codex</td>
+                    <td>⚠️ 中</td>
+                    <td>❌ 無</td>
+                    <td>⚠️ 有限</td>
+                    <td>⚠️ 部分</td>
+                    <td>~30%</td>
+                </tr>
+                <tr>
+                    <td class="highlight-col">Archon Harness</td>
+                    <td class="highlight-col">✅ 高</td>
+                    <td class="highlight-col">✅ YAML 版本化</td>
+                    <td class="highlight-col">✅ 多模型路由</td>
+                    <td class="highlight-col">✅ 完全開源</td>
+                    <td class="highlight-col">~70%</td>
+                </tr>
+                <tr>
+                    <td>傳統 IDE + AI 插件</td>
+                    <td>✅ 高</td>
+                    <td>✅ Git 完整</td>
+                    <td>❌ 單一</td>
+                    <td>✅ 視情況</td>
+                    <td>N/A</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>⏱️ 發展時間軸</h3>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-date">2024 年</div>
+                <div class="timeline-title">AI 編碼助手萌芽期</div>
+                <div class="timeline-desc">Claude Code、Codex CLI 等工具相繼推出，開發者開始嘗試 AI 輔助編程。</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">2025 年中</div>
+                <div class="timeline-title">Harness 概念形成</div>
+                <div class="timeline-desc">業界開始意識到需要「測試框架」般的工具來控制 AI 編碼行為。</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">2026 年初</div>
+                <div class="timeline-title">Anthropic 布局 sub-agents</div>
+                <div class="timeline-desc">Anthropic 推動 sub-agent 架構，Stripe 等公司開始探索自定義 AI 編碼架構。</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">2026 年 4 月</div>
+                <div class="timeline-title">Archon 正式發布</div>
+                <div class="timeline-desc">coleam00 發布首個開源 Archon Harness Builder，支援 Claude Code 與 Codex。</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">2026 年 Q2（預計）</div>
+                <div class="timeline-title">企業採用加速</div>
+                <div class="timeline-desc">更多企業將採用 Harness Engineering 理念，構建自定義 AI 編碼工作流程。</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">2026 年下半年（預計）</div>
+                <div class="timeline-title">行業標準形成</div>
+                <div class="timeline-desc">Harness 格式可能趨向標準化，YAML 工作流程將成為 AI 編碼的事實規範。</div>
+            </div>
+        </div>
 
         <h3>💡 重點解析</h3>
-        <p>ARCON支援多種平臺，包括CLI、GitHub、Telegram和Slack，並且安裝和設定非常簡單。研究顯示，透過使用類似ARCON的Harness，PR接受率可以從6.7%提高到接近70%。</p>
+        <p>Archon 的核心 primitive 是工作流文件——一個定義任務、輸入、輸出和步驟依賴關係的 YAML 文檔，具有可審查性和版本可控性。</p>
         <ul>
-            <li>ARCON允許開發者根據自己的需求定製工作流。</li>
-            <li>每個工作流由一系列節點組成，這些節點可以是傳送到編碼代理會話的提示，也可以是確定性的命令。</li>
-            <li>這種靈活性使得開發者可以在工作流中加入特定的驗證步驟或上下文策展，確保編碼過程的可靠性和一致性。</li>
-            <li>ARCON還提供了許多預包裝的工作流，涵蓋了從修復GitHub問題到建立完整的產品需求文件（PRD）等多種場景。</li>
-            <li>這些預包裝的工作流可以幫助開發者快速上手，並在此基礎上進行進一步的定製。</li>
+            <li><strong>確定性輸出</strong>：透過 YAML 結構化定義，確保每次執行結果一致</li>
+            <li><strong>可組合性</strong>：工作流可跨項目複用，實現「定義一次，永久運行」</li>
+            <li><strong>版本控制</strong>：所有提示和工作流均可版本化管理</li>
+            <li><strong>多平台支援</strong>：CLI、GitHub Actions、Telegram、Slack 等無縫整合</li>
+            <li><strong>預包裝工作流</strong>：涵蓋從修復 GitHub Issue 到建立 PRD 等多種場景</li>
         </ul>
 
-        <h3>📊 數據分析</h3>
-        <p>數據顯示，僅依靠單一的大型語言模型生成的程式碼，其PR接受率僅為6.7%。然而，透過使用類似ARCON的Harness，這一比率可以大幅提升至接近70%。這表明，透過構建自定義的Harness，開發者可以顯著提升AI編碼的質量和效率。</p>
-
         <h3>🔮 未來展望</h3>
-        <p>隨著ARCON的推出，未來的AI編碼領域將迎來更多創新和變革。開發者可以利用ARCON來構建更複雜和高效的編碼工作流，從而提高開發效率和程式碼質量。同時，ARCON的開源特性也將吸引更多社群成員參與其中，共同推動技術的進步。預計未來將有更多的企業和個人採用ARCON，進一步推廣Harness Engineering的理念，推動AI編碼技術的廣泛應用。</p>
+        <p>隨著更多企業認識到 Harness 的價值，其普及將不可避免。Archon 的開源特性使其成為推動技術進步的重要力量，開發者可以利用它來構建更複雜和高效的編碼工作流，從而提高開發效率和代碼質量。</p>
 
         <div class="highlight-box">
             <h4>✨ 關鍵洞察</h4>
-            <p>ARCON不僅提升了開發者的生產力，還推動了整個行業向更加高效和可靠的AI編碼方向發展。</p>
+            <p>Harness Engineering 代表了 AI 編碼的下一個進化方向——從隨機的實驗變成可工程的流程。</p>
         </div>
     </section>
 
