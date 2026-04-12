@@ -1,6 +1,16 @@
 {
   "archives": [
     {
+      "dir": "news_20260412_221732",
+      "title": "智策未來：分享新加坡 AI 領域的戰略部署",
+      "summary_short": "# 智策未來：分享新加坡 AI 領域的戰略部署## 📖 新聞導語本文報導來自 **PCMARKET**，發布於 **2026-04-12**。最新科技新聞報道指出，人工智能領域迎來重要技術",
+      "images": [
+        "img/img1.png"
+      ],
+      "date": "2026-04-12",
+      "url": "./news_20260412_221732/index.html"
+    },
+    {
       "dir": "news_20260412_202440",
       "title": "DeepSeek V4 正式登場：成本僅 GPT 百分之一 企業 AI 市場大洗牌 - UNWIRE.PRO 香港",
       "summary_short": "# DeepSeek V4 正式登場：成本僅 GPT 百分之一 企業 AI 市場大洗牌 - UNWIRE.PRO 香港## 📖 新聞導語本文報導來自 **UNWIRE**，發布於 **2026",
@@ -251,5 +261,5 @@
       "url": "./20260404_2045/index.html"
     }
   ],
-  "last_updated": "2026-04-12T20:28:25.779091"
+  "last_updated": "2026-04-12T22:24:53.448113"
 }
