@@ -111,6 +111,10 @@
         footer { background: #050508; padding: 60px 20px; text-align: center; border-top: 1px solid rgba(255, 255, 255, 0.1); }
         footer p { color: var(--text-secondary); margin-bottom: 20px; }
 
+        .footer-links { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; }
+        .footer-links a { color: var(--primary-blue); text-decoration: none; transition: color 0.3s ease; }
+        .footer-links a:hover { color: var(--text-primary); }
+
         @media (max-width: 768px) {
             .content-section { padding: 40px 25px; }
             .hero-images { grid-template-columns: 1fr; }
@@ -270,8 +274,12 @@
     </section>
 
     <footer>
-        <p>📡 資料來源：YouTube 影片內容整理 | 🤖 AI 輔助生成</p>
-        <p><a href="https://hklamsir.github.io/ai_news/" target="_blank" style="color: var(--primary-blue);">瀏覽所有專題</a></p>
+        <p>© 2026 AI News Archive | 由 AI 技術生成</p>
+        <div class="footer-links">
+            <a href="../index.html">返回主頁</a>
+            <a href="https://github.com/hklamsir/ai_news" target="_blank">GitHub</a>
+            <a href="https://hklamsir.github.io/ai_news/" target="_blank">瀏覽所有專題</a>
+        </div>
     </footer>
 
     <script>
