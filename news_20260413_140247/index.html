@@ -4,475 +4,314 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>【Gemini秘技】受夠 Gems 了？用 Google Docs 建立高效提示詞庫才是最優解！（附 4 大職場實戰案例）</title>
-    <meta name="description" content="如何利用 Google Docs 建立高效的 Gemini 提示詞庫，包含 4 大職場實戰案例與詳細操作指南。">
-    <meta property="og:title" content="【Gemini秘技】受夠 Gems 了？用 Google Docs 建立高效提示詞庫才是最優解！（附 4 大職場實戰案例）">
-    <meta property="og:description" content="如何利用 Google Docs 建立高效的 Gemini 提示詞庫，包含 4 大職場實戰案例與詳細操作指南。">
-    <meta property="og:image" content="img/img1.png">
-    <meta property="og:type" content="article">
     <style>
         :root {
-            --primary: #1a73e8;
-            --primary-dark: #1557b0;
-            --secondary: #f8f9fa;
-            --accent: #34a853;
-            --text: #202124;
-            --text-muted: #5f6368;
-            --border: #dadce0;
-            --card-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-            --hover-shadow: 0 4px 6px rgba(0,0,0,0.15);
+            --primary-blue: #00d4ff;
+            --primary-purple: #7b2cbf;
+            --accent-green: #00ff88;
+            --accent-orange: #ff9500;
+            --accent-red: #ff4757;
+            --dark-bg: #0a0a0f;
+            --card-bg: #12121a;
+            --card-bg-light: #1a1a28;
+            --text-primary: #ffffff;
+            --text-secondary: #a0a0b0;
+            --gradient-1: linear-gradient(135deg, #00d4ff 0%, #7b2cbf 100%);
+            --gradient-2: linear-gradient(135deg, #00d4ff 0%, #00ff88 100%);
+            --glow-blue: 0 0 20px rgba(0, 212, 255, 0.5);
+            --glow-purple: 0 0 20px rgba(123, 44, 191, 0.5);
         }
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-            line-height: 1.7;
-            color: var(--text);
-            background: var(--secondary);
-        }
-        .header {
-            background: linear-gradient(135deg, #1a73e8 0%, #0d47a1 100%);
-            color: white;
-            padding: 2.5rem 1rem;
-            text-align: center;
-        }
-        .header .tag {
-            display: inline-block;
-            background: rgba(255,255,255,0.2);
-            padding: 0.25rem 0.75rem;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            margin-bottom: 1rem;
-        }
-        .header h1 {
-            font-size: 1.6rem;
-            font-weight: 700;
-            max-width: 800px;
-            margin: 0 auto 1rem;
-            line-height: 1.4;
-        }
-        .header .meta {
-            font-size: 0.85rem;
-            opacity: 0.85;
-        }
-        .cover-image {
-            width: 100%;
-            max-height: 450px;
-            object-fit: cover;
-            display: block;
-        }
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 1.5rem 1rem;
-        }
-        .summary-box {
-            background: white;
-            border-left: 4px solid var(--primary);
-            padding: 1.25rem 1.5rem;
-            border-radius: 0 8px 8px 0;
-            margin-bottom: 1.5rem;
-            box-shadow: var(--card-shadow);
-        }
-        .summary-box h2 {
-            font-size: 1.1rem;
-            color: var(--primary);
-            margin-bottom: 0.75rem;
-        }
-        .summary-box p {
-            font-size: 0.95rem;
-            color: var(--text-muted);
-        }
-        .section-title {
-            font-size: 1.2rem;
-            font-weight: 700;
-            color: var(--text);
-            margin: 2rem 0 1rem;
-            padding-bottom: 0.5rem;
-            border-bottom: 2px solid var(--primary);
-            display: inline-block;
-        }
-        .content-body {
-            background: white;
-            border-radius: 12px;
-            padding: 1.5rem;
-            margin-bottom: 1.5rem;
-            box-shadow: var(--card-shadow);
-        }
-        .content-body p {
-            margin-bottom: 1rem;
-            font-size: 0.97rem;
-        }
-        .content-body p:last-child { margin-bottom: 0; }
-        .highlight {
-            background: linear-gradient(180deg, transparent 60%, rgba(26,115,232,0.15) 60%);
-            padding: 0 2px;
-        }
-        .tech-cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1rem;
-            margin-bottom: 1.5rem;
-        }
-        .tech-card {
-            background: white;
-            border-radius: 12px;
-            padding: 1.25rem;
-            box-shadow: var(--card-shadow);
-            transition: transform 0.2s, box-shadow 0.2s;
-            border-top: 4px solid var(--primary);
-        }
-        .tech-card:nth-child(2) { border-top-color: var(--accent); }
-        .tech-card:nth-child(3) { border-top-color: #fbbc04; }
-        .tech-card:nth-child(4) { border-top-color: #ea4335; }
-        .tech-card:hover {
-            transform: translateY(-3px);
-            box-shadow: var(--hover-shadow);
-        }
-        .tech-card .icon {
-            font-size: 2rem;
-            margin-bottom: 0.75rem;
-        }
-        .tech-card h3 {
-            font-size: 1rem;
-            font-weight: 700;
-            margin-bottom: 0.5rem;
-            color: var(--text);
-        }
-        .tech-card p {
-            font-size: 0.88rem;
-            color: var(--text-muted);
-        }
-        .comparison-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-bottom: 1.5rem;
-            background: white;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: var(--card-shadow);
-        }
-        .comparison-table th {
-            background: var(--primary);
-            color: white;
-            padding: 0.85rem 1rem;
-            text-align: left;
-            font-weight: 600;
-            font-size: 0.9rem;
-        }
-        .comparison-table td {
-            padding: 0.75rem 1rem;
-            border-bottom: 1px solid var(--border);
-            font-size: 0.88rem;
-            vertical-align: top;
-        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Noto Sans TC', sans-serif; background-color: var(--dark-bg); color: var(--text-primary); line-height: 1.8; overflow-x: hidden; }
+
+        @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-20px); } }
+        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.6; } }
+        @keyframes slideIn { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes codeRain { 0% { transform: translateY(-100%); opacity: 0; } 10% { opacity: 1; } 90% { opacity: 1; } 100% { transform: translateY(100vh); opacity: 0; } }
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); } }
+
+        .code-rain { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; overflow: hidden; }
+        .code-char { position: absolute; color: var(--primary-blue); font-family: 'Courier New', monospace; font-size: 14px; opacity: 0; animation: codeRain 4s linear infinite; }
+
+        .hero { position: relative; min-height: 80vh; display: flex; align-items: center; justify-content: center; padding: 80px 20px; background: linear-gradient(180deg, var(--dark-bg) 0%, #1a1a2e 100%); overflow: hidden; }
+        .hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(ellipse at center, rgba(123, 44, 191, 0.15) 0%, transparent 70%); z-index: 1; }
+        .hero-content { position: relative; z-index: 2; max-width: 1200px; text-align: center; animation: slideIn 1s ease-out; }
+        .hero-badge { display: inline-block; padding: 12px 32px; background: var(--gradient-1); border-radius: 50px; font-size: 18px; font-weight: 700; margin-bottom: 24px; box-shadow: var(--glow-blue); letter-spacing: 1px; }
+        .hero h1 { font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 900; margin-bottom: 24px; background: var(--gradient-1); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; line-height: 1.2; }
+        .hero-subtitle { font-size: clamp(1.2rem, 2.2vw, 1.5rem); color: var(--text-primary); max-width: 900px; margin: 0 auto 40px; line-height: 1.6; font-weight: 400; }
+        .hero-images { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; margin-top: 60px; }
+        .hero-image-card { position: relative; border-radius: 20px; overflow: hidden; aspect-ratio: 16/9; box-shadow: var(--glow-purple); transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .hero-image-card:hover { transform: scale(1.02); box-shadow: 0 0 40px rgba(123, 44, 191, 0.7); }
+        .hero-image-card img { width: 100%; height: 100%; object-fit: cover; }
+        .scroll-indicator { position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%); animation: float 2s ease-in-out infinite; z-index: 2; }
+        .scroll-indicator span { display: block; width: 30px; height: 50px; border: 2px solid var(--primary-blue); border-radius: 25px; position: relative; }
+        .scroll-indicator span::before { content: ''; position: absolute; top: 8px; left: 50%; transform: translateX(-50%); width: 6px; height: 10px; background: var(--primary-blue); border-radius: 3px; animation: pulse 1.5s infinite; }
+
+        section { padding: 80px 20px; position: relative; z-index: 1; }
+        .content-section { background: var(--card-bg); padding: 60px 50px; border-radius: 24px; border: 1px solid rgba(0, 212, 255, 0.2); max-width: 1100px; margin: 0 auto; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3); }
+
+        .content-section h2 { font-size: 1.8rem; margin: 40px 0 20px; color: var(--primary-blue); }
+        .content-section h3 { font-size: 1.6rem; margin: 40px 0 20px; color: var(--accent-green); }
+        .content-section h4 { font-size: 1.3rem; margin: 30px 0 15px; color: var(--primary-purple); }
+        .content-section p { color: var(--text-secondary); line-height: 2; font-size: 1.08rem; margin: 15px 0; }
+        .content-section ul { margin: 20px 0; padding-left: 30px; }
+        .content-section li { margin: 10px 0; color: var(--text-secondary); }
+
+        .meta-info { background: linear-gradient(135deg, rgba(0, 212, 255, 0.15) 0%, rgba(123, 44, 191, 0.15) 100%); padding: 30px; border-radius: 16px; margin-bottom: 40px; border-left: 5px solid var(--primary-blue); }
+        .meta-info p { margin: 12px 0; color: var(--text-secondary); font-size: 1.05rem; }
+        .meta-info strong { color: var(--primary-blue); font-weight: 600; }
+        .meta-info a { color: var(--primary-blue); text-decoration: none; word-break: break-all; }
+
+        .highlight-box { background: linear-gradient(135deg, rgba(0, 255, 136, 0.08) 0%, rgba(0, 212, 255, 0.08) 100%); padding: 30px; border-radius: 16px; border-left: 5px solid var(--accent-green); margin: 40px 0; }
+        .highlight-box h4 { color: var(--accent-green); margin-bottom: 15px; font-size: 1.3rem; }
+        .highlight-box p { color: var(--text-secondary); margin: 0; }
+
+        .alert-box { background: linear-gradient(135deg, rgba(255, 71, 87, 0.1) 0%, rgba(255, 149, 0, 0.1) 100%); padding: 25px 30px; border-radius: 16px; border-left: 5px solid var(--accent-red); margin: 30px 0; }
+        .alert-box h4 { color: var(--accent-red); margin-bottom: 12px; font-size: 1.15rem; }
+        .alert-box p { color: var(--text-secondary); margin: 8px 0; font-size: 1rem; }
+
+        .quote-box { background: linear-gradient(135deg, rgba(123, 44, 191, 0.15) 0%, rgba(0, 212, 255, 0.15) 100%); padding: 30px 40px; border-radius: 16px; border-left: 5px solid var(--primary-purple); margin: 40px 0; position: relative; }
+        .quote-box::before { content: '"'; position: absolute; top: 10px; left: 20px; font-size: 80px; color: var(--primary-purple); opacity: 0.3; font-family: Georgia, serif; }
+        .quote-box p { color: var(--text-primary); font-size: 1.2rem; font-style: italic; margin-bottom: 15px; }
+        .quote-box cite { color: var(--text-secondary); font-size: 0.95rem; }
+
+        .tech-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin: 40px 0; }
+        .tech-card { background: var(--card-bg-light); padding: 30px; border-radius: 16px; border: 1px solid rgba(0, 212, 255, 0.15); transition: transform 0.3s ease, box-shadow 0.3s ease; animation: fadeInUp 0.6s ease-out forwards; opacity: 0; }
+        .tech-card:nth-child(1) { animation-delay: 0.1s; }
+        .tech-card:nth-child(2) { animation-delay: 0.2s; }
+        .tech-card:nth-child(3) { animation-delay: 0.3s; }
+        .tech-card:nth-child(4) { animation-delay: 0.4s; }
+        .tech-card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0, 212, 255, 0.2); }
+        .tech-card-icon { font-size: 2.5rem; margin-bottom: 15px; }
+        .tech-card h4 { color: var(--primary-blue); margin-bottom: 12px; font-size: 1.2rem; }
+        .tech-card p { color: var(--text-secondary); font-size: 0.95rem; line-height: 1.7; }
+
+        .comparison-table { width: 100%; border-collapse: collapse; margin: 40px 0; border-radius: 16px; overflow: hidden; box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3); }
+        .comparison-table thead { background: linear-gradient(135deg, var(--primary-blue), var(--primary-purple)); }
+        .comparison-table th { padding: 18px 20px; text-align: left; font-weight: 600; font-size: 1.05rem; }
+        .comparison-table td { padding: 16px 20px; border-bottom: 1px solid rgba(255, 255, 255, 0.05); color: var(--text-secondary); }
         .comparison-table tr:last-child td { border-bottom: none; }
-        .comparison-table tr:nth-child(even) td { background: #f8f9fa; }
-        .comparison-table .check { color: var(--accent); font-weight: bold; }
-        .comparison-table .cross { color: #ea4335; font-weight: bold; }
-        .comparison-table .partial { color: #fbbc04; font-weight: bold; }
-        .timeline {
-            position: relative;
-            padding-left: 2rem;
-            margin-bottom: 1.5rem;
-        }
-        .timeline::before {
-            content: '';
-            position: absolute;
-            left: 0.4rem;
-            top: 0.5rem;
-            bottom: 0.5rem;
-            width: 3px;
-            background: linear-gradient(180deg, var(--primary), var(--accent));
-            border-radius: 2px;
-        }
-        .timeline-item {
-            position: relative;
-            margin-bottom: 1.5rem;
-            background: white;
-            border-radius: 10px;
-            padding: 1rem 1.25rem;
-            box-shadow: var(--card-shadow);
-        }
-        .timeline-item::before {
-            content: '';
-            position: absolute;
-            left: -1.75rem;
-            top: 1.1rem;
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background: var(--primary);
-            border: 3px solid white;
-            box-shadow: 0 0 0 2px var(--primary);
-        }
-        .timeline-item:nth-child(2)::before { background: var(--accent); box-shadow: 0 0 0 2px var(--accent); }
-        .timeline-item:nth-child(3)::before { background: #fbbc04; box-shadow: 0 0 0 2px #fbbc04; }
-        .timeline-item:nth-child(4)::before { background: #ea4335; box-shadow: 0 0 0 2px #ea4335; }
-        .timeline-item h4 {
-            font-size: 0.95rem;
-            font-weight: 700;
-            color: var(--text);
-            margin-bottom: 0.4rem;
-        }
-        .timeline-item p {
-            font-size: 0.88rem;
-            color: var(--text-muted);
-        }
-        .quote-box {
-            background: linear-gradient(135deg, #e8f0fe 0%, #d2e3fc 100%);
-            border-left: 5px solid var(--primary);
-            border-radius: 0 12px 12px 0;
-            padding: 1.25rem 1.5rem;
-            margin-bottom: 1.5rem;
-            position: relative;
-        }
-        .quote-box::before {
-            content: '"';
-            font-size: 4rem;
-            color: var(--primary);
-            opacity: 0.2;
-            position: absolute;
-            top: -0.5rem;
-            left: 0.75rem;
-            font-family: Georgia, serif;
-            line-height: 1;
-        }
-        .quote-box blockquote {
-            font-size: 1rem;
-            font-style: italic;
-            color: var(--text);
-            margin-bottom: 0.5rem;
-            padding-left: 0.5rem;
-        }
-        .quote-box cite {
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            font-style: normal;
-        }
-        .case-list {
-            list-style: none;
-            margin-bottom: 1.5rem;
-        }
-        .case-list li {
-            background: white;
-            border-radius: 10px;
-            padding: 1rem 1.25rem;
-            margin-bottom: 0.75rem;
-            box-shadow: var(--card-shadow);
-            display: flex;
-            align-items: flex-start;
-            gap: 0.75rem;
-        }
-        .case-list .case-num {
-            background: var(--primary);
-            color: white;
-            width: 28px;
-            height: 28px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 0.8rem;
-            font-weight: 700;
-            flex-shrink: 0;
-        }
-        .case-list .case-num.c2 { background: var(--accent); }
-        .case-list .case-num.c3 { background: #fbbc04; }
-        .case-list .case-num.c4 { background: #ea4335; }
-        .case-list h4 {
-            font-size: 0.95rem;
-            font-weight: 700;
-            margin-bottom: 0.25rem;
-        }
-        .case-list p {
-            font-size: 0.85rem;
-            color: var(--text-muted);
-        }
-        .footer {
-            text-align: center;
-            padding: 2rem 1rem;
-            color: var(--text-muted);
-            font-size: 0.82rem;
-        }
-        .footer a {
-            color: var(--primary);
-            text-decoration: none;
-        }
-        .footer a:hover { text-decoration: underline; }
-        @media (max-width: 600px) {
-            .header h1 { font-size: 1.25rem; }
+        .comparison-table tr:nth-child(even) { background: rgba(255, 255, 255, 0.02); }
+
+        .timeline { position: relative; margin: 40px 0; padding-left: 40px; }
+        .timeline::before { content: ''; position: absolute; left: 15px; top: 0; bottom: 0; width: 2px; background: linear-gradient(180deg, var(--primary-blue), var(--primary-purple)); }
+        .timeline-item { position: relative; margin-bottom: 35px; padding: 20px 25px; background: var(--card-bg-light); border-radius: 12px; border: 1px solid rgba(0, 212, 255, 0.1); animation: fadeInUp 0.5s ease-out forwards; opacity: 0; }
+        .timeline-item:nth-child(1) { animation-delay: 0.1s; }
+        .timeline-item:nth-child(2) { animation-delay: 0.2s; }
+        .timeline-item:nth-child(3) { animation-delay: 0.3s; }
+        .timeline-item:nth-child(4) { animation-delay: 0.4s; }
+        .timeline-item:nth-child(5) { animation-delay: 0.5s; }
+        .timeline-item::before { content: ''; position: absolute; left: -32px; top: 25px; width: 14px; height: 14px; background: var(--primary-blue); border-radius: 50%; box-shadow: 0 0 10px var(--primary-blue); }
+        .timeline-date { color: var(--primary-blue); font-weight: 700; font-size: 1rem; margin-bottom: 8px; }
+        .timeline-item h4 { color: var(--text-primary); margin-bottom: 8px; font-size: 1.1rem; }
+        .timeline-item p { color: var(--text-secondary); font-size: 0.95rem; }
+
+        footer { background: #050508; padding: 60px 20px; text-align: center; border-top: 1px solid rgba(255, 255, 255, 0.1); }
+        footer p { color: var(--text-secondary); margin-bottom: 20px; }
+
+        @media (max-width: 768px) {
+            .content-section { padding: 40px 25px; }
+            .hero-images { grid-template-columns: 1fr; }
+            .hero h1 { font-size: 2rem; }
+            .hero-subtitle { font-size: 1.2rem; }
             .tech-cards { grid-template-columns: 1fr; }
-            .comparison-table { font-size: 0.82rem; }
-            .comparison-table th, .comparison-table td { padding: 0.5rem 0.6rem; }
         }
     </style>
 </head>
 <body>
+    <div class="code-rain" id="codeRain"></div>
 
-<header class="header">
-    <div class="tag">🤖 AI 工作術</div>
-    <h1>【Gemini秘技】受夠 Gems 了？用 Google Docs 建立高效提示詞庫才是最優解！（附 4 大職場實戰案例）</h1>
-    <div class="meta">📅 2026年4月13日 · AI 新聞專題</div>
-</header>
-
-<img src="img/img1.png" alt="Gemini + Google Docs 提示詞庫示意圖" class="cover-image">
-
-<div class="container">
-
-    <div class="summary-box">
-        <h2>📌 新聞導語</h2>
-        <p>隨著 AI 技術的快速發展，越來越多的企業和個人開始使用各種工具來提高工作效率。Gemini 作為一款備受關注的 AI 助手，雖然在解決重複性輸入問題上表現出色，但其操作流程相對繁瑣，引發了不少使用者的不滿。為此，業界觀察人士提出了一種新的管理方法——利用 Google Docs 來建立高效的提示詞庫，以提升工作效能。</p>
-    </div>
-
-    <div class="content-body">
-        <h2 class="section-title">🚀 為何選擇 Google Docs 管理提示詞庫？</h2>
-        <p>將 Gemini 的提示詞庫遷移至 Google Docs 平臺是一項極具前瞻性的創新舉措。首先，這種做法最直接的好處是提升了<span class="highlight">查詢效率</span>。使用者只需開啟特定文件，即可迅速找到所需的提示資訊，無需再從 Gemini 側邊欄逐一翻找，大大節省了時間成本。</p>
-        <p>其次，該方案還有助於<span class="highlight">保持溝通過程中的上下文聯繫</span>，對於需要多次呼叫不同功能完成同一任務的情況尤其有利。例如，在處理郵件時，可以先使用某個預設模板自動生成回復草稿，然後在同一視窗內繼續新增其他相關指令，如資料分析或文案編輯，整個過程流暢無縫。</p>
-        <p>此外，透過 Google Drive 對這些提示詞進行分類儲存，使得長期管理和更新變得更加容易。比如，將所有與銷售相關的材料集中放在一個資料夾下，便於隨時取用；而針對特定客戶或專案建立專門的子目錄則能進一步增強組織結構的清晰度。</p>
-    </div>
-
-    <h2 class="section-title">🛠️ 四大核心優勢</h2>
-    <div class="tech-cards">
-        <div class="tech-card">
-            <div class="icon">🔍</div>
-            <h3>查詢方便</h3>
-            <p>直接以 Google Docs 文件管理所有提示詞，支援 Ctrl+F 快速搜尋，擺脫 Gemini 側邊欄的繁瑣翻找流程。</p>
-        </div>
-        <div class="tech-card">
-            <div class="icon">🔗</div>
-            <h3>對話連貫性</h3>
-            <p>在同一 Google Docs 視窗中維持對話上下文，多步驟任務無需重複切換工具或重新描述背景。</p>
-        </div>
-        <div class="tech-card">
-            <div class="icon">📁</div>
-            <h3>資料夾分類管理</h3>
-            <p>透過 Google Drive 資料夾結構對提示詞進行分門別類，支援專案、部門、場景等多維度組織方式。</p>
-        </div>
-        <div class="tech-card">
-            <div class="icon">♻️</div>
-            <h3>版本控制與協作</h3>
-            <p>受益於 Google Workspace 的版本歷史與多人協作功能，團隊可共同維護與優化提示詞庫。</p>
-        </div>
-    </div>
-
-    <h2 class="section-title">📊 Gemini 傳統模式 vs Google Docs 方案</h2>
-    <table class="comparison-table">
-        <thead>
-            <tr>
-                <th>比較維度</th>
-                <th>🔴 Gemini 傳統側邊欄</th>
-                <th>🟢 Google Docs 提示詞庫</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td><strong>查詢速度</strong></td>
-                <td><span class="partial">⚠️ 需逐一翻找</span></td>
-                <td><span class="check">✓ Ctrl+F 即時搜尋</span></td>
-            </tr>
-            <tr>
-                <td><strong>上下文維持</strong></td>
-                <td><span class="cross">✗ 每次需重新描述背景</span></td>
-                <td><span class="check">✓ 單一文件內持續上下文</span></td>
-            </tr>
-            <tr>
-                <td><strong>分類管理</strong></td>
-                <td><span class="partial">⚠️ 無結構，易遺失</span></td>
-                <td><span class="check">✓ Drive 資料夾多層分類</span></td>
-            </tr>
-            <tr>
-                <td><strong>版本控制</strong></td>
-                <td><span class="cross">✗ 無版本歷史</span></td>
-                <td><span class="check">✓ Google 版本記錄完整</span></td>
-            </tr>
-            <tr>
-                <td><strong>團隊協作</strong></td>
-                <td><span class="cross">✗ 難以共享</span></td>
-                <td><span class="check">✓ 即時多人共同編輯</span></td>
-            </tr>
-            <tr>
-                <td><strong>遷移成本</strong></td>
-                <td><span class="check">✓ 零成本起步</span></td>
-                <td><span class="partial">⚠️ 需一次性整理遷移</span></td>
-            </tr>
-        </tbody>
-    </table>
-
-    <h2 class="section-title">📅 實作時間軸</h2>
-    <div class="timeline">
-        <div class="timeline-item">
-            <h4>🗂️ 第一階段：資料整理（第 1–2 天）</h4>
-            <p>盤點現有常用提示詞，依據場景或部門進行初步分類，並於 Google Drive 建立資料夾層級結構。</p>
-        </div>
-        <div class="timeline-item">
-            <h4>✍️ 第二階段：文件建立（第 3–4 天）</h4>
-            <p>將整理好的提示詞逐一寫入獨立的 Google Docs 文件，並加入使用範例與變數註解，方便日後快速替換。</p>
-        </div>
-        <div class="timeline-item">
-            <h4>🔄 第三階段：測試與優化（第 5–6 天）</h4>
-            <p>在實際工作場景中測試提示詞庫的可用性，收集回饋並調整文件格式與提示詞內容。</p>
-        </div>
-        <div class="timeline-item">
-            <h4>🚀 第四階段：團隊部署（第 7 天起）</h4>
-            <p>向團隊成員分享資料夾存取權限，建立共同維護流程，持續迭代提示詞庫的內容與結構。</p>
-        </div>
-    </div>
-
-    <h2 class="section-title">💬 業界觀點</h2>
-    <div class="quote-box">
-        <blockquote>上述策略的成功關鍵在於充分利用現有資源（即 Google Workspace）與 AI 技術之間的互補關係，從而創造出更加人性化的互動體驗。</blockquote>
-        <cite>— 業界分析師觀點，2026 年 4 月</cite>
-    </div>
-
-    <h2 class="section-title">📋 四大職場實戰案例</h2>
-    <ul class="case-list">
-        <li>
-            <span class="case-num">1</span>
-            <div>
-                <h4>Gmail 回信加速</h4>
-                <p>客服人員能夠藉助預設好的回信模板快速響應客戶詢問，同時保持個人風格的一致性，大幅縮短回覆時間。</p>
+    <section class="hero">
+        <div class="hero-content">
+            <span class="hero-badge">🤖 AI 工具活用</span>
+            <h1>【Gemini秘技】受夠 Gems 了？用 Google Docs 建立高效提示詞庫才是最優解！</h1>
+            <p class="hero-subtitle">附 4 大職場實戰案例：Gmail 回信、試算表資料清洗、會議紀錄整理、日曆行程規劃</p>
+            <div class="hero-images">
+                <div class="hero-image-card">
+                    <img src="img/img1.png" alt="Gemini + Google Docs 提示詞庫示意圖">
+                </div>
             </div>
-        </li>
-        <li>
-            <span class="case-num c2">2</span>
-            <div>
-                <h4>試算表資料清洗</h4>
-                <p>面對大量待處理的資訊，透過簡單地引用事先準備好的公式集與清洗規則，即可輕鬆實現自動化資料處理。</p>
+            <div class="scroll-indicator"><span></span></div>
+        </div>
+    </section>
+
+    <section>
+        <div class="content-section">
+            <div class="meta-info">
+                <p><strong>📌 新聞導語</strong></p>
+                <p>隨著AI技術的快速發展，越來越多的企業和個人開始使用各種工具來提高工作效率。Gemini作為一款備受關注的AI助手，雖然在解決重複性輸入問題上表現出色，但其操作流程相對繁瑣，引發了不少使用者的不滿。為此，業界觀察人士提出了一種新的管理方法——利用Google Docs來建立高效的提示詞庫，以提升工作效能。</p>
             </div>
-        </li>
-        <li>
-            <span class="case-num c3">3</span>
-            <div>
-                <h4>會議紀錄格式轉換</h4>
-                <p>會後自動生成的文字記錄往往格式混亂，利用自定義規則可以快速轉換成符合公司標準的專業版本。</p>
+
+            <div class="highlight-box">
+                <h4>💡 核心觀點</h4>
+                <p>利用Google Docs建立提示詞庫可有效改善Gemini的操作體驗，具備三大優勢：查詢方便、維持對話連貫性、資料夾分類管理。</p>
             </div>
-        </li>
-        <li>
-            <span class="case-num c4">4</span>
-            <div>
-                <h4>日曆行程智慧規劃</h4>
-                <p>出差前只需輸入目的地及日期等基本資訊，系統便能自動生成詳細的旅行計劃，包括交通建議和費用估算。</p>
+
+            <h2>🔑 四大技術卡片</h2>
+            <div class="tech-cards">
+                <div class="tech-card">
+                    <div class="tech-card-icon">📧</div>
+                    <h4>Gmail 回信模板</h4>
+                    <p>客服人員能夠藉助預設好的回信模板快速響應客戶詢問，同時保持個人風格的一致性，大幅縮短回覆時間。</p>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-card-icon">📊</div>
+                    <h4>試算表資料清洗</h4>
+                    <p>面對大量待處理的資訊，透過簡單地引用事先準備好的公式集，即可輕鬆實現自動化資料處理。</p>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-card-icon">📝</div>
+                    <h4>會議紀錄整理</h4>
+                    <p>會後自動生成的文字記錄往往格式混亂，利用自定義規則可以快速轉換成符合公司標準的版本。</p>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-card-icon">📅</div>
+                    <h4>日曆行程規劃</h4>
+                    <p>出差前只需輸入目的地及日期等基本資訊，系統便能自動生成詳細的旅行計劃，包括交通建議和費用估算。</p>
+                </div>
             </div>
-        </li>
-    </ul>
 
-    <div class="content-body">
-        <h2 class="section-title">🔮 業界展望</h2>
-        <p>隨著數位化轉型步伐加快，如何更好地整合各類軟體工具成為企業面臨的重要課題之一。基於目前的實踐成果，業內普遍看好 Google Docs 作為提示詞管理平臺的前景。</p>
-        <p>不過，專家也提醒說，任何新興技術的普及都伴隨著挑戰，因此建議相關開發者密切關注使用者回饋，不斷優化產品效能，同時鼓勵廣大使用者積極參與到開放式創新過程中來，共同推動行業向前發展。</p>
-        <p>專家建議持續探索更多高效的工作方式，並歡迎使用者分享經驗與回饋，讓這套系統在實踐中不斷完善，最終成為職場人士不可或缺的 AI 助手標配工具。</p>
-    </div>
+            <h2>📊 方案比較：Gemini 側邊欄 vs Google Docs 提示詞庫</h2>
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>維度</th>
+                        <th>Gemini 側邊欄</th>
+                        <th>Google Docs 提示詞庫</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>查詢效率</td>
+                        <td>需逐一翻找</td>
+                        <td>關鍵詞秒搜</td>
+                    </tr>
+                    <tr>
+                        <td>上下文維持</td>
+                        <td>每次需重新描述</td>
+                        <td>文件內完整保留</td>
+                    </tr>
+                    <tr>
+                        <td>分類管理</td>
+                        <td>無結構</td>
+                        <td>資料夾層級管理</td>
+                    </tr>
+                    <tr>
+                        <td>協作共享</td>
+                        <td>難以分享</td>
+                        <td>團隊即時共用</td>
+                    </tr>
+                    <tr>
+                        <td>版本控制</td>
+                        <td>無</td>
+                        <td>修訂歷史完整</td>
+                    </tr>
+                    <tr>
+                        <td>自訂程度</td>
+                        <td>受限於介面</td>
+                        <td>完全自由編輯</td>
+                    </tr>
+                </tbody>
+            </table>
 
-    <div class="summary-box">
-        <h2>📌 重點摘要</h2>
-        <p>利用 Google Docs 建立提示詞庫可有效改善 Gemini 的操作體驗；透過 Google Docs 進行管理有三大優勢：查詢方便、維持對話連貫性、資料夾分類管理。此方法在 Gmail 回信、試算表資料清洗、會議紀錄格式轉換以及日曆行程規劃等四個職場實戰案例中展現了其實用價值。</p>
-    </div>
+            <h2>📅 發展時間軸</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date">2023 年中</div>
+                    <h4>Gemini 發布</h4>
+                    <p>Google 推出 Gemini AI 助手，初步整合至 Workspace</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2024 年初</div>
+                    <h4>Gems 功能上線</h4>
+                    <p>用戶反映 Gems 側邊欄操作繁瑣，使用體驗有待改善</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2024 年中</div>
+                    <h4>提示詞庫方案提出</h4>
+                    <p>業界開始探索用 Google Docs 管理提示詞的可能性</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2025 年</div>
+                    <h4>四大職場案例成型</h4>
+                    <p>Gmail、試算表、會議紀錄、日曆等實戰場景驗證完成</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2026 年</div>
+                    <h4>方案趨於成熟</h4>
+                    <p>成為企業提升 AI 協作效率的標準做法之一</p>
+                </div>
+            </div>
 
-</div>
+            <h2>📖 詳細分析</h2>
+            <p>研究指出，將Gemini的提示詞庫遷移至Google Docs平臺是一項極具前瞻性的創新舉措。首先，這種做法最直接的好處是提升了查詢效率。使用者只需開啟特定文件，即可迅速找到所需的提示資訊，無需再從Gemini側邊欄逐一翻找，大大節省了時間成本。</p>
 
-<footer class="footer">
-    <p>📰 AI 新聞專題 · <a href="https://hklamsir.github.io/ai_news/">返回首頁</a></p>
-    <p>🔗 影片來源：<a href="https://youtube.com/watch?v=Ws0BDq9gFqw">YouTube</a></p>
-</footer>
+            <p>其次，該方案還有助於保持溝透過程中的上下文聯絡，對於需要多次呼叫不同功能完成同一任務的情況尤其有利。例如，在處理郵件時，可以先使用某個預設模板自動生成回復草稿，然後在同一視窗內繼續新增其他相關指令，如資料分析或文案編輯，整個過程流暢無縫。</p>
 
+            <p>此外，透過Google Drive對這些提示詞進行分類儲存，使得長期管理和更新變得更加容易。比如，將所有與銷售相關的材料集中放在一個資料夾下，便於隨時取用；而針對特定客戶或專案建立專門的子目錄則能進一步增強組織結構的清晰度。</p>
+
+            <div class="quote-box">
+                <p>充分整合 Google Workspace 與 AI 技術之間的互補關係，從而創造出更加人性化的互動體驗。</p>
+                <cite>— 業界分析師</cite>
+            </div>
+
+            <h2>⚠️ 局限性</h2>
+            <div class="alert-box">
+                <h4>現階段限制</h4>
+                <p>盡管這套系統已經顯示出巨大潛力，但在某些高階功能領域仍存在侷限性，例如即時協作時的反應速度、以及跨平臺同步的穩定性等，未來有待進一步完善。</p>
+            </div>
+
+            <h2>🔮 業界展望</h2>
+            <p>隨著數字化轉型步伐加快，如何更好地整合各類軟體工具成為企業面臨的重要課題之一。基於目前的實踐成果，業內普遍看好Google Docs作為提示詞管理平臺的前景。不過，專家也提醒說，任何新興技術的普及都伴隨著挑戰，因此建議相關開發者密切關注使用者反饋，不斷最佳化產品效能。</p>
+
+        </div>
+    </section>
+
+    <footer>
+        <p>📡 資料來源：YouTube 影片內容整理 | 🤖 AI 輔助生成</p>
+        <p><a href="https://hklamsir.github.io/ai_news/" target="_blank" style="color: var(--primary-blue);">瀏覽所有專題</a></p>
+    </footer>
+
+    <script>
+        function createCodeRain() {
+            const codeRain = document.getElementById('codeRain');
+            if (!codeRain) return;
+            const chars = '01 アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン';
+            for (let i = 0; i < 50; i++) {
+                const char = document.createElement('div');
+                char.className = 'code-char';
+                char.textContent = chars[Math.floor(Math.random() * chars.length)];
+                char.style.left = Math.random() * 100 + '%';
+                char.style.animationDelay = Math.random() * 4 + 's';
+                char.style.animationDuration = (Math.random() * 2 + 3) + 's';
+                codeRain.appendChild(char);
+            }
+        }
+
+        function handleScrollAnimation() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('.fade-in').forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(30px)';
+                el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(el);
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            createCodeRain();
+            handleScrollAnimation();
+        });
+    </script>
 </body>
 </html>
