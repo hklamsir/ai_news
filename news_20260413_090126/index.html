@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI顯示卡記憶體需求深度解析</title>
+    <style>
+        :root {
+            --primary-blue: #00d4ff;
+            --primary-purple: #7b2cbf;
+            --accent-green: #00ff88;
+            --accent-orange: #ff9500;
+            --dark-bg: #0a0a0f;
+            --card-bg: #12121a;
+            --card-bg-light: #1a1a28;
+            --text-primary: #ffffff;
+            --text-secondary: #a0a0b0;
+            --gradient-1: linear-gradient(135deg, #00d4ff 0%, #7b2cbf 100%);
+            --gradient-2: linear-gradient(135deg, #00d4ff 0%, #00ff88 100%);
+            --glow-blue: 0 0 20px rgba(0, 212, 255, 0.5);
+            --glow-purple: 0 0 20px rgba(123, 44, 191, 0.5);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Noto Sans TC', sans-serif; background-color: var(--dark-bg); color: var(--text-primary); line-height: 1.8; overflow-x: hidden; }
+
+        @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-20px); } }
+        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.6; } }
+        @keyframes slideIn { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes codeRain { 0% { transform: translateY(-100%); opacity: 0; } 10% { opacity: 1; } 90% { opacity: 1; } 100% { transform: translateY(100vh); opacity: 0; } }
+
+        /* Code Rain Background */
+        .code-rain { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; overflow: hidden; }
+        .code-char { position: absolute; color: var(--primary-blue); font-family: 'Courier New', monospace; font-size: 14px; opacity: 0; animation: codeRain 4s linear infinite; }
+
+        /* Hero Section */
+        .hero { position: relative; min-height: 80vh; display: flex; align-items: center; justify-content: center; padding: 80px 20px; background: linear-gradient(180deg, var(--dark-bg) 0%, #1a1a2e 100%); overflow: hidden; }
+        .hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(ellipse at center, rgba(123, 44, 191, 0.15) 0%, transparent 70%); z-index: 1; }
+        .hero-content { position: relative; z-index: 2; max-width: 1200px; text-align: center; animation: slideIn 1s ease-out; }
+        .hero-badge { display: inline-block; padding: 12px 32px; background: var(--gradient-1); border-radius: 50px; font-size: 18px; font-weight: 700; margin-bottom: 24px; box-shadow: var(--glow-blue); letter-spacing: 1px; }
+        .hero h1 { font-size: clamp(2rem, 5vw, 4rem); font-weight: 900; margin-bottom: 24px; background: var(--gradient-1); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; line-height: 1.2; }
+        .hero-subtitle { font-size: clamp(1.2rem, 2.2vw, 1.6rem); color: var(--text-primary); max-width: 900px; margin: 0 auto 40px; line-height: 1.6; font-weight: 400; }
+        .hero-images { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; margin-top: 60px; }
+        .hero-image-card { position: relative; border-radius: 20px; overflow: hidden; aspect-ratio: 16/9; box-shadow: var(--glow-purple); transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .hero-image-card:hover { transform: scale(1.02); box-shadow: 0 0 40px rgba(123, 44, 191, 0.7); }
+        .hero-image-card img { width: 100%; height: 100%; object-fit: cover; }
+        .scroll-indicator { position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%); animation: float 2s ease-in-out infinite; z-index: 2; }
+        .scroll-indicator span { display: block; width: 30px; height: 50px; border: 2px solid var(--primary-blue); border-radius: 25px; position: relative; }
+        .scroll-indicator span::before { content: ''; position: absolute; top: 8px; left: 50%; transform: translateX(-50%); width: 6px; height: 10px; background: var(--primary-blue); border-radius: 3px; animation: pulse 1.5s infinite; }
+
+        /* Content Section */
+        section { padding: 80px 20px; position: relative; z-index: 1; }
+        .content-section { background: var(--card-bg); padding: 60px 50px; border-radius: 24px; border: 1px solid rgba(0, 212, 255, 0.2); max-width: 1100px; margin: 0 auto; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3); }
+
+        .content-section h3 { font-size: 1.6rem; margin: 40px 0 20px; color: var(--accent-green); }
+        .content-section p { color: var(--text-secondary); line-height: 2; font-size: 1.08rem; margin: 15px 0; }
+        .content-section ul { margin: 20px 0; padding-left: 30px; }
+        .content-section li { margin: 10px 0; color: var(--text-secondary); }
+
+        .meta-info { background: linear-gradient(135deg, rgba(0, 212, 255, 0.15) 0%, rgba(123, 44, 191, 0.15) 100%); padding: 30px; border-radius: 16px; margin-bottom: 40px; border-left: 5px solid var(--primary-blue); }
+        .meta-info p { margin: 12px 0; color: var(--text-secondary); font-size: 1.05rem; }
+        .meta-info strong { color: var(--primary-blue); font-weight: 600; }
+        .meta-info a { color: var(--primary-blue); text-decoration: none; word-break: break-all; }
+
+        .highlight-box { background: linear-gradient(135deg, rgba(0, 255, 136, 0.08) 0%, rgba(0, 212, 255, 0.08) 100%); padding: 30px; border-radius: 16px; border-left: 5px solid var(--accent-green); margin: 40px 0; }
+        .highlight-box h4 { color: var(--accent-green); margin-bottom: 15px; font-size: 1.3rem; }
+        .highlight-box p { color: var(--text-secondary); margin: 0; }
+
+        /* Tech Cards */
+        .tech-cards-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px; margin: 40px 0; }
+        .tech-card { background: var(--card-bg-light); border-radius: 16px; padding: 28px; border: 1px solid rgba(0, 212, 255, 0.15); transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .tech-card:hover { transform: translateY(-8px); box-shadow: 0 12px 40px rgba(0, 212, 255, 0.2); }
+        .tech-card-icon { font-size: 2.5rem; margin-bottom: 16px; }
+        .tech-card-title { font-size: 1.25rem; font-weight: 700; color: var(--text-primary); margin-bottom: 12px; }
+        .tech-card-desc { color: var(--text-secondary); font-size: 1rem; line-height: 1.7; }
+
+        /* Comparison Table */
+        .comparison-table-wrapper { overflow-x: auto; margin: 40px 0; }
+        .comparison-table { width: 100%; border-collapse: collapse; background: var(--card-bg-light); border-radius: 16px; overflow: hidden; }
+        .comparison-table th { background: var(--gradient-1); padding: 18px 16px; text-align: left; font-weight: 700; font-size: 1.05rem; }
+        .comparison-table td { padding: 16px; border-bottom: 1px solid rgba(255, 255, 255, 0.06); color: var(--text-secondary); font-size: 1rem; }
+        .comparison-table tr:last-child td { border-bottom: none; }
+        .comparison-table tr:hover td { background: rgba(0, 212, 255, 0.05); }
+        .comparison-table .highlight-row td { background: rgba(0, 255, 136, 0.08); font-weight: 600; color: var(--text-primary); }
+
+        /* Timeline */
+        .timeline { margin: 40px 0; padding: 20px 0; position: relative; }
+        .timeline::before { content: ''; position: absolute; left: 20px; top: 0; bottom: 0; width: 3px; background: var(--gradient-1); border-radius: 2px; }
+        .timeline-item { position: relative; padding-left: 60px; margin-bottom: 36px; }
+        .timeline-item::before { content: ''; position: absolute; left: 12px; top: 6px; width: 18px; height: 18px; background: var(--primary-blue); border-radius: 50%; border: 3px solid var(--dark-bg); box-shadow: var(--glow-blue); }
+        .timeline-year { font-size: 1.1rem; font-weight: 700; color: var(--primary-blue); margin-bottom: 6px; }
+        .timeline-title { font-size: 1.15rem; font-weight: 600; color: var(--text-primary); margin-bottom: 6px; }
+        .timeline-desc { color: var(--text-secondary); font-size: 1rem; line-height: 1.7; }
+
+        /* Quote Box */
+        .quote-box { background: linear-gradient(135deg, rgba(123, 44, 191, 0.15) 0%, rgba(0, 212, 255, 0.1) 100%); border-radius: 16px; padding: 36px 40px; margin: 40px 0; border-left: 5px solid var(--primary-purple); position: relative; }
+        .quote-box::before { content: '"'; position: absolute; top: 10px; left: 20px; font-size: 5rem; color: var(--primary-purple); opacity: 0.3; font-family: Georgia, serif; line-height: 1; }
+        .quote-text { font-size: 1.2rem; color: var(--text-primary); line-height: 1.9; font-style: italic; margin-bottom: 16px; position: relative; z-index: 1; }
+        .quote-source { color: var(--primary-blue); font-size: 1rem; font-weight: 600; }
+
+        /* Footer */
+        footer { background: #050508; padding: 60px 20px; text-align: center; border-top: 1px solid rgba(255, 255, 255, 0.1); }
+        footer p { color: var(--text-secondary); margin-bottom: 20px; }
+        .footer-links { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; }
+        .footer-links a { color: var(--primary-blue); text-decoration: none; transition: color 0.3s ease; }
+        .footer-links a:hover { color: var(--text-primary); }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .content-section { padding: 40px 25px; }
+            .hero-images { grid-template-columns: 1fr; }
+            .hero h1 { font-size: 2rem; }
+            .hero-subtitle { font-size: 1.2rem; }
+            .tech-cards-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <div class="code-rain" id="codeRain"></div>
+    <section class="hero">
+        <div class="hero-content">
+            <span class="hero-badge">📰 AI News 專題報道</span>
+            <h1>AI顯示卡記憶體需求深度解析：從16G到48G的效能躍升</h1>
+            <p class="hero-subtitle">隨著本地部署AI大模型的需求日益增長，不同視訊記憶體容量對運算效能的影響成為關鍵考量。本次報告深入分析24G、32G與48G顯示卡在實際應用中的表現差異，為用戶提供專業選購指南。</p>
+            <div class="hero-images">
+                <div class="hero-image-card">
+                    <img src="img/img1.png" alt="新聞插圖">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="content-section">
+            <div class="meta-info">
+                <p><strong>📺 資料來源</strong>：<a href="https://youtube.com/watch?v=aJxvAIno2qA" target="_blank">https://youtube.com/watch?v=aJxvAIno2qA</a></p>
+                <p><strong>📅 發布日期</strong>：2026-04-13</p>
+                <p><strong>🤖 處理方式</strong>：AI 智能摘要生成</p>
+            </div>
+
+            <h3>🎯 核心觀點</h3>
+            <p>本次報告針對不同視訊記憶體容量的顯示卡在執行AI大模型、影象生成和影片處理方面的表現進行了詳細分析。研究指出，24G視訊記憶體是當前最舒適的選擇，能夠流暢執行多種AI模型，包括千萬級別的語言模型。</p>
+            <p>專家分析認為，對於大多數使用者而言，24G視訊記憶體已經足夠應對日常生產力需求，而更高配置如32G和48G則適合專業使用者和高階應用場景，特別是在處理更長上下文和更高解析度內容時展現明顯優勢。</p>
+
+            <!-- Tech Cards -->
+            <h3>🖥️ 關鍵技術解析</h3>
+            <div class="tech-cards-grid">
+                <div class="tech-card">
+                    <div class="tech-card-icon">🚀</div>
+                    <div class="tech-card-title">量化推理引擎</div>
+                    <div class="tech-card-desc">Q4KM、Q8K等量化格式大幅降低VRAM需求，使24G顯示卡可流暢執行千億級參數模型，透過智慧權重壓縮技術兼顧速度與品質。</div>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-card-icon">💾</div>
+                    <div class="tech-card-title">KV Cache 優化</div>
+                    <div class="tech-card-desc">谷歌TopK KV快取技術大幅減少記憶體開銷，讓長上下文處理不再是48G專屬，24G級別即可支援更長對話窗口。</div>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-card-icon">🎨</div>
+                    <div class="tech-card-title">影像生成加速</div>
+                    <div class="tech-card-desc">ComfyUI工作流支援下，24G VRAM可流暢執行1024x1024解析度生成，透過切片機制實現更高解析度而不爆記憶體。</div>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-card-icon">🎬</div>
+                    <div class="tech-card-title">影片超解析度</div>
+                    <div class="tech-card-desc">原生1080P生成後超分至4K需要大量VRAM緩衝，48G顯示卡如RTX 4090改裝卡在這類高強度任務中具備無可替代優勢。</div>
+                </div>
+            </div>
+
+            <!-- Comparison Table -->
+            <h3>📊 VRAM 容量對比分析</h3>
+            <div class="comparison-table-wrapper">
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>VRAM 容量</th>
+                            <th>代表顯示卡</th>
+                            <th>適合模型規模</th>
+                            <th>影像生成</th>
+                            <th>影片處理</th>
+                            <th>性價比評級</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>16G</td>
+                            <td>RTX 4060 Ti, RX 7600</td>
+                            <td>7B Q4KM</td>
+                            <td>512x512 流暢</td>
+                            <td>基本支援</td>
+                            <td>⭐⭐⭐ 入門級</td>
+                        </tr>
+                        <tr>
+                            <td>20G</td>
+                            <td>RTX 3080 20G, RTX 4070 Ti Super</td>
+                            <td>13B Q4KM</td>
+                            <td>768x768 流暢</td>
+                            <td>短影片處理</td>
+                            <td>⭐⭐⭐⭐ 進階級</td>
+                        </tr>
+                        <tr class="highlight-row">
+                            <td>24G</td>
+                            <td>7900XTX, RTX 3090</td>
+                            <td>30B Q4KM</td>
+                            <td>1024x1024 流暢</td>
+                            <td>1-2分鐘短片</td>
+                            <td>⭐⭐⭐⭐⭐ 最佳選擇</td>
+                        </tr>
+                        <tr>
+                            <td>32G</td>
+                            <td>RTX 4090, RX 7900 XTX</td>
+                            <td>70B Q4KM</td>
+                            <td>1536x1536 流暢</td>
+                            <td>5分鐘影片</td>
+                            <td>⭐⭐⭐⭐ 專業級</td>
+                        </tr>
+                        <tr>
+                            <td>48G</td>
+                            <td>RTX 4090 改裝卡, RTX 6000 Ada</td>
+                            <td>100B+ Q4KM</td>
+                            <td>2048x2048 流暢</td>
+                            <td>長影片+4K超分</td>
+                            <td>⭐⭐⭐⭐⭐ 旗艦級</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>💡 重點解析</h3>
+            <p>數據顯示，不同容量的視訊記憶體在實際應用中表現出顯著差異，以下是各容量級別的核心特點：</p>
+            <ul>
+                <li>24G視訊記憶體：目前最具成本效益的選擇，能夠流暢執行多種主流AI模型，滿足日常生產力需求</li>
+                <li>32G視訊記憶體：適用於需要更長上下文和更高解析度影片處理的場景，但價格較高且生態系統尚待完善</li>
+                <li>48G視訊記憶體：能夠處理更大規模的模型和更長的影片生成，適合專業使用者和高階應用</li>
+                <li>價效比考量：7900XTX和3090顯示卡是目前最具價效比的選擇，前者在效能上略勝一籌</li>
+                <li>生態系統差異：NVIDIA的生態系統更為完善，AMD在某些場景下仍需進一步最佳化</li>
+                <li>未來趨勢：隨著技術進步，更高視訊記憶體的顯示卡將成為主流，但目前48G已足以應對絕大多數需求</li>
+            </ul>
+
+            <!-- Quote Box -->
+            <div class="quote-box">
+                <p class="quote-text">對於大多數創作者而言，24G VRAM是真正的甜蜜點。它足以應對從文字到影像的各種生成任務，同時不會讓你的錢包哭泣。48G是給那些真的需要處理8K素材或訓練超大模型的專業用戶的。</p>
+                <p class="quote-source">— AI 硬體評論社群，2026年顯示卡選購指南</p>
+            </div>
+
+            <h3>📊 數據分析</h3>
+            <p>資料顯示，24G視訊記憶體的顯示卡如7900XTX能夠流暢執行千萬級別的語言模型，如Q4KM電話版本，並支援OpenCloud的執行，達到真正的可用程度。這種配置在大多數情況下已經能夠滿足日常生產力需求，且不會產生過高的託管費用。</p>
+            <p>社群正在積極整合谷歌的託普礦KV快取技術，大幅減少KV快取的視訊記憶體開銷，使得長上下文不再成為問題。然而，對於需要處理70B級別MOE模型或原生生成1080P影片並超分到4K的專業應用，48G視訊記憶體的顯示卡如RTX 4090改裝卡仍是最佳選擇。</p>
+
+            <!-- GPU Development Timeline -->
+            <h3>📅 顯示卡VRAM發展時間軸</h3>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-year">2020</div>
+                    <div class="timeline-title">RTX 3090 發布 — 24G 時代開端</div>
+                    <div class="timeline-desc">NVIDIA推出首款24G消費級顯示卡，讓本地AI推理成為可能，拉開了高效能AI運算的序幕。</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">2022</div>
+                    <div class="timeline-title">RTX 4090 發布 — 24G 仍然是主流</div>
+                    <div class="timeline-desc">Ada架構帶來巨大效能提升，但24G仍是最受歡迎的配置，大量AI模型開始針對此容量優化。</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">2023</div>
+                    <div class="timeline-title">7900XTX 登場 — AMD反攻</div>
+                    <div class="timeline-desc">AMD首款24G旗艦顯示卡，以更具競爭力的價格提供類似效能，成為價格敏感用戶的首選。</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">2025</div>
+                    <div class="timeline-title">量化技術成熟 — 24G效能倍增</div>
+                    <div class="timeline-desc">Q4KM等先進量化技術使24G可流暢執行30B模型，等同過去需要48G的效能，大幅降低了AI入門門檻。</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">2026</div>
+                    <div class="timeline-title">48G改裝卡普及 — 旗艦新標準</div>
+                    <div class="timeline-desc">RTX 4090改裝48G成為專業用戶標配，同時24G性價比達到歷史峰值，本地AI進入黃金時代。</div>
+                </div>
+            </div>
+
+            <div class="highlight-box">
+                <h4>✨ 關鍵洞察</h4>
+                <p>業界觀察指出，NVIDIA的生態系統在AI計算方面更為完善，尤其是在開發工具和框架支援上具有明顯優勢。AMD雖然在價格和價效比方面具有一定吸引力，但在某些特定場景下仍需進一步最佳化才能完全發揮硬體潛力。</p>
+            </div>
+
+            <h3>🔮 未來展望</h3>
+            <p>未來，隨著技術的不斷進步，更高視訊記憶體的顯示卡將成為市場主流。然而，目前48G視訊記憶體的顯示卡已經足以應對大多數專業需求，特別是在高階創意工作和科研應用場景中。</p>
+            <p>建議使用者根據自身需求選擇合適的顯示卡配置，以實現最佳的生產力和效能平衡。同時，隨著國產計算卡的崛起和伺服器市場的大規模淘汰，未來的顯示卡市場將呈現更多元化的競爭格局，為消費者提供更多選擇。</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2026 AI News Archive | 由 AI 技術生成</p>
+        <div class="footer-links">
+            <a href="../index.html">返回主頁</a>
+            <a href="https://github.com/hklamsir/ai_news" target="_blank">GitHub</a>
+            <a href="https://hklamsir.github.io/ai_news/" target="_blank">瀏覽所有專題</a>
+        </div>
+    </footer>
+
+    <script>
+        function createCodeRain() {
+            const codeRain = document.getElementById('codeRain');
+            if (!codeRain) return;
+            const chars = '01 アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン';
+            for (let i = 0; i < 50; i++) {
+                const char = document.createElement('div');
+                char.className = 'code-char';
+                char.textContent = chars[Math.floor(Math.random() * chars.length)];
+                char.style.left = Math.random() * 100 + '%';
+                char.style.animationDelay = Math.random() * 4 + 's';
+                char.style.animationDuration = (Math.random() * 2 + 3) + 's';
+                codeRain.appendChild(char);
+            }
+        }
+
+        function handleScrollAnimation() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('.fade-in').forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(30px)';
+                el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(el);
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            createCodeRain();
+            handleScrollAnimation();
+        });
+    </script>
+</body>
+</html>
