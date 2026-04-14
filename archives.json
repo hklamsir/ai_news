@@ -1,6 +1,16 @@
 {
   "archives": [
     {
+      "dir": "news_20260414_134219",
+      "title": "【Gemini】換AI不用砍掉重練！Gemini無痛匯入個人化記憶　附Prompt直接Copy",
+      "summary_short": "# 【Gemini】換AI不用砍掉重練！Gemini無痛匯入個人化記憶　附Prompt直接Copy## 📖 新聞導語本文報導來自 **INEWS**，發布於 **2026-04-14**。",
+      "images": [
+        "img/img1.png"
+      ],
+      "date": "2026-04-14",
+      "url": "./news_20260414_134219/index.html"
+    },
+    {
       "dir": "news_20260414_122523",
       "title": "NVIDIA API 讓你完全免費呼叫 Minimax M2.7 模型，也能用在 OpenClaw 龍蝦 - 電腦王阿達",
       "summary_short": "# NVIDIA API 讓你完全免費呼叫 Minimax M2.7 模型，也能用在 OpenClaw 龍蝦 - 電腦王阿達## 📖 新聞導語本文報導來自 **KOC**，發布於 **2026",
@@ -301,5 +311,5 @@
       "url": "./20260404_2045/index.html"
     }
   ],
-  "last_updated": "2026-04-14T12:28:30.688969"
+  "last_updated": "2026-04-14T13:47:11.248700"
 }
