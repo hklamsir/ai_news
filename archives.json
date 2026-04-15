@@ -1,6 +1,16 @@
 {
   "archives": [
     {
+      "dir": "news_20260415_114834",
+      "title": "【0x專題】2026-04-15 Linux Kernel 正式容許 AI 寫 Code / Nvidia 工程師用 AI 生成垃圾 Patch 被打臉〈Allen〉",
+      "summary_short": "## 新聞導語2026年4月15日，Linux Kernel正式宣佈接受AI生成的程式碼，這一政策在開源社群中引起了廣泛關注。隨著AI技術的不斷進步，越來越多的開發者開始利用AI工具來提高程式設計效",
+      "images": [
+        "img/img1.png"
+      ],
+      "date": "2026-04-15",
+      "url": "./news_20260415_114834/index.html"
+    },
+    {
       "dir": "news_20260415_083154",
       "title": "Rising AI Adoption Spurs Workforce Changes",
       "summary_short": "# Rising AI Adoption Spurs Workforce Changes## 📖 新聞導語本文報導來自 **GALLUP**，發布於 **2026-04-15**。最新科技",
@@ -331,5 +341,5 @@
       "url": "./20260404_2045/index.html"
     }
   ],
-  "last_updated": "2026-04-15T08:44:33.273492"
+  "last_updated": "2026-04-15T11:52:23.983369"
 }
