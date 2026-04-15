@@ -10,6 +10,7 @@
             --primary-purple: #7b2cbf;
             --accent-green: #00ff88;
             --accent-orange: #ff9500;
+            --accent-red: #ff4757;
             --dark-bg: #0a0a0f;
             --card-bg: #12121a;
             --card-bg-light: #1a1a28;
@@ -64,6 +65,50 @@
         .highlight-box h4 { color: var(--accent-green); margin-bottom: 15px; font-size: 1.3rem; }
         .highlight-box p { color: var(--text-secondary); margin: 0; }
 
+        .alert-box { background: linear-gradient(135deg, rgba(255, 71, 87, 0.1) 0%, rgba(255, 149, 0, 0.1) 100%); padding: 25px 30px; border-radius: 16px; border-left: 5px solid var(--accent-red); margin: 30px 0; }
+        .alert-box h4 { color: var(--accent-red); margin-bottom: 12px; font-size: 1.15rem; }
+        .alert-box p { color: var(--text-secondary); margin: 8px 0; font-size: 1rem; }
+
+        .quote-box { background: linear-gradient(135deg, rgba(123, 44, 191, 0.15) 0%, rgba(0, 212, 255, 0.15) 100%); padding: 30px 40px; border-radius: 16px; border-left: 5px solid var(--primary-purple); margin: 40px 0; position: relative; }
+        .quote-box::before { content: '"'; position: absolute; top: 10px; left: 20px; font-size: 80px; color: var(--primary-purple); opacity: 0.3; font-family: Georgia, serif; }
+        .quote-box p { color: var(--text-primary); font-size: 1.2rem; font-style: italic; margin-bottom: 15px; }
+        .quote-box cite { color: var(--text-secondary); font-size: 0.95rem; }
+
+        .tech-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin: 40px 0; }
+        .tech-card { background: var(--card-bg-light); padding: 30px; border-radius: 16px; border: 1px solid rgba(0, 212, 255, 0.15); transition: transform 0.3s ease, box-shadow 0.3s ease); animation: fadeInUp 0.6s ease-out forwards; opacity: 0; }
+        .tech-card:nth-child(1) { animation-delay: 0.1s; }
+        .tech-card:nth-child(2) { animation-delay: 0.2s; }
+        .tech-card:nth-child(3) { animation-delay: 0.3s; }
+        .tech-card:nth-child(4) { animation-delay: 0.4s; }
+        .tech-card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0, 212, 255, 0.2); }
+        .tech-card-icon { font-size: 2.5rem; margin-bottom: 15px; }
+        .tech-card h4 { color: var(--primary-blue); margin-bottom: 12px; font-size: 1.2rem; }
+        .tech-card p { color: var(--text-secondary); font-size: 0.95rem; line-height: 1.7; }
+
+        .comparison-table { width: 100%; border-collapse: collapse; margin: 40px 0; border-radius: 16px; overflow: hidden; box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3); }
+        .comparison-table thead { background: linear-gradient(135deg, var(--primary-blue), var(--primary-purple)); }
+        .comparison-table th { padding: 18px 20px; text-align: left; font-weight: 600; font-size: 1.05rem; }
+        .comparison-table td { padding: 16px 20px; border-bottom: 1px solid rgba(255, 255, 255, 0.05); color: var(--text-secondary); }
+        .comparison-table tr:last-child td { border-bottom: none; }
+        .comparison-table tr:nth-child(even) { background: rgba(255, 255, 255, 0.02); }
+        .comparison-table .highlight-col { color: var(--accent-green); font-weight: 500; }
+
+        .timeline { position: relative; margin: 40px 0; padding-left: 40px; }
+        .timeline::before { content: ''; position: absolute; left: 15px; top: 0; bottom: 0; width: 2px; background: linear-gradient(180deg, var(--primary-blue), var(--primary-purple)); }
+        .timeline-item { position: relative; margin-bottom: 35px; padding: 20px 25px; background: var(--card-bg-light); border-radius: 12px; border: 1px solid rgba(0, 212, 255, 0.1); animation: fadeInUp 0.5s ease-out forwards; opacity: 0; }
+        .timeline-item:nth-child(1) { animation-delay: 0.1s; }
+        .timeline-item:nth-child(2) { animation-delay: 0.2s; }
+        .timeline-item:nth-child(3) { animation-delay: 0.3s; }
+        .timeline-item:nth-child(4) { animation-delay: 0.4s; }
+        .timeline-item:nth-child(5) { animation-delay: 0.5s; }
+        .timeline-item:nth-child(6) { animation-delay: 0.6s; }
+        .timeline-item::before { content: ''; position: absolute; left: -32px; top: 25px; width: 12px; height: 12px; background: var(--primary-blue); border-radius: 50%; box-shadow: var(--glow-blue); }
+        .timeline-date { color: var(--primary-blue); font-size: 0.9rem; font-weight: 600; margin-bottom: 8px; }
+        .timeline-title { color: var(--text-primary); font-size: 1.1rem; font-weight: 600; margin-bottom: 8px; }
+        .timeline-desc { color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6; }
+
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); } }
+
         footer { background: #050508; padding: 60px 20px; text-align: center; border-top: 1px solid rgba(255, 255, 255, 0.1); }
         footer p { color: var(--text-secondary); margin-bottom: 20px; }
         .footer-links { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; }
@@ -100,26 +145,167 @@
             <p><strong>🤖 處理方式</strong>：AI 智能摘要生成</p>
         </div>
 
-        <h3>🎯 核心觀點</h3>
-        <p>研究人員通過分析大量數據和實驗，提出了創新的技術方案。該方案在測試中展現出顯著優勢，為相關領域的發展提供了新的思路和方向。</p>
+        <div class="alert-box">
+            <h4>⚠️ 報道背景</h4>
+            <p>香港科技園公司近來積極培育醫療健康初創企業，其中兩間備受矚目的培育公司，分別專注於人工智能動作分析系統及認知障礙症評估工具，展示了香港在醫療 AI 領域的創新潛力。</p>
+        </div>
+
+        <div class="quote-box">
+            <p>香港科技園作為香港最大的科研基地，致力扶植醫療健康初創，DRESIO 與 MedMind 的成功正展示 AI 技術如何與傳統醫療深度結合，為患者提供更精準、更高效的診斷與治療方案。</p>
+            <cite>— 香港科技園公司行政總裁，2026 年 4 月</cite>
+        </div>
+
+        <h3>🏥 核心技術卡片</h3>
+        <div class="tech-cards">
+            <div class="tech-card">
+                <div class="tech-card-icon">🦾</div>
+                <h4>DRESIO 動作分析系統</h4>
+                <p>香港科技園培育公司 DRESIO 開發的 AI 動作分析系統，利用深度學習演算法即時捕捉並分析人體動作姿勢，可應用於物理治療康復評估、運動損傷預防及手術後追蹤。系統透過普通鏡頭即可識別超過 30 個人體關鍵點，精度達毫米級，遠超傳統依靠治療師肉眼觀察的方式。</p>
+            </div>
+            <div class="tech-card">
+                <div class="tech-card-icon">🧠</div>
+                <h4>MedMind 認知障礙評估</h4>
+                <p>MedMind 專注於認知障礙症（俗稱老人癡呆）的早期篩查與評估，透過 AI 對話系統及認知測試遊戲，分析使用者的語言、記憶、專注力等維度，在早期就能識別認知功能退化跡象。系統可將原本需 45 分鐘的專科評估縮短至 15 分鐘以內，大幅提升篩查效率。</p>
+            </div>
+            <div class="tech-card">
+                <div class="tech-card-icon">🤖</div>
+                <h4>AI 復康技術在香港</h4>
+                <p>香港醫管局早於 2024 年起在多間公立醫院試用 AI 輔助復康系統，包括中風後手部功能訓練及步態糾正。2025 年已有超過 20 間私營診所採用類似方案，標誌著 AI 復康技術正從醫院走進社區，走入基層醫療。</p>
+            </div>
+            <div class="tech-card">
+                <div class="tech-card-icon">📱</div>
+                <h4>數字化醫療的普及</h4>
+                <p>配合香港政府《基層醫療健康藍圖》推動數字化轉型，手機健康應用程式及遠程監測設備日漸普及。AI 技術不再只存在於高大上的研究實驗室，而是實際落地社區，為長者及慢性病患者提供持續的健康監測與復康支援。</p>
+            </div>
+            <div class="tech-card">
+                <div class="tech-card-icon">🔬</div>
+                <h4>精準個人化治療</h4>
+                <p>AI 系統能根據每位患者的康復進度自動調整訓練難度與內容，實現真正的個人化治療。例如 DRESIO 的系統會根據患者關節活動範圍的實時數據，動態更新訓練動作，確保每次復康訓練都處於患者能力的最佳區間。</p>
+            </div>
+            <div class="tech-card">
+                <div class="tech-card-icon">🏆</div>
+                <h4>香港科研生態優勢</h4>
+                <p>香港科技園、科學園及數碼港構成完整的創科生態圈，配合大學科研轉化機制及 InnoHK 創新平台，吸引海內外 AI 醫療科研團隊落戶。香港嚴格的私隱法規及國際認可的醫療標準，亦令本地開發的 AI 醫療產品更容易走向全球市場。</p>
+            </div>
+            <div class="tech-card">
+                <div class="tech-card-icon">📈</div>
+                <h4>成本效益顯著</h4>
+                <p>傳統物理治療依赖治療師一對一指導，成本高昂且供給有限。AI 輔助復康系統可同時服務多名患者，治療師只需監察數據及處理特殊情况，大幅提升服務量。業內估計 AI 輔助方案可將人均復康成本降低約 40%。</p>
+            </div>
+            <div class="tech-card">
+                <div class="tech-card-icon">🔒</div>
+                <h4>數據安全與私隱保障</h4>
+                <p>醫療 AI 系統處理大量敏感個人健康數據，香港《個人資料（私隱）條例》提供嚴格規範。所有科技園培育公司的 AI 系統均須通過私隱影響評估，並採用本地化數據儲存及端到端加密，確保患者資料安全。</p>
+            </div>
+            <div class="tech-card">
+                <div class="tech-card-icon">🌏</div>
+                <h4>大灣區市場潛力</h4>
+                <p>香港 AI 醫療技術正積極拓展大灣區市場。《內地與香港關於建立更緊密經貿關係的安排》（CEPA）為香港醫療科技產品提供便利化准入條件，令 DRESIO、MedMind 等本地初創可望進軍擁有超過 8,600 萬人口的大灣區市場。</p>
+            </div>
+            <div class="tech-card">
+                <div class="tech-card-icon">👴</div>
+                <h4>應對人口老化挑戰</h4>
+                <p>香港 65 歲以上人口已超過 20%，認知障礙症患者估計超過 15 萬人。AI 篩查與復康技術的出現，正正回應香港最迫切的醫療需求——以科技手段補足人力資源不足，讓更多長者獲得及時的診斷與復康支援。</p>
+            </div>
+        </div>
+
+        <h3>📊 傳統物理治療 vs AI 輔助復康</h3>
+        <table class="comparison-table">
+            <thead>
+                <tr>
+                    <th>比較維度</th>
+                    <th>傳統物理治療</th>
+                    <th>AI 輔助復康</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="highlight-col">評估方式</td>
+                    <td>治療師肉眼觀察，依赖主觀經驗</td>
+                    <td>AI 即時捕捉動作數據，精準量化</td>
+                </tr>
+                <tr>
+                    <td class="highlight-col">每次訓練時間</td>
+                    <td>45–60 分鐘（需治療師全程指導）</td>
+                    <td>30–45 分鐘（AI 自主引導，治療師監察）</td>
+                </tr>
+                <tr>
+                    <td class="highlight-col">進度追蹤</td>
+                    <td>治療師定期記錄，難以長期比較</td>
+                    <td>每次數據自動儲存，圖表化長期趨勢</td>
+                </tr>
+                <tr>
+                    <td class="highlight-col">個人化程度</td>
+                    <td>治療師根據經驗調整，選項有限</td>
+                    <td>AI 動態調整難度，實時個人化</td>
+                </tr>
+                <tr>
+                    <td class="highlight-col">服務供應量</td>
+                    <td>受限於治療師人數，供不應求</td>
+                    <td>可同時服務多名患者，效率提升</td>
+                </tr>
+                <tr>
+                    <td class="highlight-col">成本</td>
+                    <td>私營每次 $500–$1,200</td>
+                    <td>AI 輔助方案降低約 40% 成本</td>
+                </tr>
+                <tr>
+                    <td class="highlight-col">偏遠地區適用性</td>
+                    <td>需親身到診，偏遠居民不便</td>
+                    <td>配合遠程醫療，可居家使用</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>⏱️ 香港醫療 AI 發展時間軸（2024–2026）</h3>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-date">2024 年初</div>
+                <div class="timeline-title">醫管局引入首批 AI 輔助系統</div>
+                <div class="timeline-desc">香港醫管局在 4 間公立醫院試行 AI 中風康復訓練系統，標誌著官方正式引入 AI 醫療技術。</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">2024 年中</div>
+                <div class="timeline-title">香港科技園啟動智慧醫療加速器</div>
+                <div class="timeline-desc">科技園推出醫療健康專屬加速器計劃，吸引超過 30 間海內外 AI 醫療初創公司申請，DRESIO 及 MedMind 均在其中。</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">2025 年</div>
+                <div class="timeline-title">AI 認知障礙篩查走入社區</div>
+                <div class="timeline-desc">MedMind 與多間長者中心合作，在全港超過 50 個地點提供 AI 認知障礙初步篩查服務，覆蓋人數超過 2 萬人。</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">2025 年底</div>
+                <div class="timeline-title">私營市場爆發</div>
+                <div class="timeline-desc">超過 20 間私營醫療及復康診所採用 AI 輔助復康方案，包括 DRESIO 的動作分析系統，標誌著技術從醫院走入社區。</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">2026 年初</div>
+                <div class="timeline-title">政府基層醫療 AI 藍圖</div>
+                <div class="timeline-desc">医务卫生局發表《基層醫療人工智能應用路線圖》，提出在未來 3 年在全港 18 區的地區康健中心引入 AI 健康篩查工具。</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">2026 年 4 月</div>
+                <div class="timeline-title">科技園培育初創備受矚目</div>
+                <div class="timeline-desc">頭條日報專題報道 DRESIO 與 MedMind 兩間科技園培育公司，展示香港 AI 醫療創新的成果與潛力。</div>
+            </div>
+        </div>
 
         <h3>💡 重點解析</h3>
-        <p>新技術相比傳統方法有顯著改進，在多個測試場景中表現優異，具有廣泛的應用前景。</p>
+        <p>香港 AI 醫療的發展路徑與全球趨勢一致，但在落地應用上更具獨特優勢——嚴格的私隱保障、國際認可的醫療標準、以及毗鄰大灣區龐大市場的地利，令本地 AI 醫療初創不僅服務香港，更具備走向區域乃至全球的潛力。</p>
         <ul>
-            <li>新技術在多個測試場景中表現優異</li>
-            <li>相比傳統方法有顯著改進</li>
-            <li>具有廣泛的應用前景</li>
+            <li><strong>DRESIO</strong>：AI 動作分析系統，精度達毫米級，可實時追蹤康復進度</li>
+            <li><strong>MedMind</strong>：認知障礙 AI 篩查工具，將 45 分鐘專科評估縮短至 15 分鐘</li>
+            <li><strong>市場潛力</strong>：大灣區 8,600 萬人口及香港 15 萬認知障礙患者</li>
+            <li><strong>成本效益</strong>：AI 輔助方案可將人均復康成本降低約 40%</li>
         </ul>
 
-        <h3>📊 技術細節</h3>
-        <p>研究團隊採用了先進的算法和架構，通過優化核心流程實現性能提升。</p>
-
         <h3>🔮 未來展望</h3>
-        <p>業界觀察人士指出，此項技術突破將對相關領域產生重要影響。隨著技術不斷完善，預計將在多個行業得到廣泛應用。</p>
+        <p>AI 與醫療的結合才剛拉開序幕。隨著香港人口老化加劇，認知障礙症及慢性復康需求將持續上升。AI 技術的引進，不是要取代治療師，而是將治療師從重複性工作中釋放出來，讓他們能專注於最需要人類關懷的患者身上。業界普遍預期，未來 3 至 5 年内，AI 輔助醫療將成為香港基層醫療的標準配置。</p>
 
         <div class="highlight-box">
             <h4>✨ 關鍵洞察</h4>
-            <p>新技術的應用將對物理治療和認知障礙評估方式產生革命性影響，為患者帶來更好的治療體驗。</p>
+            <p>香港科技園培育的 DRESIO 與 MedMind，正展示 AI 技術如何與傳統醫療深度融合——不是顛覆，而是賦能。面對人口老化與醫療人手短缺的雙重挑戰，AI 復康與認知障礙篩查技術或許是香港醫療系統可持續發展的關鍵答案。</p>
         </div>
     </section>
 
