@@ -1,6 +1,16 @@
 {
   "archives": [
     {
+      "dir": "news_20260415_075646",
+      "title": "科技園培育兩大醫健初創 以AI+數據重塑物理治療與認知障礙評估方式",
+      "summary_short": "# 科技園培育兩大醫健初創 以AI+數據重塑物理治療與認知障礙評估方式## 📖 新聞導語本文報導來自 **STHEADLINE**，發布於 **2026-04-15**。最新科技新聞報道指",
+      "images": [
+        "img/img1.png"
+      ],
+      "date": "2026-04-15",
+      "url": "./news_20260415_075646/index.html"
+    },
+    {
       "dir": "news_20260414_134219",
       "title": "【Gemini】換AI不用砍掉重練！Gemini無痛匯入個人化記憶　附Prompt直接Copy",
       "summary_short": "# 【Gemini】換AI不用砍掉重練！Gemini無痛匯入個人化記憶　附Prompt直接Copy## 📖 新聞導語本文報導來自 **INEWS**，發布於 **2026-04-14**。",
@@ -311,5 +321,5 @@
       "url": "./20260404_2045/index.html"
     }
   ],
-  "last_updated": "2026-04-14T13:47:11.248700"
+  "last_updated": "2026-04-15T08:00:29.104072"
 }
