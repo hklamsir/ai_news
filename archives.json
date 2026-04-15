@@ -1,6 +1,16 @@
 {
   "archives": [
     {
+      "dir": "news_20260415_083154",
+      "title": "Rising AI Adoption Spurs Workforce Changes",
+      "summary_short": "# Rising AI Adoption Spurs Workforce Changes## 📖 新聞導語本文報導來自 **GALLUP**，發布於 **2026-04-15**。最新科技",
+      "images": [
+        "img/img1.png"
+      ],
+      "date": "2026-04-15",
+      "url": "./news_20260415_083154/index.html"
+    },
+    {
       "dir": "news_20260415_075646",
       "title": "科技園培育兩大醫健初創 以AI+數據重塑物理治療與認知障礙評估方式",
       "summary_short": "# 科技園培育兩大醫健初創 以AI+數據重塑物理治療與認知障礙評估方式## 📖 新聞導語本文報導來自 **STHEADLINE**，發布於 **2026-04-15**。最新科技新聞報道指",
@@ -321,5 +331,5 @@
       "url": "./20260404_2045/index.html"
     }
   ],
-  "last_updated": "2026-04-15T08:00:29.104072"
+  "last_updated": "2026-04-15T08:44:33.273492"
 }
