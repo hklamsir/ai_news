@@ -64,6 +64,40 @@
         .highlight-box h4 { color: var(--accent-green); margin-bottom: 15px; font-size: 1.3rem; }
         .highlight-box p { color: var(--text-secondary); margin: 0; }
 
+        .alert-box { background: linear-gradient(135deg, rgba(255, 71, 87, 0.1) 0%, rgba(255, 149, 0, 0.1) 100%); padding: 25px 30px; border-radius: 16px; border-left: 5px solid var(--accent-red); margin: 30px 0; }
+        .alert-box h4 { color: var(--accent-red); margin-bottom: 12px; font-size: 1.15rem; }
+        .alert-box p { color: var(--text-secondary); margin: 8px 0; font-size: 1rem; }
+
+        .quote-box { background: linear-gradient(135deg, rgba(123, 44, 191, 0.15) 0%, rgba(0, 212, 255, 0.15) 100%); padding: 30px 40px; border-radius: 16px; border-left: 5px solid var(--primary-purple); margin: 40px 0; position: relative; }
+        .quote-box::before { content: '"'; position: absolute; top: 10px; left: 20px; font-size: 80px; color: var(--primary-purple); opacity: 0.3; font-family: Georgia, serif; }
+        .quote-box p { color: var(--text-primary); font-size: 1.2rem; font-style: italic; margin-bottom: 15px; }
+        .quote-box cite { color: var(--text-secondary); font-size: 0.95rem; }
+
+        .tech-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin: 40px 0; }
+        .tech-card { background: var(--card-bg-light); padding: 30px; border-radius: 16px; border: 1px solid rgba(0, 212, 255, 0.15); transition: transform 0.3s ease, box-shadow 0.3s ease); animation: fadeInUp 0.6s ease-out forwards; opacity: 0; }
+        .tech-card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0, 212, 255, 0.2); }
+        .tech-card-icon { font-size: 2.5rem; margin-bottom: 15px; }
+        .tech-card h4 { color: var(--primary-blue); margin-bottom: 12px; font-size: 1.2rem; }
+        .tech-card p { color: var(--text-secondary); font-size: 0.95rem; line-height: 1.7; }
+
+        .comparison-table { width: 100%; border-collapse: collapse; margin: 40px 0; border-radius: 16px; overflow: hidden; box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3); }
+        .comparison-table thead { background: linear-gradient(135deg, var(--primary-blue), var(--primary-purple)); }
+        .comparison-table th { padding: 18px 20px; text-align: left; font-weight: 600; font-size: 1.05rem; }
+        .comparison-table td { padding: 16px 20px; border-bottom: 1px solid rgba(255, 255, 255, 0.05); color: var(--text-secondary); }
+        .comparison-table tr:last-child td { border-bottom: none; }
+        .comparison-table tr:nth-child(even) { background: rgba(255, 255, 255, 0.02); }
+        .comparison-table .highlight-col { color: var(--accent-green); font-weight: 500; }
+
+        .timeline { position: relative; margin: 40px 0; padding-left: 40px; }
+        .timeline::before { content: ''; position: absolute; left: 15px; top: 0; bottom: 0; width: 2px; background: linear-gradient(180deg, var(--primary-blue), var(--primary-purple)); }
+        .timeline-item { position: relative; margin-bottom: 35px; padding: 20px 25px; background: var(--card-bg-light); border-radius: 12px; border: 1px solid rgba(0, 212, 255, 0.1); }
+        .timeline-item::before { content: ''; position: absolute; left: -32px; top: 25px; width: 12px; height: 12px; background: var(--primary-blue); border-radius: 50%; box-shadow: var(--glow-blue); }
+        .timeline-date { color: var(--primary-blue); font-size: 0.9rem; font-weight: 600; margin-bottom: 8px; }
+        .timeline-title { color: var(--text-primary); font-size: 1.1rem; font-weight: 600; margin-bottom: 8px; }
+        .timeline-desc { color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6; }
+
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); } }
+
         footer { background: #050508; padding: 60px 20px; text-align: center; border-top: 1px solid rgba(255, 255, 255, 0.1); }
         footer p { color: var(--text-secondary); margin-bottom: 20px; }
         .footer-links { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; }
@@ -91,6 +125,85 @@
                 </div>
             </div>
         </div>
+
+        <h3>📊 IPv4 vs IPv6 vs IPv8 功能對比</h3>
+        <table class="comparison-table">
+            <thead>
+                <tr>
+                    <th>特性</th>
+                    <th>IPv4</th>
+                    <th>IPv6</th>
+                    <th>IPv8</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>地址長度</td>
+                    <td>32 位元</td>
+                    <td>128 位元</td>
+                    <td>可變（加密身份）</td>
+                </tr>
+                <tr>
+                    <td>地址空間</td>
+                    <td class="highlight-col">~40 億</td>
+                    <td>340 兆兆</td>
+                    <td>無限</td>
+                </tr>
+                <tr>
+                    <td>安全機制</td>
+                    <td class="highlight-col">外部疊加</td>
+                    <td>IPsec 可選</td>
+                    <td>原生加密</td>
+                </tr>
+                <tr>
+                    <td>身份驗證</td>
+                    <td class="highlight-col">IP 地址（不可靠）</td>
+                    <td>NDP（有限）</td>
+                    <td>公鑰密碼學</td>
+                </tr>
+                <tr>
+                    <td>P2P 支援</td>
+                    <td class="highlight-col">需 NAT/UPnP</td>
+                    <td>尚可</td>
+                    <td>原生支援</td>
+                </tr>
+                <tr>
+                    <td>抗審查</td>
+                    <td class="highlight-col">弱</td>
+                    <td>弱</td>
+                    <td class="highlight-col">強</td>
+                </tr>
+                <tr>
+                    <td>自動配置</td>
+                    <td>DHCP（可選）</td>
+                    <td>SLAAC</td>
+                    <td>加密自動發現</td>
+                </tr>
+                <tr>
+                    <td>物聯網適用性</td>
+                    <td class="highlight-col">地址不足</td>
+                    <td>良好</td>
+                    <td class="highlight-col">優秀</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>💡 IPv8 技術特點解析</h3>
+        <p>IPv8 的核心創新在於將加密身份與網絡協議深度整合。與 IPv6 只是擴大地址空間不同，IPv8 試圖從根本上解決互聯網的安全和信任問題。</p>
+        <ul>
+            <li><strong>加密原生身份</strong>：每個節點擁有密鑰對，身份無法偽造</li>
+            <li><strong>零配置網絡</strong>：設備開機即可安全通信，無需 DHCP 或 DNS</li>
+            <li><strong>抗攻擊設計</strong>：DDoS 攻擊難以使用 IP 欺騙，阻斷攻擊源</li>
+            <li><strong>隱私保護</strong>：通信可追蹤但無法偽裝，提升私密性</li>
+            <li><strong>對等架構</strong>：消除客戶端-服務器瓶頸，提升效率和韌性</li>
+        </ul>
+
+        <div class="alert-box">
+            <h4>⚠️ 標準化仍需時日</h4>
+            <p>IPv8 目前仍處於 IETF 草案階段（draft-thain-ipv8-00），距離正式標準化尚需數年時間。互聯網協議的更替涉及巨大基礎設施投資，IPv6 推廣 20 年仍未普及，IPv8 面臨同樣的部署挑戰。</p>
+        </div>
+
+
     </section>
 
     <section class="content-section">
@@ -117,10 +230,143 @@
         <h3>🔮 未來展望</h3>
         <p>業界觀察人士指出，此項技術突破將對相關領域產生重要影響。隨著技術不斷完善，預計將在多個行業得到廣泛應用，推動產業升級。</p>
 
+
+        <h3>🎯 IPv8 核心技術卡片</h3>
+        <div class="tech-cards">
+            <div class="tech-card">
+                <div class="tech-card-icon">🔐</div>
+                <h4>加密身份驗證</h4>
+                <p>IPv8 使用加密公鑰作為節點身份，消除 IP 地址欺騙和 ARP 欺騙等傳統攻擊，提升網絡安全性。</p>
+            </div>
+            <div class="tech-card">
+                <div class="tech-card-icon">🌐</div>
+                <h4>對等網絡架構</h4>
+                <p>原生支援 P2P 通信，節點可直接發現和通信，無需 NAT 穿透，降低複雜性和延遲。</p>
+            </div>
+            <div class="tech-card">
+                <div class="tech-card-icon">🛡️</div>
+                <h4>抗審查能力</h4>
+                <p>去中心化設計使流量難以被單點封鎖，提高言論自由和資訊流通的韌性。</p>
+            </div>
+            <div class="tech-card">
+                <div class="tech-card-icon">📡</div>
+                <h4>自動服務發現</h4>
+                <p>內建發現機制讓設備可自動找到網絡中的服務，簡化物聯網部署和管理。</p>
+            </div>
+        </div>
+
+        <h3>⏱️ 互聯網協議發展時間軸</h3>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-date">1974 年</div>
+                <div class="timeline-title">TCP/IP 誕生</div>
+                <div class="timeline-desc">Vint Cerf 和 Bob Kahn 發表白皮書「A Protocol for Packet Network Interconnection」，奠定 TCP/IP 基礎。</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">1983 年</div>
+                <div class="timeline-title">IPv4 正式部署</div>
+                <div class="timeline-desc">ARPANET 全面轉向 TCP/IP 協議，IPv4 成為互聯網的基礎協議。</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">1998 年</div>
+                <div class="timeline-title">IPv6 標準化</div>
+                <div class="timeline-desc">IETF 正式標準化 IPv6（RFC 2460），解決 IPv4 地址耗盡問題，但普及緩慢。</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">2017 年</div>
+                <div class="timeline-title">IPv8 概念提出</div>
+                <div class="timeline-desc">研究者開始探索基於加密身份的下一代互聯網協議，解決安全和隱私問題。</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">2026 年</div>
+                <div class="timeline-title">IPv8 IETF 草案</div>
+                <div class="timeline-desc">draft-thain-ipv8-00 正式提交 IETF，為 IPv8 標準化邁出重要一步。</div>
+            </div>
+        </div>
+
         <div class="highlight-box">
             <h4>✨ 關鍵洞察</h4>
             <p>新技術的出現將改變現有的網絡通信模式，為未來的互聯網發展帶來新的機遇和挑戰。</p>
         </div>
+
+        <h3>📊 IPv4 vs IPv6 vs IPv8 功能對比</h3>
+        <table class="comparison-table">
+            <thead>
+                <tr>
+                    <th>特性</th>
+                    <th>IPv4</th>
+                    <th>IPv6</th>
+                    <th>IPv8</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>地址長度</td>
+                    <td>32 位元</td>
+                    <td>128 位元</td>
+                    <td>可變（加密身份）</td>
+                </tr>
+                <tr>
+                    <td>地址空間</td>
+                    <td class="highlight-col">~40 億</td>
+                    <td>340 兆兆</td>
+                    <td>無限</td>
+                </tr>
+                <tr>
+                    <td>安全機制</td>
+                    <td class="highlight-col">外部疊加</td>
+                    <td>IPsec 可選</td>
+                    <td>原生加密</td>
+                </tr>
+                <tr>
+                    <td>身份驗證</td>
+                    <td class="highlight-col">IP 地址（不可靠）</td>
+                    <td>NDP（有限）</td>
+                    <td>公鑰密碼學</td>
+                </tr>
+                <tr>
+                    <td>P2P 支援</td>
+                    <td class="highlight-col">需 NAT/UPnP</td>
+                    <td>尚可</td>
+                    <td>原生支援</td>
+                </tr>
+                <tr>
+                    <td>抗審查</td>
+                    <td class="highlight-col">弱</td>
+                    <td>弱</td>
+                    <td class="highlight-col">強</td>
+                </tr>
+                <tr>
+                    <td>自動配置</td>
+                    <td>DHCP（可選）</td>
+                    <td>SLAAC</td>
+                    <td>加密自動發現</td>
+                </tr>
+                <tr>
+                    <td>物聯網適用性</td>
+                    <td class="highlight-col">地址不足</td>
+                    <td>良好</td>
+                    <td class="highlight-col">優秀</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>💡 IPv8 技術特點解析</h3>
+        <p>IPv8 的核心創新在於將加密身份與網絡協議深度整合。與 IPv6 只是擴大地址空間不同，IPv8 試圖從根本上解決互聯網的安全和信任問題。</p>
+        <ul>
+            <li><strong>加密原生身份</strong>：每個節點擁有密鑰對，身份無法偽造</li>
+            <li><strong>零配置網絡</strong>：設備開機即可安全通信，無需 DHCP 或 DNS</li>
+            <li><strong>抗攻擊設計</strong>：DDoS 攻擊難以使用 IP 欺騙，阻斷攻擊源</li>
+            <li><strong>隱私保護</strong>：通信可追蹤但無法偽裝，提升私密性</li>
+            <li><strong>對等架構</strong>：消除客戶端-服務器瓶頸，提升效率和韌性</li>
+        </ul>
+
+        <div class="alert-box">
+            <h4>⚠️ 標準化仍需時日</h4>
+            <p>IPv8 目前仍處於 IETF 草案階段（draft-thain-ipv8-00），距離正式標準化尚需數年時間。互聯網協議的更替涉及巨大基礎設施投資，IPv6 推廣 20 年仍未普及，IPv8 面臨同樣的部署挑戰。</p>
+        </div>
+
+
     </section>
 
     <footer>
