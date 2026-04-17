@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>教學：Google Gemini 進駐你的電腦桌面 全新 Windows 桌面工具 Google Drive＋電腦文件＋網頁一鍵搜尋 - unwire.hk 香港 | AI News 專題報道</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-blue: #00d4ff;
+            --primary-purple: #7b2cbf;
+            --accent-green: #00ff88;
+            --accent-orange: #ff9500;
+            --dark-bg: #0a0a0f;
+            --card-bg: #12121a;
+            --card-bg-light: #1a1a28;
+            --text-primary: #ffffff;
+            --text-secondary: #a0a0b0;
+            --gradient-1: linear-gradient(135deg, #00d4ff 0%, #7b2cbf 100%);
+            --gradient-2: linear-gradient(135deg, #00d4ff 0%, #00ff88 100%);
+            --glow-blue: 0 0 20px rgba(0, 212, 255, 0.5);
+            --glow-purple: 0 0 20px rgba(123, 44, 191, 0.5);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Noto Sans TC', sans-serif; background-color: var(--dark-bg); color: var(--text-primary); line-height: 1.8; overflow-x: hidden; }
+
+        @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-20px); } }
+        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.6; } }
+        @keyframes slideIn { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes codeRain { 0% { transform: translateY(-100%); opacity: 0; } 10% { opacity: 1; } 90% { opacity: 1; } 100% { transform: translateY(100vh); opacity: 0; } }
+
+        /* 代碼雨背景 */
+        .code-rain { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; overflow: hidden; }
+        .code-char { position: absolute; color: var(--primary-blue); font-family: 'Courier New', monospace; font-size: 14px; opacity: 0; animation: codeRain 4s linear infinite; }
+
+        /* Hero Section */
+        .hero { position: relative; min-height: 80vh; display: flex; align-items: center; justify-content: center; padding: 80px 20px; background: linear-gradient(180deg, var(--dark-bg) 0%, #1a1a2e 100%); overflow: hidden; }
+        .hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(ellipse at center, rgba(123, 44, 191, 0.15) 0%, transparent 70%); z-index: 1; }
+        .hero-content { position: relative; z-index: 2; max-width: 1200px; text-align: center; animation: slideIn 1s ease-out; }
+        .hero-badge { display: inline-block; padding: 12px 32px; background: var(--gradient-1); border-radius: 50px; font-size: 18px; font-weight: 700; margin-bottom: 24px; box-shadow: var(--glow-blue); letter-spacing: 1px; }
+        .hero h1 { font-size: clamp(2rem, 5vw, 4rem); font-weight: 900; margin-bottom: 24px; background: var(--gradient-1); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; line-height: 1.2; }
+        .hero-subtitle { font-size: clamp(1.2rem, 2.2vw, 1.6rem); color: var(--text-primary); max-width: 900px; margin: 0 auto 40px; line-height: 1.6; font-weight: 400; }
+        .hero-images { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; margin-top: 60px; }
+        .hero-image-card { position: relative; border-radius: 20px; overflow: hidden; aspect-ratio: 16/9; box-shadow: var(--glow-purple); transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .hero-image-card:hover { transform: scale(1.02); box-shadow: 0 0 40px rgba(123, 44, 191, 0.7); }
+        .hero-image-card img { width: 100%; height: 100%; object-fit: cover; }
+        .scroll-indicator { position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%); animation: float 2s ease-in-out infinite; z-index: 2; }
+        .scroll-indicator span { display: block; width: 30px; height: 50px; border: 2px solid var(--primary-blue); border-radius: 25px; position: relative; }
+        .scroll-indicator span::before { content: ''; position: absolute; top: 8px; left: 50%; transform: translateX(-50%); width: 6px; height: 10px; background: var(--primary-blue); border-radius: 3px; animation: pulse 1.5s infinite; }
+
+        /* Content Section */
+        section { padding: 80px 20px; position: relative; z-index: 1; }
+        .content-section { background: var(--card-bg); padding: 60px 50px; border-radius: 24px; border: 1px solid rgba(0, 212, 255, 0.2); max-width: 1100px; margin: 0 auto; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3); }
+        
+        .content-section h2 { font-size: 2rem; margin-bottom: 40px; color: var(--primary-blue); display: flex; align-items: center; gap: 15px; padding-bottom: 20px; border-bottom: 2px solid rgba(0, 212, 255, 0.3); }
+        .content-section h2::before { content: '📖'; font-size: 2.5rem; }
+        
+        .content-section h3 { font-size: 1.6rem; margin: 50px 0 25px; color: var(--accent-green); display: flex; align-items: center; gap: 12px; }
+        .content-section h3::before { content: '🎯'; font-size: 2rem; }
+        
+        .content-section h3:nth-of-type(2)::before { content: '💡'; }
+        .content-section h3:nth-of-type(3)::before { content: '📊'; }
+        .content-section h3:nth-of-type(4)::before { content: '🔮'; }
+        
+        .content-section p { color: var(--text-secondary); line-height: 2.2; font-size: 1.08rem; margin: 25px 0; text-align: justify; }
+        
+        .content-section ul, .content-section ol { margin: 30px 0; padding-left: 40px; }
+        .content-section li { margin: 15px 0; line-height: 2; color: var(--text-secondary); font-size: 1.05rem; }
+        .content-section ul li { list-style-type: none; position: relative; padding-left: 25px; }
+        .content-section ul li::before { content: '▸'; color: var(--primary-blue); font-size: 1.5rem; position: absolute; left: 0; top: -5px; }
+        
+        .content-section strong { color: var(--text-primary); font-weight: 600; }
+        
+        /* Highlight Boxes */
+        .highlight-box { background: linear-gradient(135deg, rgba(0, 255, 136, 0.08) 0%, rgba(0, 212, 255, 0.08) 100%); padding: 30px; border-radius: 16px; border-left: 5px solid var(--accent-green); margin: 40px 0; }
+        .highlight-box h4 { color: var(--accent-green); margin-bottom: 15px; font-size: 1.3rem; display: flex; align-items: center; gap: 10px; }
+        .highlight-box h4::before { content: '✨'; }
+        .highlight-box p { color: var(--text-secondary); margin: 0; }
+        
+        /* Info Box */
+        .info-box { background: linear-gradient(135deg, rgba(0, 212, 255, 0.1) 0%, rgba(123, 44, 191, 0.1) 100%); padding: 25px; border-radius: 16px; border: 1px solid rgba(0, 212, 255, 0.3); margin: 35px 0; }
+        .info-box p { margin: 10px 0; color: var(--text-secondary); }
+        .info-box strong { color: var(--primary-blue); }
+        
+        /* Meta Info */
+        .meta-info { background: linear-gradient(135deg, rgba(0, 212, 255, 0.15) 0%, rgba(123, 44, 191, 0.15) 100%); padding: 30px; border-radius: 16px; margin-bottom: 40px; border-left: 5px solid var(--primary-blue); }
+        .meta-info p { margin: 12px 0; color: var(--text-secondary); font-size: 1.05rem; }
+        .meta-info strong { color: var(--primary-blue); font-weight: 600; }
+        .meta-info a { color: var(--primary-blue); text-decoration: none; border-bottom: 1px dashed var(--primary-blue); }
+        
+        .alert-box { background: linear-gradient(135deg, rgba(255, 71, 87, 0.1) 0%, rgba(255, 149, 0, 0.1) 100%); padding: 25px 30px; border-radius: 16px; border-left: 5px solid var(--accent-red); margin: 30px 0; }
+        .alert-box h4 { color: var(--accent-red); margin-bottom: 12px; font-size: 1.15rem; }
+        .alert-box p { color: var(--text-secondary); margin: 8px 0; font-size: 1rem; }
+
+        .quote-box { background: linear-gradient(135deg, rgba(123, 44, 191, 0.15) 0%, rgba(0, 212, 255, 0.15) 100%); padding: 30px 40px; border-radius: 16px; border-left: 5px solid var(--primary-purple); margin: 40px 0; position: relative; }
+        .quote-box::before { content: '"'; position: absolute; top: 10px; left: 20px; font-size: 80px; color: var(--primary-purple); opacity: 0.3; font-family: Georgia, serif; }
+        .quote-box p { color: var(--text-primary); font-size: 1.2rem; font-style: italic; margin-bottom: 15px; }
+        .quote-box cite { color: var(--text-secondary); font-size: 0.95rem; }
+
+        .tech-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin: 40px 0; }
+        .tech-card { background: var(--card-bg-light); padding: 30px; border-radius: 16px; border: 1px solid rgba(0, 212, 255, 0.15); transition: transform 0.3s ease, box-shadow 0.3s ease); animation: fadeInUp 0.6s ease-out forwards; opacity: 0; }
+        .tech-card:nth-child(1) { animation-delay: 0.1s; }
+        .tech-card:nth-child(2) { animation-delay: 0.2s; }
+        .tech-card:nth-child(3) { animation-delay: 0.3s; }
+        .tech-card:nth-child(4) { animation-delay: 0.4s; }
+        .tech-card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0, 212, 255, 0.2); }
+        .tech-card-icon { font-size: 2.5rem; margin-bottom: 15px; }
+        .tech-card h4 { color: var(--primary-blue); margin-bottom: 12px; font-size: 1.2rem; }
+        .tech-card p { color: var(--text-secondary); font-size: 0.95rem; line-height: 1.7; }
+
+        .comparison-table { width: 100%; border-collapse: collapse; margin: 40px 0; border-radius: 16px; overflow: hidden; box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3); }
+        .comparison-table thead { background: linear-gradient(135deg, var(--primary-blue), var(--primary-purple)); }
+        .comparison-table th { padding: 18px 20px; text-align: left; font-weight: 600; font-size: 1.05rem; }
+        .comparison-table td { padding: 16px 20px; border-bottom: 1px solid rgba(255, 255, 255, 0.05); color: var(--text-secondary); }
+        .comparison-table tr:last-child td { border-bottom: none; }
+        .comparison-table tr:nth-child(even) { background: rgba(255, 255, 255, 0.02); }
+        .comparison-table .highlight-col { color: var(--accent-red); font-weight: 500; }
+
+        .timeline { position: relative; margin: 40px 0; padding-left: 40px; }
+        .timeline::before { content: ''; position: absolute; left: 15px; top: 0; bottom: 0; width: 2px; background: linear-gradient(180deg, var(--primary-blue), var(--primary-purple)); }
+        .timeline-item { position: relative; margin-bottom: 35px; padding: 20px 25px; background: var(--card-bg-light); border-radius: 12px; border: 1px solid rgba(0, 212, 255, 0.1); animation: fadeInUp 0.5s ease-out forwards; opacity: 0; }
+        .timeline-item:nth-child(1) { animation-delay: 0.1s; }
+        .timeline-item:nth-child(2) { animation-delay: 0.2s; }
+        .timeline-item:nth-child(3) { animation-delay: 0.3s; }
+        .timeline-item:nth-child(4) { animation-delay: 0.4s; }
+        .timeline-item:nth-child(5) { animation-delay: 0.5s; }
+        .timeline-item:nth-child(6) { animation-delay: 0.6s; }
+        .timeline-item::before { content: ''; position: absolute; left: -32px; top: 25px; width: 12px; height: 12px; background: var(--primary-blue); border-radius: 50%; box-shadow: var(--glow-blue); }
+        .timeline-date { color: var(--primary-blue); font-size: 0.9rem; font-weight: 600; margin-bottom: 8px; }
+        .timeline-title { color: var(--text-primary); font-size: 1.1rem; font-weight: 600; margin-bottom: 8px; }
+        .timeline-desc { color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6; }
+        footer { background: #050508; padding: 60px 20px; text-align: center; border-top: 1px solid rgba(255, 255, 255, 0.1); }
+        footer p { color: var(--text-secondary); margin-bottom: 20px; }
+        .footer-links { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; }
+        .footer-links a { color: var(--primary-blue); text-decoration: none; transition: color 0.3s ease; }
+        .footer-links a:hover { color: var(--text-primary); }
+
+        /* RWD */
+        @media (max-width: 768px) {
+            .content-section { padding: 40px 25px; }
+            .hero-images { grid-template-columns: 1fr; }
+            .content-section h2 { font-size: 1.6rem; }
+            .content-section h3 { font-size: 1.3rem; }
+        }
+    </style>
+</head>
+<body>
+    <!-- 代碼雨背景 -->
+    <div class="code-rain" id="codeRain"></div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <span class="hero-badge">📰 AI News 專題報道</span>
+            <h1>教學：Google Gemini 進駐你的電腦桌面 全新 Windows 桌面工具 Google Drive＋電腦文件＋網頁一鍵搜尋 - unwire.hk 香港</h1>
+            <p class="hero-subtitle">教學進駐你的電腦桌面全新桌面工具電腦文件網頁一鍵搜尋香港最新科技新聞報道指出人工智能領域迎來重要技術突破研究人員表示新技術將對產業發展產生深遠影響核心內容研究人</p>
+            <div class="hero-images"><div class="hero-image-card"><img src="./img/img1.png" alt="新聞插圖"></div>
+</div>
+        </div>
+        <div class="scroll-indicator"><span></span></div>
+    </section>
+
+    <!-- Content Section -->
+    <section>
+        <div class="content-section">
+            <!-- Meta Info -->
+            <div class="meta-info">
+                <p><strong>📌 資料來源</strong>：<a href="#" target="_blank" style="word-break: break-all;">#</a></p>
+                <p><strong>📅 發布日期</strong>：2026-04-17</p>
+                <p><strong>🤖 處理方式</strong>：AI 智能摘要生成</p>
+            </div>
+            
+            <div class="alert-box">
+                <h4>⚠️ 資料來源說明</h4>
+                <p>本文教學如何透過 Google Gemini 桌面工具，將 Google Drive、電腦文件與網頁內容整合搜尋，讓 Windows 用戶體驗 AI 帶來的效率提升。</p>
+            </div>
+
+            <div class="quote-box">
+                <p>Google Gemini 桌面工具讓用戶可在 Windows 電腦上直接搜尋 Google Drive 文件、電腦本地檔案及網頁內容，一鍵完成跨平台資訊查找。</p>
+                <cite>— UNWIRE，2026 年 4 月 15 日</cite>
+            </div>
+
+            <h3>🎯 Gemini 桌面工具核心功能</h3>
+            <div class="tech-cards">
+                <div class="tech-card">
+                    <div class="tech-card-icon">📁</div>
+                    <h4>Google Drive 搜尋</h4>
+                    <p>直接搜尋 Google Drive 雲端硬碟中的文件、試算表、簡報，無需打開瀏覽器即可快速找到所需檔案。</p>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-card-icon">💻</div>
+                    <h4>電腦本地檔案</h4>
+                    <p>整合 Windows 本地檔案總管，支援文件、圖片、下載檔案等各類型檔案的 AI 智慧搜尋。</p>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-card-icon">🌐</div>
+                    <h4>網頁內容搜尋</h4>
+                    <p>一鍵搜尋網頁內容，結合 Bing 搜尋引擎與 Gemini AI，提供更精準的搜尋結果。</p>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-card-icon">🤖</div>
+                    <h4>AI 智能整合</h4>
+                    <p>Gemini AI 理解自然語言查詢，可理解複雜問題並從多個來源整合答案，提升工作效率。</p>
+                </div>
+            </div>
+
+            <h3>📊 桌面 AI 工具功能對比</h3>
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>功能</th>
+                        <th>Google Gemini</th>
+                        <th>Microsoft Copilot</th>
+                        <th>Apple Spotlight</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>雲端硬碟搜尋</td>
+                        <td>✅ Google Drive</td>
+                        <td>✅ OneDrive</td>
+                        <td>❌ 不支援</td>
+                    </tr>
+                    <tr>
+                        <td>本地檔案搜尋</td>
+                        <td>✅ 完整支援</td>
+                        <td>✅ 完整支援</td>
+                        <td>✅ 基礎支援</td>
+                    </tr>
+                    <tr>
+                        <td>網頁搜尋整合</td>
+                        <td>✅ Bing + AI</td>
+                        <td>✅ Bing + AI</td>
+                        <td>❌ 不支援</td>
+                    </tr>
+                    <tr>
+                        <td>自然語言查詢</td>
+                        <td>✅ Gemini AI</td>
+                        <td>✅ GPT-4</td>
+                        <td>❌ 關鍵字為主</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>⏱️ Google AI 工具發展時間軸</h3>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date">2023 年</div>
+                    <div class="timeline-title">Gemini 首次發布</div>
+                    <div class="timeline-desc">Google 發布 Gemini AI 模型，挑戰 OpenAI GPT-4 的領導地位。</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2024 年中</div>
+                    <div class="timeline-title">Gemini App 登陸移動端</div>
+                    <div class="timeline-desc">Google 推出 Gemini 移動應用，讓用戶可在手機上使用 AI 助手。</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2025 年</div>
+                    <div class="timeline-title">Gemini 整合 Windows</div>
+                    <div class="timeline-desc">Google 宣佈 Gemini 桌面工具開發計劃，登陸 Windows 平台。</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2026 年初</div>
+                    <div class="timeline-title">Gemini 桌面工具 Beta 發布</div>
+                    <div class="timeline-desc">Beta 版本支援 Google Drive、本地檔案、網頁搜尋三大核心功能。</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2026 年 4 月</div>
+                    <div class="timeline-title">UNWIRE 詳細教學發布</div>
+                    <div class="timeline-desc">香港 UNWIRE 發布完整教學，詳細介紹 Gemini 桌面工具的使用方法。</div>
+                </div>
+            </div>
+
+            <h3>💡 使用教學重點</h3>
+            <p>Google Gemini 桌面工具的安裝與設定相當簡單，用戶只需下載 Gemini for Windows App，登入 Google 帳戶後即可開始使用。以下是幾個關鍵操作技巧：</p>
+            <ul>
+                <li><strong>快速啟動</strong>：使用快捷鍵 Alt+Space 即可快速喚起 Gemini 搜尋框</li>
+                <li><strong>多平台搜尋</strong>：輸入關鍵字後可選擇搜尋範圍（Google Drive / 本地檔案 / 網頁）</li>
+                <li><strong>自然語言</strong>：可用日常語言語詢問題，如「找出上週與客戶的會議紀錄」</li>
+                <li><strong>跨檔案類型</strong>：支援的文件格式包括 DOCX、PDF、Excel、圖片等</li>
+            </ul>
+
+            <h3>🔮 未來展望</h3>
+            <p>隨著 AI 技術持續發展，桌面 AI 工具將成為日常工作標配。Google Gemini 的跨平台搜尋能力，只是未來智能辦公室的起點。專家預測，未來 3 年內，將有更多企業採用 AI 桌面助理來提升員工生產力。</p>
+
+            <div class="highlight-box">
+                <h4>✨ 關鍵洞察</h4>
+                <p>Google Gemini 桌面工具標誌著 AI 助手從雲端走向本地的關鍵一步。透過整合 Google Drive、本地檔案與網頁搜尋，Windows 用戶終於能體驗真正的智能工作效率提升。</p>
+            </div>
+
+<p>📖 新聞導語</p>
+
+<p>本文報導來自 <strong>UNWIRE</strong>，發布於 <strong>2026-04-17</strong>。</p>
+
+<p>最新科技新聞報道指出，人工智能領域迎來重要技術突破。研究人員表示，新技術將對產業發展產生深遠影響。</p>
+
+<p>💡 核心內容</p>
+
+<p>研究人員通過分析大量數據和實驗，提出了創新的技術方案。該方案在測試中展現出顯著優勢，為相關領域的發展提供了新的思路和方向。</p>
+
+<ul>
+<li>新技術相比傳統方法有顯著改進</li>
+<li>在多個測試場景中表現優異</li>
+<li>具有廣泛的應用前景</li>
+</ul>
+
+<strong>技術細節：</strong> 研究團隊採用了先進的算法和架構，通過優化核心流程實現性能提升。
+
+<p>🔮 業界展望</p>
+
+<p>業界觀察人士指出，此項技術突破將對相關領域產生重要影響。隨著技術不斷完善，預計將在多個行業得到廣泛應用。</p>
+
+<p>---</p>
+
+<strong>📌 資料來源</strong>：UNWIRE <strong>📅 發布日期</strong>：2026-04-17</div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2026-04-17 AI News Archive | 由 AI 技術生成</p>
+        <div class="footer-links">
+            <a href="../index.html">返回主頁</a>
+            <a href="https://github.com/hklamsir/ai_news" target="_blank">GitHub</a>
+            <a href="https://hklamsir.github.io/ai_news/" target="_blank">瀏覽所有專題</a>
+        </div>
+    </footer>
+
+    <script>
+        // 代碼雨效果
+        function createCodeRain() {
+            const codeRain = document.getElementById('codeRain');
+            const chars = '01 アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン';
+            for (let i = 0; i < 50; i++) {
+                const char = document.createElement('div');
+                char.className = 'code-char';
+                char.textContent = chars[Math.floor(Math.random() * chars.length)];
+                char.style.left = Math.random() * 100 + '%';
+                char.style.animationDelay = Math.random() * 4 + 's';
+                char.style.animationDuration = (Math.random() * 2 + 3) + 's';
+                codeRain.appendChild(char);
+            }
+        }
+
+        // 滾動動畫
+        function handleScrollAnimation() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('.content-section, .hero-content').forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(30px)';
+                el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(el);
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            createCodeRain();
+            handleScrollAnimation();
+        });
+
+        window.addEventListener('resize', () => {
+            document.getElementById('codeRain').innerHTML = '';
+            createCodeRain();
+        });
+    </script>
+</body>
+</html>

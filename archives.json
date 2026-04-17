@@ -1,6 +1,16 @@
 {
   "archives": [
     {
+      "dir": "news_20260417_100238",
+      "title": "教學：Google Gemini 進駐你的電腦桌面 全新 Windows 桌面工具 Google Drive＋電腦文件＋網頁一鍵搜尋 - unwire.hk 香港",
+      "summary_short": "Google Gemini 桌面工具讓用戶可在 Windows 電腦上直接搜尋 Google Drive 文件、電腦本地檔案及網頁內容，一鍵完成跨平台資訊查找。",
+      "images": [
+        "img/img1.png"
+      ],
+      "date": "2026-04-17",
+      "url": "./news_20260417_100238/index.html"
+    },
+    {
       "dir": "news_20260416_181634",
       "title": "為什麼有的人覺得 AI 是笨蛋，卻有另一群人願意每個月花 200 美元訂閱？",
       "summary_short": "「同樣的 AI 工具，為什麼有人覺得它是世紀大騙局，有人卻願意每月掏 200 美元？」 覺得 AI 沒用的用戶，往往用它來替代搜尋引擎查簡單事實，卻發現...",
