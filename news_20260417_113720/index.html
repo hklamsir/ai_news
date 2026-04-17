@@ -10,6 +10,7 @@
             --primary-purple: #7b2cbf;
             --accent-green: #00ff88;
             --accent-orange: #ff9500;
+            --accent-red: #ff4757;
             --dark-bg: #0a0a0f;
             --card-bg: #12121a;
             --card-bg-light: #1a1a28;
@@ -29,6 +30,7 @@
         @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.6; } }
         @keyframes slideIn { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
         @keyframes codeRain { 0% { transform: translateY(-100%); opacity: 0; } 10% { opacity: 1; } 90% { opacity: 1; } 100% { transform: translateY(100vh); opacity: 0; } }
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); } }
 
         .code-rain { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; overflow: hidden; }
         .code-char { position: absolute; color: var(--primary-blue); font-family: 'Courier New', monospace; font-size: 14px; opacity: 0; animation: codeRain 4s linear infinite; }
@@ -74,7 +76,7 @@
         .quote-box cite { color: var(--text-secondary); font-size: 0.95rem; }
 
         .tech-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin: 40px 0; }
-        .tech-card { background: var(--card-bg-light); padding: 30px; border-radius: 16px; border: 1px solid rgba(0, 212, 255, 0.15); transition: transform 0.3s ease, box-shadow 0.3s ease); animation: fadeInUp 0.6s ease-out forwards; opacity: 0; }
+        .tech-card { background: var(--card-bg-light); padding: 30px; border-radius: 16px; border: 1px solid rgba(0, 212, 255, 0.15); transition: transform 0.3s ease, box-shadow 0.3s ease; animation: fadeInUp 0.6s ease-out forwards; opacity: 0; }
         .tech-card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0, 212, 255, 0.2); }
         .tech-card-icon { font-size: 2.5rem; margin-bottom: 15px; }
         .tech-card h4 { color: var(--primary-blue); margin-bottom: 12px; font-size: 1.2rem; }
@@ -90,13 +92,11 @@
 
         .timeline { position: relative; margin: 40px 0; padding-left: 40px; }
         .timeline::before { content: ''; position: absolute; left: 15px; top: 0; bottom: 0; width: 2px; background: linear-gradient(180deg, var(--primary-blue), var(--primary-purple)); }
-        .timeline-item { position: relative; margin-bottom: 35px; padding: 20px 25px; background: var(--card-bg-light); border-radius: 12px; border: 1px solid rgba(0, 212, 255, 0.1); }
+        .timeline-item { position: relative; margin-bottom: 35px; padding: 20px 25px; background: var(--card-bg-light); border-radius: 12px; border: 1px solid rgba(0, 212, 255, 0.1); animation: fadeInUp 0.5s ease-out forwards; opacity: 0; }
         .timeline-item::before { content: ''; position: absolute; left: -32px; top: 25px; width: 12px; height: 12px; background: var(--primary-blue); border-radius: 50%; box-shadow: var(--glow-blue); }
         .timeline-date { color: var(--primary-blue); font-size: 0.9rem; font-weight: 600; margin-bottom: 8px; }
         .timeline-title { color: var(--text-primary); font-size: 1.1rem; font-weight: 600; margin-bottom: 8px; }
         .timeline-desc { color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6; }
-
-        @keyframes fadeInUp { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); } }
 
         footer { background: #050508; padding: 60px 20px; text-align: center; border-top: 1px solid rgba(255, 255, 255, 0.1); }
         footer p { color: var(--text-secondary); margin-bottom: 20px; }
@@ -109,6 +109,8 @@
             .hero-images { grid-template-columns: 1fr; }
             .hero h1 { font-size: 2rem; }
             .hero-subtitle { font-size: 1.2rem; }
+            .comparison-table { font-size: 0.9rem; }
+            .comparison-table th, .comparison-table td { padding: 12px 10px; }
         }
     </style>
 </head>
@@ -118,178 +120,82 @@
         <div class="hero-content">
             <span class="hero-badge">📰 AI News 專題報道</span>
             <h1>Internet Protocol Version 8 (IPv8)</h1>
-            <p class="hero-subtitle">最新科技新聞報道指出，人工智能領域迎來重要技術突破。研究人員表示，新技術將對產業發展產生深遠影響。</p>
+            <p class="hero-subtitle">IETF 發布革命性網路協議草案！IPv8 不僅解決 IPv4 位址枯竭，更通過 Zone Server 統一平台革新網路管理、安全與監控方式。</p>
             <div class="hero-images">
                 <div class="hero-image-card">
-                    <img src="img/img1.png" alt="新聞插圖">
+                    <img src="img/img1.png" alt="IPv8 示意圖">
                 </div>
             </div>
         </div>
-
-        <h3>📊 IPv4 vs IPv6 vs IPv8 功能對比</h3>
-        <table class="comparison-table">
-            <thead>
-                <tr>
-                    <th>特性</th>
-                    <th>IPv4</th>
-                    <th>IPv6</th>
-                    <th>IPv8</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>地址長度</td>
-                    <td>32 位元</td>
-                    <td>128 位元</td>
-                    <td>可變（加密身份）</td>
-                </tr>
-                <tr>
-                    <td>地址空間</td>
-                    <td class="highlight-col">~40 億</td>
-                    <td>340 兆兆</td>
-                    <td>無限</td>
-                </tr>
-                <tr>
-                    <td>安全機制</td>
-                    <td class="highlight-col">外部疊加</td>
-                    <td>IPsec 可選</td>
-                    <td>原生加密</td>
-                </tr>
-                <tr>
-                    <td>身份驗證</td>
-                    <td class="highlight-col">IP 地址（不可靠）</td>
-                    <td>NDP（有限）</td>
-                    <td>公鑰密碼學</td>
-                </tr>
-                <tr>
-                    <td>P2P 支援</td>
-                    <td class="highlight-col">需 NAT/UPnP</td>
-                    <td>尚可</td>
-                    <td>原生支援</td>
-                </tr>
-                <tr>
-                    <td>抗審查</td>
-                    <td class="highlight-col">弱</td>
-                    <td>弱</td>
-                    <td class="highlight-col">強</td>
-                </tr>
-                <tr>
-                    <td>自動配置</td>
-                    <td>DHCP（可選）</td>
-                    <td>SLAAC</td>
-                    <td>加密自動發現</td>
-                </tr>
-                <tr>
-                    <td>物聯網適用性</td>
-                    <td class="highlight-col">地址不足</td>
-                    <td>良好</td>
-                    <td class="highlight-col">優秀</td>
-                </tr>
-            </tbody>
-        </table>
-
-        <h3>💡 IPv8 技術特點解析</h3>
-        <p>IPv8 的核心創新在於將加密身份與網絡協議深度整合。與 IPv6 只是擴大地址空間不同，IPv8 試圖從根本上解決互聯網的安全和信任問題。</p>
-        <ul>
-            <li><strong>加密原生身份</strong>：每個節點擁有密鑰對，身份無法偽造</li>
-            <li><strong>零配置網絡</strong>：設備開機即可安全通信，無需 DHCP 或 DNS</li>
-            <li><strong>抗攻擊設計</strong>：DDoS 攻擊難以使用 IP 欺騙，阻斷攻擊源</li>
-            <li><strong>隱私保護</strong>：通信可追蹤但無法偽裝，提升私密性</li>
-            <li><strong>對等架構</strong>：消除客戶端-服務器瓶頸，提升效率和韌性</li>
-        </ul>
-
-        <div class="alert-box">
-            <h4>⚠️ 標準化仍需時日</h4>
-            <p>IPv8 目前仍處於 IETF 草案階段（draft-thain-ipv8-00），距離正式標準化尚需數年時間。互聯網協議的更替涉及巨大基礎設施投資，IPv6 推廣 20 年仍未普及，IPv8 面臨同樣的部署挑戰。</p>
-        </div>
-
-
     </section>
 
     <section class="content-section">
         <div class="meta-info">
-            <p><strong>📺 資料來源</strong>：<a href="https://ietf.org" target="_blank">IETF</a></p>
+            <p><strong>📺 資料來源</strong>：<a href="https://www.ietf.org/archive/id/draft-thain-ipv8-00.html" target="_blank">IETF</a></p>
             <p><strong>📅 發布日期</strong>：2026-04-17</p>
-            <p><strong>🤖 處理方式</strong>：AI 智能摘要生成</p>
+            <p><strong>🤖 處理方式</strong>：AI 智能摘要 + 深度優化</p>
         </div>
 
-        <h3>🎯 核心觀點</h3>
-        <p>本次報告指出，研究人員通過分析大量數據和實驗，提出了創新的技術方案。該方案在測試中展現出顯著優勢，為相關領域的發展提供了新的思路和方向。</p>
-
-        <h3>💡 重點解析</h3>
-        <p>研究團隊採用了先進的算法和架構，通過優化核心流程實現性能提升。主要發現包括：</p>
-        <ul>
-            <li>新技術相比傳統方法有顯著改進</li>
-            <li>在多個測試場景中表現優異</li>
-            <li>具有廣泛的應用前景</li>
-        </ul>
-
-        <h3>📊 數據分析</h3>
-        <p>數據顯示，新技術在多個關鍵指標上均超過了傳統方法。例如，在處理速度、穩定性和資源利用率等方面都有顯著提升。</p>
-
-        <h3>🔮 未來展望</h3>
-        <p>業界觀察人士指出，此項技術突破將對相關領域產生重要影響。隨著技術不斷完善，預計將在多個行業得到廣泛應用，推動產業升級。</p>
-
+        <div class="quote-box">
+            <p>IPv8 是一個管理的網路協議套件，徹底改變了從家庭網絡到全球互聯網的運營、安全和監控方式。</p>
+            <cite>— Thain, IETF Draft, 2026 年 4 月</cite>
+        </div>
 
         <h3>🎯 IPv8 核心技術卡片</h3>
         <div class="tech-cards">
             <div class="tech-card">
                 <div class="tech-card-icon">🔐</div>
-                <h4>加密身份驗證</h4>
-                <p>IPv8 使用加密公鑰作為節點身份，消除 IP 地址欺騙和 ARP 欺騙等傳統攻擊，提升網絡安全性。</p>
-            </div>
-            <div class="tech-card">
-                <div class="tech-card-icon">🌐</div>
-                <h4>對等網絡架構</h4>
-                <p>原生支援 P2P 通信，節點可直接發現和通信，無需 NAT 穿透，降低複雜性和延遲。</p>
-            </div>
-            <div class="tech-card">
-                <div class="tech-card-icon">🛡️</div>
-                <h4>抗審查能力</h4>
-                <p>去中心化設計使流量難以被單點封鎖，提高言論自由和資訊流通的韌性。</p>
+                <h4>OAuth2 JWT 統一認證</h4>
+                <p>每個可管理設備透過 OAuth2 JWT 權杖授權，由 Zone Server 本地快取提供服務，無需往返外部身份提供者，實現毫秒級驗證。</p>
             </div>
             <div class="tech-card">
                 <div class="tech-card-icon">📡</div>
-                <h4>自動服務發現</h4>
-                <p>內建發現機制讓設備可自動找到網絡中的服務，簡化物聯網部署和管理。</p>
+                <h4>DHCP8 單一回應</h4>
+                <p>設備發送一個 DHCP8 Discover，收到包含所有服務端點的回應，包括 DNS8、NTP8、NetLog8、OAuth8 等，無需手動配置。</p>
+            </div>
+            <div class="tech-card">
+                <div class="tech-card-icon">🌐</div>
+                <h4>DNS8 + WHOIS8 驗證</h4>
+                <p>每個出口封包都會根據 DNS8 查找和 WHOIS8 註冊的主動路由進行驗證，消除僵屍網絡命令與控制的主要通道。</p>
+            </div>
+            <div class="tech-card">
+                <div class="tech-card-icon">📍</div>
+                <h4>64 位元地址空間</h4>
+                <p>2^64 = 18.4 萬億兆位址。每個 ASN 持有者獲得 42.9 億個主機位址，徹底解決 IPv4 位址枯竭問題。</p>
+            </div>
+            <div class="tech-card">
+                <div class="tech-card-icon">🔄</div>
+                <h4>100% 向後兼容</h4>
+                <p>IPv4 是 IPv8 的子集。r.r.r.r = 0.0.0.0 的 IPv8 位址等於 IPv4 位址，無需修改任何現有設備、應用或網絡。</p>
+            </div>
+            <div class="tech-card">
+                <div class="tech-card-icon">🛡️</div>
+                <h4>東西南北安全</h4>
+                <p>東西部流量由 ACL8 區域隔離強制執行；南北流量在 Zone Server 出口進行 DNS8 和 WHOIS8 雙重驗證。</p>
+            </div>
+            <div class="tech-card">
+                <div class="tech-card-icon">📊</div>
+                <h4>Cost Factor 成本因子</h4>
+                <p>統一路徑品質度量，包含往返時間、封包損失、擁塞窗口、鏈路容量、經濟政策、地理距離等七個元件。</p>
+            </div>
+            <div class="tech-card">
+                <div class="tech-card-icon">🗺️</div>
+                <h4>結構性路由表界限</h4>
+                <p>BGP8 路由表在每個 ASN 一個條目的結構上受限。今日約 175,000 個條目，遠低於 BGP4 的 90 萬前綴。</p>
+            </div>
+            <div class="tech-card">
+                <div class="tech-card-icon">🏢</div>
+                <h4>127.0.0.0/8 內部區域</h4>
+                <p>內部 Zone Server 平台統一管理網路遙測、身份驗證、名稱解析、時間同步、存取控制和翻譯。</p>
+            </div>
+            <div class="tech-card">
+                <div class="tech-card-icon">🔧</div>
+                <h4>Update8 韌體更新</h4>
+                <p>標準供應商饋送格式、Zone Server 驗證代理、可選本地快取、基於設備關鍵性的排程，以及 NIC 硬體強制回滾預防。</p>
             </div>
         </div>
 
-        <h3>⏱️ 互聯網協議發展時間軸</h3>
-        <div class="timeline">
-            <div class="timeline-item">
-                <div class="timeline-date">1974 年</div>
-                <div class="timeline-title">TCP/IP 誕生</div>
-                <div class="timeline-desc">Vint Cerf 和 Bob Kahn 發表白皮書「A Protocol for Packet Network Interconnection」，奠定 TCP/IP 基礎。</div>
-            </div>
-            <div class="timeline-item">
-                <div class="timeline-date">1983 年</div>
-                <div class="timeline-title">IPv4 正式部署</div>
-                <div class="timeline-desc">ARPANET 全面轉向 TCP/IP 協議，IPv4 成為互聯網的基礎協議。</div>
-            </div>
-            <div class="timeline-item">
-                <div class="timeline-date">1998 年</div>
-                <div class="timeline-title">IPv6 標準化</div>
-                <div class="timeline-desc">IETF 正式標準化 IPv6（RFC 2460），解決 IPv4 地址耗盡問題，但普及緩慢。</div>
-            </div>
-            <div class="timeline-item">
-                <div class="timeline-date">2017 年</div>
-                <div class="timeline-title">IPv8 概念提出</div>
-                <div class="timeline-desc">研究者開始探索基於加密身份的下一代互聯網協議，解決安全和隱私問題。</div>
-            </div>
-            <div class="timeline-item">
-                <div class="timeline-date">2026 年</div>
-                <div class="timeline-title">IPv8 IETF 草案</div>
-                <div class="timeline-desc">draft-thain-ipv8-00 正式提交 IETF，為 IPv8 標準化邁出重要一步。</div>
-            </div>
-        </div>
-
-        <div class="highlight-box">
-            <h4>✨ 關鍵洞察</h4>
-            <p>新技術的出現將改變現有的網絡通信模式，為未來的互聯網發展帶來新的機遇和挑戰。</p>
-        </div>
-
-        <h3>📊 IPv4 vs IPv6 vs IPv8 功能對比</h3>
+        <h3>📊 IPv4 vs IPv6 vs IPv8 比較</h3>
         <table class="comparison-table">
             <thead>
                 <tr>
@@ -301,72 +207,187 @@
             </thead>
             <tbody>
                 <tr>
-                    <td>地址長度</td>
-                    <td>32 位元</td>
+                    <td class="highlight-col">位址空間</td>
+                    <td>32 位元 (~40 億)</td>
                     <td>128 位元</td>
-                    <td>可變（加密身份）</td>
+                    <td>64 位元 (每 ASN 42.9 億)</td>
                 </tr>
                 <tr>
-                    <td>地址空間</td>
-                    <td class="highlight-col">~40 億</td>
-                    <td>340 兆兆</td>
-                    <td>無限</td>
+                    <td class="highlight-col">位址枯竭</td>
+                    <td>已枯竭 (2011)</td>
+                    <td>理論無限</td>
+                    <td>每 ASN 充足</td>
                 </tr>
                 <tr>
-                    <td>安全機制</td>
-                    <td class="highlight-col">外部疊加</td>
+                    <td class="highlight-col">向後兼容</td>
+                    <td>原生</td>
+                    <td>需雙棧</td>
+                    <td>100% 兼容 IPv4</td>
+                </tr>
+                <tr>
+                    <td class="highlight-col">管理整合</td>
+                    <td>碎片化</td>
+                    <td>無改善</td>
+                    <td>Zone Server 統一</td>
+                </tr>
+                <tr>
+                    <td class="highlight-col">路由表大小</td>
+                    <td>90 萬+ 前綴</td>
+                    <td>未廣泛部署</td>
+                    <td>~17.5 萬 (結構界線)</td>
+                </tr>
+                <tr>
+                    <td class="highlight-col">安全性</td>
+                    <td>手動配置</td>
                     <td>IPsec 可選</td>
-                    <td>原生加密</td>
+                    <td>協議強制執行</td>
                 </tr>
                 <tr>
-                    <td>身份驗證</td>
-                    <td class="highlight-col">IP 地址（不可靠）</td>
-                    <td>NDP（有限）</td>
-                    <td>公鑰密碼學</td>
-                </tr>
-                <tr>
-                    <td>P2P 支援</td>
-                    <td class="highlight-col">需 NAT/UPnP</td>
-                    <td>尚可</td>
-                    <td>原生支援</td>
-                </tr>
-                <tr>
-                    <td>抗審查</td>
-                    <td class="highlight-col">弱</td>
-                    <td>弱</td>
-                    <td class="highlight-col">強</td>
-                </tr>
-                <tr>
-                    <td>自動配置</td>
-                    <td>DHCP（可選）</td>
-                    <td>SLAAC</td>
-                    <td>加密自動發現</td>
-                </tr>
-                <tr>
-                    <td>物聯網適用性</td>
-                    <td class="highlight-col">地址不足</td>
-                    <td>良好</td>
-                    <td class="highlight-col">優秀</td>
+                    <td class="highlight-col">遷移方式</td>
+                    <td>不適用</td>
+                    <td>雙棧 (25 年未完成)</td>
+                    <td>無 flag day</td>
                 </tr>
             </tbody>
         </table>
 
-        <h3>💡 IPv8 技術特點解析</h3>
-        <p>IPv8 的核心創新在於將加密身份與網絡協議深度整合。與 IPv6 只是擴大地址空間不同，IPv8 試圖從根本上解決互聯網的安全和信任問題。</p>
-        <ul>
-            <li><strong>加密原生身份</strong>：每個節點擁有密鑰對，身份無法偽造</li>
-            <li><strong>零配置網絡</strong>：設備開機即可安全通信，無需 DHCP 或 DNS</li>
-            <li><strong>抗攻擊設計</strong>：DDoS 攻擊難以使用 IP 欺騙，阻斷攻擊源</li>
-            <li><strong>隱私保護</strong>：通信可追蹤但無法偽裝，提升私密性</li>
-            <li><strong>對等架構</strong>：消除客戶端-服務器瓶頸，提升效率和韌性</li>
-        </ul>
+        <h3>📊 IPv8 關鍵規格比較</h3>
+        <table class="comparison-table">
+            <thead>
+                <tr>
+                    <th>參數</th>
+                    <th>IPv4</th>
+                    <th>IPv6</th>
+                    <th>IPv8</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="highlight-col">Header 格式</td>
+                    <td>20-60 位元組可變</td>
+                    <td>40 位元組固定</td>
+                    <td>優化可擴展</td>
+                </tr>
+                <tr>
+                    <td class="highlight-col">Socket API</td>
+                    <td>完全相容</td>
+                    <td>需修改</td>
+                    <td>向後兼容</td>
+                </tr>
+                <tr>
+                    <td class="highlight-col">NAT 需求</td>
+                    <td>CGNAT 普遍</td>
+                    <td>通常不需要</td>
+                    <td>不需要</td>
+                </tr>
+                <tr>
+                    <td class="highlight-col">靜態配置</td>
+                    <td>手動</td>
+                    <td>SLAAC/DHCPv6</td>
+                    <td>DHCP8 全自動</td>
+                </tr>
+                <tr>
+                    <td class="highlight-col">路由協議</td>
+                    <td>BGP/OSPF/IS-IS</td>
+                    <td>類似 IPv4</td>
+                    <td>BGP8/OSPF8/IS-IS8</td>
+                </tr>
+            </tbody>
+        </table>
 
-        <div class="alert-box">
-            <h4>⚠️ 標準化仍需時日</h4>
-            <p>IPv8 目前仍處於 IETF 草案階段（draft-thain-ipv8-00），距離正式標準化尚需數年時間。互聯網協議的更替涉及巨大基礎設施投資，IPv6 推廣 20 年仍未普及，IPv8 面臨同樣的部署挑戰。</p>
+        <h3>📊 Companion Specifications 配套規範</h3>
+        <table class="comparison-table">
+            <thead>
+                <tr>
+                    <th>規範名稱</th>
+                    <th>功能</th>
+                    <th>狀態</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="highlight-col">draft-thain-routing-protocols-00</td>
+                    <td>BGP8, IBGP8, OSPF8, IS-IS8, CF</td>
+                    <td>進行中</td>
+                </tr>
+                <tr>
+                    <td class="highlight-col">draft-thain-rine-00</td>
+                    <td>Regional Inter-Network Exchange</td>
+                    <td>進行中</td>
+                </tr>
+                <tr>
+                    <td class="highlight-col">draft-thain-zoneserver-00</td>
+                    <td>Zone Server Architecture</td>
+                    <td>進行中</td>
+                </tr>
+                <tr>
+                    <td class="highlight-col">draft-thain-whois8-00</td>
+                    <td>WHOIS8 Protocol</td>
+                    <td>進行中</td>
+                </tr>
+                <tr>
+                    <td class="highlight-col">draft-thain-netlog8-00</td>
+                    <td>NetLog8 Protocol</td>
+                    <td>進行中</td>
+                </tr>
+                <tr>
+                    <td class="highlight-col">draft-thain-support8-00</td>
+                    <td>ARP8, ICMPv8, Route8</td>
+                    <td>進行中</td>
+                </tr>
+                <tr>
+                    <td class="highlight-col">draft-thain-wifi8-00</td>
+                    <td>WiFi8 Protocol</td>
+                    <td>進行中</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>⏱️ IPv8 發展時間軸</h3>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-date">2011 年 2 月</div>
+                <div class="timeline-title">IPv4 位址枯竭</div>
+                <div class="timeline-desc">IANA 完成 IPv4 單播位址空間分配，各區域互聯網註冊機構在 2011-2020 年間相繼枯竭。</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">25 年 IPv6 部署</div>
+                <div class="timeline-title">IPv6 進展緩慢</div>
+                <div class="timeline-desc">經過 25 年標準化和部署努力，IPv6 僅佔全球互聯網流量少數。雙棧過渡模式被證明商業上不可接受。</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">2024 年</div>
+                <div class="timeline-title">BGP4 路由表超載</div>
+                <div class="timeline-desc">BGP4 全球路由表超過 90 萬個前綴且無結構界限。前綴劫持、路由洩露和 bogon 注入問題日益嚴重。</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">2026 年 4 月</div>
+                <div class="timeline-title">IPv8 IETF Draft 發布</div>
+                <div class="timeline-desc">Thain 向 IETF 提交 draft-thain-ipv8-00，同時發布 10 個配套規範草案，涵蓋路由、Zone Server、WHOIS8 等。</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">2026 年 10 月</div>
+                <div class="timeline-title">Draft 過期前</div>
+                <div class="timeline-desc">預計將有更新版本發布，距離 draft 過期（10 月 16 日）還有約 6 個月的修訂期。</div>
+            </div>
         </div>
 
+        <h3>💡 重點解析</h3>
+        <p>IPv8 的核心創新在於 Zone Server 平台——一個成對的主動/主動平台，運行網路區段所需的所有服務：位址分配（DHCP8）、名稱解析（DNS8）、時間同步（NTP8）、遙測收集（NetLog8）、身份驗證快取（OAuth8）、路由驗證（WHOIS8 解析器）、存取控制執行（ACL8）和 IPv4/IPv8 翻譯（XLATE8）。</p>
+        <ul>
+            <li><strong>統一身份模型</strong>：OAuth2 JWT 權杖在本地驗證，亞毫秒級延遲</li>
+            <li><strong>單一 DHCP8 回應</strong>：設備從收到 DHCP8 回應一刻起就已完全運作——已驗證、已記錄、已時間同步、已執行區域策略</li>
+            <li><strong>東西部安全</strong>：ACL8 區域隔離，設備只能與其指定服務網關通訊</li>
+            <li><strong>南北安全</strong>：DNS8 + WHOIS8 雙重驗證，阻断僵尸網絡 C2 通道</li>
+        </ul>
 
+        <h3>🔮 未來展望</h3>
+        <p>業界觀察人士指出，IPv8 的出現將徹底改變網路管理範式。通過將 DHCP、DNS、NTP、日誌、監控和身份驗證統一到單一平台，IPv8 解決了現代網路管理碎片化的根本問題。隨著技術不斷完善，預計將在電信、雲端和企業網路中得到廣泛應用。</p>
+
+        <div class="highlight-box">
+            <h4>✨ 關鍵洞察</h4>
+            <p>IPv8 的出現代表網路協議的重大演進——不僅解決位址枯竭，更通過統一管理平台革新網路安全與運營。100% 向後兼容性與無 flag day 遷移策略，大幅降低採用門檻。</p>
+        </div>
     </section>
 
     <footer>
