@@ -1,6 +1,16 @@
 {
   "archives": [
     {
+      "dir": "news_20260417_113452",
+      "title": "Internet Protocol Version 8 (IPv8)",
+      "summary_short": "# Internet Protocol Version 8 (IPv8)## 📖 新聞導語本文報導來自 **IETF**，發布於 **2026-04-17**。最新科技新聞報道指出，人工智",
+      "images": [
+        "img/img1.png"
+      ],
+      "date": "2026-04-17",
+      "url": "./news_20260417_113452/index.html"
+    },
+    {
       "dir": "news_20260417_100238",
       "title": "教學：Google Gemini 進駐你的電腦桌面 全新 Windows 桌面工具 Google Drive＋電腦文件＋網頁一鍵搜尋 - unwire.hk 香港",
       "summary_short": "Google Gemini 桌面工具讓用戶可在 Windows 電腦上直接搜尋 Google Drive 文件、電腦本地檔案及網頁內容，一鍵完成跨平台資訊查找。",
@@ -381,5 +391,5 @@
       "url": "./20260404_2045/index.html"
     }
   ],
-  "last_updated": "2026-04-16T18:57:47.951340"
+  "last_updated": "2026-04-17T11:38:24.012893"
 }
