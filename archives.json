@@ -1,6 +1,16 @@
 {
   "archives": [
     {
+      "dir": "news_20260417_113720",
+      "title": "Internet Protocol Version 8 (IPv8)",
+      "summary_short": "# Internet Protocol Version 8 (IPv8)## 📖 新聞導語本文報導來自 **IETF**，發布於 **2026-04-17**。最新科技新聞報道指出，人工智",
+      "images": [
+        "img/img1.png"
+      ],
+      "date": "2026-04-17",
+      "url": "./news_20260417_113720/index.html"
+    },
+    {
       "dir": "news_20260417_113452",
       "title": "Internet Protocol Version 8 (IPv8)",
       "summary_short": "# Internet Protocol Version 8 (IPv8)## 📖 新聞導語本文報導來自 **IETF**，發布於 **2026-04-17**。最新科技新聞報道指出，人工智",
@@ -391,5 +401,5 @@
       "url": "./20260404_2045/index.html"
     }
   ],
-  "last_updated": "2026-04-17T11:38:24.012893"
+  "last_updated": "2026-04-17T11:41:11.072628"
 }
