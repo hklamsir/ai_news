@@ -10,6 +10,7 @@
             --primary-purple: #7b2cbf;
             --accent-green: #00ff88;
             --accent-orange: #ff9500;
+            --accent-red: #ff4757;
             --dark-bg: #0a0a0f;
             --card-bg: #12121a;
             --card-bg-light: #1a1a28;
@@ -113,6 +114,8 @@
             .hero-images { grid-template-columns: 1fr; }
             .hero h1 { font-size: 2rem; }
             .hero-subtitle { font-size: 1.2rem; }
+            .comparison-table { font-size: 0.9rem; }
+            .comparison-table th, .comparison-table td { padding: 12px 10px; }
         }
     </style>
 </head>
@@ -135,11 +138,123 @@
         <div class="meta-info">
             <p><strong>📺 資料來源</strong>：<a href="https://www.youtube.com/watch?v=0LMV0ytCuFQ&t=1189s" target="_blank">https://www.youtube.com/watch?v=0LMV0ytCuFQ&t=1189s</a></p>
             <p><strong>📅 發布日期</strong>：2026-04-18</p>
-            <p><strong>🤖 處理方式</strong>：AI 智能摘要生成</p>
+            <p><strong>🤖 處理方式</strong>：AI 智能摘要 + 深度優化</p>
         </div>
 
-        <h3>🎯 核心觀點</h3>
-        <p>本次報告深入探討了AI時代下的就業形勢，特別是對於剛畢業的大學生而言，他們面臨著前所未有的困難。專家分析指出，儘管AI在短期內不會完全取代人類工作，但其對初級職位的衝擊已經顯現，迫使年輕人尋求新的生存之道。</p>
+        <div class="quote-box">
+            <p>儘管AI在短期內不會完全取代人類工作，但其對初級職位的衝擊已經顯現，迫使年輕人尋求新的生存之道。</p>
+            <cite>— 專家分析，2026 年</cite>
+        </div>
+
+        <h3>🚨 青年失業危機：核心數據</h3>
+        <div class="alert-box">
+            <h4>⚠️ 職場寒冬預警</h4>
+            <p>AI浪潮衝擊下，初級職位大幅萎縮，年輕人正面臨前所未有的就業困境。</p>
+        </div>
+        <div class="tech-cards">
+            <div class="tech-card">
+                <div class="tech-card-icon">📉</div>
+                <h4>美國青年失業率</h4>
+                <p>22至27歲大學畢業生失業率高達 <strong>5.6%</strong>，明顯高於整體失業率 <strong>4.2%</strong>。年輕人成為AI浪潮下最脆弱的群體。</p>
+            </div>
+            <div class="tech-card">
+                <div class="tech-card-icon">🇭🇰</div>
+                <h4>香港Fresh Grad困境</h4>
+                <p>Fresh Grad全職職位空缺從2021年第4季約 <strong>15,000</strong> 個，銳減至2025年第4季不足 <strong>7,500</strong> 個，跌幅超過50%。</p>
+            </div>
+            <div class="tech-card">
+                <div class="tech-card-icon">🏢</div>
+                <h4>科技巨頭裁員潮</h4>
+                <p>Block、Snap等多間科技巨頭宣佈大幅裁員，但股價卻逆勢上漲——市場似乎已接受「AI取代人類」的敘事。</p>
+            </div>
+            <div class="tech-card">
+                <div class="tech-card-icon">📋</div>
+                <h4>入職門檻飙升</h4>
+                <p>許多公司要求申請者具備 <strong>至少2年相關經驗</strong>，但新鮮人根本無法滿足這個條件，形成惡性循環。</p>
+            </div>
+            <div class="tech-card">
+                <div class="tech-card-icon">🤖</div>
+                <h4>AI能力鴻溝</h4>
+                <p>Anthropic報告顯示，AI理論能力與實際應用之間存在巨大實施差距，企業難以快速落地AI系統。</p>
+            </div>
+            <div class="tech-card">
+                <div class="tech-card-icon">🔮</div>
+                <h4>BCG未來預測</h4>
+                <p>未來2-3年內約 <strong>10%-15%</strong> 的工作將被AI取代，而<strong>50%-55%</strong> 的工作將被重構，技能需求大幅改變。</p>
+            </div>
+        </div>
+
+        <h3>📊 AI時代青年就業形勢比較</h3>
+        <table class="comparison-table">
+            <thead>
+                <tr>
+                    <th>指標</th>
+                    <th>AI爆發前（2021）</th>
+                    <th>AI時代（2025-2026）</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="highlight-col">美國青年失業率</td>
+                    <td>~4.0%（正常水平）</td>
+                    <td>5.6%（高於整體）</td>
+                </tr>
+                <tr>
+                    <td class="highlight-col">香港Fresh Grad職缺</td>
+                    <td>~15,000 個/季</td>
+                    <td>&lt;7,500 個/季（-50%）</td>
+                </tr>
+                <tr>
+                    <td class="highlight-col">入職要求</td>
+                    <td>Fresh Grad可申請</td>
+                    <td>普遍要求2年經驗</td>
+                </tr>
+                <tr>
+                    <td class="highlight-col">初級職位需求</td>
+                    <td>穩定供應</td>
+                    <td>大幅萎縮</td>
+                </tr>
+                <tr>
+                    <td class="highlight-col">技能要求</td>
+                    <td>傳統專業技能</td>
+                    <td>AI工具運用 + 高階思維</td>
+                </tr>
+                <tr>
+                    <td class="highlight-col">職場心態</td>
+                    <td>穩定就業預期</td>
+                    <td>創業 / 自由職業興起</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>⏱️ AI裁員風暴時間軸</h3>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-date">2021 年</div>
+                <div class="timeline-title">香港Fresh Grad職缺高峰</div>
+                <div class="timeline-desc">大學聯校就業資訊中心統計顯示，Fresh Grad全職職位空缺達約15,000個/季，就業市場相對穩定。</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">2022-2023 年</div>
+                <div class="timeline-title">ChatGPT引爆AI浪潮</div>
+                <div class="timeline-desc">OpenAI發布ChatGPT後，各行業開始加速AI佈局，科技公司率先裁員以示「AI轉型」決心。</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">2024-2025 年</div>
+                <div class="timeline-title">裁員常態化</div>
+                <div class="timeline-desc">Block、Snap等科技巨頭相繼宣佈裁員，股價卻逆勢上漲。BCG預測10%-15%工作將被AI取代。</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">2025 年底</div>
+                <div class="timeline-title">香港職缺腰斬</div>
+                <div class="timeline-desc">Fresh Grad全職職位空缺跌至不足7,500個，較2021年高峰暴跌超過50%，青年失業問題加劇。</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">2026 年至今</div>
+                <div class="timeline-title">求生逆襲時代</div>
+                <div class="timeline-desc">年輕人開始轉向創業、自由職業、AI工具創業等非傳統路徑，AI降低創業門檻，同時加劇就業焦慮。</div>
+            </div>
+        </div>
 
         <h3>💡 重點解析</h3>
         <p>多個科技巨頭如Block、Snap等宣佈大幅裁員，股價卻逆勢上漲。美國22至27歲大學畢業生失業率高達5.6%，遠超整體失業率。香港Fresh Grad全職職位空缺數量自2021年以來急劇下降。AI導致入職門檻提高，許多公司要求申請者具備至少兩年相關經驗。</p>
@@ -152,8 +267,33 @@
             <li>BCG報告指出，未來2-3年內約10%-15%的工作將被AI取代，而50%-55%的工作將被重構。</li>
         </ul>
 
-        <h3>📊 數據分析</h3>
-        <p>根據紐約聯邦儲備銀行的資料，美國22至27歲大學畢業生的失業率在去年底已攀升至5.6%，明顯高於整體失業率4.2%。而在香港，情況同樣不容樂觀。根據大學聯校就業資訊中心的統計，Fresh Grad全職職位空缺數量自2021年第4季的約15,000個銳減至2025年第4季的不足7,500個，降幅超過50%。</p>
+        <h3>📊 BCG就業影響預測</h3>
+        <table class="comparison-table">
+            <thead>
+                <tr>
+                    <th>影響類型</th>
+                    <th>佔比</th>
+                    <th>說明</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="highlight-col">被取代的工作</td>
+                    <td>10%-15%</td>
+                    <td>例行性、重複性的初級職位最受衝擊</td>
+                </tr>
+                <tr>
+                    <td class="highlight-col">被重構的工作</td>
+                    <td>50%-55%</td>
+                    <td>大部分工作將與AI協作，技能需求大幅改變</td>
+                </tr>
+                <tr>
+                    <td class="highlight-col">不受影響的工作</td>
+                    <td>30%-40%</td>
+                    <td>需要高階思維、人際溝通、創意的複雜工作</td>
+                </tr>
+            </tbody>
+        </table>
 
         <h3>🔮 未來展望</h3>
         <p>未來幾年內，AI將持續對勞動市場產生深遠影響。企業需要更加註重培養員工的高階思維能力和人際溝通技巧，以應對職位重構帶來的新挑戰。同時，政府和教育機構也應加大對年輕人創業的支援力度，提供更多資源和指導，幫助他們在這個充滿變數的時代找到屬於自己的立足之地。</p>
