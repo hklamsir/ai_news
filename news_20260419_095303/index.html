@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OpenAI 總裁深度訪談：為什麼關閉 Sora - AI News</title>
+    <style>
+        :root {
+            --primary-blue: #00d4ff;
+            --primary-purple: #7b2cbf;
+            --accent-green: #00ff88;
+            --accent-orange: #ff9500;
+            --accent-red: #ff4757;
+            --dark-bg: #0a0a0f;
+            --card-bg: #12121a;
+            --card-bg-light: #1a1a28;
+            --text-primary: #ffffff;
+            --text-secondary: #a0a0b0;
+            --gradient-1: linear-gradient(135deg, #00d4ff 0%, #7b2cbf 100%);
+            --gradient-2: linear-gradient(135deg, #00d4ff 0%, #00ff88 100%);
+            --glow-blue: 0 0 20px rgba(0, 212, 255, 0.5);
+            --glow-purple: 0 0 20px rgba(123, 44, 191, 0.5);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Noto Sans TC', sans-serif; background-color: var(--dark-bg); color: var(--text-primary); line-height: 1.8; overflow-x: hidden; }
+
+        @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-20px); } }
+        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.6; } }
+        @keyframes slideIn { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes codeRain { 0% { transform: translateY(-100%); opacity: 0; } 10% { opacity: 1; } 90% { opacity: 1; } 100% { transform: translateY(100vh); opacity: 0; } }
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); } }
+
+        .code-rain { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; overflow: hidden; }
+        .code-char { position: absolute; color: var(--primary-blue); font-family: 'Courier New', monospace; font-size: 14px; opacity: 0; animation: codeRain 4s linear infinite; }
+
+        .hero { position: relative; min-height: 80vh; display: flex; align-items: center; justify-content: center; padding: 80px 20px; background: linear-gradient(180deg, var(--dark-bg) 0%, #1a1a2e 100%); overflow: hidden; }
+        .hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(ellipse at center, rgba(123, 44, 191, 0.15) 0%, transparent 70%); z-index: 1; }
+        .hero-content { position: relative; z-index: 2; max-width: 1200px; text-align: center; animation: slideIn 1s ease-out; }
+        .hero-badge { display: inline-block; padding: 12px 32px; background: var(--gradient-1); border-radius: 50px; font-size: 18px; font-weight: 700; margin-bottom: 24px; box-shadow: var(--glow-blue); letter-spacing: 1px; }
+        .hero h1 { font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 900; margin-bottom: 24px; background: var(--gradient-1); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; line-height: 1.2; }
+        .hero-subtitle { font-size: clamp(1.2rem, 2.2vw, 1.5rem); color: var(--text-primary); max-width: 900px; margin: 0 auto 40px; line-height: 1.6; font-weight: 400; }
+        .hero-images { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; margin-top: 60px; }
+        .hero-image-card { position: relative; border-radius: 20px; overflow: hidden; aspect-ratio: 16/9; box-shadow: var(--glow-purple); transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .hero-image-card:hover { transform: scale(1.02); box-shadow: 0 0 40px rgba(123, 44, 191, 0.7); }
+        .hero-image-card img { width: 100%; height: 100%; object-fit: cover; }
+        .scroll-indicator { position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%); animation: float 2s ease-in-out infinite; z-index: 2; }
+        .scroll-indicator span { display: block; width: 30px; height: 50px; border: 2px solid var(--primary-blue); border-radius: 25px; position: relative; }
+        .scroll-indicator span::before { content: ''; position: absolute; top: 8px; left: 50%; transform: translateX(-50%); width: 6px; height: 10px; background: var(--primary-blue); border-radius: 3px; animation: pulse 1.5s infinite; }
+
+        section { padding: 80px 20px; position: relative; z-index: 1; }
+        .content-section { background: var(--card-bg); padding: 60px 50px; border-radius: 24px; border: 1px solid rgba(0, 212, 255, 0.2); max-width: 1100px; margin: 0 auto; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3); }
+
+        .content-section h3 { font-size: 1.6rem; margin: 40px 0 20px; color: var(--accent-green); }
+        .content-section p { color: var(--text-secondary); line-height: 2; font-size: 1.08rem; margin: 15px 0; }
+        .content-section ul { margin: 20px 0; padding-left: 30px; }
+        .content-section li { margin: 10px 0; color: var(--text-secondary); }
+
+        .meta-info { background: linear-gradient(135deg, rgba(0, 212, 255, 0.15) 0%, rgba(123, 44, 191, 0.15) 100%); padding: 30px; border-radius: 16px; margin-bottom: 40px; border-left: 5px solid var(--primary-blue); }
+        .meta-info p { margin: 12px 0; color: var(--text-secondary); font-size: 1.05rem; }
+        .meta-info strong { color: var(--primary-blue); font-weight: 600; }
+        .meta-info a { color: var(--primary-blue); text-decoration: none; word-break: break-all; }
+
+        .highlight-box { background: linear-gradient(135deg, rgba(0, 255, 136, 0.08) 0%, rgba(0, 212, 255, 0.08) 100%); padding: 30px; border-radius: 16px; border-left: 5px solid var(--accent-green); margin: 40px 0; }
+        .highlight-box h4 { color: var(--accent-green); margin-bottom: 15px; font-size: 1.3rem; }
+        .highlight-box p { color: var(--text-secondary); margin: 0; }
+
+        .alert-box { background: linear-gradient(135deg, rgba(255, 71, 87, 0.1) 0%, rgba(255, 149, 0, 0.1) 100%); padding: 25px 30px; border-radius: 16px; border-left: 5px solid var(--accent-red); margin: 30px 0; }
+        .alert-box h4 { color: var(--accent-red); margin-bottom: 12px; font-size: 1.15rem; }
+        .alert-box p { color: var(--text-secondary); margin: 8px 0; font-size: 1rem; }
+
+        .quote-box { background: linear-gradient(135deg, rgba(123, 44, 191, 0.15) 0%, rgba(0, 212, 255, 0.15) 100%); padding: 30px 40px; border-radius: 16px; border-left: 5px solid var(--primary-purple); margin: 40px 0; position: relative; }
+        .quote-box::before { content: '"'; position: absolute; top: 10px; left: 20px; font-size: 80px; color: var(--primary-purple); opacity: 0.3; font-family: Georgia, serif; }
+        .quote-box p { color: var(--text-primary); font-size: 1.2rem; font-style: italic; margin-bottom: 15px; }
+        .quote-box cite { color: var(--text-secondary); font-size: 0.95rem; }
+
+        .tech-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin: 40px 0; }
+        .tech-card { background: var(--card-bg-light); padding: 30px; border-radius: 16px; border: 1px solid rgba(0, 212, 255, 0.15); transition: transform 0.3s ease, box-shadow 0.3s ease; animation: fadeInUp 0.6s ease-out forwards; opacity: 0; }
+        .tech-card:nth-child(1) { animation-delay: 0.1s; }
+        .tech-card:nth-child(2) { animation-delay: 0.2s; }
+        .tech-card:nth-child(3) { animation-delay: 0.3s; }
+        .tech-card:nth-child(4) { animation-delay: 0.4s; }
+        .tech-card:nth-child(5) { animation-delay: 0.5s; }
+        .tech-card:nth-child(6) { animation-delay: 0.6s; }
+        .tech-card:nth-child(7) { animation-delay: 0.7s; }
+        .tech-card:nth-child(8) { animation-delay: 0.8s; }
+        .tech-card:nth-child(9) { animation-delay: 0.9s; }
+        .tech-card:nth-child(10) { animation-delay: 1.0s; }
+        .tech-card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0, 212, 255, 0.2); }
+        .tech-card-icon { font-size: 2.5rem; margin-bottom: 15px; }
+        .tech-card h4 { color: var(--primary-blue); margin-bottom: 12px; font-size: 1.2rem; }
+        .tech-card p { color: var(--text-secondary); font-size: 0.95rem; line-height: 1.7; }
+
+        .comparison-table { width: 100%; border-collapse: collapse; margin: 40px 0; border-radius: 16px; overflow: hidden; box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3); }
+        .comparison-table thead { background: linear-gradient(135deg, var(--primary-blue), var(--primary-purple)); }
+        .comparison-table th { padding: 18px 20px; text-align: left; font-weight: 600; font-size: 1.05rem; }
+        .comparison-table td { padding: 16px 20px; border-bottom: 1px solid rgba(255, 255, 255, 0.05); color: var(--text-secondary); }
+        .comparison-table tr:last-child td { border-bottom: none; }
+        .comparison-table tr:nth-child(even) { background: rgba(255, 255, 255, 0.02); }
+        .comparison-table .highlight-col { color: var(--accent-red); font-weight: 500; }
+        .comparison-table .good-col { color: var(--accent-green); font-weight: 500; }
+
+        .timeline { position: relative; margin: 40px 0; padding-left: 40px; }
+        .timeline::before { content: ''; position: absolute; left: 15px; top: 0; bottom: 0; width: 2px; background: linear-gradient(180deg, var(--primary-blue), var(--primary-purple)); }
+        .timeline-item { position: relative; margin-bottom: 35px; padding: 20px 25px; background: var(--card-bg-light); border-radius: 12px; border: 1px solid rgba(0, 212, 255, 0.1); animation: fadeInUp 0.5s ease-out forwards; opacity: 0; }
+        .timeline-item:nth-child(1) { animation-delay: 0.1s; }
+        .timeline-item:nth-child(2) { animation-delay: 0.2s; }
+        .timeline-item:nth-child(3) { animation-delay: 0.3s; }
+        .timeline-item:nth-child(4) { animation-delay: 0.4s; }
+        .timeline-item:nth-child(5) { animation-delay: 0.5s; }
+        .timeline-item:nth-child(6) { animation-delay: 0.6s; }
+        .timeline-item::before { content: ''; position: absolute; left: -32px; top: 25px; width: 12px; height: 12px; background: var(--primary-blue); border-radius: 50%; box-shadow: var(--glow-blue); }
+        .timeline-date { color: var(--primary-blue); font-size: 0.9rem; font-weight: 600; margin-bottom: 8px; }
+        .timeline-title { color: var(--text-primary); font-size: 1.1rem; font-weight: 600; margin-bottom: 8px; }
+        .timeline-desc { color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6; }
+
+        footer { background: #050508; padding: 60px 20px; text-align: center; border-top: 1px solid rgba(255, 255, 255, 0.1); }
+        footer p { color: var(--text-secondary); margin-bottom: 20px; }
+        .footer-links { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; }
+        .footer-links a { color: var(--primary-blue); text-decoration: none; transition: color 0.3s ease; }
+        .footer-links a:hover { color: var(--text-primary); }
+
+        @media (max-width: 768px) {
+            .content-section { padding: 40px 25px; }
+            .hero-images { grid-template-columns: 1fr; }
+            .hero h1 { font-size: 2rem; }
+            .hero-subtitle { font-size: 1.2rem; }
+            .comparison-table { font-size: 0.9rem; }
+            .comparison-table th, .comparison-table td { padding: 12px 10px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="code-rain" id="codeRain"></div>
+    <section class="hero">
+        <div class="hero-content">
+            <span class="hero-badge">📰 AI News 專題報道</span>
+            <h1>OpenAI 總裁深度訪談：為什麼關閉 Sora</h1>
+            <p class="hero-subtitle">Greg Brockman 首次正面回應：Sora 為何被「冷落」？下一代預訓練模型「Spud」神秘麵紗揭開，AGI 進度條已達 80%！</p>
+            <div class="hero-images">
+                <div class="hero-image-card">
+                    <img src="img/img1.png" alt="OpenAI 總裁訪談">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <div class="meta-info">
+            <p><strong>📺 資料來源</strong>：<a href="https://k.sina.com.cn/article_5953466437_162dab0450670afaf6.html" target="_blank">圖靈人工智能</a></p>
+            <p><strong>📅 發布日期</strong>：2026-04-19</p>
+            <p><strong>🤖 處理方式</strong>：AI 智能摘要 + 深度優化</p>
+        </div>
+
+        <div class="alert-box">
+            <h4>⚠️ 訪談背景</h4>
+            <p>4月2日，OpenAI 聯合創始人兼總裁 Greg Brockman 在海外播客《Big Technology》中進行了一場信息密度極高的深度對話，首次正面回應 OpenAI 在視頻生成風頭正勁時選擇收縮 Sora 投入的真實意圖。</p>
+        </div>
+
+        <div class="quote-box">
+            <p>整個 AI 行業正處於一個關鍵的轉折點——從「驗證技術可行性」的實驗室階段，全面邁向「獲取現實效能深度反饋」的部署階段。</p>
+            <cite>— Greg Brockman，OpenAI 總裁</cite>
+        </div>
+
+        <h3>🎯 核心戰略要點</h3>
+        <div class="tech-cards">
+            <div class="tech-card">
+                <div class="tech-card-icon">🎬</div>
+                <h4>Sora 為何被「冷落」？</h4>
+                <p>Sora 與 GPT 系列屬於完全不同的技術樹分支，同時追求兩個底層構建方式迥異的分支，對當前資源而言過於沉重。OpenAI 選擇將主要精力絕對對齊到 GPT 系列的開發上。</p>
+            </div>
+            <div class="tech-card">
+                <div class="tech-card-icon">🤖</div>
+                <h4>超級應用藍圖</h4>
+                <p>未來的超級應用將是編程、瀏覽器與對話的完全合體。AI 能夠直接操控網頁並處理複雜的背景信息，人類只需負責監督。</p>
+            </div>
+            <div class="tech-card">
+                <div class="tech-card-icon">🧅</div>
+                <h4>代號「Spud」新模型</h4>
+                <p>這不僅是一個單一模型，而是凝聚了過去兩年研究成果的全新預訓練基礎。預訓練的提升具有巨大的乘數效應，基礎能力的跨越能顯著降低後續強化學習與推理的成本。</p>
+            </div>
+            <div class="tech-card">
+                <div class="tech-card-icon">📈</div>
+                <h4>AGI 進度 70-80%</h4>
+                <p>Brockman 明確判斷：AGI 已完成了 70% 到 80%，將在未來幾年內成為現實。標準不是圖靈測試，而是「經濟模式全面轉型的時刻」。</p>
+            </div>
+            <div class="tech-card">
+                <div class="tech-card-icon">⚡</div>
+                <h4>自動化研究員</h4>
+                <p>OpenAI 預計在 2026 年秋天推出「自動化研究員」，利用 AI 來反哺 AI 研發，讓 AI 變得更強，能接管研究科學家完整的端到端工作流程。</p>
+            </div>
+            <div class="tech-card">
+                <div class="tech-card-icon">💰</div>
+                <h4>千億算力豪賭</h4>
+                <p>算力不是「成本中心」，而是像雇佣銷售人員一樣的「收入中心」。只要產品賣得出去，算力的建設規模就直接決定企業收入的邊界。</p>
+            </div>
+            <div class="tech-card">
+                <div class="tech-card-icon">🔋</div>
+                <h4>能源焦慮被誇大</h4>
+                <p>OpenAI 在 Abilene 的超級計算機耗水量僅相當於一個普通家庭一年的用量，幾乎可以忽略不計。AI 正在真實地拯救生命。</p>
+            </div>
+            <div class="tech-card">
+                <div class="tech-card-icon">👔</div>
+                <h4>人類成為 Agent 的 CEO</h4>
+                <p>當人類像首席執行官一樣指揮成千上萬個 Agent 艦隊時，必須有一個負責方。如果 Agent 建網站時出了錯，責任不在 Agent，而在作為管理者的人類。</p>
+            </div>
+            <div class="tech-card">
+                <div class="tech-card-icon">🖥️</div>
+                <h4>電腦操控能力</h4>
+                <p>未來 AI 將真正具備電腦操控能力，並配備企業級的審計追蹤和憑證管理後，人類將迎來跨領域的創造力大爆發。</p>
+            </div>
+            <div class="tech-card">
+                <div class="tech-card-icon">🏥</div>
+                <h4>AI 拯救生命的真實案例</h4>
+                <p>一位用戶通過 AI 研究出了癌症的治療思路，在醫生無能為力的情況下獲得了治療方案。已有用戶利用 AI 研究症狀，成功幫孩子發現腦腫瘤並挽救了生命。</p>
+            </div>
+        </div>
+
+        <h3>📊 技術架構對比：Sora vs GPT</h3>
+        <table class="comparison-table">
+            <thead>
+                <tr>
+                    <th>維度</th>
+                    <th>Sora（視頻生成）</th>
+                    <th>GPT（推理模型）</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="highlight-col">底層架構</td>
+                    <td>擴散模型分支</td>
+                    <td class="good-col">GPT 統一架構</td>
+                </tr>
+                <tr>
+                    <td class="highlight-col">技術樹</td>
+                    <td>獨立分支</td>
+                    <td class="good-col">核心主線</td>
+                </tr>
+                <tr>
+                    <td class="highlight-col">資源消耗</td>
+                    <td>極高（雙線並進負擔過重）</td>
+                    <td class="good-col">集中投入</td>
+                </tr>
+                <tr>
+                    <td class="highlight-col">與 GPT 整合</td>
+                    <td>困難（底層不同）</td>
+                    <td class="good-col">完美融合</td>
+                </tr>
+                <tr>
+                    <td class="highlight-col">當前優先級</td>
+                    <td class="highlight-col">降低（收縮商業化）</td>
+                    <td class="good-col">絕對優先</td>
+                </tr>
+                <tr>
+                    <td class="highlight-col">ChatGPT 圖像功能</td>
+                    <td colspan="2">保留（基於 GPT 而非擴散模型，底層技術統一）</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>📊 Codex 能力躍升時間線</h3>
+        <table class="comparison-table">
+            <thead>
+                <tr>
+                    <th>時間</th>
+                    <th>能力描述</th>
+                    <th>任務時長</th>
+                    <th>備註</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>2020 年</td>
+                    <td>早期 AI 建站</td>
+                    <td class="highlight-col">4 小時反覆提示</td>
+                    <td>需要大量人工干預</td>
+                </tr>
+                <tr>
+                    <td>2022 年 12 月</td>
+                    <td>新版 Codex</td>
+                    <td class="good-col">一次性高質量完成</td>
+                    <td>顯著進步</td>
+                </tr>
+                <tr>
+                    <td>新模型發布後</td>
+                    <td>AI 能處理的任務佔比</td>
+                    <td class="good-col">20% → 80%</td>
+                    <td>4 倍跳躍</td>
+                </tr>
+                <tr>
+                    <td>物理學家案例</td>
+                    <td>解決困擾多年的未解難題</td>
+                    <td class="good-col">僅 12 小時</td>
+                    <td>科學家感嘆模型在「思考」</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>📊 算力經濟學：成本 vs 收入</h3>
+        <table class="comparison-table">
+            <thead>
+                <tr>
+                    <th>維度</th>
+                    <th>傳統觀點</th>
+                    <th>Brockman 新邏輯</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="highlight-col">算力定位</td>
+                    <td>成本中心</td>
+                    <td class="good-col">收入中心（如雇佣銷售）</td>
+                </tr>
+                <tr>
+                    <td class="highlight-col">基礎模型</td>
+                    <td>越大越好</td>
+                    <td class="good-col">在智能與推理成本間找最佳平衡</td>
+                </tr>
+                <tr>
+                    <td class="highlight-col">GPU 投資</td>
+                    <td>破產豪賭</td>
+                    <td class="good-col">必勝局（需求永遠趕不上供給）</td>
+                </tr>
+                <tr>
+                    <td class="highlight-col">預訓練算力</td>
+                    <td>可能削減</td>
+                    <td class="good-col">只會持續上升</td>
+                </tr>
+                <tr>
+                    <td class="highlight-col">企業市場</td>
+                    <td>觀望態度</td>
+                    <td class="good-col">爆發期：全面採用 AI 進行知識型工作</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>⏱️ OpenAI 發展關鍵時間軸</h3>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-date">ChatGPT 發布後</div>
+                <div class="timeline-title">全員慶祝，Brockman 感到警惕</div>
+                <div class="timeline-desc">當全公司瀰漫著勝利氣息時，Brockman 卻始終將公司定位為挑戰者，保持危機感。</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">過去 18 個月</div>
+                <div class="timeline-title">GPU 基礎設施建設高峰期</div>
+                <div class="timeline-desc">Brockman 個人大部分精力投入 GPU 基礎設施建設，全力支持團隊在大規模訓練任務中擴展架構。</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">2026 年 4 月 2 日</div>
+                <div class="timeline-title">《Big Technology》深度訪談</div>
+                <div class="timeline-desc">Brockman 首次正面回應 Sora 收縮、超級應用、Spud 新模型、AGI 進度等核心戰略問題。</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">2026 年（預計）</div>
+                <div class="timeline-title">「自動化研究員」推出</div>
+                <div class="timeline-desc">利用 AI 接管研究科學家完整端到端工作流程，在計算機模擬環境（in silico）中自主運行。</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">未來幾年</div>
+                <div class="timeline-title">AGI 成為現實</div>
+                <div class="timeline-desc">當 AI 能直接引入系統並自主勝任幾乎所有在電腦端進行的人類智力任務時，AGI 將無可爭議地實現。</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">長期願景</div>
+                <div class="timeline-title">跨領域創造力大爆發</div>
+                <div class="timeline-desc">就像 AlphaGo 下出人類棋手無法構想的第 37 手一樣，這種充滿創造力的現象將發生在科學、數學、醫療、文學等每一個領域。</div>
+            </div>
+        </div>
+
+        <h3>💡 重點解析：為何放棄 Sora？</h3>
+        <p>Brockman 明確指出，整個 AI 行業正處於關鍵轉折點——從「驗證技術可行性」的實驗室階段，全面邁向「獲取現實效能深度反饋」的部署階段。</p>
+        <ul>
+            <li><strong>殘酷的優先級排序：</strong>排在首位的是打造能與用戶目標完全對齊的私人助手，以及構建能解決極度複雜難題的 AI。即便以 OpenAI 的算力儲備，也無法同時支撐這兩大核心任務與所有具備潛力的應用場景。</li>
+            <li><strong>技術底層的統一性：</strong>放棄全面開花，是為了了在核心路徑上實現突破。語音、圖像、文本、科研與編程，最終都可以在同一個框架內實現——這正是 AGI 的奇妙之處。</li>
+            <li><strong>隨機向量的總和為零：</strong>Brockman 比喻：只有將所有力量對齊到一個方向，才能成功突圍。</li>
+            <li><strong>物理學家的啟示：</strong>一位物理學家將困擾他許久的未解難題交給 OpenAI 的模型，僅 12 小時後就得到了解決方案——這是第一次感覺模型在「思考」。</li>
+        </ul>
+
+        <h3>🔮 未來展望：超級應用與人類新角色</h3>
+        <p>在 Brockman 的構想中，未來的 AI 不應讓人類去適應電腦的操作邏輯，而是由 AI 直接操控網頁並處理複雜的背景信息。這種「順應人類」的計算機將成為人類進入數字世界的專屬門戶。</p>
+        <p>面對「數學型人才將被 AI 衝擊」的擔憂，Brockman 給出了一種充滿人文關懷的視角：躲在屏幕後敲擊鍵盤並非人類存在的真諦。AI 將釋放出大量的時間，讓人類去增強人際連接，建立更深的情感紐帶。</p>
+
+        <div class="highlight-box">
+            <h4>✨ Brockman 對普通人的最終建議</h4>
+            <p>克服面對空白輸入框的迷茫，去試用這些工具。培養自己的主體性，把自己定位為管理者，去設定方向、委派任務並進行監督。看清自己真正想要什麼，並利用 AI 去實現它——這將是未來時代最重要的生存技能。</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2026 AI News Archive | 由 AI 技術生成</p>
+        <div class="footer-links">
+            <a href="../index.html">返回主頁</a>
+            <a href="https://github.com/hklamsir/ai_news" target="_blank">GitHub</a>
+            <a href="https://hklamsir.github.io/ai_news/" target="_blank">瀏覽所有專題</a>
+        </div>
+    </footer>
+
+    <script>
+        function createCodeRain() {
+            const codeRain = document.getElementById('codeRain');
+            if (!codeRain) return;
+            const chars = '01 アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン';
+            for (let i = 0; i < 50; i++) {
+                const char = document.createElement('div');
+                char.className = 'code-char';
+                char.textContent = chars[Math.floor(Math.random() * chars.length)];
+                char.style.left = Math.random() * 100 + '%';
+                char.style.animationDelay = Math.random() * 4 + 's';
+                char.style.animationDuration = (Math.random() * 2 + 3) + 's';
+                codeRain.appendChild(char);
+            }
+        }
+
+        function handleScrollAnimation() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('.fade-in').forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(30px)';
+                el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(el);
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            createCodeRain();
+            handleScrollAnimation();
+        });
+    </script>
+</body>
+</html>

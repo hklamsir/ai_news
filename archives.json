@@ -1,6 +1,16 @@
 {
   "archives": [
     {
+      "dir": "news_20260419_095303",
+      "title": "OpenAI 總裁深度訪談：為什麼關閉 Sora",
+      "summary_short": "Greg Brockman 首次正面回應：Sora 為何被「冷落」？下一代預訓練模型「Spud」神秘麵紗揭開，AGI 進度條已達 80%！",
+      "images": [
+        "img/img1.png"
+      ],
+      "date": "2026-04-19",
+      "url": "./news_20260419_095303/index.html"
+    },
+    {
       "dir": "news_20260418_182050",
       "title": "AI大裁員時代：年輕人的求生逆襲！",
       "summary_short": "全球科技巨頭裁員潮，年輕人如何逆境求生？從Anthropic、BCG報告深度解析AI對就業市場的影響，以及新一代打工仔的生存策略。",
@@ -409,5 +419,5 @@
       "url": "./20260404_2045/index.html"
     }
   ],
-  "last_updated": "2026-04-18T18:35:27.359620"
+  "last_updated": "2026-04-19T09:54:00.000000"
 }
