@@ -1,6 +1,16 @@
 {
   "archives": [
     {
+      "dir": "news_20260419_115822",
+      "title": "養成讓 AI 復盤工作流程的習慣，你的 ChatGPT、Codex、OpenClaw 助理就會愈做愈好",
+      "summary_short": "AI 助理並非完美，透過系統性的復盤反饋迴圈，可以讓 ChatGPT、Codex、OpenClaw 愈來愈懂你、愈幫癒多。",
+      "images": [
+        "img/img1.png"
+      ],
+      "date": "2026-04-19",
+      "url": "./news_20260419_115822/index.html"
+    },
+    {
       "dir": "news_20260419_095303",
       "title": "OpenAI 總裁深度訪談：為什麼關閉 Sora",
       "summary_short": "Greg Brockman 首次正面回應：Sora 為何被「冷落」？下一代預訓練模型「Spud」神秘麵紗揭開，AGI 進度條已達 80%！",
