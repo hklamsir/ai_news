@@ -1,6 +1,13 @@
 {
   "archives": [
     {
+      "dir": "news_20260420_081938",
+      "title": "Google 推出 Gemini 3.1 Flash TTS 文字轉語音模型，支援近 70 種語言且具備豐富情感表達",
+      "source": "TECHBANG",
+      "date": "2026-04-20",
+      "url": "https://www.techbang.com/posts/128888-google-gemini-3-1-flash-tts-emotions"
+    },
+    {
       "dir": "news_20260419_115822",
       "title": "養成讓 AI 復盤工作流程的習慣，你的 ChatGPT、Codex、OpenClaw 助理就會愈做愈好",
       "summary_short": "AI 助理並非完美，透過系統性的復盤反饋迴圈，可以讓 ChatGPT、Codex、OpenClaw 愈來愈懂你、愈幫癒多。",
