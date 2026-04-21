@@ -1,6 +1,16 @@
 {
   "archives": [
     {
+      "dir": "news_20260421_223502",
+      "title": "GitHub 爆紅：144個AI員工職位 (12個部門) 開源免費用，各有性格、工作流與 KPI",
+      "summary_short": "AI 員工人格系統席捲開源社區！144 個 AI 角色涵蓋 12 個部門，各有獨特性格、工作流程與績效指標，完全免費開源，GitHub 84K Stars！",
+      "images": [
+        "img/img1.png"
+      ],
+      "date": "2026-04-21",
+      "url": "./news_20260421_223502/index.html"
+    },
+    {
       "dir": "news_20260421_110301",
       "title": "【Gemini 64型人格測試指令】教用AI免費自製測驗 唔使畀錢解鎖MBTI結果神準 | ezone",
       "summary_short": "# 【Gemini 64型人格測試指令】教用AI免費自製測驗 唔使畀錢解鎖MBTI結果神準 | ezone## 📖 新聞導語本文報導來自 **EZONE**，發布於 **2026-04-21*",
@@ -446,5 +456,5 @@
       "url": "./20260404_2045/index.html"
     }
   ],
-  "last_updated": "2026-04-21T11:06:15.189612"
+  "last_updated": "2026-04-21T22:38:00.000000"
 }
