@@ -1,6 +1,16 @@
 {
   "archives": [
     {
+      "dir": "news_20260421_110301",
+      "title": "【Gemini 64型人格測試指令】教用AI免費自製測驗 唔使畀錢解鎖MBTI結果神準 | ezone",
+      "summary_short": "# 【Gemini 64型人格測試指令】教用AI免費自製測驗 唔使畀錢解鎖MBTI結果神準 | ezone## 📖 新聞導語本文報導來自 **EZONE**，發布於 **2026-04-21*",
+      "images": [
+        "img/img1.png"
+      ],
+      "date": "2026-04-21",
+      "url": "./news_20260421_110301/index.html"
+    },
+    {
       "dir": "news_20260420_081938",
       "title": "Google 推出 Gemini 3.1 Flash TTS 文字轉語音模型，支援近 70 種語言且具備豐富情感表達",
       "source": "TECHBANG",
@@ -436,5 +446,5 @@
       "url": "./20260404_2045/index.html"
     }
   ],
-  "last_updated": "2026-04-19T09:54:00.000000"
+  "last_updated": "2026-04-21T11:06:15.189612"
 }
