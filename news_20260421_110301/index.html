@@ -189,6 +189,54 @@
             </div>
         </div>
 
+        <h3>📋 即Copy即用 MBTI 64型人格測驗魔法指令</h3>
+        <div class="highlight-box" style="background: linear-gradient(135deg, rgba(123, 44, 191, 0.15) 0%, rgba(0, 212, 255, 0.15) 100%); border-left: 5px solid var(--primary-purple);">
+            <h4 style="color: var(--primary-purple); margin-bottom: 15px;">🎯 指令使用方法</h4>
+            <p style="margin-bottom: 15px;">1. 打開 Gemini 選 Canvas（工具 → Canvas → tab 選 Pro）<br>2. 複製以下指令，貼到 Gemini 對話框<br>3. 等待約 30 秒，AI 即時生成專屬測驗</p>
+        </div>
+        <div style="background: #0d0d15; border-radius: 16px; padding: 25px; margin: 30px 0; border: 1px solid rgba(0, 212, 255, 0.2);">
+            <h4 style="color: var(--primary-blue); margin-bottom: 20px;">✨ 完整指令（Prompt）：</h4>
+            <pre style="color: #a0a0b0; font-size: 0.9rem; line-height: 1.8; white-space: pre-wrap; word-break: break-all;"># 角色設定
+
+請擔任「專家級 React 全端工程師」與「心理測驗演算法設計師」。你的任務是開發一個可以直接運作、架構優雅且極具質感的 Web App。
+
+# 核心任務
+
+開發一款「64 型人格（6 軸向）測驗 React 應用程式與計分引擎」。在傳統的 MBTI（4 軸）基礎上，新增「問題處理行徑 (A/O)」與「待人接物態度 (H/C)」兩個維度，共計 6 軸，最終產生 64 種人格結果（格式如 INTJ-A-C）。測試名稱︰64 型人格測驗解析
+
+# 技術棧限制
+
+- 框架：React (Vite 環境相容的單一檔案或結構)
+- 樣式：Tailwind CSS (用於排版與 RWD)
+- 動畫：Framer Motion (用於平滑過渡與微互動)
+- 圖示：Lucide React
+- 注意：請勿使用 window.confirm() 或 alert() 等瀏覽器原生彈出視窗
+
+# 1. 演算法與資料結構設計
+
+- 請建立一個包含剛好 100 題的題庫陣列
+- 6 個軸向：E/I、S/N、T/F、J/P、A/O、H/C
+- 基礎 4 軸各 17 題，新增 2 軸各 16 題
+- 答題採用 1~5 分的李克特量表
+
+# 2. 狀態管理與持久化
+
+- 必須使用 useReducer 來管理複雜狀態
+- 整合 localStorage 實作自動儲存機制
+
+# 3. UI/UX 與視覺設計
+
+- 視覺風格：暗色系宇宙風 + 玻璃擬態（Glassmorphism）
+- 分頁機制：每頁只顯示 5 題
+- 選項元件：1~5 分的圓形選擇按鈕，極端選項較大，中立選項較小
+
+# 4. 動態解析引擎
+
+- 千萬不要寫死 64 種結果，請設計動態組合引擎
+- 根據 MBTI + A/O + H/C 動態拼湊出專屬稱號、解析文案、優點與盲點
+- 結果頁面必須包含「性格能量光譜」儀表板</pre>
+        </div>
+
         <h3>📊 MBTI 16型 vs 64型 對比</h3>
         <table class="comparison-table">
             <thead>
