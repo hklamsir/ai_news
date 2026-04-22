@@ -1,6 +1,16 @@
 {
   "archives": [
     {
+      "dir": "news_20260422_084948",
+      "title": "後 LLM 時代來臨：AI 技術新紀元",
+      "summary_short": "ChatGPT 引爆 LLM 革命三年後，AI 正從語言生成轉向推理規劃與自主行動。華盛頓郵報 AI Tech Brief 深度解析：後 LLM 時代的技術變革與產業影響。",
+      "images": [
+        "img/img1.png"
+      ],
+      "date": "2026-04-22",
+      "url": "./news_20260422_084948/index.html"
+    },
+    {
       "dir": "news_20260421_223502",
       "title": "GitHub 爆紅：144個AI員工職位 (12個部門) 開源免費用，各有性格、工作流與 KPI",
       "summary_short": "AI 員工人格系統席捲開源社區！144 個 AI 角色涵蓋 12 個部門，各有獨特性格、工作流程與績效指標，完全免費開源，GitHub 84K Stars！",
@@ -456,5 +466,5 @@
       "url": "./20260404_2045/index.html"
     }
   ],
-  "last_updated": "2026-04-21T22:38:00.000000"
+  "last_updated": "2026-04-22T08:50:00.000000"
 }
