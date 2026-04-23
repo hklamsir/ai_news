@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Cloud 於 Next ‘26 大會宣布開啟「代理式企業」新時代 - PCMARKET</title>
+    <style>
+        :root {
+            --primary-blue: #00d4ff;
+            --primary-purple: #7b2cbf;
+            --accent-green: #00ff88;
+            --accent-orange: #ff9500;
+            --accent-red: #ff4757;
+            --dark-bg: #0a0a0f;
+            --card-bg: #12121a;
+            --card-bg-light: #1a1a28;
+            --text-primary: #ffffff;
+            --text-secondary: #a0a0b0;
+            --gradient-1: linear-gradient(135deg, #00d4ff 0%, #7b2cbf 100%);
+            --gradient-2: linear-gradient(135deg, #00d4ff 0%, #00ff88 100%);
+            --glow-blue: 0 0 20px rgba(0, 212, 255, 0.5);
+            --glow-purple: 0 0 20px rgba(123, 44, 191, 0.5);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Noto Sans TC', sans-serif; background-color: var(--dark-bg); color: var(--text-primary); line-height: 1.8; overflow-x: hidden; }
+
+        @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-20px); } }
+        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.6; } }
+        @keyframes slideIn { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes codeRain { 0% { transform: translateY(-100%); opacity: 0; } 10% { opacity: 1; } 90% { opacity: 1; } 100% { transform: translateY(100vh); opacity: 0; } }
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); } }
+
+        .code-rain { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; overflow: hidden; }
+        .code-char { position: absolute; color: var(--primary-blue); font-family: 'Courier New', monospace; font-size: 14px; opacity: 0; animation: codeRain 4s linear infinite; }
+
+        .hero { position: relative; min-height: 80vh; display: flex; align-items: center; justify-content: center; padding: 80px 20px; background: linear-gradient(180deg, var(--dark-bg) 0%, #1a1a2e 100%); overflow: hidden; }
+        .hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(ellipse at center, rgba(123, 44, 191, 0.15) 0%, transparent 70%); z-index: 1; }
+        .hero-content { position: relative; z-index: 2; max-width: 1200px; text-align: center; animation: slideIn 1s ease-out; }
+        .hero-badge { display: inline-block; padding: 12px 32px; background: var(--gradient-1); border-radius: 50px; font-size: 18px; font-weight: 700; margin-bottom: 24px; box-shadow: var(--glow-blue); letter-spacing: 1px; }
+        .hero h1 { font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 900; margin-bottom: 24px; background: var(--gradient-1); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; line-height: 1.2; }
+        .hero-subtitle { font-size: clamp(1.2rem, 2.2vw, 1.5rem); color: var(--text-primary); max-width: 900px; margin: 0 auto 40px; line-height: 1.6; font-weight: 400; }
+        .hero-images { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; margin-top: 60px; }
+        .hero-image-card { position: relative; border-radius: 20px; overflow: hidden; aspect-ratio: 16/9; box-shadow: var(--glow-purple); transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .hero-image-card:hover { transform: scale(1.02); box-shadow: 0 0 40px rgba(123, 44, 191, 0.7); }
+        .hero-image-card img { width: 100%; height: 100%; object-fit: cover; }
+        .scroll-indicator { position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%); animation: float 2s ease-in-out infinite; z-index: 2; }
+        .scroll-indicator span { display: block; width: 30px; height: 50px; border: 2px solid var(--primary-blue); border-radius: 25px; position: relative; }
+        .scroll-indicator span::before { content: ''; position: absolute; top: 8px; left: 50%; transform: translateX(-50%); width: 6px; height: 10px; background: var(--primary-blue); border-radius: 3px; animation: pulse 1.5s infinite; }
+
+        section { padding: 80px 20px; position: relative; z-index: 1; }
+        .content-section { background: var(--card-bg); padding: 60px 50px; border-radius: 24px; border: 1px solid rgba(0, 212, 255, 0.2); max-width: 1100px; margin: 0 auto; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3); }
+
+        .content-section h3 { font-size: 1.6rem; margin: 40px 0 20px; color: var(--accent-green); }
+        .content-section p { color: var(--text-secondary); line-height: 2; font-size: 1.08rem; margin: 15px 0; }
+        .content-section ul { margin: 20px 0; padding-left: 30px; }
+        .content-section li { margin: 10px 0; color: var(--text-secondary); }
+
+        .meta-info { background: linear-gradient(135deg, rgba(0, 212, 255, 0.15) 0%, rgba(123, 44, 191, 0.15) 100%); padding: 30px; border-radius: 16px; margin-bottom: 40px; border-left: 5px solid var(--primary-blue); }
+        .meta-info p { margin: 12px 0; color: var(--text-secondary); font-size: 1.05rem; }
+        .meta-info strong { color: var(--primary-blue); font-weight: 600; }
+        .meta-info a { color: var(--primary-blue); text-decoration: none; word-break: break-all; }
+
+        .highlight-box { background: linear-gradient(135deg, rgba(0, 255, 136, 0.08) 0%, rgba(0, 212, 255, 0.08) 100%); padding: 30px; border-radius: 16px; border-left: 5px solid var(--accent-green); margin: 40px 0; }
+        .highlight-box h4 { color: var(--accent-green); margin-bottom: 15px; font-size: 1.3rem; }
+        .highlight-box p { color: var(--text-secondary); margin: 0; }
+
+        .alert-box { background: linear-gradient(135deg, rgba(255, 71, 87, 0.1) 0%, rgba(255, 149, 0, 0.1) 100%); padding: 25px 30px; border-radius: 16px; border-left: 5px solid var(--accent-red); margin: 30px 0; }
+        .alert-box h4 { color: var(--accent-red); margin-bottom: 12px; font-size: 1.15rem; }
+        .alert-box p { color: var(--text-secondary); margin: 8px 0; font-size: 1rem; }
+
+        .quote-box { background: linear-gradient(135deg, rgba(123, 44, 191, 0.15) 0%, rgba(0, 212, 255, 0.15) 100%); padding: 30px 40px; border-radius: 16px; border-left: 5px solid var(--primary-purple); margin: 40px 0; position: relative; }
+        .quote-box::before { content: '"'; position: absolute; top: 10px; left: 20px; font-size: 80px; color: var(--primary-purple); opacity: 0.3; font-family: Georgia, serif; }
+        .quote-box p { color: var(--text-primary); font-size: 1.2rem; font-style: italic; margin-bottom: 15px; }
+        .quote-box cite { color: var(--text-secondary); font-size: 0.95rem; }
+
+        .tech-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin: 40px 0; }
+        .tech-card { background: var(--card-bg-light); padding: 30px; border-radius: 16px; border: 1px solid rgba(0, 212, 255, 0.15); transition: transform 0.3s ease, box-shadow 0.3s ease; animation: fadeInUp 0.6s ease-out forwards; opacity: 0; }
+        .tech-card:nth-child(1) { animation-delay: 0.1s; }
+        .tech-card:nth-child(2) { animation-delay: 0.2s; }
+        .tech-card:nth-child(3) { animation-delay: 0.3s; }
+        .tech-card:nth-child(4) { animation-delay: 0.4s; }
+        .tech-card:nth-child(5) { animation-delay: 0.5s; }
+        .tech-card:nth-child(6) { animation-delay: 0.6s; }
+        .tech-card:nth-child(7) { animation-delay: 0.7s; }
+        .tech-card:nth-child(8) { animation-delay: 0.8s; }
+        .tech-card:nth-child(9) { animation-delay: 0.9s; }
+        .tech-card:nth-child(10) { animation-delay: 1.0s; }
+        .tech-card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0, 212, 255, 0.2); }
+        .tech-card-icon { font-size: 2.5rem; margin-bottom: 15px; }
+        .tech-card h4 { color: var(--primary-blue); margin-bottom: 12px; font-size: 1.2rem; }
+        .tech-card p { color: var(--text-secondary); font-size: 0.95rem; line-height: 1.7; }
+
+        .comparison-table { width: 100%; border-collapse: collapse; margin: 40px 0; border-radius: 16px; overflow: hidden; box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3); }
+        .comparison-table thead { background: linear-gradient(135deg, var(--primary-blue), var(--primary-purple)); }
+        .comparison-table th { padding: 18px 20px; text-align: left; font-weight: 600; font-size: 1.05rem; }
+        .comparison-table td { padding: 16px 20px; border-bottom: 1px solid rgba(255, 255, 255, 0.05); color: var(--text-secondary); }
+        .comparison-table tr:last-child td { border-bottom: none; }
+        .comparison-table tr:nth-child(even) { background: rgba(255, 255, 255, 0.02); }
+        .comparison-table .highlight-col { color: var(--accent-red); font-weight: 500; }
+
+        .timeline { position: relative; margin: 40px 0; padding-left: 40px; }
+        .timeline::before { content: ''; position: absolute; left: 15px; top: 0; bottom: 0; width: 2px; background: linear-gradient(180deg, var(--primary-blue), var(--primary-purple)); }
+        .timeline-item { position: relative; margin-bottom: 35px; padding: 20px 25px; background: var(--card-bg-light); border-radius: 12px; border: 1px solid rgba(0, 212, 255, 0.1); animation: fadeInUp 0.5s ease-out forwards; opacity: 0; }
+        .timeline-item:nth-child(1) { animation-delay: 0.1s; }
+        .timeline-item:nth-child(2) { animation-delay: 0.2s; }
+        .timeline-item:nth-child(3) { animation-delay: 0.3s; }
+        .timeline-item:nth-child(4) { animation-delay: 0.4s; }
+        .timeline-item:nth-child(5) { animation-delay: 0.5s; }
+        .timeline-item::before { content: ''; position: absolute; left: -33px; top: 25px; width: 16px; height: 16px; background: var(--primary-blue); border-radius: 50%; box-shadow: var(--glow-blue); }
+        .timeline-item h4 { color: var(--primary-blue); margin-bottom: 10px; font-size: 1.15rem; }
+        .timeline-item p { color: var(--text-secondary); font-size: 0.98rem; }
+
+        footer { text-align: center; padding: 40px 20px; background: var(--card-bg); border-top: 1px solid rgba(0, 212, 255, 0.2); position: relative; z-index: 1; }
+        .footer-links { display: flex; justify-content: center; gap: 30px; margin-bottom: 20px; flex-wrap: wrap; }
+        .footer-links a { color: var(--primary-blue); text-decoration: none; font-size: 1rem; transition: color 0.3s ease; }
+        .footer-links a:hover { color: var(--accent-green); }
+        footer p { color: var(--text-secondary); font-size: 0.9rem; }
+    </style>
+</head>
+<body>
+    <div class="code-rain" id="codeRain"></div>
+
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-badge">Google Cloud Next ‘26</div>
+            <h1>Google Cloud 於 Next ‘26 大會宣布開啟「代理式企業」新時代</h1>
+            <p class="hero-subtitle">透過 Gemini Enterprise Agent Platform、第八代 TPU 與代理式創新，賦能企業將 AI 轉化為實質的成長引擎，推動「代理式企業」的轉型。</p>
+            <div class="hero-images">
+                <div class="hero-image-card"><img src="img/img1.png" alt="AI Agent"></div>
+            </div>
+        </div>
+        <div class="scroll-indicator"><span></span></div>
+    </section>
+
+    <section>
+        <div class="content-section">
+            <div class="meta-info">
+                <p><strong>📌 資料來源：</strong>BLOG</p>
+                <p><strong>📅 發布日期：</strong>2026-04-23</p>
+                <p><strong>🔗 原始連結：</strong><a href="https://blog.google/intl/zh-tw/products/cloud/the_dawn_of_-the_agentic_enterprise_at_next_26/">查看原文</a></p>
+            </div>
+
+            <h3>📖 新聞導語</h3>
+            <p>今天，我們在 Next ‘26 大會上宣布了一系列創新技術，包含全新統一的 AI 技術堆疊、第八代 TPU（Tensor Processing Unit），以及各種橫跨數據、資安與生產力的「代理式（Agentic）」創新，賦能企業將智慧轉化為成長引擎。</p>
+
+            <h3>💡 核心內容</h3>
+            <p>這些創新技術以統一的技術堆疊為基礎，讓代理超越單純的聊天機器人功能，邁向能夠感知、推理並採取行動以推動實質成果的自主 AI 代理（autonomous agents）。</p>
+
+            <div class="highlight-box">
+                <h4>🚀 企業轉型成效</h4>
+                <p>轉型為代理式企業的全球產業領導者，已經獲得了顯著的商業成效：</p>
+                <ul>
+                    <li><strong>FairPrice Group（職總平價集團）</strong>：透過 Gemini Enterprise 推進「明日商店」願景，AI 代理提升生鮮雜貨購物體驗、簡化門市營運，大幅降低製作主題廣告的時間與成本。</li>
+                    <li><strong>GSK（葛蘭素史克）</strong>：將過去需要耗時一個月才能完成的臨床研究工作大幅縮短至幾分鐘。</li>
+                    <li><strong>和泰汽車</strong>：透過無程式碼的 Agent Designer 自建 AI 助手，減少內部 30% 資料整理時間，讓員工能專注於高價值的戰略任務。</li>
+                </ul>
+            </div>
+
+            <div class="alert-box">
+                <h4>📊 驚人數據</h4>
+                <p>近 <strong>75%</strong> 的 Google Cloud 客戶正使用我們的 AI 產品來驅動業務發展。</p>
+                <p>過去 12 個月中，有 <strong>330 家</strong> Google Cloud 客戶各自處理了超過 1 兆個詞元（token）。</p>
+                <p>客戶透過直接使用 API，讓我們的第一方模型每分鐘處理超過 <strong>160 億個詞元</strong>。</p>
+            </div>
+
+            <h3>🔮 業界展望</h3>
+            <p>轉型成為代理式企業是每個企業未來的發展趨勢。我們的 AI Hypercomputer 奠定了可擴充的基礎、Data Cloud 提供了情境脈絡、Agentic Defense 確保了資安防護，而 Gemini Enterprise Agent Platform 則實現精準的協作調度。技術已全面到位，現在正是為企業打造成長引擎的最佳時機。</p>
+
+            <!-- TECH-CARDS-START -->
+            <div class="tech-cards">
+                <div class="tech-card">
+                    <div class="tech-card-icon">🤖</div>
+                    <h4>Gemini Enterprise Agent Platform</h4>
+                    <p>專為建立、擴充、治理和最佳化 AI 代理所打造的嶄新全方位平台，整合模型選擇、模型建立與 AI 代理建立功能。</p>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-card-icon">⚡</div>
+                    <h4>TPU 8t 訓練效能引擎</h4>
+                    <p>經過最佳化處理，可將前沿模型的開發時間從數個月縮短至數週，平衡極致運算吞吐量、共享記憶體和晶片間頻寬。</p>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-card-icon">🚀</div>
+                    <h4>TPU 8i 推理引擎</h4>
+                    <p>專為驅動理想的代理式 AI 使用者體驗而打造，結合 288GB 高頻寬記憶體與 384MB SRAM，容量較上一代增加 3 倍。</p>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-card-icon">🔒</div>
+                    <h4>AI 驅動資安防護</h4>
+                    <p>整合 Google 威脅情報與 Wiz 雲端資安平台，透過分類與調查代理處理超過 500 萬則警報，將分析時間從 30 分鐘縮短至 60 秒。</p>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-card-icon">📧</div>
+                    <h4>Gmail AI 收件匣</h4>
+                    <p>透過 Gemini 為使用者打造專屬且主動的收件匣助理，智能分類與優先處理重要郵件。</p>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-card-icon">💬</div>
+                    <h4>Google Chat 詢問 Gemini</h4>
+                    <p>直接在 Chat 對話視窗中透過詢問 Gemini 即時彙整各類資訊、提取深入洞察。</p>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-card-icon">📄</div>
+                    <h4>Google 文件 AI 創作</h4>
+                    <p>即時彙整來自 Google 雲端硬碟、Gmail 及網路上的資訊，將靈感快速轉化為具備專業格式的草稿。</p>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-card-icon">☁️</div>
+                    <h4>Google 雲端硬碟專案</h4>
+                    <p>全新的智慧化協作空間，能即時整理團隊的檔案及電子郵件，管理工作流程並生成內容。</p>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-card-icon">🛡️</div>
+                    <h4>暗網情報代理</h4>
+                    <p>以 98% 準確率分析每日數百萬則外部事件，幫助企業過濾並優先處理真正具威脅性的事件。</p>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-card-icon">🎯</div>
+                    <h4>威脅搜索代理</h4>
+                    <p>利用 Google 龐大的威脅情報知識庫，讓資安團隊能夠主動搜索繞過傳統防禦機制的新型攻擊模式。</p>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-card-icon">📡</div>
+                    <h4>偵測工程代理</h4>
+                    <p>為各種威脅情境生成持續性的偵測規則，將偵測規則的建立從手動技術活轉變為高效的自動化流程。</p>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-card-icon">🔐</div>
+                    <h4>Google Cloud 詐欺防禦</h4>
+                    <p>專為辨識機器人、真人與 AI 代理的合法性及授權狀態而設計，保護從帳戶建立到支付結帳的完整數位商務流程。</p>
+                </div>
+            </div>
+            <!-- TECH-CARDS-END -->
+
+            <!-- COMPARISON-TABLE-START -->
+            <h3>📊 TPU 第八代效能比較</h3>
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>規格</th>
+                        <th>TPU 8t（訓練）</th>
+                        <th>TPU 8i（推理）</th>
+                        <th>上一代提升</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>設計目標</td>
+                        <td>前沿模型開發</td>
+                        <td>代理式 AI 體驗</td>
+                        <td>—</td>
+                    </tr>
+                    <tr>
+                        <td>開發時間</td>
+                        <td>數週</td>
+                        <td>即時回應</td>
+                        <td>大幅縮短</td>
+                    </tr>
+                    <tr>
+                        <td>高頻寬記憶體</td>
+                        <td>優化配置</td>
+                        <td>288 GB</td>
+                        <td>—</td>
+                    </tr>
+                    <tr>
+                        <td>SRAM</td>
+                        <td>—</td>
+                        <td>384 MB</td>
+                        <td class="highlight-col">容量 +3倍</td>
+                    </tr>
+                    <tr>
+                        <td>性價比提升</td>
+                        <td colspan="3" class="highlight-col">80% 提升</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>📊 企業轉型成效比較</h3>
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>企業</th>
+                        <th>應用領域</th>
+                        <th>原本效率</th>
+                        <th>現在效率</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>FairPrice Group</td>
+                        <td>明日商店願景</td>
+                        <td>傳統廣告製作</td>
+                        <td class="highlight-col">大幅降低時間與成本</td>
+                    </tr>
+                    <tr>
+                        <td>GSK</td>
+                        <td>臨床研究</td>
+                        <td>1 個月</td>
+                        <td class="highlight-col">幾分鐘</td>
+                    </tr>
+                    <tr>
+                        <td>和泰汽車</td>
+                        <td>資料整理</td>
+                        <td>100% 時間</td>
+                        <td class="highlight-col">減少 30%</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>📊 AI 市場滲透率</h3>
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>指標</th>
+                        <th>數據</th>
+                        <th>說明</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Google Cloud AI 客戶</td>
+                        <td>75%</td>
+                        <td>使用 AI 產品驅動業務</td>
+                    </tr>
+                    <tr>
+                        <td>兆級詞元處理客戶</td>
+                        <td>330 家</td>
+                        <td>過去 12 個月處理超過 1 兆詞元</td>
+                    </tr>
+                    <tr>
+                        <td>10 兆詞元里程碑</td>
+                        <td>35 家</td>
+                        <td>達成廣泛應用程式 10 兆詞元使用</td>
+                    </tr>
+                    <tr>
+                        <td>每分鐘詞元處理量</td>
+                        <td class="highlight-col">160 億</td>
+                        <td>高於上一季的 100 億</td>
+                    </tr>
+                </tbody>
+            </table>
+            <!-- COMPARISON-TABLE-END -->
+
+            <!-- TIMELINE-START -->
+            <h3>📅 代理式企業關鍵里程碑</h3>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <h4>Next ‘26 大會召開</h4>
+                    <p>Google Cloud 正式宣布「代理式企業（Agentic Enterprise）」新時代來臨，透過全新 AI 技術堆疊、第八代 TPU 與代理式創新，賦能企業轉型。</p>
+                </div>
+                <div class="timeline-item">
+                    <h4>Gemini Enterprise Agent Platform 發布</h4>
+                    <p>專為建立、擴充、治理和最佳化 AI 代理打造的全方位平台，整合 Vertex AI 平台的進化版，加入代理整合、開發運作、調度及安全功能。</p>
+                </div>
+                <div class="timeline-item">
+                    <h4>第八代 TPU 正式推出</h4>
+                    <p>具備專為訓練（TPU 8t）和推理（TPU 8i）打造的兩種截然不同架構，性價比較上一代提升 80%。</p>
+                </div>
+                <div class="timeline-item">
+                    <h4>Workspace Intelligence 全面升級</h4>
+                    <p>打造統一的語義層，為使用者及其 AI 代理打破資訊和情境脈絡的孤島，包括 Gmail AI 收件匣、Google Chat 詢問 Gemini、Google 雲端硬碟專案等。</p>
+                </div>
+                <div class="timeline-item">
+                    <h4>AI 驅動資安防護上線</h4>
+                    <p>整合 Google 威脅情報與 Wiz 雲端資安平台，推出暗網情報代理、威脅搜索代理、偵測工程代理三大全新資安代理。</p>
+                </div>
+                <div class="timeline-item">
+                    <h4>Google Cloud 詐欺防禦全面推出</h4>
+                    <p>reCAPTCHA 升級為 Google Cloud  Fraud Defense，專為辨識機器人、真人與 AI 代理的合法性及授權狀態而設計。</p>
+                </div>
+            </div>
+            <!-- TIMELINE-END -->
+
+            <!-- QUOTE-BOX-START -->
+            <div class="quote-box">
+                <p>轉型成為代理式企業是每個企業未來的發展趨勢。技術已全面到位，現在正是為企業打造成長引擎的最佳時機。</p>
+                <cite>— Thomas Kurian，Google Cloud 執行長</cite>
+            </div>
+
+            <div class="quote-box">
+                <p>Gemini Enterprise 是專為「代理式時代（Agentic Era）」打造的端到端系統，連結企業資料、人員以及所有應用程式與 AI 代理的樞紐，能將所有的營運流程轉變為單一的智慧工作流程。</p>
+                <cite>— Google Cloud 官方部落格</cite>
+            </div>
+            <!-- QUOTE-BOX-END -->
+
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-links">
+            <a href="https://cloud.google.com/blog/topics/google-cloud-next/welcome-to-google-cloud-next26" target="_blank">📖 完整英文部落格文章</a>
+            <a href="https://cloud.google.com/blog/products/ai-machine-learning/introducing-gemini-enterprise-agent-platform" target="_blank">🤖 Gemini Enterprise 最新進展</a>
+            <a href="https://workspace.google.com/blog/product-announcements/introducing-workspace-intelligence" target="_blank">💼 Workspace Intelligence</a>
+        </div>
+        <p>生成時間：2026-04-23 | 資料來源：Google Cloud Blog</p>
+    </footer>
+
+    <script>
+        const codeRain = document.getElementById('codeRain');
+        const chars = '01アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン';
+        for (let i = 0; i < 50; i++) {
+            const char = document.createElement('span');
+            char.className = 'code-char';
+            char.textContent = chars[Math.floor(Math.random() * chars.length)];
+            char.style.left = Math.random() * 100 + '%';
+            char.style.animationDelay = Math.random() * 4 + 's';
+            char.style.animationDuration = (Math.random() * 2 + 3) + 's';
+            codeRain.appendChild(char);
+        }
+    </script>
+</body>
+</html>
