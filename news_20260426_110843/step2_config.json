@@ -1,0 +1,4 @@
+{
+  "model": "qwen-image",
+  "images": ["img1.png"]
+}

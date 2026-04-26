@@ -1,6 +1,26 @@
 {
   "archives": [
     {
+      "dir": "news_20260426_110843",
+      "title": "Google 押注 AI 代理：企業變現策略核心轉向",
+      "summary_short": "Alphabet CEO Sundar Pichai 明確表示 AI 代理是人類化數碼助手，是 Google 變現人工智能策略的核心支柱，標誌著與 Amazon、Microsoft、OpenAI、Anthropic 的企業 AI 大戰進入新階段。",
+      "images": [
+        "img/img1.png"
+      ],
+      "date": "2026-04-26",
+      "url": "./news_20260426_110843/index.html"
+    },
+    {
+      "dir": "news_20260426_110317",
+      "title": "新聞文章",
+      "summary_short": "# 新聞文章## 📖 新聞導語本文報導來自 **REUTERS**，發布於 **2026-04-26**。科技行業最新動態顯示，人工智能領域持續快速發展。業界觀察人士指出，新技術的應用正在",
+      "images": [
+        "img/img1.png"
+      ],
+      "date": "2026-04-26",
+      "url": "./news_20260426_110317/index.html"
+    },
+    {
       "dir": "news_20260424_232600",
       "title": "房地產 AI 危機：業界搜索可見度墊底但 82% 經紀人已每日使用 AI",
       "summary_short": "5WPR 與 Haute Residence 聯合研究發現，房地產在 AI 搜索可見度排名倒數第一，但 82% 房地產經紀人已每日使用 AI。專家警告：24 個月窗口期，機不可失！",
@@ -484,5 +504,5 @@
       "url": "./20260404_2045/index.html"
     }
   ],
-  "last_updated": "2026-04-24T23:26:00.000000"
+  "last_updated": "2026-04-26T11:07:11.876323"
 }

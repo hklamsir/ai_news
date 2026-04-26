@@ -1,0 +1,313 @@
+# AI News 網頁生成 Prompt（新聞風格 - 精簡版）
+
+請根據以下新聞素材，生成一個完整的**科技感新聞專題網頁**。
+
+---
+
+## 【重要要求】
+
+### ❌ 禁止：
+- **不要直接複製摘要內容**
+- 不要使用 Markdown 符號（##、###、** 等）
+- 不要使用「本影片」、「影片中」等字詞
+- **Hero Section 圖片不要和文字重疊**
+
+### ✅ 必須：
+- **用你的理解重新組織內容**，分成清晰的段落
+- 使用專業新聞用語（「本次報告」、「研究指出」、「數據顯示」）
+- 將內容分成 3-5 個小節，每節有明確主題
+- 使用 HTML 標籤（`<h3>`、`<p>`、`<ul>`、`<li>`）排版
+- **Hero Section 圖片使用 grid 佈局，不要和文字重疊**
+- **必須包含完整的 Footer**
+
+---
+
+## 【版面配置】
+
+### 必備 Section（只包含這 3 個）：
+1. **Hero Section** - 標題 + 短摘要 + 圖片（使用 grid/flex 佈局）
+2. **Content Section** - 重新組織後的新聞內容
+3. **Footer** - 版權信息 + 連結
+
+---
+
+## 【Hero Section 佈局要求】
+
+**必須使用以下結構**（文字在上，圖片在下，使用 grid）：
+
+```html
+<section class="hero">
+    <div class="hero-content">
+        <span class="hero-badge">📰 AI News 專題報道</span>
+        <h1>標題</h1>
+        <p class="hero-subtitle">短摘要...</p>
+        <div class="hero-images">
+            <div class="hero-image-card">
+                <img src="圖片路徑" alt="新聞插圖">
+            </div>
+        </div>
+    </div>
+</section>
+```
+
+---
+
+## 【Content Section 結構】
+
+### 1. Meta Info（資料來源）
+```html
+<div class="meta-info">
+    <p><strong>📺 資料來源</strong>：<a href="" target="_blank"></a></p>
+    <p><strong>📅 發布日期</strong>：2026-04-26</p>
+    <p><strong>🤖 處理方式</strong>：AI 智能摘要生成</p>
+</div>
+```
+
+### 2. 內容分段（3-5 節，每節有主題）
+
+根據素材內容，自動提煉 3-5 個小節主題，例如：
+
+```html
+<h3>🎯 核心觀點</h3>
+<p>用 1-2 段話說明核心內容...</p>
+
+<h3>💡 重點解析</h3>
+<p>詳細說明重點內容...</p>
+<ul>
+    <li>要點一</li>
+    <li>要點二</li>
+    <li>要點三</li>
+</ul>
+
+<h3>📊 數據分析</h3>
+<p>如果有數據，在此說明...</p>
+
+<h3>🔮 未來展望</h3>
+<p>總結並展望未來...</p>
+```
+
+### 3. 可選 Highlight Box（強調重要信息）
+```html
+<div class="highlight-box">
+    <h4>✨ 關鍵洞察</h4>
+    <p>重要內容...</p>
+</div>
+```
+
+---
+
+## 【Footer 結構】
+
+**必須包含以下 Footer**：
+
+```html
+<footer>
+    <p>© 2026 AI News Archive | 由 AI 技術生成</p>
+    <div class="footer-links">
+        <a href="../index.html">返回主頁</a>
+        <a href="https://github.com/hklamsir/ai_news" target="_blank">GitHub</a>
+        <a href="https://hklamsir.github.io/ai_news/" target="_blank">瀏覽所有專題</a>
+    </div>
+</footer>
+```
+
+---
+
+## 【內容風格】
+
+### 新聞用語：
+- ✅ 使用：「本次報告」、「研究指出」、「數據顯示」、「業界觀察」、「專家分析」
+- ❌ 禁止：「本影片」、「影片中」、「這段影片」、「該影片」
+
+### 排版要求：
+- 每節 2-4 段，每段 3-5 句
+- 使用 `<ul>` 列出要點（3-6 個）
+- 重要概念用 `<strong>` 強調
+- 不要使用 Markdown 符號
+
+---
+
+## 【新聞素材】
+
+**標題**：
+
+**日期**：2026-04-26
+
+**YouTube 連結**：
+
+**圖片**：img1.png
+
+**內容素材**（請重新組織，不要直接複製）：
+Google puts AI agents at heart of its enterprise money-making push
+
+📖 新聞導語
+
+來源：REUTERS（由 AOL 轉載）
+作者：Kenrick Cai
+发布日期：2026年4月22日（星期三）
+地點：拉斯維加斯 Cloud Next 大會
+
+Alphabet CEO Sundar Pichai 在 Google 年度雲端大會上向投資者明確表示：AI 代理（類似人類的數碼助手）是 Google 變現人工智能策略的核心支柱。這標誌着 Google 與 Amazon、Microsoft 以及 OpenAI、Anthropic 等 AI 初創企業的企業 AI 大戰進入新階段。
+
+---
+
+💡 核心內容
+
+1. Gemini Enterprise 統一品牌
+Google 在大會上宣佈將一系列 AI 產品統一命名為「Gemini Enterprise」，最受矚目的是對 Vertex AI 的品牌重塑及強化。Vertex AI 是一個讓雲端客戶從多款 AI 模型中選擇用於商業用途的工具。
+
+2. 企業客戶已見實效
+Google Cloud CEO Thomas Kurian 接受 Reuters 專訪時表示：
+> 「策略正在發生根本性轉變，隨着模型變得更加成熟。」
+他指出 Vertex AI 的主要用例已從「舊式機器學習」轉向用戶自行構建定制 AI 代理的爆炸性增長。
+
+3. 與對手的策略差異
+- OpenAI / Anthropic：近月積極將資源投向企業客戶，主打編碼助手及插件
+- Google：選擇將 AI 代理、治理及企業部署定調為主戰場，將部分編碼公告留待5月的 I/O 開發者大會
+
+Kurian 表示：「有些人在用模型寫代碼。他們可以用 Gemini，也可以用 Claude 等其他工具。但在其他方面，我們有着獨特之處——平台上有其他人都沒有的能力。」
+
+4. 市場份額持續增長
+多年對 AI 及數據中心、定制芯片、網絡設備的巨額投資，令 Google Cloud 的整體雲端市場份額在2025年底增至 14%，但仍落後於 Amazon 及 Microsoft。
+
+5. 企業應用案例
+GE Appliances 高層 Marcia Brey 向 Reuters 表示，Google 的工具套件及已存儲在 Google Cloud 中的企業數據，令她的物流及分銷團隊能夠比其他已測試的產品更快部署 AI。
+
+---
+
+🔮 業界展望
+
+1. AI 代理成變現關鍵：各科技巨頭正從「模型之戰」轉向「代理之戰」，誰能提供最成熟的企業級 AI 代理解決方案，谁就能在變現競賽中領先
+
+2. 治理與安全成焦點：Google 同时宣佈了一系列 AI 代理的治理及安全新功能，回應外界對 AI 代理自主性帶來的安全、可靠性及監管憂慮
+
+3. 全方位自家技術棧的優勢：Google 的長遠押注——從模型到芯片的完整自家技術棧，而非依賴第三方供應商——正成為相對於其他大型雲端供應商的競爭優勢
+
+4. 2026 年資本開支不變：Pichai 重申 2026 年資本開支為 1,850 億美元，顯示 Google 在 AI 領域的投入絲毫未減
+
+---
+
+📊 關鍵數據
+
+| 指標 | 數據 |
+|------|------|
+| Google Cloud 市場份額（2025年底） | 14% |
+| 2026 年資本開支預算 | 1,850 億美元 |
+| 主要競爭對手 | Amazon、Microsoft、OpenAI、Anthropic |
+| 核心產品 | Vertex AI → Gemini Enterprise |
+
+---
+
+🏢 公司背景
+
+- Alphabet CEO：Sundar Pichai
+- Google Cloud CEO：Thomas Kurian
+- 受訪企業客戶：GE Appliances（Marcia Brey）
+- 公關記者：Kenrick Cai（Reuters）
+
+---
+
+📌 原文連結：https://www.aol.com/articles/google-puts-ai-agents-heart-120308146.html
+📅 整理日期：2026-04-26
+
+
+---
+
+## 【完整 CSS 模板】
+
+**必須使用以下 CSS 樣式**（內嵌到 `<head>` 的 `<style>`）：
+
+```css
+:root {
+    --primary-blue: #00d4ff;
+    --primary-purple: #7b2cbf;
+    --accent-green: #00ff88;
+    --accent-orange: #ff9500;
+    --dark-bg: #0a0a0f;
+    --card-bg: #12121a;
+    --card-bg-light: #1a1a28;
+    --text-primary: #ffffff;
+    --text-secondary: #a0a0b0;
+    --gradient-1: linear-gradient(135deg, #00d4ff 0%, #7b2cbf 100%);
+    --gradient-2: linear-gradient(135deg, #00d4ff 0%, #00ff88 100%);
+    --glow-blue: 0 0 20px rgba(0, 212, 255, 0.5);
+    --glow-purple: 0 0 20px rgba(123, 44, 191, 0.5);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Noto Sans TC', sans-serif; background-color: var(--dark-bg); color: var(--text-primary); line-height: 1.8; overflow-x: hidden; }
+
+@keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-20px); } }
+@keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.6; } }
+@keyframes slideIn { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes codeRain { 0% { transform: translateY(-100%); opacity: 0; } 10% { opacity: 1; } 90% { opacity: 1; } 100% { transform: translateY(100vh); opacity: 0; } }
+
+/* 代碼雨背景 */
+.code-rain { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; overflow: hidden; }
+.code-char { position: absolute; color: var(--primary-blue); font-family: 'Courier New', monospace; font-size: 14px; opacity: 0; animation: codeRain 4s linear infinite; }
+
+/* Hero Section */
+.hero { position: relative; min-height: 80vh; display: flex; align-items: center; justify-content: center; padding: 80px 20px; background: linear-gradient(180deg, var(--dark-bg) 0%, #1a1a2e 100%); overflow: hidden; }
+.hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(ellipse at center, rgba(123, 44, 191, 0.15) 0%, transparent 70%); z-index: 1; }
+.hero-content { position: relative; z-index: 2; max-width: 1200px; text-align: center; animation: slideIn 1s ease-out; }
+.hero-badge { display: inline-block; padding: 12px 32px; background: var(--gradient-1); border-radius: 50px; font-size: 18px; font-weight: 700; margin-bottom: 24px; box-shadow: var(--glow-blue); letter-spacing: 1px; }
+.hero h1 { font-size: clamp(2rem, 5vw, 4rem); font-weight: 900; margin-bottom: 24px; background: var(--gradient-1); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; line-height: 1.2; }
+.hero-subtitle { font-size: clamp(1.2rem, 2.2vw, 1.6rem); color: var(--text-primary); max-width: 900px; margin: 0 auto 40px; line-height: 1.6; font-weight: 400; }
+.hero-images { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; margin-top: 60px; }
+.hero-image-card { position: relative; border-radius: 20px; overflow: hidden; aspect-ratio: 16/9; box-shadow: var(--glow-purple); transition: transform 0.3s ease, box-shadow 0.3s ease; }
+.hero-image-card:hover { transform: scale(1.02); box-shadow: 0 0 40px rgba(123, 44, 191, 0.7); }
+.hero-image-card img { width: 100%; height: 100%; object-fit: cover; }
+.scroll-indicator { position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%); animation: float 2s ease-in-out infinite; z-index: 2; }
+.scroll-indicator span { display: block; width: 30px; height: 50px; border: 2px solid var(--primary-blue); border-radius: 25px; position: relative; }
+.scroll-indicator span::before { content: ''; position: absolute; top: 8px; left: 50%; transform: translateX(-50%); width: 6px; height: 10px; background: var(--primary-blue); border-radius: 3px; animation: pulse 1.5s infinite; }
+
+/* Content Section */
+section { padding: 80px 20px; position: relative; z-index: 1; }
+.content-section { background: var(--card-bg); padding: 60px 50px; border-radius: 24px; border: 1px solid rgba(0, 212, 255, 0.2); max-width: 1100px; margin: 0 auto; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3); }
+
+.content-section h3 { font-size: 1.6rem; margin: 40px 0 20px; color: var(--accent-green); }
+.content-section p { color: var(--text-secondary); line-height: 2; font-size: 1.08rem; margin: 15px 0; }
+.content-section ul { margin: 20px 0; padding-left: 30px; }
+.content-section li { margin: 10px 0; color: var(--text-secondary); }
+
+.meta-info { background: linear-gradient(135deg, rgba(0, 212, 255, 0.15) 0%, rgba(123, 44, 191, 0.15) 100%); padding: 30px; border-radius: 16px; margin-bottom: 40px; border-left: 5px solid var(--primary-blue); }
+.meta-info p { margin: 12px 0; color: var(--text-secondary); font-size: 1.05rem; }
+.meta-info strong { color: var(--primary-blue); font-weight: 600; }
+.meta-info a { color: var(--primary-blue); text-decoration: none; word-break: break-all; }
+
+.highlight-box { background: linear-gradient(135deg, rgba(0, 255, 136, 0.08) 0%, rgba(0, 212, 255, 0.08) 100%); padding: 30px; border-radius: 16px; border-left: 5px solid var(--accent-green); margin: 40px 0; }
+.highlight-box h4 { color: var(--accent-green); margin-bottom: 15px; font-size: 1.3rem; }
+.highlight-box p { color: var(--text-secondary); margin: 0; }
+
+/* Footer */
+footer { background: #050508; padding: 60px 20px; text-align: center; border-top: 1px solid rgba(255, 255, 255, 0.1); }
+footer p { color: var(--text-secondary); margin-bottom: 20px; }
+.footer-links { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; }
+.footer-links a { color: var(--primary-blue); text-decoration: none; transition: color 0.3s ease; }
+.footer-links a:hover { color: var(--text-primary); }
+
+/* RWD */
+@media (max-width: 768px) {
+    .content-section { padding: 40px 25px; }
+    .hero-images { grid-template-columns: 1fr; }
+    .hero h1 { font-size: 2rem; }
+    .hero-subtitle { font-size: 1.2rem; }
+}
+```
+
+---
+
+## 【輸出格式】
+
+只返回完整的 HTML 代碼（從 `<!DOCTYPE html>` 到 `</html>`），不要其他說明文字。
+
+**必須包含**：
+- 完整的 `<head>`（含上述 CSS 樣式）
+- Hero Section（使用 grid 佈局，文字在上，圖片在下）
+- Content Section（含 Meta Info + 重新組織的內容）
+- **Footer（包含版權信息和 3 個連結）**
+
+---
+
+**請開始生成 HTML 代碼。**
