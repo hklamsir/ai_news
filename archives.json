@@ -1,6 +1,16 @@
 {
   "archives": [
     {
+      "dir": "news_20260430_192502",
+      "title": "Gemini 可直接生成Excel, PDF 檔案 紙面複雜表單 影相後即成Excel表",
+      "summary_short": "# Gemini 可直接生成Excel, PDF 檔案 紙面複雜表單 影相後即成Excel表## 📖 新聞導語本文報導來自 **UNWIRE**，發布於 **2026-04-30**。最新",
+      "images": [
+        "img/img1.png"
+      ],
+      "date": "2026-04-30",
+      "url": "./news_20260430_192502/index.html"
+    },
+    {
       "dir": "news_20260426_110843",
       "title": "Google 押注 AI 代理：企業變現策略核心轉向",
       "summary_short": "Alphabet CEO Sundar Pichai 明確表示 AI 代理是人類化數碼助手，是 Google 變現人工智能策略的核心支柱，標誌著與 Amazon、Microsoft、OpenAI、Anthropic 的企業 AI 大戰進入新階段。",
@@ -504,5 +514,5 @@
       "url": "./20260404_2045/index.html"
     }
   ],
-  "last_updated": "2026-04-26T11:07:11.876323"
+  "last_updated": "2026-04-30T19:28:34.957863"
 }
