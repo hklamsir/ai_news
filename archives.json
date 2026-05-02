@@ -9,6 +9,16 @@
       "url": "./news_20260502_113000/index.html"
     },
     {
+      "dir": "news_20260502_122200",
+      "title": "Microsoft 發布三大 AI 基礎模型：MAI-Transcribe-1、MAI-Voice-1、MAI-Image-2",
+      "summary_short": "Microsoft AI 於 2026 年 4 月宣佈一口氣發布三款基礎 AI 模型（MAI-Transcribe-1、MAI-Voice-1、MAI-Image-2），涵蓋語音轉文字、音頻生成及圖像生成三大範疇。",
+      "images": [
+        "img/img1.png"
+      ],
+      "date": "2026-05-02",
+      "url": "./news_20260502_122200/index.html"
+    },
+    {
       "dir": "news_20260502_112750",
       "title": "Karpathy聊AI代理時代：程式設計師的未來何去何從？",
       "summary_short": "## 新聞導語前特斯拉AI總監、OpenAI創始成員Andrej Karpathy近期在一次訪談中指出，隨著AI技術的飛速發展，程式設計師面臨前所未有的挑戰。Karpathy認為，當前的軟體開發模式",
