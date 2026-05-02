@@ -1,6 +1,22 @@
 {
   "archives": [
     {
+      "dir": "news_20260502_113000",
+      "title": "Karpathy聊AI代理時代：程式設計師的未來何去何從？",
+      "summary_short": "前特斯拉AI總監、OpenAI創始成員 Andrej Karpathy 預言：軟體開發正邁入「3.0時代」，神經網路正逐步取代CPU成為系統主體，傳統程式設計師正面臨職能邊緣化危機。",
+      "images": [],
+      "date": "2026-05-02",
+      "url": "./news_20260502_113000/index.html"
+    },
+    {
+      "dir": "news_20260502_112750",
+      "title": "Karpathy聊AI代理時代：程式設計師的未來何去何從？",
+      "summary_short": "## 新聞導語前特斯拉AI總監、OpenAI創始成員Andrej Karpathy近期在一次訪談中指出，隨著AI技術的飛速發展，程式設計師面臨前所未有的挑戰。Karpathy認為，當前的軟體開發模式",
+      "images": [],
+      "date": "2026-05-02",
+      "url": "./news_20260502_112750/index.html"
+    },
+    {
       "dir": "news_20260430_192502",
       "title": "Gemini 可直接生成Excel, PDF 檔案 紙面複雜表單 影相後即成Excel表",
       "summary_short": "# Gemini 可直接生成Excel, PDF 檔案 紙面複雜表單 影相後即成Excel表## 📖 新聞導語本文報導來自 **UNWIRE**，發布於 **2026-04-30**。最新",
@@ -514,5 +530,5 @@
       "url": "./20260404_2045/index.html"
     }
   ],
-  "last_updated": "2026-04-30T19:28:34.957863"
+  "last_updated": "2026-05-02T11:31:31.449264"
 }
