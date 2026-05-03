@@ -1,6 +1,26 @@
 {
   "archives": [
     {
+      "dir": "news_20260503_192100",
+      "title": "我從未像現在這樣感到落後 ｜ Andrej Karpathy AI演進深度剖析",
+      "summary_short": "卡帕西在紅杉AI Ascent 2026大會上，分享從軟件1.0到3.0的躍遷、智慧體工程的崛起，以及人類在AI時代真正不可替代的價值。",
+      "images": [
+        "img/img1.png"
+      ],
+      "date": "2026-05-03",
+      "url": "./news_20260503_192100/index.html"
+    },
+    {
+      "dir": "news_20260503_212630",
+      "title": "我從未像現在這樣感到落後 | Andrej Karpathy | 氛圍程式設計 | 軟體3.0 | 提示詞程式設計 | 計算架構反轉 | 可驗證性 | 萬物皆可自動化 | 人類價值 | 理解力 | 智慧體工程",
+      "summary_short": "## 新聞導語在近日的一場技術報告中，前OpenAI聯合創始人兼特斯拉AI總監Andrej Karpathy分享了他對當前人工智慧（AI）發展的深刻見解。Karpathy強調，隨著AI技術的快速進步",
+      "images": [
+        "img/img1.png"
+      ],
+      "date": "2026-05-03",
+      "url": "./news_20260503_212630/index.html"
+    },
+    {
       "dir": "news_20260502_113000",
       "title": "Karpathy聊AI代理時代：程式設計師的未來何去何從？",
       "summary_short": "前特斯拉AI總監、OpenAI創始成員 Andrej Karpathy 預言：軟體開發正邁入「3.0時代」，神經網路正逐步取代CPU成為系統主體，傳統程式設計師正面臨職能邊緣化危機。",
@@ -540,5 +560,5 @@
       "url": "./20260404_2045/index.html"
     }
   ],
-  "last_updated": "2026-05-02T11:31:31.449264"
+  "last_updated": "2026-05-03T21:29:57.988504"
 }

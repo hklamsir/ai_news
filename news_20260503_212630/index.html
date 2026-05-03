@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI News 專題報道</title>
+    <style>
+        :root {
+            --primary-blue: #00d4ff;
+            --primary-purple: #7b2cbf;
+            --accent-green: #00ff88;
+            --accent-orange: #ff9500;
+            --dark-bg: #0a0a0f;
+            --card-bg: #12121a;
+            --card-bg-light: #1a1a28;
+            --text-primary: #ffffff;
+            --text-secondary: #a0a0b0;
+            --gradient-1: linear-gradient(135deg, #00d4ff 0%, #7b2cbf 100%);
+            --gradient-2: linear-gradient(135deg, #00d4ff 0%, #00ff88 100%);
+            --glow-blue: 0 0 20px rgba(0, 212, 255, 0.5);
+            --glow-purple: 0 0 20px rgba(123, 44, 191, 0.5);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Noto Sans TC', sans-serif; background-color: var(--dark-bg); color: var(--text-primary); line-height: 1.8; overflow-x: hidden; }
+
+        @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-20px); } }
+        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.6; } }
+        @keyframes slideIn { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes codeRain { 0% { transform: translateY(-100%); opacity: 0; } 10% { opacity: 1; } 90% { opacity: 1; } 100% { transform: translateY(100vh); opacity: 0; } }
+
+        .code-rain { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; overflow: hidden; }
+        .code-char { position: absolute; color: var(--primary-blue); font-family: 'Courier New', monospace; font-size: 14px; opacity: 0; animation: codeRain 4s linear infinite; }
+
+        .hero { position: relative; min-height: 80vh; display: flex; align-items: center; justify-content: center; padding: 80px 20px; background: linear-gradient(180deg, var(--dark-bg) 0%, #1a1a2e 100%); overflow: hidden; }
+        .hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(ellipse at center, rgba(123, 44, 191, 0.15) 0%, transparent 70%); z-index: 1; }
+        .hero-content { position: relative; z-index: 2; max-width: 1200px; text-align: center; animation: slideIn 1s ease-out; }
+        .hero-badge { display: inline-block; padding: 12px 32px; background: var(--gradient-1); border-radius: 50px; font-size: 18px; font-weight: 700; margin-bottom: 24px; box-shadow: var(--glow-blue); letter-spacing: 1px; }
+        .hero h1 { font-size: clamp(2rem, 5vw, 4rem); font-weight: 900; margin-bottom: 24px; background: var(--gradient-1); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; line-height: 1.2; }
+        .hero-subtitle { font-size: clamp(1.2rem, 2.2vw, 1.6rem); color: var(--text-primary); max-width: 900px; margin: 0 auto 40px; line-height: 1.6; font-weight: 400; }
+        .hero-images { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; margin-top: 60px; }
+        .hero-image-card { position: relative; border-radius: 20px; overflow: hidden; aspect-ratio: 16/9; box-shadow: var(--glow-purple); transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .hero-image-card:hover { transform: scale(1.02); box-shadow: 0 0 40px rgba(123, 44, 191, 0.7); }
+        .hero-image-card img { width: 100%; height: 100%; object-fit: cover; }
+        .scroll-indicator { position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%); animation: float 2s ease-in-out infinite; z-index: 2; }
+        .scroll-indicator span { display: block; width: 30px; height: 50px; border: 2px solid var(--primary-blue); border-radius: 25px; position: relative; }
+        .scroll-indicator span::before { content: ''; position: absolute; top: 8px; left: 50%; transform: translateX(-50%); width: 6px; height: 10px; background: var(--primary-blue); border-radius: 3px; animation: pulse 1.5s infinite; }
+
+        section { padding: 80px 20px; position: relative; z-index: 1; }
+        .content-section { background: var(--card-bg); padding: 60px 50px; border-radius: 24px; border: 1px solid rgba(0, 212, 255, 0.2); max-width: 1100px; margin: 0 auto; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3); }
+
+        .content-section h3 { font-size: 1.6rem; margin: 40px 0 20px; color: var(--accent-green); }
+        .content-section p { color: var(--text-secondary); line-height: 2; font-size: 1.08rem; margin: 15px 0; }
+        .content-section ul { margin: 20px 0; padding-left: 30px; }
+        .content-section li { margin: 10px 0; color: var(--text-secondary); }
+
+        .meta-info { background: linear-gradient(135deg, rgba(0, 212, 255, 0.15) 0%, rgba(123, 44, 191, 0.15) 100%); padding: 30px; border-radius: 16px; margin-bottom: 40px; border-left: 5px solid var(--primary-blue); }
+        .meta-info p { margin: 12px 0; color: var(--text-secondary); font-size: 1.05rem; }
+        .meta-info strong { color: var(--primary-blue); font-weight: 600; }
+        .meta-info a { color: var(--primary-blue); text-decoration: none; word-break: break-all; }
+
+        .highlight-box { background: linear-gradient(135deg, rgba(0, 255, 136, 0.08) 0%, rgba(0, 212, 255, 0.08) 100%); padding: 30px; border-radius: 16px; border-left: 5px solid var(--accent-green); margin: 40px 0; }
+        .highlight-box h4 { color: var(--accent-green); margin-bottom: 15px; font-size: 1.3rem; }
+        .highlight-box p { color: var(--text-secondary); margin: 0; }
+
+        footer { background: #050508; padding: 60px 20px; text-align: center; border-top: 1px solid rgba(255, 255, 255, 0.1); }
+        footer p { color: var(--text-secondary); margin-bottom: 20px; }
+        .footer-links { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; }
+        .footer-links a { color: var(--primary-blue); text-decoration: none; transition: color 0.3s ease; }
+        .footer-links a:hover { color: var(--text-primary); }
+
+        @media (max-width: 768px) {
+            .content-section { padding: 40px 25px; }
+            .hero-images { grid-template-columns: 1fr; }
+            .hero h1 { font-size: 2rem; }
+            .hero-subtitle { font-size: 1.2rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="code-rain" id="codeRain"></div>
+    <section class="hero">
+        <div class="hero-content">
+            <span class="hero-badge">📰 AI News 專題報道</span>
+            <h1>我從未像現在這樣感到落後 | Andrej Karpathy | 氛圍程式設計 | 軟體3.0 | 提示詞程式設計 | 計算架構反轉 | 可驗證性 | 萬物皆可自動化 | 人類價值 | 理解力 | 智慧體工程</h1>
+            <p class="hero-subtitle">前OpenAI聯合創始人兼特斯拉AI總監Andrej Karpathy分享了他對當前人工智慧（AI）發展的深刻見解，強調隨著AI技術的快速進步，軟體開發領域正在經歷一場範疇革命。</p>
+            <div class="hero-images">
+                <div class="hero-image-card">
+                    <img src="img/img1.png" alt="新聞插圖">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <div class="meta-info">
+            <p><strong>📺 資料來源</strong>：<a href="https://www.youtube.com/watch?v=2feT7_pjxA8" target="_blank">https://www.youtube.com/watch?v=2feT7_pjxA8</a></p>
+            <p><strong>📅 發布日期</strong>：2026-05-03</p>
+            <p><strong>🤖 處理方式</strong>：AI 智能摘要生成</p>
+        </div>
+
+        <h3>🎯 核心觀點</h3>
+        <p>在近日的一場技術報告中，Andrej Karpathy分享了他對當前人工智慧（AI）發展的深刻見解。Karpathy指出，隨著AI技術的快速進步，特別是大語言模型的崛起，軟體開發領域正在經歷一場範疇革命。傳統的程式設計方式已經無法滿足新時代的需求，而基於智慧體的氛圍程式設計和提示詞程式設計正成為主流。</p>
+
+        <h3>💡 重點解析</h3>
+        <p>本次報告揭示了AI技術的最新趨勢，並為未來的軟體開發和計算架構提供了新的視角。具體來說，報告涵蓋了以下幾個關鍵方面：</p>
+        <ul>
+            <li>智慧體工具的崛起：新一代大模型加持下的智慧體生成的程式碼質量已達到近乎完美的程度。</li>
+            <li>從軟體1.0到軟體3.0：軟體開發經歷了從手動編寫規則程式碼到訓練神經網路，再到基於大模型的提示詞程式設計的三次範疇轉移。</li>
+            <li>可驗證性的重要性：AI在高可驗證性領域表現優異，但在低可驗證性領域仍存在明顯侷限。</li>
+            <li>智慧體工程的提出：智慧體工程將取代氛圍程式設計，成為更嚴謹、專業的學科，以確保軟體開發的質量和效率。</li>
+            <li>人類不可替代的價值：人類在系統規格、高層架構、審美判斷和邏輯正確性方面的作用不可替代。</li>
+        </ul>
+
+        <h3>📊 數據分析</h3>
+        <p>數據顯示，自2025年12月以來，隨著大模型的不斷進化，智慧體生成的程式碼質量大幅提升，幾乎不再需要手動修改。這一變化促使Karpathy開始採用氛圍程式設計模式，這種模式讓他在業餘時間內能夠快速實現多個隨機實驗。</p>
+
+        <h3>🔮 未來展望</h3>
+        <p>隨著智慧體工程的普及，開發者將更多地關注系統設計和全域性把控，而具體編碼工作將由智慧體完成。同時，教育和培訓也需要跟上技術發展的步伐，注重培養學生的理解力和系統思維能力。對於企業而言，招聘流程也應進行調整，更加註重候選人在實際問題解決和智慧體駕馭方面的能力。總之，未來的科技行業將是一個高度自動化且充滿機遇的新時代。</p>
+
+        <div class="highlight-box">
+            <h4>✨ 關鍵洞察</h4>
+            <p>人類必須牢牢掌控系統規格、高層架構、審美判斷和邏輯正確性，而API細節、程式碼填充等工作完全可以交給智慧體。只有深刻理解系統和問題本質的人，才能真正駕馭AI，避免成為其附庸。</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2026 AI News Archive | 由 AI 技術生成</p>
+        <div class="footer-links">
+            <a href="../index.html">返回主頁</a>
+            <a href="https://github.com/hklamsir/ai_news" target="_blank">GitHub</a>
+            <a href="https://hklamsir.github.io/ai_news/" target="_blank">瀏覽所有專題</a>
+        </div>
+    </footer>
+
+    <script>
+        function createCodeRain() {
+            const codeRain = document.getElementById('codeRain');
+            if (!codeRain) return;
+            const chars = '01 アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン';
+            for (let i = 0; i < 50; i++) {
+                const char = document.createElement('div');
+                char.className = 'code-char';
+                char.textContent = chars[Math.floor(Math.random() * chars.length)];
+                char.style.left = Math.random() * 100 + '%';
+                char.style.animationDelay = Math.random() * 4 + 's';
+                char.style.animationDuration = (Math.random() * 2 + 3) + 's';
+                codeRain.appendChild(char);
+            }
+        }
+
+        function handleScrollAnimation() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('.fade-in').forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(30px)';
+                el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(el);
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            createCodeRain();
+            handleScrollAnimation();
+        });
+    </script>
+</body>
+</html>
