@@ -1,6 +1,16 @@
 {
   "archives": [
     {
+      "dir": "news_20260504_223400",
+      "title": "Claude Code 神秘降級事件深度剖析：看不見的疊加故障",
+      "summary_short": "過去一個多月 Claude Code 用戶集體反映「降智」，Anthropic 官方覆盤揭開真相：不是黑客攻擊、不是模型降級，而是三個看似不起眼的產品層小改動在不同時間上線，疊加製造了横跨整個開發者社區的故障。",
+      "images": [
+        "img/img1.png"
+      ],
+      "date": "2026-05-04",
+      "url": "./news_20260504_223400/index.html"
+    },
+    {
       "dir": "news_20260503_192100",
       "title": "我從未像現在這樣感到落後 ｜ Andrej Karpathy AI演進深度剖析",
       "summary_short": "卡帕西在紅杉AI Ascent 2026大會上，分享從軟件1.0到3.0的躍遷、智慧體工程的崛起，以及人類在AI時代真正不可替代的價值。",
