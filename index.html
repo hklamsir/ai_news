@@ -49,8 +49,8 @@
             <h1>AI News Archive</h1>
             <p>收錄人工智能領域重要新聞、專題報道與深度分析</p>
             <div class="stats">
-                <div class="stat-item"><div class="stat-number" id="totalArchives">59</div><div class="stat-label">專題報道</div></div>
-                <div class="stat-item"><div class="stat-number" id="totalMonths">2</div><div class="stat-label">月份</div></div>
+                <div class="stat-item"><div class="stat-number" id="totalArchives" data-source="archives">0</div><div class="stat-label">專題報道</div></div>
+                <div class="stat-item"><div class="stat-number" id="totalMonths">0</div><div class="stat-label">月份</div></div>
             </div>
         </div>
     </section>
@@ -59,7 +59,7 @@
             <div class="month-header">
                 <span class="month-icon">📅</span>
                 <h2 class="month-title">2026 年 05 月</h2>
-                <span class="month-count">7 個專題</span>
+                <span class="month-count" data-month="auto">7 個專題</span>
             </div>
             <div class="archive-grid">
                 <article class="archive-card">
@@ -118,7 +118,7 @@
             <div class="month-header">
                 <span class="month-icon">📅</span>
                 <h2 class="month-title">2026 年 04 月</h2>
-                <span class="month-count">52 個專題</span>
+                <span class="month-count" data-month="auto">52 個專題</span>
             </div>
             <div class="archive-grid">
 
@@ -570,7 +570,51 @@
         </section>
 
     </div>
-    <footer>
+    
+    <script>
+    (function() {
+        // Fetch archives.json and update counts
+        fetch('archives.json')
+            .then(r => r.json())
+            .then(data => {
+                const archives = data.archives || [];
+                
+                // Count by month
+                const monthCounts = {};
+                archives.forEach(a => {
+                    const d = a.date || '';
+                    if (d.match(/^\d{4}-\d{2}/)) {
+                        const m = d.substring(0, 7);
+                        monthCounts[m] = (monthCounts[m] || 0) + 1;
+                    }
+                });
+                
+                // Update totalArchives
+                const totalEl = document.getElementById('totalArchives');
+                if (totalEl) totalEl.textContent = archives.length;
+                
+                // Update totalMonths
+                const monthsEl = document.getElementById('totalMonths');
+                if (monthsEl) monthsEl.textContent = Object.keys(monthCounts).length;
+                
+                // Update each month-count span
+                document.querySelectorAll('.month-count[data-month]').forEach(el => {
+                    const title = el.previousElementSibling;
+                    if (title && title.tagName === 'H2') {
+                        const match = title.textContent.match(/(\d{4}) 年 (\d{2}) 月/);
+                        if (match) {
+                            const key = match[1] + '-' + match[2];
+                            if (monthCounts[key] !== undefined) {
+                                el.textContent = monthCounts[key] + ' 個專題';
+                            }
+                        }
+                    }
+                });
+            })
+            .catch(e => console.error('Failed to load archives:', e));
+    })();
+    </script>
+<footer>
         <p>&copy; 2026 AI News Archive | 由 AI 技術騅動的新聞檔案庫</p>
     </footer>
 </body>
