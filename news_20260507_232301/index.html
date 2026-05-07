@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google AI 三大訂閱方案登陸香港：Plus/Pro/Ultra 月費 HK$38 起　網民教路「免費無限續杯」秘技</title>
+    <style>
+        :root {
+            --primary-blue: #00d4ff;
+            --primary-purple: #7b2cbf;
+            --accent-green: #00ff88;
+            --accent-orange: #ff9500;
+            --accent-red: #ff4757;
+            --dark-bg: #0a0a0f;
+            --card-bg: #12121a;
+            --card-bg-light: #1a1a28;
+            --text-primary: #ffffff;
+            --text-secondary: #a0a0b0;
+            --gradient-1: linear-gradient(135deg, #00d4ff 0%, #7b2cbf 100%);
+            --gradient-2: linear-gradient(135deg, #00d4ff 0%, #00ff88 100%);
+            --glow-blue: 0 0 20px rgba(0, 212, 255, 0.5);
+            --glow-purple: 0 0 20px rgba(123, 44, 191, 0.5);
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Noto Sans TC', sans-serif; background-color: var(--dark-bg); color: var(--text-primary); line-height: 1.8; overflow-x: hidden; }
+        @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-20px); } }
+        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.6; } }
+        @keyframes slideIn { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes codeRain { 0% { transform: translateY(-100%); opacity: 0; } 10% { opacity: 1; } 90% { opacity: 1; } 100% { transform: translateY(100vh); opacity: 0; } }
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); } }
+        .code-rain { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; overflow: hidden; }
+        .code-char { position: absolute; color: var(--primary-blue); font-family: 'Courier New', monospace; font-size: 14px; opacity: 0; animation: codeRain 4s linear infinite; }
+        .hero { position: relative; min-height: 80vh; display: flex; align-items: center; justify-content: center; padding: 80px 20px; background: linear-gradient(180deg, var(--dark-bg) 0%, #1a1a2e 100%); overflow: hidden; }
+        .hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(ellipse at center, rgba(123, 44, 191, 0.15) 0%, transparent 70%); z-index: 1; }
+        .hero-content { position: relative; z-index: 2; max-width: 1200px; text-align: center; animation: slideIn 1s ease-out; }
+        .hero-badge { display: inline-block; padding: 12px 32px; background: var(--gradient-1); border-radius: 50px; font-size: 18px; font-weight: 700; margin-bottom: 24px; box-shadow: var(--glow-blue); letter-spacing: 1px; }
+        .hero h1 { font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 900; margin-bottom: 24px; background: var(--gradient-1); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; line-height: 1.2; }
+        .hero-subtitle { font-size: clamp(1.2rem, 2.2vw, 1.5rem); color: var(--text-primary); max-width: 900px; margin: 0 auto 40px; line-height: 1.6; font-weight: 400; }
+        .hero-images { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; margin-top: 60px; }
+        .hero-image-card { position: relative; border-radius: 20px; overflow: hidden; aspect-ratio: 16/9; box-shadow: var(--glow-purple); transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .hero-image-card:hover { transform: scale(1.02); box-shadow: 0 0 40px rgba(123, 44, 191, 0.7); }
+        .hero-image-card img { width: 100%; height: 100%; object-fit: cover; }
+        .scroll-indicator { position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%); animation: float 2s ease-in-out infinite; z-index: 2; }
+        .scroll-indicator span { display: block; width: 30px; height: 50px; border: 2px solid var(--primary-blue); border-radius: 25px; position: relative; }
+        .scroll-indicator span::before { content: ''; position: absolute; top: 8px; left: 50%; transform: translateX(-50%); width: 6px; height: 10px; background: var(--primary-blue); border-radius: 3px; animation: pulse 1.5s infinite; }
+        section { padding: 80px 20px; position: relative; z-index: 1; }
+        .content-section { background: var(--card-bg); padding: 60px 50px; border-radius: 24px; border: 1px solid rgba(0, 212, 255, 0.2); max-width: 1100px; margin: 0 auto; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3); }
+        .content-section h3 { font-size: 1.6rem; margin: 40px 0 20px; color: var(--accent-green); }
+        .content-section p { color: var(--text-secondary); line-height: 2; font-size: 1.08rem; margin: 15px 0; }
+        .content-section ul { margin: 20px 0; padding-left: 30px; }
+        .content-section li { margin: 10px 0; color: var(--text-secondary); }
+        .meta-info { background: linear-gradient(135deg, rgba(0, 212, 255, 0.15) 0%, rgba(123, 44, 191, 0.15) 100%); padding: 30px; border-radius: 16px; margin-bottom: 40px; border-left: 5px solid var(--primary-blue); }
+        .meta-info p { margin: 12px 0; color: var(--text-secondary); font-size: 1.05rem; }
+        .meta-info strong { color: var(--primary-blue); font-weight: 600; }
+        .meta-info a { color: var(--primary-blue); text-decoration: none; word-break: break-all; }
+        .highlight-box { background: linear-gradient(135deg, rgba(0, 255, 136, 0.08) 0%, rgba(0, 212, 255, 0.08) 100%); padding: 30px; border-radius: 16px; border-left: 5px solid var(--accent-green); margin: 40px 0; }
+        .highlight-box h4 { color: var(--accent-green); margin-bottom: 15px; font-size: 1.3rem; }
+        .highlight-box p { color: var(--text-secondary); margin: 0; }
+        .alert-box { background: linear-gradient(135deg, rgba(255, 71, 87, 0.1) 0%, rgba(255, 149, 0, 0.1) 100%); padding: 25px 30px; border-radius: 16px; border-left: 5px solid var(--accent-red); margin: 30px 0; }
+        .alert-box h4 { color: var(--accent-red); margin-bottom: 12px; font-size: 1.15rem; }
+        .alert-box p { color: var(--text-secondary); margin: 8px 0; font-size: 1rem; }
+        .quote-box { background: linear-gradient(135deg, rgba(123, 44, 191, 0.15) 0%, rgba(0, 212, 255, 0.15) 100%); padding: 30px 40px; border-radius: 16px; border-left: 5px solid var(--primary-purple); margin: 40px 0; position: relative; }
+        .quote-box::before { content: '"'; position: absolute; top: 10px; left: 20px; font-size: 80px; color: var(--primary-purple); opacity: 0.3; font-family: Georgia, serif; }
+        .quote-box p { color: var(--text-primary); font-size: 1.2rem; font-style: italic; margin-bottom: 15px; }
+        .quote-box cite { color: var(--text-secondary); font-size: 0.95rem; }
+        .tech-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin: 40px 0; }
+        .tech-card { background: var(--card-bg-light); padding: 30px; border-radius: 16px; border: 1px solid rgba(0, 212, 255, 0.15); transition: transform 0.3s ease, box-shadow 0.3s ease; animation: fadeInUp 0.6s ease-out forwards; opacity: 0; }
+        .tech-card:nth-child(1) { animation-delay: 0.1s; }
+        .tech-card:nth-child(2) { animation-delay: 0.2s; }
+        .tech-card:nth-child(3) { animation-delay: 0.3s; }
+        .tech-card:nth-child(4) { animation-delay: 0.4s; }
+        .tech-card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0, 212, 255, 0.2); }
+        .tech-card-icon { font-size: 2.5rem; margin-bottom: 15px; }
+        .tech-card h4 { color: var(--primary-blue); margin-bottom: 12px; font-size: 1.2rem; }
+        .tech-card p { color: var(--text-secondary); font-size: 0.95rem; line-height: 1.7; }
+        .comparison-table { width: 100%; border-collapse: collapse; margin: 40px 0; border-radius: 16px; overflow: hidden; box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3); }
+        .comparison-table thead { background: linear-gradient(135deg, var(--primary-blue), var(--primary-purple)); }
+        .comparison-table th { padding: 18px 20px; text-align: left; font-weight: 600; font-size: 1.05rem; }
+        .comparison-table td { padding: 16px 20px; border-bottom: 1px solid rgba(255, 255, 255, 0.05); color: var(--text-secondary); }
+        .comparison-table tr:last-child td { border-bottom: none; }
+        .comparison-table tr:nth-child(even) { background: rgba(255, 255, 255, 0.02); }
+        .comparison-table .highlight-col { color: var(--accent-red); font-weight: 500; }
+        .timeline { position: relative; margin: 40px 0; padding-left: 40px; }
+        .timeline::before { content: ''; position: absolute; left: 15px; top: 0; bottom: 0; width: 2px; background: linear-gradient(180deg, var(--primary-blue), var(--primary-purple)); }
+        .timeline-item { position: relative; margin-bottom: 35px; padding: 20px 25px; background: var(--card-bg-light); border-radius: 12px; border: 1px solid rgba(0, 212, 255, 0.1); animation: fadeInUp 0.5s ease-out forwards; opacity: 0; }
+        .timeline-item:nth-child(1) { animation-delay: 0.1s; }
+        .timeline-item:nth-child(2) { animation-delay: 0.2s; }
+        .timeline-item:nth-child(3) { animation-delay: 0.3s; }
+        .timeline-item:nth-child(4) { animation-delay: 0.4s; }
+        .timeline-item:nth-child(5) { animation-delay: 0.5s; }
+        .timeline-item:nth-child(6) { animation-delay: 0.6s; }
+        .timeline-item::before { content: ''; position: absolute; left: -32px; top: 25px; width: 12px; height: 12px; background: var(--primary-blue); border-radius: 50%; box-shadow: var(--glow-blue); }
+        .timeline-date { color: var(--primary-blue); font-size: 0.9rem; font-weight: 600; margin-bottom: 8px; }
+        .timeline-title { color: var(--text-primary); font-size: 1.1rem; font-weight: 600; margin-bottom: 8px; }
+        .timeline-desc { color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6; }
+        footer { background: #050508; padding: 60px 20px; text-align: center; border-top: 1px solid rgba(255, 255, 255, 0.1); }
+        footer p { color: var(--text-secondary); margin-bottom: 20px; }
+        .footer-links { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; }
+        .footer-links a { color: var(--primary-blue); text-decoration: none; transition: color 0.3s ease; }
+        .footer-links a:hover { color: var(--text-primary); }
+        @media (max-width: 768px) {
+            .content-section { padding: 40px 25px; }
+            .hero-images { grid-template-columns: 1fr; }
+            .hero h1 { font-size: 2rem; }
+            .hero-subtitle { font-size: 1.2rem; }
+            .comparison-table { font-size: 0.9rem; }
+            .comparison-table th, .comparison-table td { padding: 12px 10px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="code-rain" id="codeRain"></div>
+    <section class="hero">
+        <div class="hero-content">
+            <span class="hero-badge">📰 AI News 專題報道</span>
+            <h1>Google AI 三大訂閱方案登陸香港：Plus/Pro/Ultra 月費 HK$38 起</h1>
+            <p class="hero-subtitle">網民教路「免費無限續杯」秘技　首月免費試用＋帳號輪替可長期享用 Pro 方案</p>
+            <div class="hero-images">
+                <div class="hero-image-card">
+                    <img src="img/img1.png" alt="Google AI 訂閱方案" onerror="this.style.display='none'">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <div class="meta-info">
+            <p><strong>📺 資料來源</strong>：<a href="https://ezone.hk/article/20095956" target="_blank">EZONE</a></p>
+            <p><strong>📅 發布日期</strong>：2026-05-04</p>
+            <p><strong>🤖 處理方式</strong>：AI 智能摘要 + 深度優化</p>
+        </div>
+
+        <div class="highlight-box">
+            <h4>💡 重點摘要</h4>
+            <p>Google 正式在香港推出全新 AI 訂閱方案，劃分為 Plus、Pro 及 Ultra 三大級別，月費由 HK$38 起。新方案深度整合 Gemini 3.1 Pro 模型、圖像生成及影片創作工具，並按級別提供 200GB 至 30TB 雲端儲存空間。</p>
+        </div>
+
+        <h3>📊 三大方案比較</h3>
+        <div class="tech-cards">
+            <div class="tech-card">
+                <div class="tech-card-icon">💚</div>
+                <h4>Google AI Plus</h4>
+                <p><strong>月費：HK$38（年繳 HK$388）</strong><br>Gemini 3.1 Pro、3.1 Pro Deep Research、200GB 儲存空間、Flow AI 創意工作室、入門級影片生成功能。</p>
+            </div>
+            <div class="tech-card">
+                <div class="tech-card-icon">💜</div>
+                <h4>Google AI Pro</h4>
+                <p><strong>月費：HK$158（年繳 HK$1,588）</strong><br>首月免費試用、5TB 儲存空間、完整圖像/影片生成功能、Gmail/文件/Vids 深度整合。</p>
+            </div>
+            <div class="tech-card">
+                <div class="tech-card-icon">⚡</div>
+                <h4>Google AI Ultra</h4>
+                <p><strong>月費：HK$1,588（僅月費）</strong><br>30TB 儲存空間、最高用量上限、Deep Think、Veo 3.1 最高存取權、YouTube Premium 個人計劃。</p>
+            </div>
+            <div class="tech-card">
+                <div class="tech-card-icon">🌐</div>
+                <h4>如何選擇？</h4>
+                <p>輕度用戶→Plus；內容創作者→Pro；企業級用戶→Ultra。首月免費試用讓用戶可以先體驗再決定。</p>
+            </div>
+        </div>
+
+        <h3>🔄 網民「免費無限續杯」秘技</h3>
+        <div class="quote-box">
+            <p>用戶可先申請 Google AI Pro 的免費試用，在一個月限期內盡情使用各類高級模型功能，關鍵在於必須在扣費限期前言記取消訂閱。</p>
+            <cite>— 網民心得分享</cite>
+        </div>
+
+        <div class="tech-cards">
+            <div class="tech-card">
+                <div class="tech-card-icon">1️⃣</div>
+                <h4>申請首月免費試用</h4>
+                <p>先申請 Google AI Pro 的免費試用，在一個月限期內盡情使用各類高級模型功能。關鍵在於必須在扣費限期前言記取消訂閱，以避免產生 HK$158 的月費支出。</p>
+            </div>
+            <div class="tech-card">
+                <div class="tech-card-icon">2️⃣</div>
+                <h4>運用「記憶遷移」指令</h4>
+                <p>在舊帳號試用期屆滿前，利用 Gemini 提供的「記憶移民」(Immigrate) 指令，將之前的對話歷史紀錄匯出（Export）。</p>
+            </div>
+            <div class="tech-card">
+                <div class="tech-card-icon">3️⃣</div>
+                <h4>帳號輪替與資料銜接</h4>
+                <p>當第一個帳號的試用結束後，可登入新的 Google 帳號再次申請免費試用，並將匯出的對話紀錄加進新帳號的 Gemini 中。</p>
+            </div>
+            <div class="tech-card">
+                <div class="tech-card-icon">♾️</div>
+                <h4>長期免費使用</h4>
+                <p>透過策略性操作，用戶可實現超過一個月的免費使用期，並同時完整保留對話紀錄，挑戰訂閱制 AI 服務的變現策略。</p>
+            </div>
+        </div>
+
+        <h3>📋 方案詳細比較</h3>
+        <table class="comparison-table">
+            <thead>
+                <tr>
+                    <th>功能</th>
+                    <th>AI Plus (HK$38/月)</th>
+                    <th>AI Pro (HK$158/月)</th>
+                    <th>AI Ultra (HK$1,588/月)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Gemini 3.1 Pro</td>
+                    <td>✅ 標準版</td>
+                    <td>✅ 高級版</td>
+                    <td>✅ 最高級</td>
+                </tr>
+                <tr>
+                    <td>3.1 Pro Deep Research</td>
+                    <td>✅</td>
+                    <td>✅</td>
+                    <td>✅</td>
+                </tr>
+                <tr>
+                    <td>圖像生成 (Nano Banana Pro)</td>
+                    <td>✅</td>
+                    <td>✅</td>
+                    <td>✅</td>
+                </tr>
+                <tr>
+                    <td>影片生成 (Veo 3.1)</td>
+                    <td>⚠️ 有限度</td>
+                    <td>✅ 完整</td>
+                    <td>✅ 最高用量</td>
+                </tr>
+                <tr>
+                    <td>雲端儲存空間</td>
+                    <td>200 GB</td>
+                    <td>5 TB</td>
+                    <td>30 TB</td>
+                </tr>
+                <tr>
+                    <td>YouTube Premium</td>
+                    <td>❌</td>
+                    <td>❌</td>
+                    <td>✅ 個人計劃</td>
+                </tr>
+                <tr>
+                    <td>Flow AI 創意工作室</td>
+                    <td>✅</td>
+                    <td>✅</td>
+                    <td>✅</td>
+                </tr>
+                <tr>
+                    <td>Gmail/日曆/Mee t Gemini</td>
+                    <td>✅</td>
+                    <td>✅ 深度整合</td>
+                    <td>✅ 最高權限</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>🕐 關鍵時間軸</h3>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-date">2026 年 5 月</div>
+                <div class="timeline-title">Google AI 訂閱方案正式登陸香港</div>
+                <div class="timeline-desc">Plus、Pro、Ultra 三大級別正式發售，月費由 HK$38 起。</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">首月</div>
+                <div class="timeline-title">AI Pro 首月免費試用優惠</div>
+                <div class="timeline-desc">新用戶可率先體驗 Pro 方案的所有高級功能。</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">一個月後</div>
+                <div class="timeline-title">第一個帳號試用期屆滿</div>
+                <div class="timeline-desc">用戶需要取消訂閱或繳付 HK$158 月費。</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">試用期屆滿前</div>
+                <div class="timeline-title">使用「記憶移民」指令</div>
+                <div class="timeline-desc">利用 Gemini 的 Immigrate 功能匯出對話歷史。</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">新帳號申請</div>
+                <div class="timeline-title">新 Google 帳號再次申請免費試用</div>
+                <div class="timeline-desc">登入新帳號，重新申請首月免費試用。</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">資料匯入</div>
+                <div class="timeline-title">將歷史對話匯入新帳號</div>
+                <div class="timeline-desc">在新的試用期內，保持所有過往對話的上下文記憶。</div>
+            </div>
+        </div>
+
+        <div class="alert-box">
+            <h4>⚠️ 注意事項</h4>
+            <p>此「免費續杯」方法依賴於不斷創建新 Google 帳號，可能涉及 Google 服務條款的使用限制。用戶需自行判斷風險。</p>
+        </div>
+
+        <h3>🔮 業界觀察</h3>
+        <div class="quote-box">
+            <p>香港作為 Google AI 服務的重要市場，三層訂閱架構明顯針對不同使用深度用戶設計。首月免費試用加上帳號輪替技巧，意味著進取用戶可透過低成本方式長期享用 Pro 方案功能，令訂閱制 AI 服務的變現策略受到挑戰。</p>
+            <cite>— 業界分析師</cite>
+        </div>
+
+        <div class="highlight-box">
+            <h4>💭 總結</h4>
+            <p>Google AI 訂閱方案為香港用戶提供了多元選擇，從 HK$38 的入門方案到 HK$1,588 的旗艦方案，涵蓋不同使用場景。首月免費試用加上「記憶遷移」功能，讓用戶可以在試用不同方案時保留珍貴的對話歷史。然而，長期透過帳號輪替享用免費試用可能涉及服務條款風險，用戶宜自行衡量。</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2026 AI News Archive | 由 AI 技術生成</p>
+        <div class="footer-links">
+            <a href="../index.html">返回主頁</a>
+            <a href="https://github.com/hklamsir/ai_news" target="_blank">GitHub</a>
+            <a href="https://hklamsir.github.io/ai_news/" target="_blank">瀏覽所有專題</a>
+        </div>
+    </footer>
+
+    <script>
+        const codeRain = document.getElementById('codeRain');
+        const chars = '01アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン';
+        for (let i = 0; i < 50; i++) {
+            const char = document.createElement('span');
+            char.className = 'code-char';
+            char.textContent = chars[Math.floor(Math.random() * chars.length)];
+            char.style.left = Math.random() * 100 + '%';
+            char.style.animationDelay = Math.random() * 4 + 's';
+            char.style.animationDuration = (Math.random() * 3 + 3) + 's';
+            codeRain.appendChild(char);
+        }
+    </script>
+</body>
+</html>
