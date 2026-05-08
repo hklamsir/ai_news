@@ -1,6 +1,14 @@
 {
   "archives": [
     {
+      "dir": "news_20260508_123500",
+      "title": "AI 是工程文化的鏡子：為何 AI 生成代碼越來越差",
+      "summary_short": "深度分析揭示 AI 生成代碼質量下降的真正原因：問題不在 AI 本身，而在於我們餵給它的訓練數據。GitHub 5.18 億項目大部分是垃圾，而 AI 只是鏡子，反映工程文化的長期危機。",
+      "images": [],
+      "date": "2026-05-08",
+      "url": "./news_20260508_123500/index.html"
+    },
+    {
       "dir": "news_20260508_090200",
       "title": "Google Chrome 悄悄下載 4GB 檔案：用戶知情與否？刪除方法一次看",
       "summary_short": "Google 正在向大量 Chrome 用戶的電腦悄悄下載一個 4GB 的大型檔案 weights.bin，這是 Gemini Nano 設備端 AI 模型的權重檔案。用戶可通過關閉設備端 AI 設定來永久移除。",
