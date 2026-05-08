@@ -1,6 +1,14 @@
 {
   "archives": [
     {
+      "dir": "news_20260508_090200",
+      "title": "Google Chrome 悄悄下載 4GB 檔案：用戶知情與否？刪除方法一次看",
+      "summary_short": "Google 正在向大量 Chrome 用戶的電腦悄悄下載一個 4GB 的大型檔案 weights.bin，這是 Gemini Nano 設備端 AI 模型的權重檔案。用戶可通過關閉設備端 AI 設定來永久移除。",
+      "images": [],
+      "date": "2026-05-08",
+      "url": "./news_20260508_090200/index.html"
+    },
+    {
       "dir": "news_20260507_232301",
       "title": "Google AI 三大訂閱方案登陸香港：Plus/Pro/Ultra 月費 HK$38 起　網民教路「免費無限續杯」秘技",
       "summary_short": "Google AI 三大訂閱方案正式登陸香港，Plus 月費 HK$38、Pro HK$158、Ultra HK$1,588。網民分享「免費無限續杯」秘技：首月免費試用＋帳號輪替＋記憶遷移，可長期享用 Pro 方案。",
