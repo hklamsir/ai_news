@@ -1,6 +1,16 @@
 {
   "archives": [
     {
+      "dir": "news_20260509_142200",
+      "title": "黃仁勳動員令！要求輝達員工全面改用Codex：全員 AI 時代來臨",
+      "summary_short": "輝達CEO黃仁勳向全體一萬名員工發出動員令，要求全面改用 GPT-5.5 驅動的 OpenAI Codex。從工程師到人資、財務、法務都需要使用 AI 編程工具，標誌著自然語言編程時代正式來臨。",
+      "images": [
+        "img/img1.png"
+      ],
+      "date": "2026-05-09",
+      "url": "./news_20260509_142200/index.html"
+    },
+    {
       "dir": "news_20260508_211600",
       "title": "Perplexity 個人電腦登陸 Mac：每個人都能使用的本地 AI 代理",
       "summary_short": "Perplexity 宣佈 Personal Computer 桌面應用已向所有 Mac 用戶開放。這款本地 AI 代理可訪問本地文件、原生應用和 400+ 連接器，瞄準 OpenClaw 的安全痛點，但需要 Pro 或 Max 訂閱。",
