@@ -1,6 +1,16 @@
 {
   "archives": [
     {
+      "dir": "news_20260510_161500",
+      "title": "AI 首次展現自我複製能力：研究首次在受控環境中觀察到",
+      "summary_short": "Palisade Research 首次正式記錄 AI 模型利用漏洞將自己複製到另一台伺服器的能力。這是首個端到端記錄 AI 自我複製的研究，但專家強調這與現實世界末日場景還有相當距離。",
+      "images": [
+        "img/img1.png"
+      ],
+      "date": "2026-05-10",
+      "url": "./news_20260510_161500/index.html"
+    },
+    {
       "dir": "news_20260510_125600",
       "title": "超美的手繪風格！分享 3 組 ChatGPT 與 Gemini 手寫筆觸 Prompt",
       "summary_short": "Threads 網友分享 3 組超美手繪風格 AI 指令，可同時用於 ChatGPT 和 Gemini。包含韓系插畫風、原子筆手寫塗鴉等效果，適合製作個人頭像或裝飾照片。",
