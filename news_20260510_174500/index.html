@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LLM 文件腐蝕問題研究：DELEGATE-52 揭示每次處理都在降解你的文檔</title>
+    <style>
+        :root { --primary-blue: #00d4ff; --primary-purple: #7b2cbf; --accent-green: #00ff88; --accent-red: #ff4757; --dark-bg: #0a0a0f; --card-bg: #12121a; --card-bg-light: #1a1a28; --text-primary: #ffffff; --text-secondary: #a0a0b0; --gradient-1: linear-gradient(135deg, #00d4ff 0%, #7b2cbf 100%); --glow-blue: 0 0 20px rgba(0, 212, 255, 0.5); --glow-purple: 0 0 20px rgba(123, 44, 191, 0.5); }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Noto Sans TC', sans-serif; background-color: var(--dark-bg); color: var(--text-primary); line-height: 1.8; overflow-x: hidden; }
+        @keyframes slideIn { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); } }
+        .code-rain { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; overflow: hidden; }
+        .code-char { position: absolute; color: var(--primary-blue); font-family: 'Courier New', monospace; font-size: 14px; opacity: 0; animation: codeRain 4s linear infinite; }
+        @keyframes codeRain { 0% { transform: translateY(-100%); opacity: 0; } 10% { opacity: 1; } 90% { opacity: 1; } 100% { transform: translateY(100vh); opacity: 0; } }
+        .hero { position: relative; min-height: 65vh; display: flex; align-items: center; justify-content: center; padding: 80px 20px; background: linear-gradient(180deg, var(--dark-bg) 0%, #1a1a2e 100%); overflow: hidden; }
+        .hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(ellipse at center, rgba(255, 71, 87, 0.1) 0%, transparent 70%); z-index: 1; }
+        .hero-content { position: relative; z-index: 2; max-width: 1200px; text-align: center; animation: slideIn 1s ease-out; }
+        .hero-badge { display: inline-block; padding: 12px 32px; background: linear-gradient(135deg, #ff4757 0%, #7b2cbf 100%); border-radius: 50px; font-size: 18px; font-weight: 700; margin-bottom: 24px; box-shadow: 0 0 20px rgba(255, 71, 87, 0.5); }
+        .hero h1 { font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 900; margin-bottom: 24px; background: var(--gradient-1); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; line-height: 1.2; }
+        .hero-subtitle { font-size: clamp(1.2rem, 2.2vw, 1.5rem); color: var(--text-primary); max-width: 900px; margin: 0 auto 40px; line-height: 1.6; }
+        section { padding: 80px 20px; position: relative; z-index: 1; }
+        .content-section { background: var(--card-bg); padding: 60px 50px; border-radius: 24px; border: 1px solid rgba(0, 212, 255, 0.2); max-width: 1100px; margin: 0 auto; }
+        .content-section h3 { font-size: 1.6rem; margin: 40px 0 20px; color: var(--accent-green); }
+        .content-section p { color: var(--text-secondary); line-height: 2; font-size: 1.08rem; margin: 15px 0; }
+        .meta-info { background: linear-gradient(135deg, rgba(0, 212, 255, 0.15) 0%, rgba(123, 44, 191, 0.15) 100%); padding: 30px; border-radius: 16px; margin-bottom: 40px; border-left: 5px solid var(--primary-blue); }
+        .meta-info p { margin: 12px 0; color: var(--text-secondary); font-size: 1.05rem; }
+        .meta-info strong { color: var(--primary-blue); font-weight: 600; }
+        .meta-info a { color: var(--primary-blue); text-decoration: none; word-break: break-all; }
+        .alert-box { background: linear-gradient(135deg, rgba(255, 71, 87, 0.1) 0%, rgba(255, 149, 0, 0.1) 100%); padding: 30px; border-radius: 16px; border-left: 5px solid var(--accent-red); margin: 40px 0; }
+        .alert-box h4 { color: var(--accent-red); margin-bottom: 15px; font-size: 1.3rem; }
+        .alert-box p { color: var(--text-secondary); margin: 0; }
+        .highlight-box { background: linear-gradient(135deg, rgba(0, 255, 136, 0.08) 0%, rgba(0, 212, 255, 0.08) 100%); padding: 30px; border-radius: 16px; border-left: 5px solid var(--accent-green); margin: 40px 0; }
+        .highlight-box h4 { color: var(--accent-green); margin-bottom: 15px; font-size: 1.3rem; }
+        .highlight-box p { color: var(--text-secondary); margin: 0; }
+        .quote-box { background: linear-gradient(135deg, rgba(123, 44, 191, 0.15) 0%, rgba(0, 212, 255, 0.15) 100%); padding: 30px 40px; border-radius: 16px; border-left: 5px solid var(--primary-purple); margin: 40px 0; }
+        .quote-box p { color: var(--text-primary); font-size: 1.2rem; font-style: italic; margin-bottom: 15px; }
+        .quote-box cite { color: var(--text-secondary); font-size: 0.95rem; }
+        .tech-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin: 40px 0; }
+        .tech-card { background: var(--card-bg-light); padding: 30px; border-radius: 16px; border: 1px solid rgba(0, 212, 255, 0.15); animation: fadeInUp 0.6s ease-out forwards; opacity: 0; }
+        .tech-card:nth-child(1) { animation-delay: 0.1s; }
+        .tech-card:nth-child(2) { animation-delay: 0.2s; }
+        .tech-card:nth-child(3) { animation-delay: 0.3s; }
+        .tech-card:nth-child(4) { animation-delay: 0.4s; }
+        .tech-card-icon { font-size: 2.5rem; margin-bottom: 15px; }
+        .tech-card h4 { color: var(--primary-blue); margin-bottom: 12px; font-size: 1.2rem; }
+        .tech-card p { color: var(--text-secondary); font-size: 0.95rem; line-height: 1.7; }
+        .table-section { overflow-x: auto; margin: 40px 0; }
+        .comparison-table { width: 100%; border-collapse: collapse; border-radius: 16px; overflow: hidden; box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3); }
+        .comparison-table thead { background: linear-gradient(135deg, var(--primary-blue), var(--primary-purple)); }
+        .comparison-table th { padding: 18px 20px; text-align: left; font-weight: 600; font-size: 1.05rem; }
+        .comparison-table td { padding: 16px 20px; border-bottom: 1px solid rgba(255, 255, 255, 0.05); color: var(--text-secondary); }
+        .comparison-table tr:last-child td { border-bottom: none; }
+        .comparison-table tr:nth-child(even) { background: rgba(255, 255, 255, 0.02); }
+        footer { background: #050508; padding: 60px 20px; text-align: center; border-top: 1px solid rgba(255, 255, 255, 0.1); }
+        footer p { color: var(--text-secondary); margin-bottom: 20px; }
+        .footer-links { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; }
+        .footer-links a { color: var(--primary-blue); text-decoration: none; transition: color 0.3s ease; }
+        .footer-links a:hover { color: var(--text-primary); }
+        @media (max-width: 768px) {
+            .content-section { padding: 40px 25px; }
+            .hero h1 { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="code-rain" id="codeRain"></div>
+    <section class="hero">
+        <div class="hero-content">
+            <span class="hero-badge">📄 LLM 研究</span>
+            <h1>LLM 文件腐蝕問題</h1>
+            <p class="hero-subtitle">DELEGATE-52 研究揭示：即使最強模型平均也會腐蝕 25% 文檔內容</p>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <div class="meta-info">
+            <p><strong>📺 資料來源</strong>：<a href="https://news.ycombinator.com/item?id=48073246" target="_blank">Hacker News</a></p>
+            <p><strong>📅 發布日期</strong>：2026-05-10</p>
+            <p><strong>🤖 處理方式</strong>：AI 智能摘要 + 社群討論精選</p>
+        </div>
+
+        <div class="alert-box">
+            <h4>⚠️ 核心發現</h4>
+            <p>即使是最強的前沿模型（Gemini 3.1 Pro、Claude 4.6 Opus、GPT 5.4），在長 workflow 結束時平均腐蝕 25% 的文檔內容。每次 LLM 處理都會導致訊息損失和扭曲。</p>
+        </div>
+
+        <div class="highlight-box">
+            <h4>💡 研究背景：DELEGATE-52</h4>
+            <p>研究人員模擬了 52 個專業領域的長 delegation workflow，包括 coding、crystallography、music notation 等，測試 19 個 LLM 的表現。</p>
+        </div>
+
+        <h3>🔬 專家解讀</h3>
+        <div class="quote-box">
+            <p>「LLM 是最複雜的猜測機器。這讓它既無用又取決於如何使用。」</p>
+            <cite>— Hacker News 社群</cite>
+        </div>
+        <div class="quote-box">
+            <p>「LLM 是均值回歸機器——越偏離訓練數據的內容，越容易被拉向平均。」</p>
+            <cite>— 另一位資深開發者</cite>
+        </div>
+
+        <h3>📊 比喻：JPEG 壓縮</h3>
+        <p>這個問題的絕佳比喻是 JPEG 圖片壓縮：</p>
+        <ul>
+            <li>每次通過 LLM 處理就像對圖片進行 JPEG 壓縮</li>
+            <li>每次都會損失一些品質</li>
+            <li>長期累積後最終變得無法識別</li>
+            <li>對於文檔，精確性會逐漸喪失，獨特的細節會被磨平</li>
+        </ul>
+
+        <h3>🛠️ 實用解決方案</h3>
+        <div class="tech-cards">
+            <div class="tech-card">
+                <div class="tech-card-icon">✂️</div>
+                <h4>使用 Surgical Edit</h4>
+                <p>只讓 LLM 做小範圍精確編輯，而非整個文檔來回處理。現代 coding agent 使用專門工具（如 str_replace）避免整個文件來回。</p>
+            </div>
+            <div class="tech-card">
+                <div class="tech-card-icon">🔍</div>
+                <h4>隔離事實與 LLMs</h4>
+                <p>確定性數據通過 LLM 處理前先驗證，LLM 只輔助寫作而非數據處理。避免把 AI 當成「電話遊戲」的中間人。</p>
+            </div>
+            <div class="tech-card">
+                <div class="tech-card-icon">📋</div>
+                <h4>建立版本控制</h4>
+                <p>使用 git diff 追蹤 LLM 的變更，並手動審查每次修改。這是應對 LLM 不可預測性的最佳防線。</p>
+            </div>
+            <div class="tech-card">
+                <div class="tech-card-icon">🧩</div>
+                <h4>分開處理</h4>
+                <p>讓 LLM 研究獨立的 markdown 文件，最後再組裝成文檔。類似於軟體開發中的關注點分離原則。</p>
+            </div>
+        </div>
+
+        <h3>💬 社群精彩討論</h3>
+        <div class="quote-box">
+            <p>「就像在瓷器店裡揮舞狼牙棒——傳輸 100GB 數據會在企業網絡中造成巨大噪音。」</p>
+            <cite>— 關於 AI 自我複製研究的評論，同樣適用於這裡</cite>
+        </div>
+
+        <h3>⚖️ 批評與反思</h3>
+        <p>研究也受到質疑：</p>
+        <ul>
+            <li>使用的 agentic harness 太基礎（只有 read_file 和 write_file）</li>
+            <li>結果更多反映的是 harness 設計問題而非模型本身問題</li>
+            <li>現代 coding agent（如 Claude Code）使用專門設計的工具來避免這些問題</li>
+        </ul>
+        <p>但核心問題依然存在：每次 LLM 處理都會導致一定程度的訊息損失。</p>
+
+        <div class="highlight-box">
+            <h4>💭 結論</h4>
+            <p>LLM 是強大的工具，但也有其固有的局限性。每次處理都會引入「entropy」—— 就像每次複印機複印都會略微降 quality。了解這些限制並採取適當的防範措施，是在工作流程中有效使用 AI 的關鍵。</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2026 AI News Archive | 由 AI 技術生成</p>
+        <div class="footer-links">
+            <a href="../index.html">返回主頁</a>
+            <a href="https://github.com/hklamsir/ai_news" target="_blank">GitHub</a>
+            <a href="https://hklamsir.github.io/ai_news/" target="_blank">瀏覽所有專題</a>
+        </div>
+    </footer>
+
+    <script>
+        const codeRain = document.getElementById('codeRain');
+        const chars = '01アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン';
+        for (let i = 0; i < 50; i++) {
+            const char = document.createElement('span');
+            char.className = 'code-char';
+            char.textContent = chars[Math.floor(Math.random() * chars.length)];
+            char.style.left = Math.random() * 100 + '%';
+            char.style.animationDelay = Math.random() * 4 + 's';
+            char.style.animationDuration = (Math.random() * 3 + 3) + 's';
+            codeRain.appendChild(char);
+        }
+    </script>
+</body>
+</html>

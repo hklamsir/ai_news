@@ -1,0 +1,7 @@
+{
+  "title": "LLM 文件腐蝕問題研究：DELEGATE-52 揭示每次處理都在降解你的文檔",
+  "youtube_url": null,
+  "date": "2026-05-10",
+  "summary_length": 1500,
+  "summary_short": "DELEGATE-52 研究發現即使最強模型（Gemini 3.1 Pro、Claude 4.6 Opus、GPT 5.4）平均也會腐蝕 25% 的文檔內容。每次 LLM 處理就像 JPEG 壓縮，長期累積會導致內容完全變形。"
+}
