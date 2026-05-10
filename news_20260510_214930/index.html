@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>網路安全進入 AI 對決 AI 時代：世界經濟論壇報告 - AI News 專題報道</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-blue: #00d4ff;
+            --primary-purple: #7b2cbf;
+            --accent-green: #00ff88;
+            --accent-orange: #ff9500;
+            --accent-red: #ff4757;
+            --dark-bg: #0a0a0f;
+            --card-bg: #12121a;
+            --card-bg-light: #1a1a28;
+            --text-primary: #ffffff;
+            --text-secondary: #a0a0b0;
+            --gradient-1: linear-gradient(135deg, #00d4ff 0%, #7b2cbf 100%);
+            --gradient-2: linear-gradient(135deg, #00d4ff 0%, #00ff88 100%);
+            --glow-blue: 0 0 20px rgba(0, 212, 255, 0.5);
+            --glow-purple: 0 0 20px rgba(123, 44, 191, 0.5);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Noto Sans TC', sans-serif; background-color: var(--dark-bg); color: var(--text-primary); line-height: 1.8; overflow-x: hidden; }
+
+        @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-20px); } }
+        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.6; } }
+        @keyframes slideIn { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes codeRain { 0% { transform: translateY(-100%); opacity: 0; } 10% { opacity: 1; } 90% { opacity: 1; } 100% { transform: translateY(100vh); opacity: 0; } }
+
+        /* 代碼雨背景 */
+        .code-rain { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; overflow: hidden; }
+        .code-char { position: absolute; color: var(--primary-blue); font-family: 'Courier New', monospace; font-size: 14px; opacity: 0; animation: codeRain 4s linear infinite; }
+
+        /* Hero Section */
+        .hero { position: relative; min-height: 80vh; display: flex; align-items: center; justify-content: center; padding: 80px 20px; background: linear-gradient(180deg, var(--dark-bg) 0%, #1a1a2e 100%); overflow: hidden; }
+        .hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(ellipse at center, rgba(123, 44, 191, 0.15) 0%, transparent 70%); z-index: 1; }
+        .hero-content { position: relative; z-index: 2; max-width: 1200px; text-align: center; animation: slideIn 1s ease-out; }
+        .hero-badge { display: inline-block; padding: 12px 32px; background: var(--gradient-1); border-radius: 50px; font-size: 18px; font-weight: 700; margin-bottom: 24px; box-shadow: var(--glow-blue); letter-spacing: 1px; }
+        .hero h1 { font-size: clamp(2rem, 5vw, 4rem); font-weight: 900; margin-bottom: 24px; background: var(--gradient-1); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; line-height: 1.2; }
+        .hero-subtitle { font-size: clamp(1.2rem, 2.2vw, 1.6rem); color: var(--text-primary); max-width: 900px; margin: 0 auto 40px; line-height: 1.6; font-weight: 400; }
+        .hero-images { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; margin-top: 60px; }
+        .hero-image-card { position: relative; border-radius: 20px; overflow: hidden; aspect-ratio: 16/9; box-shadow: var(--glow-purple); transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .hero-image-card:hover { transform: scale(1.02); box-shadow: 0 0 40px rgba(123, 44, 191, 0.7); }
+        .hero-image-card img { width: 100%; height: 100%; object-fit: cover; }
+        .scroll-indicator { position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%); animation: float 2s ease-in-out infinite; z-index: 2; }
+        .scroll-indicator span { display: block; width: 30px; height: 50px; border: 2px solid var(--primary-blue); border-radius: 25px; position: relative; }
+        .scroll-indicator span::before { content: ''; position: absolute; top: 8px; left: 50%; transform: translateX(-50%); width: 6px; height: 10px; background: var(--primary-blue); border-radius: 3px; animation: pulse 1.5s infinite; }
+
+        /* Content Section */
+        section { padding: 80px 20px; position: relative; z-index: 1; }
+        .content-section { background: var(--card-bg); padding: 60px 50px; border-radius: 24px; border: 1px solid rgba(0, 212, 255, 0.2); max-width: 1100px; margin: 0 auto; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3); }
+
+        .content-section h3 { font-size: 1.6rem; margin: 40px 0 20px; color: var(--accent-green); }
+        .content-section p { color: var(--text-secondary); line-height: 2; font-size: 1.08rem; margin: 15px 0; }
+        .content-section ul { margin: 20px 0; padding-left: 30px; }
+        .content-section li { margin: 10px 0; color: var(--text-secondary); }
+
+        .meta-info { background: linear-gradient(135deg, rgba(0, 212, 255, 0.15) 0%, rgba(123, 44, 191, 0.15) 100%); padding: 30px; border-radius: 16px; margin-bottom: 40px; border-left: 5px solid var(--primary-blue); }
+        .meta-info p { margin: 12px 0; color: var(--text-secondary); font-size: 1.05rem; }
+        .meta-info strong { color: var(--primary-blue); font-weight: 600; }
+        .meta-info a { color: var(--primary-blue); text-decoration: none; word-break: break-all; }
+
+        .highlight-box { background: linear-gradient(135deg, rgba(0, 255, 136, 0.08) 0%, rgba(0, 212, 255, 0.08) 100%); padding: 30px; border-radius: 16px; border-left: 5px solid var(--accent-green); margin: 40px 0; }
+        .highlight-box h4 { color: var(--accent-green); margin-bottom: 15px; font-size: 1.3rem; }
+        .highlight-box p { color: var(--text-secondary); margin: 0; }
+
+        /* Footer */
+        footer { background: #050508; padding: 60px 20px; text-align: center; border-top: 1px solid rgba(255, 255, 255, 0.1); }
+        footer p { color: var(--text-secondary); margin-bottom: 20px; }
+        .footer-links { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; }
+        .footer-links a { color: var(--primary-blue); text-decoration: none; transition: color 0.3s ease; }
+        .footer-links a:hover { color: var(--text-primary); }
+
+        /* RWD */
+        @media (max-width: 768px) {
+            .content-section { padding: 40px 25px; }
+            .hero-images { grid-template-columns: 1fr; }
+            .hero h1 { font-size: 2rem; }
+            .hero-subtitle { font-size: 1.2rem; }
+        }
+    
+        .alert-box { background: linear-gradient(135deg, rgba(255, 71, 87, 0.1) 0%, rgba(255, 149, 0, 0.1) 100%); padding: 25px 30px; border-radius: 16px; border-left: 5px solid var(--accent-red); margin: 30px 0; }
+        .alert-box h4 { color: var(--accent-red); margin-bottom: 12px; font-size: 1.15rem; }
+        .alert-box p { color: var(--text-secondary); margin: 8px 0; font-size: 1rem; }
+        .quote-box { background: linear-gradient(135deg, rgba(123, 44, 191, 0.15) 0%, rgba(0, 212, 255, 0.15) 100%); padding: 30px 40px; border-radius: 16px; border-left: 5px solid var(--primary-purple); margin: 40px 0; position: relative; }
+        .quote-box::before { content: '"'; position: absolute; top: 10px; left: 20px; font-size: 80px; color: var(--primary-purple); opacity: 0.3; font-family: Georgia, serif; }
+        .quote-box p { color: var(--text-primary); font-size: 1.2rem; font-style: italic; margin-bottom: 15px; }
+        .quote-box cite { color: var(--text-secondary); font-size: 0.95rem; }
+        .tech-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin: 40px 0; }
+        .tech-card { background: var(--card-bg-light); padding: 30px; border-radius: 16px; border: 1px solid rgba(0, 212, 255, 0.15); transition: transform 0.3s ease, box-shadow 0.3s ease); }
+        .tech-card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0, 212, 255, 0.2); }
+        .tech-card-icon { font-size: 2.5rem; margin-bottom: 15px; }
+        .tech-card h4 { color: var(--primary-blue); margin-bottom: 12px; font-size: 1.2rem; }
+        .tech-card p { color: var(--text-secondary); font-size: 0.95rem; line-height: 1.7; }
+        .comparison-table { width: 100%; border-collapse: collapse; margin: 40px 0; border-radius: 16px; overflow: hidden; box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3); }
+        .comparison-table thead { background: linear-gradient(135deg, var(--primary-blue), var(--primary-purple)); }
+        .comparison-table th { padding: 18px 20px; text-align: left; font-weight: 600; font-size: 1.05rem; }
+        .comparison-table td { padding: 16px 20px; border-bottom: 1px solid rgba(255, 255, 255, 0.05); color: var(--text-secondary); }
+        .comparison-table tr:last-child td { border-bottom: none; }
+        .comparison-table tr:nth-child(even) { background: rgba(255, 255, 255, 0.02); }
+        .comparison-table .highlight-col { color: var(--accent-green); font-weight: 500; }
+        .timeline { position: relative; margin: 40px 0; padding-left: 40px; }
+        .timeline::before { content: ''; position: absolute; left: 15px; top: 0; bottom: 0; width: 2px; background: linear-gradient(180deg, var(--primary-blue), var(--primary-purple)); }
+        .timeline-item { position: relative; margin-bottom: 35px; padding: 20px 25px; background: var(--card-bg-light); border-radius: 12px; border: 1px solid rgba(0, 212, 255, 0.1); }
+        .timeline-item::before { content: ''; position: absolute; left: -32px; top: 25px; width: 12px; height: 12px; background: var(--primary-blue); border-radius: 50%; box-shadow: var(--glow-blue); }
+        .timeline-date { color: var(--primary-blue); font-size: 0.9rem; font-weight: 600; margin-bottom: 8px; }
+        .timeline-title { color: var(--text-primary); font-size: 1.1rem; font-weight: 600; margin-bottom: 8px; }
+        .timeline-desc { color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6; }
+</style>
+</head>
+<body>
+    <!-- 代碼雨背景 -->
+    <div class="code-rain" id="codeRain"></div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <span class="hero-badge">📰 AI News 專題報道</span>
+            <h1>網路安全進入 AI 對決 AI 時代</h1>
+            <p class="hero-subtitle">世界經濟論壇最新報告揭示，攻擊者與防禦者同步部署自主系統，開啟智能對抗新紀元</p>
+            <div class="hero-images">
+                <div class="hero-image-card">
+                    <img src="img/img1.png" alt="AI 網路安全對決概念圖">
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <span></span>
+
+            <!-- 四大企業案例 -->
+            <h3>🏢 企業案例：AI 防御系統實戰</h3>
+            <div class="tech-cards">
+                <div class="tech-card">
+                    <div class="tech-card-icon">🔴</div>
+                    <h4>IBM ATOM</h4>
+                    <p>IBM 的「ATOM」系統以代理式 AI 自主調查、入侵數據豐富化並評分資安警報。現時處理約 95% 的日常調查，每月自動化超過 850 分析小時，大幅提升資安團隊效率。</p>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-card-icon">🔵</div>
+                    <h4>Google Big Sleep</h4>
+                    <p>Google 部署「Big Sleep」AI 代理識別未知軟件漏洞，在漏洞被利用前搶先發現並修補，主動式防禦未知威脅。</p>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-card-icon">🟡</div>
+                    <h4>Google CodeMender</h4>
+                    <p>Google 的「CodeMender」自動生成安全修補程式，已修補超過 100 個重大安全漏洞，將過往需數週的修補工作壓縮至數分鐘內完成。</p>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-card-icon">🟢</div>
+                    <h4>Allianz 假設分析系統</h4>
+                    <p>Allianz 的「假設驅動 AI 分析系統」在調查期間動態檢索和分析取證數據，取代集中式端點收集，以應對企業系統生成的海量資安數據。</p>
+                </div>
+            </div>
+
+            <h3>📊 AI 資安效益對比</h3>
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>指標</th>
+                        <th>傳統資安</th>
+                        <th>AI 資安</th>
+                        <th>差異</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>平均入侵成本</td>
+                        <td>USD 4.8M</td>
+                        <td>USD 2.9M</td>
+                        <td class="highlight-col">-USD 1.9M</td>
+                    </tr>
+                    <tr>
+                        <td>入侵發現時間</td>
+                        <td>~250 天</td>
+                        <td>~170 天</td>
+                        <td class="highlight-col">-80 天</td>
+                    </tr>
+                    <tr>
+                        <td>分析師工時（月）</td>
+                        <td>全人手處理</td>
+                        <td>850+ 小時自動化</td>
+                        <td class="highlight-col">大幅減少</td>
+                    </tr>
+                    <tr>
+                        <td>威脅調查覆蓋率</td>
+                        <td>選擇性抽樣</td>
+                        <td>95% 自動化</td>
+                        <td class="highlight-col">接近全覆蓋</td>
+                    </tr>
+                    <tr>
+                        <td>漏洞修補速度</td>
+                        <td>數週</td>
+                        <td>數分鐘</td>
+                        <td class="highlight-col">指數提升</td>
+                    </tr>
+                    <tr>
+                        <td>AI 應用普及率</td>
+                        <td>—</td>
+                        <td>77% 企業已採用</td>
+                        <td class="highlight-col">主流趨勢</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>⏱️ AI 資安發展時間軸</h3>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date">2024 年</div>
+                    <div class="timeline-title">AI 攻擊工具平民化</div>
+                    <div class="timeline-desc">生成式 AI 降低網路攻擊技術門檻，初級駭客亦能發動複雜攻擊。</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2025 年中</div>
+                    <div class="timeline-title">企業大規模採用 AI 資安</div>
+                    <div class="timeline-desc">77% 企業開始在資安營運中部署 AI 工具，資安 AI 應用從實驗走向生產。</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2025 年底</div>
+                    <div class="timeline-title">IBM ATOM 全面部署</div>
+                    <div class="timeline-desc">IBM ATOM 系統達到每日 95% 調查自動化，標誌自主資安系統成熟。</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2026 年 3 月</div>
+                    <div class="timeline-title">Google CodeMender 100+ 漏洞</div>
+                    <div class="timeline-desc">Google 宣佈 CodeMender 已自動修補超過 100 個重大安全漏洞。</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2026 年 5 月</div>
+                    <div class="timeline-title">WEF 報告發布</div>
+                    <div class="timeline-desc">WEF 與 KPMG 聯合發布《赋權守衛者：AI 資安》報告，系統性論述 AI-vs-AI 新時代。</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2027 年（預計）</div>
+                    <div class="timeline-title">完全自主資安系統</div>
+                    <div class="timeline-desc">專家預期完全自主的資安代理系統將成為主流，人機協作模式全面重構。</div>
+                </div>
+            </div>
+
+            <div class="quote-box">
+                <p>「對手正以機器速度運作，利用 AI 進行目標偵察、生成惡意軟件、利用漏洞、規避偵測並大規模發動攻擊。過去需數週的工作，現可在幾分鐘內完成。」</p>
+                <cite>— 世界經濟論壇《赋權守衛者：AI 資安》報告，2026 年 5 月</cite>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Content Section -->
+    <section>
+        <div class="content-section">
+            <!-- Meta Info -->
+            <div class="meta-info">
+                <p><strong>📺 資料來源</strong>：The Economic Times</p>
+                <p><strong>📅 發布日期</strong>：2026-05-10</p>
+                <p><strong>🤖 處理方式</strong>：AI 智能摘要生成</p>
+            </div>
+
+            <!-- 核心觀點 -->
+            <h3>🎯 核心觀點</h3>
+            <p>本次報告指出，全球網路安全格局正經歷根本性轉變。世界經濟論壇研究顯示，人工智慧技術已從輔助工具躍升為攻防雙方的核心戰力，形成<strong>「AI 對抗 AI」</strong>的全新對抗模式。這一演變標誌著網路安全進入自主系統交鋒的新時代，傳統以人為主導的防禦機制面臨前所未有的挑戰。</p>
+            <p>數據顯示，攻擊方與防禦方同步加速部署自動化智能系統，使得網路對抗的節奏與複雜度呈指數級增長。業界觀察人士認為，此趨勢將重塑整個資安產業的生態結構與技術發展路徑。</p>
+
+            <!-- 重點解析 -->
+            <h3>💡 重點解析</h3>
+            <p>研究指出，當前 AI 驅動的網路安全態勢呈現三大特徵：</p>
+            <ul>
+                <li><strong>自主決策能力</strong>：攻防系統已具備獨立分析威脅、制定策略並行回應的能力，大幅縮短反應時間</li>
+                <li><strong>持續學習對抗</strong>：雙方系統透過機器學習不斷適應對手行為，形成動態演化的對抗循環</li>
+                <li><strong>規模化運作</strong>：自動化系統可同時監控或攻擊大量目標，突破傳統人力限制的瓶頸</li>
+                <li><strong>隱蔽性提升</strong>：AI 生成的攻擊手法更難以被傳統規則式偵測系統識別</li>
+                <li><strong>資源門檻降低</strong>：攻擊者利用 AI 工具可執行更複雜的行動，擴大威脅參與者範圍</li>
+                <li><strong>防禦成本攀升</strong>：企業需持續投資智能防禦系統以持競爭力</li>
+            </ul>
+
+            <!-- 數據分析 -->
+            <h3>📊 數據分析</h3>
+            <p>世界經濟論壇的調查數據顯示，全球主要經濟體的關鍵基礎設施營運商中，已有超過六成開始導入某種形式的 AI 資安防禦方案。同時，資安威脅情報機構觀察到，利用 AI 技術的網路攻擊事件在過去兩年內呈現顯著成長趨勢。</p>
+            <p>專家分析，這種對稱性的技術軍備競賽意味著資安優勢的維持周期大幅縮短。組織必須建立更敏捷的防禦架構，並強化人機協作的工作流程，方能在持續演變的威脅環境中保持韌性。</p>
+
+            <div class="highlight-box">
+                <h4>✨ 關鍵洞察</h4>
+                <p>AI 對 AI 的對抗模式不僅是技術層面的競爭，更涉及倫理規範、國際治理與人才培育等系統性議題。報告建議各國政府與產業協力建立負責任的 AI 資安發展框架，以確保技術進步同時維護數位生態的穩定與安全。</p>
+            </div>
+
+            <!-- 未來展望 -->
+            <h3>🔮 未來展望</h3>
+            <p>業界觀察人士預期，未來三至五年內，完全自主的資安代理系統將成為主流。這些系統能夠在極少人工干預的情況下，完成從威脅偵測、損害控制到復原重建的全流程作業。</p>
+            <p>然而，研究也警告過度依賴自動化可能帶來新型風險，包括系統間的誤判連鎖反應、對抗性機器學習攻擊，以及關鍵決策過程中的人類監督弱化。平衡效率與管控，將是下一世代資安治理的核心課題。</p>
+
+            <!-- 四大企業案例 -->
+            <h3>🏢 企業案例：AI 防御系統實戰</h3>
+            <div class="tech-cards">
+                <div class="tech-card">
+                    <div class="tech-card-icon">🔴</div>
+                    <h4>IBM ATOM</h4>
+                    <p>IBM 的「ATOM」系統以代理式 AI 自主調查、入侵數據豐富化並評分資安警報。現時處理約 95% 的日常調查，每月自動化超過 850 分析小時，大幅提升資安團隊效率。</p>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-card-icon">🔵</div>
+                    <h4>Google Big Sleep</h4>
+                    <p>Google 部署「Big Sleep」AI 代理識別未知軟件漏洞，在漏洞被利用前搶先發現並修補，主動式防禦未知威脅。</p>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-card-icon">🟡</div>
+                    <h4>Google CodeMender</h4>
+                    <p>Google 的「CodeMender」自動生成安全修補程式，已修補超過 100 個重大安全漏洞，將過往需數週的修補工作壓縮至數分鐘內完成。</p>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-card-icon">🟢</div>
+                    <h4>Allianz 假設分析系統</h4>
+                    <p>Allianz 的「假設驅動 AI 分析系統」在調查期間動態檢索和分析取證數據，取代集中式端點收集，以應對企業系統生成的海量資安數據。</p>
+                </div>
+            </div>
+
+            <h3>📊 AI 資安效益對比</h3>
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>指標</th>
+                        <th>傳統資安</th>
+                        <th>AI 資安</th>
+                        <th>差異</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>平均入侵成本</td>
+                        <td>USD 4.8M</td>
+                        <td>USD 2.9M</td>
+                        <td class="highlight-col">-USD 1.9M</td>
+                    </tr>
+                    <tr>
+                        <td>入侵發現時間</td>
+                        <td>~250 天</td>
+                        <td>~170 天</td>
+                        <td class="highlight-col">-80 天</td>
+                    </tr>
+                    <tr>
+                        <td>分析師工時（月）</td>
+                        <td>全人手處理</td>
+                        <td>850+ 小時自動化</td>
+                        <td class="highlight-col">大幅減少</td>
+                    </tr>
+                    <tr>
+                        <td>威脅調查覆蓋率</td>
+                        <td>選擇性抽樣</td>
+                        <td>95% 自動化</td>
+                        <td class="highlight-col">接近全覆蓋</td>
+                    </tr>
+                    <tr>
+                        <td>漏洞修補速度</td>
+                        <td>數週</td>
+                        <td>數分鐘</td>
+                        <td class="highlight-col">指數提升</td>
+                    </tr>
+                    <tr>
+                        <td>AI 應用普及率</td>
+                        <td>—</td>
+                        <td>77% 企業已採用</td>
+                        <td class="highlight-col">主流趨勢</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>⏱️ AI 資安發展時間軸</h3>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date">2024 年</div>
+                    <div class="timeline-title">AI 攻擊工具平民化</div>
+                    <div class="timeline-desc">生成式 AI 降低網路攻擊技術門檻，初級駭客亦能發動複雜攻擊。</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2025 年中</div>
+                    <div class="timeline-title">企業大規模採用 AI 資安</div>
+                    <div class="timeline-desc">77% 企業開始在資安營運中部署 AI 工具，資安 AI 應用從實驗走向生產。</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2025 年底</div>
+                    <div class="timeline-title">IBM ATOM 全面部署</div>
+                    <div class="timeline-desc">IBM ATOM 系統達到每日 95% 調查自動化，標誌自主資安系統成熟。</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2026 年 3 月</div>
+                    <div class="timeline-title">Google CodeMender 100+ 漏洞</div>
+                    <div class="timeline-desc">Google 宣佈 CodeMender 已自動修補超過 100 個重大安全漏洞。</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2026 年 5 月</div>
+                    <div class="timeline-title">WEF 報告發布</div>
+                    <div class="timeline-desc">WEF 與 KPMG 聯合發布《赋權守衛者：AI 資安》報告，系統性論述 AI-vs-AI 新時代。</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2027 年（預計）</div>
+                    <div class="timeline-title">完全自主資安系統</div>
+                    <div class="timeline-desc">專家預期完全自主的資安代理系統將成為主流，人機協作模式全面重構。</div>
+                </div>
+            </div>
+
+            <div class="quote-box">
+                <p>「對手正以機器速度運作，利用 AI 進行目標偵察、生成惡意軟件、利用漏洞、規避偵測並大規模發動攻擊。過去需數週的工作，現可在幾分鐘內完成。」</p>
+                <cite>— 世界經濟論壇《赋權守衛者：AI 資安》報告，2026 年 5 月</cite>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2026 AI News Archive | 由 AI 技術生成</p>
+        <div class="footer-links">
+            <a href="../index.html">返回主頁</a>
+            <a href="https://github.com/hklamsir/ai_news" target="_blank">GitHub</a>
+            <a href="https://hklamsir.github.io/ai_news/" target="_blank">瀏覽所有專題</a>
+        </div>
+    </footer>
+
+    <script>
+        // 生成代碼雨效果
+        function createCodeRain() {
+            const container = document.getElementById('codeRain');
+            const chars = '01アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン';
+            
+            for (let i = 0; i < 50; i++) {
+                const char = document.createElement('span');
+                char.className = 'code-char';
+                char.textContent = chars[Math.floor(Math.random() * chars.length)];
+                char.style.left = Math.random() * 100 + '%';
+                char.style.animationDelay = Math.random() * 4 + 's';
+                char.style.animationDuration = (3 + Math.random() * 2) + 's';
+                container.appendChild(char);
+            }
+        }
+        
+        createCodeRain();
+    </script>
+</body>
+</html>
