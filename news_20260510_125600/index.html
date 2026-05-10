@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>超美的手繪風格！分享 3 組 ChatGPT 與 Gemini 手寫筆觸 Prompt</title>
+    <style>
+        :root { --primary-blue: #00d4ff; --primary-purple: #7b2cbf; --accent-green: #00ff88; --accent-orange: #ff9500; --dark-bg: #0a0a0f; --card-bg: #12121a; --card-bg-light: #1a1a28; --text-primary: #ffffff; --text-secondary: #a0a0b0; --gradient-1: linear-gradient(135deg, #00d4ff 0%, #7b2cbf 100%); --glow-blue: 0 0 20px rgba(0, 212, 255, 0.5); --glow-purple: 0 0 20px rgba(123, 44, 191, 0.5); }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Noto Sans TC', sans-serif; background-color: var(--dark-bg); color: var(--text-primary); line-height: 1.8; overflow-x: hidden; }
+        @keyframes slideIn { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); } }
+        .code-rain { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; overflow: hidden; }
+        .code-char { position: absolute; color: var(--primary-blue); font-family: 'Courier New', monospace; font-size: 14px; opacity: 0; animation: codeRain 4s linear infinite; }
+        @keyframes codeRain { 0% { transform: translateY(-100%); opacity: 0; } 10% { opacity: 1; } 90% { opacity: 1; } 100% { transform: translateY(100vh); opacity: 0; } }
+        .hero { position: relative; min-height: 75vh; display: flex; align-items: center; justify-content: center; padding: 80px 20px; background: linear-gradient(180deg, var(--dark-bg) 0%, #1a1a2e 100%); overflow: hidden; }
+        .hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(ellipse at center, rgba(123, 44, 191, 0.15) 0%, transparent 70%); z-index: 1; }
+        .hero-content { position: relative; z-index: 2; max-width: 1200px; text-align: center; animation: slideIn 1s ease-out; }
+        .hero-badge { display: inline-block; padding: 12px 32px; background: var(--gradient-1); border-radius: 50px; font-size: 18px; font-weight: 700; margin-bottom: 24px; box-shadow: var(--glow-blue); }
+        .hero h1 { font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 900; margin-bottom: 24px; background: var(--gradient-1); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; line-height: 1.2; }
+        .hero-subtitle { font-size: clamp(1.2rem, 2.2vw, 1.5rem); color: var(--text-primary); max-width: 900px; margin: 0 auto 40px; line-height: 1.6; }
+        .hero-images { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; margin-top: 60px; }
+        .hero-image-card { position: relative; border-radius: 20px; overflow: hidden; aspect-ratio: 16/9; box-shadow: var(--glow-purple); transition: transform 0.3s ease; }
+        .hero-image-card:hover { transform: scale(1.02); }
+        .hero-image-card img { width: 100%; height: 100%; object-fit: cover; }
+        section { padding: 80px 20px; position: relative; z-index: 1; }
+        .content-section { background: var(--card-bg); padding: 60px 50px; border-radius: 24px; border: 1px solid rgba(0, 212, 255, 0.2); max-width: 1100px; margin: 0 auto; }
+        .content-section h3 { font-size: 1.6rem; margin: 40px 0 20px; color: var(--accent-green); }
+        .content-section p { color: var(--text-secondary); line-height: 2; font-size: 1.08rem; margin: 15px 0; }
+        .meta-info { background: linear-gradient(135deg, rgba(0, 212, 255, 0.15) 0%, rgba(123, 44, 191, 0.15) 100%); padding: 30px; border-radius: 16px; margin-bottom: 40px; border-left: 5px solid var(--primary-blue); }
+        .meta-info p { margin: 12px 0; color: var(--text-secondary); font-size: 1.05rem; }
+        .meta-info strong { color: var(--primary-blue); font-weight: 600; }
+        .meta-info a { color: var(--primary-blue); text-decoration: none; word-break: break-all; }
+        .highlight-box { background: linear-gradient(135deg, rgba(0, 255, 136, 0.08) 0%, rgba(0, 212, 255, 0.08) 100%); padding: 30px; border-radius: 16px; border-left: 5px solid var(--accent-green); margin: 40px 0; }
+        .highlight-box h4 { color: var(--accent-green); margin-bottom: 15px; font-size: 1.3rem; }
+        .highlight-box p { color: var(--text-secondary); margin: 0; }
+        .prompt-box { background: var(--card-bg-light); padding: 25px 30px; border-radius: 16px; border: 1px solid rgba(0, 212, 255, 0.15); margin: 25px 0; font-family: 'Courier New', monospace; color: var(--text-secondary); line-height: 1.8; font-size: 0.95rem; }
+        .tech-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin: 40px 0; }
+        .tech-card { background: var(--card-bg-light); padding: 30px; border-radius: 16px; border: 1px solid rgba(0, 212, 255, 0.15); animation: fadeInUp 0.6s ease-out forwards; opacity: 0; }
+        .tech-card:nth-child(1) { animation-delay: 0.1s; }
+        .tech-card:nth-child(2) { animation-delay: 0.2s; }
+        .tech-card:nth-child(3) { animation-delay: 0.3s; }
+        .tech-card-icon { font-size: 2.5rem; margin-bottom: 15px; }
+        .tech-card h4 { color: var(--primary-blue); margin-bottom: 12px; font-size: 1.2rem; }
+        .tech-card p { color: var(--text-secondary); font-size: 0.95rem; line-height: 1.7; }
+        footer { background: #050508; padding: 60px 20px; text-align: center; border-top: 1px solid rgba(255, 255, 255, 0.1); }
+        footer p { color: var(--text-secondary); margin-bottom: 20px; }
+        .footer-links { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; }
+        .footer-links a { color: var(--primary-blue); text-decoration: none; transition: color 0.3s ease; }
+        .footer-links a:hover { color: var(--text-primary); }
+        @media (max-width: 768px) {
+            .content-section { padding: 40px 25px; }
+            .hero-images { grid-template-columns: 1fr; }
+            .hero h1 { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="code-rain" id="codeRain"></div>
+    <section class="hero">
+        <div class="hero-content">
+            <span class="hero-badge">🎨 AI 指令教學</span>
+            <h1>超美的手繪風格 Prompt</h1>
+            <p class="hero-subtitle">分享 3 組 ChatGPT 與 Gemini 手寫筆觸風格指令，生成有溫度的 AI 藝術作品</p>
+            <div class="hero-images">
+                <div class="hero-image-card">
+                    <img src="img/img1.png" alt="手繪風格 AI 藝術">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <div class="meta-info">
+            <p><strong>📺 資料來源</strong>：<a href="https://applealmond.com/posts/312152" target="_blank">蘋果仁</a></p>
+            <p><strong>📅 發布日期</strong>：2026-05-08</p>
+            <p><strong>🤖 處理方式</strong>：AI 智能摘要</p>
+        </div>
+
+        <div class="highlight-box">
+            <h4>💡 核心觀點</h4>
+            <p>越來越多人使用 AI 進行創作，Threads 網友 jamiee._c 分享了 3 組超美的手繪風格 Prompt 指令，可同時用於 ChatGPT 和 Gemini，能生成帶有溫度的手繪風格作品。</p>
+        </div>
+
+        <h3>🎨 Prompt 1：韓系個人照</h3>
+        <p>原指令用於生成「想像中的你」的韓系插畫風格照片。用戶也可以提供自己照片，再調整 Prompt 讓 AI 以照片為參考生成結果。</p>
+        <div class="prompt-box">
+生成一張你想像中我這個「蘋果仁」的樣子、韓系插畫風、角色特徵鮮明、情緒自然表情、半身構圖、動態姿態、服裝細節精緻、手繪塗鴉風、潑墨筆觸、隨性線條、粉彩與墨色混合、漫畫草稿質感、白色簡約背景、周圍科學化元素點綴、氛圍感強、高細節、高品質。臉的細節要細緻一點
+        </div>
+        <p><strong>適用途徑：</strong>個人社群頭像、Profile 圖片</p>
+        <p><strong>使用方法：</strong>可以自己提供照片，AI 會根據照片生成符合風格的結果</p>
+
+        <h3>✏️ Prompt 2：手寫塗鴉</h3>
+        <p>這組會呈現原子筆手寫的塗鴉效果，就像在課本上亂寫亂畫的感覺。原指令是讓 AI 在用戶的個人媒體帳號上做評論，用戶可以修改指令，改成針對自己提供的照片或文章來處理。</p>
+        <p><strong>使用方法：</strong>需要提供一張圖片讓 AI 在上面創作，可以在任何照片或圖片上添加手寫塗鴉效果</p>
+
+        <h3>🎯 使用建議</h3>
+        <div class="tech-cards">
+            <div class="tech-card">
+                <div class="tech-card-icon">📸</div>
+                <h4>提供參考照片</h4>
+                <p>想要生成符合自己外觀的風格，可以先提供照片給 AI 作為參考，再套用 Prompt 指令。</p>
+            </div>
+            <div class="tech-card">
+                <div class="tech-card-icon">🔄</div>
+                <h4>兩大平台對比</h4>
+                <p>可以將同一指令分別丟到 ChatGPT 和 Gemini，比較 image 2.0 和 Nano Banana 2.0 的生成效果差異。</p>
+            </div>
+            <div class="tech-card">
+                <div class="tech-card-icon">✨</div>
+                <h4>多次微調</h4>
+                <p>如果第一次生成效果不理想，可以根據結果再調整指令中的細節描述，例如臉部細節、背景元素等。</p>
+            </div>
+        </div>
+
+        <div class="highlight-box">
+            <h4>📌 注意事項</h4>
+            <p>第三組 Prompt 指令的完整內容在原文中有詳細說明，建議前往蘋果仁網站查看完整教學。</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2026 AI News Archive | 由 AI 技術生成</p>
+        <div class="footer-links">
+            <a href="../index.html">返回主頁</a>
+            <a href="https://github.com/hklamsir/ai_news" target="_blank">GitHub</a>
+            <a href="https://hklamsir.github.io/ai_news/" target="_blank">瀏覽所有專題</a>
+        </div>
+    </footer>
+
+    <script>
+        const codeRain = document.getElementById('codeRain');
+        const chars = '01アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン';
+        for (let i = 0; i < 50; i++) {
+            const char = document.createElement('span');
+            char.className = 'code-char';
+            char.textContent = chars[Math.floor(Math.random() * chars.length)];
+            char.style.left = Math.random() * 100 + '%';
+            char.style.animationDelay = Math.random() * 4 + 's';
+            char.style.animationDuration = (Math.random() * 3 + 3) + 's';
+            codeRain.appendChild(char);
+        }
+    </script>
+</body>
+</html>

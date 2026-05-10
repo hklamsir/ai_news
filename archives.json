@@ -1,6 +1,16 @@
 {
   "archives": [
     {
+      "dir": "news_20260510_125600",
+      "title": "超美的手繪風格！分享 3 組 ChatGPT 與 Gemini 手寫筆觸 Prompt",
+      "summary_short": "Threads 網友分享 3 組超美手繪風格 AI 指令，可同時用於 ChatGPT 和 Gemini。包含韓系插畫風、原子筆手寫塗鴉等效果，適合製作個人頭像或裝飾照片。",
+      "images": [
+        "img/img1.png"
+      ],
+      "date": "2026-05-10",
+      "url": "./news_20260510_125600/index.html"
+    },
+    {
       "dir": "news_20260510_121700",
       "title": "OpenAI 推出 Codex Chrome 插件：進軍瀏覽器開發工作",
       "summary_short": "OpenAI 推出 Codex 的 Chrome 擴充功能，讓 AI 程式碼助理可在瀏覽器中測試網頁應用、跨分頁收集上下文、使用 Chrome DevTools。目標是吸引非技術專業用戶。Codex 將來會整合 ChatGPT 與 Atlas 網頁瀏覽器。",
