@@ -1,6 +1,16 @@
 {
   "archives": [
     {
+      "dir": "news_20260510_121700",
+      "title": "OpenAI 推出 Codex Chrome 插件：進軍瀏覽器開發工作",
+      "summary_short": "OpenAI 推出 Codex 的 Chrome 擴充功能，讓 AI 程式碼助理可在瀏覽器中測試網頁應用、跨分頁收集上下文、使用 Chrome DevTools。目標是吸引非技術專業用戶。Codex 將來會整合 ChatGPT 與 Atlas 網頁瀏覽器。",
+      "images": [
+        "img/img1.png"
+      ],
+      "date": "2026-05-10",
+      "url": "./news_20260510_121700/index.html"
+    },
+    {
       "dir": "news_20260509_143300",
       "title": "AI 不會取代白領工作：數學上行不通",
       "summary_short": "深度分析反駁 Anthropic CEO 的「數據中心天才國」預測。AI 在數學上存在根本限制：非確定性、幻覺不可避免、功能組合極限。三面牆同時收窄，實際應用在醫療、金融、法律三個領域全面失敗。",
