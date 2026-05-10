@@ -1,6 +1,20 @@
 {
   "archives": [
     {
+      "title": "Anthropic 創辦人 Jack Clark：AI 智能爆炸即將來臨",
+      "url": "news_20260510_203400/index.html",
+      "source": "Axios",
+      "date": "2026-05-07",
+      "type": "interview",
+      "tags": [
+        "Anthropic",
+        "Jack Clark",
+        "AI安全",
+        "智能爆炸",
+        "遞迴自我改進"
+      ]
+    },
+    {
       "title": "智能波動率預測投資組合優化系統：MSVM框架",
       "url": "news_20260510_184800/index.html",
       "source": "Nature Scientific Reports",
