@@ -1,6 +1,20 @@
 {
   "archives": [
     {
+      "title": "智能波動率預測投資組合優化系統：MSVM框架",
+      "url": "news_20260510_184800/index.html",
+      "source": "Nature Scientific Reports",
+      "date": "2026-05-10",
+      "type": "research",
+      "tags": [
+        "投資組合",
+        "機器學習",
+        "SVM",
+        "波動率",
+        "Nature"
+      ]
+    },
+    {
       "dir": "news_20260510_174500",
       "title": "LLM 文件腐蝕問題研究：DELEGATE-52 揭示每次處理都在降解你的文檔",
       "summary_short": "DELEGATE-52 研究發現即使最強模型（Gemini 3.1 Pro、Claude 4.6 Opus、GPT 5.4）平均也會腐蝕 25% 的文檔內容。每次 LLM 處理就像 JPEG 壓縮，長期累積會導致內容完全變形。",
