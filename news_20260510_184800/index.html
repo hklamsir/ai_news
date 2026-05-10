@@ -22,6 +22,10 @@
         .hero-badge { display: inline-block; background: linear-gradient(135deg, var(--primary-blue), var(--primary-purple)); padding: 8px 20px; border-radius: 50px; font-size: 0.9rem; font-weight: 600; margin-bottom: 20px; }
         .hero h1 { font-size: clamp(2rem, 5vw, 3rem); margin-bottom: 20px; background: linear-gradient(135deg, var(--primary-blue), var(--primary-purple)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
         .hero-subtitle { font-size: clamp(1.2rem, 2.2vw, 1.5rem); color: var(--text-primary); max-width: 900px; margin: 0 auto 40px; line-height: 1.6; }
+        .hero-images { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; margin-top: 60px; }
+        .hero-image-card { position: relative; border-radius: 20px; overflow: hidden; aspect-ratio: 16/9; box-shadow: var(--glow-purple); transition: transform 0.3s ease; }
+        .hero-image-card:hover { transform: scale(1.02); }
+        .hero-image-card img { width: 100%; height: 100%; object-fit: cover; }
         .content-section { padding: 20px; }
         .meta-info { background: var(--card-bg); border-radius: 16px; padding: 24px; margin-bottom: 30px; border: 1px solid rgba(0,212,255,0.2); }
         .meta-info p { margin-bottom: 8px; color: var(--text-secondary); }
@@ -59,6 +63,11 @@
             <span class="hero-badge">📊 Nature 研究</span>
             <h1>智能波動率預測投資組合優化系統：MSVM框架</h1>
             <p class="hero-subtitle">97.5% 準確率・40個國際市場・可解釋的AI投資決策</p>
+            <div class="hero-images">
+                <div class="hero-image-card">
+                    <img src="img/img1.png" alt="投資組合理論示意">
+                </div>
+            </div>
         </div>
     </section>
 
