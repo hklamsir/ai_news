@@ -35,7 +35,7 @@
         .highlight-box { background: linear-gradient(135deg, rgba(0, 255, 136, 0.08) 0%, rgba(0, 212, 255, 0.08) 100%); padding: 30px; border-radius: 16px; border-left: 5px solid var(--accent-green); margin: 40px 0; }
         .highlight-box h4 { color: var(--accent-green); margin-bottom: 15px; font-size: 1.3rem; }
         .highlight-box p { color: var(--text-secondary); margin: 0; }
-        .prompt-box { background: var(--card-bg-light); padding: 25px 30px; border-radius: 16px; border: 1px solid rgba(0, 212, 255, 0.15); margin: 25px 0; font-family: 'Courier New', monospace; color: var(--text-secondary); line-height: 1.8; font-size: 0.95rem; }
+        .prompt-box { background: var(--card-bg-light); padding: 25px 30px; border-radius: 16px; border: 1px solid rgba(0, 212, 255, 0.15); margin: 25px 0; font-family: 'Courier New', monospace; color: var(--text-secondary); line-height: 1.8; font-size: 0.95rem; white-space: pre-wrap; }
         .tech-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin: 40px 0; }
         .tech-card { background: var(--card-bg-light); padding: 30px; border-radius: 16px; border: 1px solid rgba(0, 212, 255, 0.15); animation: fadeInUp 0.6s ease-out forwards; opacity: 0; }
         .tech-card:nth-child(1) { animation-delay: 0.1s; }
@@ -44,6 +44,9 @@
         .tech-card-icon { font-size: 2.5rem; margin-bottom: 15px; }
         .tech-card h4 { color: var(--primary-blue); margin-bottom: 12px; font-size: 1.2rem; }
         .tech-card p { color: var(--text-secondary); font-size: 0.95rem; line-height: 1.7; }
+        .summary-box { background: var(--card-bg-light); padding: 30px; border-radius: 16px; border: 1px solid rgba(123, 44, 191, 0.3); margin: 40px 0; }
+        .summary-box h4 { color: var(--primary-purple); margin-bottom: 15px; font-size: 1.2rem; }
+        .summary-box p { color: var(--text-secondary); margin: 8px 0; }
         footer { background: #050508; padding: 60px 20px; text-align: center; border-top: 1px solid rgba(255, 255, 255, 0.1); }
         footer p { color: var(--text-secondary); margin-bottom: 20px; }
         .footer-links { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; }
@@ -85,15 +88,48 @@
 
         <h3>🎨 Prompt 1：韓系個人照</h3>
         <p>原指令用於生成「想像中的你」的韓系插畫風格照片。用戶也可以提供自己照片，再調整 Prompt 讓 AI 以照片為參考生成結果。</p>
-        <div class="prompt-box">
-生成一張你想像中我這個「蘋果仁」的樣子、韓系插畫風、角色特徵鮮明、情緒自然表情、半身構圖、動態姿態、服裝細節精緻、手繪塗鴉風、潑墨筆觸、隨性線條、粉彩與墨色混合、漫畫草稿質感、白色簡約背景、周圍科學化元素點綴、氛圍感強、高細節、高品質。臉的細節要細緻一點
-        </div>
+        <div class="prompt-box">生成一張你想像中我這個「蘋果仁」的樣子、韓系插畫風、角色特徵鮮明、情緒自然表情、半身構圖、動態姿態、服裝細節精緻、手繪塗鴉風、潑墨筆觸、隨性線條、粉彩與墨色混合、漫畫草稿質感、白色簡約背景、周圍科學化元素點綴、氛圍感強、高細節、高品質。臉的細節要細緻一點</div>
         <p><strong>適用途徑：</strong>個人社群頭像、Profile 圖片</p>
         <p><strong>使用方法：</strong>可以自己提供照片，AI 會根據照片生成符合風格的結果</p>
 
-        <h3>✏️ Prompt 2：手寫塗鴉</h3>
-        <p>這組會呈現原子筆手寫的塗鴉效果，就像在課本上亂寫亂畫的感覺。原指令是讓 AI 在用戶的個人媒體帳號上做評論，用戶可以修改指令，改成針對自己提供的照片或文章來處理。</p>
-        <p><strong>使用方法：</strong>需要提供一張圖片讓 AI 在上面創作，可以在任何照片或圖片上添加手寫塗鴉效果</p>
+        <h3>✏️ Prompt 2：手寫塗鴉（社群截圖吐槽版）</h3>
+        <p>這組會呈現原子筆手寫的塗鴉效果，就像在課本上亂寫亂畫的感覺。適合套用在社群截圖或圖片上，加入像朋友吐槽、老師批改般的紅筆註解與塗鴉效果。</p>
+        <div class="prompt-box">將社群帳號截圖製作成紙張列印效果，畫面帶輕微陰影與紙張紋理。使用紅色原子筆手寫風格，在圖片上加入大量中文吐槽批註與塗鴉。包含箭頭、圈選、底線、放大重點、驚嘆號、問號、情緒表情（無語、翻白眼、問號臉）。風格像朋友或老師在旁邊邊看邊吐槽，語氣幽默、誇張、帶一點毒但不惡意攻擊。畫面稍亂但有重點，像隨手亂畫但其實很好笑的那種。</div>
+        <p><strong>使用方法：</strong>需要提供一張圖片讓 AI 在上面創作出結果</p>
+
+        <h3>📓 Prompt 3：手帳紀錄（旅遊・日記風）</h3>
+        <p>這組風格適用於旅遊照片、日記、手帳。AI 會根據你給的照片，圈出裡面的元素，然後分析該元素並給一些心情小語。</p>
+        <div class="prompt-box">請觀察照片中的元素，並為每個物件加上有意義的手繪風註解。
+
+【畫面內容】   
+ ・請填寫照片中的物品（例：冰奶茶、甜甜圈）
+
+【描寫規則】  
+ ・使用像白色筆畫的細手繪線條  
+ ・一筆畫風格，隨性、略帶不均勻感   
+ ・沿著物件外圍加上描邊輪廓   
+ ・用箭頭或虛線做出視線引導
+
+【文字規則】   
+ ・手寫風格字體（偏日系可愛感,但要中文字）   
+ ・句子簡短，像自言自語的小碎念   
+ ・語氣偏日記感、帶一點情緒
+
+【註解生成規則】   
+ ・飲料 → 味道、溫度、心情（例：清爽、微甜、剛剛好）  
+ ・食物 → 口感、好吃程度（例：鬆軟、超好吃）  
+ ・空間 → 氛圍（例：很放鬆、喜歡這種感覺）  
+ ・整體 → 一句總結（例：今天有點幸福～）
+
+【裝飾】  
+ ・適度加入熱氣、閃光、愛心、小表情等元素  
+ ・不要過多，保留一些留白
+
+【完成風格】   
+ ・像 Instagram 限時動態、雜誌隨手筆記風  
+ ・自然、有質感、帶點慵懶感</div>
+        <p><strong>適用途徑：</strong>旅遊紀錄、生活日記、Instagram 限時動態</p>
+        <p><strong>效果：</strong>像在手帳上寫心情筆記，帶有溫度和情感</p>
 
         <h3>🎯 使用建議</h3>
         <div class="tech-cards">
@@ -110,13 +146,16 @@
             <div class="tech-card">
                 <div class="tech-card-icon">✨</div>
                 <h4>多次微調</h4>
-                <p>如果第一次生成效果不理想，可以根據結果再調整指令中的細節描述，例如臉部細節、背景元素等。</p>
+                <p>如果第一次生成效果不理想，可以根據結果再調整指令中的細節描述。</p>
             </div>
         </div>
 
-        <div class="highlight-box">
-            <h4>📌 注意事項</h4>
-            <p>第三組 Prompt 指令的完整內容在原文中有詳細說明，建議前往蘋果仁網站查看完整教學。</p>
+        <div class="summary-box">
+            <h4>📋 三組 Prompt 總結</h4>
+            <p><strong>Prompt 1（韓系個人照）：</strong>生成帶有韓系插畫感、角色特徵明確、筆觸細膩的個人形象照，適合 Profile 頭像。</p>
+            <p><strong>Prompt 2（手寫塗鴉）：</strong>套用在社群截圖或圖片上，加入紅筆註解與塗鴉效果，像朋友吐槽般幽默。</p>
+            <p><strong>Prompt 3（手帳紀錄）：</strong>適合旅遊照、生活日記，讓 AI 圈出畫面元素並加上有溫度的心情小語，適合 IG 限時動態。</p>
+            <p style="margin-top: 15px; color: var(--primary-purple);">這 3 組指令都不是單純讓 AI 生成圖片，而是讓照片多了一層「手作感」與「情緒感」。</p>
         </div>
     </section>
 
