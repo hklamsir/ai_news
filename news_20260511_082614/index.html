@@ -68,6 +68,38 @@
         .highlight-box h4 { color: var(--accent-green); margin-bottom: 15px; font-size: 1.3rem; }
         .highlight-box p { color: var(--text-secondary); margin: 0; }
 
+        .tech-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin: 40px 0; }
+        .tech-card { background: var(--card-bg-light); padding: 30px; border-radius: 16px; border: 1px solid rgba(0, 212, 255, 0.15); transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .tech-card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0, 212, 255, 0.2); }
+        .tech-card-icon { font-size: 2.5rem; margin-bottom: 15px; }
+        .tech-card h4 { color: var(--primary-blue); margin-bottom: 12px; font-size: 1.2rem; }
+        .tech-card p { color: var(--text-secondary); font-size: 0.95rem; line-height: 1.7; }
+
+        .comparison-table { width: 100%; border-collapse: collapse; margin: 40px 0; border-radius: 16px; overflow: hidden; box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3); }
+        .comparison-table thead { background: linear-gradient(135deg, var(--primary-blue), var(--primary-purple)); }
+        .comparison-table th { padding: 18px 20px; text-align: left; font-weight: 600; font-size: 1.05rem; }
+        .comparison-table td { padding: 16px 20px; border-bottom: 1px solid rgba(255, 255, 255, 0.05); color: var(--text-secondary); }
+        .comparison-table tr:last-child td { border-bottom: none; }
+        .comparison-table tr:nth-child(even) { background: rgba(255, 255, 255, 0.02); }
+        .comparison-table .highlight-col { color: var(--accent-green); font-weight: 500; }
+
+        .timeline { position: relative; margin: 40px 0; padding-left: 40px; }
+        .timeline::before { content: ''; position: absolute; left: 15px; top: 0; bottom: 0; width: 2px; background: linear-gradient(180deg, var(--primary-blue), var(--primary-purple)); }
+        .timeline-item { position: relative; margin-bottom: 35px; padding: 20px 25px; background: var(--card-bg-light); border-radius: 12px; border: 1px solid rgba(0, 212, 255, 0.1); }
+        .timeline-item::before { content: ''; position: absolute; left: -32px; top: 25px; width: 12px; height: 12px; background: var(--primary-blue); border-radius: 50%; box-shadow: var(--glow-blue); }
+        .timeline-date { color: var(--primary-blue); font-size: 0.9rem; font-weight: 600; margin-bottom: 8px; }
+        .timeline-title { color: var(--text-primary); font-size: 1.1rem; font-weight: 600; margin-bottom: 8px; }
+        .timeline-desc { color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6; }
+
+        .quote-box { background: linear-gradient(135deg, rgba(123, 44, 191, 0.15) 0%, rgba(0, 212, 255, 0.15) 100%); padding: 30px 40px; border-radius: 16px; border-left: 5px solid var(--primary-purple); margin: 40px 0; position: relative; }
+        .quote-box::before { content: '"'; position: absolute; top: 10px; left: 20px; font-size: 80px; color: var(--primary-purple); opacity: 0.3; font-family: Georgia, serif; }
+        .quote-box p { color: var(--text-primary); font-size: 1.2rem; font-style: italic; margin-bottom: 15px; }
+        .quote-box cite { color: var(--text-secondary); font-size: 0.95rem; }
+
+        .alert-box { background: linear-gradient(135deg, rgba(255, 71, 87, 0.1) 0%, rgba(255, 149, 0, 0.1) 100%); padding: 25px 30px; border-radius: 16px; border-left: 5px solid var(--accent-orange); margin: 30px 0; }
+        .alert-box h4 { color: var(--accent-orange); margin-bottom: 12px; font-size: 1.15rem; }
+        .alert-box p { color: var(--text-secondary); margin: 8px 0; font-size: 1rem; }
+
         /* Footer */
         footer { background: #050508; padding: 60px 20px; text-align: center; border-top: 1px solid rgba(255, 255, 255, 0.1); }
         footer p { color: var(--text-secondary); margin-bottom: 20px; }
@@ -120,6 +152,36 @@
             <p>研究指出，AI 產業的蓬勃發展正在對全球半導體供應鏈產生深遠影響。所謂「AI Silicon Tax」指的是人工智慧熱潮所帶來的隱性成本轉嫁現象，其中消費級記憶體市場首當其衝。數據顯示，一般消費者的 RAM 採購成本在短期內已攀升至原先的三倍水準。</p>
             <p>這一現象背後的關鍵因素在於，晶圓代工廠與記憶體製造商正將有限的產能優先配置給利潤率更高的 AI 加速器與高頻寬記憶體（HBM）。業界觀察人士分析，這種資源重新配置的趨勢將持續影響傳統消費電子產品的供貨穩定性與價格結構。</p>
 
+            <!-- Tech Cards -->
+            <div class="tech-cards">
+                <div class="tech-card">
+                    <div class="tech-card-icon">💰</div>
+                    <h4>記憶體價格飆漲 3 倍</h4>
+                    <p>消費級 RAM 價格在 AI 熱潮中攀升至原先的三倍，消費者升級電腦的成本大幅增加。</p>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-card-icon">🏭</div>
+                    <h4>產能優先配置 AI</h4>
+                    <p>半導體製造商將有限產能優先供應 AI 加速器與 HBM，犧牲傳統消費級記憶體供應。</p>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-card-icon">📊</div>
+                    <h4>供需失衡加劇</h4>
+                    <p>DDR4 與 DDR5 消費級記憶體供應緊張，通路商提高安全庫存水位，進一步推升價格。</p>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-card-icon">🔮</div>
+                    <h4>新常態將持續</h4>
+                    <p>專家預測「AI Silicon Tax」作為技術轉型期的常態，將持續影響全球電子產業生態。</p>
+                </div>
+            </div>
+
+            <!-- Quote Box -->
+            <div class="quote-box">
+                <p>「當產業資本與製造產能向 AI 基礎設施傾斜時，傳統消費電子市場必然承擔相應的調整成本。」</p>
+                <cite>— 半導體業界分析師</cite>
+            </div>
+
             <!-- 產能轉移分析 -->
             <h3>🏭 產能轉移與市場擠壓</h3>
             <p>專家分析指出，半導體製造商面臨的抉擇日益明確。在固定產能條件下，生產 AI 伺服器所需的高階晶片可帶來顯著更高的利潤回報。這導致傳統 DDR4 與 DDR5 消費級記憶體的產能遭到系統性壓縮。</p>
@@ -142,10 +204,96 @@
                 <p>「AI Silicon Tax」本質上是技術轉型期的資源重新分配現象。當產業資本與製造產能向 AI 基礎設施傾斜時，傳統消費電子市場必然承擔相應的調整成本。這一趨勢預計將持續至新增產能逐步開出，或 AI 需求成長曲線趨緩為止。</p>
             </div>
 
+            <!-- Comparison Table -->
+            <h3>📊 AI 時代記憶體價格對比</h3>
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>記憶體類型</th>
+                        <th>AI 熱潮前</th>
+                        <th>AI 熱潮後</th>
+                        <th>漲幅</th>
+                        <th>主因</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>消費級 DDR5 16GB</td>
+                        <td>約 NT$1,500</td>
+                        <td>約 NT$4,500</td>
+                        <td class="highlight-col">+200%</td>
+                        <td>HBM 需求排擠</td>
+                    </tr>
+                    <tr>
+                        <td>伺服器用記憶體</td>
+                        <td>供應穩定</td>
+                        <td>嚴重短缺</td>
+                        <td class="highlight-col">缺貨</td>
+                        <td>AI 伺服器需求激增</td>
+                    </tr>
+                    <tr>
+                        <td>DDR4 8GB</td>
+                        <td>約 NT$600</td>
+                        <td>約 NT$1,800</td>
+                        <td class="highlight-col">+200%</td>
+                        <td>產能轉移</td>
+                    </tr>
+                    <tr>
+                        <td>顯示卡記憶體 GDDR6X</td>
+                        <td>正常價格</td>
+                        <td>溢價 3-5 倍</td>
+                        <td class="highlight-col">+300%</td>
+                        <td>AI 繪圖晶片需求</td>
+                    </tr>
+                </tbody>
+            </table>
+
             <!-- 未來展望 -->
             <h3>🔮 產業展望與因應策略</h3>
             <p>面對此一結構性轉變，業界專家建議相關業者採取多元因應措施。記憶體製造商正積極擴建先進封裝產能，以期在 AI 與消費市場之間取得平衡。同時，部分業者探索新興記憶體技術，試圖以差異化產品開闢藍海市場。</p>
             <p>對於一般消費者而言，專家分析建議可評估實際使用需求，避免追高規格配置。隨著技術演進與產能調整，中長期價格結構有望逐步回穩。然而，在 AI 應用持續擴散的宏觀背景下，「AI Silicon Tax」作為新常態的一部分，將持續影響全球電子產業的生態格局。</p>
+
+            <!-- Timeline -->
+            <h3>📅 AI 記憶體價格演變時間軸</h3>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date">2022 年下半年</div>
+                    <div class="timeline-title">AI 熱潮興起</div>
+                    <div class="timeline-desc">ChatGPT 引爆生成式 AI 熱潮，NVIDIA GPU 需求飆升，HBM 記憶體需求開始擠壓消費級產能。</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2023 年初</div>
+                    <div class="timeline-title">記憶體廠商戰略轉向</div>
+                    <div class="timeline-desc">三星、SK 海力士、美光三大廠宣佈擴大 HBM 產能，消費級 DDR5 產線開始縮減。</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2023 年中</div>
+                    <div class="timeline-title">消費級 RAM 價格開始飆漲</div>
+                    <div class="timeline-desc">DDR5 價格首次大幅上調，通路商反映成本上漲，消費者開始感受到升級壓力。</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2024 年</div>
+                    <div class="timeline-title">供應鏈持續緊張</div>
+                    <div class="timeline-desc">AI 伺服器出貨量持續攀升，主要記憶體製造商產能利用率接近滿載，消費級產品供應緊張。</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2025 年</div>
+                    <div class="timeline-title">價格達高峰期</div>
+                    <div class="timeline-desc">消費級 RAM 價格攀升至過往三倍水準，部分地區出現囤貨與哄抬價格現象。</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2026 年展望</div>
+                    <div class="timeline-title">新增產能逐步開出</div>
+                    <div class="timeline-desc">記憶體廠商新廠房陸續完工投產，HBM 與消費級產品供應有望逐步平衡，價格壓力可望緩解。</div>
+                </div>
+            </div>
+
+            <!-- Alert Box -->
+            <div class="alert-box">
+                <h4>⚠️ 消費者建議</h4>
+                <p>若非必要，建議暫緩大容量記憶體升級計劃，或考慮二手市場替代方案。</p>
+                <p>密切關注主要記憶體廠商的產能擴張進度，待供應穩定後再行採購。</p>
+            </div>
         </div>
     </section>
 

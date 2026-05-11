@@ -2,6 +2,20 @@
   "archives": [
     {
       "dir": "news_20260511_082614",
+      "title": "AI Silicon Tax：記憶體價格飆漲背後的隱形成本",
+      "url": "news_20260511_082614/index.html",
+      "source": "techtrenches.dev",
+      "date": "2026-05-11",
+      "type": "report",
+      "tags": [
+        "AI",
+        "半導體",
+        "記憶體",
+        "價格"
+      ]
+    },
+    {
+      "dir": "news_20260511_082614",
       "title": "The AI Silicon Tax: How Your RAM Got 3x More Expensive While You Weren’t Looking",
       "summary_short": "# The AI Silicon Tax: How Your RAM Got 3x More Expensive While You Weren’t Looking## 📖 新聞導語本文報導來",
       "images": [
