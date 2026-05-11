@@ -1,6 +1,16 @@
 {
   "archives": [
     {
+      "dir": "news_20260511_095738",
+      "title": "Instagram",
+      "summary_short": "# Instagram## 📖 新聞導語本文報導來自 **INSTAGRAM**，發布於 **2026-05-11**。最新科技新聞報道指出，人工智能領域迎來重要技術突破。研究人員表示，新",
+      "images": [
+        "img/img1.png"
+      ],
+      "date": "2026-05-11",
+      "url": "./news_20260511_095738/index.html"
+    },
+    {
       "dir": "news_20260511_082614",
       "title": "AI Silicon Tax：記憶體價格飆漲背後的隱形成本",
       "url": "news_20260511_082614/index.html",
@@ -641,6 +651,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-05-11T08:28:16.505417",
+  "last_updated": "2026-05-11T09:59:43.191492",
   "total_count": 77
 }
