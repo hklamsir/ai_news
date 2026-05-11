@@ -1,53 +1,20 @@
 {
   "archives": [
     {
-      "dir": "news_20260511_095738",
-      "title": "都大研發首個粵語酒後語言檢測系統",
-      "url": "news_20260511_095738/index.html",
-      "source": "instagram @hkmuofficial",
-      "date": "2026-05-11",
-      "type": "report",
-      "tags": [
-        "AI",
-        "HKMU",
-        "粵語",
-        "酒後駕駛",
-        "醫療科技"
-      ]
-    },
-    {
-      "dir": "news_20260511_095738",
-      "title": "Instagram",
-      "summary_short": "# Instagram## 📖 新聞導語本文報導來自 **INSTAGRAM**，發布於 **2026-05-11**。最新科技新聞報道指出，人工智能領域迎來重要技術突破。研究人員表示，新",
-      "images": [
-        "img/img1.png"
-      ],
-      "date": "2026-05-11",
-      "url": "./news_20260511_095738/index.html"
-    },
-    {
       "dir": "news_20260511_082614",
       "title": "AI Silicon Tax：記憶體價格飆漲背後的隱形成本",
-      "url": "news_20260511_082614/index.html",
-      "source": "techtrenches.dev",
+      "summary": "當人工智慧熱潮席捲全球，消費者可能未曾察覺，他們的 RAM 價格已在不知不覺中翻了三倍。本次報告深入剖析 AI 產業鏈如何重塑半導體市場格局。",
+      "url": "./news_20260511_082614/index.html",
       "date": "2026-05-11",
-      "type": "report",
-      "tags": [
-        "AI",
-        "半導體",
-        "記憶體",
-        "價格"
-      ]
+      "source": "AI News"
     },
     {
-      "dir": "news_20260511_082614",
-      "title": "The AI Silicon Tax: How Your RAM Got 3x More Expensive While You Weren’t Looking",
-      "summary_short": "# The AI Silicon Tax: How Your RAM Got 3x More Expensive While You Weren’t Looking## 📖 新聞導語本文報導來",
-      "images": [
-        "img/img1.png"
-      ],
+      "dir": "news_20260511_095738",
+      "title": "都大研發首個粵語酒後語言檢測系統",
+      "summary": "香港都會大學研發首個粵語酒後語言檢測系統，結合 AI 分析語速、語調、停頓與語法結構，評估酒精對語言能力的影響。",
+      "url": "./news_20260511_095738/index.html",
       "date": "2026-05-11",
-      "url": "./news_20260511_082614/index.html"
+      "source": "AI News"
     },
     {
       "dir": "news_20260510_161500",
@@ -666,6 +633,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-05-11T09:59:43.191492",
-  "total_count": 77
+  "last_updated": "2026-05-11T10:31:02.456360",
+  "total_count": 79
 }
