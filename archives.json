@@ -3,12 +3,11 @@
     {
       "dir": "news_20260512_225128",
       "title": "Qwen AI 打通淘寶 全球最大 AI 購物生態圈正式啟動",
-      "summary_short": "# Qwen AI 打通淘寶 全球最大 AI 購物生態圈正式啟動## 📖 新聞導語本文報導來自 **UNWIRE**，發布於 **2026-05-12**。最新科技新聞報道指出，人工智能領",
-      "images": [
-        "img/img1.png"
-      ],
+      "summary": "阿里巴巴旗下 Qwen 人工智能模型與淘寶平台深度整合，標誌著全球最大規模的 AI 驅動電商生態系統正式誕生，開創智能購物新紀元",
+      "url": "./news_20260512_225128/index.html",
       "date": "2026-05-12",
-      "url": "./news_20260512_225128/index.html"
+      "time": "22:51:28",
+      "source": "AI News"
     },
     {
       "dir": "news_20260511_112552",
@@ -731,6 +730,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-05-12T22:53:39.728739",
-  "total_count": 80
+  "last_updated": "2026-05-12T23:01:07.467765",
+  "total_count": 81
 }
