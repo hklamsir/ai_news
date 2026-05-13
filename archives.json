@@ -2,13 +2,12 @@
   "archives": [
     {
       "dir": "news_20260513_081538",
-      "title": "Everything announced at The Android Show: I/O 2026 edition - Engadget",
-      "summary_short": "# Everything announced at The Android Show: I/O 2026 edition - Engadget## 📖 新聞導語本文報導來自 **ENGADGE",
-      "images": [
-        "img/img1.png"
-      ],
+      "title": "The Android Show: I/O 2026 重點發布總整理",
+      "summary": "Google 提前披露 I/O 2026 大會的重磅消息！全新 Googlebooks 筆電、Gemini Intelligence 全面登陸、Android 17 新功能、Instagram 編輯工",
+      "url": "./news_20260513_081538/index.html",
       "date": "2026-05-13",
-      "url": "./news_20260513_081538/index.html"
+      "time": "08:15:38",
+      "source": "AI News"
     },
     {
       "dir": "news_20260512_225128",
@@ -740,6 +739,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-05-13T08:17:35.644735",
-  "total_count": 81
+  "last_updated": "2026-05-13T08:19:29.974025",
+  "total_count": 82
 }

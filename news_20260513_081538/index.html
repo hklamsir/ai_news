@@ -1,16 +1,16 @@
 <!DOCTYPE html>
-<html lang="zh-TW">
+<html lang="zh-Hant">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Android Show: I/O 2026 完整發布回顧 - AI News</title>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <title>The Android Show: I/O 2026 重點發布總整理 - Engadget</title>
     <style>
         :root {
             --primary-blue: #00d4ff;
             --primary-purple: #7b2cbf;
             --accent-green: #00ff88;
             --accent-orange: #ff9500;
+            --accent-red: #ff4757;
             --dark-bg: #0a0a0f;
             --card-bg: #12121a;
             --card-bg-light: #1a1a28;
@@ -30,18 +30,17 @@
         @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.6; } }
         @keyframes slideIn { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
         @keyframes codeRain { 0% { transform: translateY(-100%); opacity: 0; } 10% { opacity: 1; } 90% { opacity: 1; } 100% { transform: translateY(100vh); opacity: 0; } }
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); } }
 
-        /* 代碼雨背景 */
         .code-rain { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; overflow: hidden; }
         .code-char { position: absolute; color: var(--primary-blue); font-family: 'Courier New', monospace; font-size: 14px; opacity: 0; animation: codeRain 4s linear infinite; }
 
-        /* Hero Section */
         .hero { position: relative; min-height: 80vh; display: flex; align-items: center; justify-content: center; padding: 80px 20px; background: linear-gradient(180deg, var(--dark-bg) 0%, #1a1a2e 100%); overflow: hidden; }
         .hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(ellipse at center, rgba(123, 44, 191, 0.15) 0%, transparent 70%); z-index: 1; }
         .hero-content { position: relative; z-index: 2; max-width: 1200px; text-align: center; animation: slideIn 1s ease-out; }
         .hero-badge { display: inline-block; padding: 12px 32px; background: var(--gradient-1); border-radius: 50px; font-size: 18px; font-weight: 700; margin-bottom: 24px; box-shadow: var(--glow-blue); letter-spacing: 1px; }
-        .hero h1 { font-size: clamp(2rem, 5vw, 4rem); font-weight: 900; margin-bottom: 24px; background: var(--gradient-1); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; line-height: 1.2; }
-        .hero-subtitle { font-size: clamp(1.2rem, 2.2vw, 1.6rem); color: var(--text-primary); max-width: 900px; margin: 0 auto 40px; line-height: 1.6; font-weight: 400; }
+        .hero h1 { font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 900; margin-bottom: 24px; background: var(--gradient-1); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; line-height: 1.2; }
+        .hero-subtitle { font-size: clamp(1.2rem, 2.2vw, 1.5rem); color: var(--text-primary); max-width: 900px; margin: 0 auto 40px; line-height: 1.6; font-weight: 400; }
         .hero-images { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; margin-top: 60px; }
         .hero-image-card { position: relative; border-radius: 20px; overflow: hidden; aspect-ratio: 16/9; box-shadow: var(--glow-purple); transition: transform 0.3s ease, box-shadow 0.3s ease; }
         .hero-image-card:hover { transform: scale(1.02); box-shadow: 0 0 40px rgba(123, 44, 191, 0.7); }
@@ -50,11 +49,11 @@
         .scroll-indicator span { display: block; width: 30px; height: 50px; border: 2px solid var(--primary-blue); border-radius: 25px; position: relative; }
         .scroll-indicator span::before { content: ''; position: absolute; top: 8px; left: 50%; transform: translateX(-50%); width: 6px; height: 10px; background: var(--primary-blue); border-radius: 3px; animation: pulse 1.5s infinite; }
 
-        /* Content Section */
         section { padding: 80px 20px; position: relative; z-index: 1; }
         .content-section { background: var(--card-bg); padding: 60px 50px; border-radius: 24px; border: 1px solid rgba(0, 212, 255, 0.2); max-width: 1100px; margin: 0 auto; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3); }
 
         .content-section h3 { font-size: 1.6rem; margin: 40px 0 20px; color: var(--accent-green); }
+        .content-section h4 { font-size: 1.3rem; margin: 30px 0 15px; color: var(--accent-orange); }
         .content-section p { color: var(--text-secondary); line-height: 2; font-size: 1.08rem; margin: 15px 0; }
         .content-section ul { margin: 20px 0; padding-left: 30px; }
         .content-section li { margin: 10px 0; color: var(--text-secondary); }
@@ -68,84 +67,253 @@
         .highlight-box h4 { color: var(--accent-green); margin-bottom: 15px; font-size: 1.3rem; }
         .highlight-box p { color: var(--text-secondary); margin: 0; }
 
-        /* Footer */
+        .alert-box { background: linear-gradient(135deg, rgba(255, 71, 87, 0.1) 0%, rgba(255, 149, 0, 0.1) 100%); padding: 25px 30px; border-radius: 16px; border-left: 5px solid var(--accent-red); margin: 30px 0; }
+        .alert-box h4 { color: var(--accent-red); margin-bottom: 12px; font-size: 1.15rem; }
+        .alert-box p { color: var(--text-secondary); margin: 8px 0; font-size: 1rem; }
+
+        .quote-box { background: linear-gradient(135deg, rgba(123, 44, 191, 0.15) 0%, rgba(0, 212, 255, 0.15) 100%); padding: 30px 40px; border-radius: 16px; border-left: 5px solid var(--primary-purple); margin: 40px 0; position: relative; }
+        .quote-box::before { content: '"'; position: absolute; top: 10px; left: 20px; font-size: 80px; color: var(--primary-purple); opacity: 0.3; font-family: Georgia, serif; }
+        .quote-box p { color: var(--text-primary); font-size: 1.2rem; font-style: italic; margin-bottom: 15px; }
+        .quote-box cite { color: var(--text-secondary); font-size: 0.95rem; }
+
+        .tech-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin: 40px 0; }
+        .tech-card { background: var(--card-bg-light); padding: 30px; border-radius: 16px; border: 1px solid rgba(0, 212, 255, 0.15); transition: transform 0.3s ease, box-shadow 0.3s ease; animation: fadeInUp 0.6s ease-out forwards; opacity: 0; }
+        .tech-card:nth-child(1) { animation-delay: 0.1s; }
+        .tech-card:nth-child(2) { animation-delay: 0.2s; }
+        .tech-card:nth-child(3) { animation-delay: 0.3s; }
+        .tech-card:nth-child(4) { animation-delay: 0.4s; }
+        .tech-card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0, 212, 255, 0.2); }
+        .tech-card-icon { font-size: 2.5rem; margin-bottom: 15px; }
+        .tech-card h4 { color: var(--primary-blue); margin-bottom: 12px; font-size: 1.2rem; }
+        .tech-card p { color: var(--text-secondary); font-size: 0.95rem; line-height: 1.7; }
+
+        .comparison-table { width: 100%; border-collapse: collapse; margin: 40px 0; border-radius: 16px; overflow: hidden; box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3); }
+        .comparison-table thead { background: linear-gradient(135deg, var(--primary-blue), var(--primary-purple)); }
+        .comparison-table th { padding: 18px 20px; text-align: left; font-weight: 600; font-size: 1.05rem; }
+        .comparison-table td { padding: 16px 20px; border-bottom: 1px solid rgba(255, 255, 255, 0.05); color: var(--text-secondary); }
+        .comparison-table tr:last-child td { border-bottom: none; }
+        .comparison-table tr:nth-child(even) { background: rgba(255, 255, 255, 0.02); }
+        .comparison-table .highlight-col { color: var(--accent-green); font-weight: 500; }
+        .comparison-table .highlight-red { color: var(--accent-red); font-weight: 500; }
+
+        .timeline { position: relative; margin: 40px 0; padding-left: 40px; }
+        .timeline::before { content: ''; position: absolute; left: 15px; top: 0; bottom: 0; width: 2px; background: linear-gradient(180deg, var(--primary-blue), var(--primary-purple)); }
+        .timeline-item { position: relative; margin-bottom: 35px; padding: 20px 25px; background: var(--card-bg-light); border-radius: 12px; border: 1px solid rgba(0, 212, 255, 0.1); animation: fadeInUp 0.5s ease-out forwards; opacity: 0; }
+        .timeline-item:nth-child(1) { animation-delay: 0.1s; }
+        .timeline-item:nth-child(2) { animation-delay: 0.2s; }
+        .timeline-item:nth-child(3) { animation-delay: 0.3s; }
+        .timeline-item:nth-child(4) { animation-delay: 0.4s; }
+        .timeline-item:nth-child(5) { animation-delay: 0.5s; }
+        .timeline-item:nth-child(6) { animation-delay: 0.6s; }
+        .timeline-item::before { content: ''; position: absolute; left: -32px; top: 25px; width: 12px; height: 12px; background: var(--primary-blue); border-radius: 50%; box-shadow: var(--glow-blue); }
+        .timeline-date { color: var(--primary-blue); font-size: 0.9rem; font-weight: 600; margin-bottom: 8px; }
+        .timeline-title { color: var(--text-primary); font-size: 1.1rem; font-weight: 600; margin-bottom: 8px; }
+        .timeline-desc { color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6; }
+
         footer { background: #050508; padding: 60px 20px; text-align: center; border-top: 1px solid rgba(255, 255, 255, 0.1); }
         footer p { color: var(--text-secondary); margin-bottom: 20px; }
         .footer-links { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; }
         .footer-links a { color: var(--primary-blue); text-decoration: none; transition: color 0.3s ease; }
         .footer-links a:hover { color: var(--text-primary); }
 
-        /* RWD */
         @media (max-width: 768px) {
             .content-section { padding: 40px 25px; }
             .hero-images { grid-template-columns: 1fr; }
             .hero h1 { font-size: 2rem; }
             .hero-subtitle { font-size: 1.2rem; }
+            .comparison-table { font-size: 0.9rem; }
+            .comparison-table th, .comparison-table td { padding: 12px 10px; }
         }
     </style>
 </head>
 <body>
-    <!-- 代碼雨背景 -->
     <div class="code-rain" id="codeRain"></div>
-
-    <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
-            <span class="hero-badge">📰 AI News 專題報道</span>
-            <h1>Android Show: I/O 2026 完整發布回顧</h1>
-            <p class="hero-subtitle">Google 年度開發者大會揭曉 Android 生態系統最新布局，人工智能與行動裝置深度整合成為本次發表核心主軸</p>
+            <span class="hero-badge">📱 Android 生態</span>
+            <h1>The Android Show: I/O 2026 重點發布總整理</h1>
+            <p class="hero-subtitle">Google 提前披露 I/O 2026 大會的重磅消息！全新 Googlebooks 筆電、Gemini Intelligence 全面登陸、Android 17 新功能、Instagram 編輯工具升級，一文睇清所有重點。</p>
             <div class="hero-images">
                 <div class="hero-image-card">
-                    <img src="img/img1.png" alt="Android Show I/O 2026 發表會現場">
+                    <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&q=80" alt="Android I/O 2026">
                 </div>
             </div>
         </div>
-        <div class="scroll-indicator">
-            <span></span>
+    </section>
+
+    <section class="content-section">
+        <div class="meta-info">
+            <p><strong>📺 資料來源</strong>：<a href="https://www.engadget.com/2171038/everything-announced-at-android-show-google-io-2026/" target="_blank">Engadget</a></p>
+            <p><strong>📅 發布日期</strong>：2026-05-13</p>
+            <p><strong>🤖 處理方式</strong>：AI 智能摘要 + 深度優化</p>
+        </div>
+
+        <div class="alert-box">
+            <h4>📌 背景說明</h4>
+            <p>Google I/O 2026 開發者大會即將舉行，但 Android 生態系的發布實在太多，Google 決定透過《The Android Show》提前披露所有重點。今次發布涵蓋硬件、軟件、AI 功能全方位更新。</p>
+        </div>
+
+        <div class="quote-box">
+            <p>Googlebooks 是 Android 基礎的進化形態，專為 Gemini Intelligence 度身訂造，與 Android 手機無縫整合。</p>
+            <cite>— Google 官方聲明，2026 年 5 月 13 日</cite>
+        </div>
+
+        <h3>🎯 四大核心發布</h3>
+        <div class="tech-cards">
+            <div class="tech-card">
+                <div class="tech-card-icon">💻</div>
+                <h4>Googlebooks 筆電系列</h4>
+                <p>Chromebook 15 週年接班產品，專為 Gemini Intelligence 設計，2026 年秋季上市，由 Acer、ASUS、Dell、HP、Lenovo 製造，可直接存取 Android 手機檔案。</p>
+            </div>
+            <div class="tech-card">
+                <div class="tech-card-icon">🤖</div>
+                <h4>Gemini Intelligence</h4>
+                <p>整合式 AI 功能套件，包括 Magic Pointer、Create My Widget、Autofill with Google，適用於 Android、Wear OS、Android Auto、Android XR。</p>
+            </div>
+            <div class="tech-card">
+                <div class="tech-card-icon">🌐</div>
+                <h4>Gemini for Chrome</h4>
+                <p>2026 年 6 月底起登陸 Android，Gemini 3.1 AI 助手可協助研究、摘要、比較網頁，連接 Gmail、Calendar、Keep，並整合 Nano Banana 圖像生成。</p>
+            </div>
+            <div class="tech-card">
+                <div class="tech-card-icon">📱</div>
+                <h4>Android 17 新功能</h4>
+                <p>Noto 3D emoji、Rambler 語音轉文字、Pause Point 防沉迷、Screen Reactions 影片錄製，支援 iOS 轉 Android 無線傳輸。</p>
+            </div>
+        </div>
+
+        <h3>💻 Googlebooks vs Copilot+ PC 比較</h3>
+        <table class="comparison-table">
+            <thead>
+                <tr>
+                    <th>項目</th>
+                    <th>Googlebooks</th>
+                    <th>Microsoft Copilot+ PC</th>
+                    <th>差異</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="highlight-col">定位</td>
+                    <td>Android + ChromeOS 整合</td>
+                    <td>Windows AI 筆電</td>
+                    <td class="highlight-col">Googlebooks 強調跨平台</td>
+                </tr>
+                <tr>
+                    <td class="highlight-col">AI 功能</td>
+                    <td>Gemini Intelligence</td>
+                    <td>Copilot AI</td>
+                    <td>功能相似但生態不同</td>
+                </tr>
+                <tr>
+                    <td class="highlight-col">手機整合</td>
+                    <td>直接存取 Android 檔案</td>
+                    <td>Phone Link（有限）</td>
+                    <td class="highlight-col">Googlebooks 原生整合</td>
+                </tr>
+                <tr>
+                    <td class="highlight-col">上市時間</td>
+                    <td>2026 年秋季</td>
+                    <td>2024 年中</td>
+                    <td>Copilot+ 先上市</td>
+                </tr>
+                <tr>
+                    <td class="highlight-col">廠商</td>
+                    <td>Acer、ASUS、Dell、HP、Lenovo</td>
+                    <td>多家 Windows 筆電</td>
+                    <td>廠商重疊性高</td>
+                </tr>
+                <tr>
+                    <td class="highlight-col">市場反應</td>
+                    <td>待觀察</td>
+                    <td>銷售未如預期</td>
+                    <td class="highlight-red">Copilot+ 反應冷淡</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>⏱️ 發布時間軸</h3>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-date">2026 年 5 月 12 日</div>
+                <div class="timeline-title">The Android Show 直播</div>
+                <div class="timeline-desc">Google 透過直播發布所有 I/O 前哨重點，包括 Googlebooks、Gemini Intelligence、Android 17</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">2026 年 5 月中</div>
+                <div class="timeline-title">Google I/O 2026 大會</div>
+                <div class="timeline-desc">正式開發者大會，預計有更多 Android XR、Android Auto 更新披露</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">2026 年 6 月底</div>
+                <div class="timeline-title">Gemini for Chrome 部署</div>
+                <div class="timeline-desc">美國 Android 12+ 設備優先，AI Pro/Ultra 訂閱用戶搶先體驗</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">2026 年夏季</div>
+                <div class="timeline-title">Gemini Intelligence 推送</div>
+                <div class="timeline-desc">Samsung Galaxy 與 Google Pixel 最新型號率先獲得更新</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">2026 年秋季</div>
+                <div class="timeline-title">Googlebooks 上市</div>
+                <div class="timeline-desc">首批筆電由 Acer、ASUS、Dell、HP、Lenovo 製造，聖誕檔期搶攻市場</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">2026 年下半年</div>
+                <div class="timeline-title">Quick Share 支援 AirDrop</div>
+                <div class="timeline-desc">Samsung、Oppo、OnePlus、Vivo、小米、Honor 將支援與 iOS 跨平台傳輸</div>
+            </div>
+        </div>
+
+        <h4>📱 Android 17 重點功能</h4>
+        <p>Google 持續淡化年度大更新，轉而以 Pixel Drops 形式推出功能。以下是 Android 17 的主要亮點：</p>
+        <ul>
+            <li><strong>Noto 3D emoji</strong>：全新 3D 表情符號系列，Pixel 裝置優先支援</li>
+            <li><strong>Rambler</strong>：AI 語音轉文字，自動移除口頭禪並整理句子，支援中途切換語言</li>
+            <li><strong>Pause Point</strong>：10 秒延遲機制，幫助用戶更有意識地使用手機，需重啟才能關閉</li>
+            <li><strong>Screen Reactions</strong>：同時錄製反應與畫面，適用於社交媒體短片創作</li>
+            <li><strong>iOS 轉 Android</strong>：與 Apple 合作，支援無線傳輸密碼、相片、訊息、apps、聯絡人、eSIM</li>
+            <li><strong>Quick Share × AirDrop</strong>：跨 Android 品牌與 iOS 互通的檔案傳輸</li>
+        </ul>
+
+        <h4>🎨 Instagram 編輯工具登陸 Android</h4>
+        <p>Google 與 Meta 合作，將 Instagram 的專業拍攝與編輯工具帶到 Android 生態：</p>
+        <ul>
+            <li><strong>Ultra HDR 影片</strong>：高階 Android 裝置支援</li>
+            <li><strong>夜視模式</strong>：低光環境拍攝增強</li>
+            <li><strong>影片防手震</strong>：內建穩定功能</li>
+            <li><strong>AI 畫質提升</strong>：一鍵增強相片與影片</li>
+            <li><strong>獨立音軌編輯</strong>：可調整音樂音量、消除風聲</li>
+            <li><strong>Instagram Edits app</strong>：AI 驅動的影片編輯應用程式</li>
+        </ul>
+
+        <h3>🔒 安全與私隱更新</h3>
+        <p>Gemini Intelligence 的 Agentic AI 功能引發安全憂患，Google 作出以下承諾：</p>
+        <ul>
+            <li><strong>Private Compute Core</strong>：隔離處理敏感數據</li>
+            <li><strong>Private AI Compute</strong>：雲端 AI 運算私隱保護</li>
+            <li><strong>KVM 保護</strong>：核心虛擬化安全</li>
+            <li><strong>第三方審計</strong>：關鍵 AI 安全架構開源審計</li>
+            <li><strong>隱私儀表板</strong>：顯示 AI 助手使用記錄與數據分享</li>
+            <li><strong>銀行電話驗證</strong>：新增防止偽冒金融機構來電功能</li>
+        </ul>
+
+        <div class="highlight-box">
+            <h4>✨ 關鍵洞察</h4>
+            <p>Google 正以「Android 生態整合」為核心策略，從 Googlebooks 到 Gemini Intelligence，所有功能都強調跨裝置無縫連接。這是 Google 回應 Apple 生態壁壘的直接反擊。</p>
+        </div>
+
+        <div class="alert-box">
+            <h4>⚠️ 用戶需注意</h4>
+            <p>Gemini Intelligence 功能繁多，用戶應留意：
+            <br>• 功能需要明確授權才會運行
+            <br>• 可以選擇性關閉特定功能
+            <br>• 24 小時內的 AI 使用記錄可在隱私儀表板查看
+            <br>• 自動瀏覽功能（代為預訂等）需要二次確認</p>
         </div>
     </section>
 
-    <!-- Content Section -->
-    <section>
-        <div class="content-section">
-            <!-- Meta Info -->
-            <div class="meta-info">
-                <p><strong>📺 資料來源</strong>：<a href="https://www.engadget.com" target="_blank">Engadget</a></p>
-                <p><strong>📅 發布日期</strong>：2026-05-13</p>
-                <p><strong>🤖 處理方式</strong>：AI 智能摘要生成</p>
-            </div>
-
-            <h3>🎯 發表會核心聚焦</h3>
-            <p>本次 Android Show: I/O 2026 版發表會，Google 展現了其在<strong>行動作業系統與人工智慧整合</strong>方面的重大進展。研究指出，Google 正積極將生成式 AI 技術嵌入 Android 各個層面，從系統底層到使用者介面，打造更直覺、更智慧的行動體驗。</p>
-            <p>數據顯示，開發者社群對於此次發表的 API 更新與工具鏈優化反應熱烈。業界觀察認為，Google 正透過強化 Android 生態系統的 AI 能力，回應市場對於智慧型手機功能革新的高度期待。</p>
-
-            <h3>💡 技術亮點解析</h3>
-            <p>專家分析指出，本次發表內容涵蓋多個關鍵領域，展現 Google 在軟硬體整合上的策略布局。以下為主要技術更新項目：</p>
-            <ul>
-                <li><strong>Android 16 正式預覽</strong>：全新系統架構支援更高效的 AI 模型本地運行</li>
-                <li><strong>Gemini 深度整合</strong>：Google 助理全面升級為 Gemini 驅動，支援多模態互動</li>
-                <li><strong>隱私運算強化</strong>：新增裝置端 AI 處理機制，降低雲端數據傳輸風險</li>
-                <li><strong>跨裝置生態串聯</strong>：強化 Android  Wear OS、Android TV 的無縫協作</li>
-                <li><strong>開發者工具革新</strong>：推出新一代 AI 輔助開發套件，簡化應用程式建置流程</li>
-                <li><strong>Material Design 3 更新</strong>：介面設計語言融入動態 AI 生成元素</li>
-            </ul>
-
-            <h3>📊 市場策略觀察</h3>
-            <p>研究指出，Google 此次發表會的戰略意圖明確，旨在鞏固 Android 在全球行動市場的領導地位。數據顯示，透過將 Gemini AI 深度嵌入作業系統核心，Google 正試圖建立與競爭對手差異化的使用者體驗護城河。</p>
-            <p>業界觀察人士分析，本次更新特別強調<strong>端側 AI 運算能力</strong>，反映 Google 對於隱私保護與離線功能的重視。此舉不僅回應監管力，也為開發者創造了更穩定的應用執行環境。</p>
-
-            <div class="highlight-box">
-                <h4>✨ 關鍵洞察</h4>
-                <p>本次 Android Show 標誌著行動作業系統進入「AI 原生」新紀元。Google 不再將人工智慧視為附加功能，而是將其重塑為 Android 的核心架構支柱，此轉變將對未來五年智慧型裝置發展產生深遠影響。</p>
-            </div>
-
-            <h3>🔮 產業影響展望</h3>
-            <p>專家預測，隨著 Android 16 於今年第三季正式推送，相關 AI 功能將迅速滲透至中高階裝置市場。研究指出，硬體合作夥伴如 Samsung、Pixel 等品牌，預計將在旗艦機種上優先導入完整 Gemini 整合方案。</p>
-            <p>長期而言，本次發表會揭示的技術路線，顯示 Google 正積極建構一個以 AI 為中樞的跨裝置生態系統。業界分析認為，這將加速智慧家庭、車載系統與個人裝置之間的界線消融，為使用者創造更連貫的數位生活體驗。</p>
-        </div>
-    </section>
-
-    <!-- Footer -->
     <footer>
         <p>© 2026 AI News Archive | 由 AI 技術生成</p>
         <div class="footer-links">
@@ -154,26 +322,6 @@
             <a href="https://hklamsir.github.io/ai_news/" target="_blank">瀏覽所有專題</a>
         </div>
     </footer>
-
-    <script>
-        // 生成代碼雨效果
-        const codeRain = document.getElementById('codeRain');
-        const chars = '01アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン';
-        
-        function createCodeChar() {
-            const char = document.createElement('span');
-            char.className = 'code-char';
-            char.textContent = chars[Math.floor(Math.random() * chars.length)];
-            char.style.left = Math.random() * 100 + '%';
-            char.style.animationDelay = Math.random() * 4 + 's';
-            char.style.animationDuration = (Math.random() * 3 + 3) + 's';
-            codeRain.appendChild(char);
-            
-            setTimeout(() => char.remove(), 6000);
-        }
-        
-        setInterval(createCodeChar, 100);
-    </script>
 
     <script>
         function createCodeRain() {
