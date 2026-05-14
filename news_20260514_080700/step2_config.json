@@ -1,0 +1,15 @@
+{
+  "dir_path": "/home/lamsir/ai_news/news_20260514_080700",
+  "title": "The Human Cost of 10x AI Productivity",
+  "title_zh": "AI 生產力的隱性代價：當工程師大腦被機器速度追殺",
+  "source": "TECHTRENCHES",
+  "date": "2026-05-14",
+  "url": "https://techtrenches.dev/p/the-human-cost-of-10x-how-ai-is-physically",
+  "type": "report",
+  "tags": ["AI", "工程師", "倦怠", "生產力", "健康"],
+  "image_count": 1,
+  "image_prompts": [
+    "科技風格插圖，一位疲憊的程式設計師被電腦包圍，螢幕發出藍光，眼神空洞，背景是象徵認知負荷的混亂數據流，預示著 AI 時代工程師的精神健康危機，電影《銀翼殺手》美學，cyberpunk 風格，繁體中文"
+  ],
+  "summary_short": "AI 生產力最高的用戶倦怠率達 88%。研究顯示 AI 並未減少工作，而是加劇了它。當機器速度遇上生物速度，人類認知負荷達到臨界點。"
+}

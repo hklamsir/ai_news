@@ -1,14 +1,22 @@
 {
   "archives": [
     {
+      "dir": "news_20260514_080700",
+      "title": "AI 生產力的隱性代價：當工程師大腦被機器速度追殺",
+      "summary": "當 AI 承諾十倍生產力，誰來承擔人類大腦的極限代價？一場關於工程師身心健康與產業現實的深度調查",
+      "url": "./news_20260514_080700/index.html",
+      "date": "2026-05-14",
+      "time": "08:07:00",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260514_080632",
       "title": "The Human Cost of 10x AI Productivity",
-      "summary_short": "# The Human Cost of 10x AI Productivity## 📖 新聞導語本文報導來自 **TECHTRENCHES**，發布於 **2026-05-14**。最新科",
-      "images": [
-        "img/img1.png"
-      ],
+      "summary": "當人工智能將生產力提升十倍，人類勞動力將面臨何種衝擊？本次報告深入探討技術躍進背後的社會代價與產業重構",
+      "url": "./news_20260514_080632/index.html",
       "date": "2026-05-14",
-      "url": "./news_20260514_080632/index.html"
+      "time": "08:06:32",
+      "source": "AI News"
     },
     {
       "dir": "news_20260513_081538",
@@ -749,6 +757,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-05-14T08:08:51.722138",
-  "total_count": 82
+  "last_updated": "2026-05-14T08:15:17.756861",
+  "total_count": 84
 }
