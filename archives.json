@@ -2,13 +2,12 @@
   "archives": [
     {
       "dir": "news_20260514_140253",
-      "title": "Apple may open up the App Store to agentic AI - Engadget",
-      "summary_short": "# Apple may open up the App Store to agentic AI - Engadget## 📖 新聞導語本文報導來自 **ENGADGET**，發布於 **202",
-      "images": [
-        "img/img1.png"
-      ],
+      "title": "Apple 考慮向代理式 AI 敞開 App Store 大門",
+      "summary": "在隱私安全與商業利益的十字路口，Apple 如何抉擇？代理式 AI 浪潮下的平台策略轉向",
+      "url": "./news_20260514_140253/index.html",
       "date": "2026-05-14",
-      "url": "./news_20260514_140253/index.html"
+      "time": "14:02:53",
+      "source": "AI News"
     },
     {
       "dir": "news_20260514_080700",
@@ -767,6 +766,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-05-14T14:05:10.626389",
-  "total_count": 84
+  "last_updated": "2026-05-14T14:12:44.403489",
+  "total_count": 85
 }

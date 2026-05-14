@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="zh-TW">
+<html lang="zh-Hant">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Apple 或將開放 App Store 接入智能代理 AI - AI News 專題報道</title>
+    <title>Apple 考慮向代理式 AI 敞開 App Store 大門 — AI News</title>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -11,6 +11,7 @@
             --primary-purple: #7b2cbf;
             --accent-green: #00ff88;
             --accent-orange: #ff9500;
+            --accent-red: #ff4757;
             --dark-bg: #0a0a0f;
             --card-bg: #12121a;
             --card-bg-light: #1a1a28;
@@ -30,18 +31,17 @@
         @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.6; } }
         @keyframes slideIn { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
         @keyframes codeRain { 0% { transform: translateY(-100%); opacity: 0; } 10% { opacity: 1; } 90% { opacity: 1; } 100% { transform: translateY(100vh); opacity: 0; } }
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); } }
 
-        /* 代碼雨背景 */
         .code-rain { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; overflow: hidden; }
         .code-char { position: absolute; color: var(--primary-blue); font-family: 'Courier New', monospace; font-size: 14px; opacity: 0; animation: codeRain 4s linear infinite; }
 
-        /* Hero Section */
-        .hero { position: relative; min-height: 80vh; display: flex; align-items: center; justify-content: center; padding: 80px 20px; background: linear-gradient(180deg, var(--dark-bg) 0%, #1a1a2e 100%); overflow: hidden; }
+        .hero { position: relative; min-height: 85vh; display: flex; align-items: center; justify-content: center; padding: 80px 20px; background: linear-gradient(180deg, var(--dark-bg) 0%, #1a1a2e 100%); overflow: hidden; }
         .hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(ellipse at center, rgba(123, 44, 191, 0.15) 0%, transparent 70%); z-index: 1; }
         .hero-content { position: relative; z-index: 2; max-width: 1200px; text-align: center; animation: slideIn 1s ease-out; }
         .hero-badge { display: inline-block; padding: 12px 32px; background: var(--gradient-1); border-radius: 50px; font-size: 18px; font-weight: 700; margin-bottom: 24px; box-shadow: var(--glow-blue); letter-spacing: 1px; }
-        .hero h1 { font-size: clamp(2rem, 5vw, 4rem); font-weight: 900; margin-bottom: 24px; background: var(--gradient-1); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; line-height: 1.2; }
-        .hero-subtitle { font-size: clamp(1.2rem, 2.2vw, 1.6rem); color: var(--text-primary); max-width: 900px; margin: 0 auto 40px; line-height: 1.6; font-weight: 400; }
+        .hero h1 { font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 900; margin-bottom: 24px; background: var(--gradient-1); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; line-height: 1.2; }
+        .hero-subtitle { font-size: clamp(1.2rem, 2.2vw, 1.5rem); color: var(--text-primary); max-width: 900px; margin: 0 auto 40px; line-height: 1.6; font-weight: 400; }
         .hero-images { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; margin-top: 60px; }
         .hero-image-card { position: relative; border-radius: 20px; overflow: hidden; aspect-ratio: 16/9; box-shadow: var(--glow-purple); transition: transform 0.3s ease, box-shadow 0.3s ease; }
         .hero-image-card:hover { transform: scale(1.02); box-shadow: 0 0 40px rgba(123, 44, 191, 0.7); }
@@ -50,10 +50,10 @@
         .scroll-indicator span { display: block; width: 30px; height: 50px; border: 2px solid var(--primary-blue); border-radius: 25px; position: relative; }
         .scroll-indicator span::before { content: ''; position: absolute; top: 8px; left: 50%; transform: translateX(-50%); width: 6px; height: 10px; background: var(--primary-blue); border-radius: 3px; animation: pulse 1.5s infinite; }
 
-        /* Content Section */
         section { padding: 80px 20px; position: relative; z-index: 1; }
         .content-section { background: var(--card-bg); padding: 60px 50px; border-radius: 24px; border: 1px solid rgba(0, 212, 255, 0.2); max-width: 1100px; margin: 0 auto; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3); }
 
+        .content-section h2 { font-size: 1.8rem; margin: 50px 0 25px; color: var(--accent-green); border-left: 5px solid var(--accent-green); padding-left: 20px; }
         .content-section h3 { font-size: 1.6rem; margin: 40px 0 20px; color: var(--accent-green); }
         .content-section p { color: var(--text-secondary); line-height: 2; font-size: 1.08rem; margin: 15px 0; }
         .content-section ul { margin: 20px 0; padding-left: 30px; }
@@ -68,14 +68,49 @@
         .highlight-box h4 { color: var(--accent-green); margin-bottom: 15px; font-size: 1.3rem; }
         .highlight-box p { color: var(--text-secondary); margin: 0; }
 
-        /* Footer */
+        .quote-box { background: linear-gradient(135deg, rgba(123, 44, 191, 0.15) 0%, rgba(0, 212, 255, 0.15) 100%); padding: 30px 40px; border-radius: 16px; border-left: 5px solid var(--primary-purple); margin: 40px 0; position: relative; }
+        .quote-box::before { content: '"'; position: absolute; top: 10px; left: 20px; font-size: 80px; color: var(--primary-purple); opacity: 0.3; font-family: Georgia, serif; }
+        .quote-box p { color: var(--text-primary); font-size: 1.2rem; font-style: italic; margin-bottom: 15px; }
+        .quote-box cite { color: var(--text-secondary); font-size: 0.95rem; }
+
+        .tech-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin: 40px 0; }
+        .tech-card { background: var(--card-bg-light); padding: 30px; border-radius: 16px; border: 1px solid rgba(0, 212, 255, 0.15); transition: transform 0.3s ease, box-shadow 0.3s ease; animation: fadeInUp 0.6s ease-out forwards; opacity: 0; }
+        .tech-card:nth-child(1) { animation-delay: 0.1s; }
+        .tech-card:nth-child(2) { animation-delay: 0.2s; }
+        .tech-card:nth-child(3) { animation-delay: 0.3s; }
+        .tech-card:nth-child(4) { animation-delay: 0.4s; }
+        .tech-card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0, 212, 255, 0.2); }
+        .tech-card-icon { font-size: 2.5rem; margin-bottom: 15px; }
+        .tech-card h4 { color: var(--primary-blue); margin-bottom: 12px; font-size: 1.2rem; }
+        .tech-card p { color: var(--text-secondary); font-size: 0.95rem; line-height: 1.7; }
+
+        .comparison-table { width: 100%; border-collapse: collapse; margin: 40px 0; border-radius: 16px; overflow: hidden; box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3); }
+        .comparison-table thead { background: linear-gradient(135deg, var(--primary-blue), var(--primary-purple)); }
+        .comparison-table th { padding: 18px 20px; text-align: left; font-weight: 600; font-size: 1.05rem; }
+        .comparison-table td { padding: 16px 20px; border-bottom: 1px solid rgba(255, 255, 255, 0.05); color: var(--text-secondary); }
+        .comparison-table tr:last-child td { border-bottom: none; }
+        .comparison-table tr:nth-child(even) { background: rgba(255, 255, 255, 0.02); }
+        .comparison-table .highlight-col { color: var(--accent-red); font-weight: 500; }
+
+        .timeline { position: relative; margin: 40px 0; padding-left: 40px; }
+        .timeline::before { content: ''; position: absolute; left: 15px; top: 0; bottom: 0; width: 2px; background: linear-gradient(180deg, var(--primary-blue), var(--primary-purple)); }
+        .timeline-item { position: relative; margin-bottom: 35px; padding: 20px 25px; background: var(--card-bg-light); border-radius: 12px; border: 1px solid rgba(0, 212, 255, 0.1); animation: fadeInUp 0.5s ease-out forwards; opacity: 0; }
+        .timeline-item:nth-child(1) { animation-delay: 0.1s; }
+        .timeline-item:nth-child(2) { animation-delay: 0.2s; }
+        .timeline-item:nth-child(3) { animation-delay: 0.3s; }
+        .timeline-item:nth-child(4) { animation-delay: 0.4s; }
+        .timeline-item:nth-child(5) { animation-delay: 0.5s; }
+        .timeline-item:nth-child(6) { animation-delay: 0.6s; }
+        .timeline-date { color: var(--primary-blue); font-size: 0.9rem; font-weight: 600; margin-bottom: 8px; }
+        .timeline-title { color: var(--text-primary); font-size: 1.1rem; font-weight: 600; margin-bottom: 8px; }
+        .timeline-desc { color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6; }
+
         footer { background: #050508; padding: 60px 20px; text-align: center; border-top: 1px solid rgba(255, 255, 255, 0.1); }
         footer p { color: var(--text-secondary); margin-bottom: 20px; }
         .footer-links { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; }
         .footer-links a { color: var(--primary-blue); text-decoration: none; transition: color 0.3s ease; }
         .footer-links a:hover { color: var(--text-primary); }
 
-        /* RWD */
         @media (max-width: 768px) {
             .content-section { padding: 40px 25px; }
             .hero-images { grid-template-columns: 1fr; }
@@ -91,12 +126,15 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
-            <span class="hero-badge">📰 AI News 專題報道</span>
-            <h1>Apple 或將開放 App Store 接入智能代理 AI</h1>
-            <p class="hero-subtitle">科技巨頭可能調整平台政策，為新一代人工智能應用開啟大門，引發業界高度關注與討論</p>
+            <span class="hero-badge">📱 Apple · AI · WWDC 2026</span>
+            <h1>Apple 考慮向代理式 AI 敞開 App Store 大門</h1>
+            <p class="hero-subtitle">在隱私安全與商業利益的十字路口，Apple 如何抉擇？代理式 AI 浪潮下的平台策略轉向</p>
             <div class="hero-images">
                 <div class="hero-image-card">
-                    <img src="img/img1.png" alt="Apple App Store 與 AI 技術概念圖">
+                    <img src="img/img1.png" alt="Apple App Store 代理式 AI 概念圖">
+                </div>
+                <div class="hero-image-card">
+                    <img src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=800&h=450&fit=crop" alt="Apple WWDC 開發者大會">
                 </div>
             </div>
         </div>
@@ -110,42 +148,152 @@
         <div class="content-section">
             <!-- Meta Info -->
             <div class="meta-info">
-                <p><strong>📺 資料來源</strong>：<a href="https://www.engadget.com" target="_blank">Engadget</a></p>
+                <p><strong>📺 資料來源</strong>：<a href="https://www.engadget.com/2172378/apple-may-open-up-the-app-store-to-agentic-ai/" target="_blank">ENGADGET</a>（引用 The Information）</p>
                 <p><strong>📅 發布日期</strong>：2026-05-14</p>
                 <p><strong>🤖 處理方式</strong>：AI 智能摘要生成</p>
             </div>
 
             <!-- 核心觀點 -->
-            <h3>🎯 核心觀點</h3>
-            <p>本次報告指出，Apple 可能正考慮對 App Store 政策進行重大調整，以適應<strong>智能代理式人工智能（Agentic AI）</strong>的快速發展。這一潛在變革標誌著科技巨頭對 AI 應用生態系統態度的轉變，可能為開發者創造全新的機遇與挑戰。</p>
-            <p>研究指出，隨著人工智能技術從單純的對話工具演進為能夠自主執行任務的智能代理，傳統的應用程式分發模式正面臨根本性重構。Apple 此舉若成真，將是該公司近年來在平台開放性方面最為顯著的政策轉向之一。</p>
+            <h2>🎯 核心觀點：Apple 的兩難抉擇</h2>
+            <p>多年來，AI 一直是 Apple 面临的多層面難題。根據 The Information 的獨家報導，Apple 正積極考慮向代理式 AI（Agentic AI）敞開 App Store 的大門。這一策略轉向將使 Apple 在激烈的 AI 競賽中維持競爭力，同時設法在隱私安全與商業利益之間取得平衡。</p>
+            <p>代理式 AI（Agentic AI）能主動控制設備及其程式，功能遠超一般 AI 助手。業界對這類工具的興趣正急速升溫，開發者與一般用戶都在關注。面對這股熱潮，Apple 陷入兩難：若全面封鎖代理式 AI，Apple 可能被邊緣化；若開放，則需確保用戶隱私、系統安全與平台控制權。</p>
 
-            <!-- 重點解析 -->
-            <h3>💡 重點解析</h3>
-            <p>專家分析認為，智能代理 AI 傳統應用程式存在本質差異。這類系統能夠理解用戶意圖、自主規劃執行步驟，並跨應用程式完成複雜任務，對現有的應用程式架構和審核機制提出了全新要求。</p>
-            <ul>
-                <li>智能代理 AI 需要更深層次的系統限以實現跨應用協作</li>
-                <li>現有 App Store 審核流程可能無法有效評估自主決策型 AI 的安全性</li>
-                <li>開發者將獲得更多創新空間，但同時需承擔更大的責任</li>
-                <li>用戶隱私保護與 AI 功能擴展之間需要新的平衡機制</li>
-                <li>競爭對手的平台策略可能加速 Apple 的決策進程</li>
-            </ul>
-
-            <!-- 數據分析 -->
-            <h3>📊 市場趨勢</h3>
-            <p>數據顯示，智能代理 AI 市場正處於爆發式增長階段。多家科技巨頭已相推出相關產品或服務，試圖在這一新兴領域建立先發優勢。業界觀察人士指出，Apple 若能在確保安全的前提下適度開放平台，將有助於鞏固其在移動生態系統中的領導地位。</p>
-            <p>分析進一步表明，開發者社群對於更靈活的 AI 整合方案需求強勁。現有政策限制已成為部分創新應用落地的瓶頸，適度的政策鬆綁有望釋放顯著的技術創新潛能。</p>
-
-            <!-- Highlight Box -->
-            <div class="highlight-box">
-                <h4>✨ 關鍵洞察</h4>
-                <p>Apple 的政策調整將不僅影響 iOS 生態系統，更可能成為整個移動 AI 產業的風向標。如何在開放創新與維持平台品質之間取得平衡，將是決定此舉成敗的關鍵因素。業界預期相關細節可能在即將舉行的全球開發者大會上揭曉。</p>
+            <!-- Tech Cards -->
+            <h2>📊 為何 Apple 此前封鎖 Vibe Coding 工具？</h2>
+            <div class="tech-cards">
+                <div class="tech-card">
+                    <div class="tech-card-icon">🚫</div>
+                    <h4>違反 App Store 政策</h4>
+                    <p>Vibe Coding 工具允許用戶以自然語言描述需求，AI 直接生成完整 App，完全繞過傳統開發者審核流程。</p>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-card-icon">💰</div>
+                    <h4>衝擊營收來源</h4>
+                    <p>用戶可直接透過 AI 生成 App，繞過 App Store 的付費分潤機制，直接威脅 Apple 數十億美元的服務收入。</p>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-card-icon">🦠</div>
+                    <h4>安全風險</h4>
+                    <p>AI 生成工具可能被用來傳播惡意軟件、執行木馬程式或進行其他惡意行為，帶來平台級安全漏洞。</p>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-card-icon">⚖️</div>
+                    <h4>代理式 AI 的新挑戰</h4>
+                    <p>代理式 AI 能主動操作設備（刪除郵件、進行購買等），失控風險遠超傳統 AI 助手，需更嚴格的監管框架。</p>
+                </div>
             </div>
 
-            <!-- 未來展望 -->
-            <h3>🔮 未來展望</h3>
-            <p>展望未來，智能代理 AI 的普及將重塑用戶與數位服務的互動方式。研究預測，能夠自主完成預訂、規劃、溝通等日常任務的 AI 助手將逐漸成為標配，而應用程式商店作為分發渠道的角色也將隨之演變。</p>
-            <p>業界觀察強調，無論 Apple 最終採取何種政策立場，確保用戶安全、維護隱私權益、建立透明的責任機制都應是不可動搖的底線。技術創新與風險管控的協調發展，將是這一轉型期的核心課題。</p>
+            <!-- Quote Box -->
+            <div class="quote-box">
+                <p>「員工正在設計一套能夠堅守隱私與安全標準、並防止代理式系統『失控』行為的系統——如某些用戶體驗過的，代理可以『發瘋』並刪除用戶所有郵件。」</p>
+                <cite>— The Information，引述知情人士</cite>
+            </div>
+
+            <!-- Timeline -->
+            <h2>⏱️ Apple 與 AI 的纠葛時間軸</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date">近年來</div>
+                    <div class="timeline-title">AI 布局落後</div>
+                    <div class="timeline-desc">Apple 在 AI 領域的進展落後於 Google、Microsoft 等競爭對手，Siri 的智能程度備受質疑。</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">此前</div>
+                    <div class="timeline-title">封鎖 Vibe Coding 工具</div>
+                    <div class="timeline-desc">Apple 拒絕讓 vibe coding 工具進駐 App Store，理由是違反政策並可能帶來安全與商業風險。</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2026 年</div>
+                    <div class="timeline-title">代理式 AI 熱潮來襲</div>
+                    <div class="timeline-desc">能主動控制設備的代理式 AI 在開發者與一般用戶間快速走紅，封鎖策略可能讓 Apple 被邊緣化。</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2026 年 5 月</div>
+                    <div class="timeline-title">策略轉向醞釀中</div>
+                    <div class="timeline-desc">據報導 Apple 員工正在積極設計新的系統架構，試圖在開放代理式 AI 與維護平台安全間取得平衡。</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">6 月 8-12 日</div>
+                    <div class="timeline-title">WWDC 2026 備受矚目</div>
+                    <div class="timeline-desc">外界預期 Apple 將在 WWDC 主題演講中揭示其 AI 布局的全貌，包括對代理式 AI 的最終立場。</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">WWDC 主題演講</div>
+                    <div class="timeline-title">揭曉時刻</div>
+                    <div class="timeline-desc">這將是觀察 Apple AI 策略的關鍵時刻——是全面擁抱還是謹慎限制，即將揭曉。</div>
+                </div>
+            </div>
+
+            <!-- 代理式 AI 的風險 -->
+            <h2>⚠️ 代理式 AI 的潛在風險</h2>
+            <p>代理式 AI（Agentic AI）與傳統 AI 助手有本質差異——它不僅僅回答問題，而是能主動控制設備並執行操作。這種「主動性」帶來了前所未有的風險：</p>
+            <ul>
+                <li><strong>意外刪除</strong>：代理可能「發瘋」並刪除用戶所有郵件——這並非誇大，而是 OpenClaw 等系統中真實發生過的情況</li>
+                <li><strong>未授權購買</strong>：代理可在用戶不知情的情況下進行應用內購買或訂閱</li>
+                <li><strong>隱私洩漏</strong>：代理主動訪問文件、郵件、訊息等敏感資料的範圍大幅擴大</li>
+                <li><strong>恶意利用</strong>：攻擊者可能透過代理式 AI 漏洞獲取設備控制權</li>
+            </ul>
+
+            <!-- 對比表 -->
+            <h2>📊 傳統 AI vs 代理式 AI</h2>
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>維度</th>
+                        <th>傳統 AI 助手</th>
+                        <th>代理式 AI（Agentic AI）</th>
+                        <th>風險等級</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>互動方式</td>
+                        <td>被動回應用戶提問</td>
+                        <td>主動規劃並執行任務</td>
+                        <td class="highlight-col">⚠️ 升高</td>
+                    </tr>
+                    <tr>
+                        <td>設備控制</td>
+                        <td>無</td>
+                        <td>可操作應用、刪除文件</td>
+                        <td class="highlight-col">🔴 高</td>
+                    </tr>
+                    <tr>
+                        <td>隱私影響</td>
+                        <td>有限的資料訪問</td>
+                        <td>深度訪問郵件、文件、訊息</td>
+                        <td class="highlight-col">🔴 高</td>
+                    </tr>
+                    <tr>
+                        <td>失控風險</td>
+                        <td>較低（仅回應）</td>
+                        <td>可能執行意外操作</td>
+                        <td class="highlight-col">🔴 高</td>
+                    </tr>
+                    <tr>
+                        <td>平台審核難度</td>
+                        <td>較易監管</td>
+                        <td>極難預審核行為</td>
+                        <td class="highlight-col">⚠️ 升高</td>
+                    </tr>
+                    <tr>
+                        <td>對 App Store 影響</td>
+                        <td>威脅有限</td>
+                        <td>可能繞過分潤機制</td>
+                        <td class="highlight-col">🔴 高</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <!-- 業界展望 -->
+            <h2>🔮 業界展望</h2>
+            <p>WWDC 2026（6 月 8-12 日）將是觀察 Apple AI 策略的關鍵時刻。外界預期 Apple 將揭示其對代理式 AI 的最終立場——是全面擁抱還是謹慎限制。</p>
+            <p>無論結果如何，代理式 AI 的發展趨勢已不可逆轉。當 AI 能主動操作設備時，隱私洩漏、系統破壞與未授權購買等風險將更加突出。Apple 能否在保護生態系統的同時順應這股熱潮，將決定其在未來 AI 版圖中的地位。</p>
+
+            <div class="highlight-box">
+                <h4>✨ 關鍵洞察</h4>
+                <p>Apple 的兩難折射出整個產業的共同困境：如何在 AI 的便利性與安全性之間取得平衡？當 AI 能主動操作設備時，傳統的「審核—上架」模式已不再適用。平台營運者需要全新的風險管理框架。</p>
+            </div>
         </div>
     </section>
 
@@ -155,68 +303,24 @@
         <div class="footer-links">
             <a href="../index.html">返回主頁</a>
             <a href="https://github.com/hklamsir/ai_news" target="_blank">GitHub</a>
-            <a href="https://hklamsir.github.io/ai_news/" target="_blank">瀏覽所有專題</a>
+            <a href="https://hklamsir.github.io/ai_news/" target="_blank">檢視所有專題</a>
         </div>
     </footer>
 
     <script>
-        // 代碼雨效果
+        // 生成代碼雨背景
         const codeRain = document.getElementById('codeRain');
         const chars = '01アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン';
         
-        function createCodeChar() {
-            const char = document.createElement('span');
+        for (let i = 0; i < 50; i++) {
+            const char = document.createElement('div');
             char.className = 'code-char';
             char.textContent = chars[Math.floor(Math.random() * chars.length)];
             char.style.left = Math.random() * 100 + '%';
-            char.style.animationDuration = (Math.random() * 3 + 2) + 's';
-            char.style.animationDelay = Math.random() * 2 + 's';
+            char.style.animationDelay = Math.random() * 4 + 's';
+            char.style.animationDuration = (3 + Math.random() * 2) + 's';
             codeRain.appendChild(char);
-            
-            setTimeout(() => char.remove(), 5000);
         }
-        
-        setInterval(createCodeChar, 100);
-    </script>
-
-    <script>
-        function createCodeRain() {
-            const codeRain = document.getElementById('codeRain');
-            if (!codeRain) return;
-            const chars = '01 アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン';
-            for (let i = 0; i < 50; i++) {
-                const char = document.createElement('div');
-                char.className = 'code-char';
-                char.textContent = chars[Math.floor(Math.random() * chars.length)];
-                char.style.left = Math.random() * 100 + '%';
-                char.style.animationDelay = Math.random() * 4 + 's';
-                char.style.animationDuration = (Math.random() * 2 + 3) + 's';
-                codeRain.appendChild(char);
-            }
-        }
-
-        function handleScrollAnimation() {
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.style.opacity = '1';
-                        entry.target.style.transform = 'translateY(0)';
-                    }
-                });
-            }, { threshold: 0.1 });
-
-            document.querySelectorAll('.fade-in').forEach(el => {
-                el.style.opacity = '0';
-                el.style.transform = 'translateY(30px)';
-                el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-                observer.observe(el);
-            });
-        }
-
-        document.addEventListener('DOMContentLoaded', () => {
-            createCodeRain();
-            handleScrollAnimation();
-        });
     </script>
 </body>
 </html>
