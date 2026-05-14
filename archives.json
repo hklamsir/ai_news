@@ -1,6 +1,16 @@
 {
   "archives": [
     {
+      "dir": "news_20260514_080632",
+      "title": "The Human Cost of 10x AI Productivity",
+      "summary_short": "# The Human Cost of 10x AI Productivity## 📖 新聞導語本文報導來自 **TECHTRENCHES**，發布於 **2026-05-14**。最新科",
+      "images": [
+        "img/img1.png"
+      ],
+      "date": "2026-05-14",
+      "url": "./news_20260514_080632/index.html"
+    },
+    {
       "dir": "news_20260513_081538",
       "title": "The Android Show: I/O 2026 重點發布總整理",
       "summary": "Google 提前披露 I/O 2026 大會的重磅消息！全新 Googlebooks 筆電、Gemini Intelligence 全面登陸、Android 17 新功能、Instagram 編輯工",
@@ -739,6 +749,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-05-13T08:19:29.974025",
+  "last_updated": "2026-05-14T08:08:51.722138",
   "total_count": 82
 }
