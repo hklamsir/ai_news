@@ -1,6 +1,16 @@
 {
   "archives": [
     {
+      "dir": "news_20260514_140253",
+      "title": "Apple may open up the App Store to agentic AI - Engadget",
+      "summary_short": "# Apple may open up the App Store to agentic AI - Engadget## 📖 新聞導語本文報導來自 **ENGADGET**，發布於 **202",
+      "images": [
+        "img/img1.png"
+      ],
+      "date": "2026-05-14",
+      "url": "./news_20260514_140253/index.html"
+    },
+    {
       "dir": "news_20260514_080700",
       "title": "AI 生產力的隱性代價：當工程師大腦被機器速度追殺",
       "summary": "當 AI 承諾十倍生產力，誰來承擔人類大腦的極限代價？一場關於工程師身心健康與產業現實的深度調查",
@@ -757,6 +767,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-05-14T08:15:17.756861",
+  "last_updated": "2026-05-14T14:05:10.626389",
   "total_count": 84
 }
