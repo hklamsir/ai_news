@@ -2,8 +2,8 @@
   "archives": [
     {
       "dir": "news_20260515_115717",
-      "title": "news_20260515_115717",
-      "summary": "反向盤問機制，迫使開發者在編碼前將模糊需求具體化，顯著降低需求理解落差。",
+      "title": "拒絕Vibe Coding！| AI程式設計的正確姿勢 | TypeScript大神的AI秘籍",
+      "summary": "TypeScript大神Matt Pocock公開八萬星標開源專案，以「Skills for real engineers」為核心理念，強調軟體工程基礎在AI時代非但未過時，反而成為開發者最核心的競爭優勢。",
       "url": "./news_20260515_115717/index.html",
       "date": "2026-05-15",
       "time": "11:57:17",
@@ -11,7 +11,7 @@
     },
     {
       "dir": "news_20260515_115413",
-      "title": "拒絕Vibe Coding！AI程式設計的正確姿勢",
+      "title": "【備案】拒絕Vibe Coding！AI程式設計的正確姿勢",
       "summary": "TypeScript大神Matt Pocock公開八萬星標開源專案，以嚴謹工程流程重新定義人機協作邊界，破解「十倍速製造垃圾程式碼」的產業危機",
       "url": "./news_20260515_115413/index.html",
       "date": "2026-05-15",
@@ -784,6 +784,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-05-15T12:02:14.655151",
+  "last_updated": "2026-05-15T18:19:35.677208",
   "total_count": 87
 }
