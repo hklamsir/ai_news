@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>拒絕Vibe Coding！AI程式設計的正確姿勢 | AI News</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-blue: #00d4ff;
+            --primary-purple: #7b2cbf;
+            --accent-green: #00ff88;
+            --accent-orange: #ff9500;
+            --dark-bg: #0a0a0f;
+            --card-bg: #12121a;
+            --card-bg-light: #1a1a28;
+            --text-primary: #ffffff;
+            --text-secondary: #a0a0b0;
+            --gradient-1: linear-gradient(135deg, #00d4ff 0%, #7b2cbf 100%);
+            --gradient-2: linear-gradient(135deg, #00d4ff 0%, #00ff88 100%);
+            --glow-blue: 0 0 20px rgba(0, 212, 255, 0.5);
+            --glow-purple: 0 0 20px rgba(123, 44, 191, 0.5);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Noto Sans TC', sans-serif; background-color: var(--dark-bg); color: var(--text-primary); line-height: 1.8; overflow-x: hidden; }
+
+        @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-20px); } }
+        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.6; } }
+        @keyframes slideIn { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes codeRain { 0% { transform: translateY(-100%); opacity: 0; } 10% { opacity: 1; } 90% { opacity: 1; } 100% { transform: translateY(100vh); opacity: 0; } }
+
+        /* 代碼雨背景 */
+        .code-rain { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; overflow: hidden; }
+        .code-char { position: absolute; color: var(--primary-blue); font-family: 'Courier New', monospace; font-size: 14px; opacity: 0; animation: codeRain 4s linear infinite; }
+
+        /* Hero Section */
+        .hero { position: relative; min-height: 80vh; display: flex; align-items: center; justify-content: center; padding: 80px 20px; background: linear-gradient(180deg, var(--dark-bg) 0%, #1a1a2e 100%); overflow: hidden; }
+        .hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(ellipse at center, rgba(123, 44, 191, 0.15) 0%, transparent 70%); z-index: 1; }
+        .hero-content { position: relative; z-index: 2; max-width: 1200px; text-align: center; animation: slideIn 1s ease-out; }
+        .hero-badge { display: inline-block; padding: 12px 32px; background: var(--gradient-1); border-radius: 50px; font-size: 18px; font-weight: 700; margin-bottom: 24px; box-shadow: var(--glow-blue); letter-spacing: 1px; }
+        .hero h1 { font-size: clamp(2rem, 5vw, 4rem); font-weight: 900; margin-bottom: 24px; background: var(--gradient-1); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; line-height: 1.2; }
+        .hero-subtitle { font-size: clamp(1.2rem, 2.2vw, 1.6rem); color: var(--text-primary); max-width: 900px; margin: 0 auto 40px; line-height: 1.6; font-weight: 400; }
+        .hero-images { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; margin-top: 60px; }
+        .hero-image-card { position: relative; border-radius: 20px; overflow: hidden; aspect-ratio: 16/9; box-shadow: var(--glow-purple); transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .hero-image-card:hover { transform: scale(1.02); box-shadow: 0 0 40px rgba(123, 44, 191, 0.7); }
+        .hero-image-card img { width: 100%; height: 100%; object-fit: cover; }
+        .scroll-indicator { position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%); animation: float 2s ease-in-out infinite; z-index: 2; }
+        .scroll-indicator span { display: block; width: 30px; height: 50px; border: 2px solid var(--primary-blue); border-radius: 25px; position: relative; }
+        .scroll-indicator span::before { content: ''; position: absolute; top: 8px; left: 50%; transform: translateX(-50%); width: 6px; height: 10px; background: var(--primary-blue); border-radius: 3px; animation: pulse 1.5s infinite; }
+
+        /* Content Section */
+        section { padding: 80px 20px; position: relative; z-index: 1; }
+        .content-section { background: var(--card-bg); padding: 60px 50px; border-radius: 24px; border: 1px solid rgba(0, 212, 255, 0.2); max-width: 1100px; margin: 0 auto; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3); }
+
+        .content-section h3 { font-size: 1.6rem; margin: 40px 0 20px; color: var(--accent-green); }
+        .content-section p { color: var(--text-secondary); line-height: 2; font-size: 1.08rem; margin: 15px 0; }
+        .content-section ul { margin: 20px 0; padding-left: 30px; }
+        .content-section li { margin: 10px 0; color: var(--text-secondary); }
+
+        .meta-info { background: linear-gradient(135deg, rgba(0, 212, 255, 0.15) 0%, rgba(123, 44, 191, 0.15) 100%); padding: 30px; border-radius: 16px; margin-bottom: 40px; border-left: 5px solid var(--primary-blue); }
+        .meta-info p { margin: 12px 0; color: var(--text-secondary); font-size: 1.05rem; }
+        .meta-info strong { color: var(--primary-blue); font-weight: 600; }
+        .meta-info a { color: var(--primary-blue); text-decoration: none; word-break: break-all; }
+
+        .highlight-box { background: linear-gradient(135deg, rgba(0, 255, 136, 0.08) 0%, rgba(0, 212, 255, 0.08) 100%); padding: 30px; border-radius: 16px; border-left: 5px solid var(--accent-green); margin: 40px 0; }
+        .highlight-box h4 { color: var(--accent-green); margin-bottom: 15px; font-size: 1.3rem; }
+        .highlight-box p { color: var(--text-secondary); margin: 0; }
+
+        /* Footer */
+        footer { background: #050508; padding: 60px 20px; text-align: center; border-top: 1px solid rgba(255, 255, 255, 0.1); }
+        footer p { color: var(--text-secondary); margin-bottom: 20px; }
+        .footer-links { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; }
+        .footer-links a { color: var(--primary-blue); text-decoration: none; transition: color 0.3s ease; }
+        .footer-links a:hover { color: var(--text-primary); }
+
+        /* RWD */
+        @media (max-width: 768px) {
+            .content-section { padding: 40px 25px; }
+            .hero-images { grid-template-columns: 1fr; }
+            .hero h1 { font-size: 2rem; }
+            .hero-subtitle { font-size: 1.2rem; }
+        }
+    </style>
+</head>
+<body>
+    <!-- 代碼雨背景 -->
+    <div class="code-rain" id="codeRain"></div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <span class="hero-badge">📰 AI News 專題報道</span>
+            <h1>拒絕Vibe Coding！AI程式設計的正確姿勢</h1>
+            <p class="hero-subtitle">TypeScript大神Matt Pocock公開八萬星標開源專案，以嚴謹工程流程重新定義人機協作邊界，破解「十倍速製造垃圾程式碼」的產業危機</p>
+            <div class="hero-images">
+                <div class="hero-image-card">
+                    <img src="img/img1.png" alt="AI程式設計工作流示意圖">
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <span></span>
+        </div>
+    </section>
+
+    <!-- Content Section -->
+    <section>
+        <div class="content-section">
+            <!-- Meta Info -->
+            <div class="meta-info">
+                <p><strong>📺 資料來源</strong>：<a href="https://youtu.be/_y772bb9VZE?si=nasBXDwvZMTidAY0" target="_blank">https://youtu.be/_y772bb9VZE?si=nasBXDwvZMTidAY0</a></p>
+                <p><strong>📅 發布日期</strong>：2026-05-15</p>
+                <p><strong>🤖 處理方式</strong>：AI 智能摘要生成</p>
+            </div>
+
+            <!-- 核心觀點 -->
+            <h3>🎯 產業亂象與核心主張</h3>
+            <p>人工智慧輔助程式設計工具普及之際，開發圈出現「Vibe Coding」亂象。業界觀察指出，工程師過度依賴直覺式指令生成程式碼，導致專案架構迅速劣化為「技術債務堆積山」。針對此現象，TypeScript 社群權威教育者 Matt Pocock 公開其 GitHub 熱門開源專案「Skills」，以超過八萬星標的關注度，重新定義 AI 時代的軟體工程實踐。</p>
+            <p>這位曾為聲樂教練的資深工程師主張，AI 並非取代開發者，而是需透過嚴謹的工程流程加以約束。研究指出，唯有將人類的系統思維與 AI 的執行效率結合，方能避免「以十倍速製造垃圾程式碼」的危機。</p>
+
+            <div class="highlight-box">
+                <h4>✨ 關鍵洞察</h4>
+                <p>Pocock 明確批評 Aider、BMA、SpecKit 等試圖「接管整個開發流程」的工具，認為其剝奪開發者的控制權，使除錯淪為黑箱作業。「Skills」採用小型、可組合的模組設計，強調人類主導決策、AI 負責執行的協作模式。</p>
+            </div>
+
+            <!-- 三大痛點 -->
+            <h3>⚠️ AI 程式設計的三大系統性問題</h3>
+            <p>本次報告揭示的現象，反映了 AI 工具匯入軟體開發領域後的深層矛盾：執行效率與品質管控的失衡。研究指出，當前主流 AI 程式設計工具雖能顯著提升程式碼產出速度，卻衍生出以下三大系統性問題：</p>
+            <ul>
+                <li><strong>對齊失敗</strong>：自然語言的固有模糊性導致開發者誤以為 AI 理解需求，實則雙方對功能規格的認知存在根本落差</li>
+                <li><strong>領域上下文缺失</strong>：AI 模型面對陌生專案時缺乏領域上下文，只能以泛化詞彙堆砌回應，造成溝通成本不降反升</li>
+                <li><strong>技術債務指數增長</strong>：程式碼生成速度的飛躍使劣質程式碼累積呈指數級增長，過去需數日方能產出的問題程式碼，如今僅需數秒即可完成</li>
+            </ul>
+
+            <!-- 技能模組 -->
+            <h3>💡 四大核心技能模組解析</h3>
+            <p>Matt Pocock 提出的解決方案，本質上是將軟體工程經典方法論重新封裝為 AI 適用的「技能模組」。資料顯示，其 GitHub 倉庫「Skills」已獲逾八萬星標，印證開發社群對結構化 AI 工作流的強烈需求。該方案的核心設計哲學在於「限制 AI 自由度」，透過流程化、規範化、可驗證化的框架，將 AI 嵌入既有的工程實踐。</p>
+            
+            <p><strong>「Grill Me」逆向質問機制</strong>：借鑑其聲樂教練背景中的溝通訓練經驗，建立逆向質問機制。當使用者提出「建立登入頁面」等籠統指令時，AI 不會立即執行，而是追問密碼重置流程、第三方整合需求、錯誤處理策略等細節，迫使開發者在編碼前完成深度思考。</p>
+            
+            <p><strong>「Grill with Docs」領域知識固化</strong>：針對領域驅動設計中的「通用語言」問題，要求 AI 在互動過程中持續參照專案的 Context 檔案與領域詞彙表。若團隊慣以「客戶」稱呼使用者、以「交易」指涉訂單，AI 將自動採用這些術語，避免自行創造不一致的命名。</p>
+            
+            <p><strong>測試驅動開發技能</strong>：將 TDD 轉化為可操作的 AI 技能，要求 AI 嚴格遵循「紅綠重構」迴圈：先撰寫失敗測試，再實現最小功能，最後進行重構最佳化，而非一次性產出大量未經驗證的程式碼。</p>
+            
+            <p><strong>架構審查技能</strong>：「Improve Codebase Architecture」定期觸發全域架構審查，由 AI 從模組耦合度、介面複雜度、測試覆蓋率等維度評估健康狀態，主動識別技術債務熱點。</p>
+
+            <!-- 未來展望 -->
+            <h3>🔮 未來展望與產業趨勢</h3>
+            <p>專家分析認為，這套方法論的價值在於重新校準人機分工邊界。隨著開源大模型能力持續演進，AI 程式設計的技術門檻將進一步降低，但業界觀察指出，未來頂尖工程師的核心競爭力在於「管理 AI 處理複雜系統的能力」，而非單純追求程式碼產出速度。</p>
+            <p>數據顯示，結構化 AI 工作流的需求正在快速成長。開發者逐漸意識到，AI 時代的軟體工程並非淘汰經典實踐，而是需要更精緻的流程設計來約束強大的自動化工具。人類的系統思維、架構判斷與品質意識，將成為區分優劣開發者的關鍵分野。</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2026 AI News Archive | 由 AI 技術生成</p>
+        <div class="footer-links">
+            <a href="../index.html">返回主頁</a>
+            <a href="https://github.com/hklamsir/ai_news" target="_blank">GitHub</a>
+            <a href="https://hklamsir.github.io/ai_news/" target="_blank">瀏覽所有專題</a>
+        </div>
+    </footer>
+
+    <script>
+        // 代碼雨效果
+        const codeRain = document.getElementById('codeRain');
+        const chars = '01アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン';
+        
+        for (let i = 0; i < 50; i++) {
+            const char = document.createElement('div');
+            char.className = 'code-char';
+            char.textContent = chars[Math.floor(Math.random() * chars.length)];
+            char.style.left = Math.random() * 100 + '%';
+            char.style.animationDelay = Math.random() * 4 + 's';
+            char.style.animationDuration = (Math.random() * 2 + 3) + 's';
+            codeRain.appendChild(char);
+        }
+    </script>
+
+    <script>
+        function createCodeRain() {
+            const codeRain = document.getElementById('codeRain');
+            if (!codeRain) return;
+            const chars = '01 アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン';
+            for (let i = 0; i < 50; i++) {
+                const char = document.createElement('div');
+                char.className = 'code-char';
+                char.textContent = chars[Math.floor(Math.random() * chars.length)];
+                char.style.left = Math.random() * 100 + '%';
+                char.style.animationDelay = Math.random() * 4 + 's';
+                char.style.animationDuration = (Math.random() * 2 + 3) + 's';
+                codeRain.appendChild(char);
+            }
+        }
+
+        function handleScrollAnimation() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('.fade-in').forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(30px)';
+                el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(el);
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            createCodeRain();
+            handleScrollAnimation();
+        });
+    </script>
+</body>
+</html>

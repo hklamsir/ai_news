@@ -1,6 +1,16 @@
 {
   "archives": [
     {
+      "dir": "news_20260515_115413",
+      "title": "拒絕Vibe Coding！| AI程式設計的正確姿勢 | TypeScript大神的AI秘籍",
+      "summary_short": "## 新聞導語隨著生成式人工智慧技術快速滲透軟體開發領域，「Vibe Coding」——即不經深思熟慮、僅憑直覺讓AI生成程式碼的做法——正引發業界廣泛憂慮。研究指出，過度依賴AI自動生成程式碼已",
+      "images": [
+        "img/img1.png"
+      ],
+      "date": "2026-05-15",
+      "url": "./news_20260515_115413/index.html"
+    },
+    {
       "dir": "news_20260514_140253",
       "title": "Apple 考慮向代理式 AI 敞開 App Store 大門",
       "summary": "在隱私安全與商業利益的十字路口，Apple 如何抉擇？代理式 AI 浪潮下的平台策略轉向",
@@ -766,6 +776,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-05-14T14:12:44.403489",
+  "last_updated": "2026-05-15T11:56:31.286630",
   "total_count": 85
 }
