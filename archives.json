@@ -1,14 +1,22 @@
 {
   "archives": [
     {
-      "dir": "news_20260515_115413",
-      "title": "拒絕Vibe Coding！| AI程式設計的正確姿勢 | TypeScript大神的AI秘籍",
-      "summary_short": "## 新聞導語隨著生成式人工智慧技術快速滲透軟體開發領域，「Vibe Coding」——即不經深思熟慮、僅憑直覺讓AI生成程式碼的做法——正引發業界廣泛憂慮。研究指出，過度依賴AI自動生成程式碼已",
-      "images": [
-        "img/img1.png"
-      ],
+      "dir": "news_20260515_115717",
+      "title": "news_20260515_115717",
+      "summary": "反向盤問機制，迫使開發者在編碼前將模糊需求具體化，顯著降低需求理解落差。",
+      "url": "./news_20260515_115717/index.html",
       "date": "2026-05-15",
-      "url": "./news_20260515_115413/index.html"
+      "time": "11:57:17",
+      "source": "AI News"
+    },
+    {
+      "dir": "news_20260515_115413",
+      "title": "拒絕Vibe Coding！AI程式設計的正確姿勢",
+      "summary": "TypeScript大神Matt Pocock公開八萬星標開源專案，以嚴謹工程流程重新定義人機協作邊界，破解「十倍速製造垃圾程式碼」的產業危機",
+      "url": "./news_20260515_115413/index.html",
+      "date": "2026-05-15",
+      "time": "11:54:13",
+      "source": "AI News"
     },
     {
       "dir": "news_20260514_140253",
@@ -776,6 +784,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-05-15T11:56:31.286630",
-  "total_count": 85
+  "last_updated": "2026-05-15T12:02:14.655151",
+  "total_count": 87
 }
