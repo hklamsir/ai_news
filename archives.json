@@ -1,6 +1,16 @@
 {
   "archives": [
     {
+      "dir": "news_20260516_232642",
+      "title": "Google Gemma 4 VS Qwen 3.6: I Ran Both Side by Side and Picked One",
+      "summary_short": "## 新聞導語開源人工智慧模型競爭白熱化，Google DeepMind 推出的 Gemma 4 與阿里巴巴的 Qwen 3.6 成為近期業界焦點。兩款模型均採開源權重架構，可在單一 GPU 上執",
+      "images": [
+        "img/img1.png"
+      ],
+      "date": "2026-05-16",
+      "url": "./news_20260516_232642/index.html"
+    },
+    {
       "dir": "news_20260516_150314",
       "title": "你今日用咗AI未？讓AI成為自我認識的工具",
       "summary": "從日常工具到心靈鏡子，探索人工智能如何重塑我們與自我的對話方式",
@@ -793,6 +803,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-05-16T15:09:17.765745",
+  "last_updated": "2026-05-16T23:29:25.842289",
   "total_count": 88
 }

@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI News | Google Gemma 4 對決 Qwen 3.6：開源模型巔峰之戰</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-blue: #00d4ff;
+            --primary-purple: #7b2cbf;
+            --accent-green: #00ff88;
+            --accent-orange: #ff9500;
+            --dark-bg: #0a0a0f;
+            --card-bg: #12121a;
+            --card-bg-light: #1a1a28;
+            --text-primary: #ffffff;
+            --text-secondary: #a0a0b0;
+            --gradient-1: linear-gradient(135deg, #00d4ff 0%, #7b2cbf 100%);
+            --gradient-2: linear-gradient(135deg, #00d4ff 0%, #00ff88 100%);
+            --glow-blue: 0 0 20px rgba(0, 212, 255, 0.5);
+            --glow-purple: 0 0 20px rgba(123, 44, 191, 0.5);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Noto Sans TC', sans-serif; background-color: var(--dark-bg); color: var(--text-primary); line-height: 1.8; overflow-x: hidden; }
+
+        @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-20px); } }
+        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.6; } }
+        @keyframes slideIn { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes codeRain { 0% { transform: translateY(-100%); opacity: 0; } 10% { opacity: 1; } 90% { opacity: 1; } 100% { transform: translateY(100vh); opacity: 0; } }
+
+        /* 代碼雨背景 */
+        .code-rain { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; overflow: hidden; }
+        .code-char { position: absolute; color: var(--primary-blue); font-family: 'Courier New', monospace; font-size: 14px; opacity: 0; animation: codeRain 4s linear infinite; }
+
+        /* Hero Section */
+        .hero { position: relative; min-height: 80vh; display: flex; align-items: center; justify-content: center; padding: 80px 20px; background: linear-gradient(180deg, var(--dark-bg) 0%, #1a1a2e 100%); overflow: hidden; }
+        .hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(ellipse at center, rgba(123, 44, 191, 0.15) 0%, transparent 70%); z-index: 1; }
+        .hero-content { position: relative; z-index: 2; max-width: 1200px; text-align: center; animation: slideIn 1s ease-out; }
+        .hero-badge { display: inline-block; padding: 12px 32px; background: var(--gradient-1); border-radius: 50px; font-size: 18px; font-weight: 700; margin-bottom: 24px; box-shadow: var(--glow-blue); letter-spacing: 1px; }
+        .hero h1 { font-size: clamp(2rem, 5vw, 4rem); font-weight: 900; margin-bottom: 24px; background: var(--gradient-1); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; line-height: 1.2; }
+        .hero-subtitle { font-size: clamp(1.2rem, 2.2vw, 1.6rem); color: var(--text-primary); max-width: 900px; margin: 0 auto 40px; line-height: 1.6; font-weight: 400; }
+        .hero-images { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; margin-top: 60px; }
+        .hero-image-card { position: relative; border-radius: 20px; overflow: hidden; aspect-ratio: 16/9; box-shadow: var(--glow-purple); transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .hero-image-card:hover { transform: scale(1.02); box-shadow: 0 0 40px rgba(123, 44, 191, 0.7); }
+        .hero-image-card img { width: 100%; height: 100%; object-fit: cover; }
+        .scroll-indicator { position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%); animation: float 2s ease-in-out infinite; z-index: 2; }
+        .scroll-indicator span { display: block; width: 30px; height: 50px; border: 2px solid var(--primary-blue); border-radius: 25px; position: relative; }
+        .scroll-indicator span::before { content: ''; position: absolute; top: 8px; left: 50%; transform: translateX(-50%); width: 6px; height: 10px; background: var(--primary-blue); border-radius: 3px; animation: pulse 1.5s infinite; }
+
+        /* Content Section */
+        section { padding: 80px 20px; position: relative; z-index: 1; }
+        .content-section { background: var(--card-bg); padding: 60px 50px; border-radius: 24px; border: 1px solid rgba(0, 212, 255, 0.2); max-width: 1100px; margin: 0 auto; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3); }
+
+        .content-section h3 { font-size: 1.6rem; margin: 40px 0 20px; color: var(--accent-green); }
+        .content-section p { color: var(--text-secondary); line-height: 2; font-size: 1.08rem; margin: 15px 0; }
+        .content-section ul { margin: 20px 0; padding-left: 30px; }
+        .content-section li { margin: 10px 0; color: var(--text-secondary); }
+
+        .meta-info { background: linear-gradient(135deg, rgba(0, 212, 255, 0.15) 0%, rgba(123, 44, 191, 0.15) 100%); padding: 30px; border-radius: 16px; margin-bottom: 40px; border-left: 5px solid var(--primary-blue); }
+        .meta-info p { margin: 12px 0; color: var(--text-secondary); font-size: 1.05rem; }
+        .meta-info strong { color: var(--primary-blue); font-weight: 600; }
+        .meta-info a { color: var(--primary-blue); text-decoration: none; word-break: break-all; }
+
+        .highlight-box { background: linear-gradient(135deg, rgba(0, 255, 136, 0.08) 0%, rgba(0, 212, 255, 0.08) 100%); padding: 30px; border-radius: 16px; border-left: 5px solid var(--accent-green); margin: 40px 0; }
+        .highlight-box h4 { color: var(--accent-green); margin-bottom: 15px; font-size: 1.3rem; }
+        .highlight-box p { color: var(--text-secondary); margin: 0; }
+
+        /* Footer */
+        footer { background: #050508; padding: 60px 20px; text-align: center; border-top: 1px solid rgba(255, 255, 255, 0.1); }
+        footer p { color: var(--text-secondary); margin-bottom: 20px; }
+        .footer-links { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; }
+        .footer-links a { color: var(--primary-blue); text-decoration: none; transition: color 0.3s ease; }
+        .footer-links a:hover { color: var(--text-primary); }
+
+        /* RWD */
+        @media (max-width: 768px) {
+            .content-section { padding: 40px 25px; }
+            .hero-images { grid-template-columns: 1fr; }
+            .hero h1 { font-size: 2rem; }
+            .hero-subtitle { font-size: 1.2rem; }
+        }
+    </style>
+</head>
+<body>
+    <!-- 代碼雨背景 -->
+    <div class="code-rain" id="codeRain"></div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <span class="hero-badge">📰 AI News 專題報道</span>
+            <h1>Google Gemma 4 對決 Qwen 3.6：開源模型巔峰之戰</h1>
+            <p class="hero-subtitle">開源人工智慧模型競爭白熱化，兩大巨頭分別推出可在單一 GPU 執行的輕量級架構，卻展現媲美數百億引數級閉源模型的實力。本次報告透過實測比較，揭示兩者在編碼能力、推理表現及應用場景的關鍵差異。</p>
+            <div class="hero-images">
+                <div class="hero-image-card">
+                    <img src="img/img1.png" alt="Gemma 4 與 Qwen 3.6 模型比較示意圖">
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <span></span>
+        </div>
+    </section>
+
+    <!-- Content Section -->
+    <section>
+        <div class="content-section">
+            <!-- Meta Info -->
+            <div class="meta-info">
+                <p><strong>📺 資料來源</strong>：<a href="https://www.youtube.com/watch?v=RyfC3csU-gk" target="_blank">https://www.youtube.com/watch?v=RyfC3csU-gk</a></p>
+                <p><strong>📅 發布日期</strong>：2026-05-16</p>
+                <p><strong>🤖 處理方式</strong>：AI 智能摘要生成</p>
+            </div>
+
+            <!-- 核心觀點 -->
+            <h3>🎯 核心觀點</h3>
+            <p>開源 AI 領域正經歷前所未有的效能躍升。Google DeepMind 推出的 Gemma 4 與阿里巴巴的 Qwen 3.6 雙雙打破「規模即效能」的傳統認知，以相對精簡的引數規模實現頂尖表現。研究指出，Qwen 3.6 的 270 億引數版本在軟體工程基準測試中，竟超越自家前代 3970 億引數的旗艦模型，顯示開源模型已進入效率優先的新紀元。</p>
+            <p>數據示，兩款模型均採開源權重架構，可在消費級 GPU 上執行，卻能與 Anthropic Claude 4.5 Opus 等閉源巨頭一較高下。這項突破為開發者與企業提供了前所未有的靈活性，無需依賴雲端 API 即可部署企業級 AI 能力。</p>
+
+            <!-- 技術規格比較 -->
+            <h3>⚙️ 技術規格與硬體需求</h3>
+            <p>業界觀察，兩者在硬體適配性上呈現不同策略。Qwen 3.6 採 278 億引數設計，經 Q4 量化後約需 16.8GB VRAM；Gemma 4 則以 307 億引數換取更高效能，記憶體需求約 20GB。專家分析指出，24GB 視訊記憶體環境可順暢執行兩者，但 16GB 環境下 Qwen 具備較大安全餘裕。</p>
+            <ul>
+                <li><strong>上下文視窗</strong>：Qwen 原生支援 26.2 萬 token，經擴充套件可達約 100 萬；Gemma 上限為 25.6 萬</li>
+                <li><strong>量化效率</strong>：Qwen 的 Q4 量化方案更為成熟，邊緣部署彈性較高</li>
+                <li><strong>處理大型程式碼庫</strong>：Qwen 的長上下文優勢使其在完整專案分析場景更具競爭力</li>
+            </ul>
+
+            <!-- 效能基準測試 -->
+            <h3>📊 效能基準測試分析</h3>
+            <p>研究指出，兩大模型在多項權威測試中展現差異化優。Qwen 3.6 在 SWE-Bench Verified 取得 77.2 分，該測試要求模型修復真實開源程式碼庫中的實際漏洞，而非玩具級問題。此成績較前代 Qwen 3.5 的 3970 億引數混合專家模型更為出色，引數效率提升近 15 倍。</p>
+            <p>TerminalBench 2.0 測試中，Qwen 3.6 以 59.3 分與 Anthropic 的 Claude 4.5 Opus 打成平手，後者為引數規模遠大的閉源模型。Skills-Bench 測試橫跨 78 項特定編碼技能，Qwen 3.6 從前代 27.2 分躍升至 48.2 分，單代進步幅度達 77%。</p>
+            <p>Gemma 4 則在單輪推理場景展現強大實力。數據顯示，其在 AIME 2026 競賽數學獲 89.2%，Arena AI 人類偏好評比中以 1452 Elo 位列所有開源模型第三，較前代 Gemma 3 的 1365 大幅提升。LiveCodeBench v6 限時競賽程式設計中，Gemma 4 取得 80% 成績；Codeforces 評級達 2150 Elo，相當於「候選大師」級別。</p>
+
+            <!-- Highlight Box -->
+            <div class="highlight-box">
+                <h4>✨ 關鍵洞察</h4>
+                <p>Qwen 3.6 的 270 億引數密集版本在 SWE-Bench Verified 測試中超越自家 3970 億引數前代旗艦，這項突破使開源社群為之振奮，證明模型架構優化與訓練策略的進步，已能彌補甚至超越純粹的規模擴張。</p>
+            </div>
+
+            <!-- 應用生態與實測表現 -->
+            <h3>🚀 應用生態與實測表現</h3>
+            <p>兩大模型均已催生實質應用生態。Qwen 方面，開源社群開發出終端編碼代理 Qwen Code、GitHub Action 自動審查工具 CodeBubb，以及可在 RTX 5090 達 158 token/秒 的 Windows Server 專案。MTPLX 專案更透過原生多 token 預測，在 Apple Silicon 實現 2.24 倍加速。阿里巴巴與 Fireworks AI 合作，進一步降低部署成本與延遲。</p>
+            <p>Gemma 4 的應用同樣多元：結合 LangGraph 的多智慧體研究分析師、支援 17 種語言的離線字幕翻譯器、協助非洲教師離線生成教案的工具，以及完全於瀏覽器 WebGPU 執行的 Chrome 擴充功能，無需 API 金鑰或雲端連線。Herundo 公司的案例研究更顯示，Gemma 4 可在保持基準效能的同時，訓練抵抗對抗性覆寫攻擊。</p>
+            <p>實測視覺生成任務中，兩者呈現不同特性。以 Three.js 生成 3D 幾何光暈場景為例，Gemma 4 產出符合規格的暗色場景與清晰多面體；Qwen 3.6 則出現過度曝光。然而 Netflix 片頭動畫任務中，Qwen 的表現則更為穩定。</p>
+
+            <!-- 授權條款與選型建議 -->
+            <h3>📜 授權條款與選型建議</h3>
+            <p>授權條款方面，兩者存在關鍵差異。Qwen 採全 Apache 2.0 授權無附加條款，對企業整合最為友善；Gemma 使用 Google 自定義授權，允許商業使用但有大規模部署時需留意特定條款。專家分析建議，高度監管產業或需完整法律確定性的組織，Qwen 的標準開源授權可能更具吸引力。</p>
+            <ul>
+                <li><strong>優先選擇 Qwen 3.6</strong>：長上下文處理、軟體工程任務、Apache 2.0 授權需求、16GB VRAM 環境</li>
+                <li><strong>優先選擇 Gemma 4</strong>：單輪推理品質、人類偏好對齊、離線瀏覽器部署、多語言應用</li>
+                <li><strong>共同優勢</strong>：單 GPU 執行能力、開源可客製化、企業級效能、活躍社群支援</li>
+            </ul>
+
+            <!-- 未來展望 -->
+            <h3>🔮 未來展望</h3>
+            <p>本次報告揭示，開源 AI 已進入「以小博大」的新階段。數據顯示，數百億引數級模型透過架構創新與訓練優化，已能挑戰數千億引數巨獸的地位。這項趨勢預計將加速邊緣 AI 普及，使更多開發者與組織能在本地部署企業級能力。</p>
+            <p>研究指出，隨著多 token 預測、強化學習微調等技術成熟，開源模型的迭代速度有望超越閉源對手。無論最終選擇 Qwen 3.6 或 Gemma 4，開發者皆已站在開源 AI 歷史性轉折點，見證一場由效率與創新驅動的技術革命。</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2026 AI News Archive | 由 AI 技術生成</p>
+        <div class="footer-links">
+            <a href="../index.html">返回主頁</a>
+            <a href="https://github.com/hklamsir/ai_news" target="_blank">GitHub</a>
+            <a href="https://hklamsir.github.io/ai_news/" target="_blank">瀏覽所有專題</a>
+        </div>
+    </footer>
+
+    <script>
+        // 生成代碼雨背景
+        const codeRain = document.getElementById('codeRain');
+        const chars = '01アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン';
+        
+        for (let i = 0; i < 50; i++) {
+            const char = document.createElement('div');
+            char.className = 'code-char';
+            char.textContent = chars[Math.floor(Math.random() * chars.length)];
+            char.style.left = Math.random() * 100 + '%';
+            char.style.animationDelay = Math.random() * 4 + 's';
+            char.style.animationDuration = (3 + Math.random() * 2) + 's';
+            codeRain.appendChild(char);
+        }
+    </script>
+
+    <script>
+        function createCodeRain() {
+            const codeRain = document.getElementById('codeRain');
+            if (!codeRain) return;
+            const chars = '01 アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン';
+            for (let i = 0; i < 50; i++) {
+                const char = document.createElement('div');
+                char.className = 'code-char';
+                char.textContent = chars[Math.floor(Math.random() * chars.length)];
+                char.style.left = Math.random() * 100 + '%';
+                char.style.animationDelay = Math.random() * 4 + 's';
+                char.style.animationDuration = (Math.random() * 2 + 3) + 's';
+                codeRain.appendChild(char);
+            }
+        }
+
+        function handleScrollAnimation() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('.fade-in').forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(30px)';
+                el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(el);
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            createCodeRain();
+            handleScrollAnimation();
+        });
+    </script>
+</body>
+</html>
