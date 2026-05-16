@@ -68,6 +68,36 @@
         .highlight-box h4 { color: var(--accent-green); margin-bottom: 15px; font-size: 1.3rem; }
         .highlight-box p { color: var(--text-secondary); margin: 0; }
 
+        /* Tech Cards */
+        .tech-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 24px; margin: 40px 0; }
+        .tech-card { background: linear-gradient(135deg, rgba(0, 212, 255, 0.08) 0%, rgba(123, 44, 191, 0.08) 100%); border: 1px solid rgba(0, 212, 255, 0.2); border-radius: 16px; padding: 30px; transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .tech-card:hover { transform: translateY(-5px); box-shadow: var(--glow-blue); }
+        .tech-card-icon { font-size: 2.5rem; margin-bottom: 15px; }
+        .tech-card h4 { color: var(--primary-blue); margin-bottom: 12px; font-size: 1.2rem; }
+        .tech-card p { color: var(--text-secondary); font-size: 0.95rem; line-height: 1.7; margin: 0; }
+
+        /* Comparison Table */
+        .comparison-table { width: 100%; border-collapse: collapse; margin: 30px 0; background: rgba(0, 0, 0, 0.3); border-radius: 12px; overflow: hidden; }
+        .comparison-table thead { background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-purple) 100%); }
+        .comparison-table th { padding: 16px 20px; text-align: left; font-weight: 600; font-size: 1rem; }
+        .comparison-table td { padding: 16px 20px; border-bottom: 1px solid rgba(255, 255, 255, 0.05); color: var(--text-secondary); font-size: 0.95rem; }
+        .comparison-table tbody tr:hover { background: rgba(0, 212, 255, 0.05); }
+        .comparison-table .highlight-col { color: var(--accent-green); font-weight: 500; }
+
+        /* Quote Box */
+        .quote-box { background: linear-gradient(135deg, rgba(123, 44, 191, 0.15) 0%, rgba(0, 212, 255, 0.15) 100%); border-left: 5px solid var(--primary-purple); padding: 30px 40px; margin: 40px 0; border-radius: 0 16px 16px 0; }
+        .quote-box p { font-size: 1.3rem; line-height: 1.8; color: var(--text-primary); font-weight: 400; margin-bottom: 15px; }
+        .quote-box cite { color: var(--text-secondary); font-size: 1rem; font-style: normal; }
+
+        /* Timeline */
+        .timeline { margin: 40px 0; padding-left: 20px; border-left: 3px solid var(--primary-blue); }
+        .timeline-item { position: relative; padding: 0 0 30px 30px; }
+        .timeline-item:last-child { padding-bottom: 0; }
+        .timeline-item::before { content: ''; position: absolute; left: -11px; top: 0; width: 20px; height: 20px; background: var(--primary-blue); border-radius: 50%; box-shadow: var(--glow-blue); }
+        .timeline-date { font-size: 0.9rem; color: var(--primary-blue); font-weight: 600; margin-bottom: 5px; }
+        .timeline-title { font-size: 1.15rem; color: var(--text-primary); margin-bottom: 8px; font-weight: 600; }
+        .timeline-desc { color: var(--text-secondary); font-size: 0.95rem; line-height: 1.7; }
+
         /* Footer */
         footer { background: #050508; padding: 60px 20px; text-align: center; border-top: 1px solid rgba(255, 255, 255, 0.1); }
         footer p { color: var(--text-secondary); margin-bottom: 20px; }
@@ -138,7 +168,130 @@
             <!-- Highlight Box -->
             <div class="highlight-box">
                 <h4>✨ 關鍵洞察</h4>
-                <p>Qwen 3.6 的 270 億引數密集版本在 SWE-Bench Verified 測試中超越自家 3970 億引數前代旗艦，這項突破使開源社群為之振奮，證明模型架構優化與訓練策略的進步，已能彌補甚至超越純粹的規模擴張。</p>
+                <p>Qwen 3.6 的 270 億參數密集版本在 SWE-Bench Verified 測試中超越自家 3970 億參數前代旗艦，證明模型架構優化與訓練策略的進步，已能彌補甚至超越純粹的規模擴張，開源 AI 正式進入「以小博大」的新紀元。</p>
+            </div>
+
+            <!-- Tech Cards -->
+            <div class="tech-cards">
+                <div class="tech-card">
+                    <div class="tech-card-icon">📊</div>
+                    <h4>軟體工程基準奪冠</h4>
+                    <p>Qwen 3.6 在 SWE-Bench Verified 取得 77.2 分，超越前代 15 倍參數的旗艦模型；TerminalBench 2.0 達 59.3 分，與 Claude 4.5 Opus 持平。</p>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-card-icon">🧮</div>
+                    <h4>AIME 2026 數學競賽</h4>
+                    <p>Qwen 獲 94.1% 與 Gemma 4 獲 89.2%，雙雙超越人類大師水準，展現開源模型在科研推理領域的突破性進展。</p>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-card-icon">🏆</div>
+                    <h4>Arena Elo 第三名</h4>
+                    <p>Gemma 4 以 1452 Elo 位列所有開源模型第三，較前代 Gemma 3 的 1365 大幅提升，人類偏好對齊表現優異。</p>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-card-icon">💻</div>
+                    <h4>Codeforces 候選大師</h4>
+                    <p>Gemma 4 評級達 2150 Elo，相當於「候選大師」級別，LiveCodeBench v6 限時競賽程式設計取得 80% 成績。</p>
+                </div>
+            </div>
+
+            <!-- Comparison Table -->
+            <h3>📊 Gemma 4 vs Qwen 3.6 核心比較</h3>
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>維度</th>
+                        <th>Qwen 3.6</th>
+                        <th>Gemma 4</th>
+                        <th>領先者</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>參數規模</strong></td>
+                        <td>278 億</td>
+                        <td>307 億</td>
+                        <td class="highlight-col">Gemma 4</td>
+                    </tr>
+                    <tr>
+                        <td><strong>VRAM 需求（Q4）</strong></td>
+                        <td>16.8 GB</td>
+                        <td>~20 GB</td>
+                        <td class="highlight-col">Qwen 3.6</td>
+                    </tr>
+                    <tr>
+                        <td><strong>上下文窗口</strong></td>
+                        <td>26.2 萬 token（擴展達 100 萬）</td>
+                        <td>25.6 萬 token</td>
+                        <td class="highlight-col">Qwen 3.6</td>
+                    </tr>
+                    <tr>
+                        <td><strong>SWE-Bench Verified</strong></td>
+                        <td>77.2 分</td>
+                        <td>—</td>
+                        <td class="highlight-col">Qwen 3.6</td>
+                    </tr>
+                    <tr>
+                        <td><strong>AIME 2026 數學</strong></td>
+                        <td>94.1%</td>
+                        <td>89.2%</td>
+                        <td class="highlight-col">Qwen 3.6</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Arena Elo（人類偏好）</strong></td>
+                        <td>—</td>
+                        <td>1452（開源第三）</td>
+                        <td class="highlight-col">Gemma 4</td>
+                    </tr>
+                    <tr>
+                        <td><strong>授權方式</strong></td>
+                        <td>Apache 2.0（全開放）</td>
+                        <td>Google 自定義授權</td>
+                        <td class="highlight-col">Qwen 3.6</td>
+                    </tr>
+                    <tr>
+                        <td><strong>瀏覽器端執行</strong></td>
+                        <td>需轉換</td>
+                        <td>WebGPU Chrome 擴充功能</td>
+                        <td class="highlight-col">Gemma 4</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <!-- Quote Box -->
+            <div class="quote-box">
+                <p>「270 億至 310 億參數的桌面級模型，現已能達成兩年前資料中心 4000 億參數模型的日常任務表現。」</p>
+                <cite>— 業界分析師，2026 年開源 AI 評測報告</cite>
+            </div>
+
+            <!-- Timeline -->
+            <h3>📅 開源 AI 效能躍升時間軸</h3>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date">2025 年</div>
+                    <div class="timeline-title">Qwen 3.5 旗艦版 3970 億參數</div>
+                    <div class="timeline-desc">混合專家架構旗艦模型，參數量達近 4000 億，為當時開源最強。</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2026 年初</div>
+                    <div class="timeline-title">Gemma 3 發布</div>
+                    <div class="timeline-desc">Arena Elo 1365，開源模型進入千億參數時代。</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2026 年</div>
+                    <div class="timeline-title">Gemma 4 發布</div>
+                    <div class="timeline-desc">Arena Elo 1452（開源第三），Codeforces 2150 Elo，候選大師級水準。</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2026 年</div>
+                    <div class="timeline-title">Qwen 3.6 發布</div>
+                    <div class="timeline-desc">278 億參數 SWE-Bench 77.2 分，超越 3970 億前代旗艦，Apache 2.0 全開放。</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2026 年</div>
+                    <div class="timeline-title">「以小博大」時代來臨</div>
+                    <div class="timeline-desc">數百億參數模型可達成兩年前資料中心數千億參數的任務表現，開源 AI 效能急劇縮小與閉源差距。</div>
+                </div>
             </div>
 
             <!-- 應用生態與實測表現 -->
@@ -158,8 +311,8 @@
 
             <!-- 未來展望 -->
             <h3>🔮 未來展望</h3>
-            <p>本次報告揭示，開源 AI 已進入「以小博大」的新階段。數據顯示，數百億引數級模型透過架構創新與訓練優化，已能挑戰數千億引數巨獸的地位。這項趨勢預計將加速邊緣 AI 普及，使更多開發者與組織能在本地部署企業級能力。</p>
-            <p>研究指出，隨著多 token 預測、強化學習微調等技術成熟，開源模型的迭代速度有望超越閉源對手。無論最終選擇 Qwen 3.6 或 Gemma 4，開發者皆已站在開源 AI 歷史性轉折點，見證一場由效率與創新驅動的技術革命。</p>
+            <p>專家建議開發者採用「雙軌部署」策略：同時安裝兩款模型並依任務特性切換——Qwen 3.6 主導編碼代理與長上下文工作，Gemma 4 負責精準推理與客戶導向輸出。</p>
+            <p>隨著多 token 預測、強化學習微調等技術成熟，開源模型的迭代速度有望超越閉源對手，邊緣 AI 普及將加速，企業級在地化部署將成主流。</p>
         </div>
     </section>
 
