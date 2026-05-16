@@ -3,17 +3,16 @@
     {
       "dir": "news_20260516_080726",
       "title": "NotebookLM 新功能攻略：圖表風格、視覺動線這樣玩，讓你的筆記秒變專業簡報",
-      "summary_short": "# NotebookLM 新功能攻略：圖表風格、視覺動線這樣玩，讓你的筆記秒變專業簡報## 📖 新聞導語本文報導來自 **TECHBANG**，發布於 **2026-05-16**。最新科",
-      "images": [
-        "img/img1.png"
-      ],
+      "summary": "Google 旗下 AI 筆記工具 NotebookLM 推出全新視覺化功能，研究指出這項升級將徹底改變知識工作者的內容呈現方式，讓複雜資訊一目了然。",
+      "url": "./news_20260516_080726/index.html",
       "date": "2026-05-16",
-      "url": "./news_20260516_080726/index.html"
+      "time": "08:07:26",
+      "source": "AI News"
     },
     {
       "dir": "news_20260515_115717",
-      "title": "news_20260515_115717",
-      "summary": "反向盤問機制，迫使開發者在編碼前將模糊需求具體化，顯著降低需求理解落差。",
+      "title": "拒絕Vibe Coding！ AI程式設計的正確姿勢",
+      "summary": "TypeScript大神Matt Pocock開源實戰方法論，以「Skills for real engineers」重新定義人機協作新正規化，對抗AI時代技術債務危機",
       "url": "./news_20260515_115717/index.html",
       "date": "2026-05-15",
       "time": "11:57:17",
@@ -489,7 +488,7 @@
     },
     {
       "dir": "news_20260414_134219",
-      "title": "【Gemini】換AI不用砍掉重練！Gemini無痛匯入個人化記憶　附Prompt直接Copy",
+      "title": "【Gemini】換AI不用砍掉重練！Gemini無痛匯入個人化記憶 附Prompt直接Copy",
       "summary": "當你切換 AI 助理時，最痛苦的莫過於要從零開始重建對話脈絡。Google Gemini 最新推出的「個人化記憶匯入」功能，讓你輕鬆將累積已久的偏好設定、指令風格與記憶資料，無縫转移到新模型。",
       "url": "./news_20260414_134219/index.html",
       "date": "2026-04-14",
@@ -785,6 +784,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-05-16T08:09:25.781648",
-  "total_count": 86
+  "last_updated": "2026-05-16T08:12:35.602539",
+  "total_count": 87
 }

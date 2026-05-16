@@ -68,6 +68,36 @@
         .highlight-box h4 { color: var(--accent-green); margin-bottom: 15px; font-size: 1.3rem; }
         .highlight-box p { color: var(--text-secondary); margin: 0; }
 
+        /* Tech Cards */
+        .tech-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 24px; margin: 40px 0; }
+        .tech-card { background: linear-gradient(135deg, rgba(0, 212, 255, 0.08) 0%, rgba(123, 44, 191, 0.08) 100%); border: 1px solid rgba(0, 212, 255, 0.2); border-radius: 16px; padding: 30px; transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .tech-card:hover { transform: translateY(-5px); box-shadow: var(--glow-blue); }
+        .tech-card-icon { font-size: 2.5rem; margin-bottom: 15px; }
+        .tech-card h4 { color: var(--primary-blue); margin-bottom: 12px; font-size: 1.2rem; }
+        .tech-card p { color: var(--text-secondary); font-size: 0.95rem; line-height: 1.7; margin: 0; }
+
+        /* Comparison Table */
+        .comparison-table { width: 100%; border-collapse: collapse; margin: 30px 0; background: rgba(0, 0, 0, 0.3); border-radius: 12px; overflow: hidden; }
+        .comparison-table thead { background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-purple) 100%); }
+        .comparison-table th { padding: 16px 20px; text-align: left; font-weight: 600; font-size: 1rem; }
+        .comparison-table td { padding: 16px 20px; border-bottom: 1px solid rgba(255, 255, 255, 0.05); color: var(--text-secondary); font-size: 0.95rem; }
+        .comparison-table tbody tr:hover { background: rgba(0, 212, 255, 0.05); }
+        .comparison-table .highlight-col { color: var(--accent-green); font-weight: 500; }
+
+        /* Quote Box */
+        .quote-box { background: linear-gradient(135deg, rgba(123, 44, 191, 0.15) 0%, rgba(0, 212, 255, 0.15) 100%); border-left: 5px solid var(--primary-purple); padding: 30px 40px; margin: 40px 0; border-radius: 0 16px 16px 0; }
+        .quote-box p { font-size: 1.3rem; line-height: 1.8; color: var(--text-primary); font-weight: 400; margin-bottom: 15px; }
+        .quote-box cite { color: var(--text-secondary); font-size: 1rem; font-style: normal; }
+
+        /* Timeline */
+        .timeline { margin: 40px 0; padding-left: 20px; border-left: 3px solid var(--primary-blue); }
+        .timeline-item { position: relative; padding: 0 0 30px 30px; }
+        .timeline-item:last-child { padding-bottom: 0; }
+        .timeline-item::before { content: ''; position: absolute; left: -11px; top: 0; width: 20px; height: 20px; background: var(--primary-blue); border-radius: 50%; box-shadow: var(--glow-blue); }
+        .timeline-date { font-size: 0.9rem; color: var(--primary-blue); font-weight: 600; margin-bottom: 5px; }
+        .timeline-title { font-size: 1.15rem; color: var(--text-primary); margin-bottom: 8px; font-weight: 600; }
+        .timeline-desc { color: var(--text-secondary); font-size: 0.95rem; line-height: 1.7; }
+
         /* Footer */
         footer { background: #050508; padding: 60px 20px; text-align: center; border-top: 1px solid rgba(255, 255, 255, 0.1); }
         footer p { color: var(--text-secondary); margin-bottom: 20px; }
@@ -140,12 +170,109 @@
             <!-- 關鍵洞察 -->
             <div class="highlight-box">
                 <h4>✨ 關鍵洞察</h4>
-                <p>NotebookLM 的視覺化升級標誌著 AI 工具從「輔助創作」邁向「智能設計」的重要轉折。研究指出，這類具備主動設計能力的 AI 系統，正在重新定義知識工作者與資訊的互動方式，未來將成為提升職場競爭力的關鍵工具。</p>
+                <p>NotebookLM 的視覺化升級標誌著 AI 工具從「輔助創作」邁向「智能設計」的重要轉折。使用者不再被動接受 AI 隨機生成的排版，而是可以主動決定資訊的「敘事節奏」，透過 F型、Z型、S型三大動線，配合適當的風格模板，設計出大腦最容易吸收的資訊圖表。</p>
+            </div>
+
+            <!-- Tech Cards -->
+            <div class="tech-cards">
+                <div class="tech-card">
+                    <div class="tech-card-icon">🎨</div>
+                    <h4>10 種風格模板</h4>
+                    <p>從手繪風到科學風，從便當盒排版到黏土風，精密的排版邏輯包取代過去隨機的 AI 圖表產出，讓使用者能根據受眾精準切換風格。</p>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-card-icon">📐</div>
+                    <h4>自訂提示詞控制</h4>
+                    <p>透過提示詞輸入框精確定義色彩計畫（如莫蘭迪色系）、排版結構（左圖右字）或特定字體氛圍，完全符合個人品牌或企業視覺識別。</p>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-card-icon">👁️</div>
+                    <h4>三大視覺動線</h4>
+                    <p>F 型（垂直線性）→ Z 型（水平往返）→ S 型（蛇形動線），針對不同溝通目的設計最合適的閱讀路徑，引導讀者視線。</p>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-card-icon">⚡</div>
+                    <h4>理解時間最短化</h4>
+                    <p>人類視覺處理約 50-80 毫秒內出現神經反應，成功的資訊圖表能讓讀者在無需解說的情況下，自行看懂邏輯流動與整體架構。</p>
+                </div>
+            </div>
+
+            <!-- Comparison Table -->
+            <h3>📊 三大視覺動線比較</h3>
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>動線類型</th>
+                        <th>視覺路徑</th>
+                        <th>最佳應用場景</th>
+                        <th>推薦風格</th>
+                        <th>適用內容</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>F 字型</strong></td>
+                        <td>左→右掃描後垂直下讀</td>
+                        <td>單一主題摘要、知識引導</td>
+                        <td>手繪風、專業風</td>
+                        <td class="highlight-col">新手入門、基礎筆記整理</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Z 字型</strong></td>
+                        <td>左上→右上→左下斜切→右下</td>
+                        <td>對比分析、優劣比較</td>
+                        <td>專業風、商務風</td>
+                        <td class="highlight-col">傳統 vs. AI 做法、產品規格比較</td>
+                    </tr>
+                    <tr>
+                        <td><strong>S 字型</strong></td>
+                        <td>左上→右→下轉折→左回轉</td>
+                        <td>長流程教學、多步驟指南</td>
+                        <td>黏土風、可愛風</td>
+                        <td class="highlight-col">7-8 步驟以上操作手冊、培訓教材</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <!-- Quote Box -->
+            <div class="quote-box">
+                <p>「一張成功的資訊圖表，應該是即便沒有人在旁邊解說，也能自行看懂其中的邏輯流動，迅速掌握整體架構與細節。」</p>
+                <cite>— TECHBANG / PC home 報導</cite>
+            </div>
+
+            <!-- Timeline -->
+            <h3>📅 NotebookLM 資訊圖表功能演變</h3>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date">2026 年 3 月 2 日前</div>
+                    <div class="timeline-title">隨機風格時代</div>
+                    <div class="timeline-desc">圖表風格由 AI 隨機決定，難以控制產出效果，內容扎實但排版僵硬、視覺單一。</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2026 年 3 月 2 日</div>
+                    <div class="timeline-title">10 種風格模板上線</div>
+                    <div class="timeline-desc">Google 推出風格選單，將決定權從 AI 算法交還給使用者，支援自訂提示詞精確控制外觀。</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2026 年 3 月（更新中期）</div>
+                    <div class="timeline-title">支援 Prompt 指定視覺動線</div>
+                    <div class="timeline-desc">允許使用者透過指令設定資訊圖表內容，強制指定閱讀動線，主動決定資訊的敘事節奏。</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2026 年 5 月</div>
+                    <div class="timeline-title">功能攻略詳解發布</div>
+                    <div class="timeline-desc">TECHBANG 發布完整攻略，詳解 F 型、Z 型、S 型三大動線與 10 種風格模板的實戰應用。</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">未來展望</div>
+                    <div class="timeline-title">語音敘事與即時數據串流</div>
+                    <div class="timeline-desc">預期未來版本將整合語音敘事、即時數據串流，打造從資料收集到成果呈現的完整工作流。</div>
+                </div>
             </div>
 
             <!-- 未來展望 -->
             <h3>🔮 未來展望</h3>
-            <p>隨著遠端協作與資訊爆炸成為職場常態，專家預測具備智能視覺化能力的筆記工具將迎來快速成長。NotebookLM 此次更新不僅回應了用戶需求，更為產業發展樹立了新的技術標竿。</p>
+            <p>NotebookLM 從「幫你畫圖」進化到「幫你思考視覺邏輯」，象徵 AI 工具的重要轉型。隨著遠端協作與資訊爆炸成為職場常態，具備智能視覺化能力的筆記工具將迎來快速成長。</p>
             <p>業界觀察人士預期，未來版本將進一步整合語音敘事、即時數據串流等進階功能，打造從資料收集、知識整理到成果呈現的完整工作流。對於追求效率的專業人士而言，掌握這類工具的應用技巧，將成為數位時代不可或缺的核心能力。</p>
         </div>
     </section>
