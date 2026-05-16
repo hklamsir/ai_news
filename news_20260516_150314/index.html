@@ -70,6 +70,36 @@
         .highlight-box h4 { color: var(--accent-green); margin-bottom: 15px; font-size: 1.3rem; }
         .highlight-box p { color: var(--text-secondary); margin: 0; }
 
+        /* Tech Cards */
+        .tech-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 24px; margin: 40px 0; }
+        .tech-card { background: linear-gradient(135deg, rgba(0, 212, 255, 0.08) 0%, rgba(123, 44, 191, 0.08) 100%); border: 1px solid rgba(0, 212, 255, 0.2); border-radius: 16px; padding: 30px; transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .tech-card:hover { transform: translateY(-5px); box-shadow: var(--glow-blue); }
+        .tech-card-icon { font-size: 2.5rem; margin-bottom: 15px; }
+        .tech-card h4 { color: var(--primary-blue); margin-bottom: 12px; font-size: 1.2rem; }
+        .tech-card p { color: var(--text-secondary); font-size: 0.95rem; line-height: 1.7; margin: 0; }
+
+        /* Comparison Table */
+        .comparison-table { width: 100%; border-collapse: collapse; margin: 30px 0; background: rgba(0, 0, 0, 0.3); border-radius: 12px; overflow: hidden; }
+        .comparison-table thead { background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-purple) 100%); }
+        .comparison-table th { padding: 16px 20px; text-align: left; font-weight: 600; font-size: 1rem; }
+        .comparison-table td { padding: 16px 20px; border-bottom: 1px solid rgba(255, 255, 255, 0.05); color: var(--text-secondary); font-size: 0.95rem; }
+        .comparison-table tbody tr:hover { background: rgba(0, 212, 255, 0.05); }
+        .comparison-table .highlight-col { color: var(--accent-green); font-weight: 500; }
+
+        /* Quote Box */
+        .quote-box { background: linear-gradient(135deg, rgba(123, 44, 191, 0.15) 0%, rgba(0, 212, 255, 0.15) 100%); border-left: 5px solid var(--primary-purple); padding: 30px 40px; margin: 40px 0; border-radius: 0 16px 16px 0; }
+        .quote-box p { font-size: 1.3rem; line-height: 1.8; color: var(--text-primary); font-weight: 400; margin-bottom: 15px; }
+        .quote-box cite { color: var(--text-secondary); font-size: 1rem; font-style: normal; }
+
+        /* Timeline */
+        .timeline { margin: 40px 0; padding-left: 20px; border-left: 3px solid var(--primary-blue); }
+        .timeline-item { position: relative; padding: 0 0 30px 30px; }
+        .timeline-item:last-child { padding-bottom: 0; }
+        .timeline-item::before { content: ''; position: absolute; left: -11px; top: 0; width: 20px; height: 20px; background: var(--primary-blue); border-radius: 50%; box-shadow: var(--glow-blue); }
+        .timeline-date { font-size: 0.9rem; color: var(--primary-blue); font-weight: 600; margin-bottom: 5px; }
+        .timeline-title { font-size: 1.15rem; color: var(--text-primary); margin-bottom: 8px; font-weight: 600; }
+        .timeline-desc { color: var(--text-secondary); font-size: 0.95rem; line-height: 1.7; }
+
         /* Footer */
         footer { background: #050508; padding: 60px 20px; text-align: center; border-top: 1px solid rgba(255, 255, 255, 0.1); }
         footer p { color: var(--text-secondary); margin-bottom: 20px; }
@@ -144,10 +174,115 @@
                 <p>AI的價值不僅在於提供答案，更在於<strong>「提問的藝術」</strong>——當我們學會向AI提出好問題時，其實也是在學會向自己提問。這種能力的轉移，或許是人工智能時代最重要的素養之一。</p>
             </div>
 
+            <!-- Tech Cards -->
+            <div class="tech-cards">
+                <div class="tech-card">
+                    <div class="tech-card-icon">🪞</div>
+                    <h4>情感鏡像效應</h4>
+                    <p>AI的回應成為用戶檢視自身情緒狀態的參照點，在問答之間反射出思維模式、價值觀念與情感需求。</p>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-card-icon">🧠</div>
+                    <h4>批判性思考訓練</h4>
+                    <p>當用戶對AI觀點提出質疑或要求澄清，往往最能暴露自身思考盲點，在迭代中建立分析與取捨能力。</p>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-card-icon">✍️</div>
+                    <h4>數位故事創作</h4>
+                    <p>AI降低創作門檻，孩子可用自己的語言創作故事，再透過AI把想法轉化為多媒體形式，展現學習軌跡。</p>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-card-icon">🤝</div>
+                    <h4>人類主導原則</h4>
+                    <p>AI是助手不是替代者——孩子先做主導思考，AI角色是幫助把想法更快、更生動地「呈現」，而非代替思考。</p>
+                </div>
+            </div>
+
+            <!-- Comparison Table -->
+            <h3>📊 傳統反思 vs AI 輔助自我認識</h3>
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>維度</th>
+                        <th>傳統自我反思</th>
+                        <th>AI 輔助認識</th>
+                        <th>差異與價值</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>回應速度</strong></td>
+                        <td>延遲依賴外部對話機會</td>
+                        <td>即時獲得多元觀點</td>
+                        <td class="highlight-col">節省等待時間，但需警惕過度依賴</td>
+                    </tr>
+                    <tr>
+                        <td><strong>無評判空間</strong></td>
+                        <td>身邊缺乏中立傾聽者</td>
+                        <td>提供安全的表達環境</td>
+                        <td class="highlight-col">特別適用於個別諮詢與小組介入</td>
+                    </tr>
+                    <tr>
+                        <td><strong>對話深度</strong></td>
+                        <td>依賴自身思維深度</td>
+                        <td>AI 可追問與挑戰假設</td>
+                        <td class="highlight-col">有助暴露思考盲點與核心價值</td>
+                    </tr>
+                    <tr>
+                        <td><strong>記錄與回顧</strong></td>
+                        <td>依賴日記或治療談話</td>
+                        <td>完整保存對話歷程</td>
+                        <td class="highlight-col">方便識別重複出現的主題與關懷</td>
+                    </tr>
+                    <tr>
+                        <td><strong>最終主體</strong></td>
+                        <td>完全由個人主導</td>
+                        <td>仍以人為認識主體</td>
+                        <td class="highlight-col">AI 是鏡子，不是答案本身</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <!-- Quote Box -->
+            <div class="quote-box">
+                <p>「在人工智慧席捲而來的科技浪潮中，我們是否只把溝通停留在AI生成的文字表層？還是能夠真正融入真實的情感交流，傳遞真摯的溫度？」</p>
+                <cite>— 羅浚軒，香港大學社會工作及社會行政學系碩士生</cite>
+            </div>
+
+            <!-- Timeline -->
+            <h3>📅 AI 融入教育的重要節點</h3>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date">4·23 世界閱讀日</div>
+                    <div class="timeline-title">中小學聯校共讀活動</div>
+                    <div class="timeline-desc">教育局逾千名師生締造「最大的多模態閱讀課」健力士世界紀錄，體驗《書伴遨遊》系列多模態資源。</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2025/26 學年</div>
+                    <div class="timeline-title">生命故事寫作比賽</div>
+                    <div class="timeline-desc">「人工智能與數字人生命故事寫作比賽」邀請中小學生以 AI 創作個人故事或人物傳記，主題涵蓋品德情感、歷史、個人成長及跨代共融。</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">AI 工具普及</div>
+                    <div class="timeline-title">從產業到教育現場</div>
+                    <div class="timeline-desc">HeyGen、Grok、Gemini 等工具可協助製作影片、影像演示及數字人（Digital Humans），讓更多人成為內容創作者。</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">教育轉型關鍵</div>
+                    <div class="timeline-title">從操作到責任的範式轉移</div>
+                    <div class="timeline-desc">學校與家庭的角色從「教會操作」轉向「引導理解」——AI 產出背後，仍有人的價值、思考與表達需要被看見。</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">未來方向</div>
+                    <div class="timeline-title">AI 是助手，不是替代者</div>
+                    <div class="timeline-desc">培養「能用AI、會用AI、知道怎麼checkAI」的習慣，把學習成果轉化成可溝通、可保存、可回顧的作品集。</div>
+                </div>
+            </div>
+
             <!-- 未來展望 -->
             <h3>🔮 未來展望</h3>
-            <p>業界觀察人士指出，隨著AI技術持續演進，未來可能出現專門設計用於自我探索的應用場景。這類工具將更注重對話的深度而非效率，強調<strong>過程的沉澱</strong>而非結果的產出。</p>
-            <p>然而，專家亦提醒需保持警覺：過度依賴AI進行自我認，可能導致<strong>「鏡像依賴」</strong>——即失去獨立反思的能力。理想的狀態是將AI視為輔助工具，而非替代傳統的內省實踐。在科技與人性的交會處，最終的認識主體仍應回歸自身。</p>
+            <p>專家指出，過度依賴 AI 進行自我認識可能導致<strong>「鏡像依賴」</strong>——失去獨立反思的能力。理想的狀態是將 AI 視為輔助工具，而非替代傳統的內省實踐。</p>
+            <p>家長與教師需要和孩子一起討論版權與倫理議題：AI 生成的圖像是否可任意商用？是否要標示使用了什麼工具？當孩子從一開始就理解「怎麼用得安全、用得合理」，AI 才能真正成為正向的學習媒介。在科技與人性的交會處，最終的認識主體仍應回歸自身。</p>
         </div>
     </section>
 
