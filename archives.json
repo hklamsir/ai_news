@@ -1,6 +1,16 @@
 {
   "archives": [
     {
+      "dir": "news_20260517_194144",
+      "title": "別只盯著大模型了！DeepMind重磅演講：AI將邁向“體驗時代”，這才是通往超級智能的真正鑰匙 | 科技 | 鉅亨號 | Anue鉅亨",
+      "summary_short": "# 別只盯著大模型了！DeepMind重磅演講：AI將邁向“體驗時代”，這才是通往超級智能的真正鑰匙 | 科技 | 鉅亨號 | Anue鉅亨## 📖 新聞導語本文報導來自 **HAO**，發布",
+      "images": [
+        "img/img1.png"
+      ],
+      "date": "2026-05-17",
+      "url": "./news_20260517_194144/index.html"
+    },
+    {
       "dir": "news_20260517_155102",
       "title": "ChatGPT 個人理財功能登場 OpenAI 進軍個人金融領域",
       "summary": "OpenAI 為 ChatGPT Pro 用戶推出個人理財體驗，可連結銀行帳戶提供個人化預算規劃與儲蓄建議",
@@ -820,6 +830,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-05-17T15:54:09.376078",
+  "last_updated": "2026-05-17T19:43:42.719644",
   "total_count": 91
 }
