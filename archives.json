@@ -2,13 +2,12 @@
   "archives": [
     {
       "dir": "news_20260517_194144",
-      "title": "別只盯著大模型了！DeepMind重磅演講：AI將邁向“體驗時代”，這才是通往超級智能的真正鑰匙 | 科技 | 鉅亨號 | Anue鉅亨",
-      "summary_short": "# 別只盯著大模型了！DeepMind重磅演講：AI將邁向“體驗時代”，這才是通往超級智能的真正鑰匙 | 科技 | 鉅亨號 | Anue鉅亨## 📖 新聞導語本文報導來自 **HAO**，發布",
-      "images": [
-        "img/img1.png"
-      ],
+      "title": "DeepMind重磅演講：AI將邁向「體驗時代」",
+      "summary": "別只盯著大模型了！研究指出，「體驗時代」才是通往超級智能的真正鑰匙，這項技術突破將重新定義人工智能的發展路徑",
+      "url": "./news_20260517_194144/index.html",
       "date": "2026-05-17",
-      "url": "./news_20260517_194144/index.html"
+      "time": "19:41:44",
+      "source": "AI News"
     },
     {
       "dir": "news_20260517_155102",
@@ -830,6 +829,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-05-17T19:43:42.719644",
-  "total_count": 91
+  "last_updated": "2026-05-17T19:43:47.055079",
+  "total_count": 92
 }
