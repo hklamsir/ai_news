@@ -2,13 +2,12 @@
   "archives": [
     {
       "dir": "news_20260517_092801",
-      "title": "向量資料庫Pinecone推出AI代理知識引擎Nexus，主打以預先編譯知識改善RAG檢索問題",
-      "summary_short": "# 向量資料庫Pinecone推出AI代理知識引擎Nexus，主打以預先編譯知識改善RAG檢索問題## 📖 新聞導語本文報導來自 **ITHOME**，發布於 **2026-05-17**。",
-      "images": [
-        "img/img1.png"
-      ],
+      "title": "Pinecone 推出 Nexus 知識引擎 以預先編譯知識革新 RAG 架構",
+      "summary": "向量資料庫龍頭 Pinecone 發布 AI 代理知識引擎 Nexus，提出「知識編譯」新範式，主張以預先整理與結構化企業知識改善代理式 AI 的效能與可靠性",
+      "url": "./news_20260517_092801/index.html",
       "date": "2026-05-17",
-      "url": "./news_20260517_092801/index.html"
+      "time": "09:28:01",
+      "source": "AI News"
     },
     {
       "dir": "news_20260516_232642",
@@ -812,6 +811,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-05-17T09:30:02.732603",
-  "total_count": 89
+  "last_updated": "2026-05-17T09:31:17.558940",
+  "total_count": 90
 }
