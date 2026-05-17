@@ -2,13 +2,12 @@
   "archives": [
     {
       "dir": "news_20260517_155102",
-      "title": "ChatGPT wants to be hooked up to your savings account, and that's definitely fine",
-      "summary_short": "# ChatGPT wants to be hooked up to your savings account, and that's definitely fine## 📖 新聞導語本文報導",
-      "images": [
-        "img/img1.png"
-      ],
+      "title": "ChatGPT 個人理財功能登場 OpenAI 進軍個人金融領域",
+      "summary": "OpenAI 為 ChatGPT Pro 用戶推出個人理財體驗，可連結銀行帳戶提供個人化預算規劃與儲蓄建議",
+      "url": "./news_20260517_155102/index.html",
       "date": "2026-05-17",
-      "url": "./news_20260517_155102/index.html"
+      "time": "15:51:02",
+      "source": "AI News"
     },
     {
       "dir": "news_20260517_092801",
@@ -821,6 +820,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-05-17T15:53:30.845562",
-  "total_count": 90
+  "last_updated": "2026-05-17T15:54:09.376078",
+  "total_count": 91
 }
