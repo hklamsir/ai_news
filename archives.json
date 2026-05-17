@@ -1,6 +1,16 @@
 {
   "archives": [
     {
+      "dir": "news_20260517_155102",
+      "title": "ChatGPT wants to be hooked up to your savings account, and that's definitely fine",
+      "summary_short": "# ChatGPT wants to be hooked up to your savings account, and that's definitely fine## 📖 新聞導語本文報導",
+      "images": [
+        "img/img1.png"
+      ],
+      "date": "2026-05-17",
+      "url": "./news_20260517_155102/index.html"
+    },
+    {
       "dir": "news_20260517_092801",
       "title": "Pinecone 推出 Nexus 知識引擎 以預先編譯知識革新 RAG 架構",
       "summary": "向量資料庫龍頭 Pinecone 發布 AI 代理知識引擎 Nexus，提出「知識編譯」新範式，主張以預先整理與結構化企業知識改善代理式 AI 的效能與可靠性",
@@ -811,6 +821,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-05-17T09:31:17.558940",
+  "last_updated": "2026-05-17T15:53:30.845562",
   "total_count": 90
 }
