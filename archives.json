@@ -1,6 +1,16 @@
 {
   "archives": [
     {
+      "dir": "news_20260518_104852",
+      "title": "If you’re giving a commencement speech in 2026, maybe don’t mention AI | TechCrunch",
+      "summary_short": "# If you’re giving a commencement speech in 2026, maybe don’t mention AI | TechCrunch## 📖 新聞導語本文",
+      "images": [
+        "img/img1.png"
+      ],
+      "date": "2026-05-18",
+      "url": "./news_20260518_104852/index.html"
+    },
+    {
       "dir": "news_20260517_194144",
       "title": "DeepMind重磅演講：AI將邁向「體驗時代」",
       "summary": "別只盯著大模型了！研究指出，「體驗時代」才是通往超級智能的真正鑰匙，這項技術突破將重新定義人工智能的發展路徑",
@@ -829,6 +839,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-05-17T19:43:47.055079",
+  "last_updated": "2026-05-18T10:51:01.752688",
   "total_count": 92
 }
