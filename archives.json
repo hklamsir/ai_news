@@ -2,13 +2,12 @@
   "archives": [
     {
       "dir": "news_20260518_140721",
-      "title": "TechCrunch Mobility: The AI skills arms race is coming for automotive | TechCrunch",
-      "summary_short": "# TechCrunch Mobility: The AI skills arms race is coming for automotive | TechCrunch## 📖 新聞導語本文報",
-      "images": [
-        "img/img1.png"
-      ],
+      "title": "AI 人才軍備競賽席捲汽車產業",
+      "summary": "TechCrunch Mobility 深度分析：當人工智能技術突破遇上傳統製造業轉型，汽車產業正迎來前所未有的人才爭奪戰與技術革新浪潮",
+      "url": "./news_20260518_140721/index.html",
       "date": "2026-05-18",
-      "url": "./news_20260518_140721/index.html"
+      "time": "14:07:21",
+      "source": "AI News"
     },
     {
       "dir": "news_20260518_104852",
@@ -848,6 +847,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-05-18T14:09:43.707780",
-  "total_count": 93
+  "last_updated": "2026-05-18T14:12:20.274238",
+  "total_count": 94
 }
