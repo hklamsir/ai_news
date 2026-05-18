@@ -1,6 +1,16 @@
 {
   "archives": [
     {
+      "dir": "news_20260518_140721",
+      "title": "TechCrunch Mobility: The AI skills arms race is coming for automotive | TechCrunch",
+      "summary_short": "# TechCrunch Mobility: The AI skills arms race is coming for automotive | TechCrunch## 📖 新聞導語本文報",
+      "images": [
+        "img/img1.png"
+      ],
+      "date": "2026-05-18",
+      "url": "./news_20260518_140721/index.html"
+    },
+    {
       "dir": "news_20260518_104852",
       "title": "2026 畢業演說：AI 話題的反思與警示",
       "summary": "當人工智能成為時代熱詞，TechCrunch 提出一個值得深思的建議：或許在 2026 年的畢業典禮上，我們應該暫時放下 AI 這個話題",
@@ -838,6 +848,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-05-18T10:56:54.670575",
+  "last_updated": "2026-05-18T14:09:43.707780",
   "total_count": 93
 }
