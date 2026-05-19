@@ -2,13 +2,12 @@
   "archives": [
     {
       "dir": "news_20260519_122707",
-      "title": "5.20 日 AI 峰会亮点：一天看尽 Agent、多模态、应用与算力，速来现场！",
-      "summary_short": "# 5.20 日 AI 峰会亮点：一天看尽 Agent、多模态、应用与算力，速来现场！## 📖 新聞導語本文報導來自 **EU**，發布於 **2026-05-19**。最新科技新聞報道指",
-      "images": [
-        "img/img1.png"
-      ],
+      "title": "5.20 AI 峰會亮點預告",
+      "summary": "第四屆中國AIGC產業峰會｜18位重磅嘉賓｜Agent、多模態、應用、算力一天睇盡｜北京·金茂萬麗酒店",
+      "url": "./news_20260519_122707/index.html",
       "date": "2026-05-19",
-      "url": "./news_20260519_122707/index.html"
+      "time": "12:27:07",
+      "source": "AI News"
     },
     {
       "dir": "news_20260519_075929",
@@ -866,6 +865,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-05-19T12:29:20.002354",
-  "total_count": 95
+  "last_updated": "2026-05-19T12:30:28.219914",
+  "total_count": 96
 }
