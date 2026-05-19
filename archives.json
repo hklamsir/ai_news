@@ -2,13 +2,12 @@
   "archives": [
     {
       "dir": "news_20260519_233240",
-      "title": "Hermes Agent Workspace is INSANE 🤯 (FREE Setup Guide)",
-      "summary_short": "## 新聞導語開源 AI 代理平臺 Hermes 近日推出全新「Agent Workspace」工作空間，為個人及企業使用者提供零程式碼、零費用的 AI 指揮中心解決方案。本次報告顯示，該工具透過",
-      "images": [
-        "img/img1.png"
-      ],
+      "title": "Hermes Agent Workspace",
+      "summary": "開源 AI 代理指揮中心｜零程式碼、零費用｜將 AI 變成會為你工作的員工",
+      "url": "./news_20260519_233240/index.html",
       "date": "2026-05-19",
-      "url": "./news_20260519_233240/index.html"
+      "time": "23:32:40",
+      "source": "AI News"
     },
     {
       "dir": "news_20260519_133957",
@@ -884,6 +883,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-05-19T23:35:04.750830",
-  "total_count": 97
+  "last_updated": "2026-05-19T23:40:55.187462",
+  "total_count": 98
 }
