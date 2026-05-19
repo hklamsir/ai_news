@@ -1,6 +1,16 @@
 {
   "archives": [
     {
+      "dir": "news_20260519_075929",
+      "title": "South Korea's LetinAR is building optics behind AI glasses | TechCrunch",
+      "summary_short": "# South Korea's LetinAR is building optics behind AI glasses | TechCrunch## 📖 新聞導語本文報導來自 **TECHC",
+      "images": [
+        "img/img1.png"
+      ],
+      "date": "2026-05-19",
+      "url": "./news_20260519_075929/index.html"
+    },
+    {
       "dir": "news_20260518_140721",
       "title": "AI 人才軍備競賽席捲汽車產業",
       "summary": "TechCrunch Mobility 深度分析：當人工智能技術突破遇上傳統製造業轉型，汽車產業正迎來前所未有的人才爭奪戰與技術革新浪潮",
@@ -847,6 +857,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-05-18T14:12:20.274238",
+  "last_updated": "2026-05-19T08:01:42.886636",
   "total_count": 94
 }
