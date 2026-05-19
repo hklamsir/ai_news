@@ -1,203 +1,274 @@
 <!DOCTYPE html>
-<html lang="zh-TW">
+<html lang="zh-Hant">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>韓國 LetinAR 打造 AI 眼鏡光學核心 | AI News 專題報道</title>
+    <title>南韓 LetinAR 打造 AI 眼鏡光學技術 | TechCrunch - AI News</title>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --primary-blue: #00d4ff;
-            --primary-purple: #7b2cbf;
-            --accent-green: #00ff88;
-            --accent-orange: #ff9500;
-            --dark-bg: #0a0a0f;
-            --card-bg: #12121a;
-            --card-bg-light: #1a1a28;
-            --text-primary: #ffffff;
-            --text-secondary: #a0a0b0;
-            --gradient-1: linear-gradient(135deg, #00d4ff 0%, #7b2cbf 100%);
-            --gradient-2: linear-gradient(135deg, #00d4ff 0%, #00ff88 100%);
-            --glow-blue: 0 0 20px rgba(0, 212, 255, 0.5);
-            --glow-purple: 0 0 20px rgba(123, 44, 191, 0.5);
-        }
-
+        :root { --primary-blue: #00d4ff; --primary-purple: #7b2cbf; --accent-green: #00ff88; --accent-red: #ff4757; --dark-bg: #0a0a0f; --card-bg: #12121a; --card-bg-light: #1a1a28; --text-primary: #ffffff; --text-secondary: #a0a0b0; --gradient-1: linear-gradient(135deg, #00d4ff 0%, #7b2cbf 100%); --glow-blue: 0 0 20px rgba(0, 212, 255, 0.5); --glow-purple: 0 0 20px rgba(123, 44, 191, 0.5); }
         * { margin: 0; padding: 0; box-sizing: border-box; }
         html { scroll-behavior: smooth; }
         body { font-family: 'Noto Sans TC', sans-serif; background-color: var(--dark-bg); color: var(--text-primary); line-height: 1.8; overflow-x: hidden; }
-
-        @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-20px); } }
-        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.6; } }
         @keyframes slideIn { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); } }
         @keyframes codeRain { 0% { transform: translateY(-100%); opacity: 0; } 10% { opacity: 1; } 90% { opacity: 1; } 100% { transform: translateY(100vh); opacity: 0; } }
-
         .code-rain { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; overflow: hidden; }
         .code-char { position: absolute; color: var(--primary-blue); font-family: 'Courier New', monospace; font-size: 14px; opacity: 0; animation: codeRain 4s linear infinite; }
-
-        .hero { position: relative; min-height: 80vh; display: flex; align-items: center; justify-content: center; padding: 80px 20px; background: linear-gradient(180deg, var(--dark-bg) 0%, #1a1a2e 100%); overflow: hidden; }
-        .hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(ellipse at center, rgba(123, 44, 191, 0.15) 0%, transparent 70%); z-index: 1; }
+        .hero { position: relative; min-height: 65vh; display: flex; align-items: center; justify-content: center; padding: 80px 20px; background: linear-gradient(180deg, var(--dark-bg) 0%, #1a1a2e 100%); overflow: hidden; }
+        .hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(ellipse at center, rgba(0, 212, 255, 0.1) 0%, transparent 70%); z-index: 1; }
         .hero-content { position: relative; z-index: 2; max-width: 1200px; text-align: center; animation: slideIn 1s ease-out; }
-        .hero-badge { display: inline-block; padding: 12px 32px; background: var(--gradient-1); border-radius: 50px; font-size: 18px; font-weight: 700; margin-bottom: 24px; box-shadow: var(--glow-blue); letter-spacing: 1px; }
-        .hero h1 { font-size: clamp(2rem, 5vw, 4rem); font-weight: 900; margin-bottom: 24px; background: var(--gradient-1); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; line-height: 1.2; }
-        .hero-subtitle { font-size: clamp(1.2rem, 2.2vw, 1.6rem); color: var(--text-primary); max-width: 900px; margin: 0 auto 40px; line-height: 1.6; font-weight: 400; }
+        .hero-badge { display: inline-block; padding: 12px 32px; background: linear-gradient(135deg, #00d4ff 0%, #7b2cbf 100%); border-radius: 50px; font-size: 18px; font-weight: 700; margin-bottom: 24px; box-shadow: 0 0 20px rgba(0, 212, 255, 0.5); }
+        .hero h1 { font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 900; margin-bottom: 24px; background: var(--gradient-1); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; line-height: 1.2; }
+        .hero-subtitle { font-size: clamp(1.2rem, 2.2vw, 1.5rem); color: var(--text-primary); max-width: 900px; margin: 0 auto 40px; line-height: 1.6; }
         .hero-images { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; margin-top: 60px; }
-        .hero-image-card { position: relative; border-radius: 20px; overflow: hidden; aspect-ratio: 16/9; box-shadow: var(--glow-purple); transition: transform 0.3s ease, box-shadow 0.3s ease; }
-        .hero-image-card:hover { transform: scale(1.02); box-shadow: 0 0 40px rgba(123, 44, 191, 0.7); }
+        .hero-image-card { position: relative; border-radius: 20px; overflow: hidden; aspect-ratio: 16/9; box-shadow: var(--glow-purple); transition: transform 0.3s ease; }
+        .hero-image-card:hover { transform: scale(1.02); }
         .hero-image-card img { width: 100%; height: 100%; object-fit: cover; }
-        .scroll-indicator { position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%); animation: float 2s ease-in-out infinite; z-index: 2; }
-        .scroll-indicator span { display: block; width: 30px; height: 50px; border: 2px solid var(--primary-blue); border-radius: 25px; position: relative; }
-        .scroll-indicator span::before { content: ''; position: absolute; top: 8px; left: 50%; transform: translateX(-50%); width: 6px; height: 10px; background: var(--primary-blue); border-radius: 3px; animation: pulse 1.5s infinite; }
-
         section { padding: 80px 20px; position: relative; z-index: 1; }
         .content-section { background: var(--card-bg); padding: 60px 50px; border-radius: 24px; border: 1px solid rgba(0, 212, 255, 0.2); max-width: 1100px; margin: 0 auto; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3); }
-
-        .content-section h3 { font-size: 1.6rem; margin: 40px 0 20px; color: var(--accent-green); }
-        .content-section p { color: var(--text-secondary); line-height: 2; font-size: 1.08rem; margin: 15px 0; }
-        .content-section ul { margin: 20px 0; padding-left: 30px; }
-        .content-section li { margin: 10px 0; color: var(--text-secondary); }
-
+        .content-section h2 { font-size: 2rem; margin-bottom: 40px; color: var(--primary-blue); display: flex; align-items: center; gap: 15px; padding-bottom: 20px; border-bottom: 2px solid rgba(0, 212, 255, 0.3); }
+        .content-section h2::before { content: '📖'; font-size: 2.5rem; }
+        .content-section h3 { font-size: 1.6rem; margin: 50px 0 25px; color: var(--accent-green); display: flex; align-items: center; gap: 12px; }
+        .content-section h3::before { content: '🎯'; font-size: 2rem; }
+        .content-section p { color: var(--text-secondary); line-height: 2.2; font-size: 1.08rem; margin: 25px 0; text-align: justify; }
+        .content-section ul, .content-section ol { margin: 30px 0; padding-left: 40px; }
+        .content-section li { margin: 15px 0; line-height: 2; color: var(--text-secondary); font-size: 1.05rem; }
+        .content-section ul li { list-style-type: none; position: relative; padding-left: 25px; }
+        .content-section ul li::before { content: '▸'; color: var(--primary-blue); font-size: 1.5rem; position: absolute; left: 0; top: -5px; }
+        .content-section strong { color: var(--text-primary); font-weight: 600; }
         .meta-info { background: linear-gradient(135deg, rgba(0, 212, 255, 0.15) 0%, rgba(123, 44, 191, 0.15) 100%); padding: 30px; border-radius: 16px; margin-bottom: 40px; border-left: 5px solid var(--primary-blue); }
         .meta-info p { margin: 12px 0; color: var(--text-secondary); font-size: 1.05rem; }
         .meta-info strong { color: var(--primary-blue); font-weight: 600; }
         .meta-info a { color: var(--primary-blue); text-decoration: none; word-break: break-all; }
-
         .highlight-box { background: linear-gradient(135deg, rgba(0, 255, 136, 0.08) 0%, rgba(0, 212, 255, 0.08) 100%); padding: 30px; border-radius: 16px; border-left: 5px solid var(--accent-green); margin: 40px 0; }
-        .highlight-box h4 { color: var(--accent-green); margin-bottom: 15px; font-size: 1.3rem; }
+        .highlight-box h4 { color: var(--accent-green); margin-bottom: 15px; font-size: 1.3rem; display: flex; align-items: center; gap: 10px; }
+        .highlight-box h4::before { content: '✨'; }
         .highlight-box p { color: var(--text-secondary); margin: 0; }
-
+        .quote-box { background: linear-gradient(135deg, rgba(123, 44, 191, 0.15) 0%, rgba(0, 212, 255, 0.15) 100%); padding: 30px 40px; border-radius: 16px; border-left: 5px solid var(--primary-purple); margin: 40px 0; }
+        .quote-box p { color: var(--text-primary); font-size: 1.2rem; font-style: italic; margin-bottom: 15px; }
+        .quote-box cite { color: var(--text-secondary); font-size: 0.95rem; }
+        .tech-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin: 40px 0; }
+        .tech-card { background: var(--card-bg-light); padding: 30px; border-radius: 16px; border: 1px solid rgba(0, 212, 255, 0.15); animation: fadeInUp 0.6s ease-out forwards; opacity: 0; }
+        .tech-card:nth-child(1) { animation-delay: 0.1s; }
+        .tech-card:nth-child(2) { animation-delay: 0.2s; }
+        .tech-card:nth-child(3) { animation-delay: 0.3s; }
+        .tech-card:nth-child(4) { animation-delay: 0.4s; }
+        .tech-card-icon { font-size: 2.5rem; margin-bottom: 15px; }
+        .tech-card h4 { color: var(--primary-blue); margin-bottom: 12px; font-size: 1.2rem; }
+        .tech-card p { color: var(--text-secondary); font-size: 0.95rem; line-height: 1.7; }
+        .table-section { overflow-x: auto; margin: 40px 0; }
+        .comparison-table { width: 100%; border-collapse: collapse; border-radius: 16px; overflow: hidden; box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3); }
+        .comparison-table thead { background: linear-gradient(135deg, var(--primary-blue), var(--primary-purple)); }
+        .comparison-table th { padding: 18px 20px; text-align: left; font-weight: 600; font-size: 1.05rem; color: white; }
+        .comparison-table td { padding: 16px 20px; border-bottom: 1px solid rgba(255, 255, 255, 0.05); color: var(--text-secondary); }
+        .comparison-table tr:last-child td { border-bottom: none; }
+        .comparison-table tr:nth-child(even) { background: rgba(255, 255, 255, 0.02); }
+        .comparison-table td.highlight-col { color: var(--accent-green); font-weight: 600; }
+        .timeline { margin: 40px 0; }
+        .timeline-item { display: flex; gap: 20px; margin-bottom: 24px; }
+        .timeline-dot { width: 16px; height: 16px; background: var(--primary-blue); border-radius: 50%; margin-top: 6px; flex-shrink: 0; }
+        .timeline-content { flex: 1; }
+        .timeline-content h4 { color: var(--primary-blue); margin-bottom: 5px; font-size: 1.1rem; }
+        .timeline-content p { color: var(--text-secondary); font-size: 0.95rem; line-height: 1.7; }
         footer { background: #050508; padding: 60px 20px; text-align: center; border-top: 1px solid rgba(255, 255, 255, 0.1); }
         footer p { color: var(--text-secondary); margin-bottom: 20px; }
         .footer-links { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; }
         .footer-links a { color: var(--primary-blue); text-decoration: none; transition: color 0.3s ease; }
         .footer-links a:hover { color: var(--text-primary); }
-
         @media (max-width: 768px) {
             .content-section { padding: 40px 25px; }
-            .hero-images { grid-template-columns: 1fr; }
             .hero h1 { font-size: 2rem; }
-            .hero-subtitle { font-size: 1.2rem; }
         }
     </style>
 </head>
 <body>
     <div class="code-rain" id="codeRain"></div>
-
     <section class="hero">
         <div class="hero-content">
             <span class="hero-badge">📰 AI News 專題報道</span>
-            <h1>韓國 LetinAR 打造 AI 眼鏡光學核心</h1>
-            <p class="hero-subtitle">來自 TechCrunch 的獨家報導，揭示韓國新創企業如何以創新光學技術重塑擴增實境產業格局，為下一代 AI 智慧眼鏡奠定關鍵基礎</p>
+            <h1>南韓 LetinAR 打造 AI 眼鏡光學技術</h1>
+            <p class="hero-subtitle">PinTILT 技術突破光學瓶頸，LG、三星相繼布局，2027 年 IPO 目標與 15 億美元市場爆發</p>
             <div class="hero-images">
                 <div class="hero-image-card">
-                    <img src="img/img1.png" alt="LetinAR AI 眼鏡光技術示意圖">
+                    <img src="img/img1.png" alt="AI 眼鏡光學技術示意圖">
                 </div>
             </div>
         </div>
-        <div class="scroll-indicator">
-            <span></span>
-        </div>
     </section>
-
     <section>
         <div class="content-section">
             <div class="meta-info">
-                <p><strong>📺 資料來源</strong>：<a href="https://techcrunch.com" target="_blank">TechCrunch</a></p>
-                <p><strong>📅 發布日期</strong>：2026-05-19</p>
+                <p><strong>📺 資料來源</strong>：<a href="https://techcrunch.com/2026/05/18/south-koreas-letinar-is-building-the-optics-behind-ai-glasses/" target="_blank">TechCrunch - South Korea's LetinAR</a></p>
+                <p><strong>📅 發布日期</strong>：2026-05-18</p>
                 <p><strong>🤖 處理方式</strong>：AI 智能摘要生成</p>
             </div>
-
-            <h3>🎯 產業背景與核心定位</h3>
-            <p>本次報告聚焦韓國新創公司 LetinAR 在擴增實境光學領域的突破性進展。研究指出，隨著 AI 智慧眼鏡市場快速崛起，光學顯示技術已成為決定產品成敗的關鍵環節。LetinAR 選擇專注於「鏡片後方」的光學引擎開發，為裝置製造商提供核心顯示模組。</p>
-            <p>業界觀察顯示，這種分工模式正成為 AR 產業的主流趨勢。專家分析認為，將複雜的光學系統交由專業供應商處理，可讓終端品牌更專注於軟體整合與使用者體驗設計，加速產品上市時程。</p>
-
-            <h3>💡 技術創新與競爭優勢</h3>
-            <p>LetinAR 的核心技術採用獨特的「針孔效應」光學架構，相較於傳統波導方案具有顯著優勢。數據顯示，該技術能實現更寬廣的視野角度，同時大幅降低裝置厚度與重量，這對於日常佩戴的智慧眼鏡至關重要。</p>
-            <p>技術特包括：</p>
+            <h3>🎯 核心觀點</h3>
+            <p>南韓光學新創 <strong>LetinAR</strong> 專注研發 AI 眼鏡的核心光學模組，旗下 PinTILT 技術能在更輕薄的鏡片內實現更高亮度、更低功耗的顯示效果。該公司已獲 LG 電子投資，並剛完成 1,850 萬美元新一輪融資，目標 2027 年在韓國 IPO。</p>
+            <p>全球 AI 眼鏡市場正爆發式增長：2025 年出货量達 870 萬台，按年增長超過 300%，分析師預測 2026 年將突破 1,500 萬台。三星更預告將於 7 月倫敦舉辦的 Galaxy Unpacked 發布首款 AI 眼鏡，與 Gentle Monster 合作設計。</p>
+            <h3>💡 PinTILT 技術原理</h3>
+            <p>現有主流光學技術分為兩大陣營：</p>
             <ul>
-                <li><strong>超輕薄模組設計</strong>：光學引擎厚度僅數毫米，遠優於傳統方案</li>
-                <li><strong>高透明度</strong>：鏡片保持清晰通透，不干擾正常視覺</li>
-                <li><strong>寬廣視野</strong>：提供沉浸式的擴增實境體</li>
-                <li><strong>成本效益</strong>：量產成本較波導技術大幅降低</li>
-                <li><strong>相容性強</strong>：可整合各類 AI 處理晶片與感測器</li>
+                <li><strong>波導（Waveguide）</strong>：將光線分散到整個鏡片，鏡片纖薄但效率低，大量光線在到達眼睛前已被損耗，導致畫面暗淡且耗電。</li>
+                <li><strong>鳥籠式（Birdbath）</strong>：光線直接投射到眼睛，但結構厚重，難以做成時尚眼镜。</li>
             </ul>
-
-            <h3>📊 市場佈局與生態合作</h3>
-            <p>研究指出，LetinAR 已與多家國際科技大廠建立合作關係。該公司的光學模組正被評估用於數款即將上市的 AI 智慧眼鏡產品，涵蓋消費級與企業級應用場景。</p>
-            <p>市場數據顯示，全球 AR 智慧眼鏡市場預計將在未來五年內實現高速成長。韓國政府積極扶持相關產業，LetinAR 作為本土代表企業，已獲得多輪創投資金挹注，累計募資規模達數千萬美元。</p>
-
+            <p>PinTILT 透過精密設計每個微型光學元件的角度，只收集真正能進入眼睛的光線，避開上述兩種技術的取捨，在<b>輕薄時尚</b>與<b>高亮度省電</b>之間取得突破。</p>
+            <h3>🌐 商業佈局與合作</h3>
+            <p>LetinAR 現已出貨給日本 NTT QONOQ Devices 及 Dynabook（前東芝客戶端解決方案），積累了規模型製造經驗。同時正與多家大型科技公司洽談下一代 AI 眼鏡研發，但拒絕透露名稱。</p>
+            <p>最引人注目的客戶是瑞士深度科技公司 <strong>Aegis Rider</strong>（蘇黎世聯邦理工學院 spin-off），正在開發一款 AR 頭盔，可將導航、車速、安全警示<strong>錨定在實際路面上</strong>，而非漂浮在抬頭顯示器上。LetinAR 的光學模組正是這款頭盔的核心零件，Aegis Rider 預計 2026 年進軍歐盟及瑞士市場。</p>
             <div class="highlight-box">
-                <h4>✨ 關鍵洞察</h4>
-                <p>LetinAR 的「隱形」定位策略——專注於 B2B 光學供而非自有品牌——使其能夠同時服務多家競爭對手，最大化技術影響力。這種「Intel Inside」模式在 AR 產業早期階段具有獨特優勢，有望成為下一代智慧眼鏡的標準配備。</p>
+                <h4>✨ 關鍵洞察：光學瓶頸才是 AI 眼鏡普及的關鍵</h4>
+                <p>業界共識認為，AI 眼鏡的最大挑戰不在晶片或軟體，而在光學模組——必須足夠輕薄、時尚、省電，同時提供清晰銳利的畫面。LetinAR 的技術正好切中這一痛點，這也是 LG 電子在投資後自行開始研發 AI 眼鏡的原因。</p>
             </div>
-
-            <h3>🔮 未來展望與產業影響</h3>
-            <p>業界察人士預期，隨著 Apple、Meta、Google 等巨頭加速布局智慧眼鏡市場，對於輕薄高效光學方案的需求將持續攀升。LetinAR 的技術路徑被視為解決「全天佩戴」難題的關鍵拼圖之一。</p>
-            <p>專家分析指出，AI 與 AR 的融合將重新定義人機互動方式。從即時翻譯、導航指引到情境感知助理，智慧眼鏡的應用場景正快速擴展。在這波浪潮中，掌握核心光學技術的供應商將扮演越來越重要的角色，而 LetinAR 已搶佔有利位置。</p>
+            <div class="tech-cards">
+                <div class="tech-card">
+                    <div class="tech-card-icon">🔬</div>
+                    <h4>PinTILT 光學技術</h4>
+                    <p>精密控制每個微型光學元件角度，只收集直達眼睛的光線，實現輕薄與高效的統一。</p>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-card-icon">💰</div>
+                    <h4>1,850 萬美元新融資</h4>
+                    <p>南韓產業銀行與樂天創投聯合領投，累計融資達 4,170 萬美元，2027 年 IPO 目標明確。</p>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-card-icon">🚴</div>
+                    <h4>Aegis Rider AR 頭盔</h4>
+                    <p>瑞士蘇黎世聯邦理工 spin-off，實現導航信息與路面融合，2026 年進軍歐盟市場。</p>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-card-icon">📈</div>
+                    <h4>1,500 萬台市場預測</h4>
+                    <p>Omdia 數據：2026 年 AI 眼鏡全球出貨量按年增長 73%，中國供應鏈正在追趕。</p>
+                </div>
+            </div>
+            <h3>📊 光學技術比較</h3>
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>維度</th>
+                        <th>波導 Waveguide</th>
+                        <th>鳥籠式 Birdbath</th>
+                        <th>PinTILT（LetinAR）</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>鏡片厚度</td>
+                        <td>極薄 ✓</td>
+                        <td>厚重 ✗</td>
+                        <td class="highlight-col">輕薄 ✓</td>
+                    </tr>
+                    <tr>
+                        <td>光學效率</td>
+                        <td>低（大量光線損耗）</td>
+                        <td>高</td>
+                        <td class="highlight-col">高 ✓</td>
+                    </tr>
+                    <tr>
+                        <td>功耗表現</td>
+                        <td>高（需補償損耗）</td>
+                        <td>中</td>
+                        <td class="highlight-col">低 ✓</td>
+                    </tr>
+                    <tr>
+                        <td>畫面亮度</td>
+                        <td>暗淡</td>
+                        <td>清晰</td>
+                        <td class="highlight-col">明亮 ✓</td>
+                    </tr>
+                    <tr>
+                        <td>時尚設計</td>
+                        <td>可行</td>
+                        <td>困難</td>
+                        <td class="highlight-col">可行 ✓</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="quote-box">
+                <p>「AI 眼鏡將是下一個運算平台，而光學模組是其中最難突破的技術環節——眼鏡製造商需要比現有產品更薄、更輕、更節能的鏡頭。」</p>
+                <cite>— Jaehyeok Kim，LetinAR 行政總裁</cite>
+            </div>
+            <h3>📅 發展時間軸</h3>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h4>2016 年</h4>
+                        <p>Jaehyeok Kim 與 CTO Jeonghun Ha 共同創立 LetinAR，二人於高中時期相識。</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h4>2023 年</h4>
+                        <p>Meta Ray-Ban AI 眼鏡上市，正式拉開 AI 眼鏡消費市場序幕。</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h4>2024–2025 年</h4>
+                        <p>LG 電子投資 LetinAR，隨後自行研發 AI 智能眼鏡，印證技術價值。</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h4>2025 年</h4>
+                        <p>全球 AI 眼鏡出貨量達 870 萬台，按年增長 300%，市場爆發。</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h4>2026 年 5 月</h4>
+                        <p>完成 1,850 萬美元 B 輪融资，NTT QONOQ、Dynabook 客戶持續出貨。</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h4>2026 年 7 月（預計）</h4>
+                        <p>三星 Galaxy Unpacked 發布首款 AI 眼鏡（與 Gentle Monster 合作），市場進一步升溫。</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h4>2027 年（目標）</h4>
+                        <p>LetinAR 計劃在韓國 IPO，持續擴展客戶基礎及生產規模。</p>
+                    </div>
+                </div>
+            </div>
+            <h3>🔮 未來展望</h3>
+            <p>AI 眼鏡從概念走向大眾消費的瓶頸不在軟體而在光學。當輕薄、省電、高亮度三者得以同時滿足，AI 眼鏡才真正具備取代智能手機的潛力。LetinAR 作為上游關鍵零件供應商，正站在這一價值鏈的核心位置。</p>
+            <p>隨著三星、LG、Google、Meta、華為、小米等巨頭相繼布局，光學供應商話語權將持續提升。LetinAR 的 2027 年 IPO 計劃，標誌著南韓供應鏈在下一代運算平台搶佔先機的戰略意圖。</p>
         </div>
     </section>
-
     <footer>
-        <p>© 2026 AI News Archive | 由 AI 技術生成</p>
+        <p>AI News 專題報道 | 生成時間：2026-05-19</p>
         <div class="footer-links">
-            <a href="../index.html">返回主頁</a>
-            <a href="https://github.com/hklamsir/ai_news" target="_blank">GitHub</a>
-            <a href="https://hklamsir.github.io/ai_news/" target="_blank">瀏覽所有專題</a>
+            <a href="https://hklamsir.github.io/ai_news/" target="_blank">📰 AI News 主頁</a>
+            <a href="https://techcrunch.com/2026/05/18/south-koreas-letinar-is-building-the-optics-behind-ai-glasses/" target="_blank">📺 原始文章</a>
+            <a href="https://github.com/hklamsir/ai_news" target="_blank">🐙 GitHub</a>
         </div>
     </footer>
-
-    <script>
-        const codeRain = document.getElementById('codeRain');
-        const chars = '01アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン';
-        
-        for (let i = 0; i < 50; i++) {
-            const char = document.createElement('span');
-            char.className = 'code-char';
-            char.textContent = chars[Math.floor(Math.random() * chars.length)];
-            char.style.left = Math.random() * 100 + '%';
-            char.style.animationDelay = Math.random() * 4 + 's';
-            char.style.animationDuration = (3 + Math.random() * 3) + 's';
-            codeRain.appendChild(char);
-        }
-    </script>
-
     <script>
         function createCodeRain() {
             const codeRain = document.getElementById('codeRain');
-            if (!codeRain) return;
-            const chars = '01 アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン';
-            for (let i = 0; i < 50; i++) {
-                const char = document.createElement('div');
-                char.className = 'code-char';
-                char.textContent = chars[Math.floor(Math.random() * chars.length)];
-                char.style.left = Math.random() * 100 + '%';
-                char.style.animationDelay = Math.random() * 4 + 's';
-                char.style.animationDuration = (Math.random() * 2 + 3) + 's';
-                codeRain.appendChild(char);
+            const chars = '01アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン';
+            for (let i = 0; i < 60; i++) {
+                const codeChar = document.createElement('div');
+                codeChar.className = 'code-char';
+                codeChar.style.left = Math.random() * 100 + '%';
+                codeChar.style.animationDelay = Math.random() * 4 + 's';
+                codeChar.style.animationDuration = (Math.random() * 3 + 3) + 's';
+                codeChar.textContent = chars[Math.floor(Math.random() * chars.length)];
+                codeRain.appendChild(codeChar);
             }
         }
-
-        function handleScrollAnimation() {
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.style.opacity = '1';
-                        entry.target.style.transform = 'translateY(0)';
-                    }
-                });
-            }, { threshold: 0.1 });
-
-            document.querySelectorAll('.fade-in').forEach(el => {
-                el.style.opacity = '0';
-                el.style.transform = 'translateY(30px)';
-                el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-                observer.observe(el);
-            });
-        }
-
-        document.addEventListener('DOMContentLoaded', () => {
-            createCodeRain();
-            handleScrollAnimation();
-        });
+        document.addEventListener('DOMContentLoaded', function() { createCodeRain(); });
     </script>
 </body>
 </html>
