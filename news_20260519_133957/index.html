@@ -1,225 +1,289 @@
 <!DOCTYPE html>
-<html lang="zh-TW">
+<html lang="zh-Hant">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>中國AI圈資本規則突變 | AI News 專題報道</title>
+    <title>中國AI圈估值洗牌 | 四龍到五強 | 資本定價邏輯三次顛覆 | AI News</title>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --primary-blue: #00d4ff;
-            --primary-purple: #7b2cbf;
-            --accent-green: #00ff88;
-            --accent-orange: #ff9500;
-            --dark-bg: #0a0a0f;
-            --card-bg: #12121a;
-            --card-bg-light: #1a1a28;
-            --text-primary: #ffffff;
-            --text-secondary: #a0a0b0;
-            --gradient-1: linear-gradient(135deg, #00d4ff 0%, #7b2cbf 100%);
-            --gradient-2: linear-gradient(135deg, #00d4ff 0%, #00ff88 100%);
-            --glow-blue: 0 0 20px rgba(0, 212, 255, 0.5);
-            --glow-purple: 0 0 20px rgba(123, 44, 191, 0.5);
-        }
-
+        :root { --primary-blue: #00d4ff; --primary-purple: #7b2cbf; --accent-green: #00ff88; --accent-red: #ff4757; --dark-bg: #0a0a0f; --card-bg: #12121a; --card-bg-light: #1a1a28; --text-primary: #ffffff; --text-secondary: #a0a0b0; --gradient-1: linear-gradient(135deg, #00d4ff 0%, #7b2cbf 100%); --glow-blue: 0 0 20px rgba(0, 212, 255, 0.5); --glow-purple: 0 0 20px rgba(123, 44, 191, 0.5); }
         * { margin: 0; padding: 0; box-sizing: border-box; }
         html { scroll-behavior: smooth; }
         body { font-family: 'Noto Sans TC', sans-serif; background-color: var(--dark-bg); color: var(--text-primary); line-height: 1.8; overflow-x: hidden; }
-
-        @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-20px); } }
-        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.6; } }
         @keyframes slideIn { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); } }
         @keyframes codeRain { 0% { transform: translateY(-100%); opacity: 0; } 10% { opacity: 1; } 90% { opacity: 1; } 100% { transform: translateY(100vh); opacity: 0; } }
-
-        /* 代碼雨背景 */
         .code-rain { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; overflow: hidden; }
         .code-char { position: absolute; color: var(--primary-blue); font-family: 'Courier New', monospace; font-size: 14px; opacity: 0; animation: codeRain 4s linear infinite; }
-
-        /* Hero Section */
-        .hero { position: relative; min-height: 80vh; display: flex; align-items: center; justify-content: center; padding: 80px 20px; background: linear-gradient(180deg, var(--dark-bg) 0%, #1a1a2e 100%); overflow: hidden; }
-        .hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(ellipse at center, rgba(123, 44, 191, 0.15) 0%, transparent 70%); z-index: 1; }
+        .hero { position: relative; min-height: 65vh; display: flex; align-items: center; justify-content: center; padding: 80px 20px; background: linear-gradient(180deg, var(--dark-bg) 0%, #1a1a2e 100%); overflow: hidden; }
+        .hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(ellipse at center, rgba(0, 212, 255, 0.1) 0%, transparent 70%); z-index: 1; }
         .hero-content { position: relative; z-index: 2; max-width: 1200px; text-align: center; animation: slideIn 1s ease-out; }
-        .hero-badge { display: inline-block; padding: 12px 32px; background: var(--gradient-1); border-radius: 50px; font-size: 18px; font-weight: 700; margin-bottom: 24px; box-shadow: var(--glow-blue); letter-spacing: 1px; }
-        .hero h1 { font-size: clamp(2rem, 5vw, 4rem); font-weight: 900; margin-bottom: 24px; background: var(--gradient-1); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; line-height: 1.2; }
-        .hero-subtitle { font-size: clamp(1.2rem, 2.2vw, 1.6rem); color: var(--text-primary); max-width: 900px; margin: 0 auto 40px; line-height: 1.6; font-weight: 400; }
+        .hero-badge { display: inline-block; padding: 12px 32px; background: linear-gradient(135deg, #00d4ff 0%, #7b2cbf 100%); border-radius: 50px; font-size: 18px; font-weight: 700; margin-bottom: 24px; box-shadow: 0 0 20px rgba(0, 212, 255, 0.5); }
+        .hero h1 { font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 900; margin-bottom: 24px; background: var(--gradient-1); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; line-height: 1.2; }
+        .hero-subtitle { font-size: clamp(1.2rem, 2.2vw, 1.5rem); color: var(--text-primary); max-width: 900px; margin: 0 auto 40px; line-height: 1.6; }
         .hero-images { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; margin-top: 60px; }
-        .hero-image-card { position: relative; border-radius: 20px; overflow: hidden; aspect-ratio: 16/9; box-shadow: var(--glow-purple); transition: transform 0.3s ease, box-shadow 0.3s ease; }
-        .hero-image-card:hover { transform: scale(1.02); box-shadow: 0 0 40px rgba(123, 44, 191, 0.7); }
+        .hero-image-card { position: relative; border-radius: 20px; overflow: hidden; aspect-ratio: 16/9; box-shadow: var(--glow-purple); transition: transform 0.3s ease; }
+        .hero-image-card:hover { transform: scale(1.02); }
         .hero-image-card img { width: 100%; height: 100%; object-fit: cover; }
-        .scroll-indicator { position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%); animation: float 2s ease-in-out infinite; z-index: 2; }
-        .scroll-indicator span { display: block; width: 30px; height: 50px; border: 2px solid var(--primary-blue); border-radius: 25px; position: relative; }
-        .scroll-indicator span::before { content: ''; position: absolute; top: 8px; left: 50%; transform: translateX(-50%); width: 6px; height: 10px; background: var(--primary-blue); border-radius: 3px; animation: pulse 1.5s infinite; }
-
-        /* Content Section */
         section { padding: 80px 20px; position: relative; z-index: 1; }
         .content-section { background: var(--card-bg); padding: 60px 50px; border-radius: 24px; border: 1px solid rgba(0, 212, 255, 0.2); max-width: 1100px; margin: 0 auto; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3); }
-
-        .content-section h3 { font-size: 1.6rem; margin: 40px 0 20px; color: var(--accent-green); }
-        .content-section p { color: var(--text-secondary); line-height: 2; font-size: 1.08rem; margin: 15px 0; }
-        .content-section ul { margin: 20px 0; padding-left: 30px; }
-        .content-section li { margin: 10px 0; color: var(--text-secondary); }
-
+        .content-section h3 { font-size: 1.6rem; margin: 50px 0 25px; color: var(--accent-green); display: flex; align-items: center; gap: 12px; }
+        .content-section h3::before { content: '🎯'; font-size: 2rem; }
+        .content-section p { color: var(--text-secondary); line-height: 2.2; font-size: 1.08rem; margin: 25px 0; text-align: justify; }
+        .content-section ul, .content-section ol { margin: 30px 0; padding-left: 40px; }
+        .content-section li { margin: 15px 0; line-height: 2; color: var(--text-secondary); font-size: 1.05rem; }
+        .content-section ul li { list-style-type: none; position: relative; padding-left: 25px; }
+        .content-section ul li::before { content: '▸'; color: var(--primary-blue); font-size: 1.5rem; position: absolute; left: 0; top: -5px; }
+        .content-section strong { color: var(--text-primary); font-weight: 600; }
         .meta-info { background: linear-gradient(135deg, rgba(0, 212, 255, 0.15) 0%, rgba(123, 44, 191, 0.15) 100%); padding: 30px; border-radius: 16px; margin-bottom: 40px; border-left: 5px solid var(--primary-blue); }
         .meta-info p { margin: 12px 0; color: var(--text-secondary); font-size: 1.05rem; }
         .meta-info strong { color: var(--primary-blue); font-weight: 600; }
         .meta-info a { color: var(--primary-blue); text-decoration: none; word-break: break-all; }
-
         .highlight-box { background: linear-gradient(135deg, rgba(0, 255, 136, 0.08) 0%, rgba(0, 212, 255, 0.08) 100%); padding: 30px; border-radius: 16px; border-left: 5px solid var(--accent-green); margin: 40px 0; }
-        .highlight-box h4 { color: var(--accent-green); margin-bottom: 15px; font-size: 1.3rem; }
+        .highlight-box h4 { color: var(--accent-green); margin-bottom: 15px; font-size: 1.3rem; display: flex; align-items: center; gap: 10px; }
+        .highlight-box h4::before { content: '✨'; }
         .highlight-box p { color: var(--text-secondary); margin: 0; }
-
-        /* Footer */
+        .alert-box { background: linear-gradient(135deg, rgba(255, 71, 87, 0.1) 0%, rgba(255, 149, 0, 0.1) 100%); padding: 30px; border-radius: 16px; border-left: 5px solid var(--accent-red); margin: 40px 0; }
+        .alert-box h4 { color: var(--accent-red); margin-bottom: 15px; font-size: 1.3rem; }
+        .alert-box p { color: var(--text-secondary); margin: 0; }
+        .quote-box { background: linear-gradient(135deg, rgba(123, 44, 191, 0.15) 0%, rgba(0, 212, 255, 0.15) 100%); padding: 30px 40px; border-radius: 16px; border-left: 5px solid var(--primary-purple); margin: 40px 0; }
+        .quote-box p { color: var(--text-primary); font-size: 1.2rem; font-style: italic; margin-bottom: 15px; }
+        .quote-box cite { color: var(--text-secondary); font-size: 0.95rem; }
+        .tech-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin: 40px 0; }
+        .tech-card { background: var(--card-bg-light); padding: 30px; border-radius: 16px; border: 1px solid rgba(0, 212, 255, 0.15); animation: fadeInUp 0.6s ease-out forwards; opacity: 0; }
+        .tech-card:nth-child(1) { animation-delay: 0.1s; }
+        .tech-card:nth-child(2) { animation-delay: 0.2s; }
+        .tech-card:nth-child(3) { animation-delay: 0.3s; }
+        .tech-card:nth-child(4) { animation-delay: 0.4s; }
+        .tech-card:nth-child(5) { animation-delay: 0.5s; }
+        .tech-card-icon { font-size: 2.5rem; margin-bottom: 15px; }
+        .tech-card h4 { color: var(--primary-blue); margin-bottom: 12px; font-size: 1.2rem; }
+        .tech-card p { color: var(--text-secondary); font-size: 0.95rem; line-height: 1.7; }
+        .table-section { overflow-x: auto; margin: 40px 0; }
+        .comparison-table { width: 100%; border-collapse: collapse; border-radius: 16px; overflow: hidden; box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3); }
+        .comparison-table thead { background: linear-gradient(135deg, var(--primary-blue), var(--primary-purple)); }
+        .comparison-table th { padding: 18px 20px; text-align: left; font-weight: 600; font-size: 1.05rem; color: white; }
+        .comparison-table td { padding: 16px 20px; border-bottom: 1px solid rgba(255, 255, 255, 0.05); color: var(--text-secondary); }
+        .comparison-table tr:last-child td { border-bottom: none; }
+        .comparison-table tr:nth-child(even) { background: rgba(255, 255, 255, 0.02); }
+        .comparison-table td.highlight-col { color: var(--accent-green); font-weight: 600; }
+        .comparison-table td.warning-col { color: var(--accent-red); font-weight: 600; }
+        .timeline { margin: 40px 0; }
+        .timeline-item { display: flex; gap: 20px; margin-bottom: 24px; }
+        .timeline-dot { width: 16px; height: 16px; background: var(--primary-blue); border-radius: 50%; margin-top: 6px; flex-shrink: 0; }
+        .timeline-dot.red { background: var(--accent-red); }
+        .timeline-dot.green { background: var(--accent-green); }
+        .timeline-content { flex: 1; }
+        .timeline-content h4 { color: var(--primary-blue); margin-bottom: 5px; font-size: 1.1rem; }
+        .timeline-content p { color: var(--text-secondary); font-size: 0.95rem; line-height: 1.7; }
         footer { background: #050508; padding: 60px 20px; text-align: center; border-top: 1px solid rgba(255, 255, 255, 0.1); }
         footer p { color: var(--text-secondary); margin-bottom: 20px; }
         .footer-links { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; }
         .footer-links a { color: var(--primary-blue); text-decoration: none; transition: color 0.3s ease; }
         .footer-links a:hover { color: var(--text-primary); }
-
-        /* RWD */
         @media (max-width: 768px) {
             .content-section { padding: 40px 25px; }
-            .hero-images { grid-template-columns: 1fr; }
             .hero h1 { font-size: 2rem; }
-            .hero-subtitle { font-size: 1.2rem; }
         }
     </style>
 </head>
 <body>
-    <!-- 代碼雨背景 -->
     <div class="code-rain" id="codeRain"></div>
-
-    <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
             <span class="hero-badge">📰 AI News 專題報道</span>
-            <h1>剛排好座次的中國AI圈，資本卻突然改規則！</h1>
-            <p class="hero-subtitle">中國人工智能產業歷經激烈競爭後剛形成的市場格局，正面臨資本市場遊戲規則的急劇轉變。本次報告深入解析這場突如其來的產業變局。</p>
+            <h1>中國AI圈估值洗牌</h1>
+            <p class="hero-subtitle">四龍到五強：資本定價邏輯三次顛覆，ARR 才是真正分水嶺</p>
             <div class="hero-images">
                 <div class="hero-image-card">
-                    <img src="img/img1.png" alt="中國AI產業變局示意圖">
+                    <img src="img/img1.png" alt="中國AI估值格局變化示意圖">
                 </div>
             </div>
         </div>
-        <div class="scroll-indicator">
-            <span></span>
-        </div>
     </section>
-
-    <!-- Content Section -->
     <section>
         <div class="content-section">
-            <!-- Meta Info -->
             <div class="meta-info">
-                <p><strong>📺 資料來源</strong>：EU</p>
+                <p><strong>📺 資料來源</strong>：<a href="https://eu.36kr.com/zh/p/3814463246016521" target="_blank">36氪 EU - 刚排好座次的中国AI圈，资本却突然改规则！</a></p>
                 <p><strong>📅 發布日期</strong>：2026-05-19</p>
                 <p><strong>🤖 處理方式</strong>：AI 智能摘要生成</p>
             </div>
-
-            <!-- 核心觀點 -->
             <h3>🎯 核心觀點</h3>
-            <p>中國人工智能產業在歷數年的高速發展與激烈競爭後，各大企業剛剛確立的市場地位與競爭格局，正遭遇資本市場投資邏輯的根本性轉變。研究指出，這一變化不僅影響單一企業的融資能力，更將重塑整個產業的生態結構與發展路徑。</p>
-            <p>數據顯示，資本市場對AI項目的評估標準已從過往的技術概念與用戶規模，轉向更加務商的盈利能力與商業化落地進度。這一轉變對於尚處於投入期的AI企業而言，意味著前所未有的資金壓力與轉型挑戰。</p>
-
-            <!-- 市場格局重組 -->
-            <h3>📊 市場格局重組</h3>
-            <p>業界觀察顯示，中國AI產業歷經多輪洗牌後，原本由少數頭部企業領跑的競爭態勢正在發生微妙變化。資本規則的調整使得中小規模的創新型企業獲得了新的發展機遇，同時也讓部分依賴持續融資維持運營的大型平台面臨估值重估的壓力。</p>
-            <p>專家分析認為，此次資本規則的改變具有深遠的產業影響：</p>
-            <ul>
-                <li>投資機構更加重視企業的現金流狀況與自主造血能力</li>
-                <li>技術研發投入與商業回報的匹配度成為核心評估指標</li>
-                <li>細分領域的專精型企業相較於全能型平台更受青睞</li>
-                <li>跨境合作與技術引進的審查門檻顯著提高</li>
-                <li>國有資本與業基金在投資決策中的話語權持續增強</li>
-            </ul>
-
-            <!-- 技術突破與應用前景 -->
-            <h3>💡 技術突破與應用前景</h3>
-            <p>儘管資本環境趨緊，中國AI領域的技術創新步伐並未減緩。研究人員通過大規模數據分析與實驗驗證，在多個關技術方向取得了顯著進展。這些突破為產業的長期健康發展奠定了堅實基礎。</p>
-            <p>本次報告整理的主要技術進展包括：</p>
-            <ul>
-                <li>新技術方案相比傳統方法在效率與準確率方面均有顯著改進</li>
-                <li>在多元化測試場景中展現出穩定的性能優勢</li>
-                <li>具備跨行業、跨場景的廣泛應用潛力</li>
-                <li>核心算法與架構的優化降低了部署成本與門檻</li>
-            </ul>
-
-            <!-- Highlight Box -->
-            <div class="highlight-box">
-                <h4>✨ 關鍵洞察</h4>
-                <p>資本規則的突變實質上是對中國AI產業發展階段的重新校準。從野蠻生長到精細運營，從概念驅動到價值創造，這一轉型雖伴隨陣痛，卻是產業走向成熟的必經之路。能夠在資金緊縮環境中證明自身商業價值的企業，將在新一輪競爭中佔據更有利位置。</p>
+            <p>2026年5月，一個數字徹底刷屏：中國AI<strong>四龍</strong>（智譜、MiniMax、月之暗面、百川）合併估值突破<strong>1萬億元人民幣</strong>。但最值得注意的不是這個數字本身，而是這個數字背後——<strong>資本已經三次顛覆了自己對大模型公司的定價邏輯</strong>，三次都確信「這次找到了」，三次都被下一輪事件打臉。</p>
+            <p>從「技術敘事定價」→「上市窗口定價」→「國家戰略定價」，每一次跳變都有實質內容，但資本每次都定價在「最終狀態」而不是「中間狀態」。</p>
+            <h3>💡 第一次顛覆：技術敘事定價（2022–2024）</h3>
+            <p>中國第一批大模型公司拿到融資時，資本的定價邏輯是<strong>技術能力</strong>——參數量多少、benchmark 跑分高低、能否跟 GPT-4 對抗。</p>
+            <p>典型對話：「你們的模型能力評測排第幾？」「中文榜單前三。」「那好，給你出一個估值。」</p>
+            <p>這套邏輯在2024年之前是有效的。但 <strong>DeepSeek R1</strong> 在2025年初打碎了這個邏輯——用美國對手十分之一的成本做出同等效果的模型，直接動搖了「頂級參數量=頂級護城河」的定價前提。<strong>技術能力開始變成同質化資產，而不是稀缺資產。</strong></p>
+            <div class="alert-box">
+                <h4>⚠️ 第一次定價跳變結果</h4>
+                <p>資本用「技術分」定價，DeepSeek R1 打穿了技術壁壘的神話。技術能力從稀缺資產變成同質化商品。</p>
             </div>
-
-            <!-- 未來展望 -->
-            <h3>🔮 未來展望</h3>
-            <p>業界觀察人士指出，當前的資本規則調整將對中國AI產業產生持續而深遠的影響。短期內，部分企業可能面臨融資困難與估值下調的挑戰；但從長期視角來看，這一變化有助於淘汰低效競爭、促進資源向優質項目集中，最終推動產業整體質量的提升。</p>
-            <p>隨著技術不斷完善與商業模式逐步清晰，預計中國AI產業將在製造、醫療、金融、教育等多個垂直領域實現更深層次的滲透與融合。能夠靈活適應資本新規則、快速完成商業化閉環的企業，有望在新一輪產業整合中脫穎而出。</p>
+            <h3>💡 第二次顛覆：上市窗口定價（2025）</h3>
+            <p>DeepSeek 衝擊後，資本的定價邏輯從「技術能力」切換到<strong>「上市確定性」</strong>。港交所放寬特專科技公司上市市值門檻，已商業化公司門檻降至40億港元。智譜、MiniMax 率先遞表、上市，被二級市場爆炒。</p>
+            <p>一級市場的邏輯隨之切換：不是押注誰的模型最強，而是押注誰能最快上市套現。</p>
+            <p>但這套邏輯的缺陷很快暴露——<strong>上市解決了流動性問題，但沒有解決基本面問題。</strong></p>
+            <h3>💡 第三次顛覆：國家戰略定價（2026）</h3>
+            <p>2026年上半年，國家大基金領投 DeepSeek，這是第一次直接出手 AI 大模型公司。信號清晰：<strong>在算力可能受限的情況下中國需要不依賴英偉達、不依賴美國雲的獨立模型公司</strong>，大模型被抬到和晶片製造相當的戰略層面。</p>
+            <p>與此同時，矽谷在同步抬高參照系天花板：OpenAI 投後估值達 <strong>8500億美元</strong>，Anthropic 正以 <strong>9000億美元</strong> 目標估值進行新一輪融資。在這個參照系下，四龍合併才 <strong>1萬億元人民幣（約1400億美元）</strong>，還不到 OpenAI 單家的六分之一。</p>
+            <div class="highlight-box">
+                <h4>✨ 關鍵洞察：ARR 才是真正的分水嶺</h4>
+                <p>大模型公司的估值最終要看年化經常性收入。Anthropic 從90億美元 ARR 在幾個月內飆升到 <strong>300億美元 ARR</strong>，這才是估值3000億美元級別的基礎。中國四龍中，ARR 規模最大的還不到 Anthropic 的三十分之一。當國家戰略加持的故事講完，資本的眼睛會轉向每個季度的 ARR 增速。</p>
+            </div>
+            <div class="tech-cards">
+                <div class="tech-card">
+                    <div class="tech-card-icon">📊</div>
+                    <h4>智譜</h4>
+                    <p>港股市值約4347億港元，較 IPO 前估值漲約16倍，ARR 約17億元。</p>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-card-icon">⚡</div>
+                    <h4>MiniMax</h4>
+                    <p>港股市值約2573億港元，較上市漲近4倍，率先完成商業化驗證。</p>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-card-icon">🌙</div>
+                    <h4>月之暗面</h4>
+                    <p>一級市場估值突破200億美元，累計融資超376億元，新一輪20億美元融資中。</p>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-card-icon">🔮</div>
+                    <h4>DeepSeek</h4>
+                    <p>估值約450億美元，國家大基金領投，被正式納入「五強」格局。</p>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-card-icon">🌍</div>
+                    <h4>國際參照系</h4>
+                    <p>OpenAI 8500億美元、Anthropic 9000億美元目標估值，四龍合計不到六分之一。</p>
+                </div>
+            </div>
+            <h3>📊 中國AI五強 vs 美國巨頭估值對比</h3>
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>公司</th>
+                        <th>估值</th>
+                        <th>ARR</th>
+                        <th>定位</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>智譜</td>
+                        <td>~4347億港元（~560億美元）</td>
+                        <td class="warning-col">~17億元（~$2.3億）</td>
+                        <td>港股上市，MaaS 平台</td>
+                    </tr>
+                    <tr>
+                        <td>MiniMax</td>
+                        <td>~2573億港元（~330億美元）</td>
+                        <td>已商業化</td>
+                        <td>港股上市，ToB 服務</td>
+                    </tr>
+                    <tr>
+                        <td>月之暗面</td>
+                        <td class="highlight-col">~200億美元（一級市場）</td>
+                        <td>未披露</td>
+                        <td>待上市，Kimi 主打</td>
+                    </tr>
+                    <tr>
+                        <td>DeepSeek</td>
+                        <td class="highlight-col">~450億美元</td>
+                        <td>非商業化</td>
+                        <td>國家戰略，背書效應</td>
+                    </tr>
+                    <tr>
+                        <td>四龍合計</td>
+                        <td>~1萬億元人民幣（~$1400億）</td>
+                        <td>——</td>
+                        <td>vs OpenAI 8500億美元</td>
+                    </tr>
+                    <tr>
+                        <td>Anthropic</td>
+                        <td>目標 9000億美元</td>
+                        <td class="highlight-col">300億美元（已實現）</td>
+                        <td>美國領先，Claude 母公司</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="quote-box">
+                <p>「真正的分水嶺是 ARR。大模型公司的估值最終要看年化經常性收入。Anthropic 從90億美元 ARR 在幾個月內飆升到300億美元 ARR，這才是估值3000億美元級別的基礎。」</p>
+                <cite>— 36氪 行業分析</cite>
+            </div>
+            <h3>📅 定價邏輯跳變時間軸</h3>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h4>2022–2024 年：技術敘事定價</h4>
+                        <p>資本按 benchmark 跑分、參數量、能否對抗 GPT-4 來定價。技術能力是最稀缺資產。</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot red"></div>
+                    <div class="timeline-content">
+                        <h4>2025 年初：DeepSeek R1 事件</h4>
+                        <p>用十分之一成本做出同等效果模型，技術壁壘神話被打破，技術能力變同質化商品。</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h4>2025 年中：上市窗口定價</h4>
+                        <p>港交所放寬門檻，智譜、MiniMax 相繼上市，一級市場押注誰能最快上市套現。</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot red"></div>
+                    <div class="timeline-content">
+                        <h4>2026 年：智譜 ARR 數據曝光</h4>
+                        <p>MaaS 平台 ARR 約17億元，但對比 Anthropic 90億→300億美元，差距不在一個數量級。</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot green"></div>
+                    <div class="timeline-content">
+                        <h4>2026 年上半年：國家戰略定價</h4>
+                        <p>國家大基金領投 DeepSeek，大模型被抬到和晶片製造相當的戰略層面，「四龍」變「五強」。</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot green"></div>
+                    <div class="timeline-content">
+                        <h4>2026 年下半年（預計）：第四次定價跳變</h4>
+                        <p>當國家戰略加持的故事講完，資本將轉向 ARR 增速，誰的基本面扎實誰能守住估值。</p>
+                    </div>
+                </div>
+            </div>
+            <h3>🔮 未來展望：從「四龍」到「五強」的深層意義</h3>
+            <p>從「四龍」到「五強」，不只是人數變化，而是<strong>定價邏輯第三次跳變後，賽道排名方式也跟着改變</strong>——不再只看模型能力分，要加上「國家戰略權重」。</p>
+            <p>接下來，這套新定價體系會在哪裡被挑戰？<strong>在 ARR。</strong> 當國家戰略加持的故事講完，資本的眼睛會轉向每個季度的 ARR 增速。那時候，誰的基本面更扎實，誰就能守住估值；誰是靠定價邏輯跳變浮起來的，就會面臨均值回歸。</p>
+            <p><strong>中國大模型的第四次定價跳變，已經在路上了。</strong></p>
         </div>
     </section>
-
-    <!-- Footer -->
     <footer>
-        <p>© 2026 AI News Archive | 由 AI 技術生成</p>
+        <p>AI News 專題報道 | 生成時間：2026-05-19</p>
         <div class="footer-links">
-            <a href="../index.html">返回主頁</a>
-            <a href="https://github.com/hklamsir/ai_news" target="_blank">GitHub</a>
-            <a href="https://hklamsir.github.io/ai_news/" target="_blank">瀏覽所有專題</a>
+            <a href="https://hklamsir.github.io/ai_news/" target="_blank">📰 AI News 主頁</a>
+            <a href="https://eu.36kr.com/zh/p/3814463246016521" target="_blank">📺 原始文章</a>
+            <a href="https://github.com/hklamsir/ai_news" target="_blank">🐙 GitHub</a>
         </div>
     </footer>
-
-    <script>
-        // 生成代碼雨效果
-        const codeRain = document.getElementById('codeRain');
-        const chars = '01アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン';
-        
-        for (let i = 0; i < 50; i++) {
-            const span = document.createElement('span');
-            span.className = 'code-char';
-            span.textContent = chars[Math.floor(Math.random() * chars.length)];
-            span.style.left = Math.random() * 100 + '%';
-            span.style.animationDelay = Math.random() * 4 + 's';
-            span.style.animationDuration = (3 + Math.random() * 2) + 's';
-            codeRain.appendChild(span);
-        }
-    </script>
-
     <script>
         function createCodeRain() {
             const codeRain = document.getElementById('codeRain');
-            if (!codeRain) return;
-            const chars = '01 アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン';
-            for (let i = 0; i < 50; i++) {
-                const char = document.createElement('div');
-                char.className = 'code-char';
-                char.textContent = chars[Math.floor(Math.random() * chars.length)];
-                char.style.left = Math.random() * 100 + '%';
-                char.style.animationDelay = Math.random() * 4 + 's';
-                char.style.animationDuration = (Math.random() * 2 + 3) + 's';
-                codeRain.appendChild(char);
+            const chars = '01アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン';
+            for (let i = 0; i < 60; i++) {
+                const codeChar = document.createElement('div');
+                codeChar.className = 'code-char';
+                codeChar.style.left = Math.random() * 100 + '%';
+                codeChar.style.animationDelay = Math.random() * 4 + 's';
+                codeChar.style.animationDuration = (Math.random() * 3 + 3) + 's';
+                codeChar.textContent = chars[Math.floor(Math.random() * chars.length)];
+                codeRain.appendChild(codeChar);
             }
         }
-
-        function handleScrollAnimation() {
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.style.opacity = '1';
-                        entry.target.style.transform = 'translateY(0)';
-                    }
-                });
-            }, { threshold: 0.1 });
-
-            document.querySelectorAll('.fade-in').forEach(el => {
-                el.style.opacity = '0';
-                el.style.transform = 'translateY(30px)';
-                el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-                observer.observe(el);
-            });
-        }
-
-        document.addEventListener('DOMContentLoaded', () => {
-            createCodeRain();
-            handleScrollAnimation();
-        });
+        document.addEventListener('DOMContentLoaded', function() { createCodeRain(); });
     </script>
 </body>
 </html>
