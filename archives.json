@@ -1,6 +1,16 @@
 {
   "archives": [
     {
+      "dir": "news_20260520_075654",
+      "title": "The Google AI Ultra plan now starts at $100 a month - Engadget",
+      "summary_short": "# The Google AI Ultra plan now starts at $100 a month - Engadget## 📖 新聞導語本文報導來自 **ENGADGET**，發布於",
+      "images": [
+        "img/img1.png"
+      ],
+      "date": "2026-05-20",
+      "url": "./news_20260520_075654/index.html"
+    },
+    {
       "dir": "news_20260519_233240",
       "title": "Hermes Agent Workspace",
       "summary": "開源 AI 代理指揮中心｜零程式碼、零費用｜將 AI 變成會為你工作的員工",
@@ -883,6 +893,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-05-19T23:40:55.187462",
+  "last_updated": "2026-05-20T07:58:54.492948",
   "total_count": 98
 }
