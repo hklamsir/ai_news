@@ -2,13 +2,12 @@
   "archives": [
     {
       "dir": "news_20260520_075654",
-      "title": "The Google AI Ultra plan now starts at $100 a month - Engadget",
-      "summary_short": "# The Google AI Ultra plan now starts at $100 a month - Engadget## 📖 新聞導語本文報導來自 **ENGADGET**，發布於",
-      "images": [
-        "img/img1.png"
-      ],
+      "title": "Google AI Ultra 訂閱方案從 $250 降至 $100",
+      "summary": "I/O 2026 重磅宣佈：月費腰斬同時保留 $200 頂級方案取用 Project Genie",
+      "url": "./news_20260520_075654/index.html",
       "date": "2026-05-20",
-      "url": "./news_20260520_075654/index.html"
+      "time": "07:56:54",
+      "source": "AI News"
     },
     {
       "dir": "news_20260519_233240",
@@ -893,6 +892,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-05-20T07:58:54.492948",
-  "total_count": 98
+  "last_updated": "2026-05-20T08:27:34.576882",
+  "total_count": 99
 }
