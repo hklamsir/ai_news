@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI正改寫美國夢：白領神話鬆動 藍領反成新贏家 | AI News 專題報道</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-blue: #00d4ff;
+            --primary-purple: #7b2cbf;
+            --accent-green: #00ff88;
+            --accent-orange: #ff9500;
+            --dark-bg: #0a0a0f;
+            --card-bg: #12121a;
+            --card-bg-light: #1a1a28;
+            --text-primary: #ffffff;
+            --text-secondary: #a0a0b0;
+            --gradient-1: linear-gradient(135deg, #00d4ff 0%, #7b2cbf 100%);
+            --gradient-2: linear-gradient(135deg, #00d4ff 0%, #00ff88 100%);
+            --glow-blue: 0 0 20px rgba(0, 212, 255, 0.5);
+            --glow-purple: 0 0 20px rgba(123, 44, 191, 0.5);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Noto Sans TC', sans-serif; background-color: var(--dark-bg); color: var(--text-primary); line-height: 1.8; overflow-x: hidden; }
+
+        @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-20px); } }
+        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.6; } }
+        @keyframes slideIn { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes codeRain { 0% { transform: translateY(-100%); opacity: 0; } 10% { opacity: 1; } 90% { opacity: 1; } 100% { transform: translateY(100vh); opacity: 0; } }
+
+        /* 代碼雨背景 */
+        .code-rain { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; overflow: hidden; }
+        .code-char { position: absolute; color: var(--primary-blue); font-family: 'Courier New', monospace; font-size: 14px; opacity: 0; animation: codeRain 4s linear infinite; }
+
+        /* Hero Section */
+        .hero { position: relative; min-height: 80vh; display: flex; align-items: center; justify-content: center; padding: 80px 20px; background: linear-gradient(180deg, var(--dark-bg) 0%, #1a1a2e 100%); overflow: hidden; }
+        .hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(ellipse at center, rgba(123, 44, 191, 0.15) 0%, transparent 70%); z-index: 1; }
+        .hero-content { position: relative; z-index: 2; max-width: 1200px; text-align: center; animation: slideIn 1s ease-out; }
+        .hero-badge { display: inline-block; padding: 12px 32px; background: var(--gradient-1); border-radius: 50px; font-size: 18px; font-weight: 700; margin-bottom: 24px; box-shadow: var(--glow-blue); letter-spacing: 1px; }
+        .hero h1 { font-size: clamp(2rem, 5vw, 4rem); font-weight: 900; margin-bottom: 24px; background: var(--gradient-1); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; line-height: 1.2; }
+        .hero-subtitle { font-size: clamp(1.2rem, 2.2vw, 1.6rem); color: var(--text-primary); max-width: 900px; margin: 0 auto 40px; line-height: 1.6; font-weight: 400; }
+        .hero-images { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; margin-top: 60px; }
+        .hero-image-card { position: relative; border-radius: 20px; overflow: hidden; aspect-ratio: 16/9; box-shadow: var(--glow-purple); transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .hero-image-card:hover { transform: scale(1.02); box-shadow: 0 0 40px rgba(123, 44, 191, 0.7); }
+        .hero-image-card img { width: 100%; height: 100%; object-fit: cover; }
+        .scroll-indicator { position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%); animation: float 2s ease-in-out infinite; z-index: 2; }
+        .scroll-indicator span { display: block; width: 30px; height: 50px; border: 2px solid var(--primary-blue); border-radius: 25px; position: relative; }
+        .scroll-indicator span::before { content: ''; position: absolute; top: 8px; left: 50%; transform: translateX(-50%); width: 6px; height: 10px; background: var(--primary-blue); border-radius: 3px; animation: pulse 1.5s infinite; }
+
+        /* Content Section */
+        section { padding: 80px 20px; position: relative; z-index: 1; }
+        .content-section { background: var(--card-bg); padding: 60px 50px; border-radius: 24px; border: 1px solid rgba(0, 212, 255, 0.2); max-width: 1100px; margin: 0 auto; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3); }
+
+        .content-section h3 { font-size: 1.6rem; margin: 40px 0 20px; color: var(--accent-green); }
+        .content-section p { color: var(--text-secondary); line-height: 2; font-size: 1.08rem; margin: 15px 0; }
+        .content-section ul { margin: 20px 0; padding-left: 30px; }
+        .content-section li { margin: 10px 0; color: var(--text-secondary); }
+
+        .meta-info { background: linear-gradient(135deg, rgba(0, 212, 255, 0.15) 0%, rgba(123, 44, 191, 0.15) 100%); padding: 30px; border-radius: 16px; margin-bottom: 40px; border-left: 5px solid var(--primary-blue); }
+        .meta-info p { margin: 12px 0; color: var(--text-secondary); font-size: 1.05rem; }
+        .meta-info strong { color: var(--primary-blue); font-weight: 600; }
+        .meta-info a { color: var(--primary-blue); text-decoration: none; word-break: break-all; }
+
+        .highlight-box { background: linear-gradient(135deg, rgba(0, 255, 136, 0.08) 0%, rgba(0, 212, 255, 0.08) 100%); padding: 30px; border-radius: 16px; border-left: 5px solid var(--accent-green); margin: 40px 0; }
+        .highlight-box h4 { color: var(--accent-green); margin-bottom: 15px; font-size: 1.3rem; }
+        .highlight-box p { color: var(--text-secondary); margin: 0; }
+
+        /* Footer */
+        footer { background: #050508; padding: 60px 20px; text-align: center; border-top: 1px solid rgba(255, 255, 255, 0.1); }
+        footer p { color: var(--text-secondary); margin-bottom: 20px; }
+        .footer-links { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; }
+        .footer-links a { color: var(--primary-blue); text-decoration: none; transition: color 0.3s ease; }
+        .footer-links a:hover { color: var(--text-primary); }
+
+        /* RWD */
+        @media (max-width: 768px) {
+            .content-section { padding: 40px 25px; }
+            .hero-images { grid-template-columns: 1fr; }
+            .hero h1 { font-size: 2rem; }
+            .hero-subtitle { font-size: 1.2rem; }
+        }
+    </style>
+</head>
+<body>
+    <!-- 代碼雨背景 -->
+    <div class="code-rain" id="codeRain"></div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <span class="hero-badge">📰 AI News 專題報道</span>
+            <h1>AI正改寫美國夢：白領神話鬆動 藍領反成新贏家</h1>
+            <p class="hero-subtitle">水電工成最搶手職業，人工智能浪潮重塑勞動市場格局，傳統白領優勢地位面前所未有的挑戰</p>
+            <div class="hero-images">
+                <div class="hero-image-card">
+                    <img src="img/img1.png" alt="AI改寫美國夢新聞插圖">
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <span></span>
+        </div>
+    </section>
+
+    <!-- Content Section -->
+    <section>
+        <div class="content-section">
+            <!-- Meta Info -->
+            <div class="meta-info">
+                <p><strong>📺 資料來源</strong>：<a href="#" target="_blank">鉅亨網 - 國際政經</a></p>
+                <p><strong>📅 發布日期</strong>：2026-05-20</p>
+                <p><strong>🤖 處理方式</strong>：AI 智能摘要生成</p>
+            </div>
+
+            <!-- 核心觀點 -->
+            <h3>🎯 核心觀點</h3>
+            <p>本次報告揭示了一個顛覆性的社經趨勢：人工智能的快速發展正在徹底改寫傳統的「美國夢」敘事。長期以來被視為成功象徵的白領職業，正遭遇AI技術的直接衝擊；反觀過去被低估的藍領工作，卻因具備難以自動化的特性而身價倍增。研究指出，這場職業價值的重組不僅是短期現象，更可能預示著勞動市場結構的長期轉型。</p>
+            <p>數據顯示，水電工等技術型藍領職業已成為當前最搶手的工作類別之一。這一轉變打破了數十年來「學歷至上」的職業發展邏輯，促使社會重新審視技能培養與經濟價值之間的關聯。</p>
+
+            <!-- 產業變革分析 -->
+            <h3> 產業變革分析</h3>
+            <p>專家分析指出，AI技術對不同職業層級的影響呈現明顯差異。白領工作雖然過去享有較高社會地位與薪酬，但其核心職能——如文書處理、數據分析、基礎決策等——正被大型語言模型與自動化系統逐步取代。相對而言，藍領工作涉及實體操作、現場判斷與人際互動等要素，短期內難以被AI完全複製。</p>
+            <ul>
+                <li><strong>白領職業風險</strong>：行政、會計、法律助理等職位面臨自動化替代壓力</li>
+                <li><strong>藍領職業優勢</strong>：水電工、維修技師等需現場作業的技術型工作需求激增</li>
+                <li><strong>薪酬結構翻轉</strong>：部分藍領職業薪資已超越傳統白領起薪水平</li>
+                <li><strong>教育投資重估</strong>：大學學歷的經濟回報率出現分化跡象</li>
+                <li><strong>區域發展差異</strong>：製造業回流地區的藍領就業機會顯著增加</li>
+            </ul>
+
+            <!-- 勞動市場數據 -->
+            <h3>📊 勞動市場數據</h3>
+            <p>業界觀察顯示，近期勞動市場呈現多項值得關注的指標變化。技術型藍領職缺的增長速度持續超越白領職位，而相關領域的薪資談判籌碼也明顯提升。這一趨勢在基礎建設投資增加、能源轉型加速的背景下更為顯著。</p>
+            <p>研究同時發現，職業培訓體系與市場需求之間存在明顯落差。傳統教育機構的課程設計尚未充分反映這一結構性轉變，導致部分領域出現人才短缺與技能錯配並存的現象。</p>
+
+            <!-- 關鍵洞察 -->
+            <div class="highlight-box">
+                <h4>✨ 關鍵洞察</h4>
+                <p>AI時代的核心競爭力正在從「知識儲備」轉向「實踐技能」與「情境判斷」。能夠結合技術專精與現場應變能力的複合型人才，將在未來勞動市場中佔據主導地位。這一轉變要求教育體系、企業培訓與個人職涯規劃進行相應調整。</p>
+            </div>
+
+            <!-- 未來展望 -->
+            <h3>🔮 未來展望</h3>
+            <p>展望未來，專家預期這一職業價值重組趨勢將持深化。隨著AI技術不斷演進，勞動市場可能進一步分化為「高度自動化」與「高度人性化」兩大類別。前者涉及可標準化的認知與操作任務，後者則涵蓋需要創意、情感連結與複雜現場決策的工作領域。</p>
+            <p>對於政策制定者與教育機構而言，當務之急在於建立更具彈性的技能培養機制，協助勞動人口適應這一典範轉移。而對個人而言，持續學習與跨領域能力整合將成為職涯韌性的關鍵來源。</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2026 AI News Archive | 由 AI 技術生成</p>
+        <div class="footer-links">
+            <a href="../index.html">返回主頁</a>
+            <a href="https://github.com/hklamsir/ai_news" target="_blank">GitHub</a>
+            <a href="https://hklamsir.github.io/ai_news/" target="_blank">瀏覽所有專題</a>
+        </div>
+    </footer>
+
+    <script>
+        // 代碼雨效果
+        const codeRain = document.getElementById('codeRain');
+        const chars = '01アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン';
+        
+        function createCodeRain() {
+            for (let i = 0; i < 50; i++) {
+                const char = document.createElement('div');
+                char.className = 'code-char';
+                char.textContent = chars[Math.floor(Math.random() * chars.length)];
+                char.style.left = Math.random() * 100 + '%';
+                char.style.animationDelay = Math.random() * 4 + 's';
+                char.style.animationDuration = (Math.random() * 3 + 3) + 's';
+                codeRain.appendChild(char);
+            }
+        }
+        createCodeRain();
+    </script>
+</body>
+</html>
