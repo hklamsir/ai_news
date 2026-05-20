@@ -2,13 +2,12 @@
   "archives": [
     {
       "dir": "news_20260520_202433",
-      "title": "Antigravity 2.0 登場 Google 將 Gemini CLI 轉型至 Antigravity CLI",
-      "summary_short": "# Antigravity 2.0 登場 Google 將 Gemini CLI 轉型至 Antigravity CLI## 📖 新聞導語本文報導來自 **HK**，發布於 **2026-05",
-      "images": [
-        "img/img1.png"
-      ],
+      "title": "Antigravity 2.0 登場：Google 將 Gemini CLI 轉型至 Antigravity CLI",
+      "summary": "Google 正式推出新一代命令列工具 Antigravity 2.0，標誌著開發者工具生態系統的重大升級，將 AI 輔助編程體驗推向全新高度",
+      "url": "./news_20260520_202433/index.html",
       "date": "2026-05-20",
-      "url": "./news_20260520_202433/index.html"
+      "time": "20:24:33",
+      "source": "AI News"
     },
     {
       "dir": "news_20260520_134050",
@@ -911,6 +910,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-05-20T20:26:42.847368",
-  "total_count": 100
+  "last_updated": "2026-05-20T20:29:07.630905",
+  "total_count": 101
 }
