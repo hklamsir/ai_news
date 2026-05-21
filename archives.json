@@ -1,6 +1,16 @@
 {
   "archives": [
     {
+      "dir": "news_20260521_221848",
+      "title": "Google更新AI Studio，可直接生成原生Android App",
+      "summary_short": "# Google更新AI Studio，可直接生成原生Android App## 📖 新聞導語本文報導來自 **ITHOME**，發布於 **2026-05-21**。最新科技新聞報道指出",
+      "images": [
+        "img/img1.png"
+      ],
+      "date": "2026-05-21",
+      "url": "./news_20260521_221848/index.html"
+    },
+    {
       "dir": "news_20260520_202433",
       "title": "Antigravity 2.0 登場：Google 將 Gemini CLI 轉型至 Antigravity CLI",
       "summary": "Google 正式推出新一代命令列工具 Antigravity 2.0，標誌著開發者工具生態系統的重大升級，將 AI 輔助編程體驗推向全新高度",
@@ -910,6 +920,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-05-20T20:29:07.630905",
+  "last_updated": "2026-05-21T22:20:52.537473",
   "total_count": 101
 }
