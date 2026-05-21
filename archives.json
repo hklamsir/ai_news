@@ -3,12 +3,11 @@
     {
       "dir": "news_20260521_221848",
       "title": "Google更新AI Studio，可直接生成原生Android App",
-      "summary_short": "# Google更新AI Studio，可直接生成原生Android App## 📖 新聞導語本文報導來自 **ITHOME**，發布於 **2026-05-21**。最新科技新聞報道指出",
-      "images": [
-        "img/img1.png"
-      ],
+      "summary": "Google釋出AI Studio重大更新，開發者現可透過自然語言指令，直接生成完整可用的原生Android應用程式，標誌著AI輔助開發邁入新紀元",
+      "url": "./news_20260521_221848/index.html",
       "date": "2026-05-21",
-      "url": "./news_20260521_221848/index.html"
+      "time": "22:18:48",
+      "source": "AI News"
     },
     {
       "dir": "news_20260520_202433",
@@ -920,6 +919,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-05-21T22:20:52.537473",
-  "total_count": 101
+  "last_updated": "2026-05-21T22:24:48.083497",
+  "total_count": 102
 }

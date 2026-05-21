@@ -68,6 +68,35 @@
         .highlight-box h4 { color: var(--accent-green); margin-bottom: 15px; font-size: 1.3rem; }
         .highlight-box p { color: var(--text-secondary); margin: 0; }
 
+        /* Tech Cards */
+        .tech-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin: 40px 0; }
+        .tech-card { background: linear-gradient(135deg, rgba(0, 212, 255, 0.08) 0%, rgba(123, 44, 191, 0.08) 100%); padding: 28px; border-radius: 16px; border: 1px solid rgba(0, 212, 255, 0.2); transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .tech-card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0, 212, 255, 0.2); }
+        .tech-card-icon { font-size: 2.5rem; margin-bottom: 15px; }
+        .tech-card h4 { color: var(--primary-blue); margin-bottom: 12px; font-size: 1.2rem; }
+        .tech-card p { color: var(--text-secondary); font-size: 0.95rem; line-height: 1.7; }
+
+        /* Comparison Table */
+        .comparison-table { width: 100%; border-collapse: collapse; margin: 40px 0; background: rgba(0, 0, 0, 0.3); border-radius: 12px; overflow: hidden; }
+        .comparison-table th { background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-purple) 100%); padding: 16px 20px; text-align: left; font-weight: 700; }
+        .comparison-table td { padding: 14px 20px; border-bottom: 1px solid rgba(255, 255, 255, 0.05); color: var(--text-secondary); }
+        .comparison-table tr:hover td { background: rgba(0, 212, 255, 0.05); }
+        .comparison-table .highlight-col { color: var(--accent-green); font-weight: 600; }
+
+        /* Quote Box */
+        .quote-box { background: linear-gradient(135deg, rgba(123, 44, 191, 0.15) 0%, rgba(0, 212, 255, 0.15) 100%); padding: 30px; border-radius: 16px; margin: 40px 0; border-left: 5px solid var(--primary-purple); }
+        .quote-box p { font-size: 1.2rem; font-style: italic; color: var(--text-primary); line-height: 1.8; margin-bottom: 15px; }
+        .quote-box cite { color: var(--primary-blue); font-style: normal; }
+
+        /* Timeline */
+        .timeline { margin: 40px 0; position: relative; padding-left: 30px; }
+        .timeline::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 3px; background: linear-gradient(180deg, var(--primary-blue) 0%, var(--primary-purple) 100%); border-radius: 3px; }
+        .timeline-item { position: relative; margin-bottom: 30px; padding: 20px; background: rgba(0, 0, 0, 0.3); border-radius: 12px; border: 1px solid rgba(0, 212, 255, 0.1); }
+        .timeline-item::before { content: ''; position: absolute; left: -36px; top: 24px; width: 12px; height: 12px; background: var(--primary-blue); border-radius: 50%; box-shadow: var(--glow-blue); }
+        .timeline-date { color: var(--primary-blue); font-size: 0.9rem; font-weight: 600; margin-bottom: 8px; }
+        .timeline-title { color: var(--text-primary); font-size: 1.1rem; font-weight: 700; margin-bottom: 8px; }
+        .timeline-desc { color: var(--text-secondary); font-size: 0.95rem; line-height: 1.7; }
+
         /* Footer */
         footer { background: #050508; padding: 60px 20px; text-align: center; border-top: 1px solid rgba(255, 255, 255, 0.1); }
         footer p { color: var(--text-secondary); margin-bottom: 20px; }
@@ -81,6 +110,8 @@
             .hero-images { grid-template-columns: 1fr; }
             .hero h1 { font-size: 2rem; }
             .hero-subtitle { font-size: 1.2rem; }
+            .tech-cards { grid-template-columns: 1fr; }
+            .comparison-table { font-size: 0.9rem; }
         }
     </style>
 </head>
@@ -98,6 +129,9 @@
                 <div class="hero-image-card">
                     <img src="img/img1.png" alt="Google AI Studio 生成 Android App 示意圖">
                 </div>
+                <div class="hero-image-card">
+                    <img src="img/img2.png" alt="AI 生成原生 Android App 示意圖">
+                </div>
             </div>
         </div>
         <div class="scroll-indicator">
@@ -110,7 +144,7 @@
         <div class="content-section">
             <!-- Meta Info -->
             <div class="meta-info">
-                <p><strong>📺 資料來源</strong>：<a href="https://www.ithome.com.tw/news/168000" target="_blank">ITHOME</a></p>
+                <p><strong>📺 資料來源</strong>：<a href="https://www.ithome.com.tw/news/175964" target="_blank">ITHOME</a></p>
                 <p><strong>📅 發布日期</strong>：2026-05-21</p>
                 <p><strong>🤖 處理方式</strong>：AI 智能摘要生成</p>
             </div>
@@ -131,15 +165,131 @@
                 <li><strong>安全檢測整合</strong>：自動掃描常見漏洞，確保輸出程式碼符合資安最佳實踐</li>
             </ul>
 
-            <!-- 技術細 -->
+            <!-- 技術細節 -->
             <h3>🔧 技術細節</h3>
             <p>業界觀察顯示，Google在此次更新中採用了多層次AI架構。底層以Gemini模型處理自然語言理解，中層透過強化學習優化的程式碼生成引擎產生結構化輸出，頂層則整合Android Studio的編譯與除錯工具鏈。</p>
             <p>技術團隊特別強化了對Android Jetpack元件庫的支援，使生成結果能夠充分利用現代Android開發的架構元件。此外，系統亦針對不同螢幕尺寸與Android版本進行適配，確保應用的相容性與使用者體驗一致性。</p>
 
-            <!-- Highlight Box -->
+            <!-- 關鍵洞察 -->
             <div class="highlight-box">
                 <h4>✨ 關鍵洞察</h4>
                 <p>本次更新標誌著AI輔助開發從「程式碼補全」邁向「完整應用生成」的關鍵轉折。專家預測，此技術路徑將重塑行動應用產業的生態結構，使小型團隊與獨立開發者具備與大型企業競爭的技術能力，同時也對傳統軟體工程教育與人才培養模式提出新的挑戰與機遇。</p>
+            </div>
+
+            <!-- Tech Cards -->
+            <div class="tech-cards">
+                <div class="tech-card">
+                    <div class="tech-card-icon">🤖</div>
+                    <h4>Gemini AI 引擎</h4>
+                    <p>整合Google最新Gemini模型，具備強大的自然語言理解與複雜邏輯推理能力，可將自然語言需求轉化為結構化程式碼。</p>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-card-icon">📱</div>
+                    <h4>原生Android輸出</h4>
+                    <p>直接生成採用Kotlin語言與Jetpack Compose框架的原生Android應用，區別於傳統Web封裝方案，可充分發揮裝置效能。</p>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-card-icon">🖥️</div>
+                    <h4>瀏覽器即開發環境</h4>
+                    <p>無需安裝大型SDK或配置本機開發環境，所有開發流程皆可在瀏覽器中完成，大幅降低入門門檻。</p>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-card-icon">🚀</div>
+                    <h4>一鍵部署至Google Play</h4>
+                    <p>支援自動建立App紀錄、封裝應用程式並上傳至Google Play內部測試軌道，簡化發布流程。</p>
+                </div>
+            </div>
+
+            <!-- Comparison Table -->
+            <h3>📊 AI Studio vs 傳統開發方式</h3>
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>維度</th>
+                        <th>傳統Android開發</th>
+                        <th>AI Studio</th>
+                        <th>差異</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>開發時間</td>
+                        <td>數週至數月</td>
+                        <td>數分鐘至數小時</td>
+                        <td class="highlight-col">90%+ 縮短</td>
+                    </tr>
+                    <tr>
+                        <td>技術門檻</td>
+                        <td>需要專業程式設計背景</td>
+                        <td>自然語言即可操作</td>
+                        <td class="highlight-col">大幅降低</td>
+                    </tr>
+                    <tr>
+                        <td>程式碼品質</td>
+                        <td>高度可控、可客製化</td>
+                        <td>符合標準、需人工優化</td>
+                        <td>需後續調整</td>
+                    </tr>
+                    <tr>
+                        <td>裝置整合</td>
+                        <td>完全支援所有硬體功能</td>
+                        <td>支援GPS、藍牙、NFC等</td>
+                        <td class="highlight-col">基本完整</td>
+                    </tr>
+                    <tr>
+                        <td>開發環境</td>
+                        <td>需安裝Android Studio+JDK</td>
+                        <td>僅需瀏覽器</td>
+                        <td class="highlight-col">零設定</td>
+                    </tr>
+                    <tr>
+                        <td>離線支援</td>
+                        <td>完整支援</td>
+                        <td>取決於生成的App設計</td>
+                        <td>取決於需求</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <!-- Timeline -->
+            <h3>📅 發展里程碑</h3>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date">2023年</div>
+                    <div class="timeline-title">Google AI Studio 發布</div>
+                    <div class="timeline-desc">最初定位為Gemini模型測試與提示詞設計工具，讓開發者可在瀏覽器中實驗AI能力。</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2024年</div>
+                    <div class="timeline-title">平台功能擴展</div>
+                    <div class="timeline-desc">逐步支援將Gemini能力整合至第三方應用程式，開始向完整AI開發平台轉型。</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2025年</div>
+                    <div class="timeline-title">程式碼生成功能上線</div>
+                    <div class="timeline-desc">新增程式碼補全與生成功能，支援Python、JavaScript等多種語言的智慧提示。</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2026年Q1</div>
+                    <div class="timeline-title">Web應用生成支援</div>
+                    <div class="timeline-desc">擴展至Web應用程式生成領域，支援快速建立回應式前端應用。</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2026年5月19日</div>
+                    <div class="timeline-title">原生Android App生成功能發布</div>
+                    <div class="timeline-desc">宣布支援直接生成原生Android應用，採用Kotlin語言與Jetpack Compose框架。</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">未來規劃</div>
+                    <div class="timeline-title">Firebase整合與跨平台支援</div>
+                    <div class="timeline-desc">規劃加入Firebase深度整合，支援iOS、Web及桌面應用開發，並可直接從平台邀請測試人員。</div>
+                </div>
+            </div>
+
+            <!-- Quote Box -->
+            <div class="quote-box">
+                <p>「我們的目標是讓任何有創意的人都能夠將想法轉化為可在Google Play上運行的實際應用，而不需要面對傳統行動開發的所有複雜性。」</p>
+                <cite>— Google Android 開發團隊發布聲明</cite>
             </div>
 
             <!-- 未來展望 -->
@@ -160,26 +310,10 @@
     </footer>
 
     <script>
-        // 生成代碼雨效果
-        const codeRain = document.getElementById('codeRain');
-        const chars = '01アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユラリルレロワヲン';
-        
-        for (let i = 0; i < 50; i++) {
-            const char = document.createElement('span');
-            char.className = 'code-char';
-            char.textContent = chars[Math.floor(Math.random() * chars.length)];
-            char.style.left = Math.random() * 100 + '%';
-            char.style.animationDelay = Math.random() * 4 + 's';
-            char.style.animationDuration = (Math.random() * 2 + 3) + 's';
-            codeRain.appendChild(char);
-        }
-    </script>
-
-    <script>
         function createCodeRain() {
             const codeRain = document.getElementById('codeRain');
             if (!codeRain) return;
-            const chars = '01 アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン';
+            const chars = '01アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン';
             for (let i = 0; i < 50; i++) {
                 const char = document.createElement('div');
                 char.className = 'code-char';
