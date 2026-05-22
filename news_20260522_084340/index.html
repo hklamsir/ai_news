@@ -4,107 +4,74 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>圖解2026裁員潮：全美年減50%、科技業卻逆勢增33%！AI讓白領主管職也難逃？ | AI News 專題報道</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --primary-blue: #00d4ff;
-            --primary-purple: #7b2cbf;
-            --accent-green: #00ff88;
-            --accent-orange: #ff9500;
-            --dark-bg: #0a0a0f;
-            --card-bg: #12121a;
-            --card-bg-light: #1a1a28;
-            --text-primary: #ffffff;
-            --text-secondary: #a0a0b0;
-            --gradient-1: linear-gradient(135deg, #00d4ff 0%, #7b2cbf 100%);
-            --gradient-2: linear-gradient(135deg, #00d4ff 0%, #00ff88 100%);
-            --glow-blue: 0 0 20px rgba(0, 212, 255, 0.5);
-            --glow-purple: 0 0 20px rgba(123, 44, 191, 0.5);
-        }
-
+        :root { --primary-blue: #00d4ff; --primary-purple: #7b2cbf; --accent-green: #00ff88; --accent-red: #ff4757; --dark-bg: #0a0a0f; --card-bg: #12121a; --card-bg-light: #1a1a28; --text-primary: #ffffff; --text-secondary: #a0a0b0; --gradient-1: linear-gradient(135deg, #00d4ff 0%, #7b2cbf 100%); --glow-blue: 0 0 20px rgba(0, 212, 255, 0.5); --glow-purple: 0 0 20px rgba(123, 44, 191, 0.5); }
         * { margin: 0; padding: 0; box-sizing: border-box; }
         html { scroll-behavior: smooth; }
         body { font-family: 'Noto Sans TC', sans-serif; background-color: var(--dark-bg); color: var(--text-primary); line-height: 1.8; overflow-x: hidden; }
-
-        @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-20px); } }
-        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.6; } }
         @keyframes slideIn { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
-        @keyframes codeRain { 0% { transform: translateY(-100%); opacity: 0; } 10% { opacity: 1; } 90% { opacity: 1; } 100% { transform: translateY(100vh); opacity: 0; } }
-
-        /* 代碼雨背景 */
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); } }
         .code-rain { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; overflow: hidden; }
         .code-char { position: absolute; color: var(--primary-blue); font-family: 'Courier New', monospace; font-size: 14px; opacity: 0; animation: codeRain 4s linear infinite; }
-
-        /* Hero Section */
-        .hero { position: relative; min-height: 80vh; display: flex; align-items: center; justify-content: center; padding: 80px 20px; background: linear-gradient(180deg, var(--dark-bg) 0%, #1a1a2e 100%); overflow: hidden; }
-        .hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(ellipse at center, rgba(123, 44, 191, 0.15) 0%, transparent 70%); z-index: 1; }
+        @keyframes codeRain { 0% { transform: translateY(-100%); opacity: 0; } 10% { opacity: 1; } 90% { opacity: 1; } 100% { transform: translateY(100vh); opacity: 0; } }
+        .hero { position: relative; min-height: 65vh; display: flex; align-items: center; justify-content: center; padding: 80px 20px; background: linear-gradient(180deg, var(--dark-bg) 0%, #1a1a2e 100%); overflow: hidden; }
+        .hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(ellipse at center, rgba(0, 212, 255, 0.1) 0%, transparent 70%); z-index: 1; }
         .hero-content { position: relative; z-index: 2; max-width: 1200px; text-align: center; animation: slideIn 1s ease-out; }
-        .hero-badge { display: inline-block; padding: 12px 32px; background: var(--gradient-1); border-radius: 50px; font-size: 18px; font-weight: 700; margin-bottom: 24px; box-shadow: var(--glow-blue); letter-spacing: 1px; }
-        .hero h1 { font-size: clamp(2rem, 5vw, 4rem); font-weight: 900; margin-bottom: 24px; background: var(--gradient-1); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; line-height: 1.2; }
-        .hero-subtitle { font-size: clamp(1.2rem, 2.2vw, 1.6rem); color: var(--text-primary); max-width: 900px; margin: 0 auto 40px; line-height: 1.6; font-weight: 400; }
+        .hero-badge { display: inline-block; padding: 12px 32px; background: linear-gradient(135deg, #00d4ff 0%, #7b2cbf 100%); border-radius: 50px; font-size: 18px; font-weight: 700; margin-bottom: 24px; box-shadow: 0 0 20px rgba(0, 212, 255, 0.5); }
+        .hero h1 { font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 900; margin-bottom: 24px; background: var(--gradient-1); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; line-height: 1.2; }
+        .hero-subtitle { font-size: clamp(1.2rem, 2.2vw, 1.5rem); color: var(--text-primary); max-width: 900px; margin: 0 auto 40px; line-height: 1.6; }
         .hero-images { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; margin-top: 60px; }
-        .hero-image-card { position: relative; border-radius: 20px; overflow: hidden; aspect-ratio: 16/9; box-shadow: var(--glow-purple); transition: transform 0.3s ease, box-shadow 0.3s ease; }
-        .hero-image-card:hover { transform: scale(1.02); box-shadow: 0 0 40px rgba(123, 44, 191, 0.7); }
+        .hero-image-card { position: relative; border-radius: 20px; overflow: hidden; aspect-ratio: 16/9; box-shadow: var(--glow-purple); transition: transform 0.3s ease; }
+        .hero-image-card:hover { transform: scale(1.02); }
         .hero-image-card img { width: 100%; height: 100%; object-fit: cover; }
-        .scroll-indicator { position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%); animation: float 2s ease-in-out infinite; z-index: 2; }
-        .scroll-indicator span { display: block; width: 30px; height: 50px; border: 2px solid var(--primary-blue); border-radius: 25px; position: relative; }
-        .scroll-indicator span::before { content: ''; position: absolute; top: 8px; left: 50%; transform: translateX(-50%); width: 6px; height: 10px; background: var(--primary-blue); border-radius: 3px; animation: pulse 1.5s infinite; }
-
-        /* Content Section */
         section { padding: 80px 20px; position: relative; z-index: 1; }
-        .content-section { background: var(--card-bg); padding: 60px 50px; border-radius: 24px; border: 1px solid rgba(0, 212, 255, 0.2); max-width: 1100px; margin: 0 auto; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3); }
-        
-        .content-section h2 { font-size: 2rem; margin-bottom: 40px; color: var(--primary-blue); display: flex; align-items: center; gap: 15px; padding-bottom: 20px; border-bottom: 2px solid rgba(0, 212, 255, 0.3); }
-        .content-section h2::before { content: '📖'; font-size: 2.5rem; }
-        
-        .content-section h3 { font-size: 1.6rem; margin: 50px 0 25px; color: var(--accent-green); display: flex; align-items: center; gap: 12px; }
-        .content-section h3::before { content: '🎯'; font-size: 2rem; }
-        
-        .content-section h3:nth-of-type(2)::before { content: '💡'; }
-        .content-section h3:nth-of-type(3)::before { content: '📊'; }
-        .content-section h3:nth-of-type(4)::before { content: '🔮'; }
-        
-        .content-section p { color: var(--text-secondary); line-height: 2.2; font-size: 1.08rem; margin: 25px 0; text-align: justify; }
-        
-        .content-section ul, .content-section ol { margin: 30px 0; padding-left: 40px; }
-        .content-section li { margin: 15px 0; line-height: 2; color: var(--text-secondary); font-size: 1.05rem; }
-        .content-section ul li { list-style-type: none; position: relative; padding-left: 25px; }
-        .content-section ul li::before { content: '▸'; color: var(--primary-blue); font-size: 1.5rem; position: absolute; left: 0; top: -5px; }
-        
-        .content-section strong { color: var(--text-primary); font-weight: 600; }
-        
-        /* Highlight Boxes */
-        .highlight-box { background: linear-gradient(135deg, rgba(0, 255, 136, 0.08) 0%, rgba(0, 212, 255, 0.08) 100%); padding: 30px; border-radius: 16px; border-left: 5px solid var(--accent-green); margin: 40px 0; }
-        .highlight-box h4 { color: var(--accent-green); margin-bottom: 15px; font-size: 1.3rem; display: flex; align-items: center; gap: 10px; }
-        .highlight-box h4::before { content: '✨'; }
-        .highlight-box p { color: var(--text-secondary); margin: 0; }
-        
-        /* Info Box */
-        .info-box { background: linear-gradient(135deg, rgba(0, 212, 255, 0.1) 0%, rgba(123, 44, 191, 0.1) 100%); padding: 25px; border-radius: 16px; border: 1px solid rgba(0, 212, 255, 0.3); margin: 35px 0; }
-        .info-box p { margin: 10px 0; color: var(--text-secondary); }
-        .info-box strong { color: var(--primary-blue); }
-        
-        /* Meta Info */
+        .content-section { background: var(--card-bg); padding: 60px 50px; border-radius: 24px; border: 1px solid rgba(0, 212, 255, 0.2); max-width: 1100px; margin: 0 auto; }
+        .content-section h3 { font-size: 1.6rem; margin: 40px 0 20px; color: var(--accent-green); }
+        .content-section p { color: var(--text-secondary); line-height: 2; font-size: 1.08rem; margin: 15px 0; }
         .meta-info { background: linear-gradient(135deg, rgba(0, 212, 255, 0.15) 0%, rgba(123, 44, 191, 0.15) 100%); padding: 30px; border-radius: 16px; margin-bottom: 40px; border-left: 5px solid var(--primary-blue); }
         .meta-info p { margin: 12px 0; color: var(--text-secondary); font-size: 1.05rem; }
         .meta-info strong { color: var(--primary-blue); font-weight: 600; }
-        .meta-info a { color: var(--primary-blue); text-decoration: none; border-bottom: 1px dashed var(--primary-blue); }
-        
-        /* Footer */
+        .meta-info a { color: var(--primary-blue); text-decoration: none; word-break: break-all; }
+        .alert-box { background: linear-gradient(135deg, rgba(255, 71, 87, 0.1) 0%, rgba(255, 149, 0, 0.1) 100%); padding: 30px; border-radius: 16px; border-left: 5px solid var(--accent-red); margin: 40px 0; }
+        .alert-box h4 { color: var(--accent-red); margin-bottom: 15px; font-size: 1.3rem; }
+        .alert-box p { color: var(--text-secondary); margin: 0; }
+        .highlight-box { background: linear-gradient(135deg, rgba(0, 255, 136, 0.08) 0%, rgba(0, 212, 255, 0.08) 100%); padding: 30px; border-radius: 16px; border-left: 5px solid var(--accent-green); margin: 40px 0; }
+        .highlight-box h4 { color: var(--accent-green); margin-bottom: 15px; font-size: 1.3rem; }
+        .highlight-box p { color: var(--text-secondary); margin: 0; }
+        .quote-box { background: linear-gradient(135deg, rgba(123, 44, 191, 0.15) 0%, rgba(0, 212, 255, 0.15) 100%); padding: 30px 40px; border-radius: 16px; border-left: 5px solid var(--primary-purple); margin: 40px 0; }
+        .quote-box p { color: var(--text-primary); font-size: 1.2rem; font-style: italic; margin-bottom: 15px; }
+        .quote-box cite { color: var(--text-secondary); font-size: 0.95rem; }
+        .tech-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin: 40px 0; }
+        .tech-card { background: var(--card-bg-light); padding: 30px; border-radius: 16px; border: 1px solid rgba(0, 212, 255, 0.15); animation: fadeInUp 0.6s ease-out forwards; opacity: 0; }
+        .tech-card:nth-child(1) { animation-delay: 0.1s; }
+        .tech-card:nth-child(2) { animation-delay: 0.2s; }
+        .tech-card:nth-child(3) { animation-delay: 0.3s; }
+        .tech-card:nth-child(4) { animation-delay: 0.4s; }
+        .tech-card-icon { font-size: 2.5rem; margin-bottom: 15px; }
+        .tech-card h4 { color: var(--primary-blue); margin-bottom: 12px; font-size: 1.2rem; }
+        .tech-card p { color: var(--text-secondary); font-size: 0.95rem; line-height: 1.7; }
+        .table-section { overflow-x: auto; margin: 40px 0; }
+        .comparison-table { width: 100%; border-collapse: collapse; border-radius: 16px; overflow: hidden; box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3); }
+        .comparison-table thead { background: linear-gradient(135deg, var(--primary-blue), var(--primary-purple)); }
+        .comparison-table th { padding: 18px 20px; text-align: left; font-weight: 600; font-size: 1.05rem; }
+        .comparison-table td { padding: 16px 20px; border-bottom: 1px solid rgba(255, 255, 255, 0.05); color: var(--text-secondary); }
+        .comparison-table tr:last-child td { border-bottom: none; }
+        .comparison-table tr:nth-child(even) { background: rgba(255, 255, 255, 0.02); }
+        .timeline { margin: 40px 0; }
+        .timeline-item { display: flex; gap: 20px; margin-bottom: 24px; }
+        .timeline-dot { width: 16px; height: 16px; background: var(--primary-blue); border-radius: 50%; margin-top: 6px; flex-shrink: 0; }
+        .timeline-content { flex: 1; }
+        .timeline-content h4 { color: var(--primary-blue); margin-bottom: 5px; font-size: 1.1rem; }
+        .timeline-content p { color: var(--text-secondary); font-size: 0.95rem; line-height: 1.7; }
         footer { background: #050508; padding: 60px 20px; text-align: center; border-top: 1px solid rgba(255, 255, 255, 0.1); }
         footer p { color: var(--text-secondary); margin-bottom: 20px; }
         .footer-links { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; }
         .footer-links a { color: var(--primary-blue); text-decoration: none; transition: color 0.3s ease; }
         .footer-links a:hover { color: var(--text-primary); }
-
-        /* RWD */
         @media (max-width: 768px) {
             .content-section { padding: 40px 25px; }
-            .hero-images { grid-template-columns: 1fr; }
-            .content-section h2 { font-size: 1.6rem; }
-            .content-section h3 { font-size: 1.3rem; }
+            .hero h1 { font-size: 2rem; }
         }
     </style>
 </head>
@@ -117,76 +84,165 @@
         <div class="hero-content">
             <span class="hero-badge">📰 AI News 專題報道</span>
             <h1>圖解2026裁員潮：全美年減50%、科技業卻逆勢增33%！AI讓白領主管職也難逃？</h1>
-            <p class="hero-subtitle">圖解2026裁員潮：全美年減50、科技業卻逆勢增33！AI讓白領主管職也難逃？ 本文整理自華爾街日報、Business Insider、TrueUp 三大裁員追蹤資料，截稿日為 2026 年 5 月 18 日。</p>
-            <div class="hero-images"><div class="hero-image-card"><img src="./img/cover.png" alt="新聞插圖"></div>
-</div>
+            <p class="hero-subtitle">本文整理自《華爾街日報》、Business Insider、TrueUp三大裁員追蹤資料，截稿日為2026年5月18日。2026年美國企業裁員潮呈現兩極走勢：整體裁員較去年同期下滑50%，但科技業逆勢上升33%。AI自動化不僅影響基層員工，連白領、管理階層也難逃波及。</p>
+            <div class="hero-images">
+                <div class="hero-image-card">
+                    <img src="./img/cover.png" alt="新聞插圖">
+                </div>
+            </div>
         </div>
-        <div class="scroll-indicator"><span></span></div>
+        <div class="scroll-indicator">
+            <span></span>
+        </div>
     </section>
 
-    <!-- Content Section -->
+<!-- Content Section -->
     <section>
         <div class="content-section">
+
             <!-- Meta Info -->
             <div class="meta-info">
-                <p><strong>📌 資料來源</strong>：<a href="#" target="_blank" style="word-break: break-all;">#</a></p>
+                <p><strong>📺 資料來源</strong>：<a href="https://www.bnext.com.tw/article/90968/us-corporate-layoffs-2026-tech-ai-restructuring" target="_blank">BNEXT</a></p>
                 <p><strong>📅 發布日期</strong>：2026-05-22</p>
                 <p><strong>🤖 處理方式</strong>：AI 智能摘要生成</p>
             </div>
-            
-            <!-- Main Content -->
-            <div class="markdown-content"><p>圖解2026裁員潮：全美年減50%、科技業卻逆勢增33%！AI讓白領主管職也難逃？</p>
 
-<p>📖 新聞導語</p>
+            <!-- 數據全景 -->
+            <h3>📊 數據全景</h3>
+            <p>2026年美國企業裁員潮呈現<strong>兩極走勢</strong>：整體裁員較去年同期下滑50%，但科技業逆勢上升33%。AI自動化不僅影響基層員工，連白領、管理階層也難逃波及。</p>
+            <ul>
+                <li><strong>整體裁員</strong>：2026年1-4月美企共宣布裁員<strong>30萬749人</strong>，較2025年同期下滑50%</li>
+                <li>2025年數字受川普政府大規模裁撤聯邦員工拉高，並非常態；若只看私部門，今年裁員量年減約10%</li>
+                <li><strong>科技業</strong>：已裁逾<strong>8.5萬人</strong>，較去年同期增加33%</li>
+                <li><strong>TrueUp統計</strong>：2026年至5月18日，全球科技業共<strong>323次裁員</strong>、影響<strong>13萬7,687人</strong>，平均每天近千人失業</li>
+            </ul>
 
-<p>本文整理自《華爾街日報》、Business Insider、TrueUp 三大裁員追蹤資料，截稿日為 2026 年 5 月 18 日。</p>
+            <!-- 大企業裁員地圖 -->
+            <h3>🏢 大企業裁員地圖</h3>
+            <p>以下是2026年以來主要企業裁員一覽：</p>
+            <div class="table-section">
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>企業</th>
+                            <th>裁員人數</th>
+                            <th>宣布日期</th>
+                            <th>主要原因</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>UPS</td>
+                            <td>最多3萬人</td>
+                            <td>1/27</td>
+                            <td>亞馬遜減少使用UPS配送、重整物流網絡</td>
+                        </tr>
+                        <tr>
+                            <td>亞馬遜</td>
+                            <td>1.6萬人</td>
+                            <td>1/27</td>
+                            <td>減少官僚層級（2025年10月已裁1.4萬人）</td>
+                        </tr>
+                        <tr>
+                            <td>甲骨文</td>
+                            <td>約3萬人</td>
+                            <td>3/30起</td>
+                            <td>融資建AI資料中心，需從其他部門擠出資金</td>
+                        </tr>
+                        <tr>
+                            <td>Meta</td>
+                            <td>8,000人</td>
+                            <td>4/22</td>
+                            <td>重心轉向AI基礎設施，元宇宙優先順序降低</td>
+                        </tr>
+                        <tr>
+                            <td>雅詩蘭黛</td>
+                            <td>9,000-1萬人</td>
+                            <td>4/30</td>
+                            <td>實體零售縮編，轉向亞馬遜、TikTok Shop電商</td>
+                        </tr>
+                        <tr>
+                            <td>海尼根</td>
+                            <td>5,000-6,000人</td>
+                            <td>2/10</td>
+                            <td>歐美啤酒市場萎縮、歐洲廠房整併</td>
+                        </tr>
+                        <tr>
+                            <td>Block</td>
+                            <td>4,000人（4成員工）</td>
+                            <td>2/25</td>
+                            <td>創辦人Jack Dorsey：AI工具改變公司運作方式</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
 
-<p>2026 年美國企業裁員潮呈現兩極走勢：整體裁員較去年同期下滑 50%，但科技業逆勢上升 33%。AI 自動化不僅影響基層員工，連白領、管理階層也難逃波及。</p>
+            <!-- 5月新一波 -->
+            <h3>⚠️ 5月新一波：連管理層也被裁</h3>
+            <p>5月新一波裁員出現明顯特徵：<strong>砍管理職、扁平化組織</strong>。從Coinbase、Cloudflare到Walmart的內部備忘錄都用類似句型：AI與自動化改變了「需要的人力配置」，因此組織必須跟著重建。</p>
+            <div class="table-section">
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>企業</th>
+                            <th>裁員人數</th>
+                            <th>宣布日期</th>
+                            <th>特殊之處</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Coinbase</td>
+                            <td>700人（14%）</td>
+                            <td>5/4</td>
+                            <td>「不再有純管理職，所有領導者必須親自動手做事」</td>
+                        </tr>
+                        <tr>
+                            <td>PayPal</td>
+                            <td>4,760人（20%）</td>
+                            <td>5/4</td>
+                            <td>2-3年內裁掉2成，獲利下滑進行支付業務轉型</td>
+                        </tr>
+                        <tr>
+                            <td>Cloudflare</td>
+                            <td>1,100人（20%）</td>
+                            <td>5/7</td>
+                            <td>內部AI使用量暴增超6倍，需重新想像每個流程</td>
+                        </tr>
+                        <tr>
+                            <td>Cisco</td>
+                            <td>約4,000人（5%）</td>
+                            <td>5/13</td>
+                            <td>AI基礎設施訂單目標從50億增至90億美元</td>
+                        </tr>
+                        <tr>
+                            <td>Walmart</td>
+                            <td>約1,000人</td>
+                            <td>5/11</td>
+                            <td>讓組織更扁平、責任更清楚</td>
+                        </tr>
+                        <tr>
+                            <td>Starbucks</td>
+                            <td>300人</td>
+                            <td>5/14</td>
+                            <td>集中在科技、行銷、財務、研發部門</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
 
-<p>💡 核心內容</p>
+            <!-- 關鍵洞察 -->
+            <div class="highlight-box">
+                <h4>✨ 關鍵洞察：AI是最大公約數，但不是唯一原因</h4>
+                <p>AI是這一波裁員潮的<strong>最大公約數</strong>，但並非所有裁員都歸咎於AI。例如<strong>Estée Lauder</strong>是通路轉型、<strong>UPS</strong>是亞馬遜減少採購、<strong>Heineken</strong>是市場萎縮、<strong>Epic Games</strong>則是《要塞英雄》活躍度下滑，與AI無直接關聯。</p>
+            </div>
 
-<p>📊 數據全景</p>
-
-<ul>
-<li><strong>整體裁員</strong>：2026 年 1-4 月美企共宣布裁員 30 萬 749 人，較 2025 年同期下滑 50%</li>
-<li>2025 年數字受川普政府大規模裁撤聯邦員工拉高，並非常態</li>
-<li>若只看私部門，今年裁員量年減約 10%</li>
-<li><strong>科技業</strong>：已裁逾 8.5 萬人，較去年同期增加 33%</li>
-<li><strong>TrueUp 統計</strong>：2026 年至 5 月 18 日，全球科技業共 323 次裁員、影響 13 萬 7,687 人，平均每天近千人失業</li>
-</ul>
-
-<p>🏢 大企業裁員地圖</p>
-
-<p>| 企業 | 裁員人數 | 宣布日期 | 主要原因 | |------|----------|----------|----------| | UPS | 最多 3 萬人 | 1/27 | 亞馬遜減少使用 UPS 配送、重整物流網絡 | | 亞馬遜 | 1.6 萬人 | 1/27 | 減少官僚層級（2025年10月已裁1.4萬人） | | 甲骨文 | 約 3 萬人 | 3/30 起 | 融資建 AI 資料中心，需從其他部門擠出資金 | | Meta | 8,000 人 | 4/22 | 重心轉向 AI 基礎設施，元宇宙優先順序降低 | | 雅詩蘭黛 | 9,000-1 萬人 | 4/30 | 實體零售縮編，轉向亞馬遜、TikTok Shop 電商 | | 海尼根 | 5,000-6,000 人 | 2/10 | 歐美啤酒市場萎縮、歐洲廠房整併 | | Block | 4,000 人（4成員工） | 2/25 | 創辦人Jack Dorsey：AI工具改變公司運作方式 |</p>
-
-<p>⚠️ 5月新一波：連管理層也被裁</p>
-
-<p>5 月新一波裁員出現明顯特徵：砍管理職、扁平化組織。</p>
-
-<p>| 企業 | 裁員人數 | 宣布日期 | 特殊之處 | |------|----------|----------|----------| | Coinbase | 700 人（14%） | 5/4 | 「不再有純管理職，所有領導者必須親自動手做事」 | | PayPal | 4,760 人（20%） | 5/4 | 2-3年內裁掉2成，獲利下滑進行支付業務轉型 | | Cloudflare | 1,100 人（20%） | 5/7 | 內部 AI 使用量暴增超 6 倍，需重新想像每個流程 | | Cisco | 約 4,000 人（5%） | 5/13 | AI 基礎設施訂單目標從 50 億增至 90 億美元 | | Walmart | 約 1,000 人 | 5/11 | 讓組織更扁平、責任更清楚 | | Starbucks | 300 人 | 5/14 | 集中在科技、行銷、財務、研發部門 |</p>
-
-<p>🔍 AI 是最大公約數，但不是唯一原因</p>
-
-<ul>
-<li><strong>AI 相關</strong>：Cloudflare、Meta、甲骨文、Block、Coinbase</li>
-<li><strong>通路轉型</strong>：UPS（亞馬遜減少採購）、Estée Lauder（電商 vs 實體）</li>
-<li><strong>市場萎縮</strong>：Heineken（歐美啤酒市場）</li>
-<li><strong>遊戲因素</strong>：Epic Games（《要塞英雄》活躍度下滑，與 AI 無關）</li>
-</ul>
-
-<p>---</p>
-
-<strong>📌 資料來源</strong>：BNEXT、WSJ、Business Insider、TrueUp、Challenger Gray & Christmas <strong>📅 發布日期</strong>：2026-05-22</div>
-        </div>
-    </section>
-
-    
-            <!-- Tech Cards: 關鍵數據 -->
+            <!-- Tech Cards -->
             <div class="tech-cards">
                 <div class="tech-card">
                     <div class="tech-card-icon">📉</div>
                     <h4>整體裁員↓50%</h4>
-                    <p>2026年1-4月美企宣布裁員30萬749人，較去年同期下滑50%，但2025年受聯邦裁員拉高基期。</p>
+                    <p>2026年1-4月美企宣布裁員30萬749人，較去年同期下滑50%，主因是2025年基期受聯邦裁員墊高。</p>
                 </div>
                 <div class="tech-card">
                     <div class="tech-card-icon">📈</div>
@@ -200,75 +256,77 @@
                 </div>
                 <div class="tech-card">
                     <div class="tech-card-icon">🤖</div>
-                    <h4>AI是主因非唯一</h4>
-                    <p>AI是這波裁員潮最大公約數，但Estée Lauder通路轉型、Heineken市場萎縮等與AI無直接關聯。</p>
+                    <h4>AI非唯一原因</h4>
+                    <p>AI是最大公約數，但Estée Lauder通路轉型、Heineken市場萎縮等與AI無直接關聯。</p>
                 </div>
             </div>
 
-            <!-- Comparison Table: 裁員原因分析 -->
-            <h3>📊 2026裁員潮：AI相關 vs 非AI因素</h3>
-            <table class="comparison-table">
-                <thead>
-                    <tr>
-                        <th>企業</th>
-                        <th>裁員人數</th>
-                        <th>宣布日期</th>
-                        <th>是否AI相關</th>
-                        <th>主因</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>UPS</td>
-                        <td>最多3萬人</td>
-                        <td>1/27</td>
-                        <td>❌ 非AI</td>
-                        <td>亞馬遜減少UPS配送、重整物流網絡</td>
-                    </tr>
-                    <tr>
-                        <td>亞馬遜</td>
-                        <td>1.6萬人</td>
-                        <td>1/27</td>
-                        <td>⚠️ 間接</td>
-                        <td>減少官僚層級，AI提升效率後無需那麼多管理層</td>
-                    </tr>
-                    <tr>
-                        <td>甲骨文</td>
-                        <td>約3萬人</td>
-                        <td>3/30</td>
-                        <td>✅ 直接</td>
-                        <td>大舉融資興建AI資料中心，需從其他部門擠出資金</td>
-                    </tr>
-                    <tr>
-                        <td>Meta</td>
-                        <td>8,000人</td>
-                        <td>4/22</td>
-                        <td>✅ 直接</td>
-                        <td>重心轉向AI基礎設施與人才，元宇宙優先順序降低</td>
-                    </tr>
-                    <tr>
-                        <td>Cloudflare</td>
-                        <td>1,100人</td>
-                        <td>5/7</td>
-                        <td>✅ 直接</td>
-                        <td>內部AI使用量暴增超6倍，「需重新想像每個流程」</td>
-                    </tr>
-                    <tr>
-                        <td>Coinbase</td>
-                        <td>700人（14%）</td>
-                        <td>5/4</td>
-                        <td>✅ 直接</td>
-                        <td>「AI讓過去一週的工作，工程師幾天就能完成」</td>
-                    </tr>
-                    <tr>
-                        <td>Cisco</td>
-                        <td>約4,000人</td>
-                        <td>5/13</td>
-                        <td>✅ 直接</td>
-                        <td>把資源重新分配到AI、資安等高成長業務</td>
-                    </tr>
-                </tbody>
-            </table>
+            <!-- AI相關裁員對比表 -->
+            <h3>📊 AI相關裁員 vs 非AI因素裁員</h3>
+            <div class="table-section">
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>企業</th>
+                            <th>裁員人數</th>
+                            <th>宣布日期</th>
+                            <th>是否AI相關</th>
+                            <th>主因</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>UPS</td>
+                            <td>最多3萬人</td>
+                            <td>1/27</td>
+                            <td>❌ 非AI</td>
+                            <td>亞馬遜減少UPS配送、重整物流網絡</td>
+                        </tr>
+                        <tr>
+                            <td>亞馬遜</td>
+                            <td>1.6萬人</td>
+                            <td>1/27</td>
+                            <td>⚠️ 間接</td>
+                            <td>減少官僚層級，AI提升效率後無需那麼多管理層</td>
+                        </tr>
+                        <tr>
+                            <td>甲骨文</td>
+                            <td>約3萬人</td>
+                            <td>3/30</td>
+                            <td>✅ 直接</td>
+                            <td>大舉融資興建AI資料中心，需從其他部門擠出資金</td>
+                        </tr>
+                        <tr>
+                            <td>Meta</td>
+                            <td>8,000人</td>
+                            <td>4/22</td>
+                            <td>✅ 直接</td>
+                            <td>重心轉向AI基礎設施與人才，元宇宙優先順序降低</td>
+                        </tr>
+                        <tr>
+                            <td>Cloudflare</td>
+                            <td>1,100人</td>
+                            <td>5/7</td>
+                            <td>✅ 直接</td>
+                            <td>內部AI使用量暴增超6倍，「需重新想像每個流程」</td>
+                        </tr>
+                        <tr>
+                            <td>Coinbase</td>
+                            <td>700人（14%）</td>
+                            <td>5/4</td>
+                            <td>✅ 直接</td>
+                            <td>「AI讓過去一週的工作，工程師幾天就能完成」</td>
+                        </tr>
+                        <tr>
+                            <td>Cisco</td>
+                            <td>約4,000人</td>
+                            <td>5/13</td>
+                            <td>✅ 直接</td>
+                            <td>把資源重新分配到AI、資安等高成長業務</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
 
             <!-- Quote Box -->
             <div class="quote-box">
@@ -297,7 +355,7 @@
                 <div class="timeline-item">
                     <div class="timeline-date">2026/3/30</div>
                     <div class="timeline-title">甲骨文裁員約3萬人</div>
-                    <div class="timeline-desc">投資銀行TD Cowen估算約3萬人，主因為融资兴建AI資料中心，與業績無直接關聯。</div>
+                    <div class="timeline-desc">投資銀行TD Cowen估算約3萬人，主因為融資興建AI資料中心，與業績無直接關聯。</div>
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-date">2026/4/22</div>
@@ -311,9 +369,17 @@
                 </div>
             </div>
 
-<!-- Footer -->
+            <!-- 未來展望 -->
+            <h3>🔮 未來展望</h3>
+            <p>2026年的裁員潮揭示了一個重要趨勢：<strong>AI正在重塑組織結構</strong>。以往裁員主要影響基層工作者，如今白領、管理階層也成為目標。Coinbase執行長阿姆斯壯的宣言代表了一種新興管理哲學：「<strong>每個領導者都必須是實際執行者</strong>」。</p>
+            <p>這種變化帶來深遠影響：當AI能以數倍效率完成過往需要多人執行的工作，企業所需的管理層級大幅縮減。專家預測，這種「扁平化浪潮」將在未來數年持續蔓延，無論是科技巨頭還是傳統企業都難以避免。</p>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
     <footer>
-        <p>© 2026-05-22 AI News Archive | 由 AI 技術生成</p>
+        <p>© 2026 AI News Archive | 由 AI 技術生成</p>
         <div class="footer-links">
             <a href="../index.html">返回主頁</a>
             <a href="https://github.com/hklamsir/ai_news" target="_blank">GitHub</a>
@@ -322,49 +388,17 @@
     </footer>
 
     <script>
-        // 代碼雨效果
-        function createCodeRain() {
-            const codeRain = document.getElementById('codeRain');
-            const chars = '01 アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン';
-            for (let i = 0; i < 50; i++) {
-                const char = document.createElement('div');
-                char.className = 'code-char';
-                char.textContent = chars[Math.floor(Math.random() * chars.length)];
-                char.style.left = Math.random() * 100 + '%';
-                char.style.animationDelay = Math.random() * 4 + 's';
-                char.style.animationDuration = (Math.random() * 2 + 3) + 's';
-                codeRain.appendChild(char);
-            }
+        const codeRain = document.getElementById('codeRain');
+        const chars = '01アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン';
+        for (let i = 0; i < 50; i++) {
+            const char = document.createElement('span');
+            char.className = 'code-char';
+            char.textContent = chars[Math.floor(Math.random() * chars.length)];
+            char.style.left = Math.random() * 100 + '%';
+            char.style.animationDelay = Math.random() * 4 + 's';
+            char.style.animationDuration = (Math.random() * 3 + 3) + 's';
+            codeRain.appendChild(char);
         }
-
-        // 滾動動畫
-        function handleScrollAnimation() {
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.style.opacity = '1';
-                        entry.target.style.transform = 'translateY(0)';
-                    }
-                });
-            }, { threshold: 0.1 });
-
-            document.querySelectorAll('.content-section, .hero-content').forEach(el => {
-                el.style.opacity = '0';
-                el.style.transform = 'translateY(30px)';
-                el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-                observer.observe(el);
-            });
-        }
-
-        document.addEventListener('DOMContentLoaded', () => {
-            createCodeRain();
-            handleScrollAnimation();
-        });
-
-        window.addEventListener('resize', () => {
-            document.getElementById('codeRain').innerHTML = '';
-            createCodeRain();
-        });
     </script>
 </body>
 </html>
