@@ -1,6 +1,16 @@
 {
   "archives": [
     {
+      "dir": "news_20260522_084340",
+      "title": "圖解2026裁員潮：全美年減50%、科技業卻逆勢增33%！AI讓白領主管職也難逃？",
+      "summary_short": "# 圖解2026裁員潮：全美年減50%、科技業卻逆勢增33%！AI讓白領主管職也難逃？## 📖 新聞導語本文報導來自 **BNEXT**，發布於 **2026-05-22**。最新科技新聞",
+      "images": [
+        "img/img1.png"
+      ],
+      "date": "2026-05-22",
+      "url": "./news_20260522_084340/index.html"
+    },
+    {
       "dir": "news_20260521_221848",
       "title": "Google更新AI Studio，可直接生成原生Android App",
       "summary": "Google釋出AI Studio重大更新，開發者現可透過自然語言指令，直接生成完整可用的原生Android應用程式，標誌著AI輔助開發邁入新紀元",
@@ -919,6 +929,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-05-21T22:24:48.083497",
+  "last_updated": "2026-05-22T08:45:58.803888",
   "total_count": 102
 }
