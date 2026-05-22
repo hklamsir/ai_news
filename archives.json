@@ -1,6 +1,16 @@
 {
   "archives": [
     {
+      "dir": "news_20260522_095855",
+      "title": "Mobile phishing is a bigger threat than email now - how to stay protected",
+      "summary_short": "# Mobile phishing is a bigger threat than email now - how to stay protected## 📖 新聞導語本文報導來自 **ZDN",
+      "images": [
+        "img/img1.png"
+      ],
+      "date": "2026-05-22",
+      "url": "./news_20260522_095855/index.html"
+    },
+    {
       "dir": "news_20260522_084340",
       "title": "圖解2026裁員潮：全美年減50%、科技業卻逆勢增33%！AI讓白領主管職也難逃？",
       "summary": "圖解2026裁員潮：全美年減50、科技業卻逆勢增33！AI讓白領主管職也難逃？ 本文整理自華爾街日報、Business Insider、TrueUp 三大裁員追蹤資料，截稿日為 2026 年 5 月 ",
@@ -928,6 +938,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-05-22T08:50:47.419084",
+  "last_updated": "2026-05-22T10:00:58.192247",
   "total_count": 103
 }
