@@ -1,9 +1,11 @@
 <!DOCTYPE html>
-<html lang="zh-TW">
+<html lang="zh-Hant">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>圖解2026裁員潮：科技業逆勢增長33% | AI News</title>
+    <title>圖解2026裁員潮：全美年減50%、科技業卻逆勢增33%！AI讓白領主管職也難逃？ | AI News 專題報道</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -31,9 +33,11 @@
         @keyframes slideIn { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
         @keyframes codeRain { 0% { transform: translateY(-100%); opacity: 0; } 10% { opacity: 1; } 90% { opacity: 1; } 100% { transform: translateY(100vh); opacity: 0; } }
 
+        /* 代碼雨背景 */
         .code-rain { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; overflow: hidden; }
         .code-char { position: absolute; color: var(--primary-blue); font-family: 'Courier New', monospace; font-size: 14px; opacity: 0; animation: codeRain 4s linear infinite; }
 
+        /* Hero Section */
         .hero { position: relative; min-height: 80vh; display: flex; align-items: center; justify-content: center; padding: 80px 20px; background: linear-gradient(180deg, var(--dark-bg) 0%, #1a1a2e 100%); overflow: hidden; }
         .hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(ellipse at center, rgba(123, 44, 191, 0.15) 0%, transparent 70%); z-index: 1; }
         .hero-content { position: relative; z-index: 2; max-width: 1200px; text-align: center; animation: slideIn 1s ease-out; }
@@ -48,94 +52,268 @@
         .scroll-indicator span { display: block; width: 30px; height: 50px; border: 2px solid var(--primary-blue); border-radius: 25px; position: relative; }
         .scroll-indicator span::before { content: ''; position: absolute; top: 8px; left: 50%; transform: translateX(-50%); width: 6px; height: 10px; background: var(--primary-blue); border-radius: 3px; animation: pulse 1.5s infinite; }
 
+        /* Content Section */
         section { padding: 80px 20px; position: relative; z-index: 1; }
         .content-section { background: var(--card-bg); padding: 60px 50px; border-radius: 24px; border: 1px solid rgba(0, 212, 255, 0.2); max-width: 1100px; margin: 0 auto; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3); }
-
-        .content-section h3 { font-size: 1.6rem; margin: 40px 0 20px; color: var(--accent-green); }
-        .content-section p { color: var(--text-secondary); line-height: 2; font-size: 1.08rem; margin: 15px 0; }
-        .content-section ul { margin: 20px 0; padding-left: 30px; }
-        .content-section li { margin: 10px 0; color: var(--text-secondary); }
-
+        
+        .content-section h2 { font-size: 2rem; margin-bottom: 40px; color: var(--primary-blue); display: flex; align-items: center; gap: 15px; padding-bottom: 20px; border-bottom: 2px solid rgba(0, 212, 255, 0.3); }
+        .content-section h2::before { content: '📖'; font-size: 2.5rem; }
+        
+        .content-section h3 { font-size: 1.6rem; margin: 50px 0 25px; color: var(--accent-green); display: flex; align-items: center; gap: 12px; }
+        .content-section h3::before { content: '🎯'; font-size: 2rem; }
+        
+        .content-section h3:nth-of-type(2)::before { content: '💡'; }
+        .content-section h3:nth-of-type(3)::before { content: '📊'; }
+        .content-section h3:nth-of-type(4)::before { content: '🔮'; }
+        
+        .content-section p { color: var(--text-secondary); line-height: 2.2; font-size: 1.08rem; margin: 25px 0; text-align: justify; }
+        
+        .content-section ul, .content-section ol { margin: 30px 0; padding-left: 40px; }
+        .content-section li { margin: 15px 0; line-height: 2; color: var(--text-secondary); font-size: 1.05rem; }
+        .content-section ul li { list-style-type: none; position: relative; padding-left: 25px; }
+        .content-section ul li::before { content: '▸'; color: var(--primary-blue); font-size: 1.5rem; position: absolute; left: 0; top: -5px; }
+        
+        .content-section strong { color: var(--text-primary); font-weight: 600; }
+        
+        /* Highlight Boxes */
+        .highlight-box { background: linear-gradient(135deg, rgba(0, 255, 136, 0.08) 0%, rgba(0, 212, 255, 0.08) 100%); padding: 30px; border-radius: 16px; border-left: 5px solid var(--accent-green); margin: 40px 0; }
+        .highlight-box h4 { color: var(--accent-green); margin-bottom: 15px; font-size: 1.3rem; display: flex; align-items: center; gap: 10px; }
+        .highlight-box h4::before { content: '✨'; }
+        .highlight-box p { color: var(--text-secondary); margin: 0; }
+        
+        /* Info Box */
+        .info-box { background: linear-gradient(135deg, rgba(0, 212, 255, 0.1) 0%, rgba(123, 44, 191, 0.1) 100%); padding: 25px; border-radius: 16px; border: 1px solid rgba(0, 212, 255, 0.3); margin: 35px 0; }
+        .info-box p { margin: 10px 0; color: var(--text-secondary); }
+        .info-box strong { color: var(--primary-blue); }
+        
+        /* Meta Info */
         .meta-info { background: linear-gradient(135deg, rgba(0, 212, 255, 0.15) 0%, rgba(123, 44, 191, 0.15) 100%); padding: 30px; border-radius: 16px; margin-bottom: 40px; border-left: 5px solid var(--primary-blue); }
         .meta-info p { margin: 12px 0; color: var(--text-secondary); font-size: 1.05rem; }
         .meta-info strong { color: var(--primary-blue); font-weight: 600; }
-        .meta-info a { color: var(--primary-blue); text-decoration: none; word-break: break-all; }
-
-        .highlight-box { background: linear-gradient(135deg, rgba(0, 255, 136, 0.08) 0%, rgba(0, 212, 255, 0.08) 100%); padding: 30px; border-radius: 16px; border-left: 5px solid var(--accent-green); margin: 40px 0; }
-        .highlight-box h4 { color: var(--accent-green); margin-bottom: 15px; font-size: 1.3rem; }
-        .highlight-box p { color: var(--text-secondary); margin: 0; }
-
+        .meta-info a { color: var(--primary-blue); text-decoration: none; border-bottom: 1px dashed var(--primary-blue); }
+        
+        /* Footer */
         footer { background: #050508; padding: 60px 20px; text-align: center; border-top: 1px solid rgba(255, 255, 255, 0.1); }
         footer p { color: var(--text-secondary); margin-bottom: 20px; }
         .footer-links { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; }
         .footer-links a { color: var(--primary-blue); text-decoration: none; transition: color 0.3s ease; }
         .footer-links a:hover { color: var(--text-primary); }
 
+        /* RWD */
         @media (max-width: 768px) {
             .content-section { padding: 40px 25px; }
             .hero-images { grid-template-columns: 1fr; }
-            .hero h1 { font-size: 2rem; }
-            .hero-subtitle { font-size: 1.2rem; }
+            .content-section h2 { font-size: 1.6rem; }
+            .content-section h3 { font-size: 1.3rem; }
         }
     </style>
 </head>
 <body>
+    <!-- 代碼雨背景 -->
     <div class="code-rain" id="codeRain"></div>
 
+    <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
             <span class="hero-badge">📰 AI News 專題報道</span>
-            <h1>圖解2026裁員潮：全美年減50%、科技業卻逆勢增33%！</h1>
-            <p class="hero-subtitle">AI浪潮重塑職場版圖，白領主管職位面臨前所未有的挑戰，科技產業與傳統產業呈現兩極化發展態勢</p>
-            <div class="hero-images">
-                <div class="hero-image-card">
-                    <img src="img/img1.png" alt="2026裁員潮數據圖解">
-                </div>
-            </div>
+            <h1>圖解2026裁員潮：全美年減50%、科技業卻逆勢增33%！AI讓白領主管職也難逃？</h1>
+            <p class="hero-subtitle">圖解2026裁員潮：全美年減50、科技業卻逆勢增33！AI讓白領主管職也難逃？ 本文整理自華爾街日報、Business Insider、TrueUp 三大裁員追蹤資料，截稿日為 2026 年 5 月 18 日。</p>
+            <div class="hero-images"><div class="hero-image-card"><img src="./img/cover.png" alt="新聞插圖"></div>
+</div>
         </div>
-        <div class="scroll-indicator">
-            <span></span>
-        </div>
+        <div class="scroll-indicator"><span></span></div>
     </section>
 
+    <!-- Content Section -->
     <section>
         <div class="content-section">
+            <!-- Meta Info -->
             <div class="meta-info">
-                <p><strong> 資料來源</strong>：<a href="https://www.bnext.com.tw/" target="_blank">BNEXT</a></p>
+                <p><strong>📌 資料來源</strong>：<a href="#" target="_blank" style="word-break: break-all;">#</a></p>
                 <p><strong>📅 發布日期</strong>：2026-05-22</p>
                 <p><strong>🤖 處理方式</strong>：AI 智能摘要生成</p>
             </div>
+            
+            <!-- Main Content -->
+            <div class="markdown-content"><p>圖解2026裁員潮：全美年減50%、科技業卻逆勢增33%！AI讓白領主管職也難逃？</p>
 
-            <h3>📊 數據顯示：裁員潮呈現兩極化趨勢</h3>
-            <p>本次報告揭示2026年美國就業市場出現顯著分化。數據顯示，全美整體裁員規模較前一年大幅減少50%，顯示宏觀經濟環境趨於穩定。然而，科技業卻呈現截然不同的景象，裁員人數逆勢增長33%，形成強烈對比。</p>
-            <p>研究指出，此現象反映出AI技術對產業結構的深層衝擊。傳統產業在經歷前幾年的調整後逐步回穩，而科技業則因技術迭代加速，正進行大規模的組織重組與人力優化。</p>
+<p>📖 新聞導語</p>
 
-            <h3>🎯 核心觀點：AI衝擊白領階層</h3>
-            <p>專家分析強調，本次裁員潮的顯著特徵在於受影響群體的轉變。過去自動化主要威脅藍領勞動力，如今AI技術的成熟使白領工作，尤其是中階主管職位，成為新的衝擊目標。</p>
-            <ul>
-                <li>數據分析、報告生成等認知型工作首當其衝</li>
-                <li>管理層級扁平化趨勢加速</li>
-                <li>決策輔助AI降低對中層協調人員的需求</li>
-                <li>企業更傾向投資技術而非人力擴張</li>
-            </ul>
+<p>本文整理自《華爾街日報》、Business Insider、TrueUp 三大裁員追蹤資料，截稿日為 2026 年 5 月 18 日。</p>
 
-            <div class="highlight-box">
-                <h4>✨ 關鍵洞察</h4>
-                <p>AI並非單純取代人力，而是重新定義「必要人力」的邊界。能夠與AI協作的專業人才需求上升，而可被算法優化的職能則快速萎縮。</p>
-            </div>
+<p>2026 年美國企業裁員潮呈現兩極走勢：整體裁員較去年同期下滑 50%，但科技業逆勢上升 33%。AI 自動化不僅影響基層員工，連白領、管理階層也難逃波及。</p>
 
-            <h3>💡 產業影響分析</h3>
-            <p>業界觀察顯示，科技企業的裁員策略具有明確的選擇性。大型平台企業持續精簡非核心部門，同時加大對AI研發人才的招募力度。這種「減量增質」的人力配置，標誌著產業進入效率優先的新階段。</p>
-            <p>研究人員進一步指出，此趨勢可能向金融、法律、諮詢等專業服務領域擴散。這些行業同樣具備高比例的白領管理職位，且工作流程具備數位化改造的潛力。</p>
+<p>💡 核心內容</p>
 
-            <h3>🔮 未來展望</h3>
-            <p>展望後續發展，專家預測職場將呈現三大走向：技術能力成為基本門檻、跨領域整合能力價值提升、以及終身學習成為職涯存續的必要條件。企業組織架構也將持續向敏捷化、專案化演進。</p>
-            <p>本次報告提醒，面對AI驅動的產業變革，個人與組織都需要重新評估競爭優勢的來源。能夠快速適應技術變遷、持續創造不可替代價值的勞動力，將在未來的就業市場中佔據主動地位。</p>
+<p>📊 數據全景</p>
+
+<ul>
+<li><strong>整體裁員</strong>：2026 年 1-4 月美企共宣布裁員 30 萬 749 人，較 2025 年同期下滑 50%</li>
+<li>2025 年數字受川普政府大規模裁撤聯邦員工拉高，並非常態</li>
+<li>若只看私部門，今年裁員量年減約 10%</li>
+<li><strong>科技業</strong>：已裁逾 8.5 萬人，較去年同期增加 33%</li>
+<li><strong>TrueUp 統計</strong>：2026 年至 5 月 18 日，全球科技業共 323 次裁員、影響 13 萬 7,687 人，平均每天近千人失業</li>
+</ul>
+
+<p>🏢 大企業裁員地圖</p>
+
+<p>| 企業 | 裁員人數 | 宣布日期 | 主要原因 | |------|----------|----------|----------| | UPS | 最多 3 萬人 | 1/27 | 亞馬遜減少使用 UPS 配送、重整物流網絡 | | 亞馬遜 | 1.6 萬人 | 1/27 | 減少官僚層級（2025年10月已裁1.4萬人） | | 甲骨文 | 約 3 萬人 | 3/30 起 | 融資建 AI 資料中心，需從其他部門擠出資金 | | Meta | 8,000 人 | 4/22 | 重心轉向 AI 基礎設施，元宇宙優先順序降低 | | 雅詩蘭黛 | 9,000-1 萬人 | 4/30 | 實體零售縮編，轉向亞馬遜、TikTok Shop 電商 | | 海尼根 | 5,000-6,000 人 | 2/10 | 歐美啤酒市場萎縮、歐洲廠房整併 | | Block | 4,000 人（4成員工） | 2/25 | 創辦人Jack Dorsey：AI工具改變公司運作方式 |</p>
+
+<p>⚠️ 5月新一波：連管理層也被裁</p>
+
+<p>5 月新一波裁員出現明顯特徵：砍管理職、扁平化組織。</p>
+
+<p>| 企業 | 裁員人數 | 宣布日期 | 特殊之處 | |------|----------|----------|----------| | Coinbase | 700 人（14%） | 5/4 | 「不再有純管理職，所有領導者必須親自動手做事」 | | PayPal | 4,760 人（20%） | 5/4 | 2-3年內裁掉2成，獲利下滑進行支付業務轉型 | | Cloudflare | 1,100 人（20%） | 5/7 | 內部 AI 使用量暴增超 6 倍，需重新想像每個流程 | | Cisco | 約 4,000 人（5%） | 5/13 | AI 基礎設施訂單目標從 50 億增至 90 億美元 | | Walmart | 約 1,000 人 | 5/11 | 讓組織更扁平、責任更清楚 | | Starbucks | 300 人 | 5/14 | 集中在科技、行銷、財務、研發部門 |</p>
+
+<p>🔍 AI 是最大公約數，但不是唯一原因</p>
+
+<ul>
+<li><strong>AI 相關</strong>：Cloudflare、Meta、甲骨文、Block、Coinbase</li>
+<li><strong>通路轉型</strong>：UPS（亞馬遜減少採購）、Estée Lauder（電商 vs 實體）</li>
+<li><strong>市場萎縮</strong>：Heineken（歐美啤酒市場）</li>
+<li><strong>遊戲因素</strong>：Epic Games（《要塞英雄》活躍度下滑，與 AI 無關）</li>
+</ul>
+
+<p>---</p>
+
+<strong>📌 資料來源</strong>：BNEXT、WSJ、Business Insider、TrueUp、Challenger Gray & Christmas <strong>📅 發布日期</strong>：2026-05-22</div>
         </div>
     </section>
 
+    
+            <!-- Tech Cards: 關鍵數據 -->
+            <div class="tech-cards">
+                <div class="tech-card">
+                    <div class="tech-card-icon">📉</div>
+                    <h4>整體裁員↓50%</h4>
+                    <p>2026年1-4月美企宣布裁員30萬749人，較去年同期下滑50%，但2025年受聯邦裁員拉高基期。</p>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-card-icon">📈</div>
+                    <h4>科技業逆勢↑33%</h4>
+                    <p>科技業今年已裁逾8.5萬人，較去年同期增加33%，AI投資與自動化是重要推力之一。</p>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-card-icon">👔</div>
+                    <h4>白領也難逃</h4>
+                    <p>Coinbase、Cloudflare、Walmart相繼裁撤純管理職，「所有領導者必須親自動手做事」成新趨勢。</p>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-card-icon">🤖</div>
+                    <h4>AI是主因非唯一</h4>
+                    <p>AI是這波裁員潮最大公約數，但Estée Lauder通路轉型、Heineken市場萎縮等與AI無直接關聯。</p>
+                </div>
+            </div>
+
+            <!-- Comparison Table: 裁員原因分析 -->
+            <h3>📊 2026裁員潮：AI相關 vs 非AI因素</h3>
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>企業</th>
+                        <th>裁員人數</th>
+                        <th>宣布日期</th>
+                        <th>是否AI相關</th>
+                        <th>主因</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>UPS</td>
+                        <td>最多3萬人</td>
+                        <td>1/27</td>
+                        <td>❌ 非AI</td>
+                        <td>亞馬遜減少UPS配送、重整物流網絡</td>
+                    </tr>
+                    <tr>
+                        <td>亞馬遜</td>
+                        <td>1.6萬人</td>
+                        <td>1/27</td>
+                        <td>⚠️ 間接</td>
+                        <td>減少官僚層級，AI提升效率後無需那麼多管理層</td>
+                    </tr>
+                    <tr>
+                        <td>甲骨文</td>
+                        <td>約3萬人</td>
+                        <td>3/30</td>
+                        <td>✅ 直接</td>
+                        <td>大舉融資興建AI資料中心，需從其他部門擠出資金</td>
+                    </tr>
+                    <tr>
+                        <td>Meta</td>
+                        <td>8,000人</td>
+                        <td>4/22</td>
+                        <td>✅ 直接</td>
+                        <td>重心轉向AI基礎設施與人才，元宇宙優先順序降低</td>
+                    </tr>
+                    <tr>
+                        <td>Cloudflare</td>
+                        <td>1,100人</td>
+                        <td>5/7</td>
+                        <td>✅ 直接</td>
+                        <td>內部AI使用量暴增超6倍，「需重新想像每個流程」</td>
+                    </tr>
+                    <tr>
+                        <td>Coinbase</td>
+                        <td>700人（14%）</td>
+                        <td>5/4</td>
+                        <td>✅ 直接</td>
+                        <td>「AI讓過去一週的工作，工程師幾天就能完成」</td>
+                    </tr>
+                    <tr>
+                        <td>Cisco</td>
+                        <td>約4,000人</td>
+                        <td>5/13</td>
+                        <td>✅ 直接</td>
+                        <td>把資源重新分配到AI、資安等高成長業務</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <!-- Quote Box -->
+            <div class="quote-box">
+                <p>「不再有純管理職，所有領導者必須親自動手做事。過去要花一週的工作，現在工程師幾天就能完成。」</p>
+                <cite>— Brian Armstrong，Coinbase 執行長（2026年5月4日）</cite>
+            </div>
+
+            <!-- Timeline: 2026裁員大事記 -->
+            <h3>📅 2026裁員潮時間軸</h3>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date">2026/1/27</div>
+                    <div class="timeline-title">UPS、亞馬遜裁員風暴起</div>
+                    <div class="timeline-desc">UPS宣布刪減最多3萬個營運職務；亞馬遜裁減1.6萬企業職員，相當於員工總數1成。</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2026/2/10</div>
+                    <div class="timeline-title">海尼根裁員5,000-6,000人</div>
+                    <div class="timeline-desc">歐美啤酒市場萎縮、歐洲廠房整併，與科技裁員潮屬不同邏輯。</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2026/2/25</div>
+                    <div class="timeline-title">Block裁員4成員工</div>
+                    <div class="timeline-desc">創辦人Jack Dorsey表示「AI工具改變了公司運作方式」，裁員相當於員工總數4成。</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2026/3/30</div>
+                    <div class="timeline-title">甲骨文裁員約3萬人</div>
+                    <div class="timeline-desc">投資銀行TD Cowen估算約3萬人，主因為融资兴建AI資料中心，與業績無直接關聯。</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2026/4/22</div>
+                    <div class="timeline-title">Meta裁員8,000人</div>
+                    <div class="timeline-desc">裁減約1成員工，主要集中在Reality Labs與Facebook，執行長祖克伯砸數千億美元建資料中心。</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2026/5月</div>
+                    <div class="timeline-title">管理層裁員潮</div>
+                    <div class="timeline-desc">Coinbase、PayPal、Cloudflare、Cisco相繼裁員，「扁平化組織」成新趨勢，管理階層也成目標。</div>
+                </div>
+            </div>
+
+<!-- Footer -->
     <footer>
-        <p>© 2026 AI News Archive | 由 AI 技術生成</p>
+        <p>© 2026-05-22 AI News Archive | 由 AI 技術生成</p>
         <div class="footer-links">
             <a href="../index.html">返回主頁</a>
             <a href="https://github.com/hklamsir/ai_news" target="_blank">GitHub</a>
@@ -144,21 +322,49 @@
     </footer>
 
     <script>
-        const codeRain = document.getElementById('codeRain');
-        const chars = '01アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン';
-        
+        // 代碼雨效果
         function createCodeRain() {
+            const codeRain = document.getElementById('codeRain');
+            const chars = '01 アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン';
             for (let i = 0; i < 50; i++) {
-                const char = document.createElement('span');
+                const char = document.createElement('div');
                 char.className = 'code-char';
                 char.textContent = chars[Math.floor(Math.random() * chars.length)];
                 char.style.left = Math.random() * 100 + '%';
                 char.style.animationDelay = Math.random() * 4 + 's';
-                char.style.animationDuration = (3 + Math.random() * 2) + 's';
+                char.style.animationDuration = (Math.random() * 2 + 3) + 's';
                 codeRain.appendChild(char);
             }
         }
-        createCodeRain();
+
+        // 滾動動畫
+        function handleScrollAnimation() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('.content-section, .hero-content').forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(30px)';
+                el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(el);
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            createCodeRain();
+            handleScrollAnimation();
+        });
+
+        window.addEventListener('resize', () => {
+            document.getElementById('codeRain').innerHTML = '';
+            createCodeRain();
+        });
     </script>
 </body>
 </html>
