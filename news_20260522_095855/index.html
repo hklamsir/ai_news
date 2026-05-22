@@ -1,86 +1,77 @@
 <!DOCTYPE html>
-<html lang="zh-TW">
+<html lang="zh-Hant">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mobile Phishing 威脅超越電子郵件 - AI News 專題報道</title>
+    <title>Mobile phishing is a bigger threat than email now - how to stay protected | AI News 專題報道</title>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --primary-blue: #00d4ff;
-            --primary-purple: #7b2cbf;
-            --accent-green: #00ff88;
-            --accent-orange: #ff9500;
-            --dark-bg: #0a0a0f;
-            --card-bg: #12121a;
-            --card-bg-light: #1a1a28;
-            --text-primary: #ffffff;
-            --text-secondary: #a0a0b0;
-            --gradient-1: linear-gradient(135deg, #00d4ff 0%, #7b2cbf 100%);
-            --gradient-2: linear-gradient(135deg, #00d4ff 0%, #00ff88 100%);
-            --glow-blue: 0 0 20px rgba(0, 212, 255, 0.5);
-            --glow-purple: 0 0 20px rgba(123, 44, 191, 0.5);
-        }
-
+        :root { --primary-blue: #00d4ff; --primary-purple: #7b2cbf; --accent-green: #00ff88; --accent-red: #ff4757; --dark-bg: #0a0a0f; --card-bg: #12121a; --card-bg-light: #1a1a28; --text-primary: #ffffff; --text-secondary: #a0a0b0; --gradient-1: linear-gradient(135deg, #00d4ff 0%, #7b2cbf 100%); --glow-blue: 0 0 20px rgba(0, 212, 255, 0.5); --glow-purple: 0 0 20px rgba(123, 44, 191, 0.5); }
         * { margin: 0; padding: 0; box-sizing: border-box; }
         html { scroll-behavior: smooth; }
         body { font-family: 'Noto Sans TC', sans-serif; background-color: var(--dark-bg); color: var(--text-primary); line-height: 1.8; overflow-x: hidden; }
-
-        @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-20px); } }
-        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.6; } }
         @keyframes slideIn { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
-        @keyframes codeRain { 0% { transform: translateY(-100%); opacity: 0; } 10% { opacity: 1; } 90% { opacity: 1; } 100% { transform: translateY(100vh); opacity: 0; } }
-
-        /* 代碼雨背景 */
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); } }
         .code-rain { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; overflow: hidden; }
         .code-char { position: absolute; color: var(--primary-blue); font-family: 'Courier New', monospace; font-size: 14px; opacity: 0; animation: codeRain 4s linear infinite; }
-
-        /* Hero Section */
-        .hero { position: relative; min-height: 80vh; display: flex; align-items: center; justify-content: center; padding: 80px 20px; background: linear-gradient(180deg, var(--dark-bg) 0%, #1a1a2e 100%); overflow: hidden; }
-        .hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(ellipse at center, rgba(123, 44, 191, 0.15) 0%, transparent 70%); z-index: 1; }
+        @keyframes codeRain { 0% { transform: translateY(-100%); opacity: 0; } 10% { opacity: 1; } 90% { opacity: 1; } 100% { transform: translateY(100vh); opacity: 0; } }
+        .hero { position: relative; min-height: 65vh; display: flex; align-items: center; justify-content: center; padding: 80px 20px; background: linear-gradient(180deg, var(--dark-bg) 0%, #1a1a2e 100%); overflow: hidden; }
+        .hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(ellipse at center, rgba(0, 212, 255, 0.1) 0%, transparent 70%); z-index: 1; }
         .hero-content { position: relative; z-index: 2; max-width: 1200px; text-align: center; animation: slideIn 1s ease-out; }
-        .hero-badge { display: inline-block; padding: 12px 32px; background: var(--gradient-1); border-radius: 50px; font-size: 18px; font-weight: 700; margin-bottom: 24px; box-shadow: var(--glow-blue); letter-spacing: 1px; }
-        .hero h1 { font-size: clamp(2rem, 5vw, 4rem); font-weight: 900; margin-bottom: 24px; background: var(--gradient-1); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; line-height: 1.2; }
-        .hero-subtitle { font-size: clamp(1.2rem, 2.2vw, 1.6rem); color: var(--text-primary); max-width: 900px; margin: 0 auto 40px; line-height: 1.6; font-weight: 400; }
+        .hero-badge { display: inline-block; padding: 12px 32px; background: linear-gradient(135deg, #00d4ff 0%, #7b2cbf 100%); border-radius: 50px; font-size: 18px; font-weight: 700; margin-bottom: 24px; box-shadow: 0 0 20px rgba(0, 212, 255, 0.5); }
+        .hero h1 { font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 900; margin-bottom: 24px; background: var(--gradient-1); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; line-height: 1.2; }
+        .hero-subtitle { font-size: clamp(1.2rem, 2.2vw, 1.5rem); color: var(--text-primary); max-width: 900px; margin: 0 auto 40px; line-height: 1.6; }
         .hero-images { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; margin-top: 60px; }
-        .hero-image-card { position: relative; border-radius: 20px; overflow: hidden; aspect-ratio: 16/9; box-shadow: var(--glow-purple); transition: transform 0.3s ease, box-shadow 0.3s ease; }
-        .hero-image-card:hover { transform: scale(1.02); box-shadow: 0 0 40px rgba(123, 44, 191, 0.7); }
+        .hero-image-card { position: relative; border-radius: 20px; overflow: hidden; aspect-ratio: 16/9; box-shadow: var(--glow-purple); transition: transform 0.3s ease; }
+        .hero-image-card:hover { transform: scale(1.02); }
         .hero-image-card img { width: 100%; height: 100%; object-fit: cover; }
-        .scroll-indicator { position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%); animation: float 2s ease-in-out infinite; z-index: 2; }
-        .scroll-indicator span { display: block; width: 30px; height: 50px; border: 2px solid var(--primary-blue); border-radius: 25px; position: relative; }
-        .scroll-indicator span::before { content: ''; position: absolute; top: 8px; left: 50%; transform: translateX(-50%); width: 6px; height: 10px; background: var(--primary-blue); border-radius: 3px; animation: pulse 1.5s infinite; }
-
-        /* Content Section */
         section { padding: 80px 20px; position: relative; z-index: 1; }
-        .content-section { background: var(--card-bg); padding: 60px 50px; border-radius: 24px; border: 1px solid rgba(0, 212, 255, 0.2); max-width: 1100px; margin: 0 auto; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3); }
-
+        .content-section { background: var(--card-bg); padding: 60px 50px; border-radius: 24px; border: 1px solid rgba(0, 212, 255, 0.2); max-width: 1100px; margin: 0 auto; }
         .content-section h3 { font-size: 1.6rem; margin: 40px 0 20px; color: var(--accent-green); }
         .content-section p { color: var(--text-secondary); line-height: 2; font-size: 1.08rem; margin: 15px 0; }
-        .content-section ul { margin: 20px 0; padding-left: 30px; }
-        .content-section li { margin: 10px 0; color: var(--text-secondary); }
-
         .meta-info { background: linear-gradient(135deg, rgba(0, 212, 255, 0.15) 0%, rgba(123, 44, 191, 0.15) 100%); padding: 30px; border-radius: 16px; margin-bottom: 40px; border-left: 5px solid var(--primary-blue); }
         .meta-info p { margin: 12px 0; color: var(--text-secondary); font-size: 1.05rem; }
         .meta-info strong { color: var(--primary-blue); font-weight: 600; }
         .meta-info a { color: var(--primary-blue); text-decoration: none; word-break: break-all; }
-
+        .alert-box { background: linear-gradient(135deg, rgba(255, 71, 87, 0.1) 0%, rgba(255, 149, 0, 0.1) 100%); padding: 30px; border-radius: 16px; border-left: 5px solid var(--accent-red); margin: 40px 0; }
+        .alert-box h4 { color: var(--accent-red); margin-bottom: 15px; font-size: 1.3rem; }
+        .alert-box p { color: var(--text-secondary); margin: 0; }
         .highlight-box { background: linear-gradient(135deg, rgba(0, 255, 136, 0.08) 0%, rgba(0, 212, 255, 0.08) 100%); padding: 30px; border-radius: 16px; border-left: 5px solid var(--accent-green); margin: 40px 0; }
         .highlight-box h4 { color: var(--accent-green); margin-bottom: 15px; font-size: 1.3rem; }
         .highlight-box p { color: var(--text-secondary); margin: 0; }
-
-        /* Footer */
+        .quote-box { background: linear-gradient(135deg, rgba(123, 44, 191, 0.15) 0%, rgba(0, 212, 255, 0.15) 100%); padding: 30px 40px; border-radius: 16px; border-left: 5px solid var(--primary-purple); margin: 40px 0; }
+        .quote-box p { color: var(--text-primary); font-size: 1.2rem; font-style: italic; margin-bottom: 15px; }
+        .quote-box cite { color: var(--text-secondary); font-size: 0.95rem; }
+        .tech-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin: 40px 0; }
+        .tech-card { background: var(--card-bg-light); padding: 30px; border-radius: 16px; border: 1px solid rgba(0, 212, 255, 0.15); animation: fadeInUp 0.6s ease-out forwards; opacity: 0; }
+        .tech-card:nth-child(1) { animation-delay: 0.1s; }
+        .tech-card:nth-child(2) { animation-delay: 0.2s; }
+        .tech-card:nth-child(3) { animation-delay: 0.3s; }
+        .tech-card:nth-child(4) { animation-delay: 0.4s; }
+        .tech-card-icon { font-size: 2.5rem; margin-bottom: 15px; }
+        .tech-card h4 { color: var(--primary-blue); margin-bottom: 12px; font-size: 1.2rem; }
+        .tech-card p { color: var(--text-secondary); font-size: 0.95rem; line-height: 1.7; }
+        .table-section { overflow-x: auto; margin: 40px 0; }
+        .comparison-table { width: 100%; border-collapse: collapse; border-radius: 16px; overflow: hidden; box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3); }
+        .comparison-table thead { background: linear-gradient(135deg, var(--primary-blue), var(--primary-purple)); }
+        .comparison-table th { padding: 18px 20px; text-align: left; font-weight: 600; font-size: 1.05rem; }
+        .comparison-table td { padding: 16px 20px; border-bottom: 1px solid rgba(255, 255, 255, 0.05); color: var(--text-secondary); }
+        .comparison-table tr:last-child td { border-bottom: none; }
+        .comparison-table tr:nth-child(even) { background: rgba(255, 255, 255, 0.02); }
+        .timeline { margin: 40px 0; }
+        .timeline-item { display: flex; gap: 20px; margin-bottom: 24px; }
+        .timeline-dot { width: 16px; height: 16px; background: var(--primary-blue); border-radius: 50%; margin-top: 6px; flex-shrink: 0; }
+        .timeline-content { flex: 1; }
+        .timeline-content h4 { color: var(--primary-blue); margin-bottom: 5px; font-size: 1.1rem; }
+        .timeline-content p { color: var(--text-secondary); font-size: 0.95rem; line-height: 1.7; }
         footer { background: #050508; padding: 60px 20px; text-align: center; border-top: 1px solid rgba(255, 255, 255, 0.1); }
         footer p { color: var(--text-secondary); margin-bottom: 20px; }
         .footer-links { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; }
         .footer-links a { color: var(--primary-blue); text-decoration: none; transition: color 0.3s ease; }
         .footer-links a:hover { color: var(--text-primary); }
-
-        /* RWD */
         @media (max-width: 768px) {
             .content-section { padding: 40px 25px; }
-            .hero-images { grid-template-columns: 1fr; }
             .hero h1 { font-size: 2rem; }
-            .hero-subtitle { font-size: 1.2rem; }
         }
     </style>
 </head>
@@ -92,11 +83,11 @@
     <section class="hero">
         <div class="hero-content">
             <span class="hero-badge">📰 AI News 專題報道</span>
-            <h1>Mobile Phishing 威脅超越電子郵件 資安防護進入新戰場</h1>
-            <p class="hero-subtitle">研究指出，行動裝置已成為網路釣魚攻擊的主要目標，傳統以電子郵件為核心的防禦思維亟需轉型。本次報告深入剖析新型態威脅與應對策略。</p>
+            <h1>Mobile phishing is a bigger threat than email now - how to stay protected</h1>
+            <p class="hero-subtitle">根據 Verizon 2026 DBIR 報告，移動端網絡攻擊正在超越傳統電郵威脅。移動端釣魚點擊率比電郵高出 40%，企業必須重新審視安全培訓策略。</p>
             <div class="hero-images">
                 <div class="hero-image-card">
-                    <img src="img/img1.png" alt="行動裝置安全威脅示意圖">
+                    <img src="./img/cover.png" alt="新聞插圖">
                 </div>
             </div>
         </div>
@@ -105,46 +96,196 @@
         </div>
     </section>
 
-    <!-- Content Section -->
+<!-- Content Section -->
     <section>
         <div class="content-section">
+
             <!-- Meta Info -->
             <div class="meta-info">
-                <p><strong>📺 資料來源</strong>：<a href="https://www.zdnet.com" target="_blank">ZDNET</a></p>
+                <p><strong>📺 資料來源</strong>：<a href="https://www.zdnet.com/article/mobile-phishing-is-a-bigger-threat-than-email-now/" target="_blank">ZDNET</a></p>
                 <p><strong>📅 發布日期</strong>：2026-05-22</p>
                 <p><strong>🤖 處理方式</strong>：AI 智能摘要生成</p>
             </div>
 
-            <!-- 核心觀點 -->
-            <h3>🎯 核心觀點</h3>
-            <p>數據顯示，<strong>行動裝置釣魚攻擊（Mobile Phishing）</strong>已正式超越傳統電子郵件威脅，成為當前資安領域最嚴峻的挑戰之一。研究指出，攻擊者正將重心轉向智慧型手機與平板電腦，利用行動平台的特性設計更難以辨識的詐騙手法。</p>
-            <p>業界觀察人士分析，這一轉變反映了使用者行為的遷移趨勢。隨著民眾日益依賴行動裝置處理金融交易、社交互動與工作通訊，攻擊面也隨之擴大。專家強調，現行防護機制多針對桌面環境設計，在行動場景中存在明顯缺口。</p>
-
-            <!-- 威脅態勢分析 -->
-            <h3>⚠️ 威脅態勢分析</h3>
-            <p>本次報告揭示，行動釣魚攻擊具備多項獨特優勢，使其成功率顯著高於傳統管道。研究團隊歸納主要特徵如下：</p>
+            <!-- 關鍵數據 -->
+            <h3>📊 關鍵數據</h3>
+            <p>Verizon 2026 年《數據洩露調查報告》(DBIR) 基於超過<strong>31,000 宗</strong>真實安全事件，涵蓋<strong>145 個國家</strong>、22,000 宗確認數據洩露。主要發現：</p>
             <ul>
-                <li><strong>即時性干擾</strong>：推播通知創造緊迫感，降低使用者理性判斷時間</li>
-                <li><strong>介面簡化</strong>：小螢幕限制資訊呈現，難以辨識網址真偽與安全憑證</li>
-                <li><strong>多管道滲透</strong>：結合簡訊、即時通訊、社交媒體與惡意應用程式形成攻擊鏈</li>
-                <li><strong>情境混淆</strong>：利用行動裝置的個人化特性，裝成親友或常用服務</li>
-                <li><strong>防護弱化</strong>：多數使用者未在行動裝置部署企業級安全工具</li>
+                <li><strong>人的因素</strong>：62% 的已知數據洩露涉及「人的因素」，較去年上升 2%</li>
+                <li><strong>社交工程</strong>：16% 的漏洞來自社交工程攻擊</li>
+                <li><strong>移動端點擊率</strong>：電話釣魚平均點擊率 2%，比電郵的 1.4% 高出 <strong>40%</strong></li>
+                <li><strong>漏洞利用</strong>：31% 的漏洞始於漏洞利用，首次超越被盜憑證（13%）</li>
+                <li><strong>影子 AI</strong>：67% 的員工在公司設備上使用非企業 AI 帳戶</li>
             </ul>
 
-            <!-- 防護策略 -->
-            <h3>🛡️ 防護策略建議</h3>
-            <p>針對上述威脅，研究提出多層次防護架構。專家分析指出，單一技術已不足以應對複攻擊，需整合技術、流程與人員意識三個面向。</p>
-            <p>技術層面，建議部署具備<strong>行動威脅防禦（MTD）</strong>能力的解決方案，即時偵測惡意網址與異常應用程式行為。同時強化零信任架構，確保任何存取請求均經過嚴格驗證，無論來自何種裝置。</p>
+            <!-- 移動社交工程崛起 -->
+            <h3>📱 移動社交工程崛起</h3>
+            <p>移動端攻擊（vishing 語音釣魚、文字詐騙）正在流行，成功率比傳統電郵高出 40%。研究指出原因：</p>
+            <ol>
+                <li><strong>傳統電郵防護較成熟</strong>：電郵釣魚偵測技術不斷進步，攻擊者轉向移動端</li>
+                <li><strong>個人設備信任度更高</strong>：用戶對手機來自可信聯繫人的消息防範意識較低</li>
+                <li><strong>預 text攻擊</strong>：先建立信任關係再發動攻擊，比泛濫式釣魚更精密</li>
+            </ol>
 
+            <!-- 預 text攻擊 vs 傳統釣魚 -->
+            <h3>⚠️ 預 text攻擊 vs 傳統釣魚</h3>
+            <p>「預 text攻擊」(Pretexting) 是新型社交工程手法，先建立信任再行騙，比傳統泛濫式釣魚更危險。</p>
+            <div class="table-section">
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>特性</th>
+                            <th>傳統釣魚</th>
+                            <th>預 text攻擊</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>手法</td>
+                            <td>大量發送、廣撒網</td>
+                            <td>先建立信任關係再有針對性攻擊</td>
+                        </tr>
+                        <tr>
+                            <td>目標</td>
+                            <td>隨機個人</td>
+                            <td>特定人員（如財務部門）</td>
+                        </tr>
+                        <tr>
+                            <td>成功率</td>
+                            <td>較低</td>
+                            <td>較高</td>
+                        </tr>
+                        <tr>
+                            <td>典型案例</td>
+                            <td>假銀行電郵</td>
+                            <td>假冒高管/供應商，通過即時通訊建立信任後騙改付款詳情</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- 關鍵洞察 -->
             <div class="highlight-box">
-                <h4>✨ 關鍵洞察</h4>
-                <p>研究強調，最有效的防護並非阻斷所有行動存取，而是建立<strong>「預設不信任」</strong>的安全文化。企業應定期模擬行動釣魚演練，並將行動安全納入員工培訓核心課程，而非僅作為附加項目。</p>
+                <h4>✨ 關鍵洞察：移動端比電郵更危險</h4>
+                <p>Verizon 報告明確指出：「社交攻擊使用以電話為中心的媒介——短信、語音或回調郵件——比使用傳統電郵向量更成功。」移動端已成為企業安全的新盲點，而多數企業的培訓仍停留在年度電郵測試層面。</p>
+            </div>
+
+            <!-- Tech Cards -->
+            <div class="tech-cards">
+                <div class="tech-card">
+                    <div class="tech-card-icon">📱</div>
+                    <h4>移動端+40%</h4>
+                    <p>移動端釣魚點擊率比電郵高出 40%，電話釣魚平均點擊率達 2%。</p>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-card-icon">👥</div>
+                    <h4>62%人為因素</h4>
+                    <p>62% 的數據洩露涉及「人的因素」，網絡犯罪分子持續利用人性弱點。</p>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-card-icon">🤖</div>
+                    <h4>AI加速漏洞</h4>
+                    <p>AI 將漏洞利用時間從「數月」縮短至「數小時」，修補窗口大幅压缩。</p>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-card-icon">⚠️</div>
+                    <h4>影子AI風險</h4>
+                    <p>67% 員工使用非企業 AI，可能將機密數據（源代碼、研究資料）外洩。</p>
+                </div>
+            </div>
+
+            <!-- AI與漏洞趨勢 -->
+            <h3>🤖 AI 加劇漏洞威脅</h3>
+            <p>2026 年報告首次記錄漏洞利用超越被盜憑證成為頭號入侵方式，原因包括：</p>
+            <ul>
+                <li><strong>AI 加速漏洞利用</strong>：網絡犯罪分子使用 AI 將漏洞利用時間從「數月」縮短至「數小時」</li>
+                <li><strong>修補率下降</strong>：2025 年僅 26% 的關鍵漏洞被完全修補，遠低於 2024 年的 38%</li>
+                <li><strong>影子 AI 風險</strong>：員工未經批准使用 AI 工具，可能將機密數據外洩至第三方模型</li>
+            </ul>
+
+            <!-- Quote Box -->
+            <div class="quote-box">
+                <p>「社交攻擊使用以電話為中心的媒介——短信、語音或回調郵件——比使用傳統電郵向量更成功。底線是：這些攻擊比我們習慣的防禦方式更有效。」</p>
+                <cite>— Verizon 2026 DBIR 報告</cite>
+            </div>
+
+            <!-- 防護建議 -->
+            <h3>🛡️ 防護建議</h3>
+            <p>面對移動端威脅崛起，企業必須採取新策略：</p>
+            <div class="table-section">
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>威脅類型</th>
+                            <th>風險</th>
+                            <th>建議措施</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>移動端釣魚</td>
+                            <td>點擊率高 40%</td>
+                            <td>開展移動端為主的釣魚識別訓練</td>
+                        </tr>
+                        <tr>
+                            <td>預 text攻擊</td>
+                            <td>建立信任後行騙</td>
+                            <td>教育員工識別先建立信任再行騙的手法</td>
+                        </tr>
+                        <tr>
+                            <td>自帶設備</td>
+                            <td>企業安全盲點</td>
+                            <td>重新審視自帶設備政策</td>
+                        </tr>
+                        <tr>
+                            <td>影子 AI</td>
+                            <td>機密數據外洩</td>
+                            <td>建立明確政策規範 AI 工具使用</td>
+                        </tr>
+                        <tr>
+                            <td>漏洞利用</td>
+                            <td>AI 加速攻擊</td>
+                            <td>縮短修補時間窗口，快速響應</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Timeline -->
+            <h3>📅 移動安全威脅時間軸</h3>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date">傳統時代</div>
+                    <div class="timeline-title">電郵釣魚為主</div>
+                    <div class="timeline-desc">企業安全培訓聚焦於識別電郵釣魚連結，電郵防護技術成熟。</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">近年</div>
+                    <div class="timeline-title">移動端攻擊崛起</div>
+                    <div class="timeline-desc">攻擊者轉向 SMS、即時通訊、語音電話，用戶對移動端威脅意識不足。</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2025-2026</div>
+                    <div class="timeline-title">預 text攻擊流行</div>
+                    <div class="timeline-desc">先建立信任關係再行騙的精密攻擊手法成為主流，威脅企業財務安全。</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">AI 時代</div>
+                    <div class="timeline-title">漏洞利用加速</div>
+                    <div class="timeline-desc">AI 協助網絡犯罪分子快速利用漏洞，修補窗口從「數月」縮短至「數小時」。</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">現在</div>
+                    <div class="timeline-title">影子 AI 風險</div>
+                    <div class="timeline-desc">員工使用非企業 AI 工具可能外洩機密數據，成為新型安全盲點。</div>
+                </div>
             </div>
 
             <!-- 未來展望 -->
             <h3>🔮 未來展望</h3>
-            <p>業界觀察預期，隨著5G普及與物聯網裝置增長，行動攻擊面將持續擴張。研究指出，攻擊者正積極開發針對行動支付、數位身分錢包與遠端辦公應用的新型騙手法。</p>
-            <p>專家分析認為，資安產業需加速創新，將人工智慧導入行為分析與威脅情資，以對抗自動化攻擊工具。同時，平台業者與裝置製造商應承擔更大責任，從源頭強化作業系統與應用商店的安全機制。唯有生態系統各方協作，方能在行動優先的時代有效守護數位資產。</p>
+            <p>Verizon 報告揭示了一個明確趨勢：<strong>移動端已成為企業安全的新盲點</strong>。隨著 AI 加速漏洞利用、預 text攻擊日益精密，傳統以電郵為中心的安全培訓已不足以應對現代威脅。</p>
+            <p>企業必須重新思考安全策略：從「年度電郵測試」轉向「持續性移動端安全意識培養」，並正視員工個人設備帶來的潛在風險。在 AI 時代，<strong>人的因素</strong>仍是安全鏈中最薄弱的一環。</p>
+
         </div>
     </section>
 
@@ -159,23 +300,17 @@
     </footer>
 
     <script>
-        // 代碼雨效果
         const codeRain = document.getElementById('codeRain');
         const chars = '01アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン';
-        
-        function createCodeRain() {
-            const span = document.createElement('span');
-            span.className = 'code-char';
-            span.textContent = chars[Math.floor(Math.random() * chars.length)];
-            span.style.left = Math.random() * 100 + '%';
-            span.style.animationDuration = (Math.random() * 2 + 3) + 's';
-            span.style.animationDelay = Math.random() * 2 + 's';
-            codeRain.appendChild(span);
-            
-            setTimeout(() => span.remove(), 5000);
+        for (let i = 0; i < 50; i++) {
+            const char = document.createElement('span');
+            char.className = 'code-char';
+            char.textContent = chars[Math.floor(Math.random() * chars.length)];
+            char.style.left = Math.random() * 100 + '%';
+            char.style.animationDelay = Math.random() * 4 + 's';
+            char.style.animationDuration = (Math.random() * 3 + 3) + 's';
+            codeRain.appendChild(char);
         }
-
-        setInterval(createCodeRain, 100);
     </script>
 </body>
 </html>

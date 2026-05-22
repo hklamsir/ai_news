@@ -3,17 +3,16 @@
     {
       "dir": "news_20260522_095855",
       "title": "Mobile phishing is a bigger threat than email now - how to stay protected",
-      "summary_short": "# Mobile phishing is a bigger threat than email now - how to stay protected## 📖 新聞導語本文報導來自 **ZDN",
-      "images": [
-        "img/img1.png"
-      ],
+      "summary": "根據 Verizon 2026 DBIR 報告，移動端網絡攻擊正在超越傳統電郵威脅。移動端釣魚點擊率比電郵高出 40%，企業必須重新審視安全培訓策略。",
+      "url": "./news_20260522_095855/index.html",
       "date": "2026-05-22",
-      "url": "./news_20260522_095855/index.html"
+      "time": "09:58:55",
+      "source": "AI News"
     },
     {
       "dir": "news_20260522_084340",
       "title": "圖解2026裁員潮：全美年減50%、科技業卻逆勢增33%！AI讓白領主管職也難逃？",
-      "summary": "圖解2026裁員潮：全美年減50、科技業卻逆勢增33！AI讓白領主管職也難逃？ 本文整理自華爾街日報、Business Insider、TrueUp 三大裁員追蹤資料，截稿日為 2026 年 5 月 ",
+      "summary": "本文整理自《華爾街日報》、Business Insider、TrueUp三大裁員追蹤資料，截稿日為2026年5月18日。2026年美國企業裁員潮呈現兩極走勢：整體裁員較去年同期下滑50%，但科技業逆勢",
       "url": "./news_20260522_084340/index.html",
       "date": "2026-05-22",
       "time": "08:43:40",
@@ -938,6 +937,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-05-22T10:00:58.192247",
-  "total_count": 103
+  "last_updated": "2026-05-22T10:02:16.948537",
+  "total_count": 104
 }
