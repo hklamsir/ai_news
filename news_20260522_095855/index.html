@@ -255,62 +255,38 @@
             <h3>📅 移動安全威脅時間軸</h3>
             <div class="timeline">
                 <div class="timeline-item">
-                    <div class="timeline-date">傳統時代</div>
-                    <div class="timeline-title">電郵釣魚為主</div>
-                    <div class="timeline-desc">企業安全培訓聚焦於識別電郵釣魚連結，電郵防護技術成熟。</div>
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h4>傳統時代：電郵釣魚為主</h4>
+                        <p>企業安全培訓聚焦於識別電郵釣魚連結，電郵防護技術成熟。</p>
+                    </div>
                 </div>
                 <div class="timeline-item">
-                    <div class="timeline-date">近年</div>
-                    <div class="timeline-title">移動端攻擊崛起</div>
-                    <div class="timeline-desc">攻擊者轉向 SMS、即時通訊、語音電話，用戶對移動端威脅意識不足。</div>
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h4>近年：移動端攻擊崛起</h4>
+                        <p>攻擊者轉向 SMS、即時通訊、語音電話，用戶對移動端威脅意識不足。</p>
+                    </div>
                 </div>
                 <div class="timeline-item">
-                    <div class="timeline-date">2025-2026</div>
-                    <div class="timeline-title">預 text攻擊流行</div>
-                    <div class="timeline-desc">先建立信任關係再行騙的精密攻擊手法成為主流，威脅企業財務安全。</div>
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h4>2025-2026：預text攻擊流行</h4>
+                        <p>先建立信任關係再行騙的精密攻擊手法成為主流，威脅企業財務安全。</p>
+                    </div>
                 </div>
                 <div class="timeline-item">
-                    <div class="timeline-date">AI 時代</div>
-                    <div class="timeline-title">漏洞利用加速</div>
-                    <div class="timeline-desc">AI 協助網絡犯罪分子快速利用漏洞，修補窗口從「數月」縮短至「數小時」。</div>
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h4>AI 時代：漏洞利用加速</h4>
+                        <p>AI 協助網絡犯罪分子快速利用漏洞，修補窗口從「數月」縮短至「數小時」。</p>
+                    </div>
                 </div>
                 <div class="timeline-item">
-                    <div class="timeline-date">現在</div>
-                    <div class="timeline-title">影子 AI 風險</div>
-                    <div class="timeline-desc">員工使用非企業 AI 工具可能外洩機密數據，成為新型安全盲點。</div>
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h4>現在：影子 AI 風險</h4>
+                        <p>員工使用非企業 AI 工具可能外洩機密數據，成為新型安全盲點。</p>
+                    </div>
                 </div>
             </div>
-
-            <!-- 未來展望 -->
-            <h3>🔮 未來展望</h3>
-            <p>Verizon 報告揭示了一個明確趨勢：<strong>移動端已成為企業安全的新盲點</strong>。隨著 AI 加速漏洞利用、預 text攻擊日益精密，傳統以電郵為中心的安全培訓已不足以應對現代威脅。</p>
-            <p>企業必須重新思考安全策略：從「年度電郵測試」轉向「持續性移動端安全意識培養」，並正視員工個人設備帶來的潛在風險。在 AI 時代，<strong>人的因素</strong>仍是安全鏈中最薄弱的一環。</p>
-
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <p>© 2026 AI News Archive | 由 AI 技術生成</p>
-        <div class="footer-links">
-            <a href="../index.html">返回主頁</a>
-            <a href="https://github.com/hklamsir/ai_news" target="_blank">GitHub</a>
-            <a href="https://hklamsir.github.io/ai_news/" target="_blank">瀏覽所有專題</a>
-        </div>
-    </footer>
-
-    <script>
-        const codeRain = document.getElementById('codeRain');
-        const chars = '01アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン';
-        for (let i = 0; i < 50; i++) {
-            const char = document.createElement('span');
-            char.className = 'code-char';
-            char.textContent = chars[Math.floor(Math.random() * chars.length)];
-            char.style.left = Math.random() * 100 + '%';
-            char.style.animationDelay = Math.random() * 4 + 's';
-            char.style.animationDuration = (Math.random() * 3 + 3) + 's';
-            codeRain.appendChild(char);
-        }
-    </script>
-</body>
-</html>
