@@ -1,15 +1,6 @@
 {
   "archives": [
     {
-      "dir": "news_20260523_100740",
-      "title": "不要把習外包給AI！",
-      "summary": "Google雲端AI總監警示：用AI換速度，你賠上的是「未來的能力」",
-      "url": "./news_20260523_100740/index.html",
-      "date": "2026-05-23",
-      "time": "10:07:40",
-      "source": "AI News"
-    },
-    {
       "dir": "news_20260523_100230",
       "title": "不要把學習外包給AI！",
       "summary": "Google雲端AI部門總監 Addy Osmani 警告：將學習外包給AI正在侵蝕工程師的長期能力。Anthropic研究顯示，AI輔助學習速度相同但理解力低33%；MIT研究發現使用ChatGPT",
@@ -955,6 +946,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-05-23T10:11:52.983433",
-  "total_count": 106
+  "last_updated": "2026-05-23T10:17:36.177600",
+  "total_count": 105
 }
