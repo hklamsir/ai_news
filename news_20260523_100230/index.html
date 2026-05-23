@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>不要把學習外包給AI！Google雲端AI總監：用AI換速度，你賠上的是「未來的能力」 | AI News 專題報道</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-blue: #00d4ff;
+            --primary-purple: #7b2cbf;
+            --accent-green: #00ff88;
+            --accent-orange: #ff9500;
+            --dark-bg: #0a0a0f;
+            --card-bg: #12121a;
+            --card-bg-light: #1a1a28;
+            --text-primary: #ffffff;
+            --text-secondary: #a0a0b0;
+            --gradient-1: linear-gradient(135deg, #00d4ff 0%, #7b2cbf 100%);
+            --gradient-2: linear-gradient(135deg, #00d4ff 0%, #00ff88 100%);
+            --glow-blue: 0 0 20px rgba(0, 212, 255, 0.5);
+            --glow-purple: 0 0 20px rgba(123, 44, 191, 0.5);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Noto Sans TC', sans-serif; background-color: var(--dark-bg); color: var(--text-primary); line-height: 1.8; overflow-x: hidden; }
+
+        @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-20px); } }
+        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.6; } }
+        @keyframes slideIn { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes codeRain { 0% { transform: translateY(-100%); opacity: 0; } 10% { opacity: 1; } 90% { opacity: 1; } 100% { transform: translateY(100vh); opacity: 0; } }
+
+        /* 代碼雨背景 */
+        .code-rain { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; overflow: hidden; }
+        .code-char { position: absolute; color: var(--primary-blue); font-family: 'Courier New', monospace; font-size: 14px; opacity: 0; animation: codeRain 4s linear infinite; }
+
+        /* Hero Section */
+        .hero { position: relative; min-height: 80vh; display: flex; align-items: center; justify-content: center; padding: 80px 20px; background: linear-gradient(180deg, var(--dark-bg) 0%, #1a1a2e 100%); overflow: hidden; }
+        .hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(ellipse at center, rgba(123, 44, 191, 0.15) 0%, transparent 70%); z-index: 1; }
+        .hero-content { position: relative; z-index: 2; max-width: 1200px; text-align: center; animation: slideIn 1s ease-out; }
+        .hero-badge { display: inline-block; padding: 12px 32px; background: var(--gradient-1); border-radius: 50px; font-size: 18px; font-weight: 700; margin-bottom: 24px; box-shadow: var(--glow-blue); letter-spacing: 1px; }
+        .hero h1 { font-size: clamp(2rem, 5vw, 4rem); font-weight: 900; margin-bottom: 24px; background: var(--gradient-1); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; line-height: 1.2; }
+        .hero-subtitle { font-size: clamp(1.2rem, 2.2vw, 1.6rem); color: var(--text-primary); max-width: 900px; margin: 0 auto 40px; line-height: 1.6; font-weight: 400; }
+        .scroll-indicator { position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%); animation: float 2s ease-in-out infinite; z-index: 2; }
+        .scroll-indicator span { display: block; width: 30px; height: 50px; border: 2px solid var(--primary-blue); border-radius: 25px; position: relative; }
+        .scroll-indicator span::before { content: ''; position: absolute; top: 8px; left: 50%; transform: translateX(-50%); width: 6px; height: 10px; background: var(--primary-blue); border-radius: 3px; animation: pulse 1.5s infinite; }
+
+        /* Content Section */
+        section { padding: 80px 20px; position: relative; z-index: 1; }
+        .content-section { background: var(--card-bg); padding: 60px 50px; border-radius: 24px; border: 1px solid rgba(0, 212, 255, 0.2); max-width: 1100px; margin: 0 auto; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3); }
+        
+        .content-section h2 { font-size: 2rem; margin-bottom: 40px; color: var(--primary-blue); display: flex; align-items: center; gap: 15px; padding-bottom: 20px; border-bottom: 2px solid rgba(0, 212, 255, 0.3); }
+        .content-section h2::before { content: '📖'; font-size: 2.5rem; }
+        
+        .content-section h3 { font-size: 1.6rem; margin: 50px 0 25px; color: var(--accent-green); display: flex; align-items: center; gap: 12px; }
+        .content-section h3::before { content: '🎯'; font-size: 2rem; }
+        
+        .content-section h3:nth-of-type(2)::before { content: '⚠️'; }
+        .content-section h3:nth-of-type(3)::before { content: '💡'; }
+        .content-section h3:nth-of-type(4)::before { content: '📊'; }
+        .content-section h3:nth-of-type(5)::before { content: '🔮'; }
+        
+        .content-section p { color: var(--text-secondary); line-height: 2.2; font-size: 1.08rem; margin: 25px 0; text-align: justify; }
+        
+        .content-section ul, .content-section ol { margin: 30px 0; padding-left: 40px; }
+        .content-section li { margin: 15px 0; line-height: 2; color: var(--text-secondary); font-size: 1.05rem; }
+        .content-section ul li { list-style-type: none; position: relative; padding-left: 25px; }
+        .content-section ul li::before { content: '▸'; color: var(--primary-blue); font-size: 1.5rem; position: absolute; left: 0; top: -5px; }
+        
+        .content-section strong { color: var(--text-primary); font-weight: 600; }
+        
+        /* Highlight Boxes */
+        .highlight-box { background: linear-gradient(135deg, rgba(0, 255, 136, 0.08) 0%, rgba(0, 212, 255, 0.08) 100%); padding: 30px; border-radius: 16px; border-left: 5px solid var(--accent-green); margin: 40px 0; }
+        .highlight-box h4 { color: var(--accent-green); margin-bottom: 15px; font-size: 1.3rem; display: flex; align-items: center; gap: 10px; }
+        .highlight-box h4::before { content: '✨'; }
+        .highlight-box p { color: var(--text-secondary); margin: 0; }
+        
+        /* Info Box */
+        .info-box { background: linear-gradient(135deg, rgba(0, 212, 255, 0.1) 0%, rgba(123, 44, 191, 0.1) 100%); padding: 25px; border-radius: 16px; border: 1px solid rgba(0, 212, 255, 0.3); margin: 35px 0; }
+        .info-box p { margin: 10px 0; color: var(--text-secondary); }
+        .info-box strong { color: var(--primary-blue); }
+        
+        /* Meta Info */
+        .meta-info { background: linear-gradient(135deg, rgba(0, 212, 255, 0.15) 0%, rgba(123, 44, 191, 0.15) 100%); padding: 30px; border-radius: 16px; margin-bottom: 40px; border-left: 5px solid var(--primary-blue); }
+        .meta-info p { margin: 12px 0; color: var(--text-secondary); font-size: 1.05rem; }
+        .meta-info strong { color: var(--primary-blue); font-weight: 600; }
+        .meta-info a { color: var(--primary-blue); text-decoration: none; border-bottom: 1px dashed var(--primary-blue); }
+
+        /* Tech Cards */
+        .tech-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin: 40px 0; }
+        .tech-card { background: linear-gradient(135deg, rgba(0, 212, 255, 0.1) 0%, rgba(123, 44, 191, 0.1) 100%); border: 1px solid rgba(0, 212, 255, 0.3); border-radius: 16px; padding: 30px; transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .tech-card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0, 212, 255, 0.2); }
+        .tech-card-icon { font-size: 3rem; margin-bottom: 15px; }
+        .tech-card h4 { color: var(--primary-blue); font-size: 1.3rem; margin-bottom: 12px; }
+        .tech-card p { color: var(--text-secondary); font-size: 1rem; margin: 0; line-height: 1.6; }
+
+        /* Comparison Table */
+        .comparison-table { width: 100%; border-collapse: collapse; margin: 40px 0; background: var(--card-bg-light); border-radius: 12px; overflow: hidden; }
+        .comparison-table th { background: var(--gradient-1); color: white; padding: 16px 20px; text-align: left; font-size: 1.1rem; }
+        .comparison-table td { padding: 16px 20px; border-bottom: 1px solid rgba(255,255,255,0.1); color: var(--text-secondary); }
+        .comparison-table tr:hover td { background: rgba(0, 212, 255, 0.05); }
+        .comparison-table .highlight-col { color: var(--accent-green); font-weight: 600; }
+
+        /* Quote Box */
+        .quote-box { background: linear-gradient(135deg, rgba(123, 44, 191, 0.2) 0%, rgba(0, 212, 255, 0.2) 100%); border-left: 5px solid var(--primary-purple); padding: 30px; border-radius: 16px; margin: 40px 0; }
+        .quote-box p { font-size: 1.3rem; color: var(--text-primary); font-style: italic; margin: 0 0 15px 0; }
+        .quote-box cite { color: var(--primary-blue); font-size: 1rem; }
+
+        /* Timeline */
+        .timeline { margin: 40px 0; padding-left: 0; list-style: none; }
+        .timeline-item { background: var(--card-bg-light); border-radius: 12px; padding: 25px 30px; margin-bottom: 20px; border-left: 4px solid var(--primary-blue); transition: transform 0.3s ease; }
+        .timeline-item:hover { transform: translateX(10px); }
+        .timeline-date { color: var(--accent-orange); font-size: 0.95rem; font-weight: 600; margin-bottom: 8px; }
+        .timeline-title { color: var(--text-primary); font-size: 1.2rem; font-weight: 600; margin-bottom: 10px; }
+        .timeline-desc { color: var(--text-secondary); font-size: 1rem; line-height: 1.6; }
+
+        /* Footer */
+        footer { background: #050508; padding: 60px 20px; text-align: center; border-top: 1px solid rgba(255, 255, 255, 0.1); }
+        footer p { color: var(--text-secondary); margin-bottom: 20px; }
+        .footer-links { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; }
+        .footer-links a { color: var(--primary-blue); text-decoration: none; transition: color 0.3s ease; }
+        .footer-links a:hover { color: var(--text-primary); }
+
+        /* RWD */
+        @media (max-width: 768px) {
+            .content-section { padding: 40px 25px; }
+            .tech-cards { grid-template-columns: 1fr; }
+            .content-section h2 { font-size: 1.6rem; }
+            .content-section h3 { font-size: 1.3rem; }
+        }
+    </style>
+</head>
+<body>
+    <!-- 代碼雨背景 -->
+    <div class="code-rain" id="codeRain"></div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <span class="hero-badge">📰 AI News 專題報道</span>
+            <h1>不要把學習外包給AI！</h1>
+            <p class="hero-subtitle">Google雲端AI部門總監 Addy Osmani 警告：將學習外包給AI正在侵蝕工程師的長期能力。Anthropic研究顯示，AI輔助學習速度相同但理解力低33%；MIT研究發現使用ChatGPT者大腦連通性降低，83%用戶無法回憶自己生成的代碼。</p>
+        </div>
+        <div class="scroll-indicator"><span></span></div>
+    </section>
+
+    <!-- Content Section -->
+    <section>
+        <div class="content-section">
+            <!-- Meta Info -->
+            <div class="meta-info">
+                <p><strong>📌 資料來源</strong>：<a href="https://www.bnext.com.tw/article/90994/ai-outsource-learning" target="_blank">數位時代</a></p>
+                <p><strong>📅 發布日期</strong>：2026-05-23</p>
+                <p><strong>🤖 處理方式</strong>：AI 智能摘要生成</p>
+            </div>
+
+            <!-- 核心觀點 -->
+            <h3>🎯 核心觀點</h3>
+            <p>Google雲端AI部門總監 Addy Osmani 近期撰寫文章向大眾呼籲：<strong>不要將「學習」外包給AI模型</strong>。他警告，這種輸入訊息讓AI給出答案的固定模式，正讓科技業陷入嚴重的「認知放棄」（Cognitive Surrender）危機。</p>
+            <p>歐斯曼尼直言，雖然AI能在當下快速修正程式碼中的錯誤，但人類的思維模式卻毫無進步。隨著成千上萬次缺乏思考的互動影響，工程師在沒有AI協助下獨立構建系統的能力正在逐週退化。</p>
+
+            <!-- 研究數據 -->
+            <h3>⚠️ 震撼研究數據</h3>
+            <p>這不是歐斯曼尼的個人說法，多項權威研究都發現了類似的趨勢：</p>
+
+            <!-- 關鍵洞察 -->
+            <div class="highlight-box">
+                <h4>✨ 關鍵洞察：認知負債</h4>
+                <p>MIT研究人員將此定義為「認知負債」（Cognitive Debt）——在今天省下了腦力，明天就必須付出失去批判性思考能力的代價。高達<strong>83%</strong>的大型語言模型使用者甚至無法回憶或背誦自己剛產出的任何一行內容。</p>
+            </div>
+
+            <!-- Tech Cards -->
+            <div class="tech-cards">
+                <div class="tech-card">
+                    <div class="tech-card-icon">🧠</div>
+                    <h4>Anthropic 研究發現</h4>
+                    <p>AI組理解力測驗正確率僅50%，遠低於手動組的67%。僅複製貼上生成程式碼者得分更跌破40%。</p>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-card-icon">🧠</div>
+                    <h4>MIT 腦電圖研究</h4>
+                    <p>使用大型語言模型者大腦連通性最弱，隨著外部輔助程度增加，大腦各部分連通性逐漸降低。</p>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-card-icon">📉</div>
+                    <h4>83% 記憶缺失</h4>
+                    <p>研究發現83%的LLM使用者無法回憶自己剛生成的任何一行代碼，明顯認知放棄現象。</p>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-card-icon">⚖️</div>
+                    <h4>CHI 2026 研究</h4>
+                    <p>在任務一開始就讓LLM介入引導問題框架，即便後續由人類獨立完成，仍會顯著降低決策品質。</p>
+                </div>
+            </div>
+
+            <!-- Comparison Table -->
+            <h3>📊 AI輔助 vs 手動學習 深度比較</h3>
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>維度</th>
+                        <th>純手動學習</th>
+                        <th>AI輔助學習</th>
+                        <th>差異</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>學習速度</td>
+                        <td>較慢</td>
+                        <td>相同</td>
+                        <td class="highlight-col">⚖️ 無顯著差異</td>
+                    </tr>
+                    <tr>
+                        <td>理解力測驗</td>
+                        <td>67% 正確率</td>
+                        <td>50% 正確率</td>
+                        <td class="highlight-col">📉 -17% 差距</td>
+                    </tr>
+                    <tr>
+                        <td>概念性問題</td>
+                        <td>穩定</td>
+                        <td>僅40% (複製貼上者)</td>
+                        <td class="highlight-col">📉 嚴重退化</td>
+                    </tr>
+                    <tr>
+                        <td>獨立解題能力</td>
+                        <td>持續強化</td>
+                        <td>逐週退化</td>
+                        <td class="highlight-col">⚠️ 長期危機</td>
+                    </tr>
+                    <tr>
+                        <td>批判性思考</td>
+                        <td>維持敏銳度</td>
+                        <td>逐漸鈍化</td>
+                        <td class="highlight-col">📉 認知負債</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <!-- AI 何時可靠 -->
+            <h3>💡 何時可以信任AI？</h3>
+            <p>歐斯曼尼解釋，對於<strong>重複性的程式碼或用過即丟的腳本</strong>，委派給AI的確符合經濟效益；但對於真正的核心軟體而言，放棄思考讓AI處理終將面臨問題。</p>
+            <p>三種情況仍需要工程師獨自面對：</p>
+            <ul>
+                <li><strong>AI幻覺</strong>：面對看似合理實則錯誤的答案，只有具備足夠專業知識的工程師才能識破</li>
+                <li><strong>系統崩潰除錯</strong>：AI生成的程式碼同樣會出錯，工程師不理解架構便無法找出根源</li>
+                <li><strong>基礎架構變更</strong>：當框架更新或安全審查出現結構問題，無法單靠提示詞解決</li>
+            </ul>
+
+            <!-- Quote Box -->
+            <div class="quote-box">
+                <p>「『產出』與『學習』是兩個獨立的指標。你的主管與客戶只會關心前者，而後者只能靠你自己。」</p>
+                <cite>— Addy Osmani，Google雲端AI部門總監</cite>
+            </div>
+
+            <!-- Timeline -->
+            <h3>📅 Addy Osmani 觀點演化時間軸</h3>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date">2026年5月</div>
+                    <div class="timeline-title">發布「不要把學習外包給AI」文章</div>
+                    <div class="timeline-desc">Addy Osmani 在個人部落格發布文章，首次系統性警告「認知放棄」危機。</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2026年初</div>
+                    <div class="timeline-title">Anthropic 對比實驗</div>
+                    <div class="timeline-desc">Anthropic進行AI輔助vs手動學習對比研究，發現理解力差距達17%。</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2026年</div>
+                    <div class="timeline-title">MIT「Your Brain on ChatGPT」研究</div>
+                    <div class="timeline-desc">MIT透過腦電圖測量發現使用LLM者大腦連通性顯著降低。</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2026年</div>
+                    <div class="timeline-title">CHI 2026 會議研究</div>
+                    <div class="timeline-desc">研究證實早期LLM介入會顯著降低決策品質，即便後續由人類獨立完成。</div>
+                </div>
+            </div>
+
+            <!-- 未來展望 -->
+            <h3>🔮 未來展望</h3>
+            <p>歐斯曼尼表示，這不代表AI只會讓人越用越笨，而是取決於你怎麼使用這項技術。他建議：</p>
+            <ul>
+                <li>在向AI尋求解答前，應先自行撰寫兩三句話的假設，用AI的回答來驗證自身理論</li>
+                <li>在進入陌生領域時，應優先要求AI解釋運作原理與權衡取捨，徹底理解概念後再要求程式碼</li>
+                <li>應將AI的輸出結果視為菜鳥工程師的成果，抱持批判態度審視內容</li>
+                <li>偶爾手動重寫AI生成的程式碼，並在對話結束前多發送一則指令，要求AI說明其設計思路</li>
+            </ul>
+            <p>歐斯曼尼強調，他寧可只交付80%的成果並換取100%的學習，也不願本末倒置，耽溺於眼前的便利，犧牲未來專業技能的發展潛力。</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2026-05-23 AI News Archive | 由 AI 技術生成</p>
+        <div class="footer-links">
+            <a href="../index.html">返回主頁</a>
+            <a href="https://github.com/hklamsir/ai_news" target="_blank">GitHub</a>
+            <a href="https://hklamsir.github.io/ai_news/" target="_blank">瀏覽所有專題</a>
+        </div>
+    </footer>
+
+    <script>
+        function createCodeRain() {
+            const codeRain = document.getElementById('codeRain');
+            const chars = '01アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン';
+            for (let i = 0; i < 50; i++) {
+                const char = document.createElement('div');
+                char.className = 'code-char';
+                char.textContent = chars[Math.floor(Math.random() * chars.length)];
+                char.style.left = Math.random() * 100 + '%';
+                char.style.animationDelay = Math.random() * 4 + 's';
+                char.style.animationDuration = (Math.random() * 2 + 3) + 's';
+                codeRain.appendChild(char);
+            }
+        }
+
+        function handleScrollAnimation() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('.content-section, .hero-content').forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(30px)';
+                el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(el);
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            createCodeRain();
+            handleScrollAnimation();
+        });
+
+        window.addEventListener('resize', () => {
+            document.getElementById('codeRain').innerHTML = '';
+            createCodeRain();
+        });
+    </script>
+</body>
+</html>
