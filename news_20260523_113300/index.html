@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qwen 3.7 Max 評測：超越 Opus 4.6、Gemini 3.1、DeepSeek V4 的強大 AI 模型 | AI News 專題報道</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-blue: #00d4ff;
+            --primary-purple: #7b2cbf;
+            --accent-green: #00ff88;
+            --accent-orange: #ff9500;
+            --dark-bg: #0a0a0f;
+            --card-bg: #12121a;
+            --card-bg-light: #1a1a28;
+            --text-primary: #ffffff;
+            --text-secondary: #a0a0b0;
+            --gradient-1: linear-gradient(135deg, #00d4ff 0%, #7b2cbf 100%);
+            --gradient-2: linear-gradient(135deg, #00d4ff 0%, #00ff88 100%);
+            --glow-blue: 0 0 20px rgba(0, 212, 255, 0.5);
+            --glow-purple: 0 0 20px rgba(123, 44, 191, 0.5);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Noto Sans TC', sans-serif; background-color: var(--dark-bg); color: var(--text-primary); line-height: 1.8; overflow-x: hidden; }
+
+        @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-20px); } }
+        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.6; } }
+        @keyframes slideIn { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes codeRain { 0% { transform: translateY(-100%); opacity: 0; } 10% { opacity: 1; } 90% { opacity: 1; } 100% { transform: translateY(100vh); opacity: 0; } }
+
+        .code-rain { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; overflow: hidden; }
+        .code-char { position: absolute; color: var(--primary-blue); font-family: 'Courier New', monospace; font-size: 14px; opacity: 0; animation: codeRain 4s linear infinite; }
+
+        .hero { position: relative; min-height: 80vh; display: flex; align-items: center; justify-content: center; padding: 80px 20px; background: linear-gradient(180deg, var(--dark-bg) 0%, #1a1a2e 100%); overflow: hidden; }
+        .hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(ellipse at center, rgba(123, 44, 191, 0.15) 0%, transparent 70%); z-index: 1; }
+        .hero-content { position: relative; z-index: 2; max-width: 1200px; text-align: center; animation: slideIn 1s ease-out; }
+        .hero-badge { display: inline-block; padding: 12px 32px; background: var(--gradient-1); border-radius: 50px; font-size: 18px; font-weight: 700; margin-bottom: 24px; box-shadow: var(--glow-blue); letter-spacing: 1px; }
+        .hero h1 { font-size: clamp(2rem, 5vw, 4rem); font-weight: 900; margin-bottom: 24px; background: var(--gradient-1); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; line-height: 1.2; }
+        .hero-subtitle { font-size: clamp(1.2rem, 2.2vw, 1.6rem); color: var(--text-primary); max-width: 900px; margin: 0 auto 40px; line-height: 1.6; font-weight: 400; }
+        .hero-images { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; margin-top: 40px; max-width: 900px; margin-left: auto; margin-right: auto; }
+        .hero-image-card { position: relative; border-radius: 20px; overflow: hidden; aspect-ratio: 16/9; box-shadow: var(--glow-purple); transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .hero-image-card img { width: 100%; height: 100%; object-fit: cover; display: block; }
+        .hero-image-card:hover { transform: scale(1.02); box-shadow: 0 0 40px rgba(123, 44, 191, 0.7); }
+        .scroll-indicator { position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%); animation: float 2s ease-in-out infinite; z-index: 2; }
+        .scroll-indicator span { display: block; width: 30px; height: 50px; border: 2px solid var(--primary-blue); border-radius: 25px; position: relative; }
+        .scroll-indicator span::before { content: ''; position: absolute; top: 8px; left: 50%; transform: translateX(-50%); width: 6px; height: 10px; background: var(--primary-blue); border-radius: 3px; animation: pulse 1.5s infinite; }
+
+        section { padding: 80px 20px; position: relative; z-index: 1; }
+        .content-section { background: var(--card-bg); padding: 60px 50px; border-radius: 24px; border: 1px solid rgba(0, 212, 255, 0.2); max-width: 1100px; margin: 0 auto; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3); }
+        
+        .content-section h2 { font-size: 2rem; margin-bottom: 40px; color: var(--primary-blue); display: flex; align-items: center; gap: 15px; padding-bottom: 20px; border-bottom: 2px solid rgba(0, 212, 255, 0.3); }
+        .content-section h2::before { content: '📖'; font-size: 2.5rem; }
+        
+        .content-section h3 { font-size: 1.6rem; margin: 50px 0 25px; color: var(--accent-green); display: flex; align-items: center; gap: 12px; }
+        .content-section h3::before { content: '🎯'; font-size: 2rem; }
+        
+        .content-section h3:nth-of-type(2)::before { content: '⚡'; }
+        .content-section h3:nth-of-type(3)::before { content: '📊'; }
+        .content-section h3:nth-of-type(4)::before { content: '💡'; }
+        .content-section h3:nth-of-type(5)::before { content: '🔮'; }
+        
+        .content-section p { color: var(--text-secondary); line-height: 2.2; font-size: 1.08rem; margin: 25px 0; text-align: justify; }
+        
+        .content-section ul, .content-section ol { margin: 30px 0; padding-left: 40px; }
+        .content-section li { margin: 15px 0; line-height: 2; color: var(--text-secondary); font-size: 1.05rem; }
+        .content-section ul li { list-style-type: none; position: relative; padding-left: 25px; }
+        .content-section ul li::before { content: '▸'; color: var(--primary-blue); font-size: 1.5rem; position: absolute; left: 0; top: -5px; }
+        
+        .content-section strong { color: var(--text-primary); font-weight: 600; }
+        
+        .highlight-box { background: linear-gradient(135deg, rgba(0, 255, 136, 0.08) 0%, rgba(0, 212, 255, 0.08) 100%); padding: 30px; border-radius: 16px; border-left: 5px solid var(--accent-green); margin: 40px 0; }
+        .highlight-box h4 { color: var(--accent-green); margin-bottom: 15px; font-size: 1.3rem; display: flex; align-items: center; gap: 10px; }
+        .highlight-box h4::before { content: '✨'; }
+        .highlight-box p { color: var(--text-secondary); margin: 0; }
+        
+        .info-box { background: linear-gradient(135deg, rgba(0, 212, 255, 0.1) 0%, rgba(123, 44, 191, 0.1) 100%); padding: 25px; border-radius: 16px; border: 1px solid rgba(0, 212, 255, 0.3); margin: 35px 0; }
+        .info-box p { margin: 10px 0; color: var(--text-secondary); }
+        .info-box strong { color: var(--primary-blue); }
+        
+        .meta-info { background: linear-gradient(135deg, rgba(0, 212, 255, 0.15) 0%, rgba(123, 44, 191, 0.15) 100%); padding: 30px; border-radius: 16px; margin-bottom: 40px; border-left: 5px solid var(--primary-blue); }
+        .meta-info p { margin: 12px 0; color: var(--text-secondary); font-size: 1.05rem; }
+        .meta-info strong { color: var(--primary-blue); font-weight: 600; }
+        .meta-info a { color: var(--primary-blue); text-decoration: none; border-bottom: 1px dashed var(--primary-blue); }
+
+        .tech-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin: 40px 0; }
+        .tech-card { background: linear-gradient(135deg, rgba(0, 212, 255, 0.1) 0%, rgba(123, 44, 191, 0.1) 100%); border: 1px solid rgba(0, 212, 255, 0.3); border-radius: 16px; padding: 30px; transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .tech-card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0, 212, 255, 0.2); }
+        .tech-card-icon { font-size: 3rem; margin-bottom: 15px; }
+        .tech-card h4 { color: var(--primary-blue); font-size: 1.3rem; margin-bottom: 12px; }
+        .tech-card p { color: var(--text-secondary); font-size: 1rem; margin: 0; line-height: 1.6; }
+
+        .comparison-table { width: 100%; border-collapse: collapse; margin: 40px 0; background: var(--card-bg-light); border-radius: 12px; overflow: hidden; }
+        .comparison-table th { background: var(--gradient-1); color: white; padding: 16px 20px; text-align: left; font-size: 1.1rem; }
+        .comparison-table td { padding: 16px 20px; border-bottom: 1px solid rgba(255,255,255,0.1); color: var(--text-secondary); }
+        .comparison-table tr:hover td { background: rgba(0, 212, 255, 0.05); }
+        .comparison-table .highlight-col { color: var(--accent-green); font-weight: 600; }
+
+        .quote-box { background: linear-gradient(135deg, rgba(123, 44, 191, 0.2) 0%, rgba(0, 212, 255, 0.2) 100%); border-left: 5px solid var(--primary-purple); padding: 30px; border-radius: 16px; margin: 40px 0; }
+        .quote-box p { font-size: 1.3rem; color: var(--text-primary); font-style: italic; margin: 0 0 15px 0; }
+        .quote-box cite { color: var(--primary-blue); font-size: 1rem; }
+
+        .timeline { margin: 40px 0; padding-left: 0; list-style: none; }
+        .timeline-item { background: var(--card-bg-light); border-radius: 12px; padding: 25px 30px; margin-bottom: 20px; border-left: 4px solid var(--primary-blue); transition: transform 0.3s ease; }
+        .timeline-item:hover { transform: translateX(10px); }
+        .timeline-date { color: var(--accent-orange); font-size: 0.95rem; font-weight: 600; margin-bottom: 8px; }
+        .timeline-title { color: var(--text-primary); font-size: 1.2rem; font-weight: 600; margin-bottom: 10px; }
+        .timeline-desc { color: var(--text-secondary); font-size: 1rem; line-height: 1.6; }
+
+        footer { background: #050508; padding: 60px 20px; text-align: center; border-top: 1px solid rgba(255, 255, 255, 0.1); }
+        footer p { color: var(--text-secondary); margin-bottom: 20px; }
+        .footer-links { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; }
+        .footer-links a { color: var(--primary-blue); text-decoration: none; transition: color 0.3s ease; }
+        .footer-links a:hover { color: var(--text-primary); }
+
+        @media (max-width: 768px) {
+            .content-section { padding: 40px 25px; }
+            .tech-cards { grid-template-columns: 1fr; }
+            .content-section h2 { font-size: 1.6rem; }
+            .content-section h3 { font-size: 1.3rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="code-rain" id="codeRain"></div>
+
+    <section class="hero">
+        <div class="hero-content">
+            <span class="hero-badge">📺 YouTube 評測</span>
+            <h1>Qwen 3.7 Max：超越 Frontier 的 AI 新標竿</h1>
+            <p class="hero-subtitle">阿里巴巴推出最新旗艦模型 Qwen 3.7 Max，在多項基準測試中超越 Opus 4.6、Gemini 3.1、DeepSeek V4，以 $1.30 成本實現 56% 改進，刷新性價比標準。</p>
+            <div class="hero-images">
+                <div class="hero-image-card">
+                    <img src="img/img1.png" alt="Qwen 3.7 Max AI 模型">
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator"><span></span></div>
+    </section>
+
+    <section>
+        <div class="content-section">
+            <div class="meta-info">
+                <p><strong>📌 資料來源</strong>：<a href="https://www.youtube.com/watch?v=UXar6lNCNcc" target="_blank">YouTube 評測影片</a></p>
+                <p><strong>📅 發布日期</strong>：2026-05-23</p>
+                <p><strong>🎬 頻道</strong>：World of AI Benchmark</p>
+                <p><strong>🤖 處理方式</strong>：Whisper 語音轉文字 + AI 摘要生成</p>
+            </div>
+
+            <h3>🎯 核心重點</h3>
+            <p>阿里巴巴再次震驚 AI 業界，發布全新旗艦模型 <strong>Qwen 3.7 Max</strong>。這款模型專為「代理時代」設計，被譽為目前最強大的中國基礎模型，在多項基準測試中與 Anthropic、Google、OpenAI 等頂尖廠商並駕齊驅。</p>
+            <p>Qwen 3.7 Max 在 Artificial Analysis Intelligence 指數中獲得 <strong>56.6 分</strong>，較上一代 Qwen 3.6 Max 提升 4.8 點，在科學推理、編程和代理能力方面有顯著突破。</p>
+
+            <div class="highlight-box">
+                <h4>✨ 關鍵洞察：代理時代的到來</h4>
+                <p>Qwen 3.7 Max 被設計為能夠在 <strong>35 小時內持續執行 1,200 次工具調用</strong>，保持上下文連貫性與推理能力。這標誌著 AI 從被動工具向主動代理的轉變，展現出長期自主執行的潛力。</p>
+            </div>
+
+            <!-- Tech Cards -->
+            <div class="tech-cards">
+                <div class="tech-card">
+                    <div class="tech-card-icon">🚀</div>
+                    <h4>56.6 AII 指數</h4>
+                    <p>較 Qwen 3.6 Max 提升 4.8 點，在科學推理、編程和代理能力方面全面突破，創下中國模型新紀錄。</p>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-card-icon">💰</div>
+                    <h4>$1.30 成本效益</h4>
+                    <p>長期自主任務僅需 $1.30 即實現 56% 改進，成本僅為 Opus 4.7 的 1/9，展現極致性價比。</p>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-card-icon">⚡</div>
+                    <h4>60.6 Swaybench</h4>
+                    <p>在 Terminal Bench 2.0 和 Swaybench 中獲得 60.6 分，超越 Opus 4.6 Max 與 Gemini 3.1 Pro。</p>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-card-icon">🌏</div>
+                    <h4>多語言專家</h4>
+                    <p>強大的多語言能力使其成為全球化 AI 應用的首選，在各類語言任務中表現優異。</p>
+                </div>
+            </div>
+
+            <!-- Comparison Table -->
+            <h3>📊 長期代理編程任務效能對比</h3>
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>模型</th>
+                        <th>改進幅度</th>
+                        <th>成本</th>
+                        <th>CPM（每美元改進）</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Qwen 3.7 Max</strong></td>
+                        <td>56%</td>
+                        <td>$1.30</td>
+                        <td class="highlight-col">43.1% / $1</td>
+                    </tr>
+                    <tr>
+                        <td>Opus 4.7</td>
+                        <td>28%</td>
+                        <td>$12.15</td>
+                        <td>2.3% / $1</td>
+                    </tr>
+                    <tr>
+                        <td>GPT 5.5</td>
+                        <td>7%</td>
+                        <td>$2.85</td>
+                        <td>2.5% / $1</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>⚡ 主要功能與應用場景</h3>
+            <p>Qwen 3.7 Max 被設計為多功能通用模型，涵蓋以下核心能力：</p>
+            <ul>
+                <li><strong>高級編程與調試</strong>：處理複雜的多層級重構任務，支援從前端到後端的全端開發</li>
+                <li><strong>前端原型開發</strong>：快速生成高質量 UI 組件，包括 3D 圖形、SVG 動畫和互動式水族箱</li>
+                <li><strong>辦公流程自動化</strong>：整合多種工具和 API，實現複雜業務流程的自動化</li>
+                <li><strong>多代理協調</strong>：管理多個 AI 代理協作完成複雜任務</li>
+                <li><strong>長期自主執行</strong>：在 35 小時內持續工作，保持上下文連貫性</li>
+            </ul>
+
+            <!-- Quote Box -->
+            <div class="quote-box">
+                <p>「這是目前市場上最好的中國模型，在編程、推理和多語言能力上都達到了 Frontier 等級。」</p>
+                <cite>— World of AI Benchmark 評測影片</cite>
+            </div>
+
+            <!-- Timeline -->
+            <h3>💡 Qwen 3.7 Max 性能里程碑</h3>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date">AII 指數</div>
+                    <div class="timeline-title">56.6 分</div>
+                    <div class="timeline-desc">Artificial Analysis Intelligence 指數達 56.6，較 3.6 Max 提升 4.8 點，創中國模型歷史新高。</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">Swaybench</div>
+                    <div class="timeline-title">60.6 分</div>
+                    <div class="timeline-desc">在 Terminal Bench 2.0 和 Swaybench 中獲得 60.6 分，超越 Opus 4.6 Max 和 Gemini 3.1。</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">自主執行</div>
+                    <div class="timeline-title">35小時 / 1200次工具調用</div>
+                    <div class="timeline-desc">能夠在 35 小時內持續執行 1200 次工具調用，保持上下文連貫性和推理能力。</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">長期任務</div>
+                    <div class="timeline-title">56% 改進 / $1.30</div>
+                    <div class="timeline-desc">在 10 次自主循環的 Tetris 自我訓練任務中，以 $1.30 成本實現 56% 改進。</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">世界排名</div>
+                    <div class="timeline-title">第八名</div>
+                    <div class="timeline-desc">在 World of AI Benchmark 排行榜中排名第八，涵蓋前端、遊戲、3D 圖形等多領域。</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">價格優勢</div>
+                    <div class="timeline-title">$2.5 / $7.5 每百萬 token</div>
+                    <div class="timeline-desc">輸入 token 價格 $2.5/百萬，輸出 token 價格 $7.5/百萬，性價比極高。</div>
+                </div>
+            </div>
+
+            <h3>🔮 未來展望</h3>
+            <p>Qwen 3.7 Max 的發布標誌著中國 AI 模型正式進入 Frontier 競爭階段。雖然目前尚未支援多模態（如音訊、影像），但其在長時間自主執行與高精度生成方面的優勢已顯而易見。</p>
+            <p>專家預測，隨著更多應用場景的開發，Qwen 3.7 Max 有望在企業自動化、遊戲開發、設計工具等領域發揮更大價值。對於尋求最先進 AI 工具的用戶來說，這是一款不容錯過的選擇。</p>
+            
+            <div class="info-box">
+                <p><strong>💡 評測重點摘要：</strong></p>
+                <p>• Qwen 3.7 Max 是目前最強大的中國基礎模型</p>
+                <p>• 在編程、推理、代理能力上達到 Frontier 等級</p>
+                <p>• 性價比極高，成本僅為同級別模型的 1/9</p>
+                <p>• 適合需要長期自主執行的複雜任務</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2026-05-23 AI News Archive | 由 AI 技術生成</p>
+        <div class="footer-links">
+            <a href="../index.html">返回主頁</a>
+            <a href="https://github.com/hklamsir/ai_news" target="_blank">GitHub</a>
+            <a href="https://hklamsir.github.io/ai_news/" target="_blank">瀏覽所有專題</a>
+        </div>
+    </footer>
+
+    <script>
+        function createCodeRain() {
+            const codeRain = document.getElementById('codeRain');
+            const chars = '01アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン';
+            for (let i = 0; i < 50; i++) {
+                const char = document.createElement('div');
+                char.className = 'code-char';
+                char.textContent = chars[Math.floor(Math.random() * chars.length)];
+                char.style.left = Math.random() * 100 + '%';
+                char.style.animationDelay = Math.random() * 4 + 's';
+                char.style.animationDuration = (Math.random() * 2 + 3) + 's';
+                codeRain.appendChild(char);
+            }
+        }
+
+        function handleScrollAnimation() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('.content-section, .hero-content').forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(30px)';
+                el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(el);
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            createCodeRain();
+            handleScrollAnimation();
+        });
+
+        window.addEventListener('resize', () => {
+            document.getElementById('codeRain').innerHTML = '';
+            createCodeRain();
+        });
+    </script>
+</body>
+</html>
