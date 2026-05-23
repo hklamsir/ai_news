@@ -1,6 +1,16 @@
 {
   "archives": [
     {
+      "dir": "news_20260523_113655",
+      "title": "Qwen 3.7 Max: NEW Powerful AI Model! Beats Opus 4.6, Gemini 3.1, Deepseek v4! (Fully Tested)",
+      "summary_short": "## 新聞導語阿里巴巴集團旗下通義千問（Qwen）團隊於近日正式發布全新旗艦級人工智慧模型 Qwen 3.7 Max，標誌著中國 AI 研發進入「智慧代理時代」的重要里程碑。本次報告指出，該模型在",
+      "images": [
+        "img/img1.png"
+      ],
+      "date": "2026-05-23",
+      "url": "./news_20260523_113655/index.html"
+    },
+    {
       "dir": "news_20260523_100230",
       "title": "不要把學習外包給AI！",
       "summary": "Google雲端AI部門總監 Addy Osmani 警告：將學習外包給AI正在侵蝕工程師的長期能力。Anthropic研究顯示，AI輔助學習速度相同但理解力低33%；MIT研究發現使用ChatGPT",
@@ -946,6 +956,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-05-23T10:17:36.177600",
+  "last_updated": "2026-05-23T11:39:23.122386",
   "total_count": 105
 }
