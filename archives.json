@@ -2,13 +2,12 @@
   "archives": [
     {
       "dir": "news_20260524_103901",
-      "title": "Ferrari is using IBM's AI to create F1 superfans | TechCrunch",
-      "summary_short": "# Ferrari is using IBM's AI to create F1 superfans | TechCrunch## 📖 新聞導語本文報導來自 **TECHCRUNCH**，發布",
-      "images": [
-        "img/img1.png"
-      ],
+      "title": "Ferrari 攜手 IBM AI 打造 F1 超級粉絲",
+      "summary": "頂級超跑製造商與科技巨頭聯手，運用生成式人工智能重塑賽車運動的粉絲體驗，開創體育娛樂產業的數位轉型新紀元",
+      "url": "./news_20260524_103901/index.html",
       "date": "2026-05-24",
-      "url": "./news_20260524_103901/index.html"
+      "time": "10:39:01",
+      "source": "AI News"
     },
     {
       "dir": "news_20260524_101131",
@@ -974,6 +973,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-05-24T10:41:08.782040",
-  "total_count": 107
+  "last_updated": "2026-05-24T10:45:29.510183",
+  "total_count": 108
 }
