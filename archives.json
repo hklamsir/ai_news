@@ -1,6 +1,16 @@
 {
   "archives": [
     {
+      "dir": "news_20260524_105655",
+      "title": "Spotify is adding more AI gunk for podcasts and audiobooks - Engadget",
+      "summary_short": "# Spotify is adding more AI gunk for podcasts and audiobooks - Engadget## 📖 新聞導語本文報導來自 **ENGADGE",
+      "images": [
+        "img/img1.png"
+      ],
+      "date": "2026-05-24",
+      "url": "./news_20260524_105655/index.html"
+    },
+    {
       "dir": "news_20260524_103901",
       "title": "Ferrari 攜手 IBM AI 打造 F1 超級粉絲",
       "summary": "頂級超跑製造商與科技巨頭聯手，運用生成式人工智能重塑賽車運動的粉絲體驗，開創體育娛樂產業的數位轉型新紀元",
@@ -973,6 +983,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-05-24T10:45:29.510183",
+  "last_updated": "2026-05-24T10:59:12.756667",
   "total_count": 108
 }
