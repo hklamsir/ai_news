@@ -2,13 +2,12 @@
   "archives": [
     {
       "dir": "news_20260524_105655",
-      "title": "Spotify is adding more AI gunk for podcasts and audiobooks - Engadget",
-      "summary_short": "# Spotify is adding more AI gunk for podcasts and audiobooks - Engadget## 📖 新聞導語本文報導來自 **ENGADGE",
-      "images": [
-        "img/img1.png"
-      ],
+      "title": "Spotify 全力押注 AI 個人化播客與有聲書",
+      "summary": "從 ElevenLabs 技術有聲書到個人化每日簡報，Spotify 正在把 AI 變成平台的核心功能",
+      "url": "./news_20260524_105655/index.html",
       "date": "2026-05-24",
-      "url": "./news_20260524_105655/index.html"
+      "time": "10:56:55",
+      "source": "AI News"
     },
     {
       "dir": "news_20260524_103901",
@@ -983,6 +982,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-05-24T10:59:12.756667",
-  "total_count": 108
+  "last_updated": "2026-05-24T11:00:49.680764",
+  "total_count": 109
 }
