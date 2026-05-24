@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>書讀完了、AI也會用，為何職場還是卡關？｜AI News 專題</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-blue: #00d4ff;
+            --primary-purple: #7b2cbf;
+            --accent-green: #00ff88;
+            --accent-orange: #ff9500;
+            --dark-bg: #0a0a0f;
+            --card-bg: #12121a;
+            --card-bg-light: #1a1a28;
+            --text-primary: #ffffff;
+            --text-secondary: #a0a0b0;
+            --gradient-1: linear-gradient(135deg, #00d4ff 0%, #7b2cbf 100%);
+            --gradient-2: linear-gradient(135deg, #00d4ff 0%, #00ff88 100%);
+            --glow-blue: 0 0 20px rgba(0, 212, 255, 0.5);
+            --glow-purple: 0 0 20px rgba(123, 44, 191, 0.5);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Noto Sans TC', sans-serif; background-color: var(--dark-bg); color: var(--text-primary); line-height: 1.8; overflow-x: hidden; }
+
+        @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-20px); } }
+        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.6; } }
+        @keyframes slideIn { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes codeRain { 0% { transform: translateY(-100%); opacity: 0; } 10% { opacity: 1; } 90% { opacity: 1; } 100% { transform: translateY(100vh); opacity: 0; } }
+
+        /* 代碼雨背景 */
+        .code-rain { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; overflow: hidden; }
+        .code-char { position: absolute; color: var(--primary-blue); font-family: 'Courier New', monospace; font-size: 14px; opacity: 0; animation: codeRain 4s linear infinite; }
+
+        /* Hero Section */
+        .hero { position: relative; min-height: 80vh; display: flex; align-items: center; justify-content: center; padding: 80px 20px; background: linear-gradient(180deg, var(--dark-bg) 0%, #1a1a2e 100%); overflow: hidden; }
+        .hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(ellipse at center, rgba(123, 44, 191, 0.15) 0%, transparent 70%); z-index: 1; }
+        .hero-content { position: relative; z-index: 2; max-width: 1200px; text-align: center; animation: slideIn 1s ease-out; }
+        .hero-badge { display: inline-block; padding: 12px 32px; background: var(--gradient-1); border-radius: 50px; font-size: 18px; font-weight: 700; margin-bottom: 24px; box-shadow: var(--glow-blue); letter-spacing: 1px; }
+        .hero h1 { font-size: clamp(2rem, 5vw, 4rem); font-weight: 900; margin-bottom: 24px; background: var(--gradient-1); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; line-height: 1.2; }
+        .hero-subtitle { font-size: clamp(1.2rem, 2.2vw, 1.6rem); color: var(--text-primary); max-width: 900px; margin: 0 auto 40px; line-height: 1.6; font-weight: 400; }
+        .hero-images { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; margin-top: 60px; }
+        .hero-image-card { position: relative; border-radius: 20px; overflow: hidden; aspect-ratio: 16/9; box-shadow: var(--glow-purple); transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .hero-image-card:hover { transform: scale(1.02); box-shadow: 0 0 40px rgba(123, 44, 191, 0.7); }
+        .hero-image-card img { width: 100%; height: 100%; object-fit: cover; }
+        .scroll-indicator { position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%); animation: float 2s ease-in-out infinite; z-index: 2; }
+        .scroll-indicator span { display: block; width: 30px; height: 50px; border: 2px solid var(--primary-blue); border-radius: 25px; position: relative; }
+        .scroll-indicator span::before { content: ''; position: absolute; top: 8px; left: 50%; transform: translateX(-50%); width: 6px; height: 10px; background: var(--primary-blue); border-radius: 3px; animation: pulse 1.5s infinite; }
+
+        /* Content Section */
+        section { padding: 80px 20px; position: relative; z-index: 1; }
+        .content-section { background: var(--card-bg); padding: 60px 50px; border-radius: 24px; border: 1px solid rgba(0, 212, 255, 0.2); max-width: 1100px; margin: 0 auto; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3); }
+
+        .content-section h3 { font-size: 1.6rem; margin: 40px 0 20px; color: var(--accent-green); }
+        .content-section p { color: var(--text-secondary); line-height: 2; font-size: 1.08rem; margin: 15px 0; }
+        .content-section ul { margin: 20px 0; padding-left: 30px; }
+        .content-section li { margin: 10px 0; color: var(--text-secondary); }
+
+        .meta-info { background: linear-gradient(135deg, rgba(0, 212, 255, 0.15) 0%, rgba(123, 44, 191, 0.15) 100%); padding: 30px; border-radius: 16px; margin-bottom: 40px; border-left: 5px solid var(--primary-blue); }
+        .meta-info p { margin: 12px 0; color: var(--text-secondary); font-size: 1.05rem; }
+        .meta-info strong { color: var(--primary-blue); font-weight: 600; }
+        .meta-info a { color: var(--primary-blue); text-decoration: none; word-break: break-all; }
+
+        .highlight-box { background: linear-gradient(135deg, rgba(0, 255, 136, 0.08) 0%, rgba(0, 212, 255, 0.08) 100%); padding: 30px; border-radius: 16px; border-left: 5px solid var(--accent-green); margin: 40px 0; }
+        .highlight-box h4 { color: var(--accent-green); margin-bottom: 15px; font-size: 1.3rem; }
+        .highlight-box p { color: var(--text-secondary); margin: 0; }
+
+        /* Footer */
+        footer { background: #050508; padding: 60px 20px; text-align: center; border-top: 1px solid rgba(255, 255, 255, 0.1); }
+        footer p { color: var(--text-secondary); margin-bottom: 20px; }
+        .footer-links { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; }
+        .footer-links a { color: var(--primary-blue); text-decoration: none; transition: color 0.3s ease; }
+        .footer-links a:hover { color: var(--text-primary); }
+
+        /* RWD */
+        @media (max-width: 768px) {
+            .content-section { padding: 40px 25px; }
+            .hero-images { grid-template-columns: 1fr; }
+            .hero h1 { font-size: 2rem; }
+            .hero-subtitle { font-size: 1.2rem; }
+        }
+    </style>
+</head>
+<body>
+    <!-- 代雨背景 -->
+    <div class="code-rain" id="codeRain"></div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <span class="hero-badge">📰 AI News 專題報道</span>
+            <h1>書讀完了、AI也會用，為何職場還是卡關？</h1>
+            <p class="hero-subtitle">新世代該先學的兩件事：抽象思考和落地執行</p>
+            <div class="hero-images">
+                <div class="hero-image-card">
+                    <img src="img/img1.png" alt="新聞插圖">
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <span></span>
+        </div>
+    </section>
+
+    <!-- Content Section -->
+    <section>
+        <div class="content-section">
+            <!-- Meta Info -->
+            <div class="meta-info">
+                <p><strong>📺 資料來源</strong>：<a href="https://www.bnext.com.tw" target="_blank">BNEXT</a></p>
+                <p><strong>📅 發布日期</strong>：2026-05-24</p>
+                <p><strong>🤖 處理方式</strong>：AI 智能摘要生成</p>
+            </div>
+
+            <!-- 核心議題 -->
+            <h3>🎯 核心議題</h3>
+            <p>本次報告深入探討當代年輕人在職場發展中面臨的普遍困境。研究指出，儘管新世代具備完整的學歷背景與熟練的 AI 工具操作能力，卻仍有相當比例的人在實際職場環境中遭遇瓶頸。專家分析認為，這種現象背後反映出教育體系與產業需求之間的結構性落差。</p>
+            <p>數據顯示，單純的知識累積與技術操作已不足以應對快速變遷的職場生態。業界觀察人士強調，企業現今更重視員工如何將零散資訊轉化為可行策略，以及如何將想法付諸實踐的綜合素養。</p>
+
+            <!-- 關鍵能力分析 -->
+            <h3> 關鍵能力分析</h3>
+            <p>研究團隊經過長期追蹤調查，歸納出兩項決定職場成敗的核心能力。這兩項能力互為表裡，構成現代專業人才的競爭力基礎。</p>
+            <ul>
+                <li><strong>抽象思考</strong>：將複雜問題簡化為可操作的框架，辨識表象背後的結構性因素</li>
+                <li><strong>落地執行</strong>：把概念轉化為具體行動，在資源有限條件下達成目標</li>
+                <li>兩者結合形成「從認知到實踐」的完整閉環</li>
+                <li>彌補傳統教育偏重理論傳授的不足</li>
+                <li>因應 AI 時代對人類獨特價值的重新定義</li>
+                <li>建立跨領域協作所需的溝通橋樑</li>
+            </ul>
+
+            <!-- 產業現況觀察 -->
+            <h3>📊 產業現況觀察</h3>
+            <p>根據多家企業人資主管的訪談結果，新進人員普遍呈現「高起點、低續航」的特徵。這些求職者往往能快速掌握工具使用，卻在面對模糊任務時顯得不知所措。研究指出，這種落差源於學習歷程中過度依賴標準答案的訓練模式。</p>
+            <p>相對而言，能夠在職場脫穎而出的工作者，通常展現出強大的問題拆解能力與主動推進的特質。他們不等待完整指令，而是善於在資不完整的情況下做出合理判斷，並持續迭代修正。</p>
+
+            <!-- Highlight Box -->
+            <div class="highlight-box">
+                <h4>✨ 關鍵洞察</h4>
+                <p>AI 工具的普及正在重塑職場能力的光譜。當技術操作門檻持續降低，人類的差異化價值將越來越體現在「定義問題」與「創造解法」的層次。本次報告建議，教育規劃與自我培養應及早納入這兩項能力的系統性訓練。</p>
+            </div>
+
+            <!-- 實踐建議 -->
+            <h3>🔮 實踐建議與展望</h3>
+            <p>專家分析建議，培養抽象思考可從跨領域閱讀與案例分析著手，訓練自己辨不同情境中的共通模式。至於落地執行，則需要創造實際操作的機會，在真實反饋中累積經驗。</p>
+            <p>展望未來，隨著 AI 技術持續演進，人機協作的模式將更加緊密。業界觀察人士預期，能夠靈活運用 AI 工具、同時保有獨立判斷與執行力的複合型人才，將成為下一波職場競爭的領先群體。教育機構與個人發展者宜及早調整方向，以因應這項結構性轉變。</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2026 AI News Archive | 由 AI 技術生成</p>
+        <div class="footer-links">
+            <a href="../index.html">返回主頁</a>
+            <a href="https://github.com/hklamsir/ai_news" target="_blank">GitHub</a>
+            <a href="https://hklamsir.github.io/ai_news/" target="_blank">瀏覽所有專題</a>
+        </div>
+    </footer>
+
+    <script>
+        // 生成代碼雨效果
+        function createCodeRain() {
+            const container = document.getElementById('codeRain');
+            const chars = '01アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン';
+            
+            for (let i = 0; i < 50; i++) {
+                const char = document.createElement('span');
+                char.className = 'code-char';
+                char.textContent = chars[Math.floor(Math.random() * chars.length)];
+                char.style.left = Math.random() * 100 + '%';
+                char.style.animationDelay = Math.random() * 4 + 's';
+                char.style.animationDuration = (Math.random() * 3 + 2) + 's';
+                container.appendChild(char);
+            }
+        }
+        
+        createCodeRain();
+    </script>
+</body>
+</html>
