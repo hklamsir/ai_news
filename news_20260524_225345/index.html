@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Agent 長時任務執行技術突破 | AI News 專題報道</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-blue: #00d4ff;
+            --primary-purple: #7b2cbf;
+            --accent-green: #00ff88;
+            --accent-orange: #ff9500;
+            --dark-bg: #0a0a0f;
+            --card-bg: #12121a;
+            --card-bg-light: #1a1a28;
+            --text-primary: #ffffff;
+            --text-secondary: #a0a0b0;
+            --gradient-1: linear-gradient(135deg, #00d4ff 0%, #7b2cbf 100%);
+            --gradient-2: linear-gradient(135deg, #00d4ff 0%, #00ff88 100%);
+            --glow-blue: 0 0 20px rgba(0, 212, 255, 0.5);
+            --glow-purple: 0 0 20px rgba(123, 44, 191, 0.5);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Noto Sans TC', sans-serif; background-color: var(--dark-bg); color: var(--text-primary); line-height: 1.8; overflow-x: hidden; }
+
+        @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-20px); } }
+        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.6; } }
+        @keyframes slideIn { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes codeRain { 0% { transform: translateY(-100%); opacity: 0; } 10% { opacity: 1; } 90% { opacity: 1; } 100% { transform: translateY(100vh); opacity: 0; } }
+
+        .code-rain { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; overflow: hidden; }
+        .code-char { position: absolute; color: var(--primary-blue); font-family: 'Courier New', monospace; font-size: 14px; opacity: 0; animation: codeRain 4s linear infinite; }
+
+        .hero { position: relative; min-height: 80vh; display: flex; align-items: center; justify-content: center; padding: 80px 20px; background: linear-gradient(180deg, var(--dark-bg) 0%, #1a1a2e 100%); overflow: hidden; }
+        .hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(ellipse at center, rgba(123, 44, 191, 0.15) 0%, transparent 70%); z-index: 1; }
+        .hero-content { position: relative; z-index: 2; max-width: 1200px; text-align: center; animation: slideIn 1s ease-out; }
+        .hero-badge { display: inline-block; padding: 12px 32px; background: var(--gradient-1); border-radius: 50px; font-size: 18px; font-weight: 700; margin-bottom: 24px; box-shadow: var(--glow-blue); letter-spacing: 1px; }
+        .hero h1 { font-size: clamp(2rem, 5vw, 4rem); font-weight: 900; margin-bottom: 24px; background: var(--gradient-1); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; line-height: 1.2; }
+        .hero-subtitle { font-size: clamp(1.2rem, 2.2vw, 1.6rem); color: var(--text-primary); max-width: 900px; margin: 0 auto 40px; line-height: 1.6; font-weight: 400; }
+        .hero-images { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; margin-top: 60px; }
+        .hero-image-card { position: relative; border-radius: 20px; overflow: hidden; aspect-ratio: 16/9; box-shadow: var(--glow-purple); transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .hero-image-card:hover { transform: scale(1.02); box-shadow: 0 0 40px rgba(123, 44, 191, 0.7); }
+        .hero-image-card img { width: 100%; height: 100%; object-fit: cover; }
+        .scroll-indicator { position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%); animation: float 2s ease-in-out infinite; z-index: 2; }
+        .scroll-indicator span { display: block; width: 30px; height: 50px; border: 2px solid var(--primary-blue); border-radius: 25px; position: relative; }
+        .scroll-indicator span::before { content: ''; position: absolute; top: 8px; left: 50%; transform: translateX(-50%); width: 6px; height: 10px; background: var(--primary-blue); border-radius: 3px; animation: pulse 1.5s infinite; }
+
+        section { padding: 80px 20px; position: relative; z-index: 1; }
+        .content-section { background: var(--card-bg); padding: 60px 50px; border-radius: 24px; border: 1px solid rgba(0, 212, 255, 0.2); max-width: 1100px; margin: 0 auto; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3); }
+
+        .content-section h3 { font-size: 1.6rem; margin: 40px 0 20px; color: var(--accent-green); }
+        .content-section p { color: var(--text-secondary); line-height: 2; font-size: 1.08rem; margin: 15px 0; }
+        .content-section ul { margin: 20px 0; padding-left: 30px; }
+        .content-section li { margin: 10px 0; color: var(--text-secondary); }
+
+        .meta-info { background: linear-gradient(135deg, rgba(0, 212, 255, 0.15) 0%, rgba(123, 44, 191, 0.15) 100%); padding: 30px; border-radius: 16px; margin-bottom: 40px; border-left: 5px solid var(--primary-blue); }
+        .meta-info p { margin: 12px 0; color: var(--text-secondary); font-size: 1.05rem; }
+        .meta-info strong { color: var(--primary-blue); font-weight: 600; }
+        .meta-info a { color: var(--primary-blue); text-decoration: none; word-break: break-all; }
+
+        .highlight-box { background: linear-gradient(135deg, rgba(0, 255, 136, 0.08) 0%, rgba(0, 212, 255, 0.08) 100%); padding: 30px; border-radius: 16px; border-left: 5px solid var(--accent-green); margin: 40px 0; }
+        .highlight-box h4 { color: var(--accent-green); margin-bottom: 15px; font-size: 1.3rem; }
+        .highlight-box p { color: var(--text-secondary); margin: 0; }
+
+        footer { background: #050508; padding: 60px 20px; text-align: center; border-top: 1px solid rgba(255, 255, 255, 0.1); }
+        footer p { color: var(--text-secondary); margin-bottom: 20px; }
+        .footer-links { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; }
+        .footer-links a { color: var(--primary-blue); text-decoration: none; transition: color 0.3s ease; }
+        .footer-links a:hover { color: var(--text-primary); }
+
+        @media (max-width: 768px) {
+            .content-section { padding: 40px 25px; }
+            .hero-images { grid-template-columns: 1fr; }
+            .hero h1 { font-size: 2rem; }
+            .hero-subtitle { font-size: 1.2rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="code-rain" id="codeRain"></div>
+
+    <section class="hero">
+        <div class="hero-content">
+            <span class="hero-badge">📰 AI News 專題報道</span>
+            <h1>AI Agent 長時任務執行技術突破</h1>
+            <p class="hero-subtitle">Anthropic、OpenAI 與 Hermes Agent 同步推出「/goal」功能，標誌著人工智慧自動化從「指令-回應」邁向「目標導向、自主迭代」的新紀元。研究顯示，明確定義任務完成標準的 AI 系統已可連續運作逾 27 小時無需人工介入。</p>
+            <div class="hero-images">
+                <div class="hero-image-card">
+                    <img src="img/img1.png" alt="AI Agent 長時任務執行示意圖">
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <span></span>
+        </div>
+    </section>
+
+    <section>
+        <div class="content-section">
+            <div class="meta-info">
+                <p><strong>📺 資料來源</strong>：<a href="https://youtu.be/PpeCur6fEXc?si=-xCpnGlSeqmzJoz5" target="_blank">https://youtu.be/PpeCur6fEXc?si=-xCpnGlSeqmzJoz5</a></p>
+                <p><strong>📅 發布日期</strong>：2026-05-24</p>
+                <p><strong>🤖 處理方式</strong>：AI 智能摘要生成</p>
+            </div>
+
+            <h3>🎯 產業格局轉變</h3>
+            <p>人工智慧代理程式領域正經歷關鍵轉折。本次報告觀察到，Anthropic、OpenAI 與 Hermes Agent 三大業者幾乎同步推出名為「/goal」的長時任務執行功能，這項技術突破使 AI 自動化從傳統的「指令-回應」模式，正式邁向「目標導向、自主迭代」的新階段。</p>
+            <p>業界觀察指出，此項功能的設計理念可追溯至 2024 年中崛起的開源外掛「Ralph Loop」——其名稱源自《辛普森家庭》中永不放棄的角色 Ralph，象徵著「持續迭代至完成」的精神。如今這一概念已獲主流平台採納並轉化為官方功能，顯示市場對長時自動化的強勁需求。</p>
+
+            <h3>💡 技術瓶頸與突破路徑</h3>
+            <p>資料顯示，傳統 AI 互動模式存在「假性自動化」困境——使用者平均每十分鐘需介入確認進度，無法真正解放認知負荷。Anthropic 研究團隊於 2025 年底發表的研究揭示，大型語言模型存在「上下文焦慮」（context anxiety）的系統性問題。</p>
+            <p>研究指出，模型在執行過程中持續監控上下文視窗使用率，當感知資源緊迫時，會傾向提前總結、交差了事，形成類似「下班心態」的保守傾向。這種內建於訓練過程的惰性，使得單次對話難以完成複雜任務。</p>
+            <p>/goal 功能的核心機制在於引入<strong>雙角色架構</strong>：實作者（Implementer）負責執行與產出，評審（Evaluator）則依據使用者定義的標準進行驗證，形成「胡蘿蔔與驢子」的持續驅動模式，有效對抗模型的內建惰性。</p>
+
+            <div class="highlight-box">
+                <h4>✨ 關鍵洞察</h4>
+                <p>成功應用 /goal 功能的關鍵不在技術操作，而在「評估設計」（Evaluation Design）。模糊目標如「把專案改得好一點」往往五分鐘即遭草率結案；而具備完整執行框架的提示詞，則能驅動 AI 持續迭代至真正完成。</p>
+            </div>
+
+            <h3>📊 提示詞工程的正規化轉移</h3>
+            <p>專家分析強調，高品質 goal 提示詞需涵蓋五大核心要素，將隱性期望轉化為可執行指令：</p>
+            <ul>
+                <li><strong>成果定義（Outcome）</strong>：具體可衡量的完成標準</li>
+                <li><strong>驗證方式（Verification）</strong>：客檢驗機制與工具</li>
+                <li><strong>限制條件（Constraints）</strong>：明確的範圍邊界與資源限制</li>
+                <li><strong>迭代政策（Iteration policy）</strong>：過程記錄與變更追蹤要求</li>
+                <li><strong>錯誤處理（Error handling）</strong>：例外狀況的處理協議與暫停條件</li>
+            </ul>
+            <p>研究指出，這種結構化設計使 AI 具備自我校正能力，使用者得以將個人品味系統化、規模化執行，徹底轉移認知負荷。</p>
+
+            <h3>🔬 質化工作的量化拆解策略</h3>
+            <p>針對設計、寫作等缺乏客觀檢驗標準的白領工作，Anthropic 的前端設計研究提供了可複製的方法論。研究團隊將「漂亮網頁」這一模糊概念拆解為四維評分架構：</p>
+            <ul>
+                <li><strong>設計品質</strong>：整體視覺語言的一致性</li>
+                <li><strong>原創性</strong>：避免通用模板的獨特性</li>
+                <li><strong>技術執行</strong>：細節處理的精確度</li>
+                <li><strong>可用性</strong>：功能操作的直覺性</li>
+            </ul>
+            <p>關鍵在於，評審機制並非檢視程式碼，而是透過 Playwright 自動化瀏覽器擷取實際畫面進行評分，確保評估貼近使用者真實體驗。資料顯示，該研究在第九輪迭代產出符合預期的美術館網站，第十輪卻出現「創意躍遷」——模型自主將平面網頁重構為 3D 虛擬畫廊空間。</p>
+
+            <h3>🔮 未來展望</h3>
+            <p>本次報告提出六步驟 SOP，協助使用者將隱性專業判斷轉化為 AI 可執行的評分標準：建立基準產出以理解模型現有能力、記錄「皺眉點」以捕捉直反應、分類評估維度、收集具體案例、確保樣本多樣性，以及實際驗證與迭代。</p>
+            <p>研究人員指出，這種非線性突破無法透過次提示達成，唯有持續迭代累積複雜度與野心，方能觸發模型潛在的創意組合能力。隨著 /goal 功能的普及，知識工作者將迎來「注意力解放」的新時代——從任務執行者轉變為目標定義者與品味策展者。</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2026 AI News Archive | 由 AI 技術生成</p>
+        <div class="footer-links">
+            <a href="../index.html">返回主頁</a>
+            <a href="https://github.com/hklamsir/ai_news" target="_blank">GitHub</a>
+            <a href="https://hklamsir.github.io/ai_news/" target="_blank">瀏覽所有專題</a>
+        </div>
+    </footer>
+
+    <script>
+        const codeRain = document.getElementById('codeRain');
+        const chars = '01アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン';
+        
+        for (let i = 0; i < 50; i++) {
+            const char = document.createElement('span');
+            char.className = 'code-char';
+            char.textContent = chars[Math.floor(Math.random() * chars.length)];
+            char.style.left = Math.random() * 100 + '%';
+            char.style.animationDelay = Math.random() * 4 + 's';
+            char.style.animationDuration = (3 + Math.random() * 2) + 's';
+            codeRain.appendChild(char);
+        }
+    </script>
+
+    <script>
+        function createCodeRain() {
+            const codeRain = document.getElementById('codeRain');
+            if (!codeRain) return;
+            const chars = '01 アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン';
+            for (let i = 0; i < 50; i++) {
+                const char = document.createElement('div');
+                char.className = 'code-char';
+                char.textContent = chars[Math.floor(Math.random() * chars.length)];
+                char.style.left = Math.random() * 100 + '%';
+                char.style.animationDelay = Math.random() * 4 + 's';
+                char.style.animationDuration = (Math.random() * 2 + 3) + 's';
+                codeRain.appendChild(char);
+            }
+        }
+
+        function handleScrollAnimation() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('.fade-in').forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(30px)';
+                el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(el);
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            createCodeRain();
+            handleScrollAnimation();
+        });
+    </script>
+</body>
+</html>
