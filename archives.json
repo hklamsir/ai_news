@@ -1,14 +1,22 @@
 {
   "archives": [
     {
-      "dir": "news_20260524_100906",
-      "title": "Starbucks abandons its AI inventory tool after only nine months - Engadget",
-      "summary_short": "# Starbucks abandons its AI inventory tool after only nine months - Engadget## 📖 新聞導語本文報導來自 **EN",
-      "images": [
-        "img/img1.png"
-      ],
+      "dir": "news_20260524_101131",
+      "title": "Starbucks 放棄 AI 庫存工具 僅僅九個月就夭折",
+      "summary": "攜手 NomadGo 打造的自動化盤點系統，连薄荷糖漿都偵測不到 — 零售業 AI 落地的慘痛一課",
+      "url": "./news_20260524_101131/index.html",
       "date": "2026-05-24",
-      "url": "./news_20260524_100906/index.html"
+      "time": "10:11:31",
+      "source": "AI News"
+    },
+    {
+      "dir": "news_20260524_100906",
+      "title": "Starbucks 終止 AI 庫存系統",
+      "summary": "全球咖啡巨頭僅部署九個月即放棄 AI 驅動庫存管理工具，引發業界對企業 AI 落地挑戰的深刻反思",
+      "url": "./news_20260524_100906/index.html",
+      "date": "2026-05-24",
+      "time": "10:09:06",
+      "source": "AI News"
     },
     {
       "dir": "news_20260523_113655",
@@ -17,15 +25,6 @@
       "url": "./news_20260523_113655/index.html",
       "date": "2026-05-23",
       "time": "11:36:55",
-      "source": "AI News"
-    },
-    {
-      "dir": "news_20260523_113300",
-      "title": "Qwen 3.7 Max：超越 Frontier 的 AI 新標竿",
-      "summary": "阿里巴巴推出最新旗艦模型 Qwen 3.7 Max，在多項基準測試中超越 Opus 4.6、Gemini 3.1、DeepSeek V4，以 $1.30 成本實現 56% 改進，刷新性價比標準。",
-      "url": "./news_20260523_113300/index.html",
-      "date": "2026-05-23",
-      "time": "11:33:00",
       "source": "AI News"
     },
     {
@@ -974,6 +973,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-05-24T10:11:14.951988",
-  "total_count": 107
+  "last_updated": "2026-05-24T10:12:31.904462",
+  "total_count": 108
 }
