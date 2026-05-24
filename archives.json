@@ -2,13 +2,12 @@
   "archives": [
     {
       "dir": "news_20260524_225345",
-      "title": "我的 AI agent 連續跑了 27 個小時，/goal 功能怎麼用？",
-      "summary_short": "## 新聞導語人工智慧代理程式（AI Agent）正迎來關鍵轉折。近期 Anthropic、OpenAI 與 Hermes Agent 三大業者幾乎同步推出名為「/goal」的長時任務執行功能，標",
-      "images": [
-        "img/img1.png"
-      ],
+      "title": "AI Agent 連續跑 27 小時 /goal 功能怎麼用？",
+      "summary": "Claude Code、OpenAI Codex、Hermes Agent 同步推出 /goal 功能——Gary Chen 27 小時實驗驗證「評審 + 執行者」雙 agents 架構",
+      "url": "./news_20260524_225345/index.html",
       "date": "2026-05-24",
-      "url": "./news_20260524_225345/index.html"
+      "time": "22:53:45",
+      "source": "AI News"
     },
     {
       "dir": "news_20260524_201819",
@@ -1001,6 +1000,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-05-24T22:56:04.564731",
-  "total_count": 110
+  "last_updated": "2026-05-24T23:01:20.346134",
+  "total_count": 111
 }
