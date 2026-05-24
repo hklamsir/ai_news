@@ -1,8 +1,0 @@
-{
-  "title": "Qwen 3.7 Max 評測：超越 Opus 4.6、Gemini 3.1、DeepSeek V4 的強大 AI 模型",
-  "source": "youtube",
-  "url": "https://www.youtube.com/watch?v=UXar6lNCNcc",
-  "dir_path": "/home/lamsir/ai_news/news_20260523_113300",
-  "summary": "阿里巴巴推出最新旗艦模型 Qwen 3.7 Max，專為代理時代設計。在多項基準測試中表現優異，Terminal Bench 2.0 和 Swaybench 得分達 60.6，人工分析智能指數（AII）達 56.6，較 Qwen 3.6 Max 提升 4.8 點。在長期自主編程任務中以 $1.30 成本實現 56% 改進，大幅超越 Opus 4.7（28%/12.15）和 GPT 5.5（7%/2.85）。價格實惠，輸入 $2.5/百萬 token，輸出 $7.5/百萬 token。",
-  "tags": ["Qwen", "阿里巴巴", "AI模型", "基准测试", "代理時代"]
-}
