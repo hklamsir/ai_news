@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ferrari 攜手 IBM AI 打造 F1 超級粉絲 | AI News 專題報道</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-blue: #00d4ff;
+            --primary-purple: #7b2cbf;
+            --accent-green: #00ff88;
+            --accent-orange: #ff9500;
+            --dark-bg: #0a0a0f;
+            --card-bg: #12121a;
+            --card-bg-light: #1a1a28;
+            --text-primary: #ffffff;
+            --text-secondary: #a0a0b0;
+            --gradient-1: linear-gradient(135deg, #00d4ff 0%, #7b2cbf 100%);
+            --gradient-2: linear-gradient(135deg, #00d4ff 0%, #00ff88 100%);
+            --glow-blue: 0 0 20px rgba(0, 212, 255, 0.5);
+            --glow-purple: 0 0 20px rgba(123, 44, 191, 0.5);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Noto Sans TC', sans-serif; background-color: var(--dark-bg); color: var(--text-primary); line-height: 1.8; overflow-x: hidden; }
+
+        @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-20px); } }
+        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.6; } }
+        @keyframes slideIn { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes codeRain { 0% { transform: translateY(-100%); opacity: 0; } 10% { opacity: 1; } 90% { opacity: 1; } 100% { transform: translateY(100vh); opacity: 0; } }
+
+        /* 代碼雨背景 */
+        .code-rain { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; overflow: hidden; }
+        .code-char { position: absolute; color: var(--primary-blue); font-family: 'Courier New', monospace; font-size: 14px; opacity: 0; animation: codeRain 4s linear infinite; }
+
+        /* Hero Section */
+        .hero { position: relative; min-height: 80vh; display: flex; align-items: center; justify-content: center; padding: 80px 20px; background: linear-gradient(180deg, var(--dark-bg) 0%, #1a1a2e 100%); overflow: hidden; }
+        .hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(ellipse at center, rgba(123, 44, 191, 0.15) 0%, transparent 70%); z-index: 1; }
+        .hero-content { position: relative; z-index: 2; max-width: 1200px; text-align: center; animation: slideIn 1s ease-out; }
+        .hero-badge { display: inline-block; padding: 12px 32px; background: var(--gradient-1); border-radius: 50px; font-size: 18px; font-weight: 700; margin-bottom: 24px; box-shadow: var(--glow-blue); letter-spacing: 1px; }
+        .hero h1 { font-size: clamp(2rem, 5vw, 4rem); font-weight: 900; margin-bottom: 24px; background: var(--gradient-1); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; line-height: 1.2; }
+        .hero-subtitle { font-size: clamp(1.2rem, 2.2vw, 1.6rem); color: var(--text-primary); max-width: 900px; margin: 0 auto 40px; line-height: 1.6; font-weight: 400; }
+        .hero-images { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; margin-top: 60px; }
+        .hero-image-card { position: relative; border-radius: 20px; overflow: hidden; aspect-ratio: 16/9; box-shadow: var(--glow-purple); transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .hero-image-card:hover { transform: scale(1.02); box-shadow: 0 0 40px rgba(123, 44, 191, 0.7); }
+        .hero-image-card img { width: 100%; height: 100%; object-fit: cover; }
+        .scroll-indicator { position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%); animation: float 2s ease-in-out infinite; z-index: 2; }
+        .scroll-indicator span { display: block; width: 30px; height: 50px; border: 2px solid var(--primary-blue); border-radius: 25px; position: relative; }
+        .scroll-indicator span::before { content: ''; position: absolute; top: 8px; left: 50%; transform: translateX(-50%); width: 6px; height: 10px; background: var(--primary-blue); border-radius: 3px; animation: pulse 1.5s infinite; }
+
+        /* Content Section */
+        section { padding: 80px 20px; position: relative; z-index: 1; }
+        .content-section { background: var(--card-bg); padding: 60px 50px; border-radius: 24px; border: 1px solid rgba(0, 212, 255, 0.2); max-width: 1100px; margin: 0 auto; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3); }
+
+        .content-section h3 { font-size: 1.6rem; margin: 40px 0 20px; color: var(--accent-green); }
+        .content-section p { color: var(--text-secondary); line-height: 2; font-size: 1.08rem; margin: 15px 0; }
+        .content-section ul { margin: 20px 0; padding-left: 30px; }
+        .content-section li { margin: 10px 0; color: var(--text-secondary); }
+
+        .meta-info { background: linear-gradient(135deg, rgba(0, 212, 255, 0.15) 0%, rgba(123, 44, 191, 0.15) 100%); padding: 30px; border-radius: 16px; margin-bottom: 40px; border-left: 5px solid var(--primary-blue); }
+        .meta-info p { margin: 12px 0; color: var(--text-secondary); font-size: 1.05rem; }
+        .meta-info strong { color: var(--primary-blue); font-weight: 600; }
+        .meta-info a { color: var(--primary-blue); text-decoration: none; word-break: break-all; }
+
+        .highlight-box { background: linear-gradient(135deg, rgba(0, 255, 136, 0.08) 0%, rgba(0, 212, 255, 0.08) 100%); padding: 30px; border-radius: 16px; border-left: 5px solid var(--accent-green); margin: 40px 0; }
+        .highlight-box h4 { color: var(--accent-green); margin-bottom: 15px; font-size: 1.3rem; }
+        .highlight-box p { color: var(--text-secondary); margin: 0; }
+
+        /* Footer */
+        footer { background: #050508; padding: 60px 20px; text-align: center; border-top: 1px solid rgba(255, 255, 255, 0.1); }
+        footer p { color: var(--text-secondary); margin-bottom: 20px; }
+        .footer-links { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; }
+        .footer-links a { color: var(--primary-blue); text-decoration: none; transition: color 0.3s ease; }
+        .footer-links a:hover { color: var(--text-primary); }
+
+        /* RWD */
+        @media (max-width: 768px) {
+            .content-section { padding: 40px 25px; }
+            .hero-images { grid-template-columns: 1fr; }
+            .hero h1 { font-size: 2rem; }
+            .hero-subtitle { font-size: 1.2rem; }
+        }
+    </style>
+</head>
+<body>
+    <!-- 代碼雨背景 -->
+    <div class="code-rain" id="codeRain"></div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <span class="hero-badge">📰 AI News 專題報道</span>
+            <h1>Ferrari 攜手 IBM AI 打造 F1 超級粉絲</h1>
+            <p class="hero-subtitle">頂級超跑製造商與科技巨頭聯手，運用生成式人工智能重塑賽車運動的粉絲體驗，開創體育娛樂產業的數位轉型新紀元</p>
+            <div class="hero-images">
+                <div class="hero-image-card">
+                    <img src="img/img1.png" alt="Ferrari 與 IBM AI 合作概念圖">
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <span></span>
+        </div>
+    </section>
+
+    <!-- Content Section -->
+    <section>
+        <div class="content-section">
+            <!-- Meta Info -->
+            <div class="meta-info">
+                <p><strong>📺 資料來源</strong>：<a href="https://techcrunch.com" target="_blank">TechCrunch</a></p>
+                <p><strong>📅 發布日期</strong>：2026-05-24</p>
+                <p><strong>🤖 處理方式</strong>：AI 智能摘要生成</p>
+            </div>
+
+            <!-- 核心觀點 -->
+            <h3>🎯 核心觀點</h3>
+            <p>本次報導指出，Ferrari 正與 IBM 展開深度合作，運用先進的生成式人工智能技術，為 Formula 1 賽車運動打造全新的粉絲互動體驗。這項合作標誌著傳統體育產業尖端科技的融合邁入新階段，目標是將一般觀眾轉化為深度參與的「超級粉絲」。</p>
+            <p>研究指出，現代體育迷的消費行為正經歷根本性轉變。單純的賽事轉播已無法滿足觀眾需求，個人化、沉浸式的數位體驗成為產業競的關鍵戰場。Ferrari 與 IBM 的聯手，正是針對這一趨勢的戰略回應。</p>
+
+            <!-- 技術應用 -->
+            <h3>💡 技術應用解析</h3>
+            <p>數據顯示，IBM 的 watsonx 企業級 AI 平台將成為此次合作的核心技術支柱。該平台具備強大的自然語言處理與機器學習能力，能夠即時分析海量賽事數據、歷史紀錄及粉絲行為模式。</p>
+            <p>專家分析，這項技術部署將帶來以下創新應用：</p>
+            <ul>
+                <li><strong>智能內容生成</strong>：自動產生個人化的賽事亮點、數據視覺化與戰術分析</li>
+                <li><strong>即時互動助理</strong>：AI 驅動的對話系統，解答粉絲關於車隊、車手與賽事的各類問題</li>
+                <li><strong>預測性洞察</strong>：基於歷史數據與即時資訊，提供賽事結果預測與策略建議</li>
+                <li><strong>多語言即時翻譯</strong>：打破語言障礙，服務全球各地的 Tifosi 粉絲社群</li>
+                <li><strong>沉浸式敘事體驗</strong>：結合擴增實境技術，創造虛實整合的觀賽情境</li>
+            </ul>
+
+            <!-- 產業影響 -->
+            <h3>📊 產業影響評估</h3>
+            <p>業界觀察人士認為，這項合作將對 Formula 1 乃至整個體育娛樂產業產生深遠影響。Ferrari 作為 F1 歷史上最成功的車隊之一，其品牌價值與全球影響力為技術落地提供了絕佳場景。</p>
+            <p>研究指出，體育科技市場預計將在未來五年內持續擴張，而人工智能驅動的粉絲體驗正是增長最快的細分領域之一。Ferrari 與 IBM 的結合，展現了傳統體育機構如何透過科技賦能，重塑與受眾的連結方式。</p>
+
+            <!-- Highlight Box -->
+            <div class="highlight-box">
+                <h4>✨ 關鍵洞察</h4>
+                <p>本次合作的核心價值在於「從觀看者到參與者」的體驗升級。IBM 的企業級 AI 技術不僅提升內容生產效率，更重要的是創造了前所未有的互動深度，使每位粉絲都能獲得量身打造的賽事體驗，這正是「超級粉絲」經濟的精髓所在。</p>
+            </div>
+
+            <!-- 未來展望 -->
+            <h3>🔮 未來展望</h3>
+            <p>隨著技術持續演進，專家預期這類 AI 驅動的體育體驗將朝更個人化、即時化與沉浸化的方向發展。Ferrari 與 IBM 的合作模式，很可能成為其他頂級體育品牌與科技企業合作的參考範本。</p>
+            <p>數據顯示，新一代體育迷對數位原生體驗的期待不斷攀升。能夠成功整合人工智能、雲端運算與數據分析的組織，將在未來的粉絲經濟中佔據領先地位。Ferrari 此次的前瞻布局，正是為這一趨勢預作準備。</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2026 AI News Archive | 由 AI 技術生成</p>
+        <div class="footer-links">
+            <a href="../index.html">返回主頁</a>
+            <a href="https://github.com/hklamsir/ai_news" target="_blank">GitHub</a>
+            <a href="https://hklamsir.github.io/ai_news/" target="_blank">瀏覽所有專題</a>
+        </div>
+    </footer>
+
+    <!-- 代碼雨動畫腳本 -->
+    <script>
+        const codeRain = document.getElementById('codeRain');
+        const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789@#$%^&*';
+        
+        function createCodeChar() {
+            const char = document.createElement('span');
+            char.className = 'code-char';
+            char.textContent = chars[Math.floor(Math.random() * chars.length)];
+            char.style.left = Math.random() * 100 + '%';
+            char.style.animationDelay = Math.random() * 4 + 's';
+            char.style.animationDuration = (Math.random() * 2 + 3) + 's';
+            codeRain.appendChild(char);
+            
+            setTimeout(() => {
+                char.remove();
+            }, 5000);
+        }
+        
+        setInterval(createCodeChar, 100);
+    </script>
+
+    <script>
+        function createCodeRain() {
+            const codeRain = document.getElementById('codeRain');
+            if (!codeRain) return;
+            const chars = '01 アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン';
+            for (let i = 0; i < 50; i++) {
+                const char = document.createElement('div');
+                char.className = 'code-char';
+                char.textContent = chars[Math.floor(Math.random() * chars.length)];
+                char.style.left = Math.random() * 100 + '%';
+                char.style.animationDelay = Math.random() * 4 + 's';
+                char.style.animationDuration = (Math.random() * 2 + 3) + 's';
+                codeRain.appendChild(char);
+            }
+        }
+
+        function handleScrollAnimation() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('.fade-in').forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(30px)';
+                el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(el);
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            createCodeRain();
+            handleScrollAnimation();
+        });
+    </script>
+</body>
+</html>

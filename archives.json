@@ -1,6 +1,16 @@
 {
   "archives": [
     {
+      "dir": "news_20260524_103901",
+      "title": "Ferrari is using IBM's AI to create F1 superfans | TechCrunch",
+      "summary_short": "# Ferrari is using IBM's AI to create F1 superfans | TechCrunch## 📖 新聞導語本文報導來自 **TECHCRUNCH**，發布",
+      "images": [
+        "img/img1.png"
+      ],
+      "date": "2026-05-24",
+      "url": "./news_20260524_103901/index.html"
+    },
+    {
       "dir": "news_20260524_101131",
       "title": "Starbucks 放棄 AI 庫存工具 僅僅九個月就夭折",
       "summary": "攜手 NomadGo 打造的自動化盤點系統，连薄荷糖漿都偵測不到 — 零售業 AI 落地的慘痛一課",
@@ -964,6 +974,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-05-24T10:34:48.529152",
+  "last_updated": "2026-05-24T10:41:08.782040",
   "total_count": 107
 }
