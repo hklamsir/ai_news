@@ -1,6 +1,16 @@
 {
   "archives": [
     {
+      "dir": "news_20260525_101115",
+      "title": "DeepSeek permanently reduces the price of its flagship V4 model by 75 percent - Engadget",
+      "summary_short": "# DeepSeek permanently reduces the price of its flagship V4 model by 75 percent - Engadget## 📖 新聞導",
+      "images": [
+        "img/img1.png"
+      ],
+      "date": "2026-05-25",
+      "url": "./news_20260525_101115/index.html"
+    },
+    {
       "dir": "news_20260524_225345",
       "title": "AI Agent 連續跑 27 小時 /goal 功能怎麼用？",
       "summary": "Claude Code、OpenAI Codex、Hermes Agent 同步推出 /goal 功能——Gary Chen 27 小時實驗驗證「評審 + 執行者」雙 agents 架構",
@@ -1000,6 +1010,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-05-24T23:01:20.346134",
+  "last_updated": "2026-05-25T10:13:20.972570",
   "total_count": 111
 }
