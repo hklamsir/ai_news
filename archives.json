@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260525_221000",
+      "title": "LINE臺灣AI Coding實戰 從Vibe Coding到規格驅動開發",
+      "summary": "LINE臺灣工程團隊分享AI輔助開發心法，工程師角色從工匠升級為工頭",
+      "url": "./news_20260525_221000/index.html",
+      "date": "2026-05-25",
+      "time": "22:10:00",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260525_103000",
       "title": "中國CXMT記憶體進入主流市場 攜手Corsair DDR5突圍",
       "summary": "中國CXMT記憶體進入主流市場：攜手Corsair DDR5突圍，DRAM市場競爭白熱化",
@@ -1018,6 +1027,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-05-25T13:05:40.173722",
-  "total_count": 113
+  "last_updated": "2026-05-25T22:13:28.564517",
+  "total_count": 114
 }
