@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260525_103000",
+      "title": "中國CXMT記憶體進入主流市場 攜手Corsair DDR5突圍",
+      "summary": "中國CXMT記憶體進入主流市場：攜手Corsair DDR5突圍，DRAM市場競爭白熱化",
+      "url": "./news_20260525_103000/index.html",
+      "date": "2026-05-25",
+      "time": "10:30:00",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260525_101115",
       "title": "DeepSeek 永久調降 V4 旗艦模型價格 75%",
       "summary": "中國 AI 新創企業發動價格戰，大型語言模型市場競爭白熱化，開發者成本大幅降低",
@@ -1009,6 +1018,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-05-25T10:16:06.096439",
-  "total_count": 112
+  "last_updated": "2026-05-25T13:05:40.173722",
+  "total_count": 113
 }
