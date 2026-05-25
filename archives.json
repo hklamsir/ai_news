@@ -2,13 +2,12 @@
   "archives": [
     {
       "dir": "news_20260525_101115",
-      "title": "DeepSeek permanently reduces the price of its flagship V4 model by 75 percent - Engadget",
-      "summary_short": "# DeepSeek permanently reduces the price of its flagship V4 model by 75 percent - Engadget## 📖 新聞導",
-      "images": [
-        "img/img1.png"
-      ],
+      "title": "DeepSeek 永久調降 V4 旗艦模型價格 75%",
+      "summary": "中國 AI 新創企業發動價格戰，大型語言模型市場競爭白熱化，開發者成本大幅降低",
+      "url": "./news_20260525_101115/index.html",
       "date": "2026-05-25",
-      "url": "./news_20260525_101115/index.html"
+      "time": "10:11:15",
+      "source": "AI News"
     },
     {
       "dir": "news_20260524_225345",
@@ -1010,6 +1009,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-05-25T10:13:20.972570",
-  "total_count": 111
+  "last_updated": "2026-05-25T10:16:06.096439",
+  "total_count": 112
 }
