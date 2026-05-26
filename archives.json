@@ -1,9 +1,18 @@
 {
   "archives": [
     {
+      "dir": "news_20260526_202354",
+      "title": "教宗良十四世首個 AI 通論 警惕「新型數碼奴役」",
+      "summary": "羅馬天主教教宗發表首份重要教導文件，警告 AI 需要被「繳械」，將數碼剝削與歷史奴隸制相比",
+      "url": "./news_20260526_202354/index.html",
+      "date": "2026-05-26",
+      "time": "20:23:54",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260526_114800",
-      "title": "拒絕Vibe Coding！ AI程式設計的正確姿勢",
-      "summary": "TypeScript大神Matt Pocock開源實戰方法論，以「Skills for real engineers」重新定義人機協作新正規化，對抗AI時代技術債務危機",
+      "title": "AI 經濟的兩個泡沫 只有一個能存活",
+      "summary": "為何這次泡沫與網路泡沫不同——基礎設施層真實、應用層掙扎，結構性差異決定誰能度過調整期",
       "url": "./news_20260526_114800/index.html",
       "date": "2026-05-26",
       "time": "11:48:00",
@@ -1036,6 +1045,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-05-26T15:33:19.507538",
-  "total_count": 115
+  "last_updated": "2026-05-26T20:25:02.192957",
+  "total_count": 116
 }
