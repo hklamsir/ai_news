@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260526_114800",
+      "title": "拒絕Vibe Coding！ AI程式設計的正確姿勢",
+      "summary": "TypeScript大神Matt Pocock開源實戰方法論，以「Skills for real engineers」重新定義人機協作新正規化，對抗AI時代技術債務危機",
+      "url": "./news_20260526_114800/index.html",
+      "date": "2026-05-26",
+      "time": "11:48:00",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260525_221000",
       "title": "LINE臺灣AI Coding實戰 從Vibe Coding到規格驅動開發",
       "summary": "LINE臺灣工程團隊分享AI輔助開發心法，工程師角色從工匠升級為工頭",
@@ -1027,6 +1036,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-05-25T22:13:28.564517",
-  "total_count": 114
+  "last_updated": "2026-05-26T15:33:19.507538",
+  "total_count": 115
 }
