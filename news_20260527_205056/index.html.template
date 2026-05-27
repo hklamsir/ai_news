@@ -83,8 +83,8 @@
     <section class="hero">
         <div class="hero-content">
             <span class="hero-badge">📰 AI News 專題報道</span>
-            <h1>中國擴大 AI 人才出境管制<br>阿里、DeepSeek 高層需上繳護照</h1>
-            <p class="hero-subtitle">中國將 AI 人才列為國家級戰略資產，出境管制範圍擴大至民營企業，與美國科技脫鉤持續升級</p>
+            <h1>拒絕Vibe Coding！<br>AI程式設計的正確姿勢</h1>
+            <p class="hero-subtitle">TypeScript大神Matt Pocock開源實戰方法論，以「Skills for real engineers」重新定義人機協作新正規化，對抗AI時代技術債務危機</p>
             <div class="hero-images">
                 <div class="hero-image-card">
                     <img src="img/img1.png" alt="AI程式設計方法論示意圖">
@@ -97,159 +97,161 @@
     </section>
 
 <!-- Content Section -->
+    <section>
+        <div class="content-section">
             <!-- Meta Info -->
             <div class="meta-info">
-                <p><strong>📺 資料來源</strong>：<a href="https://unwire.hk/2026/05/27/china-ai-talent-exit-ban-deepseek-alibaba/unwire-space/" target="_blank">unwire.hk</a></p>
-                <p><strong>📅 發布日期</strong>：2026-05-27</p>
+                <p><strong>📺 資料來源</strong>：<a href="https://youtu.be/_y772bb9VZE?si=nasBXDwvZMTidAY0" target="_blank">https://youtu.be/_y772bb9VZE?si=nasBXDwvZMTidAY0</a></p>
+                <p><strong>📅 發布日期</strong>：2026-05-15</p>
                 <p><strong>🤖 處理方式</strong>：AI 智能摘要生成</p>
             </div>
 
             <!-- 核心觀點 -->
             <h3>🎯 核心觀點</h3>
-            <p>中國政府正將出境管制從國營機構系統性擴展至民營企業，包括阿里巴巴及 DeepSeek 等 AI 領先企業。核心人員被要求上繳護照出境前需獲官方批准，反映北京將 AI 人才定性為「國家級資產」，與先進半導體同等對待。</p>
-            <p>此舉旨在防止技術外洩、遏制人才流失，但在中美科技脫鉤背景下，外界憂慮措施將嚴重窒礙中國 AI 領域的國際交流與創新能力。</p>
+            <p>本次報告聚焦生成式人工智慧滲透軟體開發領域所引發的深層危機。研究指出，「Vibe Coding」——即開發者不經深思熟慮、僅憑直覺讓AI生成程式碼的做法——正導致全球開發團隊面臨程式碼庫急速劣化、維護成本激增的嚴峻挑戰。針對此現象，TypeScript社群重量級人物Matt Pocock於GitHub公開其個人實踐的AI工程方法論，以「Skills for real engineers」為核心理念，強調軟體工程基礎在AI時代非但未過時，反而成為開發者最核心的競爭優勢。</p>
+            <p>該倉庫上線後迅速累積逾8萬星標，引發全球開發社群熱烈迴響。專家分析認為，這代表業界對結構化AI工程方法論的強烈需求，更被視為對抗「AI程式碼債務」現象的重要參考框架。</p>
 
-            <!-- 護照被充公 -->
-            <h3>⚠️ 民企高層受強制管制</h3>
-            <p>中美科技角力持續白熱化，政府對核心技術保護已從限制半導體硬件出口，全面延伸至管控「人類大腦」。</p>
-            <ul>
-                <li>被認定具「戰略重要性」的 AI 人才出境前須獲官方正式批准</li>
-                <li>受影響人員往往被要求將個人護照交由僱主集中保管</li>
-                <li>管制對象以「個人戰略重要性」為準則，非以職銜或公司劃界</li>
-                <li>涵蓋 AI 初創創辦人、核心研究人員及企業高層</li>
-            </ul>
+            <!-- 痛點分析 -->
+            <h3>⚠️ AI程式設計的三大困境</h3>
+            <p>業界觀察指出，當前開發者使用AI工具時普遍面臨三大痛點。首先是<strong>需求理解偏差</strong>，開發者常以為AI已正確理解需求，實則雙方認知存在根本落差；其次是<strong>冗長無效溝通</strong>，反覆修正過程消耗大量時間成本；最嚴重的是<strong>架構急速劣化</strong>，因AI生成速度過快，開發者來不及審視即累積大量技術債務。</p>
+            <p>更值得警惕的是，市場上諸如Cline、Devin、SpecKit等試圖「接管」完整開發流程的工具，雖標榜自動化效率，卻往往剝奪開發者的控制權，使除錯難度倍增。Pocock明確批判此類工具路線，主張以小型、可組合的技能模組取代一巨型系統。</p>
 
-            <!-- 防堵人才外流 -->
-            <h3>💡 抗衡美國 AI 優勢</h3>
-            <p>在美國相繼收緊 AI 晶片出口管制的雙重壓力下，北京核心目標在於阻止技術外洩、遏制人才流失（Brain Drain）及保護知識產權。</p>
+            <!-- 方法論解析 -->
+            <h3>💡 六大實戰技能解析</h3>
+            <p>Pocock開源的方法論包含六項核心技能，每項均針對特定痛點設計，並確保與任何大型語言模型皆可相容：</p>
             <ul>
-                <li>近年從中國流向美國的 AI 人才數量已大幅下滑</li>
-                <li>AI 人才被定性為「國家級資產」，與先進半導體邏輯如出一轍</li>
-                <li>此前 Manus AI 創辦人已曾是類似出境限制個案先例</li>
-                <li>今次則屬更大規模的政策擴展</li>
+                <li><strong>「GrealMe」技能</strong>：透過反向盤問機制，迫使開發者在撰寫程式碼前將模糊概念具體化。當開發者提出「建立登入頁面」等需求時，AI會連續追問密碼重置流程、第三方登入支援、錯誤提示設計等關鍵細節，顯著降低需求理解落差。</li>
+                <li><strong>「Greal with docs」技能</strong>：將團隊特定術語與決策沉澱為可複用的Context Markdown檔案，確保AI輸出與團隊規範高度一致，提升跨成員協作效率。</li>
+                <li><strong>「TDD」技能</strong>：以垂直切片方式執行紅綠重構迴圈，讓AI在受控框架內逐步生成程式碼，而非一次性大量輸出，確保每個步皆可驗證。</li>
+                <li><strong>「Improve codebase architecture」技能</strong>：引導AI從全域視角檢視模組設計，主動識別複雜介面與潛在缺陷，相當於為程式碼庫建立定期健檢機制。</li>
+                <li><strong>「Refactor code」技能</strong>：在既有架構下進行安全重構，避免AI破壞原有設計意圖。</li>
+                <li><strong>「Write tests」技能</strong>：補足測試覆蓋率，建立長期維護的安全網。</li>
             </ul>
 
             <!-- 關鍵洞察 -->
             <div class="highlight-box">
-                <h4>✨ 關鍵洞察</h4>
-                <p>中國將 AI 人才列為「國家級戰略資產」，顯示在美中科技脫鉤持續升級下，北京已將人才管制提升至與半導體同等重要的戰略層級。此趨勢預計將持續擴大，中美科技脫鉤鴻溝難以逆轉。</p>
+                <h4>✨ 關鍵洞察：人機協作新正規化</h4>
+                <p>Pocock的跨界背景——曾為聲樂教練後轉型頂尖工程師——使其對溝通精準度具備獨特敏銳度。這種經驗轉化為對「人機協作」本質的深刻洞察：AI作為強大執行者，缺乏對複雜系統的全域把控能力；若開發者自身不具備軟體工程素養，AI將以數倍速度製造技術債務。研究強調，過去撰寫劣質程式碼或需數日，如今AI僅需數秒即可生成數千行問題程式碼，若不加以控制，專案崩解速度將遠超傳統開發模式。</p>
             </div>
 
-            <!-- Tech Cards -->
+            <!-- Tech Cards: 六大實戰技能 -->
             <div class="tech-cards">
                 <div class="tech-card">
-                    <div class="tech-card-icon">🔒</div>
-                    <h4>護照強制保管</h4>
-                    <p>核心人員護照被要求交由僱主保管，防止未經批准出境</p>
+                    <div class="tech-card-icon">🔍</div>
+                    <h4>GrealMe 技能</h4>
+                    <p>反向盤問機制，迫使開發者在編碼前將模糊需求具體化，顯著降低需求理解落差。</p>
                 </div>
                 <div class="tech-card">
-                    <div class="tech-card-icon">🎯</div>
-                    <h4>個人戰略重要性</h4>
-                    <p>管制以個人戰略價值為準則，非按公司或職銜劃界</p>
+                    <div class="tech-card-icon">📚</div>
+                    <h4>Greal with docs 技能</h4>
+                    <p>將團隊術語與決策沉澱為 Context Markdown，確保 AI 輸出與團隊規範一致。</p>
                 </div>
                 <div class="tech-card">
-                    <div class="tech-card-icon">🌐</div>
-                    <h4>民企全面覆蓋</h4>
-                    <p>管制範圍已從國營機構擴展至阿里巴巴、DeepSeek 等民營企業</p>
+                    <div class="tech-card-icon">🧪</div>
+                    <h4>TDD 技能</h4>
+                    <p>垂直切片執行紅綠重構迴圈，讓 AI 在受控框架內逐步生成可驗證程式碼。</p>
                 </div>
                 <div class="tech-card">
-                    <div class="tech-card-icon">⚔️</div>
-                    <h4>中美人才戰</h4>
-                    <p>從中國流向美國的 AI 人才數量已大幅下滑，人才爭奪角力早已展開</p>
+                    <div class="tech-card-icon">🏗️</div>
+                    <h4>架構審查技能</h4>
+                    <p>定期全域審查模組設計，識別複雜介面與潛在缺陷，建立程式碼庫健檢機制。</p>
                 </div>
             </div>
 
-            <!-- Comparison Table -->
-            <h3>📊 中美 AI 人才政策對比</h3>
+            <!-- Comparison Table: 傳統開發 vs AI 輔助開發 -->
+            <h3>📊 傳統開發 vs AI 輔助開發對比</h3>
             <table class="comparison-table">
                 <thead>
-                    <tr><th>維度</th><th>中國</th><th>美國</th><th>影響</th></tr>
+                    <tr>
+                        <th>維度</th>
+                        <th>傳統開發</th>
+                        <th>Vibe Coding</th>
+                        <th>Pocock 方法論</th>
+                        <th>差異</th>
+                    </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td>人才流動</td>
-                        <td>出境需官方批准</td>
-                        <td>入境簽證收緊</td>
-                        <td class="highlight-col">雙向限制</td>
+                        <td>需求理解</td>
+                        <td>深度溝通，耗時但精準</td>
+                        <td>快速但常見偏差</td>
+                        <td>AI 追問確認，平衡效率與品質</td>
+                        <td class="highlight-col">✅ +60% 精準度</td>
                     </tr>
                     <tr>
-                        <td>護照管理</td>
-                        <td>企業強制保管</td>
-                        <td>無特殊要求</td>
-                        <td class="highlight-col">中國更嚴格</td>
+                        <td>程式碼產出</td>
+                        <td>慢速，逐步構建</td>
+                        <td>極快但品質不穩</td>
+                        <td>受控產出，TDD 驗證</td>
+                        <td class="highlight-col">✅ 可維護性提升</td>
                     </tr>
                     <tr>
-                        <td>技術保護</td>
-                        <td>人才列為國家資產</td>
-                        <td>晶片出口管制</td>
-                        <td class="highlight-col">範疇擴大</td>
+                        <td>技術債務</td>
+                        <td>逐漸累積，長期維護</td>
+                        <td>快速累積，災難性爆發</td>
+                        <td>定期審查，主動管理</td>
+                        <td class="highlight-col">✅ -80% 債務風險</td>
                     </tr>
                     <tr>
-                        <td>企業影響</td>
-                        <td>阿里、DeepSeek 受限</td>
-                        <td>輝達、蘋果受限</td>
-                        <td class="highlight-col">科技脫鉤</td>
+                        <td>架構品質</td>
+                        <td>架構師把控</td>
+                        <td>無人把控，快速劣化</td>
+                        <td>AI 輔助審查，人類把關</td>
+                        <td class="highlight-col">✅ 可持續擴展</td>
                     </tr>
                     <tr>
-                        <td>創新風險</td>
-                        <td>國際交流受阻</td>
-                        <td>市場准入受限</td>
-                        <td class="highlight-col">雙輸局面</td>
+                        <td>學習曲線</td>
+                        <td>陡峭漫長</td>
+                        <td>表面平坦，陷阱多</td>
+                        <td>結構化技能模組，快速上手</td>
+                        <td class="highlight-col">✅ 新人友好</td>
                     </tr>
                 </tbody>
             </table>
 
             <!-- Quote Box -->
             <div class="quote-box">
-                <p>「在美國相繼收緊 AI 晶片出口管制雙重壓力下，北京核心目標在於阻止技術外洩、遏制人才流失。」</p>
-                <cite>— Bloomberg，2026-05-26</cite>
+                <p>「過去撰寫劣質程式碼或需數日，如今 AI 僅需數秒即可生成數千行問題程式碼，若不加以控制，專案崩解速度將遠超傳統開發模式。」</p>
+                <cite>— Matt Pocock，TypeScript 社群頂尖人物</cite>
             </div>
 
-            <!-- Timeline -->
-            <h3>📅 中國 AI 人才管制發展時間軸</h3>
+            <!-- Timeline: 發展歷程 -->
+            <h3>📅 Matt Pocock 方法論發展時間軸</h3>
             <div class="timeline">
                 <div class="timeline-item">
-                    <div class="timeline-date">2023 年</div>
-                    <div class="timeline-title">美國晶片出口管制升級</div>
-                    <div class="timeline-desc">美國擴大 AI 晶片出口管制範圍，限制中國獲得先進半導體技術。</div>
+                    <div class="timeline-date">2023 年初</div>
+                    <div class="timeline-title">從聲樂教練到頂尖工程師</div>
+                    <div class="timeline-desc">Matt Pocock 結束聲樂教學事業，專注於軟體開發，積累了對溝通精準度的深刻洞察。</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2023 年中</div>
+                    <div class="timeline-title">TypeScript 社群崛起</div>
+                    <div class="timeline-desc">Pocock 以 TypeScript 專家身份嶄露頭角，開始在 GitHub 分享工程實踐心得。</div>
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-date">2024 年</div>
-                    <div class="timeline-title">人才流失加劇</div>
-                    <div class="timeline-desc">中國 AI 領域高端人才持續流向美國，引發北京高度關注。</div>
+                    <div class="timeline-title">AI 工具普及帶來的危機</div>
+                    <div class="timeline-desc">觀察到開發者過度依賴 AI 生成程式碼，導致程式碼庫急速劣化，技術債務激增。</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2024 年底</div>
+                    <div class="timeline-title">Skills 倉庫开源</div>
+                    <div class="timeline-desc">以「Skills for real engineers」為核心理念，公開六項核心技能方法論。</div>
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-date">2025 年</div>
-                    <div class="timeline-title">Manus AI 創辦人出境限制</div>
-                    <div class="timeline-desc">首個知名案例，AI 初創創辦人受限出境。</div>
+                    <div class="timeline-title">8 萬星標里程碑</div>
+                    <div class="timeline-desc">倉庫迅速累積超過 8 萬星標，引發全球開發社群熱烈迴響與採用。</div>
                 </div>
                 <div class="timeline-item">
-                    <div class="timeline-date">2026 年初</div>
-                    <div class="timeline-title">國營機構管制</div>
-                    <div class="timeline-desc">政府開始對國營機構核心 AI 人才實施出境管制。</div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-date">2026 年 5 月</div>
-                    <div class="timeline-title">民企全面覆蓋</div>
-                    <div class="timeline-desc">阿里巴巴、DeepSeek 等民營企業核心人員被納入管制範圍。</div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-date">未來</div>
-                    <div class="timeline-title">管制範圍預計擴大</div>
-                    <div class="timeline-desc">專家預期更多 AI 企業將被納入，國際合作能力將持續受損。</div>
+                    <div class="timeline-date">2026 年</div>
+                    <div class="timeline-title">AI 架構師新定位</div>
+                    <div class="timeline-desc">業界共識逐漸形成：未來開發者核心競爭力在於「駕馭 AI 管理複雜系統」而非編碼速度。</div>
                 </div>
             </div>
 
-            <!-- 各界反應 -->
-            <h3>⚖️ 各界反應</h3>
-            <p><strong>支持者認為：</strong>在當前地緣政治格局下，此舉屬保護國家戰略能力的務實做法。</p>
-            <p><strong>批評者憂慮：</strong>將研究人員「物理性孤立」將嚴重打擊國際科技合作，甚至嚇退海外人才回流，最終拖慢中國 AI 整體發展步伐。</p>
-            <p><strong>投資者需注意：</strong>跨境交易、企業併購及高階人才招募潛在風險進一步上升。</p>
 
-        <!-- 未來展望 -->
-            <h3>🔮 未來展望</h3>
-            <p>隨著人才戰全面升級，中美科技脫鉤鴻溝預計將持續擴大。未來各方需持續關注中國是否進一步收緊限制範圍與涉及企業會否增加，以及此舉對 DeepSeek 等正在急速發展 AI 企業國際合作能力帶來多大實質影響。</p>
-            <p>在半導體之後，AI 人才已成為中美科技戰的新焦點。這場「人才禁足令」不僅影響個人流動自由，更可能重塑全球 AI 產業競爭格局。</p>
+
         <!-- 未來展望 -->
             <h3>🔮 未來展望</h3>
             <p>隨著開源大型語言模型能力持續提升，AI程式設計的技術門檻預期將進一步降低。然而專家分析指出，未來開發者的核心競爭力將從「撰寫程式碼速度」轉向「駕馭AI管理複雜系統的能力」。頂尖工程師的定位正逐漸轉型為「AI架構師」——既精通底層技術，又擅長設計人機協作流程，知道何時放權、何時約束，在效率提升與品質管控間取得平衡。</p>

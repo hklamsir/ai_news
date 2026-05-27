@@ -3,10 +3,11 @@
     {
       "dir": "news_20260527_205056",
       "title": "中國擴大 AI 人才出境管制 阿里、DeepSeek 高層需上繳護照",
-      "summary_short": "# 中國擴大 AI 人才出境管制 阿里、DeepSeek 高層需上繳護照## 📖 新聞導語本文報導來自 **UNWIRE**，發布於 **2026-05-27**。最新科技新聞報道指出，人",
-      "images": [],
+      "summary": "中國將 AI 人才列為國家級戰略資產，出境管制範圍擴大至民營企業，與美國科技脫鉤持續升級",
+      "url": "./news_20260527_205056/index.html",
       "date": "2026-05-27",
-      "url": "./news_20260527_205056/index.html"
+      "time": "20:50:56",
+      "source": "AI News"
     },
     {
       "dir": "news_20260526_202354",
@@ -1053,6 +1054,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-05-27T20:55:46.001406",
-  "total_count": 116
+  "last_updated": "2026-05-27T20:59:32.764759",
+  "total_count": 117
 }
