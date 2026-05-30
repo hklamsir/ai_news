@@ -58,12 +58,19 @@
         .comparison-table td { padding: 16px 20px; border-bottom: 1px solid rgba(255, 255, 255, 0.05); color: var(--text-secondary); }
         .comparison-table tr:last-child td { border-bottom: none; }
         .comparison-table tr:nth-child(even) { background: rgba(255, 255, 255, 0.02); }
-        .timeline { margin: 40px 0; }
-        .timeline-item { display: flex; gap: 20px; margin-bottom: 24px; }
-        .timeline-dot { width: 16px; height: 16px; background: var(--primary-blue); border-radius: 50%; margin-top: 6px; flex-shrink: 0; }
-        .timeline-content { flex: 1; }
-        .timeline-content h4 { color: var(--primary-blue); margin-bottom: 5px; font-size: 1.1rem; }
-        .timeline-content p { color: var(--text-secondary); font-size: 0.95rem; line-height: 1.7; }
+        .timeline { position: relative; margin: 40px 0; padding-left: 40px; }
+        .timeline::before { content: ''; position: absolute; left: 15px; top: 0; bottom: 0; width: 2px; background: linear-gradient(180deg, var(--primary-blue), var(--primary-purple)); }
+        .timeline-item { position: relative; margin-bottom: 35px; padding: 20px 25px; background: var(--card-bg-light); border-radius: 12px; border: 1px solid rgba(0, 212, 255, 0.1); animation: fadeInUp 0.5s ease-out forwards; opacity: 0; }
+        .timeline-item:nth-child(1) { animation-delay: 0.1s; }
+        .timeline-item:nth-child(2) { animation-delay: 0.2s; }
+        .timeline-item:nth-child(3) { animation-delay: 0.3s; }
+        .timeline-item:nth-child(4) { animation-delay: 0.4s; }
+        .timeline-item:nth-child(5) { animation-delay: 0.5s; }
+        .timeline-item:nth-child(6) { animation-delay: 0.6s; }
+        .timeline-item::before { content: ''; position: absolute; left: -32px; top: 25px; width: 12px; height: 12px; background: var(--primary-blue); border-radius: 50%; box-shadow: var(--glow-blue); }
+        .timeline-date { color: var(--primary-blue); font-size: 0.9rem; font-weight: 600; margin-bottom: 8px; }
+        .timeline-title { color: var(--text-primary); font-size: 1.1rem; font-weight: 600; margin-bottom: 8px; }
+        .timeline-desc { color: var(--text-secondary); font-size: 0.95rem; line-height: 1.7; }
         footer { background: #050508; padding: 60px 20px; text-align: center; border-top: 1px solid rgba(255, 255, 255, 0.1); }
         footer p { color: var(--text-secondary); margin-bottom: 20px; }
         .footer-links { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; }
@@ -87,7 +94,7 @@
             <p class="hero-subtitle">電視網絡首例 AI 版權訴訟！CNN 入稟控告 Perplexity 抄襲超過 17,000 篇內容，揭露從談判到決裂的完整過程</p>
             <div class="hero-images">
                 <div class="hero-image-card">
-                    <img src="img/img1.png" alt="AI程式設計方法論示意圖">
+                    <img src="img/img1.png" alt="CNN 控告 Perplexity 新聞專題">
                 </div>
             </div>
         </div>
@@ -97,8 +104,7 @@
     </section>
 
 <!-- Content Section -->
-    <section>
-        <div class="content-section">
+    <section class="content-section">
 
             <!-- Meta Info -->
             <div class="meta-info">
@@ -249,7 +255,6 @@
             <h3>🔮 未來展望：AI 時代的內容生態重塑</h3>
             <p>CNN 訴訟律師團隊的策略很明確：不僅要求經濟賠償，更尋求法院頒發禁制令，全面阻止 Perplexity 未來使用 CNN 內容。這起案件預計將成為 AI 版權問題的里程碑式判例，並可能倒逼整個行業重新定義 AI 訓練數據的授權邊界。</p>
             <p>對於整個新聞媒體行業而言，CNN 的訴訟具有重要的示範效應。如果勝訴，將為其他新聞機構提供有力的法律參考；即便敗訴，也可能推動國會加快制定 AI 版權相關立法。最終，無論判決結果如何，這場風波都已深刻揭示：在 AI 席捲一切的時代，內容的價值正在被重新發現與定價。</p>
-        </div>
     </section>
 
     <!-- Footer -->

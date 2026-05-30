@@ -10,15 +10,6 @@
       "source": "AI News"
     },
     {
-      "dir": "news_20260530_234522",
-      "title": "CNN 正式對 Perplexity 提起訴訟，AI 內容版權戰再度升級",
-      "summary": "傳統媒體巨頭與生成式 AI 企業的智權爭議持續發酵，產業生態系面臨重新洗牌。",
-      "url": "./news_20260530_234522/index.html",
-      "date": "2026-05-30",
-      "time": "23:45:22",
-      "source": "AI News"
-    },
-    {
       "dir": "news_20260527_205056",
       "title": "中國擴大 AI 人才出境管制 阿里、DeepSeek 高層需上繳護照",
       "summary": "中國將 AI 人才列為國家級戰略資產，出境管制範圍擴大至民營企業，與美國科技脫鉤持續升級",
@@ -1072,6 +1063,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-05-30T23:55:01.825612",
-  "total_count": 119
+  "last_updated": "2026-05-31T00:10:19.100966",
+  "total_count": 118
 }
