@@ -1,6 +1,14 @@
 {
   "archives": [
     {
+      "dir": "news_20260530_234522",
+      "title": "CNN is the latest media company to sue Perplexity - Engadget",
+      "summary_short": "# CNN is the latest media company to sue Perplexity - Engadget## 📖 新聞導語本文報導來自 **ENGADGET**，發布於 *",
+      "images": [],
+      "date": "2026-05-30",
+      "url": "./news_20260530_234522/index.html"
+    },
+    {
       "dir": "news_20260527_205056",
       "title": "中國擴大 AI 人才出境管制 阿里、DeepSeek 高層需上繳護照",
       "summary": "中國將 AI 人才列為國家級戰略資產，出境管制範圍擴大至民營企業，與美國科技脫鉤持續升級",
@@ -1054,6 +1062,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-05-27T20:59:32.764759",
+  "last_updated": "2026-05-30T23:50:15.925876",
   "total_count": 117
 }
