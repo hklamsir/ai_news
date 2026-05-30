@@ -1,12 +1,22 @@
 {
   "archives": [
     {
-      "dir": "news_20260530_234522",
-      "title": "CNN is the latest media company to sue Perplexity - Engadget",
-      "summary_short": "# CNN is the latest media company to sue Perplexity - Engadget## 📖 新聞導語本文報導來自 **ENGADGET**，發布於 *",
-      "images": [],
+      "dir": "news_20260530_234750",
+      "title": "CNN 控告 Perplexity AI 時代版權大戰",
+      "summary": "電視網絡首例 AI 版權訴訟！CNN 入稟控告 Perplexity 抄襲超過 17,000 篇內容，揭露從談判到決裂的完整過程",
+      "url": "./news_20260530_234750/index.html",
       "date": "2026-05-30",
-      "url": "./news_20260530_234522/index.html"
+      "time": "23:47:50",
+      "source": "AI News"
+    },
+    {
+      "dir": "news_20260530_234522",
+      "title": "CNN 正式對 Perplexity 提起訴訟，AI 內容版權戰再度升級",
+      "summary": "傳統媒體巨頭與生成式 AI 企業的智權爭議持續發酵，產業生態系面臨重新洗牌。",
+      "url": "./news_20260530_234522/index.html",
+      "date": "2026-05-30",
+      "time": "23:45:22",
+      "source": "AI News"
     },
     {
       "dir": "news_20260527_205056",
@@ -1062,6 +1072,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-05-30T23:50:15.925876",
-  "total_count": 117
+  "last_updated": "2026-05-30T23:55:01.825612",
+  "total_count": 119
 }
