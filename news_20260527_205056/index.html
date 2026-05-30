@@ -58,12 +58,19 @@
         .comparison-table td { padding: 16px 20px; border-bottom: 1px solid rgba(255, 255, 255, 0.05); color: var(--text-secondary); }
         .comparison-table tr:last-child td { border-bottom: none; }
         .comparison-table tr:nth-child(even) { background: rgba(255, 255, 255, 0.02); }
-        .timeline { margin: 40px 0; }
-        .timeline-item { display: flex; gap: 20px; margin-bottom: 24px; }
-        .timeline-dot { width: 16px; height: 16px; background: var(--primary-blue); border-radius: 50%; margin-top: 6px; flex-shrink: 0; }
-        .timeline-content { flex: 1; }
-        .timeline-content h4 { color: var(--primary-blue); margin-bottom: 5px; font-size: 1.1rem; }
-        .timeline-content p { color: var(--text-secondary); font-size: 0.95rem; line-height: 1.7; }
+        .timeline { position: relative; margin: 40px 0; padding-left: 40px; }
+        .timeline::before { content: ''; position: absolute; left: 15px; top: 0; bottom: 0; width: 2px; background: linear-gradient(180deg, var(--primary-blue), var(--primary-purple)); }
+        .timeline-item { position: relative; margin-bottom: 35px; padding: 20px 25px; background: var(--card-bg-light); border-radius: 12px; border: 1px solid rgba(0, 212, 255, 0.1); animation: fadeInUp 0.5s ease-out forwards; opacity: 0; }
+        .timeline-item:nth-child(1) { animation-delay: 0.1s; }
+        .timeline-item:nth-child(2) { animation-delay: 0.2s; }
+        .timeline-item:nth-child(3) { animation-delay: 0.3s; }
+        .timeline-item:nth-child(4) { animation-delay: 0.4s; }
+        .timeline-item:nth-child(5) { animation-delay: 0.5s; }
+        .timeline-item:nth-child(6) { animation-delay: 0.6s; }
+        .timeline-item::before { content: ''; position: absolute; left: -32px; top: 25px; width: 12px; height: 12px; background: var(--primary-blue); border-radius: 50%; box-shadow: var(--glow-blue); }
+        .timeline-date { color: var(--primary-blue); font-size: 0.9rem; font-weight: 600; margin-bottom: 8px; }
+        .timeline-title { color: var(--text-primary); font-size: 1.1rem; font-weight: 600; margin-bottom: 8px; }
+        .timeline-desc { color: var(--text-secondary); font-size: 0.95rem; line-height: 1.7; }
         footer { background: #050508; padding: 60px 20px; text-align: center; border-top: 1px solid rgba(255, 255, 255, 0.1); }
         footer p { color: var(--text-secondary); margin-bottom: 20px; }
         .footer-links { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; }
@@ -251,6 +258,8 @@
             <h3>🔮 未來展望</h3>
             <p>隨著人才戰全面升級，中美科技脫鉤鴻溝預計將持續擴大。未來各方需持續關注中國是否進一步收緊限制範圍與涉及企業會否增加，以及此舉對 DeepSeek 等正在急速發展 AI 企業國際合作能力帶來多大實質影響。</p>
             <p>在半導體之後，AI 人才已成為中美科技戰的新焦點。這場「人才禁足令」不僅影響個人流動自由，更可能重塑全球 AI 產業競爭格局。</p>
+    </section>
+
     <!-- Footer -->
     <footer>
         <p>© 2026 AI News Archive | 由 AI 技術生成</p>
