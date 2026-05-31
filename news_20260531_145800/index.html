@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gemini用量改制：發送1指令竟耗盡5小時額度？5招秘技大幅節省Token | ezone.hk - AI News</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root { --primary-blue: #00d4ff; --primary-purple: #7b2cbf; --accent-green: #00ff88; --accent-orange: #ff9500; --accent-red: #ff4757; --dark-bg: #0a0a0f; --card-bg: #12121a; --card-bg-light: #1a1a28; --text-primary: #ffffff; --text-secondary: #a0a0b0; --gradient-1: linear-gradient(135deg, #00d4ff 0%, #7b2cbf 100%); --gradient-2: linear-gradient(135deg, #00d4ff 0%, #00ff88 100%); --glow-blue: 0 0 20px rgba(0, 212, 255, 0.5); --glow-purple: 0 0 20px rgba(123, 44, 191, 0.5); }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Noto Sans TC', sans-serif; background-color: var(--dark-bg); color: var(--text-primary); line-height: 1.8; overflow-x: hidden; }
+        @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-20px); } }
+        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.6; } }
+        @keyframes slideIn { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes codeRain { 0% { transform: translateY(-100%); opacity: 0; } 10% { opacity: 1; } 90% { opacity: 1; } 100% { transform: translateY(100vh); opacity: 0; } }
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); } }
+        .code-rain { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; overflow: hidden; }
+        .code-char { position: absolute; color: var(--primary-blue); font-family: 'Courier New', monospace; font-size: 14px; opacity: 0; animation: codeRain 4s linear infinite; }
+        .hero { position: relative; min-height: 80vh; display: flex; align-items: center; justify-content: center; padding: 80px 20px; background: linear-gradient(180deg, var(--dark-bg) 0%, #1a1a2e 100%); overflow: hidden; }
+        .hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(ellipse at center, rgba(123, 44, 191, 0.15) 0%, transparent 70%); z-index: 1; }
+        .hero-content { position: relative; z-index: 2; max-width: 1200px; text-align: center; animation: slideIn 1s ease-out; }
+        .hero-badge { display: inline-block; padding: 12px 32px; background: var(--gradient-1); border-radius: 50px; font-size: 18px; font-weight: 700; margin-bottom: 24px; box-shadow: var(--glow-blue); letter-spacing: 1px; }
+        .hero h1 { font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 900; margin-bottom: 24px; background: var(--gradient-1); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; line-height: 1.2; }
+        .hero-subtitle { font-size: clamp(1.2rem, 2.2vw, 1.5rem); color: var(--text-primary); max-width: 900px; margin: 0 auto 40px; line-height: 1.6; font-weight: 400; }
+        .hero-images { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; margin-top: 60px; }
+        .hero-image-card { position: relative; border-radius: 20px; overflow: hidden; aspect-ratio: 16/9; box-shadow: var(--glow-purple); transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .hero-image-card:hover { transform: scale(1.02); box-shadow: 0 0 40px rgba(123, 44, 191, 0.7); }
+        .hero-image-card img { width: 100%; height: 100%; object-fit: cover; }
+        .scroll-indicator { position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%); animation: float 2s ease-in-out infinite; z-index: 2; }
+        .scroll-indicator span { display: block; width: 30px; height: 50px; border: 2px solid var(--primary-blue); border-radius: 25px; position: relative; }
+        .scroll-indicator span::before { content: ''; position: absolute; top: 8px; left: 50%; transform: translateX(-50%); width: 6px; height: 10px; background: var(--primary-blue); border-radius: 3px; animation: pulse 1.5s infinite; }
+        section { padding: 80px 20px; position: relative; z-index: 1; }
+        .content-section { background: var(--card-bg); padding: 60px 50px; border-radius: 24px; border: 1px solid rgba(0, 212, 255, 0.2); max-width: 1100px; margin: 0 auto; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3); }
+        .content-section h3 { font-size: 1.6rem; margin: 40px 0 20px; color: var(--accent-green); }
+        .content-section p { color: var(--text-secondary); line-height: 2; font-size: 1.08rem; margin: 15px 0; }
+        .content-section ul { margin: 20px 0; padding-left: 30px; }
+        .content-section li { margin: 10px 0; color: var(--text-secondary); }
+        .meta-info { background: linear-gradient(135deg, rgba(0, 212, 255, 0.15) 0%, rgba(123, 44, 191, 0.15) 100%); padding: 30px; border-radius: 16px; margin-bottom: 40px; border-left: 5px solid var(--primary-blue); }
+        .meta-info p { margin: 12px 0; color: var(--text-secondary); font-size: 1.05rem; }
+        .meta-info strong { color: var(--primary-blue); font-weight: 600; }
+        .meta-info a { color: var(--primary-blue); text-decoration: none; word-break: break-all; }
+        .highlight-box { background: linear-gradient(135deg, rgba(0, 255, 136, 0.08) 0%, rgba(0, 212, 255, 0.08) 100%); padding: 30px; border-radius: 16px; border-left: 5px solid var(--accent-green); margin: 40px 0; }
+        .highlight-box h4 { color: var(--accent-green); margin-bottom: 15px; font-size: 1.3rem; }
+        .highlight-box p { color: var(--text-secondary); margin: 0; }
+        .alert-box { background: linear-gradient(135deg, rgba(255, 71, 87, 0.1) 0%, rgba(255, 149, 0, 0.1) 100%); padding: 25px 30px; border-radius: 16px; border-left: 5px solid var(--accent-red); margin: 30px 0; }
+        .alert-box h4 { color: var(--accent-red); margin-bottom: 12px; font-size: 1.15rem; }
+        .alert-box p { color: var(--text-secondary); margin: 8px 0; font-size: 1rem; }
+        .quote-box { background: linear-gradient(135deg, rgba(123, 44, 191, 0.15) 0%, rgba(0, 212, 255, 0.15) 100%); padding: 30px 40px; border-radius: 16px; border-left: 5px solid var(--primary-purple); margin: 40px 0; position: relative; }
+        .quote-box::before { content: '"'; position: absolute; top: 10px; left: 20px; font-size: 80px; color: var(--primary-purple); opacity: 0.3; font-family: Georgia, serif; }
+        .quote-box p { color: var(--text-primary); font-size: 1.2rem; font-style: italic; margin-bottom: 15px; }
+        .quote-box cite { color: var(--text-secondary); font-size: 0.95rem; }
+        .tech-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin: 40px 0; }
+        .tech-card { background: var(--card-bg-light); padding: 30px; border-radius: 16px; border: 1px solid rgba(0, 212, 255, 0.15); transition: transform 0.3s ease, box-shadow 0.3s ease; animation: fadeInUp 0.6s ease-out forwards; opacity: 0; }
+        .tech-card:nth-child(1) { animation-delay: 0.1s; }
+        .tech-card:nth-child(2) { animation-delay: 0.2s; }
+        .tech-card:nth-child(3) { animation-delay: 0.3s; }
+        .tech-card:nth-child(4) { animation-delay: 0.4s; }
+        .tech-card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0, 212, 255, 0.2); }
+        .tech-card-icon { font-size: 2.5rem; margin-bottom: 15px; }
+        .tech-card h4 { color: var(--primary-blue); margin-bottom: 12px; font-size: 1.2rem; }
+        .tech-card p { color: var(--text-secondary); font-size: 0.95rem; line-height: 1.7; }
+        .comparison-table { width: 100%; border-collapse: collapse; margin: 40px 0; border-radius: 16px; overflow: hidden; box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3); }
+        .comparison-table thead { background: linear-gradient(135deg, var(--primary-blue), var(--primary-purple)); }
+        .comparison-table th { padding: 18px 20px; text-align: left; font-weight: 600; font-size: 1.05rem; }
+        .comparison-table td { padding: 16px 20px; border-bottom: 1px solid rgba(255, 255, 255, 0.05); color: var(--text-secondary); }
+        .comparison-table tr:last-child td { border-bottom: none; }
+        .comparison-table tr:nth-child(even) { background: rgba(255, 255, 255, 0.02); }
+        .comparison-table .highlight-col { color: var(--accent-green); font-weight: 500; }
+        .timeline { position: relative; margin: 40px 0; padding-left: 40px; }
+        .timeline::before { content: ''; position: absolute; left: 15px; top: 0; bottom: 0; width: 2px; background: linear-gradient(180deg, var(--primary-blue), var(--primary-purple)); }
+        .timeline-item { position: relative; margin-bottom: 35px; padding: 20px 25px; background: var(--card-bg-light); border-radius: 12px; border: 1px solid rgba(0, 212, 255, 0.1); animation: fadeInUp 0.5s ease-out forwards; opacity: 0; }
+        .timeline-item:nth-child(1) { animation-delay: 0.1s; }
+        .timeline-item:nth-child(2) { animation-delay: 0.2s; }
+        .timeline-item:nth-child(3) { animation-delay: 0.3s; }
+        .timeline-item:nth-child(4) { animation-delay: 0.4s; }
+        .timeline-item:nth-child(5) { animation-delay: 0.5s; }
+        .timeline-item:nth-child(6) { animation-delay: 0.6s; }
+        .timeline-item::before { content: ''; position: absolute; left: -32px; top: 25px; width: 12px; height: 12px; background: var(--primary-blue); border-radius: 50%; box-shadow: var(--glow-blue); }
+        .timeline-date { color: var(--primary-blue); font-size: 0.9rem; font-weight: 600; margin-bottom: 8px; }
+        .timeline-title { color: var(--text-primary); font-size: 1.1rem; font-weight: 600; margin-bottom: 8px; }
+        .timeline-desc { color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6; }
+        footer { background: #050508; padding: 60px 20px; text-align: center; border-top: 1px solid rgba(255, 255, 255, 0.1); }
+        footer p { color: var(--text-secondary); margin-bottom: 20px; }
+        .footer-links { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; }
+        .footer-links a { color: var(--primary-blue); text-decoration: none; transition: color 0.3s ease; }
+        .footer-links a:hover { color: var(--text-primary); }
+        @media (max-width: 768px) { .content-section { padding: 40px 25px; } .hero-images { grid-template-columns: 1fr; } .hero h1 { font-size: 2rem; } .hero-subtitle { font-size: 1.2rem; } }
+    </style>
+</head>
+<body>
+    <div class="code-rain" id="codeRain"></div>
+    <section class="hero">
+        <div class="hero-content">
+            <span class="hero-badge">📰 AI News 專題報道</span>
+            <h1>Gemini用量改制惹爭議<br>5招秘技節省Token配額</h1>
+            <p class="hero-subtitle">Google I/O 2026 宣布調整用量計算方式，失敗影片指令竟耗盡5小時額度</p>
+            <div class="hero-images">
+                <div class="hero-image-card">
+                    <img src="img/img1.png" alt="Gemini用量改制示意圖：Token配額消耗分析">
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator"><span></span></div>
+    </section>
+    <section class="content-section">
+        <div class="meta-info">
+            <p><strong>📺 資料來源</strong>：<a href="https://ezone.hk/article/20098210/gemini%E7%94%A8%E9%87%8F%E6%94%B9%E5%88%B6-%E7%99%BC%E9%80%81-%E6%8C%87%E4%BB%A4%E7%AB%9F%E8%80%97%E7%9B%A1-%E5%B0%8F%E6%99%82%E9%A1%8D%E5%BA%A6-gemini%E4%BD%BF%E7%94%A8%E4%B8%8A%E9%99%90%E7%B8%AE%E6%B0%B4%E6%83%B9%E7%88%AD%E8%AD%B0-%E6%95%99%E4%BD%A0-%E6%8B%9B%E7%A7%98%E6%8A%80%E5%A4%A7%E5%B9%85%E7%AF%80%E7%9C%81token/5" target="_blank">ezone.hk</a></p>
+            <p><strong>📅 發布日期</strong>：2026-05-28</p>
+            <p><strong>🤖 處理方式</strong>：AI 智能摘要生成</p>
+        </div>
+
+        <h3>🎯 核心觀點</h3>
+        <p>Google 在 2026 年 Google I/O 大會宣布調整 Gemini 用量計算方式，從「指令次數」改為「Token 實際運算量」。新制上路後爭議不斷，有用戶反映影片生成失敗後，5 小時額度竟直接從 0% 跳升至 100%，引發科技界廣泛討論。</p>
+
+        <h3>⚠️ 爭議事件：用戶一條指令耗盡 5 小時額度</h3>
+        <p>國外 AI Pro 訂閱用戶 Ashutosh Shrivastava 實測 Gemini Avatar 影片生成功能，指令執行 3-4 分鐘後顯示「影片生成失敗」。然而他的 5 小時限額進度條竟從 0% 直接飆升至 100%，等同一個失敗指令便耗盡全部額度。此個案引來 Gemini 負責人 Josh Woodward 親自回應：「糟糕，讓我們看一下。」</p>
+
+        <h3>✨ Gemini 用量改制三大重點</h3>
+        <ul>
+            <li><strong>計費改依 Token 運算量</strong>：告別「算次數」，改依提示複雜度、模型等級及功能消耗計算</li>
+            <li><strong>雙軌限額制</strong>：設有每 5 小時定期重設及每週總上限雙重保護</li>
+            <li><strong>算力吃緊主因</strong>：Google 指出過去一年用戶 Token 消耗暴增 7 倍，各 AI 巨頭算力緊繃</li>
+        </ul>
+
+        <div class="highlight-box">
+            <h4>✨ 關鍵洞察：AI 巨頭的算力瓶頸</h4>
+            <p>用量緊縮背後的根本原因是 AI 需求爆發式增長。用戶量與 Token 消耗量均呈 7 倍成長，讓 Google 不得不透過改制平衡算力成本。用戶在這段陣痛期內，需要更精明地管理自己的用量配額。</p>
+        </div>
+
+        <div class="tech-cards">
+            <div class="tech-card">
+                <div class="tech-card-icon">🔄</div>
+                <h4>定期重開新對話</h4>
+                <p>每 5-7 輪便開新視窗，避免歷史紀錄不斷累積，導致 Token 以等比級數暴增。</p>
+            </div>
+            <div class="tech-card">
+                <div class="tech-card-icon">📄</div>
+                <h4>文件預先處理</h4>
+                <p>上傳 PDF 前先截取相關段落，而非直接丟入整份文件，節省大量不必要配額。</p>
+            </div>
+            <div class="tech-card">
+                <div class="tech-card-icon">⚡</div>
+                <h4>精簡提示詞</h4>
+                <p>用肯定句取代疑問句，指定輸出格式與長度，避免冗詞廢話燃燒配額。</p>
+            </div>
+            <div class="tech-card">
+                <div class="tech-card-icon">🎯</div>
+                <h4>限制輸出長度</h4>
+                <p>明確要求「50 字內條列回答」或「只輸出結論」，比用家自己少問更有效。</p>
+            </div>
+        </div>
+
+        <h3>📊 Gemini 用量改制影響分析</h3>
+        <table class="comparison-table">
+            <thead>
+                <tr><th>維度</th><th>舊制（按次數）</th><th>新制（按 Token）</th><th>差異</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>計費基礎</td><td>指令發送次數</td><td>Token 實際運算量</td><td class="highlight-col">更精準但難預測</td></tr>
+                <tr><td>限額觸發</td><td>每日固定次數</td><td>5 小時 + 每週雙軌</td><td class="highlight-col">更複雜</td></tr>
+                <tr><td>失敗任務扣額</td><td>通常不扣</td><td>可能全扣</td><td class="highlight-col">爭議核心</td></tr>
+                <tr><td>Deep Research</td><td>固定配額</td><td>一輪燒掉 45%</td><td class="highlight-col">成本大增</td></tr>
+                <tr><td>影片生成</td><td>固定配額</td><td>一次燒掉 26%</td><td class="highlight-col">高消耗功能</td></tr>
+            </tbody>
+        </table>
+
+        <div class="quote-box">
+            <p>「糟糕，讓我們看一下（Yikes, let us look into this）。」</p>
+            <cite>— Josh Woodward，Google Gemini 負責人</cite>
+        </div>
+
+        <h3>📅 Gemini 用量改制時間軸</h3>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-date">2026 年 5 月</div>
+                <div class="timeline-title">Google I/O 2026 宣布改制</div>
+                <div class="timeline-desc">Gemini 用量計算從「次數」改為「Token 實際運算量」</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">2026-05-28</div>
+                <div class="timeline-title">失敗指令扣額爭議爆發</div>
+                <div class="timeline-desc">用戶影片生成失敗後 5 小時額度直接飆升至 100%，負責人介入調查</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">進行中</div>
+                <div class="timeline-title">官方回應階段</div>
+                <div class="timeline-desc">Josh Woodward 承諾調查，但尚未明確說明是漏洞還是設計問題</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">進行中</div>
+                <div class="timeline-title">用戶觀望期</div>
+                <div class="timeline-desc">高消耗功能（如 Deep Research、Veo 3）用家需更謹慎管理配額</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">傳聞中</div>
+                <div class="timeline-title">用量限制儀表板</div>
+                <div class="timeline-desc">有消息指 Google 正準備上線用量限制儀表板，方便用家追蹤</div>
+            </div>
+        </div>
+
+        <h3>🔮 未來展望</h3>
+        <p>用量改制短期內勢必造成用戶不便，但長期而言，按 Token 計費更能反映實際算力消耗，有助 AI 服務的可持續發展。在 Google 回應前，建議用家密切監控用量、善用 5 招節省配額技巧，並對高消耗功能保持警惕。</p>
+    </section>
+    <footer>
+        <p>© 2026 AI News Archive | 由 AI 技術生成</p>
+        <div class="footer-links">
+            <a href="../index.html">返回主頁</a>
+            <a href="https://github.com/hklamsir/ai_news" target="_blank">GitHub</a>
+            <a href="https://hklamsir.github.io/ai_news/" target="_blank">瀏覽所有專題</a>
+        </div>
+    </footer>
+
+
+    <script>
+        const codeRain = document.getElementById('codeRain');
+        const chars = '01アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン';
+        for (let i = 0; i < 50; i++) {
+            const char = document.createElement('span');
+            char.className = 'code-char';
+            char.textContent = chars[Math.floor(Math.random() * chars.length)];
+            char.style.left = Math.random() * 100 + '%';
+            char.style.animationDelay = Math.random() * 4 + 's';
+            char.style.animationDuration = (Math.random() * 3 + 3) + 's';
+            codeRain.appendChild(char);
+        }
+    </script>
+
+</body>
+</html>

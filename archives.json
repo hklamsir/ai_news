@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260531_145800",
+      "title": "【Gemini用量改制】發送1指令竟耗盡5小時額度？Gemini使用上限縮水惹爭議 教你5招秘技大幅節省Token | ezone",
+      "summary": "Google I/O 2026 宣布調整用量計算方式，失敗影片指令竟耗盡5小時額度",
+      "url": "./news_20260531_145800/index.html",
+      "date": "2026-05-31",
+      "time": "14:58:00",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260531_142200",
       "title": "Anthropic launches Opus 4.8, with honesty as its killer feature",
       "summary": "新版 AI 模型錯誤率大降 4 倍，Dynamic Workflows 支援數百個子代理並行",
@@ -1081,6 +1090,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-05-31T14:46:34.101739",
-  "total_count": 120
+  "last_updated": "2026-05-31T14:59:28.260547",
+  "total_count": 121
 }
