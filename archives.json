@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260531_152400",
+      "title": "日本電視台用生成 AI 製作動畫　效果備受批評網民直指「見到就想嘔」",
+      "summary": "綜藝節目「動畫化」企劃以生成 AI 製作，觸發恐怖谷效應引發熱議",
+      "url": "./news_20260531_152400/index.html",
+      "date": "2026-05-31",
+      "time": "15:24:00",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260531_145800",
       "title": "【Gemini用量改制】發送1指令竟耗盡5小時額度？Gemini使用上限縮水惹爭議 教你5招秘技大幅節省Token | ezone",
       "summary": "Google I/O 2026 宣布調整用量計算方式，失敗影片指令竟耗盡5小時額度",
@@ -1063,6 +1072,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-05-31T15:11:30.188045",
-  "total_count": 118
+  "last_updated": "2026-05-31T15:25:13.583052",
+  "total_count": 119
 }
