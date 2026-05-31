@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260531_142200",
+      "title": "Anthropic 推出 Claude Opus 4.8 誠實，成為殺手級功能",
+      "summary": "新版 AI 模型錯誤率大降 4 倍，Dynamic Workflows 支援數百個子代理並行",
+      "url": "./news_20260531_142200/index.html",
+      "date": "2026-05-31",
+      "time": "14:22:00",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260531_130727",
       "title": "Google Workspace換Logo了！ 新版哪裡不同？",
       "summary": "一次看懂「漸層」設計背後的AI品牌戰略",
@@ -1072,6 +1081,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-05-31T14:01:07.955777",
-  "total_count": 119
+  "last_updated": "2026-05-31T14:26:25.744457",
+  "total_count": 120
 }
