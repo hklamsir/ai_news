@@ -3,147 +3,208 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Google Workspace換Logo了！新版哪裡不同？一次看懂「漸層」設計背後的AI品牌戰略</title>
+    <title>都大研發首個粵語酒後語言檢測系統 - AI News</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
     <style>
-:root {
-    --primary-blue: #00d4ff;
-    --primary-purple: #7b2cbf;
-    --accent-green: #00ff88;
-    --accent-orange: #ff9500;
-    --dark-bg: #0a0a0f;
-    --card-bg: #12121a;
-    --card-bg-light: #1a1a28;
-    --text-primary: #ffffff;
-    --text-secondary: #a0a0b0;
-    --gradient-1: linear-gradient(135deg, #00d4ff 0%, #7b2cbf 100%);
-    --gradient-2: linear-gradient(135deg, #00d4ff 0%, #00ff88 100%);
-    --glow-blue: 0 0 20px rgba(0, 212, 255, 0.5);
-    --glow-purple: 0 0 20px rgba(123, 44, 191, 0.5);
-}
-
-* { margin: 0; padding: 0; box-sizing: border-box; }
-html { scroll-behavior: smooth; }
-body { font-family: 'Noto Sans TC', sans-serif; background-color: var(--dark-bg); color: var(--text-primary); line-height: 1.8; overflow-x: hidden; }
-
-@keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-20px); } }
-@keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.6; } }
-@keyframes slideIn { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
-@keyframes codeRain { 0% { transform: translateY(-100%); opacity: 0; } 10% { opacity: 1; } 90% { opacity: 1; } 100% { transform: translateY(100vh); opacity: 0; } }
-
-/* 代碼雨背景 */
-.code-rain { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; overflow: hidden; }
-.code-char { position: absolute; color: var(--primary-blue); font-family: 'Courier New', monospace; font-size: 14px; opacity: 0; animation: codeRain 4s linear infinite; }
-
-/* Hero Section */
-.hero { position: relative; min-height: 80vh; display: flex; align-items: center; justify-content: center; padding: 80px 20px; background: linear-gradient(180deg, var(--dark-bg) 0%, #1a1a2e 100%); overflow: hidden; }
-.hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(ellipse at center, rgba(123, 44, 191, 0.15) 0%, transparent 70%); z-index: 1; }
-.hero-content { position: relative; z-index: 2; max-width: 1200px; text-align: center; animation: slideIn 1s ease-out; }
-.hero-badge { display: inline-block; padding: 12px 32px; background: var(--gradient-1); border-radius: 50px; font-size: 18px; font-weight: 700; margin-bottom: 24px; box-shadow: var(--glow-blue); letter-spacing: 1px; }
-.hero h1 { font-size: clamp(2rem, 5vw, 4rem); font-weight: 900; margin-bottom: 24px; background: var(--gradient-1); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; line-height: 1.2; }
-.hero-subtitle { font-size: clamp(1.2rem, 2.2vw, 1.6rem); color: var(--text-primary); max-width: 900px; margin: 0 auto 40px; line-height: 1.6; font-weight: 400; }
-.hero-images { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; margin-top: 60px; }
-.hero-image-card { position: relative; border-radius: 20px; overflow: hidden; aspect-ratio: 16/9; box-shadow: var(--glow-purple); transition: transform 0.3s ease, box-shadow 0.3s ease; }
-.hero-image-card:hover { transform: scale(1.02); box-shadow: 0 0 40px rgba(123, 44, 191, 0.7); }
-.hero-image-card img { width: 100%; height: 100%; object-fit: cover; }
-.scroll-indicator { position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%); animation: float 2s ease-in-out infinite; z-index: 2; }
-.scroll-indicator span { display: block; width: 30px; height: 50px; border: 2px solid var(--primary-blue); border-radius: 25px; position: relative; }
-.scroll-indicator span::before { content: ''; position: absolute; top: 8px; left: 50%; transform: translateX(-50%); width: 6px; height: 10px; background: var(--primary-blue); border-radius: 3px; animation: pulse 1.5s infinite; }
-
-/* Content Section */
-section { padding: 80px 20px; position: relative; z-index: 1; }
-.content-section { background: var(--card-bg); padding: 60px 50px; border-radius: 24px; border: 1px solid rgba(0, 212, 255, 0.2); max-width: 1100px; margin: 0 auto; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3); }
-
-.content-section h3 { font-size: 1.6rem; margin: 40px 0 20px; color: var(--accent-green); }
-.content-section p { color: var(--text-secondary); line-height: 2; font-size: 1.08rem; margin: 15px 0; }
-.content-section ul { margin: 20px 0; padding-left: 30px; }
-.content-section li { margin: 10px 0; color: var(--text-secondary); }
-
-.meta-info { background: linear-gradient(135deg, rgba(0, 212, 255, 0.15) 0%, rgba(123, 44, 191, 0.15) 100%); padding: 30px; border-radius: 16px; margin-bottom: 40px; border-left: 5px solid var(--primary-blue); }
-.meta-info p { margin: 12px 0; color: var(--text-secondary); font-size: 1.05rem; }
-.meta-info strong { color: var(--primary-blue); font-weight: 600; }
-.meta-info a { color: var(--primary-blue); text-decoration: none; word-break: break-all; }
-
-.highlight-box { background: linear-gradient(135deg, rgba(0, 255, 136, 0.08) 0%, rgba(0, 212, 255, 0.08) 100%); padding: 30px; border-radius: 16px; border-left: 5px solid var(--accent-green); margin: 40px 0; }
-.highlight-box h4 { color: var(--accent-green); margin-bottom: 15px; font-size: 1.3rem; }
-.highlight-box p { color: var(--text-secondary); margin: 0; }
-
-/* Footer */
-footer { background: #050508; padding: 60px 20px; text-align: center; border-top: 1px solid rgba(255, 255, 255, 0.1); }
-footer p { color: var(--text-secondary); margin-bottom: 20px; }
-.footer-links { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; }
-.footer-links a { color: var(--primary-blue); text-decoration: none; transition: color 0.3s ease; }
-.footer-links a:hover { color: var(--text-primary); }
-
-/* RWD */
-@media (max-width: 768px) {
-    .content-section { padding: 40px 25px; }
-    .hero-images { grid-template-columns: 1fr; }
-    .hero h1 { font-size: 2rem; }
-    .hero-subtitle { font-size: 1.2rem; }
-}
+        :root { --primary-blue: #00d4ff; --primary-purple: #7b2cbf; --accent-green: #00ff88; --accent-orange: #ff9500; --accent-red: #ff4757; --dark-bg: #0a0a0f; --card-bg: #12121a; --card-bg-light: #1a1a28; --text-primary: #ffffff; --text-secondary: #a0a0b0; --gradient-1: linear-gradient(135deg, #00d4ff 0%, #7b2cbf 100%); --gradient-2: linear-gradient(135deg, #00d4ff 0%, #00ff88 100%); --glow-blue: 0 0 20px rgba(0, 212, 255, 0.5); --glow-purple: 0 0 20px rgba(123, 44, 191, 0.5); }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Noto Sans TC', sans-serif; background-color: var(--dark-bg); color: var(--text-primary); line-height: 1.8; overflow-x: hidden; }
+        @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-20px); } }
+        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.6; } }
+        @keyframes slideIn { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes codeRain { 0% { transform: translateY(-100%); opacity: 0; } 10% { opacity: 1; } 90% { opacity: 1; } 100% { transform: translateY(100vh); opacity: 0; } }
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); } }
+        .code-rain { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; overflow: hidden; }
+        .code-char { position: absolute; color: var(--primary-blue); font-family: 'Courier New', monospace; font-size: 14px; opacity: 0; animation: codeRain 4s linear infinite; }
+        .hero { position: relative; min-height: 80vh; display: flex; align-items: center; justify-content: center; padding: 80px 20px; background: linear-gradient(180deg, var(--dark-bg) 0%, #1a1a2e 100%); overflow: hidden; }
+        .hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(ellipse at center, rgba(123, 44, 191, 0.15) 0%, transparent 70%); z-index: 1; }
+        .hero-content { position: relative; z-index: 2; max-width: 1200px; text-align: center; animation: slideIn 1s ease-out; }
+        .hero-badge { display: inline-block; padding: 12px 32px; background: var(--gradient-1); border-radius: 50px; font-size: 18px; font-weight: 700; margin-bottom: 24px; box-shadow: var(--glow-blue); letter-spacing: 1px; }
+        .hero h1 { font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 900; margin-bottom: 24px; background: var(--gradient-1); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; line-height: 1.2; }
+        .hero-subtitle { font-size: clamp(1.2rem, 2.2vw, 1.5rem); color: var(--text-primary); max-width: 900px; margin: 0 auto 40px; line-height: 1.6; font-weight: 400; }
+        .hero-images { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; margin-top: 60px; }
+        .hero-image-card { position: relative; border-radius: 20px; overflow: hidden; aspect-ratio: 16/9; box-shadow: var(--glow-purple); transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .hero-image-card:hover { transform: scale(1.02); box-shadow: 0 0 40px rgba(123, 44, 191, 0.7); }
+        .hero-image-card img { width: 100%; height: 100%; object-fit: cover; }
+        .scroll-indicator { position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%); animation: float 2s ease-in-out infinite; z-index: 2; }
+        .scroll-indicator span { display: block; width: 30px; height: 50px; border: 2px solid var(--primary-blue); border-radius: 25px; position: relative; }
+        .scroll-indicator span::before { content: ''; position: absolute; top: 8px; left: 50%; transform: translateX(-50%); width: 6px; height: 10px; background: var(--primary-blue); border-radius: 3px; animation: pulse 1.5s infinite; }
+        section { padding: 80px 20px; position: relative; z-index: 1; }
+        .content-section { background: var(--card-bg); padding: 60px 50px; border-radius: 24px; border: 1px solid rgba(0, 212, 255, 0.2); max-width: 1100px; margin: 0 auto; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3); }
+        .content-section h3 { font-size: 1.6rem; margin: 40px 0 20px; color: var(--accent-green); }
+        .content-section p { color: var(--text-secondary); line-height: 2; font-size: 1.08rem; margin: 15px 0; }
+        .content-section ul { margin: 20px 0; padding-left: 30px; }
+        .content-section li { margin: 10px 0; color: var(--text-secondary); }
+        .meta-info { background: linear-gradient(135deg, rgba(0, 212, 255, 0.15) 0%, rgba(123, 44, 191, 0.15) 100%); padding: 30px; border-radius: 16px; margin-bottom: 40px; border-left: 5px solid var(--primary-blue); }
+        .meta-info p { margin: 12px 0; color: var(--text-secondary); font-size: 1.05rem; }
+        .meta-info strong { color: var(--primary-blue); font-weight: 600; }
+        .meta-info a { color: var(--primary-blue); text-decoration: none; word-break: break-all; }
+        .highlight-box { background: linear-gradient(135deg, rgba(0, 255, 136, 0.08) 0%, rgba(0, 212, 255, 0.08) 100%); padding: 30px; border-radius: 16px; border-left: 5px solid var(--accent-green); margin: 40px 0; }
+        .highlight-box h4 { color: var(--accent-green); margin-bottom: 15px; font-size: 1.3rem; }
+        .highlight-box p { color: var(--text-secondary); margin: 0; }
+        .alert-box { background: linear-gradient(135deg, rgba(255, 71, 87, 0.1) 0%, rgba(255, 149, 0, 0.1) 100%); padding: 25px 30px; border-radius: 16px; border-left: 5px solid var(--accent-red); margin: 30px 0; }
+        .alert-box h4 { color: var(--accent-red); margin-bottom: 12px; font-size: 1.15rem; }
+        .alert-box p { color: var(--text-secondary); margin: 8px 0; font-size: 1rem; }
+        .quote-box { background: linear-gradient(135deg, rgba(123, 44, 191, 0.15) 0%, rgba(0, 212, 255, 0.15) 100%); padding: 30px 40px; border-radius: 16px; border-left: 5px solid var(--primary-purple); margin: 40px 0; position: relative; }
+        .quote-box::before { content: '"'; position: absolute; top: 10px; left: 20px; font-size: 80px; color: var(--primary-purple); opacity: 0.3; font-family: Georgia, serif; }
+        .quote-box p { color: var(--text-primary); font-size: 1.2rem; font-style: italic; margin-bottom: 15px; }
+        .quote-box cite { color: var(--text-secondary); font-size: 0.95rem; }
+        .tech-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin: 40px 0; }
+        .tech-card { background: var(--card-bg-light); padding: 30px; border-radius: 16px; border: 1px solid rgba(0, 212, 255, 0.15); transition: transform 0.3s ease, box-shadow 0.3s ease; animation: fadeInUp 0.6s ease-out forwards; opacity: 0; }
+        .tech-card:nth-child(1) { animation-delay: 0.1s; }
+        .tech-card:nth-child(2) { animation-delay: 0.2s; }
+        .tech-card:nth-child(3) { animation-delay: 0.3s; }
+        .tech-card:nth-child(4) { animation-delay: 0.4s; }
+        .tech-card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0, 212, 255, 0.2); }
+        .tech-card-icon { font-size: 2.5rem; margin-bottom: 15px; }
+        .tech-card h4 { color: var(--primary-blue); margin-bottom: 12px; font-size: 1.2rem; }
+        .tech-card p { color: var(--text-secondary); font-size: 0.95rem; line-height: 1.7; }
+        .comparison-table { width: 100%; border-collapse: collapse; margin: 40px 0; border-radius: 16px; overflow: hidden; box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3); }
+        .comparison-table thead { background: linear-gradient(135deg, var(--primary-blue), var(--primary-purple)); }
+        .comparison-table th { padding: 18px 20px; text-align: left; font-weight: 600; font-size: 1.05rem; }
+        .comparison-table td { padding: 16px 20px; border-bottom: 1px solid rgba(255, 255, 255, 0.05); color: var(--text-secondary); }
+        .comparison-table tr:last-child td { border-bottom: none; }
+        .comparison-table tr:nth-child(even) { background: rgba(255, 255, 255, 0.02); }
+        .comparison-table .highlight-col { color: var(--accent-green); font-weight: 500; }
+        .timeline { position: relative; margin: 40px 0; padding-left: 40px; }
+        .timeline::before { content: ''; position: absolute; left: 15px; top: 0; bottom: 0; width: 2px; background: linear-gradient(180deg, var(--primary-blue), var(--primary-purple)); }
+        .timeline-item { position: relative; margin-bottom: 35px; padding: 20px 25px; background: var(--card-bg-light); border-radius: 12px; border: 1px solid rgba(0, 212, 255, 0.1); animation: fadeInUp 0.5s ease-out forwards; opacity: 0; }
+        .timeline-item:nth-child(1) { animation-delay: 0.1s; }
+        .timeline-item:nth-child(2) { animation-delay: 0.2s; }
+        .timeline-item:nth-child(3) { animation-delay: 0.3s; }
+        .timeline-item:nth-child(4) { animation-delay: 0.4s; }
+        .timeline-item:nth-child(5) { animation-delay: 0.5s; }
+        .timeline-item:nth-child(6) { animation-delay: 0.6s; }
+        .timeline-item::before { content: ''; position: absolute; left: -32px; top: 25px; width: 12px; height: 12px; background: var(--primary-blue); border-radius: 50%; box-shadow: var(--glow-blue); }
+        .timeline-date { color: var(--primary-blue); font-size: 0.9rem; font-weight: 600; margin-bottom: 8px; }
+        .timeline-title { color: var(--text-primary); font-size: 1.1rem; font-weight: 600; margin-bottom: 8px; }
+        .timeline-desc { color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6; }
+        footer { background: #050508; padding: 60px 20px; text-align: center; border-top: 1px solid rgba(255, 255, 255, 0.1); }
+        footer p { color: var(--text-secondary); margin-bottom: 20px; }
+        .footer-links { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; }
+        .footer-links a { color: var(--primary-blue); text-decoration: none; transition: color 0.3s ease; }
+        .footer-links a:hover { color: var(--text-primary); }
+        @media (max-width: 768px) { .content-section { padding: 40px 25px; } .hero-images { grid-template-columns: 1fr; } .hero h1 { font-size: 2rem; } .hero-subtitle { font-size: 1.2rem; } }
     </style>
 </head>
 <body>
     <div class="code-rain" id="codeRain"></div>
-    <div class="code-rain">
-        <span class="code-char" style="left: 5%; animation-duration: 5s; animation-delay: 0.2s;">01</span>
-        <span class="code-char" style="left: 15%; animation-duration: 6s; animation-delay: 1.5s;">10</span>
-        <span class="code-char" style="left: 25%; animation-duration: 4.5s; animation-delay: 0.8s;">AI</span>
-        <span class="code-char" style="left: 35%; animation-duration: 5.5s; animation-delay: 2.1s;">WS</span>
-        <span class="code-char" style="left: 45%; animation-duration: 4s; animation-delay: 0.5s;">01</span>
-        <span class="code-char" style="left: 55%; animation-duration: 6.2s; animation-delay: 1.8s;">10</span>
-        <span class="code-char" style="left: 65%; animation-duration: 4.8s; animation-delay: 0.9s;">UX</span>
-        <span class="code-char" style="left: 75%; animation-duration: 5.1s; animation-delay: 2.4s;">AI</span>
-        <span class="code-char" style="left: 85%; animation-duration: 5.7s; animation-delay: 1.2s;">11</span>
-        <span class="code-char" style="left: 95%; animation-duration: 4.2s; animation-delay: 0.4s;">00</span>
-    </div>
-
     <section class="hero">
         <div class="hero-content">
             <span class="hero-badge">📰 AI News 專題報道</span>
-            <h1>Google Workspace換Logo了！新版哪裡不同？一次看懂「漸層」設計背後的AI品牌戰略</h1>
-            <p class="hero-subtitle">科技巨頭Google近日宣布全面更新Workspace品牌識別系統，以全新漸層視覺語言重塑生態系形象。本次升級不僅反映設計美學的演進，更揭示人工智慧技術如何深度整合至企業級生產力工具，為數位協作領域樹立全新標竿。</p>
+            <h1>都大研發首個粵語酒後語言檢測系統</h1>
+            <p class="hero-subtitle">一次看懂「漸層」設計背後的AI品牌戰略</p>
             <div class="hero-images">
                 <div class="hero-image-card">
-                    <img src="https://placehold.co/1200x675/1a1a28/7b2cbf?text=Workspace+AI+Rebrand+&+Gradient+Strategy" alt="Google Workspace 新版漸層 Logo 與 AI 戰略示意圖">
+                    <img src="img/img1.png" alt="粵語酒後語言檢測系統">
                 </div>
             </div>
         </div>
         <div class="scroll-indicator"><span></span></div>
     </section>
-
     <section class="content-section">
         <div class="meta-info">
-            <p><strong>📺 資料來源</strong>：<a href="https://www.bnext.com.tw" target="_blank">BNEXT 商業周刊</a></p>
+            <p><strong>📺 資料來源</strong>：<a href="https://www.bnext.com.tw/article/91081/google-workspace-logo-refresh-ai-branding-trend" target="_blank">BNEXT</a></p>
             <p><strong>📅 發布日期</strong>：2026-05-31</p>
             <p><strong>🤖 處理方式</strong>：AI 智能摘要生成</p>
         </div>
 
         <h3>🎯 核心觀點</h3>
-        <p>本次品牌升級標誌著科技巨頭在企業服務市場的战略轉向，其核心不再僅是單一工具的優化，而是全面擁抱<strong>人工智慧驅動的協作生態系</strong>。研究指出，新版識別系統捨棄了過往靜態的平面化風格，轉而採用具備流動感的漸層色彩，藉此傳遞 AI 技術具備動態學習與即時演進的特性。業界觀察認為，此舉不僅重塑了產品的外觀印象，更在無形中強化了使用者對智慧化生產力工具的信任感。</p>
-        <p>從市場佈局的角度來看，視覺語言的更迭往往是技術底層變革的前奏。隨著生成式 AI 技術深度嵌入文書處理、雲端會議與專案管理等核心模組，原有的品牌形象已無法準確傳達產品價值。透過導入漸層設計，企業得以向全球客戶傳遞明確訊號，宣告其服務已進入全新階段的智能化演進，此次轉變不僅鞏固了其市場領導地位，更將重新定義未來十年的企業數位轉型路徑。</p>
+        <p>Google Workspace 近日全面更新 Logo，這是自 2020 年以來首度煥新。新版 Logo 線條更圓潤、柔和，並大量採用「漸層色」元素，成為 AI 時代品牌的象徵性訊號。</p>
 
-        <h3>💡 設計邏輯與技術融合</h3>
-        <p>在視覺設計的實務應用上，新版標誌的漸層效果並非單純的美學選擇，而是高度對應底層 AI 演算架構的運作模式。專家分析指出，色彩之間的平滑過渡象徵著數據在不同服務節點間的無縫串流，強調跨平台協作的流暢度與即時性。數據顯示，採用此類動態視覺元素的企業軟體，在使用者直覺操作測試中的任務完成率提升了近兩成，證明視覺引導能有效降低新功能的學習曲線。</p>
-        <p>進一步剖析本次升級的技術細節，開發團隊透過重新定義色彩與圖形的互動規則，使介面能夠根據使用者的工作情境自動調整視覺強度。這些設計決策經過嚴格的用戶測試驗證，確保每一項調整都能實質提升操作體驗。團隊亦針對色彩渲染引擎進行底層優化，以支援高解析度顯示器的精細呈現，確保跨裝置的一致性與效能表現。主要技術與設計調整方向包含：</p>
+        <h3>⚠️ 前版 Logo 的設計困境</h3>
+        <p>2020 年推出的 Logo 雖然實現了品牌一致性的理想，卻也讓應用程式之間過度同質化，犧牲了各自的辨識度。當 Gmail、Google 雲端硬碟、Google 日曆等應用程式在使用介面上一字排開時，相當容易造成混淆。</p>
+
+        <h3>✨ 新版 Logo 四大亮點</h3>
+        <p>此次更新打破了過往 Logo 必須涵蓋紅、黃、藍、綠 4 色的規則：</p>
         <ul>
-            <li>引入多層次色彩過渡，強化不同應用模組間的辨識度與連動性</li>
-            <li>優化圖標邊緣的圓滑處理，呼應 AI 演算法在處理非結構化資料時的彈性</li>
-            <li>建立動態光暈效果，即時反饋系統運算狀態與任務執行進度</li>
-            <li>統一跨裝置的渲染標準，確保桌面端與行動載具間的視覺一致性</li>
-            <li>整合情境感知設計，依據用戶使用習慣動態調整介面配色濃淡</li>
-            <li>強化品牌色譜的對比度，提升長時間操作下的閱讀舒適度與專注力</li>
+            <li><strong>Gmail</strong>：紅色成為佔比超過 60% 的主色</li>
+            <li><strong>Google 日曆</strong>：從 4 色中空線條解放，以漸層呈現主色系</li>
+            <li><strong>Google Meet / Chat</strong>：保留擬物造型並以漸層呈現</li>
+            <li><strong>全系列</strong>：移除圓形白底（Page Container），線條更圓潤柔和</li>
         </ul>
 
-        <h3>🔮 業界展望與未來佈局</h3>
-        <p>面對企業級軟體市場的激烈競爭，此次品牌重塑預示著未來數位工具將更加依賴<strong>無感化的智慧輔助</strong>。業界觀察人士普遍認為，當視覺識別開始反映技術內核的演進時，競爭焦點將從單一功能的比拼，轉向整體生態系的整合能力。隨著技術不斷成熟，預期各大雲端服務供應商將陸續跟進，推出具備高度自適應特性的智慧化工作空間，進而推動整個 SaaS 產業向智能化標準邁進。</p>
         <div class="highlight-box">
-            <h4>✨ 關鍵洞察</h4>
-            <p>本次設計變革的核心在於將抽象的 AI 運算能力轉化為具象的視覺語言，使技術優勢得以被用戶直觀感知。這不僅是品牌形象的迭代，更是產品哲學的躍進，預示著未來企業軟體將以更透明、更貼近人類思維的方式，重塑全球數位工作模式。</p>
+            <h4>✨ 關鍵洞察：「漸層」已成為 AI 品牌識別證</h4>
+            <p>包含 Instagram、Google Gemini、Microsoft Copilot、Meta AI 在內的知名科技品牌，都在 Logo 上不約而同地採用了漸層色彩。當全球最具代表性的科技巨頭都在用同一種視覺語言包裝 AI，「漸層」便逐漸與 AI 劃上等號，成為品牌走向 AI 時代的宣告。</p>
         </div>
-        <p>展望下一個發展週期，平台方將持續深化自然語言處理與多模態互動技術的應用，進一步打破傳統軟體的操作框架。數據分析顯示，具備高度 AI 整合能力的工作平台，預計將在全球企業採購名單中佔據主導地位。這股技術浪潮將促使傳統工作流程全面重組，為數位經濟帶來前所未有的營運效率與創新動能。</p>
-    </section>
 
+        <div class="tech-cards">
+            <div class="tech-card">
+                <div class="tech-card-icon">🔴</div>
+                <h4>品牌一致性 vs 辨識度</h4>
+                <p>2020 年統一採用 4 色幾何中空線條，犧牲了各應用程式的獨特性。</p>
+            </div>
+            <div class="tech-card">
+                <div class="tech-card-icon">🌈</div>
+                <h4>漸層色成主流</h4>
+                <p>渲染技術進步讓漸層更易執行，且能呈現立體感與溫度。</p>
+            </div>
+            <div class="tech-card">
+                <div class="tech-card-icon">📱</div>
+                <h4>AI 時代的視覺語言</h4>
+                <p>漸層象徵動態、運算與演進，成為品牌轉型 AI 的識別證。</p>
+            </div>
+            <div class="tech-card">
+                <div class="tech-card-icon">👁️</div>
+                <h4>親和力與層次感</h4>
+                <p>漸層色彩模糊邊界，增添視覺上的親切、靈活流動感。</p>
+            </div>
+        </div>
+
+        <h3>📊 2020 版 vs 2026 版 Logo 對比</h3>
+        <table class="comparison-table">
+            <thead>
+                <tr><th>維度</th><th>2020 版</th><th>2026 版</th><th>差異</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>色彩策略</td><td>紅黃藍綠4色平均</td><td>各應用有專屬主色</td><td class="highlight-col">更個性化</td></tr>
+                <tr><td>線條風格</td><td>幾何中空線條</td><td>圓潤柔和實線</td><td class="highlight-col">更親和</td></tr>
+                <tr><td>漸層效果</td><td>無</td><td>全面採用</td><td class="highlight-col">AI 時代特徵</td></tr>
+                <tr><td>背景設計</td><td>圓形白底（Page Container）</td><td>移除白底</td><td class="highlight-col">更簡潔</td></tr>
+                <tr><td>品牌辨識</td><td>同質化嚴重</td><td>各有特色</td><td class="highlight-col">大幅提升</td></tr>
+            </tbody>
+        </table>
+
+        <div class="quote-box">
+            <p>「我們目前正在見證一場『集體轉向』，從扁平化設計的極簡樸素，走向『處處皆 AI 漸層』的美學趨勢。」</p>
+            <cite>— Ben Sherwood，Design Bridge and Partners 創意合夥人</cite>
+        </div>
+
+        <h3>📅 Google Workspace Logo 演變時間軸</h3>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-date">2020 年</div>
+                <div class="timeline-title">統一 4 色幾何線條</div>
+                <div class="timeline-desc">G Suite 更名為 Google Workspace，推出統一的紅黃藍綠中空線條 Logo</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">2025 年末</div>
+                <div class="timeline-title">Fast Company 預測</div>
+                <div class="timeline-desc">預言「漸層」將成為 AI 時代最具定義性的色彩配置</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">2026 年</div>
+                <div class="timeline-title">科技巨頭集體擁抱漸層</div>
+                <div class="timeline-desc">Instagram、Google Gemini、Microsoft Copilot、Meta AI 相繼採用漸層 Logo</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">2026 年（本月）</div>
+                <div class="timeline-title">Google Workspace 全面更新</div>
+                <div class="timeline-desc">移除 Page Container，全面採用漸層色與圓潤線條</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">進行中</div>
+                <div class="timeline-title">「順從」還是「創新」？</div>
+                <div class="timeline-desc">創意總監 Anthony Cappetta 指漸層趨勢是對數位規範的「順從」</div>
+            </div>
+        </div>
+
+        <h3>🔮 未來展望</h3>
+        <p>隨著愈來愈多品牌採用漸層作為 AI 識別證，這股風潮預計將持續蔓延。然而，當所有品牌都使用相似的視覺語言時，真正的考驗在於：如何在順應趨勢的同時，依然保持品牌的獨特個性。</p>
+
+    </section>
     <footer>
         <p>© 2026 AI News Archive | 由 AI 技術生成</p>
         <div class="footer-links">
@@ -153,44 +214,5 @@ footer p { color: var(--text-secondary); margin-bottom: 20px; }
         </div>
     </footer>
 
-    <script>
-        function createCodeRain() {
-            const codeRain = document.getElementById('codeRain');
-            if (!codeRain) return;
-            const chars = '01 アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン';
-            for (let i = 0; i < 50; i++) {
-                const char = document.createElement('div');
-                char.className = 'code-char';
-                char.textContent = chars[Math.floor(Math.random() * chars.length)];
-                char.style.left = Math.random() * 100 + '%';
-                char.style.animationDelay = Math.random() * 4 + 's';
-                char.style.animationDuration = (Math.random() * 2 + 3) + 's';
-                codeRain.appendChild(char);
-            }
-        }
-
-        function handleScrollAnimation() {
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.style.opacity = '1';
-                        entry.target.style.transform = 'translateY(0)';
-                    }
-                });
-            }, { threshold: 0.1 });
-
-            document.querySelectorAll('.fade-in').forEach(el => {
-                el.style.opacity = '0';
-                el.style.transform = 'translateY(30px)';
-                el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-                observer.observe(el);
-            });
-        }
-
-        document.addEventListener('DOMContentLoaded', () => {
-            createCodeRain();
-            handleScrollAnimation();
-        });
-    </script>
 </body>
 </html>

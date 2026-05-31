@@ -1,9 +1,11 @@
 {
-  "dir_name": "news_20260531_130933",
-  "dir_path": "/home/lamsir/ai_news/news_20260531_130933",
-  "title": "Google Workspace換Logo了！新版哪裡不同？一次看懂「漸層」設計背後的AI品牌戰略",
+  "dir_name": "news_20260511_095738",
+  "dir_path": "/home/lamsir/ai_news/news_20260511_095738",
+  "title": "Instagram",
   "youtube_url": null,
   "source_url": "",
-  "images": [],
-  "timestamp": "2026-05-31T13:12:05.254044"
+  "images": [
+    "img/img1.png"
+  ],
+  "timestamp": "2026-05-11T09:57:57.575891"
 }
