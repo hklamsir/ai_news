@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260531_175100",
+      "title": "「AI廢片」量領先全球　韓國為何成生成式AI社會實驗場？｜專欄",
+      "summary": "每月AI支出超越Netflix、政治人物Deepfake氾濫，卻僅16%民眾感到擔憂",
+      "url": "./news_20260531_175100/index.html",
+      "date": "2026-05-31",
+      "time": "17:51:00",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260531_152400",
       "title": "日本電視台用生成 AI 製作動畫　效果備受批評網民直指「見到就想嘔」",
       "summary": "綜藝節目「動畫化」企劃以生成 AI 製作，觸發恐怖谷效應引發熱議",
@@ -1072,6 +1081,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-05-31T15:25:13.583052",
-  "total_count": 119
+  "last_updated": "2026-05-31T17:52:57.374342",
+  "total_count": 120
 }

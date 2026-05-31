@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>「AI廢片」量領先全球　韓國為何成生成式AI社會實驗場？ - AI News</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root { --primary-blue: #00d4ff; --primary-purple: #7b2cbf; --accent-green: #00ff88; --accent-orange: #ff9500; --accent-red: #ff4757; --dark-bg: #0a0a0f; --card-bg: #12121a; --card-bg-light: #1a1a28; --text-primary: #ffffff; --text-secondary: #a0a0b0; --gradient-1: linear-gradient(135deg, #00d4ff 0%, #7b2cbf 100%); --gradient-2: linear-gradient(135deg, #00d4ff 0%, #00ff88 100%); --glow-blue: 0 0 20px rgba(0, 212, 255, 0.5); --glow-purple: 0 0 20px rgba(123, 44, 191, 0.5); }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Noto Sans TC', sans-serif; background-color: var(--dark-bg); color: var(--text-primary); line-height: 1.8; overflow-x: hidden; }
+        @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-20px); } }
+        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.6; } }
+        @keyframes slideIn { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes codeRain { 0% { transform: translateY(-100%); opacity: 0; } 10% { opacity: 1; } 90% { opacity: 1; } 100% { transform: translateY(100vh); opacity: 0; } }
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); } }
+        .code-rain { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; overflow: hidden; }
+        .code-char { position: absolute; color: var(--primary-blue); font-family: 'Courier New', monospace; font-size: 14px; opacity: 0; animation: codeRain 4s linear infinite; }
+        .hero { position: relative; min-height: 80vh; display: flex; align-items: center; justify-content: center; padding: 80px 20px; background: linear-gradient(180deg, var(--dark-bg) 0%, #1a1a2e 100%); overflow: hidden; }
+        .hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(ellipse at center, rgba(123, 44, 191, 0.15) 0%, transparent 70%); z-index: 1; }
+        .hero-content { position: relative; z-index: 2; max-width: 1200px; text-align: center; animation: slideIn 1s ease-out; }
+        .hero-badge { display: inline-block; padding: 12px 32px; background: var(--gradient-1); border-radius: 50px; font-size: 18px; font-weight: 700; margin-bottom: 24px; box-shadow: var(--glow-blue); letter-spacing: 1px; }
+        .hero h1 { font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 900; margin-bottom: 24px; background: var(--gradient-1); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; line-height: 1.2; }
+        .hero-subtitle { font-size: clamp(1.2rem, 2.2vw, 1.5rem); color: var(--text-primary); max-width: 900px; margin: 0 auto 40px; line-height: 1.6; font-weight: 400; }
+        .hero-images { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; margin-top: 60px; }
+        .hero-image-card { position: relative; border-radius: 20px; overflow: hidden; aspect-ratio: 16/9; box-shadow: var(--glow-purple); transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .hero-image-card:hover { transform: scale(1.02); box-shadow: 0 0 40px rgba(123, 44, 191, 0.7); }
+        .hero-image-card img { width: 100%; height: 100%; object-fit: cover; }
+        .scroll-indicator { position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%); animation: float 2s ease-in-out infinite; z-index: 2; }
+        .scroll-indicator span { display: block; width: 30px; height: 50px; border: 2px solid var(--primary-blue); border-radius: 25px; position: relative; }
+        .scroll-indicator span::before { content: ''; position: absolute; top: 8px; left: 50%; transform: translateX(-50%); width: 6px; height: 10px; background: var(--primary-blue); border-radius: 3px; animation: pulse 1.5s infinite; }
+        section { padding: 80px 20px; position: relative; z-index: 1; }
+        .content-section { background: var(--card-bg); padding: 60px 50px; border-radius: 24px; border: 1px solid rgba(0, 212, 255, 0.2); max-width: 1100px; margin: 0 auto; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3); }
+        .content-section h3 { font-size: 1.6rem; margin: 40px 0 20px; color: var(--accent-green); }
+        .content-section p { color: var(--text-secondary); line-height: 2; font-size: 1.08rem; margin: 15px 0; }
+        .content-section ul { margin: 20px 0; padding-left: 30px; }
+        .content-section li { margin: 10px 0; color: var(--text-secondary); }
+        .meta-info { background: linear-gradient(135deg, rgba(0, 212, 255, 0.15) 0%, rgba(123, 44, 191, 0.15) 100%); padding: 30px; border-radius: 16px; margin-bottom: 40px; border-left: 5px solid var(--primary-blue); }
+        .meta-info p { margin: 12px 0; color: var(--text-secondary); font-size: 1.05rem; }
+        .meta-info strong { color: var(--primary-blue); font-weight: 600; }
+        .meta-info a { color: var(--primary-blue); text-decoration: none; word-break: break-all; }
+        .highlight-box { background: linear-gradient(135deg, rgba(0, 255, 136, 0.08) 0%, rgba(0, 212, 255, 0.08) 100%); padding: 30px; border-radius: 16px; border-left: 5px solid var(--accent-green); margin: 40px 0; }
+        .highlight-box h4 { color: var(--accent-green); margin-bottom: 15px; font-size: 1.3rem; }
+        .highlight-box p { color: var(--text-secondary); margin: 0; }
+        .alert-box { background: linear-gradient(135deg, rgba(255, 71, 87, 0.1) 0%, rgba(255, 149, 0, 0.1) 100%); padding: 25px 30px; border-radius: 16px; border-left: 5px solid var(--accent-red); margin: 30px 0; }
+        .alert-box h4 { color: var(--accent-red); margin-bottom: 12px; font-size: 1.15rem; }
+        .alert-box p { color: var(--text-secondary); margin: 8px 0; font-size: 1rem; }
+        .quote-box { background: linear-gradient(135deg, rgba(123, 44, 191, 0.15) 0%, rgba(0, 212, 255, 0.15) 100%); padding: 30px 40px; border-radius: 16px; border-left: 5px solid var(--primary-purple); margin: 40px 0; position: relative; }
+        .quote-box::before { content: '"'; position: absolute; top: 10px; left: 20px; font-size: 80px; color: var(--primary-purple); opacity: 0.3; font-family: Georgia, serif; }
+        .quote-box p { color: var(--text-primary); font-size: 1.2rem; font-style: italic; margin-bottom: 15px; }
+        .quote-box cite { color: var(--text-secondary); font-size: 0.95rem; }
+        .tech-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin: 40px 0; }
+        .tech-card { background: var(--card-bg-light); padding: 30px; border-radius: 16px; border: 1px solid rgba(0, 212, 255, 0.15); transition: transform 0.3s ease, box-shadow 0.3s ease; animation: fadeInUp 0.6s ease-out forwards; opacity: 0; }
+        .tech-card:nth-child(1) { animation-delay: 0.1s; }
+        .tech-card:nth-child(2) { animation-delay: 0.2s; }
+        .tech-card:nth-child(3) { animation-delay: 0.3s; }
+        .tech-card:nth-child(4) { animation-delay: 0.4s; }
+        .tech-card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0, 212, 255, 0.2); }
+        .tech-card-icon { font-size: 2.5rem; margin-bottom: 15px; }
+        .tech-card h4 { color: var(--primary-blue); margin-bottom: 12px; font-size: 1.2rem; }
+        .tech-card p { color: var(--text-secondary); font-size: 0.95rem; line-height: 1.7; }
+        .comparison-table { width: 100%; border-collapse: collapse; margin: 40px 0; border-radius: 16px; overflow: hidden; box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3); }
+        .comparison-table thead { background: linear-gradient(135deg, var(--primary-blue), var(--primary-purple)); }
+        .comparison-table th { padding: 18px 20px; text-align: left; font-weight: 600; font-size: 1.05rem; }
+        .comparison-table td { padding: 16px 20px; border-bottom: 1px solid rgba(255, 255, 255, 0.05); color: var(--text-secondary); }
+        .comparison-table tr:last-child td { border-bottom: none; }
+        .comparison-table tr:nth-child(even) { background: rgba(255, 255, 255, 0.02); }
+        .comparison-table .highlight-col { color: var(--accent-green); font-weight: 500; }
+        .timeline { position: relative; margin: 40px 0; padding-left: 40px; }
+        .timeline::before { content: ''; position: absolute; left: 15px; top: 0; bottom: 0; width: 2px; background: linear-gradient(180deg, var(--primary-blue), var(--primary-purple)); }
+        .timeline-item { position: relative; margin-bottom: 35px; padding: 20px 25px; background: var(--card-bg-light); border-radius: 12px; border: 1px solid rgba(0, 212, 255, 0.1); animation: fadeInUp 0.5s ease-out forwards; opacity: 0; }
+        .timeline-item:nth-child(1) { animation-delay: 0.1s; }
+        .timeline-item:nth-child(2) { animation-delay: 0.2s; }
+        .timeline-item:nth-child(3) { animation-delay: 0.3s; }
+        .timeline-item:nth-child(4) { animation-delay: 0.4s; }
+        .timeline-item:nth-child(5) { animation-delay: 0.5s; }
+        .timeline-item:nth-child(6) { animation-delay: 0.6s; }
+        .timeline-item::before { content: ''; position: absolute; left: -32px; top: 25px; width: 12px; height: 12px; background: var(--primary-blue); border-radius: 50%; box-shadow: var(--glow-blue); }
+        .timeline-date { color: var(--primary-blue); font-size: 0.9rem; font-weight: 600; margin-bottom: 8px; }
+        .timeline-title { color: var(--text-primary); font-size: 1.1rem; font-weight: 600; margin-bottom: 8px; }
+        .timeline-desc { color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6; }
+        footer { background: #050508; padding: 60px 20px; text-align: center; border-top: 1px solid rgba(255, 255, 255, 0.1); }
+        footer p { color: var(--text-secondary); margin-bottom: 20px; }
+        .footer-links { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; }
+        .footer-links a { color: var(--primary-blue); text-decoration: none; transition: color 0.3s ease; }
+        .footer-links a:hover { color: var(--text-primary); }
+        @media (max-width: 768px) { .content-section { padding: 40px 25px; } .hero-images { grid-template-columns: 1fr; } .hero h1 { font-size: 2rem; } .hero-subtitle { font-size: 1.2rem; } }
+    </style>
+</head>
+<body>
+    <div class="code-rain" id="codeRain"></div>
+    <section class="hero">
+        <div class="hero-content">
+            <span class="hero-badge">📰 AI News 專題報道</span>
+            <h1>韓國成全球AI廢片之都<br>「84.5億次」觀看背後的社會實驗</h1>
+            <p class="hero-subtitle">每月AI支出超越Netflix、政治人物Deepfake氾濫，卻僅16%民眾感到擔憂</p>
+            <div class="hero-images">
+                <div class="hero-image-card">
+                    <img src="img/img1.png" alt="韓國AI廢片之都：生成式AI社會實驗示意圖">
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator"><span></span></div>
+    </section>
+    <section class="content-section">
+        <div class="meta-info">
+            <p><strong>📺 資料來源</strong>：<a href="https://www.hk01.com/%E4%B8%96%E7%95%8C%E5%B0%88%E9%A1%8C/60354601/ai%E5%BB%A2%E7%89%87-%E9%87%8F%E9%A0%98%E5%85%88%E5%85%A8%E7%90%83-%E9%9F%93%E5%9C%8B%E7%82%BA%E4%BD%95%E6%88%90%E7%94%9F%E6%88%90%E5%BC%8Fai%E7%A4%BE%E6%9C%83%E5%AF%A7%E9%9F%B3%E5%A0%B4-%E5%B0%88%E6%AC%84" target="_blank">香港01</a></p>
+            <p><strong>📅 發布日期</strong>：2026-05-30</p>
+            <p><strong>🤖 處理方式</strong>：AI 智能摘要生成</p>
+        </div>
+
+        <h3>🎯 核心觀點</h3>
+        <p>韓國以 84.5 億次累計觀看量成為全球「AI 廢片」（AI Slop）之冠，每月生成式 AI 支出達 5,830 萬美元，超越 Netflix 訂閱費用。然而在 AI 偽造影片、Deepfake 性犯罪、假新聞氾濫等亂象之下，韓國人對 AI 的樂觀態度卻冠絕全球——僅 16% 受訪者表示擔憂，遠低於美國的 50%。</p>
+
+        <h3>⚠️ AI 廢片王國的形成</h3>
+        <p>一段 5 秒的「韓國棒球女神」AI 合成影片，騙過數百萬觀眾並引發廣泛傳播。事件揭示韓國「AI 廢片」問題的冰山一角。根據 Kapwing 報告，韓國的 AI 生成低質量內容 YouTube 頻道累計觀看量達 84.5 億次，遠超排名第二的巴基斯坦（53 億次）和美國（34 億次）。</p>
+
+        <h3>✨ 韓國成 AI 超級用家的原因</h3>
+        <ul>
+            <li><strong>AI 使用率全球最快增長</strong>：2025 年上半年 25.9% 升至 2026 年 Q1 的 37.1%，147 個國家中增速第一</li>
+            <li><strong>每月支出驚人</strong>：每 月生成式 AI 訂閱支出達 5,830 萬美元，每年總花費直逼 1 兆韓元（約 52 億港元）</li>
+            <li><strong>歷史養成技術樂觀主義</strong>：從 60 年代引進重工業技術到半導體崛起，韓國人將新技術與經濟騰飛深度掛鉤</li>
+            <li><strong>FOMO 焦慮推動</strong>：專家指出「不會用 AI 就會被排除」的集體焦慮感助長熱情</li>
+        </ul>
+
+        <div class="highlight-box">
+            <h4>✨ 關鍵洞察：科技樂觀主義背後的社會代價</h4>
+            <p>韓國的例子顯示，當一個社會對技術進步有根深蒂固的信任，監管的鬆懈與 AI 亂象的危害會被集體忽略。全球首部 AI 基本法落地後，執法仍如「打地鼠」，說明法律框架遠遠追不上技術擴散速度。</p>
+        </div>
+
+        <div class="tech-cards">
+            <div class="tech-card">
+                <div class="tech-card-icon">📺</div>
+                <h4>AI 廢片之都</h4>
+                <p>韓國 YouTube 頻道累計 84.5 億次 AI 廢片觀看，居全球之冠，遠超巴基斯坦和美國。</p>
+            </div>
+            <div class="tech-card">
+                <div class="tech-card-icon">💸</div>
+                <h4>超越串流平台</h4>
+                <p>每月 AI 訂閱支出 5,830 萬美元，已超越 Netflix 等串流服務總和。</p>
+            </div>
+            <div class="tech-card">
+                <div class="tech-card-icon">⚖️</div>
+                <h4>全球首部 AI 基本法</h4>
+                <p>2026 年 1 月生效的《人工智能發展與建立信任基本法》要求強制標示 AI 內容，但執法困難。</p>
+            </div>
+            <div class="tech-card">
+                <div class="tech-card-icon">😰</div>
+                <h4>FOMO 焦慮心態</h4>
+                <p>害怕被排除在 AI 熱潮之外，成為推動韓國人踴躍使用 AI 的核心心理因素。</p>
+            </div>
+        </div>
+
+        <h3>📊 韓國 AI 熱潮 VS 全球對比</h3>
+        <table class="comparison-table">
+            <thead>
+                <tr><th>指標</th><th>韓國</th><th>美國</th><th>台灣（參考）</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>AI 使用率（2026 Q1）</td><td class="highlight-col">37.1%</td><td>較低</td><td>—</td></tr>
+                <tr><td>對 AI 感到擔憂比例</td><td>16%</td><td class="highlight-col">50%</td><td>—</td></tr>
+                <tr><td>AI 廢片觀看量</td><td class="highlight-col">84.5 億次</td><td>34 億次</td><td>—</td></tr>
+                <tr><td>年度 AI 總支出</td><td class="highlight-col">約 1 兆韓元</td><td>—</td><td>—</td></tr>
+            </tbody>
+        </table>
+
+        <div class="quote-box">
+            <p>「人們會覺得如果我不學會怎麼用這個，而大家都用過了，那我就會被排除在外。」</p>
+            <cite>— Sejin Kim，韓國創新與競爭力中心主任</cite>
+        </div>
+
+        <h3>📅 韓國 AI 社會實驗關鍵時刻</h3>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-date">2024 年</div>
+                <div class="timeline-title">Deepfake 性犯罪爆發</div>
+                <div class="timeline-desc">大規模深偽犯罪將女學生、明星頭像移植至色情影片，引發全球關注</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">2024 年選舉期間</div>
+                <div class="timeline-title">AI 偽造候選人影片氾濫</div>
+                <div class="timeline-desc">假新聞與 AI 偽造候選人影片充斥網絡，政府成立專責小組打擊</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">2025 年上半年</div>
+                <div class="timeline-title">AI 使用率突破 25.9%</div>
+                <div class="timeline-desc">微軟 AI 經濟研究所報告，韓國以 4.8 個百分點增長創全球最大增速紀錄</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">2026-02</div>
+                <div class="timeline-title">YouTuber 以 AI 偽造警方影片被捕</div>
+                <div class="timeline-desc">利用 AI 生成警察逮捕行動現場影像，偽造警民衝突以吸引流量</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">2026-04</div>
+                <div class="timeline-title">AI 合成狼照片騙過緊急部門</div>
+                <div class="timeline-desc">大田市動物園狼出逃事件中，有上班族以 AI 生成狼過馬路照片，誤導 503 人員出動</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">2026-01</div>
+                <div class="timeline-title">AI 基本法正式生效</div>
+                <div class="timeline-desc">全球首部 AI 指導法律要求強制標示 AI 內容，但執法如「打地鼠」</div>
+            </div>
+        </div>
+
+        <h3>🔮 未來展望</h3>
+        <p>韓國正以驚人速度演繹 AI 社會化的可能劇本——技術滲透率冠絕全球，但監管框架與社會準備嚴重滯後。在李在明政府將 AI 定為經濟未來基石的政策支持下，韓國將繼續作為全球最具參考價值的「AI 社會實驗場」。</p>
+    </section>
+    <footer>
+        <p>© 2026 AI News Archive | 由 AI 技術生成</p>
+        <div class="footer-links">
+            <a href="../index.html">返回主頁</a>
+            <a href="https://github.com/hklamsir/ai_news" target="_blank">GitHub</a>
+            <a href="https://hklamsir.github.io/ai_news/" target="_blank">瀏覽所有專題</a>
+        </div>
+    </footer>
+
+
+    <script>
+        const codeRain = document.getElementById('codeRain');
+        const chars = '01アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン';
+        for (let i = 0; i < 50; i++) {
+            const char = document.createElement('span');
+            char.className = 'code-char';
+            char.textContent = chars[Math.floor(Math.random() * chars.length)];
+            char.style.left = Math.random() * 100 + '%';
+            char.style.animationDelay = Math.random() * 4 + 's';
+            char.style.animationDuration = (Math.random() * 3 + 3) + 's';
+            codeRain.appendChild(char);
+        }
+    </script>
+
+</body>
+</html>
