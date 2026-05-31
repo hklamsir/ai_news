@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260531_201800",
+      "title": "DevOps教父：AI程式設計時代的致命盲區與開發者生存指南",
+      "summary": "從 SDLC 到 CDLC 的典範轉移：上下文開發生命週期解析",
+      "url": "./news_20260531_201800/index.html",
+      "date": "2026-05-31",
+      "time": "20:18:00",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260531_180800",
       "title": "一部影片教你怎麼把任務拆成 agent 能跑的工作流，Task Decomposition 解析",
       "summary": "單體代理模式困境與模組化工作流解決方案",
@@ -1090,6 +1099,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-05-31T18:11:44.142275",
-  "total_count": 121
+  "last_updated": "2026-05-31T20:33:46.446256",
+  "total_count": 122
 }
