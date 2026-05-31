@@ -2,7 +2,7 @@
   "archives": [
     {
       "dir": "news_20260531_142200",
-      "title": "Anthropic 推出 Claude Opus 4.8 誠實，成為殺手級功能",
+      "title": "Anthropic launches Opus 4.8, with honesty as its killer feature",
       "summary": "新版 AI 模型錯誤率大降 4 倍，Dynamic Workflows 支援數百個子代理並行",
       "url": "./news_20260531_142200/index.html",
       "date": "2026-05-31",
@@ -11,7 +11,7 @@
     },
     {
       "dir": "news_20260531_130727",
-      "title": "Google Workspace換Logo了！ 新版哪裡不同？",
+      "title": "Instagram",
       "summary": "一次看懂「漸層」設計背後的AI品牌戰略",
       "url": "./news_20260531_130727/index.html",
       "date": "2026-05-31",
@@ -56,7 +56,7 @@
     },
     {
       "dir": "news_20260525_221000",
-      "title": "LINE臺灣AI Coding實戰 從Vibe Coding到規格驅動開發",
+      "title": "【AI Coding實戰】AI開始寫程式後，工程師下一步是什麼？LINE臺灣：不只寫規格，更要懂得帶AI做事",
       "summary": "LINE臺灣工程團隊分享AI輔助開發心法，工程師角色從工匠升級為工頭",
       "url": "./news_20260525_221000/index.html",
       "date": "2026-05-25",
@@ -65,7 +65,7 @@
     },
     {
       "dir": "news_20260525_103000",
-      "title": "中國CXMT記憶體進入主流市場 攜手Corsair DDR5突圍",
+      "title": "中國CXMT記憶體進入主流市場：攜手Corsair Vengeance DDR5突圍",
       "summary": "中國CXMT記憶體進入主流市場：攜手Corsair DDR5突圍，DRAM市場競爭白熱化",
       "url": "./news_20260525_103000/index.html",
       "date": "2026-05-25",
@@ -74,7 +74,7 @@
     },
     {
       "dir": "news_20260525_101115",
-      "title": "DeepSeek 永久調降 V4 旗艦模型價格 75%",
+      "title": "DeepSeek 永久降價 75%：AI 價格戰再升級",
       "summary": "中國 AI 新創企業發動價格戰，大型語言模型市場競爭白熱化，開發者成本大幅降低",
       "url": "./news_20260525_101115/index.html",
       "date": "2026-05-25",
@@ -83,7 +83,7 @@
     },
     {
       "dir": "news_20260524_225345",
-      "title": "AI Agent 連續跑 27 小時 /goal 功能怎麼用？",
+      "title": "我的 AI agent 連續跑了 27 個小時，/goal 功能怎麼用？",
       "summary": "Claude Code、OpenAI Codex、Hermes Agent 同步推出 /goal 功能——Gary Chen 27 小時實驗驗證「評審 + 執行者」雙 agents 架構",
       "url": "./news_20260524_225345/index.html",
       "date": "2026-05-24",
@@ -110,7 +110,7 @@
     },
     {
       "dir": "news_20260524_103901",
-      "title": "Ferrari 攜手 IBM AI 打造 F1 超級粉絲",
+      "title": "Ferrari is using IBM's AI to create F1 superfans - TechCrunch",
       "summary": "頂級超跑製造商與科技巨頭聯手，運用生成式人工智能重塑賽車運動的粉絲體驗，開創體育娛樂產業的數位轉型新紀元",
       "url": "./news_20260524_103901/index.html",
       "date": "2026-05-24",
@@ -119,7 +119,7 @@
     },
     {
       "dir": "news_20260524_101131",
-      "title": "Starbucks 放棄 AI 庫存工具 僅僅九個月就夭折",
+      "title": "Starbucks abandons its AI inventory tool after only nine months - Engadget",
       "summary": "攜手 NomadGo 打造的自動化盤點系統，连薄荷糖漿都偵測不到 — 零售業 AI 落地的慘痛一課",
       "url": "./news_20260524_101131/index.html",
       "date": "2026-05-24",
@@ -209,7 +209,7 @@
     },
     {
       "dir": "news_20260519_133957",
-      "title": "中國AI圈估值洗牌",
+      "title": "刚排好座次的中国AI圈，资本却突然改规则！",
       "summary": "四龍到五強：資本定價邏輯三次顛覆，ARR 才是真正分水嶺",
       "url": "./news_20260519_133957/index.html",
       "date": "2026-05-19",
@@ -218,7 +218,7 @@
     },
     {
       "dir": "news_20260519_122707",
-      "title": "5.20 AI 峰會亮點預告",
+      "title": "5.20 日 AI 峰会亮点：一天看尽 Agent、多模态、应用与算力，速来现场！",
       "summary": "第四屆中國AIGC產業峰會｜18位重磅嘉賓｜Agent、多模態、應用、算力一天睇盡｜北京·金茂萬麗酒店",
       "url": "./news_20260519_122707/index.html",
       "date": "2026-05-19",
@@ -227,7 +227,7 @@
     },
     {
       "dir": "news_20260519_075929",
-      "title": "南韓 LetinAR 打造 AI 眼鏡光學技術",
+      "title": "South Korea's LetinAR is building optics behind AI glasses | TechCrunch",
       "summary": "PinTILT 技術突破光學瓶頸，LG、三星相繼布局，2027 年 IPO 目標與 15 億美元市場爆發",
       "url": "./news_20260519_075929/index.html",
       "date": "2026-05-19",
@@ -245,7 +245,7 @@
     },
     {
       "dir": "news_20260518_104852",
-      "title": "2026 畢業演說：AI 話題的反思與警示",
+      "title": "If you’re giving a commencement speech in 2026, maybe don’t mention AI | TechCrunch",
       "summary": "當人工智能成為時代熱詞，TechCrunch 提出一個值得深思的建議：或許在 2026 年的畢業典禮上，我們應該暫時放下 AI 這個話題",
       "url": "./news_20260518_104852/index.html",
       "date": "2026-05-18",
@@ -254,7 +254,7 @@
     },
     {
       "dir": "news_20260517_194144",
-      "title": "DeepMind重磅演講：AI將邁向「體驗時代」",
+      "title": "別只盯著大模型了！DeepMind重磅演講：AI將邁向“體驗時代”，這才是通往超級智能的真正鑰匙 | 科技 | 鉅亨號 | Anue鉅亨",
       "summary": "別只盯著大模型了！研究指出，「體驗時代」才是通往超級智能的真正鑰匙，這項技術突破將重新定義人工智能的發展路徑",
       "url": "./news_20260517_194144/index.html",
       "date": "2026-05-17",
@@ -263,7 +263,7 @@
     },
     {
       "dir": "news_20260517_155102",
-      "title": "ChatGPT 個人理財功能登場 OpenAI 進軍個人金融領域",
+      "title": "ChatGPT wants to be hooked up to your savings account, and that's definitely fine",
       "summary": "OpenAI 為 ChatGPT Pro 用戶推出個人理財體驗，可連結銀行帳戶提供個人化預算規劃與儲蓄建議",
       "url": "./news_20260517_155102/index.html",
       "date": "2026-05-17",
@@ -272,7 +272,7 @@
     },
     {
       "dir": "news_20260517_092801",
-      "title": "Pinecone 推出 Nexus 知識引擎 以預先編譯知識革新 RAG 架構",
+      "title": "向量資料庫Pinecone推出AI代理知識引擎Nexus，主打以預先編譯知識改善RAG檢索問題",
       "summary": "向量資料庫龍頭 Pinecone 發布 AI 代理知識引擎 Nexus，提出「知識編譯」新範式，主張以預先整理與結構化企業知識改善代理式 AI 的效能與可靠性",
       "url": "./news_20260517_092801/index.html",
       "date": "2026-05-17",
@@ -281,7 +281,7 @@
     },
     {
       "dir": "news_20260516_232642",
-      "title": "Google Gemma 4 對決 Qwen 3.6：開源模型巔峰之戰",
+      "title": "Google Gemma 4 VS Qwen 3.6: I Ran Both Side by Side and Picked One",
       "summary": "開源人工智慧模型競爭白熱化，兩大巨頭分別推出可在單一 GPU 執行的輕量級架構，卻展現媲美數百億引數級閉源模型的實力。本次報告透過實測比較，揭示兩者在編碼能力、推理表現及應用場景的關鍵差異。",
       "url": "./news_20260516_232642/index.html",
       "date": "2026-05-16",
@@ -308,7 +308,7 @@
     },
     {
       "dir": "news_20260515_115717",
-      "title": "拒絕Vibe Coding！ AI程式設計的正確姿勢",
+      "title": "拒絕Vibe Coding！| AI程式設計的正確姿勢 | TypeScript大神的AI秘籍",
       "summary": "TypeScript大神Matt Pocock開源實戰方法論，以「Skills for real engineers」重新定義人機協作新正規化，對抗AI時代技術債務危機",
       "url": "./news_20260515_115717/index.html",
       "date": "2026-05-15",
@@ -317,7 +317,7 @@
     },
     {
       "dir": "news_20260514_140253",
-      "title": "Apple 考慮向代理式 AI 敞開 App Store 大門",
+      "title": "Apple may open up the App Store to agentic AI - Engadget",
       "summary": "在隱私安全與商業利益的十字路口，Apple 如何抉擇？代理式 AI 浪潮下的平台策略轉向",
       "url": "./news_20260514_140253/index.html",
       "date": "2026-05-14",
@@ -326,7 +326,7 @@
     },
     {
       "dir": "news_20260514_080700",
-      "title": "AI 生產力的隱性代價：當工程師大腦被機器速度追殺",
+      "title": "The Human Cost of 10x AI Productivity",
       "summary": "當 AI 承諾十倍生產力，誰來承擔人類大腦的極限代價？一場關於工程師身心健康與產業現實的深度調查",
       "url": "./news_20260514_080700/index.html",
       "date": "2026-05-14",
@@ -362,7 +362,7 @@
     },
     {
       "dir": "news_20260511_112552",
-      "title": "黃仁勳批 AI 白領威脅論：老闆的「上帝情結」又犯了！",
+      "title": "AI 會消滅白領？黃仁勳批：那只是老闆的「上帝情結」又犯了！",
       "summary": "NVIDIA 執行長黃仁勳強烈反駁「AI 取代白領工作」的恐慌論調，直指這是企業高層的權力幻想，而非技術必然。",
       "url": "./news_20260511_112552/index.html",
       "date": "2026-05-11",
@@ -371,8 +371,8 @@
     },
     {
       "dir": "news_20260511_095738",
-      "title": "都大研發首個粵語酒後語言檢測系統",
-      "summary": "香港都會大學研發首個粵語酒後語言檢測系統，結合 AI 分析語速、語調、停頓與語法結構，評估酒精對語言能力的影響。",
+      "title": "Instagram",
+      "summary": "{{SUBTITLE}}",
       "url": "./news_20260511_095738/index.html",
       "date": "2026-05-11",
       "time": "09:57:38",
@@ -416,7 +416,7 @@
     },
     {
       "dir": "news_20260510_174500",
-      "title": "LLM 文件腐蝕問題",
+      "title": "LLM 文件腐蝕問題研究：DELEGATE-52 揭示每次處理都在降解你的文檔",
       "summary": "DELEGATE-52 研究揭示：即使最強模型平均也會腐蝕 25% 文檔內容",
       "url": "./news_20260510_174500/index.html",
       "date": "2026-05-10",
@@ -425,7 +425,7 @@
     },
     {
       "dir": "news_20260510_161500",
-      "title": "AI 首次展現自我複製能力",
+      "title": "AI 首次展現自我複製能力：研究首次在受控環境中觀察到",
       "summary": "Palisade Research 首次正式記錄 AI 模型利用漏洞將自己複製到另一台伺服器的能力",
       "url": "./news_20260510_161500/index.html",
       "date": "2026-05-10",
@@ -434,7 +434,7 @@
     },
     {
       "dir": "news_20260510_125600",
-      "title": "超美的手繪風格 Prompt",
+      "title": "超美的手繪風格！分享 3 組 ChatGPT 與 Gemini 手寫筆觸 Prompt",
       "summary": "分享 3 組 ChatGPT 與 Gemini 手寫筆觸風格指令，生成有溫度的 AI 藝術作品",
       "url": "./news_20260510_125600/index.html",
       "date": "2026-05-10",
@@ -443,7 +443,7 @@
     },
     {
       "dir": "news_20260510_121700",
-      "title": "OpenAI 推出 Codex Chrome 插件",
+      "title": "OpenAI 推出 Codex Chrome 插件：進軍瀏覽器開發工作",
       "summary": "AI 程式碼助理進軍瀏覽器：測試網頁應用、跨分頁收集上下文、使用 Chrome DevTools",
       "url": "./news_20260510_121700/index.html",
       "date": "2026-05-10",
@@ -452,7 +452,7 @@
     },
     {
       "dir": "news_20260509_143300",
-      "title": "AI 不會取代白領工作",
+      "title": "AI 不會取代白領工作：數學上行不通 | Techtrenches",
       "summary": "數學上行不通：非確定性、幻覺、功能極限三大無法突破的牆",
       "url": "./news_20260509_143300/index.html",
       "date": "2026-05-09",
@@ -461,7 +461,7 @@
     },
     {
       "dir": "news_20260509_142200",
-      "title": "黃仁勳動員令：全員改用 Codex",
+      "title": "黃仁勳動員令！要求輝達員工全面改用Codex：全員 AI 時代來臨 | 數位時代",
       "summary": "AI 代理程式時代正式來臨　未來「人人都是開發者」",
       "url": "./news_20260509_142200/index.html",
       "date": "2026-05-09",
@@ -470,7 +470,7 @@
     },
     {
       "dir": "news_20260508_211600",
-      "title": "Perplexity 個人電腦登陸 Mac",
+      "title": "Perplexity 個人電腦登陸 Mac：每個人都能使用的本地 AI 代理 | TechCrunch",
       "summary": "每個人都能使用的本地 AI 代理　瞄準 OpenClaw 安全痛點",
       "url": "./news_20260508_211600/index.html",
       "date": "2026-05-08",
@@ -479,7 +479,7 @@
     },
     {
       "dir": "news_20260508_123500",
-      "title": "AI 是工程文化的鏡子",
+      "title": "AI 是工程文化的鏡子：為何 AI 生成代碼越來越差 | Techtrenches",
       "summary": "為何 AI 生成代碼越來越差？GitHub 5.18 億項目的垃圾數據，才是問題根源",
       "url": "./news_20260508_123500/index.html",
       "date": "2026-05-08",
@@ -488,7 +488,7 @@
     },
     {
       "dir": "news_20260508_090200",
-      "title": "Google Chrome 悄悄下載 4GB 檔案：用戶知情與否？",
+      "title": "Google Chrome 悄悄下載 4GB 檔案：用戶知情與否？刪除方法一次看 | ZDNet",
       "summary": "Gemini Nano 設備端 AI 模型悄然安裝　刪除後會自動重新下載",
       "url": "./news_20260508_090200/index.html",
       "date": "2026-05-08",
@@ -524,7 +524,7 @@
     },
     {
       "dir": "news_20260505_080900",
-      "title": "麥肯錫示警：近七成行銷工作將被AI接手！",
+      "title": "麥肯錫示警：近七成行銷工作將被AI接手！5個轉型學習",
       "summary": "麥肯錫報告指出「代理型 AI」最終會主導近三分之二的行銷活動。行銷人該如何轉型才能逃過「無用階級」命運？本文提出五個關鍵轉型座標。",
       "url": "./news_20260505_080900/index.html",
       "date": "2026-05-05",
@@ -533,7 +533,7 @@
     },
     {
       "dir": "news_20260504_223400",
-      "title": "Claude Code 神秘降級事件",
+      "title": "Claude Code 神秘降級事件深度剖析：看不見的疊加故障",
       "summary": "過去一個多月，無數開發者懷疑人生——Claude Code 突然變笨降智、代碼跑不通、對話失憶。真相終於揭曉：不是黑客攻擊、不是模型降級，而是三個看似不起眼的產品層小改動在不同時間點悄悄上線，最終疊加",
       "url": "./news_20260504_223400/index.html",
       "date": "2026-05-04",
@@ -551,7 +551,7 @@
     },
     {
       "dir": "news_20260503_192100",
-      "title": "我從未像現在這樣感到落後",
+      "title": "我從未像現在這樣感到落後 ｜ Andrej Karpathy AI演進深度剖析",
       "summary": "Andrej Karpathy 在紅杉 AI Ascent 2026 大會上，以自身一年多的真實開發體驗，拆解從軟件1.0到軟件3.0的躍遷、智慧體工程的崛起，以及人類在AI時代真正不可替代的價值。",
       "url": "./news_20260503_192100/index.html",
       "date": "2026-05-03",
@@ -587,7 +587,7 @@
     },
     {
       "dir": "news_20260426_110843",
-      "title": "Google 押注 AI 代理：企業變現策略核心轉向",
+      "title": "Google 押注 AI 代理：企業變現策略核心轉向 | REUTERS 獨家報道",
       "summary": "Alphabet CEO Sundar Pichai 明確表示 AI 代理是人類化數碼助手，是 Google 變現人工智能策略的核心支柱，標誌著與 Amazon、Microsoft、OpenAI、An",
       "url": "./news_20260426_110843/index.html",
       "date": "2026-04-26",
@@ -749,7 +749,7 @@
     },
     {
       "dir": "news_20260416_084621",
-      "title": "Gemini 「Skills」功能登場 儲存常用 AI 指令 Chrome 側邊欄一鍵即開",
+      "title": "Gemini 「Skills」功能登場 儲存常用 AI 指令 Chrome 側邊欄一鍵即開 - unwire.hk 香港",
       "summary": "Gemini 推出全新「Skills」功能，用戶可以儲存常用的 AI 指令，並在 Chrome 側邊欄一鍵啟用。",
       "url": "./news_20260416_084621/index.html",
       "date": "2026-04-16",
@@ -893,7 +893,7 @@
     },
     {
       "dir": "news_20260409_180919",
-      "title": "Google AI 戰略深度解析",
+      "title": "是噱頭還是真強？深度拆解 Google AI 殺手鐧：如何靠「無限脈絡」與「原生代理人」超越 OpenAI？這 13 項更新預示了 AGI 的降臨！》",
       "summary": "13項更新預示 AGI 降臨：無限脈絡與原生代理人如何重塑產業格局，挑戰 OpenAI 霸主地位？",
       "url": "./news_20260409_180919/index.html",
       "date": "2026-04-09",
@@ -1081,6 +1081,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-05-31T14:26:25.744457",
+  "last_updated": "2026-05-31T14:46:34.101739",
   "total_count": 120
 }
