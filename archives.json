@@ -1,6 +1,14 @@
 {
   "archives": [
     {
+      "dir": "news_20260531_130727",
+      "title": "Google Workspace換Logo了！新版哪裡不同？一次看懂「漸層」設計背後的AI品牌戰略",
+      "summary_short": "# Google Workspace換Logo了！新版哪裡不同？一次看懂「漸層」設計背後的AI品牌戰略## 📖 新聞導語本文報導來自 **BNEXT**，發布於 **2026-05-31**。",
+      "images": [],
+      "date": "2026-05-31",
+      "url": "./news_20260531_130727/index.html"
+    },
+    {
       "dir": "news_20260530_234750",
       "title": "CNN 控告 Perplexity AI 時代版權大戰",
       "summary": "電視網絡首例 AI 版權訴訟！CNN 入稟控告 Perplexity 抄襲超過 17,000 篇內容，揭露從談判到決裂的完整過程",
@@ -1063,6 +1071,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-05-31T00:10:19.100966",
+  "last_updated": "2026-05-31T13:12:53.352302",
   "total_count": 118
 }
