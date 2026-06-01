@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260601_211019",
+      "title": "AI Tutor - Chinese",
+      "summary": "多語言語音數據訓練師，月薪可達 $45/小時，遠程工作",
+      "url": "./news_20260601_211019/index.html",
+      "date": "2026-06-01",
+      "time": "21:10:19",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260601_203142",
       "title": "15 分鐘建立 Claude Code Routine：新手自動化程式設計工作流",
       "summary": "新手自動化程式設計工作流：設定每天自動執行的開發維護流程",
@@ -1117,6 +1126,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-06-01T21:07:07.192744",
-  "total_count": 124
+  "last_updated": "2026-06-01T21:11:36.390463",
+  "total_count": 125
 }
