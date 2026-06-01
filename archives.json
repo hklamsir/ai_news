@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260601_080616",
+      "title": "'What a joke': Github Copilot's new token-based billing spurs consternation among devs | TechCrunch",
+      "summary": "從固定月費改為 Token 用量計費，用戶帳單暴漲數十倍",
+      "url": "./news_20260601_080616/index.html",
+      "date": "2026-06-01",
+      "time": "08:06:16",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260531_201800",
       "title": "DevOps教父：AI程式設計時代的致命盲區與開發者生存指南",
       "summary": "從 SDLC 到 CDLC 的典範轉移：上下文開發生命週期解析",
@@ -1099,6 +1108,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-05-31T20:33:46.446256",
-  "total_count": 122
+  "last_updated": "2026-06-01T08:07:31.951304",
+  "total_count": 123
 }
