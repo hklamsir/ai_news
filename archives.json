@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260601_233024",
+      "title": "微軟推出第一款輝達晶片的AI電腦 「史上最強」Surface筆電售價未定",
+      "summary": "RTX Spark 晶片、1200億參數本地運行、秋季上市",
+      "url": "./news_20260601_233024/index.html",
+      "date": "2026-06-01",
+      "time": "23:30:24",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260601_225736",
       "title": "MiniMax M3 IS INSANE! BEST Opensource AI Model! Beats Opus 4.7 and 50x Cheaper! (Fully Tested)",
       "summary": "100萬上下文窗口、碾壓Opus 4.7、性價比50倍",
@@ -1135,6 +1144,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-06-01T22:59:12.593079",
-  "total_count": 126
+  "last_updated": "2026-06-01T23:31:50.537971",
+  "total_count": 127
 }
