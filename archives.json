@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260601_234943",
+      "title": "現在學AI，真的還不晚：30天從小白到上手！",
+      "summary": "30天從小白到上手：AI入門完整攻略",
+      "url": "./news_20260601_234943/index.html",
+      "date": "2026-06-01",
+      "time": "23:49:43",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260601_233024",
       "title": "微軟推出第一款輝達晶片的AI電腦 「史上最強」Surface筆電售價未定",
       "summary": "RTX Spark 晶片、1200億參數本地運行、秋季上市",
@@ -1144,6 +1153,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-06-01T23:31:50.537971",
-  "total_count": 127
+  "last_updated": "2026-06-01T23:51:01.647767",
+  "total_count": 128
 }
