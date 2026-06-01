@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260601_225736",
+      "title": "MiniMax M3 IS INSANE! BEST Opensource AI Model! Beats Opus 4.7 and 50x Cheaper! (Fully Tested)",
+      "summary": "100萬上下文窗口、碾壓Opus 4.7、性價比50倍",
+      "url": "./news_20260601_225736/index.html",
+      "date": "2026-06-01",
+      "time": "22:57:36",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260601_211019",
       "title": "AI Tutor - Chinese",
       "summary": "多語言語音數據訓練師，月薪可達 $45/小時，遠程工作",
@@ -1126,6 +1135,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-06-01T21:11:36.390463",
-  "total_count": 125
+  "last_updated": "2026-06-01T22:59:12.593079",
+  "total_count": 126
 }
