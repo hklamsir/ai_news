@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>15 分鐘建立 Claude Code Routine：新手自動化程式設計工作流 | BlockTempo - AI News</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root { --primary-blue: #00d4ff; --primary-purple: #7b2cbf; --accent-green: #00ff88; --accent-orange: #ff9500; --accent-red: #ff4757; --dark-bg: #0a0a0f; --card-bg: #12121a; --card-bg-light: #1a1a28; --text-primary: #ffffff; --text-secondary: #a0a0b0; --gradient-1: linear-gradient(135deg, #00d4ff 0%, #7b2cbf 100%); --gradient-2: linear-gradient(135deg, #00d4ff 0%, #00ff88 100%); --glow-blue: 0 0 20px rgba(0, 212, 255, 0.5); --glow-purple: 0 0 20px rgba(123, 44, 191, 0.5); }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Noto Sans TC', sans-serif; background-color: var(--dark-bg); color: var(--text-primary); line-height: 1.8; overflow-x: hidden; }
+        @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-20px); } }
+        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.6; } }
+        @keyframes slideIn { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes codeRain { 0% { transform: translateY(-100%); opacity: 0; } 10% { opacity: 1; } 90% { opacity: 1; } 100% { transform: translateY(100vh); opacity: 0; } }
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); } }
+        .code-rain { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; overflow: hidden; }
+        .code-char { position: absolute; color: var(--primary-blue); font-family: 'Courier New', monospace; font-size: 14px; opacity: 0; animation: codeRain 4s linear infinite; }
+        .hero { position: relative; min-height: 80vh; display: flex; align-items: center; justify-content: center; padding: 80px 20px; background: linear-gradient(180deg, var(--dark-bg) 0%, #1a1a2e 100%); overflow: hidden; }
+        .hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(ellipse at center, rgba(123, 44, 191, 0.15) 0%, transparent 70%); z-index: 1; }
+        .hero-content { position: relative; z-index: 2; max-width: 1200px; text-align: center; animation: slideIn 1s ease-out; }
+        .hero-badge { display: inline-block; padding: 12px 32px; background: var(--gradient-1); border-radius: 50px; font-size: 18px; font-weight: 700; margin-bottom: 24px; box-shadow: var(--glow-blue); letter-spacing: 1px; }
+        .hero h1 { font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 900; margin-bottom: 24px; background: var(--gradient-1); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; line-height: 1.2; }
+        .hero-subtitle { font-size: clamp(1.2rem, 2.2vw, 1.5rem); color: var(--text-primary); max-width: 900px; margin: 0 auto 40px; line-height: 1.6; font-weight: 400; }
+        .hero-images { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; margin-top: 60px; }
+        .hero-image-card { position: relative; border-radius: 20px; overflow: hidden; aspect-ratio: 16/9; box-shadow: var(--glow-purple); transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .hero-image-card:hover { transform: scale(1.02); box-shadow: 0 0 40px rgba(123, 44, 191, 0.7); }
+        .hero-image-card img { width: 100%; height: 100%; object-fit: cover; }
+        .scroll-indicator { position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%); animation: float 2s ease-in-out infinite; z-index: 2; }
+        .scroll-indicator span { display: block; width: 30px; height: 50px; border: 2px solid var(--primary-blue); border-radius: 25px; position: relative; }
+        .scroll-indicator span::before { content: ''; position: absolute; top: 8px; left: 50%; transform: translateX(-50%); width: 6px; height: 10px; background: var(--primary-blue); border-radius: 3px; animation: pulse 1.5s infinite; }
+        section { padding: 80px 20px; position: relative; z-index: 1; }
+        .content-section { background: var(--card-bg); padding: 60px 50px; border-radius: 24px; border: 1px solid rgba(0, 212, 255, 0.2); max-width: 1100px; margin: 0 auto; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3); }
+        .content-section h3 { font-size: 1.6rem; margin: 40px 0 20px; color: var(--accent-green); }
+        .content-section p { color: var(--text-secondary); line-height: 2; font-size: 1.08rem; margin: 15px 0; }
+        .content-section ul { margin: 20px 0; padding-left: 30px; }
+        .content-section li { margin: 10px 0; color: var(--text-secondary); }
+        .meta-info { background: linear-gradient(135deg, rgba(0, 212, 255, 0.15) 0%, rgba(123, 44, 191, 0.15) 100%); padding: 30px; border-radius: 16px; margin-bottom: 40px; border-left: 5px solid var(--primary-blue); }
+        .meta-info p { margin: 12px 0; color: var(--text-secondary); font-size: 1.05rem; }
+        .meta-info strong { color: var(--primary-blue); font-weight: 600; }
+        .meta-info a { color: var(--primary-blue); text-decoration: none; word-break: break-all; }
+        .highlight-box { background: linear-gradient(135deg, rgba(0, 255, 136, 0.08) 0%, rgba(0, 212, 255, 0.08) 100%); padding: 30px; border-radius: 16px; border-left: 5px solid var(--accent-green); margin: 40px 0; }
+        .highlight-box h4 { color: var(--accent-green); margin-bottom: 15px; font-size: 1.3rem; }
+        .highlight-box p { color: var(--text-secondary); margin: 0; }
+        .alert-box { background: linear-gradient(135deg, rgba(255, 71, 87, 0.1) 0%, rgba(255, 149, 0, 0.1) 100%); padding: 25px 30px; border-radius: 16px; border-left: 5px solid var(--accent-red); margin: 30px 0; }
+        .alert-box h4 { color: var(--accent-red); margin-bottom: 12px; font-size: 1.15rem; }
+        .alert-box p { color: var(--text-secondary); margin: 8px 0; font-size: 1rem; }
+        .quote-box { background: linear-gradient(135deg, rgba(123, 44, 191, 0.15) 0%, rgba(0, 212, 255, 0.15) 100%); padding: 30px 40px; border-radius: 16px; border-left: 5px solid var(--primary-purple); margin: 40px 0; position: relative; }
+        .quote-box::before { content: '"'; position: absolute; top: 10px; left: 20px; font-size: 80px; color: var(--primary-purple); opacity: 0.3; font-family: Georgia, serif; }
+        .quote-box p { color: var(--text-primary); font-size: 1.2rem; font-style: italic; margin-bottom: 15px; }
+        .quote-box cite { color: var(--text-secondary); font-size: 0.95rem; }
+        .tech-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin: 40px 0; }
+        .tech-card { background: var(--card-bg-light); padding: 30px; border-radius: 16px; border: 1px solid rgba(0, 212, 255, 0.15); transition: transform 0.3s ease, box-shadow 0.3s ease; animation: fadeInUp 0.6s ease-out forwards; opacity: 0; }
+        .tech-card:nth-child(1) { animation-delay: 0.1s; }
+        .tech-card:nth-child(2) { animation-delay: 0.2s; }
+        .tech-card:nth-child(3) { animation-delay: 0.3s; }
+        .tech-card:nth-child(4) { animation-delay: 0.4s; }
+        .tech-card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0, 212, 255, 0.2); }
+        .tech-card-icon { font-size: 2.5rem; margin-bottom: 15px; }
+        .tech-card h4 { color: var(--primary-blue); margin-bottom: 12px; font-size: 1.2rem; }
+        .tech-card p { color: var(--text-secondary); font-size: 0.95rem; line-height: 1.7; }
+        .comparison-table { width: 100%; border-collapse: collapse; margin: 40px 0; border-radius: 16px; overflow: hidden; box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3); }
+        .comparison-table thead { background: linear-gradient(135deg, var(--primary-blue), var(--primary-purple)); }
+        .comparison-table th { padding: 18px 20px; text-align: left; font-weight: 600; font-size: 1.05rem; }
+        .comparison-table td { padding: 16px 20px; border-bottom: 1px solid rgba(255, 255, 255, 0.05); color: var(--text-secondary); }
+        .comparison-table tr:last-child td { border-bottom: none; }
+        .comparison-table tr:nth-child(even) { background: rgba(255, 255, 255, 0.02); }
+        .comparison-table .highlight-col { color: var(--accent-green); font-weight: 500; }
+        .timeline { position: relative; margin: 40px 0; padding-left: 40px; }
+        .timeline::before { content: ''; position: absolute; left: 15px; top: 0; bottom: 0; width: 2px; background: linear-gradient(180deg, var(--primary-blue), var(--primary-purple)); }
+        .timeline-item { position: relative; margin-bottom: 35px; padding: 20px 25px; background: var(--card-bg-light); border-radius: 12px; border: 1px solid rgba(0, 212, 255, 0.1); animation: fadeInUp 0.5s ease-out forwards; opacity: 0; }
+        .timeline-item:nth-child(1) { animation-delay: 0.1s; }
+        .timeline-item:nth-child(2) { animation-delay: 0.2s; }
+        .timeline-item:nth-child(3) { animation-delay: 0.3s; }
+        .timeline-item:nth-child(4) { animation-delay: 0.4s; }
+        .timeline-item:nth-child(5) { animation-delay: 0.5s; }
+        .timeline-item:nth-child(6) { animation-delay: 0.6s; }
+        .timeline-item::before { content: ''; position: absolute; left: -32px; top: 25px; width: 12px; height: 12px; background: var(--primary-blue); border-radius: 50%; box-shadow: var(--glow-blue); }
+        .timeline-date { color: var(--primary-blue); font-size: 0.9rem; font-weight: 600; margin-bottom: 8px; }
+        .timeline-title { color: var(--text-primary); font-size: 1.1rem; font-weight: 600; margin-bottom: 8px; }
+        .timeline-desc { color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6; }
+        footer { background: #050508; padding: 60px 20px; text-align: center; border-top: 1px solid rgba(255, 255, 255, 0.1); }
+        footer p { color: var(--text-secondary); margin-bottom: 20px; }
+        .footer-links { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; }
+        .footer-links a { color: var(--primary-blue); text-decoration: none; transition: color 0.3s ease; }
+        .footer-links a:hover { color: var(--text-primary); }
+        @media (max-width: 768px) { .content-section { padding: 40px 25px; } .hero-images { grid-template-columns: 1fr; } .hero h1 { font-size: 2rem; } .hero-subtitle { font-size: 1.2rem; } }
+    </style>
+</head>
+<body>
+    <div class="code-rain" id="codeRain"></div>
+    <section class="hero">
+        <div class="hero-content">
+            <span class="hero-badge">📰 AI News 專題報道</span>
+            <h1>15 分鐘建立<br>Claude Code Routine</h1>
+            <p class="hero-subtitle">新手自動化程式設計工作流：設定每天自動執行的開發維護流程</p>
+            <div class="hero-images">
+                <div class="hero-image-card">
+                    <img src="img/img1.png" alt="Claude Code Routines 自動化工作流">
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator"><span></span></div>
+    </section>
+    <section class="content-section">
+
+        <div class="meta-info">
+            <p><strong>📺 資料來源</strong>：<a href="{{SOURCE_URL}}" target="_blank">{{SOURCE_NAME}}</a></p>
+            <p><strong>📅 發布日期</strong>：{{PUB_DATE}}</p>
+            <p><strong>🤖 處理方式</strong>：AI 智能摘要 + 深度優化</p>
+        </div>
+
+        <h3>🚀 什麼是 Claude Code Routines？</h3>
+        <p>Routines 本質上是「排程執行的 Claude Code 任務」。它啟動一個獨立的 Claude 會話，依照設定的排程（每小時、每天、或 GitHub webhook 觸發）反覆執行特定任務。與一般對話不同，Routines 在後臺自主運作，不需要人工在場。</p>
+        <p>每個 Routine 包含三個要素：<strong>排程觸發器</strong>（何時跑）、<strong>任務指令</strong>（做什麼）、<strong>許可權限制</strong>（能用什麼工具）。</p>
+
+        <div class="quote-box">
+            <p>「每天早上九點，Claude Code 自動檢查 GitHub Issues、分類優先順序、跑測試、甚至發起修復 PR。你起床時，程式碼已經被維護好了。」</p>
+            <cite>— BlockTempo</cite>
+        </div>
+
+        <h3>🛠️ 三步建立第一個 Routine</h3>
+        <p><strong>第一步：安裝與確認環境</strong></p>
+        <p>確認 Claude Code CLI 版本在 v2.0 以上：</p>
+        <pre style="background:#1a1a28;padding:20px;border-radius:12px;overflow-x:auto;margin:15px 0;"><code>claude --version</code></pre>
+        <p>若版本不夠新，用官網安裝指令更新：</p>
+        <pre style="background:#1a1a28;padding:20px;border-radius:12px;overflow-x:auto;margin:15px 0;"><code>npm install -g @anthropic-ai/claude-code</code></pre>
+
+        <p><strong>第二步：建立 Routine 設定檔</strong></p>
+        <p>在專案根目錄建立 <code>.claude/routines/</code> 資料夾，然後建立設定檔 <code>daily-tests.yml</code>。</p>
+        <p>YAML 語法包含關鍵欄位：</p>
+        <ul>
+            <li><code>name</code>：任務名稱</li>
+            <li><code>schedule</code>：cron 表示式</li>
+            <li><code>start_command</code>：任務指令</li>
+            <li><code>allowed_tools</code>：允許使用的工具清單</li>
+            <li><code>max_turns</code>：最大對話輪數，防止無限迴圈</li>
+        </ul>
+
+        <p><strong>第三步：註冊與啟動</strong></p>
+        <pre style="background:#1a1a28;padding:20px;border-radius:12px;overflow-x:auto;margin:15px 0;"><code># 註冊 Routine
+claude routines add --file .claude/routines/daily-tests.yml
+
+# 啟動背景服務
+claude routines start
+
+# 檢視所有 Routine
+claude routines list
+
+# 檢視執行日誌
+claude routines logs --name daily-tests</code></pre>
+
+        <h3>💼 三大實戰案例</h3>
+        <div class="tech-cards">
+            <div class="tech-card">
+                <div class="tech-card-icon">🏷️</div>
+                <h4>自動化 Issue 分類</h4>
+                <p>每 30 分鐘掃描新 Issue，根據標題與標籤自動分類、回覆初步資訊，嚴重 bug 直接指派給對應開發者。設定 <code>trigger.type: polling</code> 定期輪詢 GitHub API。</p>
+            </div>
+            <div class="tech-card">
+                <div class="tech-card-icon">🔍</div>
+                <h4>每日程式碼健康檢查</h4>
+                <p>每日凌晨執行，依序執行 lint 檢查、型別檢查、單元測試，若發現錯誤則自動建立分支修復並發起 PR。建議設定較高的 <code>max_turns</code>（50-100）。</p>
+            </div>
+            <div class="tech-card">
+                <div class="tech-card-icon">📝</div>
+                <h4>自動檔案更新</h4>
+                <p>每日掃描新增的類別與函式，自動更新 README 和 API 檔案。這是最安全的 Routine 案例，因為檔案修改的風險遠低於程式碼修改。</p>
+            </div>
+            <div class="tech-card">
+                <div class="tech-card-icon">⚡</div>
+                <h4>Dynamic Workflow 互補</h4>
+                <p>Dynamic Workflow 是人工即時引導的動態協作；Routines 是背景排程自動化。先用手動 Dynamic Workflow 測試任務流程，確定正確後再封裝成 Routine。</p>
+            </div>
+        </div>
+
+        <h3>📊 Routines vs Dynamic Workflow</h3>
+        <table class="comparison-table">
+            <thead>
+                <tr><th>功能</th><th>Routines</th><th>Dynamic Workflow</th><th>適合場景</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>觸發方式</td><td>排程/自動觸發</td><td>人工即時引導</td><td class="highlight-col">Routine: 後台定期</td></tr>
+                <tr><td>需要人工</td><td>不需要</td><td>需要全程參與</td><td class="highlight-col">Routine: 自主運作</td></tr>
+                <tr><td>複雜度</td><td>需要設定腳本</td><td>靈活調整</td><td>依任務需求</td></tr>
+                <tr><td>應用階段</td><td>自動化階段</td><td>開發測試階段</td><td>先 Workflow 再 Routine</td></tr>
+            </tbody>
+        </table>
+
+        <h3>🔒 安全最佳實踐</h3>
+        <div class="highlight-box">
+            <h4>⚠️ 四大安全鐵律</h4>
+            <p>1. <strong>永遠限制 allowed_tools</strong>，不要讓 Routine 擁有推送遠端分支的許可權</p>
+            <p>2. <strong>設定 max_turns 上限</strong>，防止 Routine 無窮迴圈消耗 Token</p>
+            <p>3. <strong>搭配 git 隔離策略</strong>：讓 Routine 在獨立分支上操作，經人工審查後合併</p>
+            <p>4. <strong>從簡單任務開始</strong>（如 Issue 分類），確認行為正確後再升級到更複雜的任務</p>
+        </div>
+
+        <h3>📅 Claude Code Routines 快速上手時間軸</h3>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-date">0-5 分鐘</div>
+                <div class="timeline-title">環境確認</div>
+                <div class="timeline-desc">檢查 Claude Code 版本，確認在 v2.0 以上，否則更新。</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">5-10 分鐘</div>
+                <div class="timeline-title">建立設定檔</div>
+                <div class="timeline-desc">在 .claude/routines/ 建立第一個 YAML 設定檔，定義排程和任務。</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">10-15 分鐘</div>
+                <div class="timeline-title">註冊並啟動</div>
+                <div class="timeline-desc">用 claude routines add 註冊，claude routines start 啟動背景服務。</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">日後每天</div>
+                <div class="timeline-title">自動維護</div>
+                <div class="timeline-desc">你的第一個 Routine 每天自動執行，省下數小時重複性開發工作。</div>
+            </div>
+        </div>
+
+        <div class="alert-box">
+            <h4>💡 結語</h4>
+            <p>在 2026 年的開發環境中，AI 程式設計工具的最大價值不再只是「寫程式碼更快」，而是「讓機器自己維護機器」。Routines 正是這個願景的起點。不妨今天就試試看，你的第一個 Routine，可能從「每天早上跑一次測試」開始。</p>
+        </div>
+    </section>
+    <footer>
+        <p>© 2026 AI News Archive | 由 AI 技術生成</p>
+        <div class="footer-links">
+            <a href="../index.html">返回主頁</a>
+            <a href="https://github.com/hklamsir/ai_news" target="_blank">GitHub</a>
+            <a href="https://hklamsir.github.io/ai_news/" target="_blank">瀏覽所有專題</a>
+        </div>
+    </footer>
+
+
+    <script>
+        const codeRain = document.getElementById('codeRain');
+        const chars = '01アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン';
+        for (let i = 0; i < 50; i++) {
+            const char = document.createElement('span');
+            char.className = 'code-char';
+            char.textContent = chars[Math.floor(Math.random() * chars.length)];
+            char.style.left = Math.random() * 100 + '%';
+            char.style.animationDelay = Math.random() * 4 + 's';
+            char.style.animationDuration = (Math.random() * 3 + 3) + 's';
+            codeRain.appendChild(char);
+        }
+    </script>
+
+</body>
+</html>

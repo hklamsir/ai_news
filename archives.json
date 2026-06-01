@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260601_203142",
+      "title": "15 分鐘建立 Claude Code Routine：新手自動化程式設計工作流",
+      "summary": "新手自動化程式設計工作流：設定每天自動執行的開發維護流程",
+      "url": "./news_20260601_203142/index.html",
+      "date": "2026-06-01",
+      "time": "20:31:42",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260601_080616",
       "title": "'What a joke': Github Copilot's new token-based billing spurs consternation among devs | TechCrunch",
       "summary": "從固定月費改為 Token 用量計費，用戶帳單暴漲數十倍",
@@ -1108,6 +1117,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-06-01T08:07:31.951304",
-  "total_count": 123
+  "last_updated": "2026-06-01T20:32:53.365024",
+  "total_count": 124
 }
