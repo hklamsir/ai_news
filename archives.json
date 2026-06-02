@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260602_185500",
+      "title": "員工自建Vibe Coding應用成影子AI新風險，有兩千個企業用途工具暴露敏感資料",
+      "summary": "Red Access 研究：38萬公開網路資產、5千企業用途工具、40%未設驗證機制",
+      "url": "./news_20260602_185500/index.html",
+      "date": "2026-06-02",
+      "time": "18:55:00",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260602_153800",
       "title": "Nvidia's New Laptops - RTX Spark",
       "summary": "Computex 2026 重磅發布：20 核心 Arm CPU + 6144 CUDA GPU，128GB 統一記憶體，目標 Apple Silicon",
@@ -1180,6 +1189,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-06-02T15:40:25.116611",
-  "total_count": 131
+  "last_updated": "2026-06-02T18:57:56.082628",
+  "total_count": 132
 }

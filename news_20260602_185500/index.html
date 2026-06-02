@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>員工自建 AI 開發平台應用成影子AI新風險：2000個企業工具暴露敏感資料 | AI 新聞 - AI News</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root { --primary-blue: #00d4ff; --primary-purple: #7b2cbf; --accent-green: #00ff88; --accent-orange: #ff9500; --accent-red: #ff4757; --dark-bg: #0a0a0f; --card-bg: #12121a; --card-bg-light: #1a1a28; --text-primary: #ffffff; --text-secondary: #a0a0b0; --gradient-1: linear-gradient(135deg, #00d4ff 0%, #7b2cbf 100%); --gradient-2: linear-gradient(135deg, #00d4ff 0%, #00ff88 100%); --glow-blue: 0 0 20px rgba(0, 212, 255, 0.5); --glow-purple: 0 0 20px rgba(123, 44, 191, 0.5); }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Noto Sans TC', sans-serif; background-color: var(--dark-bg); color: var(--text-primary); line-height: 1.8; overflow-x: hidden; }
+        @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-20px); } }
+        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.6; } }
+        @keyframes slideIn { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes codeRain { 0% { transform: translateY(-100%); opacity: 0; } 10% { opacity: 1; } 90% { opacity: 1; } 100% { transform: translateY(100vh); opacity: 0; } }
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); } }
+        .code-rain { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; overflow: hidden; }
+        .code-char { position: absolute; color: var(--primary-blue); font-family: 'Courier New', monospace; font-size: 14px; opacity: 0; animation: codeRain 4s linear infinite; }
+        .hero { position: relative; min-height: 80vh; display: flex; align-items: center; justify-content: center; padding: 80px 20px; background: linear-gradient(180deg, var(--dark-bg) 0%, #1a1a2e 100%); overflow: hidden; }
+        .hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(ellipse at center, rgba(123, 44, 191, 0.15) 0%, transparent 70%); z-index: 1; }
+        .hero-content { position: relative; z-index: 2; max-width: 1200px; text-align: center; animation: slideIn 1s ease-out; }
+        .hero-badge { display: inline-block; padding: 12px 32px; background: var(--gradient-1); border-radius: 50px; font-size: 18px; font-weight: 700; margin-bottom: 24px; box-shadow: var(--glow-blue); letter-spacing: 1px; }
+        .hero h1 { font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 900; margin-bottom: 24px; background: var(--gradient-1); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; line-height: 1.2; }
+        .hero-subtitle { font-size: clamp(1.2rem, 2.2vw, 1.5rem); color: var(--text-primary); max-width: 900px; margin: 0 auto 40px; line-height: 1.6; font-weight: 400; }
+        .hero-images { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; margin-top: 60px; }
+        .hero-image-card { position: relative; border-radius: 20px; overflow: hidden; aspect-ratio: 16/9; box-shadow: var(--glow-purple); transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .hero-image-card:hover { transform: scale(1.02); box-shadow: 0 0 40px rgba(123, 44, 191, 0.7); }
+        .hero-image-card img { width: 100%; height: 100%; object-fit: cover; }
+        .scroll-indicator { position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%); animation: float 2s ease-in-out infinite; z-index: 2; }
+        .scroll-indicator span { display: block; width: 30px; height: 50px; border: 2px solid var(--primary-blue); border-radius: 25px; position: relative; }
+        .scroll-indicator span::before { content: ''; position: absolute; top: 8px; left: 50%; transform: translateX(-50%); width: 6px; height: 10px; background: var(--primary-blue); border-radius: 3px; animation: pulse 1.5s infinite; }
+        section { padding: 80px 20px; position: relative; z-index: 1; }
+        .content-section { background: var(--card-bg); padding: 60px 50px; border-radius: 24px; border: 1px solid rgba(0, 212, 255, 0.2); max-width: 1100px; margin: 0 auto; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3); }
+        .content-section h3 { font-size: 1.6rem; margin: 40px 0 20px; color: var(--accent-green); }
+        .content-section p { color: var(--text-secondary); line-height: 2; font-size: 1.08rem; margin: 15px 0; }
+        .content-section ul { margin: 20px 0; padding-left: 30px; }
+        .content-section li { margin: 10px 0; color: var(--text-secondary); }
+        .meta-info { background: linear-gradient(135deg, rgba(0, 212, 255, 0.15) 0%, rgba(123, 44, 191, 0.15) 100%); padding: 30px; border-radius: 16px; margin-bottom: 40px; border-left: 5px solid var(--primary-blue); }
+        .meta-info p { margin: 12px 0; color: var(--text-secondary); font-size: 1.05rem; }
+        .meta-info strong { color: var(--primary-blue); font-weight: 600; }
+        .meta-info a { color: var(--primary-blue); text-decoration: none; word-break: break-all; }
+        .highlight-box { background: linear-gradient(135deg, rgba(0, 255, 136, 0.08) 0%, rgba(0, 212, 255, 0.08) 100%); padding: 30px; border-radius: 16px; border-left: 5px solid var(--accent-green); margin: 40px 0; }
+        .highlight-box h4 { color: var(--accent-green); margin-bottom: 15px; font-size: 1.3rem; }
+        .highlight-box p { color: var(--text-secondary); margin: 0; }
+        .alert-box { background: linear-gradient(135deg, rgba(255, 71, 87, 0.1) 0%, rgba(255, 149, 0, 0.1) 100%); padding: 25px 30px; border-radius: 16px; border-left: 5px solid var(--accent-red); margin: 30px 0; }
+        .alert-box h4 { color: var(--accent-red); margin-bottom: 12px; font-size: 1.15rem; }
+        .alert-box p { color: var(--text-secondary); margin: 8px 0; font-size: 1rem; }
+        .quote-box { background: linear-gradient(135deg, rgba(123, 44, 191, 0.15) 0%, rgba(0, 212, 255, 0.15) 100%); padding: 30px 40px; border-radius: 16px; border-left: 5px solid var(--primary-purple); margin: 40px 0; position: relative; }
+        .quote-box::before { content: '"'; position: absolute; top: 10px; left: 20px; font-size: 80px; color: var(--primary-purple); opacity: 0.3; font-family: Georgia, serif; }
+        .quote-box p { color: var(--text-primary); font-size: 1.2rem; font-style: italic; margin-bottom: 15px; }
+        .quote-box cite { color: var(--text-secondary); font-size: 0.95rem; }
+        .tech-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin: 40px 0; }
+        .tech-card { background: var(--card-bg-light); padding: 30px; border-radius: 16px; border: 1px solid rgba(0, 212, 255, 0.15); transition: transform 0.3s ease, box-shadow 0.3s ease; animation: fadeInUp 0.6s ease-out forwards; opacity: 0; }
+        .tech-card:nth-child(1) { animation-delay: 0.1s; }
+        .tech-card:nth-child(2) { animation-delay: 0.2s; }
+        .tech-card:nth-child(3) { animation-delay: 0.3s; }
+        .tech-card:nth-child(4) { animation-delay: 0.4s; }
+        .tech-card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0, 212, 255, 0.2); }
+        .tech-card-icon { font-size: 2.5rem; margin-bottom: 15px; }
+        .tech-card h4 { color: var(--primary-blue); margin-bottom: 12px; font-size: 1.2rem; }
+        .tech-card p { color: var(--text-secondary); font-size: 0.95rem; line-height: 1.7; }
+        .comparison-table { width: 100%; border-collapse: collapse; margin: 40px 0; border-radius: 16px; overflow: hidden; box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3); }
+        .comparison-table thead { background: linear-gradient(135deg, var(--primary-blue), var(--primary-purple)); }
+        .comparison-table th { padding: 18px 20px; text-align: left; font-weight: 600; font-size: 1.05rem; }
+        .comparison-table td { padding: 16px 20px; border-bottom: 1px solid rgba(255, 255, 255, 0.05); color: var(--text-secondary); }
+        .comparison-table tr:last-child td { border-bottom: none; }
+        .comparison-table tr:nth-child(even) { background: rgba(255, 255, 255, 0.02); }
+        .comparison-table .highlight-col { color: var(--accent-green); font-weight: 500; }
+        .timeline { position: relative; margin: 40px 0; padding-left: 40px; }
+        .timeline::before { content: ''; position: absolute; left: 15px; top: 0; bottom: 0; width: 2px; background: linear-gradient(180deg, var(--primary-blue), var(--primary-purple)); }
+        .timeline-item { position: relative; margin-bottom: 35px; padding: 20px 25px; background: var(--card-bg-light); border-radius: 12px; border: 1px solid rgba(0, 212, 255, 0.1); animation: fadeInUp 0.5s ease-out forwards; opacity: 0; }
+        .timeline-item:nth-child(1) { animation-delay: 0.1s; }
+        .timeline-item:nth-child(2) { animation-delay: 0.2s; }
+        .timeline-item:nth-child(3) { animation-delay: 0.3s; }
+        .timeline-item:nth-child(4) { animation-delay: 0.4s; }
+        .timeline-item:nth-child(5) { animation-delay: 0.5s; }
+        .timeline-item:nth-child(6) { animation-delay: 0.6s; }
+        .timeline-item::before { content: ''; position: absolute; left: -32px; top: 25px; width: 12px; height: 12px; background: var(--primary-blue); border-radius: 50%; box-shadow: var(--glow-blue); }
+        .timeline-date { color: var(--primary-blue); font-size: 0.9rem; font-weight: 600; margin-bottom: 8px; }
+        .timeline-title { color: var(--text-primary); font-size: 1.1rem; font-weight: 600; margin-bottom: 8px; }
+        .timeline-desc { color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6; }
+        footer { background: #050508; padding: 60px 20px; text-align: center; border-top: 1px solid rgba(255, 255, 255, 0.1); }
+        footer p { color: var(--text-secondary); margin-bottom: 20px; }
+        .footer-links { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; }
+        .footer-links a { color: var(--primary-blue); text-decoration: none; transition: color 0.3s ease; }
+        .footer-links a:hover { color: var(--text-primary); }
+        @media (max-width: 768px) { .content-section { padding: 40px 25px; } .hero-images { grid-template-columns: 1fr; } .hero h1 { font-size: 2rem; } .hero-subtitle { font-size: 1.2rem; } }
+    </style>
+</head>
+<body>
+    <div class="code-rain" id="codeRain"></div>
+    <section class="hero">
+        <div class="hero-content">
+            <span class="hero-badge">📰 AI News 專題報道</span>
+            <h1>影子AI新風險<br>2000企業工具暴露資料</h1>
+            <p class="hero-subtitle">Red Access 研究：38萬公開網路資產、5千企業用途工具、40%未設驗證機制</p>
+            <div class="hero-images">
+                <div class="hero-image-card">
+                    <img src="img/img1.png" alt="Shadow AI 影子AI風險示意圖">
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator"><span></span></div>
+    </section>
+    <section class="content-section">
+
+        <div class="meta-info">
+            <p><strong>📺 資料來源</strong>：<a href="https://www.ithome.com.tw/news/176269" target="_blank">iThome</a></p>
+            <p><strong>📅 發布日期</strong>：2026-06-01</p>
+            <p><strong>🤖 處理方式</strong>：AI 智能摘要生成</p>
+        </div>
+
+        <div class="tech-cards">
+            <div class="tech-card">
+                <div class="tech-card-icon">🔍</div>
+                <h4>38萬公開網路資產</h4>
+                <p>Red Access 在主流 AI 開發平台發現超過 38 萬個可公開存取的網路資產</p>
+            </div>
+            <div class="tech-card">
+                <div class="tech-card-icon">📊</div>
+                <h4>5,000 企業用途工具</h4>
+                <p>當中約 5,000 個看似用於企業用途，員工自行建立並連接到正式生產系統</p>
+            </div>
+            <div class="tech-card">
+                <div class="tech-card-icon">⚠️</div>
+                <h4>2,000 敏感資料暴露</h4>
+                <p>40% 企業用途工具（約 2,000 個）含有敏感資料但未設置基本身分驗證機制</p>
+            </div>
+            <div class="tech-card">
+                <div class="tech-card-icon">🔓</div>
+                <h4>預設管理員權限</h4>
+                <p>部分應用甚至預設讓任何能開啟頁面的人獲得管理者權限，任何人即可存取</p>
+            </div>
+        </div>
+
+        <h3>🎯 核心觀點</h3>
+        <p>資安業者 Red Access 研究發現，員工透過 AI 驅動開發平台自行建立的應用程式已成為新型影子 AI 風險。這些由非技術員工自行搭建的應用程式，往往在未經 IT 或資安團隊審查的情況下直接發布到公開網路，並常見缺乏基本的身分驗證與存取控制，導致企業敏感資料暴露。目前已發現約 2,000 個企業用途工具暴露敏感資料，遍及六大洲所有行業。</p>
+
+        <h3>📱 甚麼是 AI 開發平台（Vibe Coding）？</h3>
+        <p>Vibe Coding 是指透過 AI 驅動的開發平台，讓任何人都能以自然語言描述需求，快速建立可運作的應用程式。這個模式將過往需要工程團隊數月才能完成的開發工作，壓縮成任何非技術員工在午餐前就能發布產品的體驗。</p>
+        <p>行銷人員建立活動追蹤器並串接 BI 系統；營運經理建立廠商入料表單並連接到工單系統；財務團隊在週五前建立簡報用的數據儀表板——這些應用通常直接發布到公開互聯網，存取控制取決於建立者當時的設定，往往完全沒有。</p>
+
+        <h3>🔍 研究發現</h3>
+        <div class="comparison-table">
+            <table>
+                <thead>
+                    <tr><th>風險項目</th><th>具體發現</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>公開網路資產</td><td>38 萬+ 個可公開存取的 web assets</td></tr>
+                    <tr><td>企業用途工具</td><td>約 5,000 個，明顯用於企業業務</td></tr>
+                    <tr><td>敏感資料暴露</td><td>2,000 個（40%）含有敏感資料</td></tr>
+                    <tr><td>驗證機制缺失</td><td>未設置基本身分驗證與存取控制</td></tr>
+                    <tr><td>預設權限問題</td><td>部分應用預設給予任何人管理者權限</td></tr>
+                    <tr><td>影響範圍</td><td>六大洲、所有行業</td></tr>
+                    <tr><td>攻擊前提</td><td>無需任何漏洞利用，公開即可存取</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h3>🛡️ 傳統資安產品的局限性</h3>
+        <p>這類 Shadow Builders 風險為何在成熟資安架構下仍被忽略？研究指出，現有資安工具存在根本性盲點：</p>
+        <ul>
+            <li><strong>EDR</strong>：只能看到瀏覽器程序，看不到應用內部的建構過程。在資安代理眼中，這種行為與普通人看新聞無異。</li>
+            <li><strong>DLP</strong>：監控已列舉的通道（如複製貼上資料到 AI 聊天），無法察覺應用透過 API 程式化地串接 BI 工具。</li>
+            <li><strong>CASB</strong>：專為 Shadow IT 設計，但無法有效區分大量自訂應用與平台本身，整個群體往往被視為一個已批准的 SaaS 供應商。</li>
+            <li><strong>Firewall / SSE</strong>：能看到流量流向平台域名，但缺乏應用作為業務物件的上下文。</li>
+        </ul>
+
+        <h3>💡 建議緩解措施</h3>
+        <p>Red Access 建議企業採用四步驟方法：</p>
+        <div class="timeline">
+            <div class="timeline-item">
+                <span class="timeline-date">第一步</span>
+                <span class="timeline-content">全面發現：直接詢問員工他們建立了哪些工具（大多數 Shadow Builder 並非刻意隱瞞）</span>
+            </div>
+            <div class="timeline-item">
+                <span class="timeline-date">第二步</span>
+                <span class="timeline-content">映射連接：記錄每個應用連接到哪些企業系統、使用何種機制（OAuth、API Key 或手動上傳）</span>
+            </div>
+            <div class="timeline-item">
+                <span class="timeline-date">第三步</span>
+                <span class="timeline-content">建立規範路徑：命名已批准的平台、定義可接受的資料類型、設定最低身份驗證標準</span>
+            </div>
+            <div class="timeline-item">
+                <span class="timeline-date">第四步</span>
+                <span class="timeline-content">持續治理：這不是一次性盤點，應用會持續創建，需在活動發生的環節持續監控</span>
+            </div>
+        </div>
+
+        <h3>🌐 影子 AI 的進化</h3>
+        <p>傳統影子 AI 是員工將敏感資料貼進 AI 聊天工具；新型影子 AI 則是員工建立完整應用、連接到正式生產系統、並發布到公開互聯網——在 IT 和資安團隊完全不知情的狀況下。</p>
+        <p>這已非傳統意義的 Shadow IT。Shadow IT 的边界是確定的——團隊瞞著公司購買協作工具，資料存在於未批准的 SaaS 供應商，但至少身份、稽核日誌和治理介面仍然存在。Shadow Builders 則完全逆轉：應用是自訂的、資料是自訂載入的、串接是直接連接到正式系統的記錄，而產出物往往發布在公開互聯網上。</p>
+
+        <div class="quote-box">
+            <p>「這些人並非惡意。他們是能幹的員工，用比組織能跟上的速度更快地解決實際問題——做的事情正是平台邀請他們做的。」</p>
+            <cite>— Red Access 研究報告</cite>
+        </div>
+
+        <div class="highlight-box">
+            <p>💡 <strong>核心問題</strong>：企業的稽核能夠通過，但這些暴露在開放網路上的應用仍在被即時利用。緩解不是技術購買，而是建立治理機制——詢問員工、映射連接、建立規範路徑、持續監控。</p>
+        </div>
+
+        <h3>📚 參考資料</h3>
+        <ul>
+            <li>Red Access 完整研究報告《Shadow Builders》</li>
+            <li>The Hacker News：What 2,000 Exposed Vibe-Coded Apps Reveal</li>
+            <li>iThome：員工自建應用成為影子 AI 新風險</li>
+            <li>OffSeq Threat Radar：Shadow AI Security Analysis</li>
+        </ul>
+    </section>
+    <footer>
+        <p>© 2026 AI News Archive | 由 AI 技術生成</p>
+        <div class="footer-links">
+            <a href="../index.html">返回主頁</a>
+            <a href="https://github.com/hklamsir/ai_news" target="_blank">GitHub</a>
+            <a href="https://hklamsir.github.io/ai_news/" target="_blank">瀏覽所有專題</a>
+        </div>
+    </footer>
+
+
+    <script>
+        const codeRain = document.getElementById('codeRain');
+        const chars = '01アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン';
+        for (let i = 0; i < 50; i++) {
+            const char = document.createElement('span');
+            char.className = 'code-char';
+            char.textContent = chars[Math.floor(Math.random() * chars.length)];
+            char.style.left = Math.random() * 100 + '%';
+            char.style.animationDelay = Math.random() * 4 + 's';
+            char.style.animationDuration = (Math.random() * 3 + 3) + 's';
+            codeRain.appendChild(char);
+        }
+    </script>
+
+</body>
+</html>
