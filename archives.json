@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260602_113700",
+      "title": "New 3D silicon chip breakthrough could extend Mooreâs Law for years",
+      "summary": "伊利諾大學研發單晶矽垂直堆疊技術，低溫製程突破散熱瓶頸，密度提升 10-100 倍",
+      "url": "./news_20260602_113700/index.html",
+      "date": "2026-06-02",
+      "time": "11:37:00",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260602_080300",
       "title": "The Human Cost of 10x AI Productivity",
       "summary": "當工程師用 AI 工具效率提升 10 倍，Burnout rate 高達 88%。呢個係一場無人警告過嘅身心消耗戰。",
@@ -1162,6 +1171,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-06-02T09:02:18.044448",
-  "total_count": 129
+  "last_updated": "2026-06-02T11:40:33.920224",
+  "total_count": 130
 }
