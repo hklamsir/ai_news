@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nvidia RTX Spark 深度解析：Arm CPU + Blackwell GPU 超級晶片誕生 | AI 新聞 - AI News</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root { --primary-blue: #00d4ff; --primary-purple: #7b2cbf; --accent-green: #00ff88; --accent-orange: #ff9500; --accent-red: #ff4757; --dark-bg: #0a0a0f; --card-bg: #12121a; --card-bg-light: #1a1a28; --text-primary: #ffffff; --text-secondary: #a0a0b0; --gradient-1: linear-gradient(135deg, #00d4ff 0%, #7b2cbf 100%); --gradient-2: linear-gradient(135deg, #00d4ff 0%, #00ff88 100%); --glow-blue: 0 0 20px rgba(0, 212, 255, 0.5); --glow-purple: 0 0 20px rgba(123, 44, 191, 0.5); }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Noto Sans TC', sans-serif; background-color: var(--dark-bg); color: var(--text-primary); line-height: 1.8; overflow-x: hidden; }
+        @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-20px); } }
+        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.6; } }
+        @keyframes slideIn { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes codeRain { 0% { transform: translateY(-100%); opacity: 0; } 10% { opacity: 1; } 90% { opacity: 1; } 100% { transform: translateY(100vh); opacity: 0; } }
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); } }
+        .code-rain { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; overflow: hidden; }
+        .code-char { position: absolute; color: var(--primary-blue); font-family: 'Courier New', monospace; font-size: 14px; opacity: 0; animation: codeRain 4s linear infinite; }
+        .hero { position: relative; min-height: 80vh; display: flex; align-items: center; justify-content: center; padding: 80px 20px; background: linear-gradient(180deg, var(--dark-bg) 0%, #1a1a2e 100%); overflow: hidden; }
+        .hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(ellipse at center, rgba(123, 44, 191, 0.15) 0%, transparent 70%); z-index: 1; }
+        .hero-content { position: relative; z-index: 2; max-width: 1200px; text-align: center; animation: slideIn 1s ease-out; }
+        .hero-badge { display: inline-block; padding: 12px 32px; background: var(--gradient-1); border-radius: 50px; font-size: 18px; font-weight: 700; margin-bottom: 24px; box-shadow: var(--glow-blue); letter-spacing: 1px; }
+        .hero h1 { font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 900; margin-bottom: 24px; background: var(--gradient-1); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; line-height: 1.2; }
+        .hero-subtitle { font-size: clamp(1.2rem, 2.2vw, 1.5rem); color: var(--text-primary); max-width: 900px; margin: 0 auto 40px; line-height: 1.6; font-weight: 400; }
+        .hero-images { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; margin-top: 60px; }
+        .hero-image-card { position: relative; border-radius: 20px; overflow: hidden; aspect-ratio: 16/9; box-shadow: var(--glow-purple); transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .hero-image-card:hover { transform: scale(1.02); box-shadow: 0 0 40px rgba(123, 44, 191, 0.7); }
+        .hero-image-card img { width: 100%; height: 100%; object-fit: cover; }
+        .scroll-indicator { position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%); animation: float 2s ease-in-out infinite; z-index: 2; }
+        .scroll-indicator span { display: block; width: 30px; height: 50px; border: 2px solid var(--primary-blue); border-radius: 25px; position: relative; }
+        .scroll-indicator span::before { content: ''; position: absolute; top: 8px; left: 50%; transform: translateX(-50%); width: 6px; height: 10px; background: var(--primary-blue); border-radius: 3px; animation: pulse 1.5s infinite; }
+        section { padding: 80px 20px; position: relative; z-index: 1; }
+        .content-section { background: var(--card-bg); padding: 60px 50px; border-radius: 24px; border: 1px solid rgba(0, 212, 255, 0.2); max-width: 1100px; margin: 0 auto; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3); }
+        .content-section h3 { font-size: 1.6rem; margin: 40px 0 20px; color: var(--accent-green); }
+        .content-section p { color: var(--text-secondary); line-height: 2; font-size: 1.08rem; margin: 15px 0; }
+        .content-section ul { margin: 20px 0; padding-left: 30px; }
+        .content-section li { margin: 10px 0; color: var(--text-secondary); }
+        .meta-info { background: linear-gradient(135deg, rgba(0, 212, 255, 0.15) 0%, rgba(123, 44, 191, 0.15) 100%); padding: 30px; border-radius: 16px; margin-bottom: 40px; border-left: 5px solid var(--primary-blue); }
+        .meta-info p { margin: 12px 0; color: var(--text-secondary); font-size: 1.05rem; }
+        .meta-info strong { color: var(--primary-blue); font-weight: 600; }
+        .meta-info a { color: var(--primary-blue); text-decoration: none; word-break: break-all; }
+        .highlight-box { background: linear-gradient(135deg, rgba(0, 255, 136, 0.08) 0%, rgba(0, 212, 255, 0.08) 100%); padding: 30px; border-radius: 16px; border-left: 5px solid var(--accent-green); margin: 40px 0; }
+        .highlight-box h4 { color: var(--accent-green); margin-bottom: 15px; font-size: 1.3rem; }
+        .highlight-box p { color: var(--text-secondary); margin: 0; }
+        .alert-box { background: linear-gradient(135deg, rgba(255, 71, 87, 0.1) 0%, rgba(255, 149, 0, 0.1) 100%); padding: 25px 30px; border-radius: 16px; border-left: 5px solid var(--accent-red); margin: 30px 0; }
+        .alert-box h4 { color: var(--accent-red); margin-bottom: 12px; font-size: 1.15rem; }
+        .alert-box p { color: var(--text-secondary); margin: 8px 0; font-size: 1rem; }
+        .quote-box { background: linear-gradient(135deg, rgba(123, 44, 191, 0.15) 0%, rgba(0, 212, 255, 0.15) 100%); padding: 30px 40px; border-radius: 16px; border-left: 5px solid var(--primary-purple); margin: 40px 0; position: relative; }
+        .quote-box::before { content: '"'; position: absolute; top: 10px; left: 20px; font-size: 80px; color: var(--primary-purple); opacity: 0.3; font-family: Georgia, serif; }
+        .quote-box p { color: var(--text-primary); font-size: 1.2rem; font-style: italic; margin-bottom: 15px; }
+        .quote-box cite { color: var(--text-secondary); font-size: 0.95rem; }
+        .tech-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin: 40px 0; }
+        .tech-card { background: var(--card-bg-light); padding: 30px; border-radius: 16px; border: 1px solid rgba(0, 212, 255, 0.15); transition: transform 0.3s ease, box-shadow 0.3s ease; animation: fadeInUp 0.6s ease-out forwards; opacity: 0; }
+        .tech-card:nth-child(1) { animation-delay: 0.1s; }
+        .tech-card:nth-child(2) { animation-delay: 0.2s; }
+        .tech-card:nth-child(3) { animation-delay: 0.3s; }
+        .tech-card:nth-child(4) { animation-delay: 0.4s; }
+        .tech-card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0, 212, 255, 0.2); }
+        .tech-card-icon { font-size: 2.5rem; margin-bottom: 15px; }
+        .tech-card h4 { color: var(--primary-blue); margin-bottom: 12px; font-size: 1.2rem; }
+        .tech-card p { color: var(--text-secondary); font-size: 0.95rem; line-height: 1.7; }
+        .comparison-table { width: 100%; border-collapse: collapse; margin: 40px 0; border-radius: 16px; overflow: hidden; box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3); }
+        .comparison-table thead { background: linear-gradient(135deg, var(--primary-blue), var(--primary-purple)); }
+        .comparison-table th { padding: 18px 20px; text-align: left; font-weight: 600; font-size: 1.05rem; }
+        .comparison-table td { padding: 16px 20px; border-bottom: 1px solid rgba(255, 255, 255, 0.05); color: var(--text-secondary); }
+        .comparison-table tr:last-child td { border-bottom: none; }
+        .comparison-table tr:nth-child(even) { background: rgba(255, 255, 255, 0.02); }
+        .comparison-table .highlight-col { color: var(--accent-green); font-weight: 500; }
+        .timeline { position: relative; margin: 40px 0; padding-left: 40px; }
+        .timeline::before { content: ''; position: absolute; left: 15px; top: 0; bottom: 0; width: 2px; background: linear-gradient(180deg, var(--primary-blue), var(--primary-purple)); }
+        .timeline-item { position: relative; margin-bottom: 35px; padding: 20px 25px; background: var(--card-bg-light); border-radius: 12px; border: 1px solid rgba(0, 212, 255, 0.1); animation: fadeInUp 0.5s ease-out forwards; opacity: 0; }
+        .timeline-item:nth-child(1) { animation-delay: 0.1s; }
+        .timeline-item:nth-child(2) { animation-delay: 0.2s; }
+        .timeline-item:nth-child(3) { animation-delay: 0.3s; }
+        .timeline-item:nth-child(4) { animation-delay: 0.4s; }
+        .timeline-item:nth-child(5) { animation-delay: 0.5s; }
+        .timeline-item:nth-child(6) { animation-delay: 0.6s; }
+        .timeline-item::before { content: ''; position: absolute; left: -32px; top: 25px; width: 12px; height: 12px; background: var(--primary-blue); border-radius: 50%; box-shadow: var(--glow-blue); }
+        .timeline-date { color: var(--primary-blue); font-size: 0.9rem; font-weight: 600; margin-bottom: 8px; }
+        .timeline-title { color: var(--text-primary); font-size: 1.1rem; font-weight: 600; margin-bottom: 8px; }
+        .timeline-desc { color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6; }
+        footer { background: #050508; padding: 60px 20px; text-align: center; border-top: 1px solid rgba(255, 255, 255, 0.1); }
+        footer p { color: var(--text-secondary); margin-bottom: 20px; }
+        .footer-links { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; }
+        .footer-links a { color: var(--primary-blue); text-decoration: none; transition: color 0.3s ease; }
+        .footer-links a:hover { color: var(--text-primary); }
+        @media (max-width: 768px) { .content-section { padding: 40px 25px; } .hero-images { grid-template-columns: 1fr; } .hero h1 { font-size: 2rem; } .hero-subtitle { font-size: 1.2rem; } }
+    </style>
+</head>
+<body>
+    <div class="code-rain" id="codeRain"></div>
+    <section class="hero">
+        <div class="hero-content">
+            <span class="hero-badge">📰 AI News 專題報道</span>
+            <h1>Nvidia RTX Spark<br>超級晶片正式發布</h1>
+            <p class="hero-subtitle">Computex 2026 重磅發布：20 核心 Arm CPU + 6144 CUDA GPU，128GB 統一記憶體，目標 Apple Silicon</p>
+            <div class="hero-images">
+                <div class="hero-image-card">
+                    <img src="img/img1.png" alt="Nvidia RTX Spark 超級晶片示意圖">
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator"><span></span></div>
+    </section>
+    <section class="content-section">
+
+        <div class="meta-info">
+            <p><strong>📺 資料來源</strong>：<a href="https://youtu.be/0-VG9QBm8S8" target="_blank">YouTube (This is Tech)</a></p>
+            <p><strong>📅 發布日期</strong>：2026-05-30（Computex 2026）</p>
+            <p><strong>🤖 處理方式</strong>：AI 智能摘要生成</p>
+        </div>
+
+        <div class="tech-cards">
+            <div class="tech-card">
+                <div class="tech-card-icon">⚡</div>
+                <h4>20 核心 Grace CPU</h4>
+                <p> Nvidia 與聯發科合作開發，10 個 Cortex-X925 高效能核心 + 10 個 Cortex-A725 中型核心</p>
+            </div>
+            <div class="tech-card">
+                <div class="tech-card-icon">🎮</div>
+                <h4>Blackwell RTX GPU</h4>
+                <p>6,144 CUDA 核心，效能與桌面版 RTX 5070 相同，超越流動版 RTX 5070</p>
+            </div>
+            <div class="tech-card">
+                <div class="tech-card-icon">🧠</div>
+                <h4>1 PetaFLOP AI 算力</h4>
+                <p>可本地運行 1200 億參數 AI 模型，支援複雜 AI 推論任務</p>
+            </div>
+            <div class="tech-card">
+                <div class="tech-card-icon">💾</div>
+                <h4>128GB 統一記憶體</h4>
+                <p>LPDDR5X 統一記憶體架構，頻寬可達 300 GB/s，消除 CPU-GPU 傳輸瓶頸</p>
+            </div>
+        </div>
+
+        <h3>🎯 核心觀點</h3>
+        <p>Nvidia 在 Computex 2026 正式發布旗下首款專為 Windows PC 設計的 Arm 架構超級晶片 RTX Spark。這款晶片整合了 20 核心 Grace CPU 與 Blackwell RTX GPU，支援高達 128GB 統一記憶體，定位直指 Apple Silicon 及 Qualcomm Snapdragon X 系列，不僅是 Nvidia 進軍個人電腦市場的重大策略，更是 Windows on Arm 生態系的重要里程碑。</p>
+
+        <h3>🏗️ 什麼是 RTX Spark？</h3>
+        <p>RTX Spark 是 Nvidia 針對 Windows PC 市場開發的 Arm 架構處理器，過往代號為「N1X」。這款晶片实际上是去年底發布的 DGX Spark 開發工作站晶片的消費版本，採用 TSMC 3nm 製程將 CPU、GPU、NPU 及記憶體整合於單一封裝中。</p>
+        <p>與傳統 x86 架構不同，RTX Spark 基於 Arm 架構設計，意味著它與 Apple M5 系列、Qualcomm Snapdragon X 系列屬於同類產品，瞄準輕薄高效能的筆電市場。</p>
+
+        <h3>📊 規格亮點</h3>
+        <div class="comparison-table">
+            <table>
+                <thead>
+                    <tr><th>規格</th><th>RTX Spark（最終版）</th><th>RTX 5070（桌面版）</th><th>RTX 5070（流動版）</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>CPU 架構</td><td>20 核 Grace（Arm）</td><td>x86</td><td>x86</td></tr>
+                    <tr><td>GPU 核心</td><td>6,144 CUDA</td><td>6,144 CUDA</td><td>4,608 CUDA</td></tr>
+                    <tr><td>AI 算力</td><td>1 PetaFLOP</td><td>N/A</td><td>N/A</td></tr>
+                    <tr><td>統一記憶體</td><td>128GB LPDDR5X</td><td>N/A</td><td>N/A</td></tr>
+                    <tr><td>記憶體頻寬</td><td>300 GB/s</td><td>N/A</td><td>N/A</td></tr>
+                    <tr><td>製程</td><td>TSMC 3nm</td><td>TSMC 4nm</td><td>TSMC 4nm</td></tr>
+                    <tr><td>厚度</td><td>14mm</td><td>N/A</td><td>N/A</td></tr>
+                    <tr><td>重量</td><td>3 磅（約 1.36kg）</td><td>N/A</td><td>N/A</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h3>🎮 遊戲與創作能力</h3>
+        <p>RTX Spark 的 GPU 配備完整的 Nvidia 技術堆疊，包括 CUDA、DLSS 4.5、光線追蹤、Reflex 及 G-SYNC，全面支援 AAA 級遊戲。根據官方數據，RTX Spark 可在 1440p 解析度下輕鬆輸出超過 100fps 的流暢畫面。</p>
+        <p>在創作方面，Nvidia 宣稱 RTX Spark 可處理 12K 4:2:2 影片編輯、渲染超過 90GB 的 3D 場景，並支援本地運行 1200 億參數的大型語言模型。Adobe 已宣佈對 Photoshop 及 Premiere 進行全面架構重構，預期可帶來高達 2 倍的 AI 及圖形效能提升。</p>
+
+        <h3>🖥️ 合作夥伴與上市時間</h3>
+        <p>多家OEM廠商已確認將推出搭載 RTX Spark 的產品，包括 ASUS、Dell、HP、Lenovo、Microsoft Surface 及 MSI。首批筆電將提供 14 吋及 16 吋兩種尺寸，配備 OLED 顯示屏及精密加工鋁合金機身，機身厚度僅 14mm、重量約 3 磅，強調便攜性與長續航力。</p>
+        <p>作業系統方面，RTX Spark 將原生支援 Windows on Arm，微軟並已準備將 Windows 打造成「代理式 AI 作業系統」，深度整合 AI 推理能力。軟件合作夥伴還包括 Blackmagic Design、Blender、CapCut、ComfyUI 及 OTOY 等。</p>
+
+        <h3>⏰ 發展時間軸</h3>
+        <div class="timeline">
+            <div class="timeline-item">
+                <span class="timeline-date">2025 底</span>
+                <span class="timeline-content">Nvidia 發布 DGX Spark 開發工作站，揭示 RTX Spark 前身</span>
+            </div>
+            <div class="timeline-item">
+                <span class="timeline-date">2026-05</span>
+                <span class="timeline-content">Computex 2026：RTX Spark 正式發布，代號 N1X</span>
+            </div>
+            <div class="timeline-item">
+                <span class="timeline-date">2026-06</span>
+                <span class="timeline-content">合作夥伴陸續展示原型裝置</span>
+            </div>
+            <div class="timeline-item">
+                <span class="timeline-date">2026 秋季</span>
+                <span class="timeline-content">首批 RTX Spark 筆電正式上市（ASUS、Dell、HP、Lenovo、MSI、Surface）</span>
+            </div>
+            <div class="timeline-item">
+                <span class="timeline-date">2026 底</span>
+                <span class="timeline-content">軟件生態系成熟：Adobe、Blender、DaVinci Resolve 等完成適配</span>
+            </div>
+        </div>
+
+        <h3>💰 價格猜測</h3>
+        <p>DGX Spark 工作站定價為 ,699 美元，而消費級 RTX Spark 筆電預計價格將更親民，但業界猜測高配版本可能落在 ,000-3,000 美元區間。考慮到記憶體與先進製程成本，RTX Spark 短期內仍屬高階市場定位。</p>
+
+        <div class="quote-box">
+            <p>「如果 Nvidia 想做一款筆電晶片，從來沒有任何懷疑。他們只是選擇了正確的時機。」</p>
+            <cite>— 業界分析師評論</cite>
+        </div>
+
+        <div class="highlight-box">
+            <p>💡 <strong>RTX Spark 的意義</strong>：Nvidia 首次以晶片供應商身份進入 Windows PC 市場，不僅是 Apple Silicon 的直接競爭對手，更可能重塑未來 PC 的架構標準——從傳統 x86 轉向 Arm + AI 融合的超級晶片時代。</p>
+        </div>
+
+        <h3>📚 參考資料</h3>
+        <ul>
+            <li>Tom's Hardware：Nvidia RTX Spark Superchip 發布</li>
+            <li>Ars Technica：Nvidia RTX Spark 深度分析</li>
+            <li>GizmoChina：RTX Spark 規格與上市資訊</li>
+            <li>CNBC：Nvidia 與 Dell、HP 合作筆電新聞</li>
+        </ul>
+    </section>
+    <footer>
+        <p>© 2026 AI News Archive | 由 AI 技術生成</p>
+        <div class="footer-links">
+            <a href="../index.html">返回主頁</a>
+            <a href="https://github.com/hklamsir/ai_news" target="_blank">GitHub</a>
+            <a href="https://hklamsir.github.io/ai_news/" target="_blank">瀏覽所有專題</a>
+        </div>
+    </footer>
+
+
+    <script>
+        const codeRain = document.getElementById('codeRain');
+        const chars = '01アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン';
+        for (let i = 0; i < 50; i++) {
+            const char = document.createElement('span');
+            char.className = 'code-char';
+            char.textContent = chars[Math.floor(Math.random() * chars.length)];
+            char.style.left = Math.random() * 100 + '%';
+            char.style.animationDelay = Math.random() * 4 + 's';
+            char.style.animationDuration = (Math.random() * 3 + 3) + 's';
+            codeRain.appendChild(char);
+        }
+    </script>
+
+</body>
+</html>

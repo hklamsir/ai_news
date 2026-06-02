@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260602_153800",
+      "title": "Nvidia's New Laptops - RTX Spark",
+      "summary": "Computex 2026 重磅發布：20 核心 Arm CPU + 6144 CUDA GPU，128GB 統一記憶體，目標 Apple Silicon",
+      "url": "./news_20260602_153800/index.html",
+      "date": "2026-06-02",
+      "time": "15:38:00",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260602_113700",
       "title": "New 3D silicon chip breakthrough could extend Mooreâs Law for years",
       "summary": "伊利諾大學研發單晶矽垂直堆疊技術，低溫製程突破散熱瓶頸，密度提升 10-100 倍",
@@ -1171,6 +1180,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-06-02T11:40:33.920224",
-  "total_count": 130
+  "last_updated": "2026-06-02T15:40:25.116611",
+  "total_count": 131
 }
