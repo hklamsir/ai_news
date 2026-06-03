@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260603_155800",
+      "title": "China's AI just mapped its entire renewable energy grid",
+      "summary": "Nature 研究：北京大學+達摩院識別 41 萬設施，各國應該關注",
+      "url": "./news_20260603_155800/index.html",
+      "date": "2026-06-03",
+      "time": "15:58:00",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260603_152800",
       "title": "AI搶飯碗？22%企業料減人手　創新技術都重災？銷售/PM工種最安全",
       "summary": "畢馬威調查：創新技術、專業服務成重災區，銷售、PM 工種最安全",
@@ -1225,6 +1234,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-06-03T15:30:15.978550",
-  "total_count": 136
+  "last_updated": "2026-06-03T15:57:22.654823",
+  "total_count": 137
 }

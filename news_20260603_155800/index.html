@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>China's AI just mapped its entire renewable energy grid | Artificial Intelligence News - AI News</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root { --primary-blue: #00d4ff; --primary-purple: #7b2cbf; --accent-green: #00ff88; --accent-orange: #ff9500; --accent-red: #ff4757; --dark-bg: #0a0a0f; --card-bg: #12121a; --card-bg-light: #1a1a28; --text-primary: #ffffff; --text-secondary: #a0a0b0; --gradient-1: linear-gradient(135deg, #00d4ff 0%, #7b2cbf 100%); --gradient-2: linear-gradient(135deg, #00d4ff 0%, #00ff88 100%); --glow-blue: 0 0 20px rgba(0, 212, 255, 0.5); --glow-purple: 0 0 20px rgba(123, 44, 191, 0.5); }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Noto Sans TC', sans-serif; background-color: var(--dark-bg); color: var(--text-primary); line-height: 1.8; overflow-x: hidden; }
+        @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-20px); } }
+        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.6; } }
+        @keyframes slideIn { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes codeRain { 0% { transform: translateY(-100%); opacity: 0; } 10% { opacity: 1; } 90% { opacity: 1; } 100% { transform: translateY(100vh); opacity: 0; } }
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); } }
+        .code-rain { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; overflow: hidden; }
+        .code-char { position: absolute; color: var(--primary-blue); font-family: 'Courier New', monospace; font-size: 14px; opacity: 0; animation: codeRain 4s linear infinite; }
+        .hero { position: relative; min-height: 80vh; display: flex; align-items: center; justify-content: center; padding: 80px 20px; background: linear-gradient(180deg, var(--dark-bg) 0%, #1a1a2e 100%); overflow: hidden; }
+        .hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(ellipse at center, rgba(123, 44, 191, 0.15) 0%, transparent 70%); z-index: 1; }
+        .hero-content { position: relative; z-index: 2; max-width: 1200px; text-align: center; animation: slideIn 1s ease-out; }
+        .hero-badge { display: inline-block; padding: 12px 32px; background: var(--gradient-1); border-radius: 50px; font-size: 18px; font-weight: 700; margin-bottom: 24px; box-shadow: var(--glow-blue); letter-spacing: 1px; }
+        .hero h1 { font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 900; margin-bottom: 24px; background: var(--gradient-1); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; line-height: 1.2; }
+        .hero-subtitle { font-size: clamp(1.2rem, 2.2vw, 1.5rem); color: var(--text-primary); max-width: 900px; margin: 0 auto 40px; line-height: 1.6; font-weight: 400; }
+        .hero-images { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; margin-top: 60px; }
+        .hero-image-card { position: relative; border-radius: 20px; overflow: hidden; aspect-ratio: 16/9; box-shadow: var(--glow-purple); transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .hero-image-card:hover { transform: scale(1.02); box-shadow: 0 0 40px rgba(123, 44, 191, 0.7); }
+        .hero-image-card img { width: 100%; height: 100%; object-fit: cover; }
+        .scroll-indicator { position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%); animation: float 2s ease-in-out infinite; z-index: 2; }
+        .scroll-indicator span { display: block; width: 30px; height: 50px; border: 2px solid var(--primary-blue); border-radius: 25px; position: relative; }
+        .scroll-indicator span::before { content: ''; position: absolute; top: 8px; left: 50%; transform: translateX(-50%); width: 6px; height: 10px; background: var(--primary-blue); border-radius: 3px; animation: pulse 1.5s infinite; }
+        section { padding: 80px 20px; position: relative; z-index: 1; }
+        .content-section { background: var(--card-bg); padding: 60px 50px; border-radius: 24px; border: 1px solid rgba(0, 212, 255, 0.2); max-width: 1100px; margin: 0 auto; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3); }
+        .content-section h3 { font-size: 1.6rem; margin: 40px 0 20px; color: var(--accent-green); }
+        .content-section p { color: var(--text-secondary); line-height: 2; font-size: 1.08rem; margin: 15px 0; }
+        .content-section ul { margin: 20px 0; padding-left: 30px; }
+        .content-section li { margin: 10px 0; color: var(--text-secondary); }
+        .meta-info { background: linear-gradient(135deg, rgba(0, 212, 255, 0.15) 0%, rgba(123, 44, 191, 0.15) 100%); padding: 30px; border-radius: 16px; margin-bottom: 40px; border-left: 5px solid var(--primary-blue); }
+        .meta-info p { margin: 12px 0; color: var(--text-secondary); font-size: 1.05rem; }
+        .meta-info strong { color: var(--primary-blue); font-weight: 600; }
+        .meta-info a { color: var(--primary-blue); text-decoration: none; word-break: break-all; }
+        .highlight-box { background: linear-gradient(135deg, rgba(0, 255, 136, 0.08) 0%, rgba(0, 212, 255, 0.08) 100%); padding: 30px; border-radius: 16px; border-left: 5px solid var(--accent-green); margin: 40px 0; }
+        .highlight-box h4 { color: var(--accent-green); margin-bottom: 15px; font-size: 1.3rem; }
+        .highlight-box p { color: var(--text-secondary); margin: 0; }
+        .alert-box { background: linear-gradient(135deg, rgba(255, 71, 87, 0.1) 0%, rgba(255, 149, 0, 0.1) 100%); padding: 25px 30px; border-radius: 16px; border-left: 5px solid var(--accent-red); margin: 30px 0; }
+        .alert-box h4 { color: var(--accent-red); margin-bottom: 12px; font-size: 1.15rem; }
+        .alert-box p { color: var(--text-secondary); margin: 8px 0; font-size: 1rem; }
+        .quote-box { background: linear-gradient(135deg, rgba(123, 44, 191, 0.15) 0%, rgba(0, 212, 255, 0.15) 100%); padding: 30px 40px; border-radius: 16px; border-left: 5px solid var(--primary-purple); margin: 40px 0; position: relative; }
+        .quote-box::before { content: '"'; position: absolute; top: 10px; left: 20px; font-size: 80px; color: var(--primary-purple); opacity: 0.3; font-family: Georgia, serif; }
+        .quote-box p { color: var(--text-primary); font-size: 1.2rem; font-style: italic; margin-bottom: 15px; }
+        .quote-box cite { color: var(--text-secondary); font-size: 0.95rem; }
+        .tech-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin: 40px 0; }
+        .tech-card { background: var(--card-bg-light); padding: 30px; border-radius: 16px; border: 1px solid rgba(0, 212, 255, 0.15); transition: transform 0.3s ease, box-shadow 0.3s ease; animation: fadeInUp 0.6s ease-out forwards; opacity: 0; }
+        .tech-card:nth-child(1) { animation-delay: 0.1s; }
+        .tech-card:nth-child(2) { animation-delay: 0.2s; }
+        .tech-card:nth-child(3) { animation-delay: 0.3s; }
+        .tech-card:nth-child(4) { animation-delay: 0.4s; }
+        .tech-card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0, 212, 255, 0.2); }
+        .tech-card-icon { font-size: 2.5rem; margin-bottom: 15px; }
+        .tech-card h4 { color: var(--primary-blue); margin-bottom: 12px; font-size: 1.2rem; }
+        .tech-card p { color: var(--text-secondary); font-size: 0.95rem; line-height: 1.7; }
+        .comparison-table { width: 100%; border-collapse: collapse; margin: 40px 0; border-radius: 16px; overflow: hidden; box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3); }
+        .comparison-table thead { background: linear-gradient(135deg, var(--primary-blue), var(--primary-purple)); }
+        .comparison-table th { padding: 18px 20px; text-align: left; font-weight: 600; font-size: 1.05rem; }
+        .comparison-table td { padding: 16px 20px; border-bottom: 1px solid rgba(255, 255, 255, 0.05); color: var(--text-secondary); }
+        .comparison-table tr:last-child td { border-bottom: none; }
+        .comparison-table tr:nth-child(even) { background: rgba(255, 255, 255, 0.02); }
+        .comparison-table .highlight-col { color: var(--accent-green); font-weight: 500; }
+        .timeline { position: relative; margin: 40px 0; padding-left: 40px; }
+        .timeline::before { content: ''; position: absolute; left: 15px; top: 0; bottom: 0; width: 2px; background: linear-gradient(180deg, var(--primary-blue), var(--primary-purple)); }
+        .timeline-item { position: relative; margin-bottom: 35px; padding: 20px 25px; background: var(--card-bg-light); border-radius: 12px; border: 1px solid rgba(0, 212, 255, 0.1); animation: fadeInUp 0.5s ease-out forwards; opacity: 0; }
+        .timeline-item:nth-child(1) { animation-delay: 0.1s; }
+        .timeline-item:nth-child(2) { animation-delay: 0.2s; }
+        .timeline-item:nth-child(3) { animation-delay: 0.3s; }
+        .timeline-item:nth-child(4) { animation-delay: 0.4s; }
+        .timeline-item:nth-child(5) { animation-delay: 0.5s; }
+        .timeline-item:nth-child(6) { animation-delay: 0.6s; }
+        .timeline-item::before { content: ''; position: absolute; left: -32px; top: 25px; width: 12px; height: 12px; background: var(--primary-blue); border-radius: 50%; box-shadow: var(--glow-blue); }
+        .timeline-date { color: var(--primary-blue); font-size: 0.9rem; font-weight: 600; margin-bottom: 8px; }
+        .timeline-title { color: var(--text-primary); font-size: 1.1rem; font-weight: 600; margin-bottom: 8px; }
+        .timeline-desc { color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6; }
+        footer { background: #050508; padding: 60px 20px; text-align: center; border-top: 1px solid rgba(255, 255, 255, 0.1); }
+        footer p { color: var(--text-secondary); margin-bottom: 20px; }
+        .footer-links { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; }
+        .footer-links a { color: var(--primary-blue); text-decoration: none; transition: color 0.3s ease; }
+        .footer-links a:hover { color: var(--text-primary); }
+        @media (max-width: 768px) { .content-section { padding: 40px 25px; } .hero-images { grid-template-columns: 1fr; } .hero h1 { font-size: 2rem; } .hero-subtitle { font-size: 1.2rem; } }
+    </style>
+</head>
+<body>
+    <div class="code-rain" id="codeRain"></div>
+    <section class="hero">
+        <div class="hero-content">
+            <span class="hero-badge">📰 AI News 專題報道</span>
+            <h1>中國 AI 測繪<br>全國再生能源電網</h1>
+            <p class="hero-subtitle">Nature 研究：北京大學+達摩院識別 41 萬設施，各國應該關注</p>
+            <div class="hero-images">
+                <div class="hero-image-card">
+                    <img src="img/img1.png" alt="中國 AI 測繪再生能源電網概念圖">
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator"><span></span></div>
+    </section>
+    <section class="content-section">
+
+        <div class="meta-info">
+            <p><strong>📺 資料來源</strong>：<a href="https://www.artificialintelligence-news.com/news/ai-energy-grid-mapping-china/" target="_blank">Artificial Intelligence News</a></p>
+            <p><strong>📅 發布日期</strong>：2026-06-03</p>
+            <p><strong>🤖 處理方式</strong>：AI 智能摘要 + 深度優化</p>
+        </div>
+
+        <div class="alert-box">
+            <h4>⚠️ 研究背景</h4>
+            <p>研究由北京大學和阿里巴巴達摩院研究人员在《Nature》期刊發布，使用深度學習模型分析亞米級衛星影像，識別中國太陽能和風力設施。</p>
+        </div>
+
+        <div class="quote-box">
+            <p>「這項庫存讓中國能夠以『上帝視角』俯瞰其新能源版圖。」</p>
+            <cite>— 劉宇教授，北京大學地球與空間科學學院</cite>
+        </div>
+
+        <h3>🎯 核心突破卡片</h3>
+        <div class="tech-cards">
+            <div class="tech-card">
+                <div class="tech-card-icon">☀️</div>
+                <h4>319,972 太陽能設施</h4>
+                <p>團隊識別了中國 31.9 萬個太陽能光伏設施，覆蓋全國 1,915 個縣級行政區。</p>
+            </div>
+            <div class="tech-card">
+                <div class="tech-card-icon">🌬️</div>
+                <h4>91,609 颱風機</h4>
+                <p>同步測繪了超過 9.1 萬颱風力渦輪機，處理了 7.56 TB 的衛星影像數據。</p>
+            </div>
+            <div class="tech-card">
+                <div class="tech-card-icon">🛰️</div>
+                <h4>亞米級衛星影像</h4>
+                <p>深度學習模型訓練於亞米級解析度衛星影像，從屋頂光電板到蒙古高原風電場都能識別。</p>
+            </div>
+            <div class="tech-card">
+                <div class="tech-card-icon">⚡</div>
+                <h4>光風互補效果</h4>
+                <p>研究證實：設施距離越遠，互補效果越強，甘肅的陰天不會影響內蒙古的風電廊道。</p>
+            </div>
+        </div>
+
+        <h3>📊 中國 vs 全球 AI 電力需求對比</h3>
+        <table class="comparison-table">
+            <thead>
+                <tr><th>地區/指標</th><th>數據</th><th>說明</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>中國 Q1 電力消耗</td><td class="highlight-col">+44% 按年</td><td>2026年首季達 229 億千瓦時</td></tr>
+                <tr><td>全球數據中心預測</td><td class="highlight-col">~1,000 TWh</td><td>IEA 預測 2030 年前達標</td></tr>
+                <tr><td>美國 PJM 容量價格</td><td class="highlight-col">10 年內升 10 倍</td><td>數據中心增長為主因</td></tr>
+                <tr><td>中國清潔能源產值</td><td class="highlight-col">15.4 萬億元</td><td>相當於巴西全國 GDP</td></tr>
+            </tbody>
+        </table>
+
+        <h3>📅 關鍵時間軸</h3>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-date">2026 年 Q1</div>
+                <div class="timeline-title">中國數據中心電力消耗飆升</div>
+                <div class="timeline-desc">中國數據中心耗電量按年大增 44%，達 229 億千瓦時。</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">2026 年（Nature 發布）</div>
+                <div class="timeline-title">北京大學+達摩院研究發布</div>
+                <div class="timeline-desc">完成中國首次全國級再生能源設施 AI 測繪，識別 41 萬設施。</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">2030 年（預測）</div>
+                <div class="timeline-title">全球數據中心用電逼近 1,000 TWh</div>
+                <div class="timeline-desc">IEA 預測數據中心用電量將接近千太瓦時，各國電網承壓。</div>
+            </div>
+        </div>
+
+        <h3>🔍 研究主要發現</h3>
+        <ul>
+            <li><strong>光風互補大幅減少發電波動</strong>：太陽能和風力的互補特性在擴大地理範圍時效果越好</li>
+            <li><strong>省級協調而非全國協調</strong>：中國當前電網管理是各省分別運作，未能發揮跨省互補優勢</li>
+            <li><strong>棄風限光問題</strong>：長期困擾中國清潔能源的浪費問題，可透過全國統籌改善</li>
+            <li><strong>數據和代碼已公開</strong>：研究數據集和代碼透過 Zenodo 向公眾開放</li>
+        </ul>
+
+        <div class="highlight-box">
+            <h4>✨ 關鍵洞察</h4>
+            <p>中國透過 AI 測繪全國再生能源設施，解決了「電網操作者無法優化他們不知道的東西」的根本問題。當前各國正處於 AI 用電爆炸式增長的臨界點，這項測繪能力讓中國在整合再生能源方面領先全球。清潔能源已成為中國經濟支柱（15.4 萬億元，巴西 GDP 規模），這個「上帝視角」將進一步提升其能源安全和電網效率。</p>
+        </div>
+
+        <div class="alert-box">
+            <h4>⚠️ 全球啟示</h4>
+            <p>這項研究不僅是中國的成就，也為其他國家提供了模板。通過大範圍地理 AI 測繪基礎設施，各國可以更有效地協調再生能源，穩定電網並減少棄風棄光。中國的清潔能源經濟產值已相當於巴西全國 GDP，這種規模的管理需要同樣規模的技術工具。</p>
+        </div>
+    </section>
+    <footer>
+        <p>© 2026 AI News Archive | 由 AI 技術生成</p>
+        <div class="footer-links">
+            <a href="../index.html">返回主頁</a>
+            <a href="https://github.com/hklamsir/ai_news" target="_blank">GitHub</a>
+            <a href="https://hklamsir.github.io/ai_news/" target="_blank">瀏覽所有專題</a>
+        </div>
+    </footer>
+
+
+    <script>
+        const codeRain = document.getElementById('codeRain');
+        const chars = '01アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン';
+        for (let i = 0; i < 50; i++) {
+            const char = document.createElement('span');
+            char.className = 'code-char';
+            char.textContent = chars[Math.floor(Math.random() * chars.length)];
+            char.style.left = Math.random() * 100 + '%';
+            char.style.animationDelay = Math.random() * 4 + 's';
+            char.style.animationDuration = (Math.random() * 3 + 3) + 's';
+            codeRain.appendChild(char);
+        }
+    </script>
+
+</body>
+</html>
