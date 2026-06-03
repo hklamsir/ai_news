@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260603_162943",
+      "title": "字节跳动旗下豆包将上线付费功能，大模型加速向商业化变现期迈进",
+      "summary": "字節跳動 AI 智能體產品豆包預計 6 月下旬推出付費訂閱，68 元/月起，消費級 AI 告別免費時代",
+      "url": "./news_20260603_162943/index.html",
+      "date": "2026-06-03",
+      "time": "16:29:43",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260603_155800",
       "title": "China's AI just mapped its entire renewable energy grid",
       "summary": "Nature 研究：北京大學+達摩院識別 41 萬設施，各國應該關注",
@@ -1234,6 +1243,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-06-03T15:57:22.654823",
-  "total_count": 137
+  "last_updated": "2026-06-03T16:32:34.216047",
+  "total_count": 138
 }
