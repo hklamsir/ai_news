@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260603_152800",
+      "title": "AI搶飯碗？22%企業料減人手　創新技術都重災？銷售/PM工種最安全",
+      "summary": "畢馬威調查：創新技術、專業服務成重災區，銷售、PM 工種最安全",
+      "url": "./news_20260603_152800/index.html",
+      "date": "2026-06-03",
+      "time": "15:28:00",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260603_140700",
       "title": "Work IQ is Microsoft's big bet on agent-first enterprise IT, and I have questions",
       "summary": "AI 代理實時決定跨系統工具調用！Microsoft 押注 2026 為企業 AI 轉捩點",
@@ -1216,6 +1225,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-06-03T14:06:28.207835",
-  "total_count": 135
+  "last_updated": "2026-06-03T15:30:15.978550",
+  "total_count": 136
 }
