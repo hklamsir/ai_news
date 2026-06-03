@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260603_094400",
+      "title": "AI搶飯碗？｜紐約聯儲銀行：遠程工作才是大學生失業關鍵",
+      "summary": "研究指應屆畢業生失業率上升三元兇是遠程工作，AI 影響甚微",
+      "url": "./news_20260603_094400/index.html",
+      "date": "2026-06-03",
+      "time": "09:44:00",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260603_083900",
       "title": "OpenAI launches new Codex tools for white-collar work | TechCrunch",
       "summary": "知識工作者佔用戶 20%、增速達開發者 3 倍！OpenAI 與 Anthropic 企業 AI 爭霸戰開打",
@@ -1198,6 +1207,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-06-03T08:41:38.890298",
-  "total_count": 133
+  "last_updated": "2026-06-03T09:44:09.086523",
+  "total_count": 134
 }
