@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Work IQ is Microsoft big bet on agent-first enterprise IT | ZDNET - AI News</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root { --primary-blue: #00d4ff; --primary-purple: #7b2cbf; --accent-green: #00ff88; --accent-orange: #ff9500; --accent-red: #ff4757; --dark-bg: #0a0a0f; --card-bg: #12121a; --card-bg-light: #1a1a28; --text-primary: #ffffff; --text-secondary: #a0a0b0; --gradient-1: linear-gradient(135deg, #00d4ff 0%, #7b2cbf 100%); --gradient-2: linear-gradient(135deg, #00d4ff 0%, #00ff88 100%); --glow-blue: 0 0 20px rgba(0, 212, 255, 0.5); --glow-purple: 0 0 20px rgba(123, 44, 191, 0.5); }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Noto Sans TC', sans-serif; background-color: var(--dark-bg); color: var(--text-primary); line-height: 1.8; overflow-x: hidden; }
+        @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-20px); } }
+        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.6; } }
+        @keyframes slideIn { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes codeRain { 0% { transform: translateY(-100%); opacity: 0; } 10% { opacity: 1; } 90% { opacity: 1; } 100% { transform: translateY(100vh); opacity: 0; } }
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); } }
+        .code-rain { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; overflow: hidden; }
+        .code-char { position: absolute; color: var(--primary-blue); font-family: 'Courier New', monospace; font-size: 14px; opacity: 0; animation: codeRain 4s linear infinite; }
+        .hero { position: relative; min-height: 80vh; display: flex; align-items: center; justify-content: center; padding: 80px 20px; background: linear-gradient(180deg, var(--dark-bg) 0%, #1a1a2e 100%); overflow: hidden; }
+        .hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(ellipse at center, rgba(123, 44, 191, 0.15) 0%, transparent 70%); z-index: 1; }
+        .hero-content { position: relative; z-index: 2; max-width: 1200px; text-align: center; animation: slideIn 1s ease-out; }
+        .hero-badge { display: inline-block; padding: 12px 32px; background: var(--gradient-1); border-radius: 50px; font-size: 18px; font-weight: 700; margin-bottom: 24px; box-shadow: var(--glow-blue); letter-spacing: 1px; }
+        .hero h1 { font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 900; margin-bottom: 24px; background: var(--gradient-1); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; line-height: 1.2; }
+        .hero-subtitle { font-size: clamp(1.2rem, 2.2vw, 1.5rem); color: var(--text-primary); max-width: 900px; margin: 0 auto 40px; line-height: 1.6; font-weight: 400; }
+        .hero-images { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; margin-top: 60px; }
+        .hero-image-card { position: relative; border-radius: 20px; overflow: hidden; aspect-ratio: 16/9; box-shadow: var(--glow-purple); transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .hero-image-card:hover { transform: scale(1.02); box-shadow: 0 0 40px rgba(123, 44, 191, 0.7); }
+        .hero-image-card img { width: 100%; height: 100%; object-fit: cover; }
+        .scroll-indicator { position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%); animation: float 2s ease-in-out infinite; z-index: 2; }
+        .scroll-indicator span { display: block; width: 30px; height: 50px; border: 2px solid var(--primary-blue); border-radius: 25px; position: relative; }
+        .scroll-indicator span::before { content: ''; position: absolute; top: 8px; left: 50%; transform: translateX(-50%); width: 6px; height: 10px; background: var(--primary-blue); border-radius: 3px; animation: pulse 1.5s infinite; }
+        section { padding: 80px 20px; position: relative; z-index: 1; }
+        .content-section { background: var(--card-bg); padding: 60px 50px; border-radius: 24px; border: 1px solid rgba(0, 212, 255, 0.2); max-width: 1100px; margin: 0 auto; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3); }
+        .content-section h3 { font-size: 1.6rem; margin: 40px 0 20px; color: var(--accent-green); }
+        .content-section p { color: var(--text-secondary); line-height: 2; font-size: 1.08rem; margin: 15px 0; }
+        .content-section ul { margin: 20px 0; padding-left: 30px; }
+        .content-section li { margin: 10px 0; color: var(--text-secondary); }
+        .meta-info { background: linear-gradient(135deg, rgba(0, 212, 255, 0.15) 0%, rgba(123, 44, 191, 0.15) 100%); padding: 30px; border-radius: 16px; margin-bottom: 40px; border-left: 5px solid var(--primary-blue); }
+        .meta-info p { margin: 12px 0; color: var(--text-secondary); font-size: 1.05rem; }
+        .meta-info strong { color: var(--primary-blue); font-weight: 600; }
+        .meta-info a { color: var(--primary-blue); text-decoration: none; word-break: break-all; }
+        .highlight-box { background: linear-gradient(135deg, rgba(0, 255, 136, 0.08) 0%, rgba(0, 212, 255, 0.08) 100%); padding: 30px; border-radius: 16px; border-left: 5px solid var(--accent-green); margin: 40px 0; }
+        .highlight-box h4 { color: var(--accent-green); margin-bottom: 15px; font-size: 1.3rem; }
+        .highlight-box p { color: var(--text-secondary); margin: 0; }
+        .alert-box { background: linear-gradient(135deg, rgba(255, 71, 87, 0.1) 0%, rgba(255, 149, 0, 0.1) 100%); padding: 25px 30px; border-radius: 16px; border-left: 5px solid var(--accent-red); margin: 30px 0; }
+        .alert-box h4 { color: var(--accent-red); margin-bottom: 12px; font-size: 1.15rem; }
+        .alert-box p { color: var(--text-secondary); margin: 8px 0; font-size: 1rem; }
+        .quote-box { background: linear-gradient(135deg, rgba(123, 44, 191, 0.15) 0%, rgba(0, 212, 255, 0.15) 100%); padding: 30px 40px; border-radius: 16px; border-left: 5px solid var(--primary-purple); margin: 40px 0; position: relative; }
+        .quote-box::before { content: '"'; position: absolute; top: 10px; left: 20px; font-size: 80px; color: var(--primary-purple); opacity: 0.3; font-family: Georgia, serif; }
+        .quote-box p { color: var(--text-primary); font-size: 1.2rem; font-style: italic; margin-bottom: 15px; }
+        .quote-box cite { color: var(--text-secondary); font-size: 0.95rem; }
+        .tech-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin: 40px 0; }
+        .tech-card { background: var(--card-bg-light); padding: 30px; border-radius: 16px; border: 1px solid rgba(0, 212, 255, 0.15); transition: transform 0.3s ease, box-shadow 0.3s ease; animation: fadeInUp 0.6s ease-out forwards; opacity: 0; }
+        .tech-card:nth-child(1) { animation-delay: 0.1s; }
+        .tech-card:nth-child(2) { animation-delay: 0.2s; }
+        .tech-card:nth-child(3) { animation-delay: 0.3s; }
+        .tech-card:nth-child(4) { animation-delay: 0.4s; }
+        .tech-card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0, 212, 255, 0.2); }
+        .tech-card-icon { font-size: 2.5rem; margin-bottom: 15px; }
+        .tech-card h4 { color: var(--primary-blue); margin-bottom: 12px; font-size: 1.2rem; }
+        .tech-card p { color: var(--text-secondary); font-size: 0.95rem; line-height: 1.7; }
+        .comparison-table { width: 100%; border-collapse: collapse; margin: 40px 0; border-radius: 16px; overflow: hidden; box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3); }
+        .comparison-table thead { background: linear-gradient(135deg, var(--primary-blue), var(--primary-purple)); }
+        .comparison-table th { padding: 18px 20px; text-align: left; font-weight: 600; font-size: 1.05rem; }
+        .comparison-table td { padding: 16px 20px; border-bottom: 1px solid rgba(255, 255, 255, 0.05); color: var(--text-secondary); }
+        .comparison-table tr:last-child td { border-bottom: none; }
+        .comparison-table tr:nth-child(even) { background: rgba(255, 255, 255, 0.02); }
+        .comparison-table .highlight-col { color: var(--accent-green); font-weight: 500; }
+        .timeline { position: relative; margin: 40px 0; padding-left: 40px; }
+        .timeline::before { content: ''; position: absolute; left: 15px; top: 0; bottom: 0; width: 2px; background: linear-gradient(180deg, var(--primary-blue), var(--primary-purple)); }
+        .timeline-item { position: relative; margin-bottom: 35px; padding: 20px 25px; background: var(--card-bg-light); border-radius: 12px; border: 1px solid rgba(0, 212, 255, 0.1); animation: fadeInUp 0.5s ease-out forwards; opacity: 0; }
+        .timeline-item:nth-child(1) { animation-delay: 0.1s; }
+        .timeline-item:nth-child(2) { animation-delay: 0.2s; }
+        .timeline-item:nth-child(3) { animation-delay: 0.3s; }
+        .timeline-item:nth-child(4) { animation-delay: 0.4s; }
+        .timeline-item:nth-child(5) { animation-delay: 0.5s; }
+        .timeline-item:nth-child(6) { animation-delay: 0.6s; }
+        .timeline-item::before { content: ''; position: absolute; left: -32px; top: 25px; width: 12px; height: 12px; background: var(--primary-blue); border-radius: 50%; box-shadow: var(--glow-blue); }
+        .timeline-date { color: var(--primary-blue); font-size: 0.9rem; font-weight: 600; margin-bottom: 8px; }
+        .timeline-title { color: var(--text-primary); font-size: 1.1rem; font-weight: 600; margin-bottom: 8px; }
+        .timeline-desc { color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6; }
+        footer { background: #050508; padding: 60px 20px; text-align: center; border-top: 1px solid rgba(255, 255, 255, 0.1); }
+        footer p { color: var(--text-secondary); margin-bottom: 20px; }
+        .footer-links { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; }
+        .footer-links a { color: var(--primary-blue); text-decoration: none; transition: color 0.3s ease; }
+        .footer-links a:hover { color: var(--text-primary); }
+        @media (max-width: 768px) { .content-section { padding: 40px 25px; } .hero-images { grid-template-columns: 1fr; } .hero h1 { font-size: 2rem; } .hero-subtitle { font-size: 1.2rem; } }
+    </style>
+</head>
+<body>
+    <div class="code-rain" id="codeRain"></div>
+    <section class="hero">
+        <div class="hero-content">
+            <span class="hero-badge">📰 AI News 專題報道</span>
+            <h1>微軟 Work IQ<br>企業軟件大革命</h1>
+            <p class="hero-subtitle">AI 代理實時決定跨系統工具調用！Microsoft 押注 2026 為企業 AI 轉捩點</p>
+            <div class="hero-images">
+                <div class="hero-image-card">
+                    <img src="img/img1.png" alt="Microsoft Work IQ 企業 AI 代理概念圖">
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator"><span></span></div>
+    </section>
+    <section class="content-section">
+
+        <div class="meta-info">
+            <p><strong>📺 資料來源</strong>：<a href="https://www.zdnet.com/article/work-iq-is-microsofts-big-bet-on-agent-first-enterprise-software/" target="_blank">ZDNET</a></p>
+            <p><strong>📅 發布日期</strong>：2026-06-03</p>
+            <p><strong>🤖 處理方式</strong>：AI 智能摘要 + 深度優化</p>
+        </div>
+
+        <div class="alert-box">
+            <h4>⚠️ 關鍵前提</h4>
+            <p>Microsoft 形容 2026 年是企業軟件從「人類驅動」轉向「AI 代理驅動」的轉捩點。Work IQ 是這個新時代的核心基礎設施。</p>
+        </div>
+
+        <div class="quote-box">
+            <p>「Work IQ 專為代理優先的世界而建，在這個世界中，AI 代理——而非人類開發者——能實時決定跨系統使用哪些工具。」</p>
+            <cite>— Microsoft 官方描述</cite>
+        </div>
+
+        <h3>🎯 核心突破卡片</h3>
+        <div class="tech-cards">
+            <div class="tech-card">
+                <div class="tech-card-icon">🔄</div>
+                <h4>getSchema 動態發現</h4>
+                <p>代理能在運行時動態發現數據結構，「詢問」數據「你是什麼」，數據會自我描述，無需預定義模型。</p>
+            </div>
+            <div class="tech-card">
+                <div class="tech-card-icon">🛠️</div>
+                <h4>10 個通用工具</h4>
+                <p>Microsoft 將數千種企業操作「壓縮」成 10 個通用工具（fetch、create、update 等），代理可實時動態組合。</p>
+            </div>
+            <div class="tech-card">
+                <div class="tech-card-icon">🔒</div>
+                <h4>Entra 身份認證</h4>
+                <p>所有調用均通過 Microsoft Entra 認證，包括新的 Entra Agent ID（非人類身份），數據留在租戶邊界內。</p>
+            </div>
+            <div class="tech-card">
+                <div class="tech-card-icon">💰</div>
+                <h4>消耗式定價</h4>
+                <p>按工具調用、編排和推理計費，支援在 Microsoft 365 管理中心設定成本控制和用量監控。</p>
+            </div>
+        </div>
+
+        <h3>📊 Work IQ vs 傳統企業軟件</h3>
+        <table class="comparison-table">
+            <thead>
+                <tr><th>維度</th><th>傳統企業軟件</th><th>Work IQ（代理優先）</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>數據發現</td><td>需預定義 API 和整合</td><td class="highlight-col">代理運行時動態查詢</td></tr>
+                <tr><td>工具調用</td><td>人類開發者編碼連接</td><td class="highlight-col">代理實時自主選擇</td></tr>
+                <tr><td>系統擴展</td><td>新增整合需大量會議協調</td><td class="highlight-col">代理自描述接口自動適配</td></tr>
+                <tr><td>上下文窗口</td><td>需容納整個企業數據上下文</td><td class="highlight-col">getSchema 按需查詢，小記憶體佔用</td></tr>
+                <tr><td>操作數量</td><td>數千種操作需要單獨集成</td><td class="highlight-col">10 個通用工具動態組合</td></tr>
+            </tbody>
+        </table>
+
+        <h3>📅 Microsoft 企業 AI 佈局時間軸</h3>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-date">2026 年</div>
+                <div class="timeline-title">Work IQ 發布</div>
+                <div class="timeline-desc">Microsoft 發布 Work IQ，作為企業代理優先軟件的核心基礎設施。</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">2026 年同步</div>
+                <div class="timeline-title">MDASH 公開</div>
+                <div class="timeline-desc">Microsoft MDASH 結束預覽，發布 100+ 專業威脅獵殺 AI 代理。</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">2026 年同步</div>
+                <div class="timeline-title">Agent 365</div>
+                <div class="timeline-desc">Microsoft 推出 Agent 365，企業 AI 代理數量快速增長。</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">2026 年同步</div>
+                <div class="timeline-title">Ask APIs</div>
+                <div class="timeline-desc">為外部應用開放 M365 Copilot Chat 體驗，作為單一不透明服務。</div>
+            </div>
+        </div>
+
+        <h3>🌟 服裝倉庫案例：代理如何解決問題</h3>
+        <p>假設一家服裝製造商突然收到大量退貨。傳統 IT 系統難以發現問題，但代理可以：</p>
+        <ul>
+            <li>代理和子代理交叉引用 SKU 退貨率、物流路線圖、客戶服務投訴關鍵詞（如「癢」、「皮疹」、「打噴嚏」）</li>
+            <li>代理發現一個共同因素：所有退貨商品在倉庫 A7 的 4 號區域停留至少 48 小時</li>
+            <li>最終真相：5 號區域存放工業膠水，微量化學殘留物滲透到 4 號區域的服裝纖維中</li>
+        </ul>
+
+        <h3>🔍 記者尖銳提問與 Microsoft 回應</h3>
+        <div class="alert-box">
+            <h4>💰 Q：Work IQ 是否只是新一輪許可證、整合、監控和支援收費？</h4>
+            <p>Microsoft：Work IQ API 為代理的工作方式優化，減少往返次數、降低延遲、提高令牌效率、擴大數據訪問吞吐量，且數據留在租戶邊界內。</p>
+        </div>
+        <div class="alert-box">
+            <h4>🎯 Q：現有自動化、改進搜索、Microsoft 365 Copilot 已有的功能有何不同？</h4>
+            <p>Microsoft：AI 代理訪問數據和使用工具的方式與人類完全不同，傳統 API 會導致代理結果質量更低、速度更慢、成本更高。</p>
+        </div>
+        <div class="alert-box">
+            <h4>🛡️ Q：是否創建了新的集中智能層，讓攻擊者、內部威脅、配置錯誤的代理可以 exploit？</h4>
+            <p>Microsoft：任何集中能力都是目標，但替代方案更糟——每個代理建立自己的數據存儲、数据移动、自己的身份驗證、自己的審計缺口。Work IQ 反而縮小了攻擊面。</p>
+        </div>
+
+        <div class="highlight-box">
+            <h4>✨ 關鍵洞察</h4>
+            <p>Microsoft 正押注 2026 年是企業軟件從人類驅動轉向 AI 代理驅動的轉捩點。Work IQ 將企業軟件從「應用程序 + 數據」模式徹底重構，讓代理能在運行時動態發現數據、自助組合工具、跨系統執行操作。這是企業 IT 數十年來最大的典範轉移。</p>
+        </div>
+
+        <div class="alert-box">
+            <h4>⚠️ 潛在風險</h4>
+            <p>文章作者警告：如果每個 IT 操作都需要巨額令牌消耗税，生產力提升可能不足以抵消成本。企業需要為代理優先的 AI 時代做好成本控制準備。</p>
+        </div>
+    </section>
+    <footer>
+        <p>© 2026 AI News Archive | 由 AI 技術生成</p>
+        <div class="footer-links">
+            <a href="../index.html">返回主頁</a>
+            <a href="https://github.com/hklamsir/ai_news" target="_blank">GitHub</a>
+            <a href="https://hklamsir.github.io/ai_news/" target="_blank">瀏覽所有專題</a>
+        </div>
+    </footer>
+
+
+    <script>
+        const codeRain = document.getElementById('codeRain');
+        const chars = '01アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン';
+        for (let i = 0; i < 50; i++) {
+            const char = document.createElement('span');
+            char.className = 'code-char';
+            char.textContent = chars[Math.floor(Math.random() * chars.length)];
+            char.style.left = Math.random() * 100 + '%';
+            char.style.animationDelay = Math.random() * 4 + 's';
+            char.style.animationDuration = (Math.random() * 3 + 3) + 's';
+            codeRain.appendChild(char);
+        }
+    </script>
+
+</body>
+</html>

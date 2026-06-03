@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260603_140700",
+      "title": "Work IQ is Microsoft's big bet on agent-first enterprise IT, and I have questions",
+      "summary": "AI 代理實時決定跨系統工具調用！Microsoft 押注 2026 為企業 AI 轉捩點",
+      "url": "./news_20260603_140700/index.html",
+      "date": "2026-06-03",
+      "time": "14:07:00",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260603_094400",
       "title": "AI搶飯碗？｜紐約聯儲銀行：遠程工作才是大學生失業關鍵",
       "summary": "研究指應屆畢業生失業率上升三元兇是遠程工作，AI 影響甚微",
@@ -1207,6 +1216,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-06-03T09:44:09.086523",
-  "total_count": 134
+  "last_updated": "2026-06-03T14:06:28.207835",
+  "total_count": 135
 }
