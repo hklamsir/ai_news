@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260603_083900",
+      "title": "OpenAI launches new Codex tools for white-collar work | TechCrunch",
+      "summary": "知識工作者佔用戶 20%、增速達開發者 3 倍！OpenAI 與 Anthropic 企業 AI 爭霸戰開打",
+      "url": "./news_20260603_083900/index.html",
+      "date": "2026-06-03",
+      "time": "08:39:00",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260602_185500",
       "title": "員工自建Vibe Coding應用成影子AI新風險，有兩千個企業用途工具暴露敏感資料",
       "summary": "Red Access 研究：38萬公開網路資產、5千企業用途工具、40%未設驗證機制",
@@ -1189,6 +1198,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-06-02T18:57:56.082628",
-  "total_count": 132
+  "last_updated": "2026-06-03T08:41:38.890298",
+  "total_count": 133
 }
