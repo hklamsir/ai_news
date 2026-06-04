@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260604_141600",
+      "title": "Perplexity CEO：AI 勝負不靠模型大細　每瓦 token 價值才是關鍵",
+      "summary": "Perplexity CEO 接受 CNBC 專訪，強調能源效率將取代模型大小成為估值關鍵",
+      "url": "./news_20260604_141600/index.html",
+      "date": "2026-06-04",
+      "time": "14:16:00",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260604_111400",
       "title": "OpenAI 推出 Codex 商業插件：為每個角色打造的 AI 工具workflow",
       "summary": "六款插件覆蓋 62 款熱門應用、110 項技能，非技術人員使用量成長速度超越開發者 3 倍",
@@ -1252,6 +1261,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-06-04T13:34:55.968134",
-  "total_count": 139
+  "last_updated": "2026-06-04T14:19:00.522678",
+  "total_count": 140
 }
