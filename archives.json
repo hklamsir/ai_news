@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260605_100819",
+      "title": "Strava declares war on scrapers ahead of IPO | TechCrunch",
+      "summary": "健身社交平台 IPO 前夕全面限制數據存取，開發者 API 每月 $11.99",
+      "url": "./news_20260605_100819/index.html",
+      "date": "2026-06-05",
+      "time": "10:08:19",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260605_085142",
       "title": "不只在Threads陪聊！Meta AI將化身「超級店員」，進駐IG、Messenger幫全球商家接單",
       "summary": "Meta Business Agent 正式上線，100萬企業已使用，每天10億個商家對話",
@@ -1279,6 +1288,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-06-05T08:53:23.674229",
-  "total_count": 142
+  "last_updated": "2026-06-05T10:10:27.897579",
+  "total_count": 143
 }
