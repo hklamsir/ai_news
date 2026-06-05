@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260605_085142",
+      "title": "不只在Threads陪聊！Meta AI將化身「超級店員」，進駐IG、Messenger幫全球商家接單",
+      "summary": "Meta Business Agent 正式上線，100萬企業已使用，每天10億個商家對話",
+      "url": "./news_20260605_085142/index.html",
+      "date": "2026-06-05",
+      "time": "08:51:42",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260604_142300",
       "title": "Google 推出 Gemma 4 12B：統一無編碼器多模態模型",
       "summary": "Google 推出首款無編碼器多模態模型，16GB VRAM 即可運行，下載量突破 1.5 億",
@@ -1270,6 +1279,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-06-04T14:24:11.529496",
-  "total_count": 141
+  "last_updated": "2026-06-05T08:53:23.674229",
+  "total_count": 142
 }
