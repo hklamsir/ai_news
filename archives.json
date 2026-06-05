@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260605_134702",
+      "title": "對話《芯片簡史》作者：華為「韜定律」，最大極限在哪裡？",
+      "summary": "華為發布τ定律，時間縮微新路徑能否突破摩爾定律瓶頸？",
+      "url": "./news_20260605_134702/index.html",
+      "date": "2026-06-05",
+      "time": "13:47:02",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260605_100819",
       "title": "Strava declares war on scrapers ahead of IPO | TechCrunch",
       "summary": "健身社交平台 IPO 前夕全面限制數據存取，開發者 API 每月 $11.99",
@@ -1288,6 +1297,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-06-05T10:10:27.897579",
-  "total_count": 143
+  "last_updated": "2026-06-05T13:49:54.942975",
+  "total_count": 144
 }
