@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260606_121000",
+      "title": "Supabase doubles valuation to $10B in 8 months | TechCrunch",
+      "summary": "開源資料庫新創完成 5 億美元 F 輪融资，AI 驅動開發熱潮下的最大贏家之一",
+      "url": "./news_20260606_121000/index.html",
+      "date": "2026-06-06",
+      "time": "12:10:00",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260605_134702",
       "title": "對話《芯片簡史》作者：華為「韜定律」，最大極限在哪裡？",
       "summary": "華為發布τ定律，時間縮微新路徑能否突破摩爾定律瓶頸？",
@@ -1297,6 +1306,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-06-05T13:49:54.942975",
-  "total_count": 144
+  "last_updated": "2026-06-06T12:12:36.631961",
+  "total_count": 145
 }

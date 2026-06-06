@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Supabase 估值翻倍至 100 億美元：8 個月內從 50 億躍升至獨角獸巨頭 - AI News</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root { --primary-blue: #00d4ff; --primary-purple: #7b2cbf; --accent-green: #00ff88; --accent-orange: #ff9500; --accent-red: #ff4757; --dark-bg: #0a0a0f; --card-bg: #12121a; --card-bg-light: #1a1a28; --text-primary: #ffffff; --text-secondary: #a0a0b0; --gradient-1: linear-gradient(135deg, #00d4ff 0%, #7b2cbf 100%); --gradient-2: linear-gradient(135deg, #00d4ff 0%, #00ff88 100%); --glow-blue: 0 0 20px rgba(0, 212, 255, 0.5); --glow-purple: 0 0 20px rgba(123, 44, 191, 0.5); }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Noto Sans TC', sans-serif; background-color: var(--dark-bg); color: var(--text-primary); line-height: 1.8; overflow-x: hidden; }
+        @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-20px); } }
+        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.6; } }
+        @keyframes slideIn { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes codeRain { 0% { transform: translateY(-100%); opacity: 0; } 10% { opacity: 1; } 90% { opacity: 1; } 100% { transform: translateY(100vh); opacity: 0; } }
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); } }
+        .code-rain { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; overflow: hidden; }
+        .code-char { position: absolute; color: var(--primary-blue); font-family: 'Courier New', monospace; font-size: 14px; opacity: 0; animation: codeRain 4s linear infinite; }
+        .hero { position: relative; min-height: 80vh; display: flex; align-items: center; justify-content: center; padding: 80px 20px; background: linear-gradient(180deg, var(--dark-bg) 0%, #1a1a2e 100%); overflow: hidden; }
+        .hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(ellipse at center, rgba(123, 44, 191, 0.15) 0%, transparent 70%); z-index: 1; }
+        .hero-content { position: relative; z-index: 2; max-width: 1200px; text-align: center; animation: slideIn 1s ease-out; }
+        .hero-badge { display: inline-block; padding: 12px 32px; background: var(--gradient-1); border-radius: 50px; font-size: 18px; font-weight: 700; margin-bottom: 24px; box-shadow: var(--glow-blue); letter-spacing: 1px; }
+        .hero h1 { font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 900; margin-bottom: 24px; background: var(--gradient-1); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; line-height: 1.2; }
+        .hero-subtitle { font-size: clamp(1.2rem, 2.2vw, 1.5rem); color: var(--text-primary); max-width: 900px; margin: 0 auto 40px; line-height: 1.6; font-weight: 400; }
+        .hero-images { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; margin-top: 60px; }
+        .hero-image-card { position: relative; border-radius: 20px; overflow: hidden; aspect-ratio: 16/9; box-shadow: var(--glow-purple); transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .hero-image-card:hover { transform: scale(1.02); box-shadow: 0 0 40px rgba(123, 44, 191, 0.7); }
+        .hero-image-card img { width: 100%; height: 100%; object-fit: cover; }
+        .scroll-indicator { position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%); animation: float 2s ease-in-out infinite; z-index: 2; }
+        .scroll-indicator span { display: block; width: 30px; height: 50px; border: 2px solid var(--primary-blue); border-radius: 25px; position: relative; }
+        .scroll-indicator span::before { content: ''; position: absolute; top: 8px; left: 50%; transform: translateX(-50%); width: 6px; height: 10px; background: var(--primary-blue); border-radius: 3px; animation: pulse 1.5s infinite; }
+        section { padding: 80px 20px; position: relative; z-index: 1; }
+        .content-section { background: var(--card-bg); padding: 60px 50px; border-radius: 24px; border: 1px solid rgba(0, 212, 255, 0.2); max-width: 1100px; margin: 0 auto; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3); }
+        .content-section h3 { font-size: 1.6rem; margin: 40px 0 20px; color: var(--accent-green); }
+        .content-section p { color: var(--text-secondary); line-height: 2; font-size: 1.08rem; margin: 15px 0; }
+        .content-section ul { margin: 20px 0; padding-left: 30px; }
+        .content-section li { margin: 10px 0; color: var(--text-secondary); }
+        .meta-info { background: linear-gradient(135deg, rgba(0, 212, 255, 0.15) 0%, rgba(123, 44, 191, 0.15) 100%); padding: 30px; border-radius: 16px; margin-bottom: 40px; border-left: 5px solid var(--primary-blue); }
+        .meta-info p { margin: 12px 0; color: var(--text-secondary); font-size: 1.05rem; }
+        .meta-info strong { color: var(--primary-blue); font-weight: 600; }
+        .meta-info a { color: var(--primary-blue); text-decoration: none; word-break: break-all; }
+        .highlight-box { background: linear-gradient(135deg, rgba(0, 255, 136, 0.08) 0%, rgba(0, 212, 255, 0.08) 100%); padding: 30px; border-radius: 16px; border-left: 5px solid var(--accent-green); margin: 40px 0; }
+        .highlight-box h4 { color: var(--accent-green); margin-bottom: 15px; font-size: 1.3rem; }
+        .highlight-box p { color: var(--text-secondary); margin: 0; }
+        .alert-box { background: linear-gradient(135deg, rgba(255, 71, 87, 0.1) 0%, rgba(255, 149, 0, 0.1) 100%); padding: 25px 30px; border-radius: 16px; border-left: 5px solid var(--accent-red); margin: 30px 0; }
+        .alert-box h4 { color: var(--accent-red); margin-bottom: 12px; font-size: 1.15rem; }
+        .alert-box p { color: var(--text-secondary); margin: 8px 0; font-size: 1rem; }
+        .quote-box { background: linear-gradient(135deg, rgba(123, 44, 191, 0.15) 0%, rgba(0, 212, 255, 0.15) 100%); padding: 30px 40px; border-radius: 16px; border-left: 5px solid var(--primary-purple); margin: 40px 0; position: relative; }
+        .quote-box::before { content: '"'; position: absolute; top: 10px; left: 20px; font-size: 80px; color: var(--primary-purple); opacity: 0.3; font-family: Georgia, serif; }
+        .quote-box p { color: var(--text-primary); font-size: 1.2rem; font-style: italic; margin-bottom: 15px; }
+        .quote-box cite { color: var(--text-secondary); font-size: 0.95rem; }
+        .tech-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin: 40px 0; }
+        .tech-card { background: var(--card-bg-light); padding: 30px; border-radius: 16px; border: 1px solid rgba(0, 212, 255, 0.15); transition: transform 0.3s ease, box-shadow 0.3s ease; animation: fadeInUp 0.6s ease-out forwards; opacity: 0; }
+        .tech-card:nth-child(1) { animation-delay: 0.1s; }
+        .tech-card:nth-child(2) { animation-delay: 0.2s; }
+        .tech-card:nth-child(3) { animation-delay: 0.3s; }
+        .tech-card:nth-child(4) { animation-delay: 0.4s; }
+        .tech-card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0, 212, 255, 0.2); }
+        .tech-card-icon { font-size: 2.5rem; margin-bottom: 15px; }
+        .tech-card h4 { color: var(--primary-blue); margin-bottom: 12px; font-size: 1.2rem; }
+        .tech-card p { color: var(--text-secondary); font-size: 0.95rem; line-height: 1.7; }
+        .comparison-table { width: 100%; border-collapse: collapse; margin: 40px 0; border-radius: 16px; overflow: hidden; box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3); }
+        .comparison-table thead { background: linear-gradient(135deg, var(--primary-blue), var(--primary-purple)); }
+        .comparison-table th { padding: 18px 20px; text-align: left; font-weight: 600; font-size: 1.05rem; }
+        .comparison-table td { padding: 16px 20px; border-bottom: 1px solid rgba(255, 255, 255, 0.05); color: var(--text-secondary); }
+        .comparison-table tr:last-child td { border-bottom: none; }
+        .comparison-table tr:nth-child(even) { background: rgba(255, 255, 255, 0.02); }
+        .comparison-table .highlight-col { color: var(--accent-green); font-weight: 500; }
+        .timeline { position: relative; margin: 40px 0; padding-left: 40px; }
+        .timeline::before { content: ''; position: absolute; left: 15px; top: 0; bottom: 0; width: 2px; background: linear-gradient(180deg, var(--primary-blue), var(--primary-purple)); }
+        .timeline-item { position: relative; margin-bottom: 35px; padding: 20px 25px; background: var(--card-bg-light); border-radius: 12px; border: 1px solid rgba(0, 212, 255, 0.1); animation: fadeInUp 0.5s ease-out forwards; opacity: 0; }
+        .timeline-item:nth-child(1) { animation-delay: 0.1s; }
+        .timeline-item:nth-child(2) { animation-delay: 0.2s; }
+        .timeline-item:nth-child(3) { animation-delay: 0.3s; }
+        .timeline-item:nth-child(4) { animation-delay: 0.4s; }
+        .timeline-item:nth-child(5) { animation-delay: 0.5s; }
+        .timeline-item:nth-child(6) { animation-delay: 0.6s; }
+        .timeline-item::before { content: ''; position: absolute; left: -32px; top: 25px; width: 12px; height: 12px; background: var(--primary-blue); border-radius: 50%; box-shadow: var(--glow-blue); }
+        .timeline-date { color: var(--primary-blue); font-size: 0.9rem; font-weight: 600; margin-bottom: 8px; }
+        .timeline-title { color: var(--text-primary); font-size: 1.1rem; font-weight: 600; margin-bottom: 8px; }
+        .timeline-desc { color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6; }
+        footer { background: #050508; padding: 60px 20px; text-align: center; border-top: 1px solid rgba(255, 255, 255, 0.1); }
+        footer p { color: var(--text-secondary); margin-bottom: 20px; }
+        .footer-links { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; }
+        .footer-links a { color: var(--primary-blue); text-decoration: none; transition: color 0.3s ease; }
+        .footer-links a:hover { color: var(--text-primary); }
+        @media (max-width: 768px) { .content-section { padding: 40px 25px; } .hero-images { grid-template-columns: 1fr; } .hero h1 { font-size: 2rem; } .hero-subtitle { font-size: 1.2rem; } }
+    </style>
+</head>
+<body>
+    <div class="code-rain" id="codeRain"></div>
+    <section class="hero">
+        <div class="hero-content">
+            <span class="hero-badge">📰 AI News 專題報道</span>
+            <h1>Supabase 估值翻倍至 100 億美元<br>8 個月內從 50 億躍升至獨角獸巨頭</h1>
+            <p class="hero-subtitle">開源資料庫新創完成 5 億美元 F 輪融资，AI 驅動開發熱潮下的最大贏家之一</p>
+            <div class="hero-images">
+                <div class="hero-image-card">
+                    <img src="img/img1.png" alt="Supabase 估值翻倍至 100 億美元">
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator"><span></span></div>
+    </section>
+    <section class="content-section">
+
+        <div class="meta-info">
+            <p><strong>📺 資料來源</strong>：<a href="https://techcrunch.com/2026/06/05/supabase-doubles-valuation-to-10b-in-8-months/" target="_blank">TechCrunch</a></p>
+            <p><strong>📅 發布日期</strong>：2026-06-06</p>
+            <p><strong>🤖 處理方式</strong>：AI 智能摘要生成</p>
+        </div>
+
+        <h3>🎯 核心觀點</h3>
+        <p>開源資料庫新創 <strong>Supabase</strong> 宣布完成 5 億美元 F 輪融资，估值達到 <strong>100 億美元</strong>（投前估值），較 8 個月前的 50 億美元翻倍。這也是近期 AI 驅動開發熱潮中的最大規模融资之一。</p>
+
+        <h3>📊 關鍵數據</h3>
+        <ul>
+            <li>📈 <strong>估值：</strong>100 億美元（投前）→ 約 105 億美元（投後）</li>
+            <li>💰 <strong>融資額：</strong>5 億美元 F 輪</li>
+            <li>📅 <strong>估值成長：</strong>8 個月內從 50 億美元翻至 100 億美元</li>
+            <li>👨‍💻 <strong>開發者數量：</strong>近 1,000 萬用戶（8 個月內翻倍）</li>
+            <li>🚀 <strong>資料庫增長：</strong>過去一年超過 600%</li>
+            <li>🤖 <strong>AI 工具占比：</strong>超過 60% 的資料庫由 AI 工具創建</li>
+        </ul>
+
+        <h3>🔥 為何 Supabase 成長這麼快？</h3>
+        <p>CEO Paul Copplestone 在博客中特別點名感謝 <strong>Claude Code</strong> 和 <strong>Codex</strong> 這兩款 AI 程式工具，認為它們「擴大了能夠構建產品的人數」。Supabase 同時也是 <strong>Bolt、Figma、Lovable、Replit</strong> 等平台的資料庫首選。</p>
+
+        <h3>🛠 技術亮點：Multigres</h3>
+        <p>本週 Supabase 推出了名為 <strong>Multigres</strong> 的工具，定位為 Postgres 的「操作系統」。它旨在簡化 Postgres 大規模運行的複雜性，讓開發者能夠集中管理讀副本、自動故障轉移、連接限制、備份等任務。</p>
+
+        <h3>💡 另類的商業策略</h3>
+        <p>Copplestone 曾在节目中透露，他拒絕了許多大型企業的百萬美元合約，因為這些合約會帶來產品決策上的壓力。他堅持自己的產品願景不走企業定制路線——這種「反向策略」在創業圈相當罕見，但顯然對 Supabase 非常有效。</p>
+
+        <h3>🏦 投資方</h3>
+        <p>本輪由 <strong>GIC</strong> 領投，现有投资方包括 <strong>Stripe</strong>，新投資方包括 <strong>Georgian</strong> 和 <strong>Salesforce Ventures</strong>。</p>
+
+        <h3>📈 估值軌跡回顧</h3>
+        <ul>
+            <li>2025 年中：20 億美元（約 2 億美元融资）</li>
+            <li>2025 年 10 月：50 億美元（1 億美元融资）</li>
+            <li>2026 年 6 月：100 億美元（5 億美元融资）</li>
+        </ul>
+
+        <div class="tech-cards">
+            <div class="tech-card">
+                <div class="tech-card-icon">🚀</div>
+                <h4>600% 資料庫增長</h4>
+                <p>過去一年內，Supabase 上的資料庫啟動數量增長超過 600%，展現出爆發式成長態勢。</p>
+            </div>
+            <div class="tech-card">
+                <div class="tech-card-icon">🤖</div>
+                <h4>AI 工具佔比 60%+</h4>
+                <p>超過六成的資料庫是由 AI 工具創建，顯示 AI 輔助開發已成為主流趨勢。</p>
+            </div>
+            <div class="tech-card">
+                <div class="tech-card-icon">👨‍💻</div>
+                <h4>1,000 萬開發者</h4>
+                <p>短短 8 個月內，Supabase 的開發者用戶數量從 500 萬翻倍至近 1,000 萬。</p>
+            </div>
+            <div class="tech-card">
+                <div class="tech-card-icon">💎</div>
+                <h4>100 億美元獨角獸</h4>
+                <p>最新估值 100 億美元（約 105 億美元投後），較 8 個月前翻倍，躋身全球最大新創之列。</p>
+            </div>
+        </div>
+
+        <h3>🔍 為什麼開發者選擇 Supabase？</h3>
+        <p>Supabase 基於開源的 <strong>PostgreSQL</strong> 資料庫，提供即時 API、身份認證、儲存等功能，讓開發者可以快速構建應用。相比傳統資料庫，Supabase 大幅降低了開發複雜度，特別適合：</p>
+        <ul>
+            <li>🔧 <strong>需要即時功能的行動/Web 應用</strong></li>
+            <li>🤖 <strong>AI 輔助編碼流程中的快速原型開發</strong></li>
+            <li>📱 <strong>需要無縫擴展的規模化新創產品</strong></li>
+            <li>🌐 <strong>希望避免供應商鎖定的開源愛好者</strong></li>
+        </ul>
+
+        <h3>🌟 Multigres：Postgres 的作業系統</h3>
+        <p>本週發布的 <strong>Multigres</strong> 是 Supabase 最新的重量級工具，被形容為 Postgres 的「操作系統」。它為開發者提供了一個中央管理介面，來處理以下繁瑣任務：</p>
+        <ul>
+            <li>📖 <strong>讀副本管理</strong> — 自動負載均衡</li>
+            <li>🔄 <strong>自動故障轉移</strong> — 確保高可用性</li>
+            <li>🔗 <strong>連接限制控制</strong> — 優化資源使用</li>
+            <li>💾 <strong>備份管理</strong> — 自動化備份策略</li>
+            <li>📊 <strong>效能監控</strong> — 即時效能儀表板</li>
+        </ul>
+        <p>這意味著即使是非專業 DBA 的普通開發者，也能輕鬆管理大規模 Postgres 部署。</p>
+
+        <h3>💬 Paul Copplestone 的反向策略</h3>
+        <div class="quote-box">
+            <p>「我拒絕參與那些『爛化』開發者工具的趨勢，因為那些百萬美元合約會讓產品變得不再以開發者為中心。」</p>
+            <cite>— Paul Copplestone，Supabase CEO & Co-founder</cite>
+        </div>
+        <p>大多數新創公司在成長過程中都會走向企業化服務，但 Copplestone 選擇了一條截然不同的路：<strong>堅持產品願景，不被大型客戶的需求牵着鼻子走</strong>。這種策略在商業世界看似冒險，卻讓 Supabase 保持了快速的產品迭代和開發者優先的文化。</p>
+
+        <h3>📈 與其他新創的估值比較</h3>
+        <table class="comparison-table">
+            <thead>
+                <tr>
+                    <th>新創公司</th>
+                    <th>最新估值</th>
+                    <th>領域</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Supabase</td>
+                    <td class="highlight-col">100 億美元</td>
+                    <td>開源資料庫</td>
+                </tr>
+                <tr>
+                    <td>FirebirdSQL</td>
+                    <td>非營利</td>
+                    <td>開源資料庫</td>
+                </tr>
+                <tr>
+                    <td>MongoDB</td>
+                    <td>~140 億美元</td>
+                    <td>NoSQL 資料庫</td>
+                </tr>
+                <tr>
+                    <td>PlanetScale</td>
+                    <td>~10 億美元</td>
+                    <td>MySQL 分支</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>🏆 AI 驅動開發時代的最大贏家</h3>
+        <p>Supabase 的爆發式成長，是 AI 輔助編碼工具興起最大的受益者之一。當 <strong>Claude Code</strong>、<strong>Codex</strong>、<strong>Bolt</strong>、<strong>Lovable</strong> 等工具讓「人人都能開發」成為可能時，作為這些工具首選資料庫的 Supabase 自然水漲船高。</p>
+        <p>這輪 5 億美元的资金將主要用於：</p>
+        <ul>
+            <li>📡 <strong>擴展全球基礎設施</strong> — 加快資料庫部署速度</li>
+            <li>🔬 <strong>深化 AI 整合</strong> — 讓 AI 輔助開發更無縫</li>
+            <li>👥 <strong>擴大團隊規模</strong> — 招聘更多工程師</li>
+            <li>🌏 <strong>拓展企業市場</strong> — 在保持開發者優先的同時進軍企業</li>
+        </ul>
+
+        <div class="highlight-box">
+            <p>💬 <strong>Paul Copplestone（原話）：</strong>「AI 模型擴大了能夠構建產品的人數，而 Supabase 的使命是讓這個過程變得盡可能簡單。」</p>
+        </div>
+    </section>
+    <footer>
+        <p>© 2026 AI News Archive | 由 AI 技術生成</p>
+        <div class="footer-links">
+            <a href="../index.html">返回主頁</a>
+            <a href="https://github.com/hklamsir/ai_news" target="_blank">GitHub</a>
+            <a href="https://hklamsir.github.io/ai_news/" target="_blank">瀏覽所有專題</a>
+        </div>
+    </footer>
+
+
+    <script>
+        const codeRain = document.getElementById('codeRain');
+        const chars = '01アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン';
+        for (let i = 0; i < 50; i++) {
+            const char = document.createElement('span');
+            char.className = 'code-char';
+            char.textContent = chars[Math.floor(Math.random() * chars.length)];
+            char.style.left = Math.random() * 100 + '%';
+            char.style.animationDelay = Math.random() * 4 + 's';
+            char.style.animationDuration = (Math.random() * 3 + 3) + 's';
+            codeRain.appendChild(char);
+        }
+    </script>
+
+</body>
+</html>
