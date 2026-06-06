@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260606_123359",
+      "title": "NVIDIA 轉型 AI 基礎設施公司！黃仁勳 GTC Taipei 2026 說了什麼？專家解析輝達佈局策略｜未來商務",
+      "summary": "Vera Rubin 由 150 家台廠共同設計，黃仁勳宣告 NVIDIA 不再只是 GPU 公司的完整戰略",
+      "url": "./news_20260606_123359/index.html",
+      "date": "2026-06-06",
+      "time": "12:33:59",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260606_121000",
       "title": "Supabase doubles valuation to $10B in 8 months | TechCrunch",
       "summary": "開源資料庫新創完成 5 億美元 F 輪融資，AI 驅動開發熱潮下的最大贏家之一",
@@ -1306,6 +1315,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-06-06T12:28:58.781745",
-  "total_count": 145
+  "last_updated": "2026-06-06T12:36:59.100812",
+  "total_count": 146
 }
