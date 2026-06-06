@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260606_172039",
+      "title": "香港生成式 AI 研發中心 推 HKGAI V3 大模型 搞 Agentic AI 逾 20 間合作夥伴",
+      "summary": "第三代本地化大模型發布暨 Agent Workshop 平臺登場，瞄準千億港元 AI 市場",
+      "url": "./news_20260606_172039/index.html",
+      "date": "2026-06-06",
+      "time": "17:20:39",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260606_165038",
       "title": "效果直逼 ChatGPT！Ideogram 4.0 正式開源：93 億參數圖像模型，支援本地部署與微調 - 電腦王阿達",
       "summary": "首個達到設計專業水準的開源圖像生成模型，文字渲染超越所有競爭者",
@@ -1333,6 +1342,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-06-06T16:52:54.645766",
-  "total_count": 148
+  "last_updated": "2026-06-06T17:23:00.418390",
+  "total_count": 149
 }
