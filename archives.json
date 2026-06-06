@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260606_124707",
+      "title": "Google 將每月向 SpaceX 支付 9.2 億美元租用算力 | TechCrunch",
+      "summary": "為期 33 個月、總值超過 300 億美元！涵蓋 11 萬顆 NVIDIA GPU 的超大規模算力租賃協議",
+      "url": "./news_20260606_124707/index.html",
+      "date": "2026-06-06",
+      "time": "12:47:07",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260606_123359",
       "title": "NVIDIA 轉型 AI 基礎設施公司！黃仁勳 GTC Taipei 2026 說了什麼？專家解析輝達佈局策略｜未來商務",
       "summary": "Vera Rubin 由 150 家台廠共同設計，黃仁勳宣告 NVIDIA 不再只是 GPU 公司的完整戰略",
@@ -1315,6 +1324,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-06-06T12:36:59.100812",
-  "total_count": 146
+  "last_updated": "2026-06-06T12:49:12.425036",
+  "total_count": 147
 }
