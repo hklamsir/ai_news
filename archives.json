@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260606_200341",
+      "title": "Anthropic 共同創辦人 Jack Clark 警告：AI 需要一個「煞車」——技術即將超越人類控制",
+      "summary": "Jack Clark 比喻 AI 行業只有油門沒有煞車，呼籲各國政府盡快制定新法規監管",
+      "url": "./news_20260606_200341/index.html",
+      "date": "2026-06-06",
+      "time": "20:03:41",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260606_172039",
       "title": "香港生成式 AI 研發中心 推 HKGAI V3 大模型 搞 Agentic AI 逾 20 間合作夥伴",
       "summary": "第三代本地化大模型發布暨 Agent Workshop 平臺登場，瞄準千億港元 AI 市場",
@@ -1342,6 +1351,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-06-06T19:41:24.032815",
-  "total_count": 149
+  "last_updated": "2026-06-06T20:06:28.172568",
+  "total_count": 150
 }
