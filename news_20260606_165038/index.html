@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>效果直逼 ChatGPT！Ideogram 4.0 正式開源：93 億參數圖像模型，支援本地部署與微調 - AI News</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root { --primary-blue: #00d4ff; --primary-purple: #7b2cbf; --accent-green: #00ff88; --accent-orange: #ff9500; --accent-red: #ff4757; --dark-bg: #0a0a0f; --card-bg: #12121a; --card-bg-light: #1a1a28; --text-primary: #ffffff; --text-secondary: #a0a0b0; --gradient-1: linear-gradient(135deg, #00d4ff 0%, #7b2cbf 100%); --gradient-2: linear-gradient(135deg, #00d4ff 0%, #00ff88 100%); --glow-blue: 0 0 20px rgba(0, 212, 255, 0.5); --glow-purple: 0 0 20px rgba(123, 44, 191, 0.5); }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Noto Sans TC', sans-serif; background-color: var(--dark-bg); color: var(--text-primary); line-height: 1.8; overflow-x: hidden; }
+        @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-20px); } }
+        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.6; } }
+        @keyframes slideIn { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes codeRain { 0% { transform: translateY(-100%); opacity: 0; } 10% { opacity: 1; } 90% { opacity: 1; } 100% { transform: translateY(100vh); opacity: 0; } }
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); } }
+        .code-rain { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; overflow: hidden; }
+        .code-char { position: absolute; color: var(--primary-blue); font-family: 'Courier New', monospace; font-size: 14px; opacity: 0; animation: codeRain 4s linear infinite; }
+        .hero { position: relative; min-height: 80vh; display: flex; align-items: center; justify-content: center; padding: 80px 20px; background: linear-gradient(180deg, var(--dark-bg) 0%, #1a1a2e 100%); overflow: hidden; }
+        .hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(ellipse at center, rgba(123, 44, 191, 0.15) 0%, transparent 70%); z-index: 1; }
+        .hero-content { position: relative; z-index: 2; max-width: 1200px; text-align: center; animation: slideIn 1s ease-out; }
+        .hero-badge { display: inline-block; padding: 12px 32px; background: var(--gradient-1); border-radius: 50px; font-size: 18px; font-weight: 700; margin-bottom: 24px; box-shadow: var(--glow-blue); letter-spacing: 1px; }
+        .hero h1 { font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 900; margin-bottom: 24px; background: var(--gradient-1); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; line-height: 1.2; }
+        .hero-subtitle { font-size: clamp(1.2rem, 2.2vw, 1.5rem); color: var(--text-primary); max-width: 900px; margin: 0 auto 40px; line-height: 1.6; font-weight: 400; }
+        .hero-images { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; margin-top: 60px; }
+        .hero-image-card { position: relative; border-radius: 20px; overflow: hidden; aspect-ratio: 16/9; box-shadow: var(--glow-purple); transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .hero-image-card:hover { transform: scale(1.02); box-shadow: 0 0 40px rgba(123, 44, 191, 0.7); }
+        .hero-image-card img { width: 100%; height: 100%; object-fit: cover; }
+        .scroll-indicator { position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%); animation: float 2s ease-in-out infinite; z-index: 2; }
+        .scroll-indicator span { display: block; width: 30px; height: 50px; border: 2px solid var(--primary-blue); border-radius: 25px; position: relative; }
+        .scroll-indicator span::before { content: ''; position: absolute; top: 8px; left: 50%; transform: translateX(-50%); width: 6px; height: 10px; background: var(--primary-blue); border-radius: 3px; animation: pulse 1.5s infinite; }
+        section { padding: 80px 20px; position: relative; z-index: 1; }
+        .content-section { background: var(--card-bg); padding: 60px 50px; border-radius: 24px; border: 1px solid rgba(0, 212, 255, 0.2); max-width: 1100px; margin: 0 auto; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3); }
+        .content-section h3 { font-size: 1.6rem; margin: 40px 0 20px; color: var(--accent-green); }
+        .content-section p { color: var(--text-secondary); line-height: 2; font-size: 1.08rem; margin: 15px 0; }
+        .content-section ul { margin: 20px 0; padding-left: 30px; }
+        .content-section li { margin: 10px 0; color: var(--text-secondary); }
+        .meta-info { background: linear-gradient(135deg, rgba(0, 212, 255, 0.15) 0%, rgba(123, 44, 191, 0.15) 100%); padding: 30px; border-radius: 16px; margin-bottom: 40px; border-left: 5px solid var(--primary-blue); }
+        .meta-info p { margin: 12px 0; color: var(--text-secondary); font-size: 1.05rem; }
+        .meta-info strong { color: var(--primary-blue); font-weight: 600; }
+        .meta-info a { color: var(--primary-blue); text-decoration: none; word-break: break-all; }
+        .highlight-box { background: linear-gradient(135deg, rgba(0, 255, 136, 0.08) 0%, rgba(0, 212, 255, 0.08) 100%); padding: 30px; border-radius: 16px; border-left: 5px solid var(--accent-green); margin: 40px 0; }
+        .highlight-box h4 { color: var(--accent-green); margin-bottom: 15px; font-size: 1.3rem; }
+        .highlight-box p { color: var(--text-secondary); margin: 0; }
+        .alert-box { background: linear-gradient(135deg, rgba(255, 71, 87, 0.1) 0%, rgba(255, 149, 0, 0.1) 100%); padding: 25px 30px; border-radius: 16px; border-left: 5px solid var(--accent-red); margin: 30px 0; }
+        .alert-box h4 { color: var(--accent-red); margin-bottom: 12px; font-size: 1.15rem; }
+        .alert-box p { color: var(--text-secondary); margin: 8px 0; font-size: 1rem; }
+        .quote-box { background: linear-gradient(135deg, rgba(123, 44, 191, 0.15) 0%, rgba(0, 212, 255, 0.15) 100%); padding: 30px 40px; border-radius: 16px; border-left: 5px solid var(--primary-purple); margin: 40px 0; position: relative; }
+        .quote-box::before { content: '"'; position: absolute; top: 10px; left: 20px; font-size: 80px; color: var(--primary-purple); opacity: 0.3; font-family: Georgia, serif; }
+        .quote-box p { color: var(--text-primary); font-size: 1.2rem; font-style: italic; margin-bottom: 15px; }
+        .quote-box cite { color: var(--text-secondary); font-size: 0.95rem; }
+        .tech-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin: 40px 0; }
+        .tech-card { background: var(--card-bg-light); padding: 30px; border-radius: 16px; border: 1px solid rgba(0, 212, 255, 0.15); transition: transform 0.3s ease, box-shadow 0.3s ease; animation: fadeInUp 0.6s ease-out forwards; opacity: 0; }
+        .tech-card:nth-child(1) { animation-delay: 0.1s; }
+        .tech-card:nth-child(2) { animation-delay: 0.2s; }
+        .tech-card:nth-child(3) { animation-delay: 0.3s; }
+        .tech-card:nth-child(4) { animation-delay: 0.4s; }
+        .tech-card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0, 212, 255, 0.2); }
+        .tech-card-icon { font-size: 2.5rem; margin-bottom: 15px; }
+        .tech-card h4 { color: var(--primary-blue); margin-bottom: 12px; font-size: 1.2rem; }
+        .tech-card p { color: var(--text-secondary); font-size: 0.95rem; line-height: 1.7; }
+        .comparison-table { width: 100%; border-collapse: collapse; margin: 40px 0; border-radius: 16px; overflow: hidden; box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3); }
+        .comparison-table thead { background: linear-gradient(135deg, var(--primary-blue), var(--primary-purple)); }
+        .comparison-table th { padding: 18px 20px; text-align: left; font-weight: 600; font-size: 1.05rem; }
+        .comparison-table td { padding: 16px 20px; border-bottom: 1px solid rgba(255, 255, 255, 0.05); color: var(--text-secondary); }
+        .comparison-table tr:last-child td { border-bottom: none; }
+        .comparison-table tr:nth-child(even) { background: rgba(255, 255, 255, 0.02); }
+        .comparison-table .highlight-col { color: var(--accent-green); font-weight: 500; }
+        .timeline { position: relative; margin: 40px 0; padding-left: 40px; }
+        .timeline::before { content: ''; position: absolute; left: 15px; top: 0; bottom: 0; width: 2px; background: linear-gradient(180deg, var(--primary-blue), var(--primary-purple)); }
+        .timeline-item { position: relative; margin-bottom: 35px; padding: 20px 25px; background: var(--card-bg-light); border-radius: 12px; border: 1px solid rgba(0, 212, 255, 0.1); animation: fadeInUp 0.5s ease-out forwards; opacity: 0; }
+        .timeline-item:nth-child(1) { animation-delay: 0.1s; }
+        .timeline-item:nth-child(2) { animation-delay: 0.2s; }
+        .timeline-item:nth-child(3) { animation-delay: 0.3s; }
+        .timeline-item:nth-child(4) { animation-delay: 0.4s; }
+        .timeline-item:nth-child(5) { animation-delay: 0.5s; }
+        .timeline-item:nth-child(6) { animation-delay: 0.6s; }
+        .timeline-item::before { content: ''; position: absolute; left: -32px; top: 25px; width: 12px; height: 12px; background: var(--primary-blue); border-radius: 50%; box-shadow: var(--glow-blue); }
+        .timeline-date { color: var(--primary-blue); font-size: 0.9rem; font-weight: 600; margin-bottom: 8px; }
+        .timeline-title { color: var(--text-primary); font-size: 1.1rem; font-weight: 600; margin-bottom: 8px; }
+        .timeline-desc { color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6; }
+        footer { background: #050508; padding: 60px 20px; text-align: center; border-top: 1px solid rgba(255, 255, 255, 0.1); }
+        footer p { color: var(--text-secondary); margin-bottom: 20px; }
+        .footer-links { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; }
+        .footer-links a { color: var(--primary-blue); text-decoration: none; transition: color 0.3s ease; }
+        .footer-links a:hover { color: var(--text-primary); }
+        @media (max-width: 768px) { .content-section { padding: 40px 25px; } .hero-images { grid-template-columns: 1fr; } .hero h1 { font-size: 2rem; } .hero-subtitle { font-size: 1.2rem; } }
+    </style>
+</head>
+<body>
+    <div class="code-rain" id="codeRain"></div>
+    <section class="hero">
+        <div class="hero-content">
+            <span class="hero-badge">📰 AI News 專題報道</span>
+            <h1>效果直逼 ChatGPT！Ideogram 4.0 正式開源<br>93 億參數圖像模型，支援本地部署與微調</h1>
+            <p class="hero-subtitle">首個達到設計專業水準的開源圖像生成模型，文字渲染超越所有競爭者</p>
+            <div class="hero-images">
+                <div class="hero-image-card">
+                    <img src="img/img1.png" alt="Ideogram 4.0 正式開源 93 億參數圖像模型">
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator"><span></span></div>
+    </section>
+    <section class="content-section">
+
+        <div class="meta-info">
+            <p><strong>📺 資料來源</strong>：<a href="https://www.koc.com.tw/archives/645075" target="_blank">電腦王阿達</a></p>
+            <p><strong>📅 發布日期</strong>：2026-06-06</p>
+            <p><strong>🤖 處理方式</strong>：AI 智能摘要生成</p>
+        </div>
+
+        <h3>🎯 核心觀點</h3>
+        <p>AI 圖像生成新創 <strong>Ideogram</strong> 正式發布 4.0 版本並開源，開放權重（Open Weight），成為首個達到設計專業水準的開源圖像生成模型。93 億參數、支援本地部署與微調，效果直逼 ChatGPT 等閉源模型，在排版和文字渲染維度上甚至超越所有競爭者。</p>
+
+        <h3>📊 關鍵數據</h3>
+        <ul>
+            <li>🤖 <strong>參數量：</strong>93 億（9.3B）</li>
+            <li>💾 <strong>量化版本：</strong>提供多種量化選項，消費級高階顯示卡即可運行</li>
+            <li>🖥️ <strong>部署方式：</strong>完全本地運行，無需雲端</li>
+            <li>🔧 <strong>微調支援：</strong>可根據品牌風格自訂微調</li>
+            <li>🏆 <strong>Design Arena 排名：</strong>僅落後 OpenAI 和 Google 閉源模型</li>
+            <li>✍️ <strong>文字渲染：</strong>超越所有競爭者，業界第一</li>
+            <li>📜 <strong>授權：</strong>Non-Commercial 協議（企業需付費取得商業授權）</li>
+        </ul>
+
+        <h3>🔓 開源細節：權重、授權與部署門檻</h3>
+        <p>Ideogram 4.0 的開放策略分為兩層：提供<strong>多種量化版本</strong>，讓擁有消費級高階顯示卡的創作者可以在本地完全掌控這款模型。不需要依賴雲端服務，不需要將資料傳到外部伺服器，還可以根據自己的品牌風格進行微調（fine-tuning）。</p>
+        <p>對於重視隱私和資料主權的企業和個人創作者而言，這是一個相當有吸引力的選項。</p>
+
+        <h3>🌐 平臺整合：不只是模型，是一個生態系</h3>
+        <p>Ideogram 4.0 並非只有一個孤零零的模型檔案。Ideogram 同步開放了多個平臺的使用管道，包括：</p>
+        <ul>
+            <li>🖼️ <strong>ComfyUI 整合：</strong>社羣已經建立了完整的工作流程，從模型下載、節點配置到生成範例都有詳細教學，大幅降低本地部署的技術門檻</li>
+            <li>🖥️ <strong>本地部署成功：</strong>已有用戶成功在本地端完成部署並生成圖片，圖片大小可從 1024 起跳</li>
+            <li>🔧 <strong>Hugging Face：</strong>模型同步上架 Hugging Face 平臺</li>
+        </ul>
+
+        <h3>🖼️ 產品功能：設計工作流不只生成</h3>
+        <p>除了模型本身，Ideogram 的產品端也同步更新了多項設計導向功能，包括可編輯文字和圖層功能即將推出。這個更新讓 Ideogram 從單純的圖像生成工具，轉型為完整的設計工作流解決方案。</p>
+
+        <h3>🏆 對產業的意義：開源追上前線</h3>
+        <p>Ideogram 4.0 的發布代表一個重要訊號：<strong>開放權重模型在設計級圖像生成領域，已經逼近閉源前線</strong>。在 Design Arena 上，Ideogram 4.0 僅落後 OpenAI 和 Google 的閉源模型，而在排版和文字渲染這兩個專業設計師最關心的維度上，它甚至超越了所有競爭者。</p>
+        <p>這種策略讓人想起 Meta 在 LLM 領域的做法：用開放權重換取社羣生態，用生態系鞏固技術地位。Ideogram 選擇在圖像生成領域走同樣的路，而且是在一個仍以閉源為主流的市場中。</p>
+
+        <h3>⚠️ 商業授權的門檻</h3>
+        <p>當然，商業授權仍然是門檻。模型權重的 <strong>Non-Commercial 協議</strong>意味著企業若要將其整合進產品或服務中，需要另外付費取得商業授權。這是開源與「免費使用」之間的界線，也是 Ideogram 的商業模式所在。</p>
+
+        <h3>💡 誰適合使用 Ideogram 4.0 開源版本？</h3>
+        <ul>
+            <li>🔒 <strong>重視隱私的創作者：</strong>不希望自己的創意資料上傳到雲端</li>
+            <li>🎨 <strong>品牌客製化需求：</strong>希望根據自家品牌風格微調模型</li>
+            <li>💻 <strong>本地運算愛好者：</strong>擁有足夠強大的顯示卡，想要完全掌控自己的生成環境</li>
+            <li>📚 <strong>研究人員：</strong>需要透明可審計的模型權重進行學術研究</li>
+            <li>🏢 <strong>企業用戶：</strong>需要商業授權，但可獲得比閉源更低的總體擁有成本</li>
+        </ul>
+
+        <div class="tech-cards">
+            <div class="tech-card">
+                <div class="tech-card-icon">🤖</div>
+                <h4>93 億參數</h4>
+                <p>Ideogram 4.0 擁有 93 億參數，是目前最大的開源圖像生成模型之一</p>
+            </div>
+            <div class="tech-card">
+                <div class="tech-card-icon">🔓</div>
+                <h4>開放權重</h4>
+                <p>首個達到設計專業水準的開源圖像模型，權重完全開放</p>
+            </div>
+            <div class="tech-card">
+                <div class="tech-card-icon">✍️</div>
+                <h4>文字渲染第一</h4>
+                <p>在排版和文字渲染維度上超越所有競爭者，業界領先</p>
+            </div>
+            <div class="tech-card">
+                <div class="tech-card-icon">🏠</div>
+                <h4>本地部署</h4>
+                <p>完全本地運行，無需雲端，保護隱私和資料主權</p>
+            </div>
+        </div>
+
+        <h3>🔍 與封閉模型的比較</h3>
+        <table class="comparison-table">
+            <thead>
+                <tr>
+                    <th>維度</th>
+                    <th>Ideogram 4.0 開源</th>
+                    <th>閉源前線模型</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>文字渲染</td>
+                    <td class="highlight-col">第一</td>
+                    <td>落後</td>
+                </tr>
+                <tr>
+                    <td>Design Arena 總分</td>
+                    <td>第三（落後 OpenAI/Google）</td>
+                    <td>前二</td>
+                </tr>
+                <tr>
+                    <td>部署方式</td>
+                    <td class="highlight-col">本地 / 完全掌控</td>
+                    <td>僅雲端</td>
+                </tr>
+                <tr>
+                    <td>微調支援</td>
+                    <td class="highlight-col">完整支援</td>
+                    <td>通常不支援</td>
+                </tr>
+                <tr>
+                    <td>隱私保護</td>
+                    <td class="highlight-col">完全本地，資料不外流</td>
+                    <td>需上傳雲端</td>
+                </tr>
+                <tr>
+                    <td>商業授權</td>
+                    <td>付費取得</td>
+                    <td>已包含在 API 費用中</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="highlight-box">
+            <p>💬 <strong>產業意義：</strong>Ideogram 4.0 開源的意義不僅是一個模型的發布，而是代表開放權重模型在設計級圖像生成領域已經能與閉源巨頭正面競爭。這與 Meta 在 LLM 領域的成功策略如出一轍：用開源換生態，用生態鞏固地位。</p>
+        </div>
+    </section>
+    <footer>
+        <p>© 2026 AI News Archive | 由 AI 技術生成</p>
+        <div class="footer-links">
+            <a href="../index.html">返回主頁</a>
+            <a href="https://github.com/hklamsir/ai_news" target="_blank">GitHub</a>
+            <a href="https://hklamsir.github.io/ai_news/" target="_blank">瀏覽所有專題</a>
+        </div>
+    </footer>
+
+
+    <script>
+        const codeRain = document.getElementById('codeRain');
+        const chars = '01アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン';
+        for (let i = 0; i < 50; i++) {
+            const char = document.createElement('span');
+            char.className = 'code-char';
+            char.textContent = chars[Math.floor(Math.random() * chars.length)];
+            char.style.left = Math.random() * 100 + '%';
+            char.style.animationDelay = Math.random() * 4 + 's';
+            char.style.animationDuration = (Math.random() * 3 + 3) + 's';
+            codeRain.appendChild(char);
+        }
+    </script>
+
+</body>
+</html>

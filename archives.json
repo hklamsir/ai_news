@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260606_165038",
+      "title": "效果直逼 ChatGPT！Ideogram 4.0 正式開源：93 億參數圖像模型，支援本地部署與微調 - 電腦王阿達",
+      "summary": "首個達到設計專業水準的開源圖像生成模型，文字渲染超越所有競爭者",
+      "url": "./news_20260606_165038/index.html",
+      "date": "2026-06-06",
+      "time": "16:50:38",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260606_124707",
       "title": "Google 將每月向 SpaceX 支付 9.2 億美元租用算力 | TechCrunch",
       "summary": "為期 33 個月、總值超過 300 億美元！涵蓋 11 萬顆 NVIDIA GPU 的超大規模算力租賃協議",
@@ -1324,6 +1333,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-06-06T13:10:14.134382",
-  "total_count": 147
+  "last_updated": "2026-06-06T16:52:54.645766",
+  "total_count": 148
 }
