@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QNAP 展出多款全新 Edge AI NAS 產品 為企業提供一體化地端 AI 運算儲存解決方案 - AI News</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root { --primary-blue: #00d4ff; --primary-purple: #7b2cbf; --accent-green: #00ff88; --accent-orange: #ff9500; --accent-red: #ff4757; --dark-bg: #0a0a0f; --card-bg: #12121a; --card-bg-light: #1a1a28; --text-primary: #ffffff; --text-secondary: #a0a0b0; --gradient-1: linear-gradient(135deg, #00d4ff 0%, #7b2cbf 100%); --gradient-2: linear-gradient(135deg, #00d4ff 0%, #00ff88 100%); --glow-blue: 0 0 20px rgba(0, 212, 255, 0.5); --glow-purple: 0 0 20px rgba(123, 44, 191, 0.5); }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Noto Sans TC', sans-serif; background-color: var(--dark-bg); color: var(--text-primary); line-height: 1.8; overflow-x: hidden; }
+        @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-20px); } }
+        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.6; } }
+        @keyframes slideIn { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes codeRain { 0% { transform: translateY(-100%); opacity: 0; } 10% { opacity: 1; } 90% { opacity: 1; } 100% { transform: translateY(100vh); opacity: 0; } }
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); } }
+        .code-rain { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; overflow: hidden; }
+        .code-char { position: absolute; color: var(--primary-blue); font-family: 'Courier New', monospace; font-size: 14px; opacity: 0; animation: codeRain 4s linear infinite; }
+        .hero { position: relative; min-height: 80vh; display: flex; align-items: center; justify-content: center; padding: 80px 20px; background: linear-gradient(180deg, var(--dark-bg) 0%, #1a1a2e 100%); overflow: hidden; }
+        .hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(ellipse at center, rgba(123, 44, 191, 0.15) 0%, transparent 70%); z-index: 1; }
+        .hero-content { position: relative; z-index: 2; max-width: 1200px; text-align: center; animation: slideIn 1s ease-out; }
+        .hero-badge { display: inline-block; padding: 12px 32px; background: var(--gradient-1); border-radius: 50px; font-size: 18px; font-weight: 700; margin-bottom: 24px; box-shadow: var(--glow-blue); letter-spacing: 1px; }
+        .hero h1 { font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 900; margin-bottom: 24px; background: var(--gradient-1); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; line-height: 1.2; }
+        .hero-subtitle { font-size: clamp(1.2rem, 2.2vw, 1.5rem); color: var(--text-primary); max-width: 900px; margin: 0 auto 40px; line-height: 1.6; font-weight: 400; }
+        .hero-images { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; margin-top: 60px; }
+        .hero-image-card { position: relative; border-radius: 20px; overflow: hidden; aspect-ratio: 16/9; box-shadow: var(--glow-purple); transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .hero-image-card:hover { transform: scale(1.02); box-shadow: 0 0 40px rgba(123, 44, 191, 0.7); }
+        .hero-image-card img { width: 100%; height: 100%; object-fit: cover; }
+        .scroll-indicator { position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%); animation: float 2s ease-in-out infinite; z-index: 2; }
+        .scroll-indicator span { display: block; width: 30px; height: 50px; border: 2px solid var(--primary-blue); border-radius: 25px; position: relative; }
+        .scroll-indicator span::before { content: ''; position: absolute; top: 8px; left: 50%; transform: translateX(-50%); width: 6px; height: 10px; background: var(--primary-blue); border-radius: 3px; animation: pulse 1.5s infinite; }
+        section { padding: 80px 20px; position: relative; z-index: 1; }
+        .content-section { background: var(--card-bg); padding: 60px 50px; border-radius: 24px; border: 1px solid rgba(0, 212, 255, 0.2); max-width: 1100px; margin: 0 auto; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3); }
+        .content-section h3 { font-size: 1.6rem; margin: 40px 0 20px; color: var(--accent-green); }
+        .content-section p { color: var(--text-secondary); line-height: 2; font-size: 1.08rem; margin: 15px 0; }
+        .content-section ul { margin: 20px 0; padding-left: 30px; }
+        .content-section li { margin: 10px 0; color: var(--text-secondary); }
+        .meta-info { background: linear-gradient(135deg, rgba(0, 212, 255, 0.15) 0%, rgba(123, 44, 191, 0.15) 100%); padding: 30px; border-radius: 16px; margin-bottom: 40px; border-left: 5px solid var(--primary-blue); }
+        .meta-info p { margin: 12px 0; color: var(--text-secondary); font-size: 1.05rem; }
+        .meta-info strong { color: var(--primary-blue); font-weight: 600; }
+        .meta-info a { color: var(--primary-blue); text-decoration: none; word-break: break-all; }
+        .highlight-box { background: linear-gradient(135deg, rgba(0, 255, 136, 0.08) 0%, rgba(0, 212, 255, 0.08) 100%); padding: 30px; border-radius: 16px; border-left: 5px solid var(--accent-green); margin: 40px 0; }
+        .highlight-box h4 { color: var(--accent-green); margin-bottom: 15px; font-size: 1.3rem; }
+        .highlight-box p { color: var(--text-secondary); margin: 0; }
+        .alert-box { background: linear-gradient(135deg, rgba(255, 71, 87, 0.1) 0%, rgba(255, 149, 0, 0.1) 100%); padding: 25px 30px; border-radius: 16px; border-left: 5px solid var(--accent-red); margin: 30px 0; }
+        .alert-box h4 { color: var(--accent-red); margin-bottom: 12px; font-size: 1.15rem; }
+        .alert-box p { color: var(--text-secondary); margin: 8px 0; font-size: 1rem; }
+        .quote-box { background: linear-gradient(135deg, rgba(123, 44, 191, 0.15) 0%, rgba(0, 212, 255, 0.15) 100%); padding: 30px 40px; border-radius: 16px; border-left: 5px solid var(--primary-purple); margin: 40px 0; position: relative; }
+        .quote-box::before { content: '"'; position: absolute; top: 10px; left: 20px; font-size: 80px; color: var(--primary-purple); opacity: 0.3; font-family: Georgia, serif; }
+        .quote-box p { color: var(--text-primary); font-size: 1.2rem; font-style: italic; margin-bottom: 15px; }
+        .quote-box cite { color: var(--text-secondary); font-size: 0.95rem; }
+        .tech-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin: 40px 0; }
+        .tech-card { background: var(--card-bg-light); padding: 30px; border-radius: 16px; border: 1px solid rgba(0, 212, 255, 0.15); transition: transform 0.3s ease, box-shadow 0.3s ease; animation: fadeInUp 0.6s ease-out forwards; opacity: 0; }
+        .tech-card:nth-child(1) { animation-delay: 0.1s; }
+        .tech-card:nth-child(2) { animation-delay: 0.2s; }
+        .tech-card:nth-child(3) { animation-delay: 0.3s; }
+        .tech-card:nth-child(4) { animation-delay: 0.4s; }
+        .tech-card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0, 212, 255, 0.2); }
+        .tech-card-icon { font-size: 2.5rem; margin-bottom: 15px; }
+        .tech-card h4 { color: var(--primary-blue); margin-bottom: 12px; font-size: 1.2rem; }
+        .tech-card p { color: var(--text-secondary); font-size: 0.95rem; line-height: 1.7; }
+        .comparison-table { width: 100%; border-collapse: collapse; margin: 40px 0; border-radius: 16px; overflow: hidden; box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3); }
+        .comparison-table thead { background: linear-gradient(135deg, var(--primary-blue), var(--primary-purple)); }
+        .comparison-table th { padding: 18px 20px; text-align: left; font-weight: 600; font-size: 1.05rem; }
+        .comparison-table td { padding: 16px 20px; border-bottom: 1px solid rgba(255, 255, 255, 0.05); color: var(--text-secondary); }
+        .comparison-table tr:last-child td { border-bottom: none; }
+        .comparison-table tr:nth-child(even) { background: rgba(255, 255, 255, 0.02); }
+        .comparison-table .highlight-col { color: var(--accent-green); font-weight: 500; }
+        .timeline { position: relative; margin: 40px 0; padding-left: 40px; }
+        .timeline::before { content: ''; position: absolute; left: 15px; top: 0; bottom: 0; width: 2px; background: linear-gradient(180deg, var(--primary-blue), var(--primary-purple)); }
+        .timeline-item { position: relative; margin-bottom: 35px; padding: 20px 25px; background: var(--card-bg-light); border-radius: 12px; border: 1px solid rgba(0, 212, 255, 0.1); animation: fadeInUp 0.5s ease-out forwards; opacity: 0; }
+        .timeline-item:nth-child(1) { animation-delay: 0.1s; }
+        .timeline-item:nth-child(2) { animation-delay: 0.2s; }
+        .timeline-item:nth-child(3) { animation-delay: 0.3s; }
+        .timeline-item:nth-child(4) { animation-delay: 0.4s; }
+        .timeline-item:nth-child(5) { animation-delay: 0.5s; }
+        .timeline-item:nth-child(6) { animation-delay: 0.6s; }
+        .timeline-item::before { content: ''; position: absolute; left: -32px; top: 25px; width: 12px; height: 12px; background: var(--primary-blue); border-radius: 50%; box-shadow: var(--glow-blue); }
+        .timeline-date { color: var(--primary-blue); font-size: 0.9rem; font-weight: 600; margin-bottom: 8px; }
+        .timeline-title { color: var(--text-primary); font-size: 1.1rem; font-weight: 600; margin-bottom: 8px; }
+        .timeline-desc { color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6; }
+        footer { background: #050508; padding: 60px 20px; text-align: center; border-top: 1px solid rgba(255, 255, 255, 0.1); }
+        footer p { color: var(--text-secondary); margin-bottom: 20px; }
+        .footer-links { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; }
+        .footer-links a { color: var(--primary-blue); text-decoration: none; transition: color 0.3s ease; }
+        .footer-links a:hover { color: var(--text-primary); }
+        @media (max-width: 768px) { .content-section { padding: 40px 25px; } .hero-images { grid-template-columns: 1fr; } .hero h1 { font-size: 2rem; } .hero-subtitle { font-size: 1.2rem; } }
+    </style>
+</head>
+<body>
+    <div class="code-rain" id="codeRain"></div>
+    <section class="hero">
+        <div class="hero-content">
+            <span class="hero-badge">📰 AI News 專題報道</span>
+            <h1>QNAP 展出多款全新 Edge AI NAS：<br>企業地端 AI 運算儲存新方案</h1>
+            <p class="hero-subtitle">COMPUTEX 2026：QNAP AI NAS 全線出擊，Qsirch 7.1.0語意搜尋 + QuAgent 智慧助理</p>
+            <div class="hero-images">
+                <div class="hero-image-card">
+                    <img src="img/img1.png" alt="QNAP Edge AI NAS 地端 AI 運算儲存">
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator"><span></span></div>
+    </section>
+    <section class="content-section">
+
+        <div class="meta-info">
+            <p><strong>📺 資料來源</strong>：<a href="https://www.hkepc.com/25865/" target="_blank">HKEPC</a></p>
+            <p><strong>📅 發布日期</strong>：2026-06-07</p>
+            <p><strong>🤖 處理方式</strong>：AI 智能摘要生成</p>
+        </div>
+
+        <h3>🖥️ 旗艦級產品：QAI-h1290FX</h3>
+        <p>專為企業核心 AI 平台設計的 12-bay 全快閃（All-Flash）邊緣運算儲存伺服器，搭載 AMD EPYC 7302P 16 核心 32 執行緒處理器，支援最高 1TB DDR4 ECC 記憶體。機身配備 12 個 2.5吋 U.2 NVMe PCIe Gen4 熱插拔硬碟槽，以及雙 25GbE 及雙 2.5GbE 網路介面，能為龐大的 AI 訓練與推論模型提供極致的資料吞吐量。</p>
+        <p><strong>最大亮點：</strong>支援雙 GPU 分工協作架構，一張高 VRAM 顯示卡（如 96GB）作為 LLM 推論主力，另一張負責 RAG 向量檢索或 ComfyUI 圖像生成等輔助任務，確保關鍵資料不出企業防火牆。</p>
+
+        <h3>📦 其他重點機型</h3>
+        <ul>
+            <li><strong>QAI-16700</strong>：16-bay 混合式，採用 AMD Ryzen 9 7900 系列處理器，儲存採用 12 個 SATA 搭配 4 個 U.2 NVMe 的混合架構，支援 Qtier 自動分層技術</li>
+            <li><strong>QAI-8300 PRO</strong>：8-bay 塔式，Intel Core Ultra X7 358H，提供 180 TOPS 總算力，現場所示範透過 OCuLink 外接顯示卡</li>
+            <li><strong>QAI-6300</strong>：6-bay 入門，Intel Core Ultra 5 325，92 TOPS 總算力，低功耗與安靜運行，適合中小企業或工作室作為私有知識庫</li>
+        </ul>
+
+        <h3>💬 軟體應用：Qsirch 7.1.0 與 QuAgent</h3>
+        <p><strong>Qsirch 7.1.0</strong> 全面導入 AI 智能語意檢索技術，用戶不再需要死記檔名，只需輸入自然語言描述即可精準找到語意相關的檔案。更支援圖片、影片與語音檔案自動生成 AI 摘要，以及一鍵自動語音轉文字（Transcription）功能，大幅提升企業多媒體資產與知識庫的檢索效率。</p>
+        <p><strong>QuAgent</strong> 智慧管理助理提供網頁端與行動裝置應用程式，用戶可直接下達指令查詢系統狀態、調整配置或調度系統資源，毋須進入傳統 Web 介面操作。</p>
+
+        <h3>🔗企業級 AI 工作流演示</h3>
+        <p>QNAP 在現場演示了完整的本地端 AI 代理工作流：</p>
+        <ol>
+            <li>用戶透過自然語言向「Text-to-SQL」介面提出查詢需求（如「請列出過去幾年按國家劃分的總銷售額」）</li>
+            <li>系統自動將語意轉換為 SQL Command，從企業資料庫抓取數據</li>
+            <li>AnythingLLM（搭配 vLLM 運作的 Gemma 4 模型）進行資料推理與分析</li>
+            <li>結合 ComfyUI 或 PPTX Export 生成商業圖像和簡報報表</li>
+            <li>Hermes Agent 或 OpenClaw 負責排程、任務拆解與自動化執行</li>
+        </ol>
+        <p>整個流程完全在企業內網完成，透過 Container Station 支援 Docker 環境與 GPU 硬體加速，徹底解決資料外洩隱憂。</p>
+
+        <h3>🔮 業界展望</h3>
+        <p>QNAP 期望藉由 AI NAS 產品線向外界證明，企業不再需要依賴昂貴且具資安風險的雲端 API。只要透過支援性極高的 AI NAS 硬體，便能輕鬆在本地端搭建出具備無限可能的 AI 代理生態圈，同時將資料轉化為極具價值的戰略資產。</p>
+
+        <h3>❓ 常見問題</h3>
+        <div class="faq-item">
+            <p><strong>Q：什麼是 Edge AI NAS？</strong></p>
+            <p>A：Edge AI NAS 是專為在地端（不依賴雲端）執行 AI 運算而設計的 NAS 儲存伺服器，企業可在擁有完整資料主權的前提下，安全地部署大語言模型。</p>
+        </div>
+        <div class="faq-item">
+            <p><strong>Q：與傳統 NAS 有何不同？</strong></p>
+            <p>A：傳統 NAS 主要用於檔案儲存，AI NAS 則內建 NPU 加速與 GPU 擴充能力，可同時承擔 AI 推論、語意搜尋、Agentic AI 工作負載。</p>
+        </div>
+        <div class="faq-item">
+            <p><strong>Q：資料安全如何保障？</strong></p>
+            <p>A：所有運算均在企業內網完成，關鍵資料不出防火牆。QAI-h1290FX 等旗艦機型支援 In-band ECC，確保 AI 推論的穩定性。</p>
+        </div>
+
+        <div class="tech-cards">
+            <div class="tech-card">
+                <div class="tech-card-icon">🖥️</div>
+                <h4>全快閃旗艦</h4>
+                <p>QAI-h1290FX 配備 AMD EPYC 處理器、1TB ECC 記憶體、雙 GPU協作，支援企業級 AI 訓練與推論</p>
+            </div>
+            <div class="tech-card">
+                <div class="tech-card-icon">🔍</div>
+                <h4>Qsirch 7.1.0</h4>
+                <p>AI 語意搜尋引擎，支援自然語言檢索、多模態資料處理、一鍵語音轉文字</p>
+            </div>
+            <div class="tech-card">
+                <div class="tech-card-icon">🤖</div>
+                <h4>QuAgent 助理</h4>
+                <p>自然語言指令管理 NAS，毋須進入 Web 介面即可查詢狀態、調整配置、調度資源</p>
+            </div>
+            <div class="tech-card">
+                <div class="tech-card-icon">🔐</div>
+                <h4>資料主權保障</h4>
+                <p>所有運算均在企業內網完成，關鍵資料不出防火牆，適合對資安有嚴格要求的企業</p>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <p>© 2026 AI News Archive | 由 AI 技術生成</p>
+        <div class="footer-links">
+            <a href="../index.html">返回主頁</a>
+            <a href="https://github.com/hklamsir/ai_news" target="_blank">GitHub</a>
+            <a href="https://hklamsir.github.io/ai_news/" target="_blank">瀏覽所有專題</a>
+        </div>
+    </footer>
+
+
+    <script>
+        const codeRain = document.getElementById('codeRain');
+        const chars = '01アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン';
+        for (let i = 0; i < 50; i++) {
+            const char = document.createElement('span');
+            char.className = 'code-char';
+            char.textContent = chars[Math.floor(Math.random() * chars.length)];
+            char.style.left = Math.random() * 100 + '%';
+            char.style.animationDelay = Math.random() * 4 + 's';
+            char.style.animationDuration = (Math.random() * 3 + 3) + 's';
+            codeRain.appendChild(char);
+        }
+    </script>
+
+</body>
+</html>

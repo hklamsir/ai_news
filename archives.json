@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260607_185751",
+      "title": "QNAP 展出多款全新 Edge AI NAS 產品 為企業提供一體化地端 AI 運算儲存解決方案",
+      "summary": "COMPUTEX 2026：QNAP AI NAS 全線出擊，Qsirch 7.1.0語意搜尋 + QuAgent 智慧助理",
+      "url": "./news_20260607_185751/index.html",
+      "date": "2026-06-07",
+      "time": "18:57:51",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260607_170523",
       "title": "AI 時代怎麼創業？Anthropic Playbook 一次看懂四階段 workflow",
       "summary": "十人獨角獸時代來臨：從 Idea 到 Scale，AI 如何重寫創業流程",
@@ -1387,6 +1396,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-06-07T17:07:12.694419",
-  "total_count": 154
+  "last_updated": "2026-06-07T18:59:40.108745",
+  "total_count": 155
 }
