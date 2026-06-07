@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260607_170523",
+      "title": "AI 時代怎麼創業？Anthropic Playbook 一次看懂四階段 workflow",
+      "summary": "十人獨角獸時代來臨：從 Idea 到 Scale，AI 如何重寫創業流程",
+      "url": "./news_20260607_170523/index.html",
+      "date": "2026-06-07",
+      "time": "17:05:23",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260607_154459",
       "title": "Tencent Cloud Day HK 2026 ：新手上堂 30 分鐘即成功寫 App CodeBuddy AI Coding 評測 | 廣東話 | 中文字幕 | 香港 | unwire.hk",
       "summary": "CodeBuddy AI Coding 評測：無需 Coding 背景，用自然語言即可將想法變成 Prototype",
@@ -1378,6 +1387,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-06-07T16:45:19.592703",
-  "total_count": 153
+  "last_updated": "2026-06-07T17:07:12.694419",
+  "total_count": 154
 }
