@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260607_154459",
+      "title": "Tencent Cloud Day HK 2026 ：新手上堂 30 分鐘即成功寫 App CodeBuddy AI Coding 評測 | 廣東話 | 中文字幕 | 香港 | unwire.hk",
+      "summary": "CodeBuddy AI Coding 評測：無需 Coding 背景，用自然語言即可將想法變成 Prototype",
+      "url": "./news_20260607_154459/index.html",
+      "date": "2026-06-07",
+      "time": "15:44:59",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260607_113837",
       "title": "OpenAI 推出 Lockdown Mode：保護敏感數據防範提示注入攻擊",
       "summary": "全新安全模式限制網絡訪問，降低提示注入數據外洩風險",
@@ -1369,6 +1378,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-06-07T11:40:51.015434",
-  "total_count": 152
+  "last_updated": "2026-06-07T16:45:19.592703",
+  "total_count": 153
 }
