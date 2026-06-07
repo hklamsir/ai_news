@@ -1,0 +1,1 @@
+OpenAI 推出 Lockdown Mode：保護敏感數據防範提示注入攻擊
