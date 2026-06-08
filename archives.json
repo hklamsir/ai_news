@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260608_100300",
+      "title": "I tried Google Drive's new AI cleanup tool to fix 14 years of storage clutter - here's the result",
+      "summary": "14 年累積 340GB 垃圾：Gemini 只推薦了 19 項整理建議",
+      "url": "./news_20260608_100300/index.html",
+      "date": "2026-06-08",
+      "time": "10:03:00",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260608_084300",
       "title": "Meta steals a tactic from Tesla and builds data centers in tents | TechCrunch",
       "summary": "俄亥俄州 New Albany 六座巨型帳篷，加速 AI 基礎設施部署",
@@ -1405,6 +1414,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-06-08T08:47:13.930597",
-  "total_count": 156
+  "last_updated": "2026-06-08T10:03:43.949945",
+  "total_count": 157
 }
