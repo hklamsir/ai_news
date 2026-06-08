@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260608_084300",
+      "title": "Meta steals a tactic from Tesla and builds data centers in tents | TechCrunch",
+      "summary": "俄亥俄州 New Albany 六座巨型帳篷，加速 AI 基礎設施部署",
+      "url": "./news_20260608_084300/index.html",
+      "date": "2026-06-08",
+      "time": "08:43:00",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260607_185751",
       "title": "QNAP 展出多款全新 Edge AI NAS 產品 為企業提供一體化地端 AI 運算儲存解決方案",
       "summary": "COMPUTEX 2026：QNAP AI NAS 全線出擊，Qsirch 7.1.0語意搜尋 + QuAgent 智慧助理",
@@ -1396,6 +1405,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-06-07T18:59:40.108745",
-  "total_count": 155
+  "last_updated": "2026-06-08T08:47:13.930597",
+  "total_count": 156
 }
