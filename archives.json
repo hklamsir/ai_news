@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260608_133000",
+      "title": "告別全民就業時代：AI 普及與香港勞動參與率觸底雙重夾擊",
+      "summary": "750萬人口中受僱人口不足一半，AI時代將如何重塑香港未來？",
+      "url": "./news_20260608_133000/index.html",
+      "date": "2026-06-08",
+      "time": "13:30:00",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260608_100300",
       "title": "I tried Google Drive's new AI cleanup tool to fix 14 years of storage clutter - here's the result",
       "summary": "14 年累積 340GB 垃圾：Gemini 只推薦了 19 項整理建議",
@@ -1414,6 +1423,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-06-08T10:03:43.949945",
-  "total_count": 157
+  "last_updated": "2026-06-08T13:29:14.221469",
+  "total_count": 158
 }
