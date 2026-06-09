@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260609_115700",
+      "title": "WWDC 2026 懶人包：Siri 終於 AI 化！Tim Cook 告別之作",
+      "summary": "Tim Cook 告別之作：Google Gemini 加持、新版 Siri 獨立 App、iOS 27 全面更新",
+      "url": "./news_20260609_115700/index.html",
+      "date": "2026-06-09",
+      "time": "11:57:00",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260608_133000",
       "title": "告別全民就業時代：AI 普及與香港勞動參與率觸底雙重夾擊",
       "summary": "750萬人口中受僱人口不足一半，AI時代將如何重塑香港未來？",
@@ -1423,6 +1432,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-06-08T13:29:14.221469",
-  "total_count": 158
+  "last_updated": "2026-06-09T12:01:49.507657",
+  "total_count": 159
 }
