@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260609_121250",
+      "title": "AI熱潮下的缺電潮：儲能、電網、變壓器為何變新戰略物資？",
+      "summary": "吃電怪獸崛起：變壓器缺貨、併網塞車、地緣政治夾擊，電力危機威脅 AI 發展",
+      "url": "./news_20260609_121250/index.html",
+      "date": "2026-06-09",
+      "time": "12:12:50",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260609_115700",
       "title": "WWDC 2026 懶人包：Siri 終於 AI 化！Tim Cook 告別之作",
       "summary": "Tim Cook 告別之作：Google Gemini 加持、新版 Siri 獨立 App、iOS 27 全面更新",
@@ -1432,6 +1441,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-06-09T12:01:49.507657",
-  "total_count": 159
+  "last_updated": "2026-06-09T12:15:20.294035",
+  "total_count": 160
 }
