@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260609_135348",
+      "title": "OpenClaw 龍蝦之父教你省錢！開源工具「skill-cleaner」幫你的 AI 技能大減肥",
+      "summary": "別再塞垃圾進上下文了！Peter Steinberger 開源技能體檢工具，省 Token 就等於省錢",
+      "url": "./news_20260609_135348/index.html",
+      "date": "2026-06-09",
+      "time": "13:53:48",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260609_121250",
       "title": "AI熱潮下的缺電潮：儲能、電網、變壓器為何變新戰略物資？",
       "summary": "吃電怪獸崛起：變壓器缺貨、併網塞車、地緣政治夾擊，電力危機威脅 AI 發展",
@@ -1441,6 +1450,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-06-09T12:15:20.294035",
-  "total_count": 160
+  "last_updated": "2026-06-09T13:56:17.506862",
+  "total_count": 161
 }
