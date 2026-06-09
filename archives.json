@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260609_192051",
+      "title": "彭博︰內地擬斥2萬億人民幣建數據中心　8成晶片用華為擠走Nvidia",
+      "summary": "北京 AI 基建大計：2萬億投資、80%本土晶片、整合電網總規模或達5萬億",
+      "url": "./news_20260609_192051/index.html",
+      "date": "2026-06-09",
+      "time": "19:20:51",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260609_135348",
       "title": "OpenClaw 龍蝦之父教你省錢！開源工具「skill-cleaner」幫你的 AI 技能大減肥",
       "summary": "別再塞垃圾進上下文了！Peter Steinberger 開源技能體檢工具，省 Token 就等於省錢",
@@ -1450,6 +1459,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-06-09T13:56:17.506862",
-  "total_count": 161
+  "last_updated": "2026-06-09T19:23:50.645047",
+  "total_count": 162
 }
