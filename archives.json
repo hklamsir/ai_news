@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260610_210122",
+      "title": "GitHub Copilot全面轉向按Token計費！Coinbase：未來12-18個月 8成AI工作將由便宜99%的模型完成 | 鉅亨網 - 美股雷達",
+      "summary": "Coinbase 執行長預言：80% AI 工作將由便宜 99% 模型完成",
+      "url": "./news_20260610_210122/index.html",
+      "date": "2026-06-10",
+      "time": "21:01:22",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260610_115130",
       "title": "Airbnb's Brian Chesky plans to launch a new AI lab | TechCrunch",
       "summary": "與昔日門生 Sam Altman 的 OpenAI 正面交鋒",
@@ -1468,6 +1477,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-06-10T11:52:53.601397",
-  "total_count": 163
+  "last_updated": "2026-06-10T21:08:42.147277",
+  "total_count": 164
 }
