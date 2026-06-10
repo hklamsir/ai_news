@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260611_075613",
+      "title": "Decart's new world model can simulate hours of photorealistic driving — with some caveats | TechCrunch",
+      "summary": "Oasis 3 開放 API 挑戰 Google World Labs，獲 3 億美元融資估值 40 億",
+      "url": "./news_20260611_075613/index.html",
+      "date": "2026-06-11",
+      "time": "07:56:13",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260610_210122",
       "title": "GitHub Copilot全面轉向按Token計費！Coinbase：未來12-18個月 8成AI工作將由便宜99%的模型完成 | 鉅亨網 - 美股雷達",
       "summary": "Coinbase 執行長預言：80% AI 工作將由便宜 99% 模型完成",
@@ -1477,6 +1486,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-06-10T21:08:42.147277",
-  "total_count": 164
+  "last_updated": "2026-06-11T07:58:33.463436",
+  "total_count": 165
 }
