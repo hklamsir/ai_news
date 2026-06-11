@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260611_091045",
+      "title": "單身經濟新趨勢！「情感陪伴」AI機械人預售爆單 完美外貌加88處自由度 | ezone",
+      "summary": "優必選 U1 系列全球預售近 3000 台，88 自由度瞄準情感陪伴市場",
+      "url": "./news_20260611_091045/index.html",
+      "date": "2026-06-11",
+      "time": "09:10:45",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260611_075613",
       "title": "Decart's new world model can simulate hours of photorealistic driving — with some caveats | TechCrunch",
       "summary": "Oasis 3 開放 API 挑戰 Google World Labs，獲 3 億美元融資估值 40 億",
@@ -1486,6 +1495,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-06-11T07:58:33.463436",
-  "total_count": 165
+  "last_updated": "2026-06-11T09:12:25.110107",
+  "total_count": 166
 }
