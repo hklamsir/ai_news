@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260611_230236",
+      "title": "臺大首例「AI眼鏡作弊」！ 考生鏡框發燙遭抓包@newsebc",
+      "summary": "INMO AIR 3 價值 3.4 萬，掃描題目 AI 解題回傳，監視委員當場查獲",
+      "url": "./news_20260611_230236/index.html",
+      "date": "2026-06-11",
+      "time": "23:02:36",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260611_182637",
       "title": "The Open Hand: Riding the Hare and Avoiding the Rabbit Hole — AI 時代育兒五原則",
       "summary": "Jason Chiu 提出五指原則：心態、關係、環境、技能、實驗",
@@ -1513,6 +1522,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-06-11T18:29:23.077159",
-  "total_count": 168
+  "last_updated": "2026-06-11T23:10:17.574083",
+  "total_count": 169
 }
