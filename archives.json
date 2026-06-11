@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260611_182637",
+      "title": "The Open Hand: Riding the Hare and Avoiding the Rabbit Hole — AI 時代育兒五原則",
+      "summary": "Jason Chiu 提出五指原則：心態、關係、環境、技能、實驗",
+      "url": "./news_20260611_182637/index.html",
+      "date": "2026-06-11",
+      "time": "18:26:37",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260611_133955",
       "title": "RTX 5090 玩家每三個月重插供電 「防範到家」仍中招 網友︰真的做多了",
       "summary": "12V-2x6 接頭插拔壽命僅 30 次，頻繁檢查反而適得其反",
@@ -1504,6 +1513,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-06-11T13:41:42.837365",
-  "total_count": 167
+  "last_updated": "2026-06-11T18:29:23.077159",
+  "total_count": 168
 }
