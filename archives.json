@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260613_075500",
+      "title": "拒絕扮演 AI 情感伴侶 Apple 新版 Siri 與競爭對手劃清界線",
+      "summary": "WWDC 2026 後 Apple 明確 Siri 不當情感伴侶，與 OpenAI/Google 拉開距離",
+      "url": "./news_20260613_075500/index.html",
+      "date": "2026-06-13",
+      "time": "07:55:00",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260612_190619",
       "title": "AI吃到飽模式終結！Token計費時代來臨",
       "summary": "Copilot 新制上路　用多少算多少時代降臨",
@@ -1558,6 +1567,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-06-12T19:08:55.894824",
-  "total_count": 173
+  "last_updated": "2026-06-13T07:57:36.105008",
+  "total_count": 174
 }
