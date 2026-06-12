@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260612_091621",
+      "title": "AI開始自己管錢了！Coinbase推AI代理交易平台 ChatGPT也能幫你買幣 | 鉅亨網 - 美股雷達",
+      "summary": "ChatGPT也能幫你買幣 — 加密貨幣進入代理經濟新時代",
+      "url": "./news_20260612_091621/index.html",
+      "date": "2026-06-12",
+      "time": "09:16:21",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260611_230236",
       "title": "臺大首例「AI眼鏡作弊」！ 考生鏡框發燙遭抓包@newsebc",
       "summary": "INMO AIR 3 價值 3.4 萬，掃描題目 AI 解題回傳，監視委員當場查獲",
@@ -1522,6 +1531,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-06-11T23:10:17.574083",
-  "total_count": 169
+  "last_updated": "2026-06-12T09:21:21.429053",
+  "total_count": 170
 }
