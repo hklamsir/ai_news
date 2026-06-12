@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260612_190619",
+      "title": "AI吃到飽模式終結！Token計費時代來臨",
+      "summary": "Copilot 新制上路　用多少算多少時代降臨",
+      "url": "./news_20260612_190619/index.html",
+      "date": "2026-06-12",
+      "time": "19:06:19",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260612_113650",
       "title": "Google 實驗性開放模型 DiffusionGemma，專用 GPU 上文字產生速度提高 4 倍",
       "summary": "擴散式文字生成新突破，NVIDIA 硬體最佳化",
@@ -1549,6 +1558,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-06-12T11:39:26.439791",
-  "total_count": 172
+  "last_updated": "2026-06-12T19:08:55.894824",
+  "total_count": 173
 }
