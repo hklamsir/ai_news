@@ -1,0 +1,1 @@
+Google 實驗性開放模型 DiffusionGemma，專用 GPU 上文字產生速度提高 4 倍

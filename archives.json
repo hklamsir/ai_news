@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260612_113650",
+      "title": "Google 實驗性開放模型 DiffusionGemma，專用 GPU 上文字產生速度提高 4 倍",
+      "summary": "擴散式文字生成新突破，NVIDIA 硬體最佳化",
+      "url": "./news_20260612_113650/index.html",
+      "date": "2026-06-12",
+      "time": "11:36:50",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260612_095440",
       "title": "Meta's Edits app is getting an AI assistant and a desktop version | TechCrunch",
       "summary": "短影片編輯工具進入人工智能新時代",
@@ -1540,6 +1549,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-06-12T09:57:58.688299",
-  "total_count": 171
+  "last_updated": "2026-06-12T11:39:26.439791",
+  "total_count": 172
 }
