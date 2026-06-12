@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260612_095440",
+      "title": "Meta's Edits app is getting an AI assistant and a desktop version | TechCrunch",
+      "summary": "短影片編輯工具進入人工智能新時代",
+      "url": "./news_20260612_095440/index.html",
+      "date": "2026-06-12",
+      "time": "09:54:40",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260612_091621",
       "title": "AI開始自己管錢了！Coinbase推AI代理交易平台 ChatGPT也能幫你買幣 | 鉅亨網 - 美股雷達",
       "summary": "ChatGPT也能幫你買幣 — 加密貨幣進入代理經濟新時代",
@@ -1531,6 +1540,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-06-12T09:21:21.429053",
-  "total_count": 170
+  "last_updated": "2026-06-12T09:57:58.688299",
+  "total_count": 171
 }
