@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260613_172333",
+      "title": "40% of enterprises will scrap AI agents - 3 ways to ensure yours don't fail",
+      "summary": "Gartner 預測：40% 企業到 2027 年將因 Governance 缺口而降級或停用 AI Agent。失敗的根源往往在上線後才浮現，而成功企業靠的是框架、專家、數據三大法寶。",
+      "url": "./news_20260613_172333/index.html",
+      "date": "2026-06-13",
+      "time": "17:23:33",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260613_094200",
       "title": "信用卡交給AI前的16個關鍵思考：免費的最貴？出包算誰？",
       "summary": "經濟學、新創、金融、法律4位專家解答AI代理時代的關鍵問題",
@@ -1585,6 +1594,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-06-13T09:44:26.100314",
-  "total_count": 176
+  "last_updated": "2026-06-13T17:25:54.948374",
+  "total_count": 177
 }
