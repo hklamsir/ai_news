@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260613_222023",
+      "title": "AI-powered robot assistant helps Germans shop",
+      "summary": "中國製造的機械人 Schotti 正在德國巴伐利亞小鎮學習導購，每小時「工資」不到 2 歐元。零售業的人機協作實驗，正在從實驗室走向賣場。",
+      "url": "./news_20260613_222023/index.html",
+      "date": "2026-06-13",
+      "time": "22:20:23",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260613_172333",
       "title": "40% of enterprises will scrap AI agents - 3 ways to ensure yours don't fail",
       "summary": "Gartner 預測：40% 企業到 2027 年將因 Governance 缺口而降級或停用 AI Agent。失敗的根源往往在上線後才浮現，而成功企業靠的是框架、專家、數據三大法寶。",
@@ -1594,6 +1603,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-06-13T17:25:54.948374",
-  "total_count": 177
+  "last_updated": "2026-06-13T22:21:45.865754",
+  "total_count": 178
 }
