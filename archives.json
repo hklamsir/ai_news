@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260613_084100",
+      "title": "Cheaper, faster, and culturally aware, Avataar's video AI is built for India's scale | TechCrunch",
+      "summary": "Avataar AI 基於阿里巴巴 Wan 2.2 蒸餾優化，成本大幅下降 20 倍，瞄準印度影片優先市場",
+      "url": "./news_20260613_084100/index.html",
+      "date": "2026-06-13",
+      "time": "08:41:00",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260613_075500",
       "title": "拒絕扮演 AI 情感伴侶 Apple 新版 Siri 與競爭對手劃清界線",
       "summary": "WWDC 2026 後 Apple 明確 Siri 不當情感伴侶，與 OpenAI/Google 拉開距離",
@@ -1567,6 +1576,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-06-13T07:57:36.105008",
-  "total_count": 174
+  "last_updated": "2026-06-13T08:42:01.133517",
+  "total_count": 175
 }
