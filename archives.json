@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260613_094200",
+      "title": "信用卡交給AI前的16個關鍵思考：免費的最貴？出包算誰？",
+      "summary": "經濟學、新創、金融、法律4位專家解答AI代理時代的關鍵問題",
+      "url": "./news_20260613_094200/index.html",
+      "date": "2026-06-13",
+      "time": "09:42:00",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260613_084100",
       "title": "Cheaper, faster, and culturally aware, Avataar's video AI is built for India's scale | TechCrunch",
       "summary": "Avataar AI 基於阿里巴巴 Wan 2.2 蒸餾優化，成本大幅下降 20 倍，瞄準印度影片優先市場",
@@ -1576,6 +1585,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-06-13T08:42:01.133517",
-  "total_count": 175
+  "last_updated": "2026-06-13T09:44:26.100314",
+  "total_count": 176
 }
