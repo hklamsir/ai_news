@@ -1,6 +1,16 @@
 {
   "archives": [
     {
+      "dir": "news_20260614_235434",
+      "title": "",
+      "summary_short": "# 退役手機變 AI 伺服器？Google 提案用舊 Pixel 打造低碳算力叢集## 📖 新聞導語Google Research 本週發表新研究，提出將退役智慧型手機改造為資料中心運算節點的",
+      "images": [
+        "img/img1.png"
+      ],
+      "date": "2026-06-14",
+      "url": "./news_20260614_235434/index.html"
+    },
+    {
       "dir": "news_20260614_223224",
       "title": "Claude工程主管揭私房工作術：用不好AI，問題出在你的想像力",
       "summary_short": "# Claude工程主管揭私房工作術：用不好AI，問題出在你的想像力## 📖 新聞導語本文報導來自 **BNEXT**，發布於 **2026-06-14**。最新科技新聞報道指出，人工智能",
@@ -1631,6 +1641,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-06-14T22:34:54.872654",
+  "last_updated": "2026-06-14T23:57:30.502237",
   "total_count": 180
 }
