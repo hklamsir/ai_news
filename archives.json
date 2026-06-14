@@ -1,6 +1,14 @@
 {
   "archives": [
     {
+      "dir": "news_20260614_135204",
+      "title": "Anthropic's safety warnings may have just backfired — the government has pulled the plug on its most powerful AI | TechCrunch",
+      "summary_short": "# Anthropic's safety warnings may have just backfired — the government has pulled the plug on its mo",
+      "images": [],
+      "date": "2026-06-14",
+      "url": "./news_20260614_135204/index.html"
+    },
+    {
       "dir": "news_20260613_222023",
       "title": "AI-powered robot assistant helps Germans shop",
       "summary": "中國製造的機械人 Schotti 正在德國巴伐利亞小鎮學習導購，每小時「工資」不到 2 歐元。零售業的人機協作實驗，正在從實驗室走向賣場。",
@@ -1603,6 +1611,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-06-13T22:21:45.865754",
+  "last_updated": "2026-06-14T13:57:34.139308",
   "total_count": 178
 }
