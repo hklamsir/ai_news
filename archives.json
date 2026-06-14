@@ -2,11 +2,12 @@
   "archives": [
     {
       "dir": "news_20260614_135204",
-      "title": "Anthropic's safety warnings may have just backfired — the government has pulled the plug on its most powerful AI | TechCrunch",
-      "summary_short": "# Anthropic's safety warnings may have just backfired — the government has pulled the plug on its mo",
-      "images": [],
+      "title": "Anthropic 安全警訊引發監管介入：政府暫停旗艦級 AI 模型部署",
+      "summary": "本次報告深入解析企業主動揭露風險評估後，如何意外觸發政府預防性管制措施，以及此決策對全球 AI 產業鏈的深遠影響。",
+      "url": "./news_20260614_135204/index.html",
       "date": "2026-06-14",
-      "url": "./news_20260614_135204/index.html"
+      "time": "13:52:04",
+      "source": "AI News"
     },
     {
       "dir": "news_20260613_222023",
@@ -1611,6 +1612,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-06-14T13:57:34.139308",
-  "total_count": 178
+  "last_updated": "2026-06-14T21:40:04.307004",
+  "total_count": 179
 }
