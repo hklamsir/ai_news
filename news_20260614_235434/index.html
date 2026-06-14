@@ -3,187 +3,246 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>退役手機化身低碳算力節點 - AI News</title>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700;900&display=swap" rel="stylesheet">
+    <title>退役手機變 AI 伺服器？Google 提案用舊 Pixel 打造低碳算力叢集 - AI News</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
     <style>
-:root {
-    --primary-blue: #00d4ff;
-    --primary-purple: #7b2cbf;
-    --accent-green: #00ff88;
-    --accent-orange: #ff9500;
-    --dark-bg: #0a0a0f;
-    --card-bg: #12121a;
-    --card-bg-light: #1a1a28;
-    --text-primary: #ffffff;
-    --text-secondary: #a0a0b0;
-    --gradient-1: linear-gradient(135deg, #00d4ff 0%, #7b2cbf 100%);
-    --gradient-2: linear-gradient(135deg, #00d4ff 0%, #00ff88 100%);
-    --glow-blue: 0 0 20px rgba(0, 212, 255, 0.5);
-    --glow-purple: 0 0 20px rgba(123, 44, 191, 0.5);
-}
-
-* { margin: 0; padding: 0; box-sizing: border-box; }
-html { scroll-behavior: smooth; }
-body { font-family: 'Noto Sans TC', sans-serif; background-color: var(--dark-bg); color: var(--text-primary); line-height: 1.8; overflow-x: hidden; }
-
-@keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-20px); } }
-@keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.6; } }
-@keyframes slideIn { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
-@keyframes codeRain { 0% { transform: translateY(-100%); opacity: 0; } 10% { opacity: 1; } 90% { opacity: 1; } 100% { transform: translateY(100vh); opacity: 0; } }
-
-/* 代碼雨背景 */
-.code-rain { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; overflow: hidden; }
-.code-char { position: absolute; color: var(--primary-blue); font-family: 'Courier New', monospace; font-size: 14px; opacity: 0; animation: codeRain 4s linear infinite; }
-
-/* Hero Section */
-.hero { position: relative; min-height: 80vh; display: flex; align-items: center; justify-content: center; padding: 80px 20px; background: linear-gradient(180deg, var(--dark-bg) 0%, #1a1a2e 100%); overflow: hidden; }
-.hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(ellipse at center, rgba(123, 44, 191, 0.15) 0%, transparent 70%); z-index: 1; }
-.hero-content { position: relative; z-index: 2; max-width: 1200px; text-align: center; animation: slideIn 1s ease-out; }
-.hero-badge { display: inline-block; padding: 12px 32px; background: var(--gradient-1); border-radius: 50px; font-size: 18px; font-weight: 700; margin-bottom: 24px; box-shadow: var(--glow-blue); letter-spacing: 1px; }
-.hero h1 { font-size: clamp(2rem, 5vw, 4rem); font-weight: 900; margin-bottom: 24px; background: var(--gradient-1); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; line-height: 1.2; }
-.hero-subtitle { font-size: clamp(1.2rem, 2.2vw, 1.6rem); color: var(--text-primary); max-width: 900px; margin: 0 auto 40px; line-height: 1.6; font-weight: 400; }
-.hero-images { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; margin-top: 60px; }
-.hero-image-card { position: relative; border-radius: 20px; overflow: hidden; aspect-ratio: 16/9; box-shadow: var(--glow-purple); transition: transform 0.3s ease, box-shadow 0.3s ease; }
-.hero-image-card:hover { transform: scale(1.02); box-shadow: 0 0 40px rgba(123, 44, 191, 0.7); }
-.hero-image-card img { width: 100%; height: 100%; object-fit: cover; }
-.scroll-indicator { position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%); animation: float 2s ease-in-out infinite; z-index: 2; }
-.scroll-indicator span { display: block; width: 30px; height: 50px; border: 2px solid var(--primary-blue); border-radius: 25px; position: relative; }
-.scroll-indicator span::before { content: ''; position: absolute; top: 8px; left: 50%; transform: translateX(-50%); width: 6px; height: 10px; background: var(--primary-blue); border-radius: 3px; animation: pulse 1.5s infinite; }
-
-/* Content Section */
-section { padding: 80px 20px; position: relative; z-index: 1; }
-.content-section { background: var(--card-bg); padding: 60px 50px; border-radius: 24px; border: 1px solid rgba(0, 212, 255, 0.2); max-width: 1100px; margin: 0 auto; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3); }
-
-.content-section h3 { font-size: 1.6rem; margin: 40px 0 20px; color: var(--accent-green); }
-.content-section p { color: var(--text-secondary); line-height: 2; font-size: 1.08rem; margin: 15px 0; }
-.content-section ul { margin: 20px 0; padding-left: 30px; }
-.content-section li { margin: 10px 0; color: var(--text-secondary); }
-
-.meta-info { background: linear-gradient(135deg, rgba(0, 212, 255, 0.15) 0%, rgba(123, 44, 191, 0.15) 100%); padding: 30px; border-radius: 16px; margin-bottom: 40px; border-left: 5px solid var(--primary-blue); }
-.meta-info p { margin: 12px 0; color: var(--text-secondary); font-size: 1.05rem; }
-.meta-info strong { color: var(--primary-blue); font-weight: 600; }
-.meta-info a { color: var(--primary-blue); text-decoration: none; word-break: break-all; }
-
-.highlight-box { background: linear-gradient(135deg, rgba(0, 255, 136, 0.08) 0%, rgba(0, 212, 255, 0.08) 100%); padding: 30px; border-radius: 16px; border-left: 5px solid var(--accent-green); margin: 40px 0; }
-.highlight-box h4 { color: var(--accent-green); margin-bottom: 15px; font-size: 1.3rem; }
-.highlight-box p { color: var(--text-secondary); margin: 0; }
-
-/* Footer */
-footer { background: #050508; padding: 60px 20px; text-align: center; border-top: 1px solid rgba(255, 255, 255, 0.1); }
-footer p { color: var(--text-secondary); margin-bottom: 20px; }
-.footer-links { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; }
-.footer-links a { color: var(--primary-blue); text-decoration: none; transition: color 0.3s ease; }
-.footer-links a:hover { color: var(--text-primary); }
-
-/* RWD */
-@media (max-width: 768px) {
-    .content-section { padding: 40px 25px; }
-    .hero-images { grid-template-columns: 1fr; }
-    .hero h1 { font-size: 2rem; }
-    .hero-subtitle { font-size: 1.2rem; }
-}
+        :root { --primary-blue: #00d4ff; --primary-purple: #7b2cbf; --accent-green: #00ff88; --accent-orange: #ff9500; --accent-red: #ff4757; --dark-bg: #0a0a0f; --card-bg: #12121a; --card-bg-light: #1a1a28; --text-primary: #ffffff; --text-secondary: #a0a0b0; --gradient-1: linear-gradient(135deg, #00d4ff 0%, #7b2cbf 100%); --gradient-2: linear-gradient(135deg, #00d4ff 0%, #00ff88 100%); --glow-blue: 0 0 20px rgba(0, 212, 255, 0.5); --glow-purple: 0 0 20px rgba(123, 44, 191, 0.5); }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Noto Sans TC', sans-serif; background-color: var(--dark-bg); color: var(--text-primary); line-height: 1.8; overflow-x: hidden; }
+        @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-20px); } }
+        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.6; } }
+        @keyframes slideIn { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes codeRain { 0% { transform: translateY(-100%); opacity: 0; } 10% { opacity: 1; } 90% { opacity: 1; } 100% { transform: translateY(100vh); opacity: 0; } }
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); } }
+        .code-rain { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; overflow: hidden; }
+        .code-char { position: absolute; color: var(--primary-blue); font-family: 'Courier New', monospace; font-size: 14px; opacity: 0; animation: codeRain 4s linear infinite; }
+        .hero { position: relative; min-height: 80vh; display: flex; align-items: center; justify-content: center; padding: 80px 20px; background: linear-gradient(180deg, var(--dark-bg) 0%, #1a1a2e 100%); overflow: hidden; }
+        .hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(ellipse at center, rgba(123, 44, 191, 0.15) 0%, transparent 70%); z-index: 1; }
+        .hero-content { position: relative; z-index: 2; max-width: 1200px; text-align: center; animation: slideIn 1s ease-out; }
+        .hero-badge { display: inline-block; padding: 12px 32px; background: var(--gradient-1); border-radius: 50px; font-size: 18px; font-weight: 700; margin-bottom: 24px; box-shadow: var(--glow-blue); letter-spacing: 1px; }
+        .hero h1 { font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 900; margin-bottom: 24px; background: var(--gradient-1); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; line-height: 1.2; }
+        .hero-subtitle { font-size: clamp(1.2rem, 2.2vw, 1.5rem); color: var(--text-primary); max-width: 900px; margin: 0 auto 40px; line-height: 1.6; font-weight: 400; }
+        .hero-images { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; margin-top: 60px; }
+        .hero-image-card { position: relative; border-radius: 20px; overflow: hidden; aspect-ratio: 16/9; box-shadow: var(--glow-purple); transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .hero-image-card:hover { transform: scale(1.02); box-shadow: 0 0 40px rgba(123, 44, 191, 0.7); }
+        .hero-image-card img { width: 100%; height: 100%; object-fit: cover; }
+        .scroll-indicator { position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%); animation: float 2s ease-in-out infinite; z-index: 2; }
+        .scroll-indicator span { display: block; width: 30px; height: 50px; border: 2px solid var(--primary-blue); border-radius: 25px; position: relative; }
+        .scroll-indicator span::before { content: ''; position: absolute; top: 8px; left: 50%; transform: translateX(-50%); width: 6px; height: 10px; background: var(--primary-blue); border-radius: 3px; animation: pulse 1.5s infinite; }
+        section { padding: 80px 20px; position: relative; z-index: 1; }
+        .content-section { background: var(--card-bg); padding: 60px 50px; border-radius: 24px; border: 1px solid rgba(0, 212, 255, 0.2); max-width: 1100px; margin: 0 auto; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3); }
+        .content-section h3 { font-size: 1.6rem; margin: 40px 0 20px; color: var(--accent-green); }
+        .content-section p { color: var(--text-secondary); line-height: 2; font-size: 1.08rem; margin: 15px 0; }
+        .content-section ul { margin: 20px 0; padding-left: 30px; }
+        .content-section li { margin: 10px 0; color: var(--text-secondary); }
+        .meta-info { background: linear-gradient(135deg, rgba(0, 212, 255, 0.15) 0%, rgba(123, 44, 191, 0.15) 100%); padding: 30px; border-radius: 16px; margin-bottom: 40px; border-left: 5px solid var(--primary-blue); }
+        .meta-info p { margin: 12px 0; color: var(--text-secondary); font-size: 1.05rem; }
+        .meta-info strong { color: var(--primary-blue); font-weight: 600; }
+        .meta-info a { color: var(--primary-blue); text-decoration: none; word-break: break-all; }
+        .highlight-box { background: linear-gradient(135deg, rgba(0, 255, 136, 0.08) 0%, rgba(0, 212, 255, 0.08) 100%); padding: 30px; border-radius: 16px; border-left: 5px solid var(--accent-green); margin: 40px 0; }
+        .highlight-box h4 { color: var(--accent-green); margin-bottom: 15px; font-size: 1.3rem; }
+        .highlight-box p { color: var(--text-secondary); margin: 0; }
+        .alert-box { background: linear-gradient(135deg, rgba(255, 71, 87, 0.1) 0%, rgba(255, 149, 0, 0.1) 100%); padding: 25px 30px; border-radius: 16px; border-left: 5px solid var(--accent-red); margin: 30px 0; }
+        .alert-box h4 { color: var(--accent-red); margin-bottom: 12px; font-size: 1.15rem; }
+        .alert-box p { color: var(--text-secondary); margin: 8px 0; font-size: 1rem; }
+        .quote-box { background: linear-gradient(135deg, rgba(123, 44, 191, 0.15) 0%, rgba(0, 212, 255, 0.15) 100%); padding: 30px 40px; border-radius: 16px; border-left: 5px solid var(--primary-purple); margin: 40px 0; position: relative; }
+        .quote-box::before { content: '"'; position: absolute; top: 10px; left: 20px; font-size: 80px; color: var(--primary-purple); opacity: 0.3; font-family: Georgia, serif; }
+        .quote-box p { color: var(--text-primary); font-size: 1.2rem; font-style: italic; margin-bottom: 15px; }
+        .quote-box cite { color: var(--text-secondary); font-size: 0.95rem; }
+        .tech-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin: 40px 0; }
+        .tech-card { background: var(--card-bg-light); padding: 30px; border-radius: 16px; border: 1px solid rgba(0, 212, 255, 0.15); transition: transform 0.3s ease, box-shadow 0.3s ease; animation: fadeInUp 0.6s ease-out forwards; opacity: 0; }
+        .tech-card:nth-child(1) { animation-delay: 0.1s; }
+        .tech-card:nth-child(2) { animation-delay: 0.2s; }
+        .tech-card:nth-child(3) { animation-delay: 0.3s; }
+        .tech-card:nth-child(4) { animation-delay: 0.4s; }
+        .tech-card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0, 212, 255, 0.2); }
+        .tech-card-icon { font-size: 2.5rem; margin-bottom: 15px; }
+        .tech-card h4 { color: var(--primary-blue); margin-bottom: 12px; font-size: 1.2rem; }
+        .tech-card p { color: var(--text-secondary); font-size: 0.95rem; line-height: 1.7; }
+        .comparison-table { width: 100%; border-collapse: collapse; margin: 40px 0; border-radius: 16px; overflow: hidden; box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3); }
+        .comparison-table thead { background: linear-gradient(135deg, var(--primary-blue), var(--primary-purple)); }
+        .comparison-table th { padding: 18px 20px; text-align: left; font-weight: 600; font-size: 1.05rem; }
+        .comparison-table td { padding: 16px 20px; border-bottom: 1px solid rgba(255, 255, 255, 0.05); color: var(--text-secondary); }
+        .comparison-table tr:last-child td { border-bottom: none; }
+        .comparison-table tr:nth-child(even) { background: rgba(255, 255, 255, 0.02); }
+        .comparison-table .highlight-col { color: var(--accent-green); font-weight: 500; }
+        .timeline { position: relative; margin: 40px 0; padding-left: 40px; }
+        .timeline::before { content: ''; position: absolute; left: 15px; top: 0; bottom: 0; width: 2px; background: linear-gradient(180deg, var(--primary-blue), var(--primary-purple)); }
+        .timeline-item { position: relative; margin-bottom: 35px; padding: 20px 25px; background: var(--card-bg-light); border-radius: 12px; border: 1px solid rgba(0, 212, 255, 0.1); animation: fadeInUp 0.5s ease-out forwards; opacity: 0; }
+        .timeline-item:nth-child(1) { animation-delay: 0.1s; }
+        .timeline-item:nth-child(2) { animation-delay: 0.2s; }
+        .timeline-item:nth-child(3) { animation-delay: 0.3s; }
+        .timeline-item:nth-child(4) { animation-delay: 0.4s; }
+        .timeline-item:nth-child(5) { animation-delay: 0.5s; }
+        .timeline-item:nth-child(6) { animation-delay: 0.6s; }
+        .timeline-item::before { content: ''; position: absolute; left: -32px; top: 25px; width: 12px; height: 12px; background: var(--primary-blue); border-radius: 50%; box-shadow: var(--glow-blue); }
+        .timeline-date { color: var(--primary-blue); font-size: 0.9rem; font-weight: 600; margin-bottom: 8px; }
+        .timeline-title { color: var(--text-primary); font-size: 1.1rem; font-weight: 600; margin-bottom: 8px; }
+        .timeline-desc { color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6; }
+        footer { background: #050508; padding: 60px 20px; text-align: center; border-top: 1px solid rgba(255, 255, 255, 0.1); }
+        footer p { color: var(--text-secondary); margin-bottom: 20px; }
+        .footer-links { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; }
+        .footer-links a { color: var(--primary-blue); text-decoration: none; transition: color 0.3s ease; }
+        .footer-links a:hover { color: var(--text-primary); }
+        @media (max-width: 768px) { .content-section { padding: 40px 25px; } .hero-images { grid-template-columns: 1fr; } .hero h1 { font-size: 2rem; } .hero-subtitle { font-size: 1.2rem; } }
     </style>
 </head>
 <body>
     <div class="code-rain" id="codeRain"></div>
-
-<section class="hero">
-    <div class="hero-content">
-        <span class="hero-badge">📰 AI News 專題報道</span>
-        <h1>退役手機化身低碳算力節點：Google 研究舊機改造資料中心可行性</h1>
-        <p class="hero-subtitle">本次報告指出，透過保留核心主機板並替換作業系統環境，25 至 50 部舊款手機即可提供等同現代單機伺服器的運算效能，顯著降低硬體碳足跡。</p>
-        <div class="hero-images">
-            <div class="hero-image-card">
-                <img src="img/img1.png" alt="舊手機算力叢集示意圖">
+    <section class="hero">
+        <div class="hero-content">
+            <span class="hero-badge">📰 AI News 專題報道</span>
+            <h1>退役手機化身低碳算力節點：25至50支=1臺伺服器</h1>
+            <p class="hero-subtitle">Google Research 提出將退役智慧型手機改造為資料中心運算節點，拆除螢幕與電池僅保留主機板，UC San Diego 規劃 2,000 支手機叢集，2026年秋季上線。</p>
+            <div class="hero-images">
+                <div class="hero-image-card">
+                    <img src="img/img1.png" alt="退役手機改造為低碳算力叢集示意圖">
+                </div>
             </div>
         </div>
-    </div>
-</section>
+        <div class="scroll-indicator"><span></span></div>
+    </section>
+    <section class="content-section">
 
-<section class="content-section">
-    <div class="meta-info">
-        <p><strong>📺 資料來源</strong>：<a href="https://www.blocktempo.com/google-retired-phones-low-carbon-computing-cluster-uc-san-diego/" target="_blank">BlockTempo（動區動趨）</a></p>
-        <p><strong>📅 發布日期</strong>：2026-06-14</p>
-        <p><strong>🤖 處理方式</strong>：AI 智能摘要生成</p>
-    </div>
+        <div class="meta-info">
+            <p><strong>📺 資料來源</strong>：<a href="https://www.blocktempo.com/google-retired-phones-low-carbon-computing-cluster-uc-san-diego/" target="_blank">BlockTempo 動區動趨</a></p>
+            <p><strong>📅 發佈日期</strong>：2026-06-14</p>
+            <p><strong>🤖 處理方式</strong>：AI 智能摘要生成</p>
+        </div>
 
-    <h3>🎯 核心觀點</h3>
-    <p>研究指出，傳統資料中心的運算節點長期依賴專門設計的伺服器硬體，但消費級行動晶片的架構演化已出現顯著轉變。本次測試針對 Pixel Fold 處理核心進行多項基準評估，結果顯示其單核運算效能顯著超越 ASUS RS720A-E11 等主流資料中心機型。專家分析認為，此現象源於行動處理器為適應嚴苛的電源限制，長期針對每瓦效能進行深度優化；相較之下，大型機架伺服器雖具備多核平行處理優勢，單核效能從非設計優先項。</p>
-    <p>這項技術路徑的突破在於重新檢視電子廢棄物的潛在價值。若將閒置的智慧型手機視為可重配置的微型運算單元，企業與學術機構將能大幅降低初期算力採購門檻。業界觀察亦指出，隨著邊緣運算需求攀升，分散式低功耗節點的應用場景正快速擴張，消費級硬體的角色定位將迎來根本性轉變。</p>
+        <h3>🎯 核心發現：手機單核效能勝過資料中心伺服器</h3>
+        <p>研究團隊以 Pixel Fold 處理器對比 ASUS RS720A-E11 資料中心伺服器，結果 Pixel Fold 單核效能於多數 SPEC CPU2017 測試項目勝過該基準伺服器。原因在於手機晶片為了在電源限制下運作，每瓦效能已磨練多年；資料中心伺服器設計重心在多核平行，單核效能從非焦點。</p>
+        <p>**關鍵數字**：25 至 50 支舊手機的算力相當於一臺現代伺服器。</p>
 
-    <h3>⚙️ 硬體改造與系統優化</h3>
-    <p>Google 團隊提出的改造方案著重於最大化既有資源的再利用價值。根據碳足跡評估模型，智慧型手機主機板佔據整體內含碳排放量約 50%，因此保留核心電路板並剔除螢幕與電池模組，可有效延續硬體的生命週期。在軟體架構方面，工程人員需將原廠行動版 Android 使用者空間全面替換為通用型 Linux 發行版。</p>
-    <p>系統重構過程中，開發者必須關閉「低記憶體清除器」等消費級保護機制，以確保長時間運算任務的穩定執行。同時，叢集管理系統需針對異構節點設計負載分配演算法，以應對消費級裝置在網路介面與儲存讀寫上的物理限制。此套標準化作業流程若能進一步模組化，將有利於大規模部署與後續維護。</p>
+        <div class="tech-card">
+            <div class="tech-card-icon">📱</div>
+            <div class="tech-card-content">
+                <h4>舊手機算力勝出</h4>
+                <p>Pixel Fold 單核效能打贏 ASUS RS720A-E11 資料中心伺服器，手機晶片的代差優勢在手機晶片的功耗效率設計。</p>
+            </div>
+        </div>
 
-    <h3>📊 數據分析</h3>
-    <p>數據顯示，25 至 50 部經改裝的舊款手機，其聚合算力已足以匹敵一台現代化企業級伺服器。學術機構已展開實地驗證，初步部署的 20 支手機叢集在 75 人同步提交作業的尖峰時段，回應延遲表現優於預設的雲端服務後端。UC San Diego 更已宣布啟動大規模測試計畫，預計於 2026 年秋季完成 2,000 支手機叢集的組裝上線。</p>
-    <p>該系統預計可釋放相當於 50 台伺服器的運算資源，整體硬體建置成本僅為常規企業採購方案的極小比例。主要效能指標如下：</p>
-    <ul>
-        <li>保留主機板模組可降低約 50% 初始硬體碳足跡</li>
-        <li>25 至 50 支節點聚合效能等同單一現代伺服器</li>
-        <li>單節點部署 20 部裝置可超越部分雲端後端回應延遲</li>
-        <li>2026 年千機級叢集預計提供約 50 台標準伺服器算力</li>
-        <li>整體採購與部署成本大幅壓縮至傳統方案的數分之一</li>
-    </ul>
+        <div class="tech-card">
+            <div class="tech-card-icon">🔋</div>
+            <div class="tech-card-content">
+                <h4>主機板保留，其餘全拆</h4>
+                <p>主機板佔整支手機內含碳約 50%，拆除螢幕、電池、機殼、相機模組，保留碳排最集中的部件，減碳效益最大化。</p>
+            </div>
+        </div>
 
-    <h3>🔮 產業挑戰與未來佈局</h3>
-    <p>儘管初步實驗結果令人振奮，但將消費級裝置導入企業級運算環境仍面臨實務考驗。業界觀察指出，行動硬體設計初衷並非針對 24 小時高負載運轉，其散熱模組與元件耐久度在長時間滿載狀態下的可靠度，目前仍缺乏長期追蹤數據。此外，異構節點的故障率與替換機制亦需建立完善的自動化維運框架。</p>
-    <p>然而，本次研究的深層意義在於挑戰算力基礎架構的傳統框架。若消費級元件足以在特定場景中取代專用伺服器，「算力硬體」的定義將迎來重新定義。專家強調，結合循環經濟與邊緣運算的混合架構，有望成為未來低碳資料中心的重要發展路徑。隨著綠能法規趨嚴與算力需求激增，此類創新部署模式將成為科技產業關注的焦點。</p>
+        <div class="tech-card">
+            <div class="tech-card-icon">🖥️</div>
+            <div class="tech-card-content">
+                <h4>軟體改造：Linux 取代 Android</h4>
+                <p>需關閉「low memory killer」等消費級保護機制，將行動版 Android userspace 換成通用 Linux 發行版。</p>
+            </div>
+        </div>
 
-    <div class="highlight-box">
-        <h4>✨ 關鍵洞察</h4>
-        <p>本次研究證實，透過系統級軟體重構與硬體模組化篩選，退役消費電子產品可轉化為具商業價值的低碳運算節點。此模式不僅為電子廢棄物提供高階再利用途徑，亦為學術與新創團隊提供低門檻的高效能運算環境，未來可望重塑雲端資源的獲取模式與資料中心綠能標準。</p>
-    </div>
-</section>
+        <div class="tech-card">
+            <div class="tech-card-icon">🏫</div>
+            <div class="tech-card-content">
+                <h4>UC San Diego 2,000 支手機實驗</h4>
+                <p>20 支手機叢集在 75 人課程尖峯時段評分延遲低於 AWS 後端。2,000 支手機叢集預計 2026 年秋季上線，提供約 50 臺伺服器算力，成本僅為常規採購的一小部分。</p>
+            </div>
+        </div>
 
-<footer>
-    <p>© 2026 AI News Archive | 由 AI 技術生成</p>
-    <div class="footer-links">
-        <a href="../index.html">返回主頁</a>
-        <a href="https://github.com/hklamsir/ai_news" target="_blank">GitHub</a>
-        <a href="https://hklamsir.github.io/ai_news/" target="_blank">瀏覽所有專題</a>
-    </div>
-</footer>
+        <div class="highlight-box">
+            <h4>📌 重點提示</h4>
+            <p>Google Research 論文指出：內含碳在設備出廠時就已成為沉沒成本，若能再用五年，碳排就被稀釋。退役手機再利用率每提升 10%，即可減排相當於減少數十萬輛汽車行駛的碳排放。</p>
+        </div>
+
+        <div class="quote-box">
+            <p>「如果消費級硬體的單核效能已足以在特定場景打贏資料中心裝置，『什麼算是算力』這個定義本身正在鬆動。」</p>
+            <cite>— Google Research 官方部落格</cite>
+        </div>
+
+        <h3>🔮 業界意義與未解問題</h3>
+        <p>這項研究的真正意義不在省錢或環保，而在於挑戰「算力必須來自專為算力設計的硬體」這個預設前提。但研究團隊坦言：消費級硬體長時間、高負載執行下的可靠度仍是未知數，手機主機板從未被設計成全天候跑伺服器工作負載，零件壽命曲線與故障率分佈仍需大規模長期資料驗證。</p>
+
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-date">2026-06-11</div>
+                <div class="timeline-title">Google Research 發表論文</div>
+                <div class="timeline-desc">Google Research 在官方部落格發表退役手機低碳算力研究</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">2026-06-14</div>
+                <div class="timeline-title">BlockTempo 報道</div>
+                <div class="timeline-desc">動區動趨 BlockTempo 轉載並深度分析</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">2026-06-14</div>
+                <div class="timeline-title">本文生成</div>
+                <div class="timeline-desc">AI News 技能自動生成專題報道</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">2026 年秋季</div>
+                <div class="timeline-title">UC San Diego 叢集上線</div>
+                <div class="timeline-desc">2,000 支手機叢集正式上線，提供約 50 臺伺服器等量算力</div>
+            </div>
+        </div>
+
+        <table class="comparison-table">
+            <thead>
+                <tr>
+                    <th>項目</th>
+                    <th>傳統資料中心</th>
+                    <th>退役手機叢集</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>所需設備</td>
+                    <td>專用伺服器</td>
+                    <td class="highlight-col">25-50 支舊手機</td>
+                </tr>
+                <tr>
+                    <td>碳排放</td>
+                    <td>全新硬體製造碳排</td>
+                    <td class="highlight-col">利用既有沉沒碳排</td>
+                </tr>
+                <tr>
+                    <td>單核效能</td>
+                    <td>非設計焦點</td>
+                    <td class="highlight-col">已針對每瓦效能優化</td>
+                </tr>
+                <tr>
+                    <td>成本</td>
+                    <td>常規採購成本</td>
+                    <td class="highlight-col">僅為常規採購一小部分</td>
+                </tr>
+                <tr>
+                    <td>可靠度驗證</td>
+                    <td>成熟已知</td>
+                    <td class="highlight-col">大規模長期資料待收集</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+    <footer>
+        <p>© 2026 AI News Archive | 由 AI 技術生成 | 林SIR 監督</p>
+        <div class="footer-links">
+            <a href="../index.html">返回主頁</a>
+            <a href="https://github.com/hklamsir/ai_news" target="_blank">GitHub</a>
+            <a href="https://hklamsir.github.io/ai_news/" target="_blank">瀏覽所有專題</a>
+        </div>
+    </footer>
 
 
     <script>
-        function createCodeRain() {
-            const codeRain = document.getElementById('codeRain');
-            if (!codeRain) return;
-            const chars = '01 アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン';
-            for (let i = 0; i < 50; i++) {
-                const char = document.createElement('div');
-                char.className = 'code-char';
-                char.textContent = chars[Math.floor(Math.random() * chars.length)];
-                char.style.left = Math.random() * 100 + '%';
-                char.style.animationDelay = Math.random() * 4 + 's';
-                char.style.animationDuration = (Math.random() * 2 + 3) + 's';
-                codeRain.appendChild(char);
-            }
+        const codeRain = document.getElementById('codeRain');
+        const chars = '01アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン';
+        for (let i = 0; i < 50; i++) {
+            const char = document.createElement('span');
+            char.className = 'code-char';
+            char.textContent = chars[Math.floor(Math.random() * chars.length)];
+            char.style.left = Math.random() * 100 + '%';
+            char.style.animationDelay = Math.random() * 4 + 's';
+            char.style.animationDuration = (Math.random() * 3 + 3) + 's';
+            codeRain.appendChild(char);
         }
-
-        function handleScrollAnimation() {
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.style.opacity = '1';
-                        entry.target.style.transform = 'translateY(0)';
-                    }
-                });
-            }, { threshold: 0.1 });
-
-            document.querySelectorAll('.fade-in').forEach(el => {
-                el.style.opacity = '0';
-                el.style.transform = 'translateY(30px)';
-                el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-                observer.observe(el);
-            });
-        }
-
-        document.addEventListener('DOMContentLoaded', () => {
-            createCodeRain();
-            handleScrollAnimation();
-        });
     </script>
+
 </body>
 </html>
