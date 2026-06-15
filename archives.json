@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260615_082155",
+      "title": "Gemini can now adjust your picture settings on Google TV",
+      "summary": "Google TV 整合 Gemini AI，用語音指令調整畫質和音頻設定",
+      "url": "./news_20260615_082155/index.html",
+      "date": "2026-06-15",
+      "time": "08:21:55",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260615_080800",
       "title": "The West Forgot How to Build. Now It's Forgetting Code",
       "summary": "從國防工業的教訓看軟體業正在犯的同一個錯誤",
@@ -1648,6 +1657,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-06-15T08:10:18.104794",
-  "total_count": 183
+  "last_updated": "2026-06-15T08:24:28.557444",
+  "total_count": 184
 }
