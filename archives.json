@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260615_130600",
+      "title": "Apple Could Eventually Bring An OpenClaw-Like Competitor To Multiple Platforms",
+      "summary": "Mark Gurman 爆料：Apple 長期方向可能是推出類似 OpenClaw 的 AI 助理",
+      "url": "./news_20260615_130600/index.html",
+      "date": "2026-06-15",
+      "time": "13:06:00",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260615_082155",
       "title": "Gemini can now adjust your picture settings on Google TV",
       "summary": "Google TV 整合 Gemini AI，用語音指令調整畫質和音頻設定",
@@ -1657,6 +1666,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-06-15T08:24:28.557444",
-  "total_count": 184
+  "last_updated": "2026-06-15T13:07:32.299483",
+  "total_count": 185
 }
