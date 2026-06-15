@@ -1,29 +1,36 @@
 {
   "archives": [
     {
+      "dir": "news_20260615_080800",
+      "title": "The West Forgot How to Build. Now It's Forgetting Code",
+      "summary": "從國防工業的教訓看軟體業正在犯的同一個錯誤",
+      "url": "./news_20260615_080800/index.html",
+      "date": "2026-06-15",
+      "time": "08:08:00",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260614_235434",
-      "title": "",
-      "summary_short": "# 退役手機變 AI 伺服器？Google 提案用舊 Pixel 打造低碳算力叢集## 📖 新聞導語Google Research 本週發表新研究，提出將退役智慧型手機改造為資料中心運算節點的",
-      "images": [
-        "img/img1.png"
-      ],
+      "title": "退役手機化身低碳算力節點：25至50支=1臺伺服器",
+      "summary": "Google Research 提出將退役智慧型手機改造為資料中心運算節點，拆除螢幕與電池僅保留主機板，UC San Diego 規劃 2,000 支手機叢集，2026年秋季上線。",
+      "url": "./news_20260614_235434/index.html",
       "date": "2026-06-14",
-      "url": "./news_20260614_235434/index.html"
+      "time": "23:54:34",
+      "source": "AI News"
     },
     {
       "dir": "news_20260614_223224",
-      "title": "Claude工程主管揭私房工作術：用不好AI，問題出在你的想像力",
-      "summary_short": "# Claude工程主管揭私房工作術：用不好AI，問題出在你的想像力## 📖 新聞導語本文報導來自 **BNEXT**，發布於 **2026-06-14**。最新科技新聞報道指出，人工智能",
-      "images": [
-        "img/img1.png"
-      ],
+      "title": "Claude工程主管：AI 的瓶頸不在工具，在想像力",
+      "summary": "Anthropic 工程主管 Felix Rieseberg 分享：真正讓他驚艷的不是模型能力，而是使用者如何結構化問題、重設工作流程。",
+      "url": "./news_20260614_223224/index.html",
       "date": "2026-06-14",
-      "url": "./news_20260614_223224/index.html"
+      "time": "22:32:24",
+      "source": "AI News"
     },
     {
       "dir": "news_20260614_220317",
       "title": "Computex 2026：ARM + NVIDIA RTX Spark AI 平台亮相：20核 CPU、128GB 記憶體、600GB/s 頻寬",
-      "summary": "最新研究報告指出，新一代優化架構在性能測試中展現卓越成效，為跨領域應用與數位轉型鋪平道路。",
+      "summary": "NVIDIA 正式發布 RTX Spark 平台，結合 ARM 架構與 AI 加速運算，瞄準個人 AI 智能代理市場，掀起 Windows PC 生態革命。",
       "url": "./news_20260614_220317/index.html",
       "date": "2026-06-14",
       "time": "22:03:17",
@@ -1641,6 +1648,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-06-14T23:57:30.502237",
-  "total_count": 180
+  "last_updated": "2026-06-15T08:10:18.104794",
+  "total_count": 183
 }
