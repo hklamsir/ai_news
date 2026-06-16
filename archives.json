@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260616_211420",
+      "title": "China’s AI outpaces global rivals but trails in trust, survey shows",
+      "summary": "全球民調：中國 AI 技術獲 11 國承認　信任度卻排名第十",
+      "url": "./news_20260616_211420/index.html",
+      "date": "2026-06-16",
+      "time": "21:14:20",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260616_192631",
       "title": "迴圈工程崛起：為何工程師 不再依賴手動提示詞？",
       "summary": "從語言指令到系統架構的典範轉移，自動化迴圈正重塑 AI 協作開發的未來標準",
@@ -1684,6 +1693,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-06-16T20:53:15.507187",
-  "total_count": 187
+  "last_updated": "2026-06-16T21:16:26.176694",
+  "total_count": 188
 }
