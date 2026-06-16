@@ -1,6 +1,16 @@
 {
   "archives": [
     {
+      "dir": "news_20260616_121728",
+      "title": "",
+      "summary_short": "# Salesforce to buy AI agent platform Fin for about $3.6 billion## 📖 新聞導語本文報導來自 **REUTERS**，發布於 ",
+      "images": [
+        "img/img1.png"
+      ],
+      "date": "2026-06-16",
+      "url": "./news_20260616_121728/index.html"
+    },
+    {
       "dir": "news_20260615_130600",
       "title": "Apple Could Eventually Bring An OpenClaw-Like Competitor To Multiple Platforms",
       "summary": "Mark Gurman 爆料：Apple 長期方向可能是推出類似 OpenClaw 的 AI 助理",
@@ -1666,6 +1676,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-06-15T13:07:32.299483",
+  "last_updated": "2026-06-16T12:20:36.758433",
   "total_count": 185
 }
