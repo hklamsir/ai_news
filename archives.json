@@ -2,53 +2,21 @@
   "archives": [
     {
       "dir": "news_20260616_192631",
-      "title": "",
-      "summary_short": "# 迴圈工程(Loop Engineering)是什麼？工程師為什麼不再寫提示詞## 📖 新聞導語本文報導來自 **BNEXT**，發布於 **2026-06-15**。## 💡 核心內容",
-      "images": [
-        "img/img1.png"
-      ],
+      "title": "迴圈工程崛起：為何工程師 不再依賴手動提示詞？",
+      "summary": "從語言指令到系統架構的典範轉移，自動化迴圈正重塑 AI 協作開發的未來標準",
+      "url": "./news_20260616_192631/index.html",
       "date": "2026-06-16",
-      "url": "./news_20260616_192631/index.html"
+      "time": "19:26:31",
+      "source": "AI News"
     },
     {
       "dir": "news_20260616_140516",
-      "title": "",
-      "summary_short": "# Salesforce to buy AI agent platform Fin for about $3.6 billion## 📖 新聞導語本文報導來自 **REUTERS**，發布於 ",
-      "images": [
-        "img/img1.png"
-      ],
+      "title": "Salesforce 斥資 36 億美元 收購 AI 代理平台 Fin",
+      "summary": "全球雲端服務巨頭搶佔數碼勞動力市場，AI 代理正式邁入大規模商業化階段",
+      "url": "./news_20260616_140516/index.html",
       "date": "2026-06-16",
-      "url": "./news_20260616_140516/index.html"
-    },
-    {
-      "dir": "news_20260616_131928",
-      "title": "Salesforce to buy AI agent platform Fin for about $3.6 billion",
-      "summary_short": "# Salesforce to buy AI agent platform Fin for about $3.6 billion## 📖 新聞導語本文報導來自 **REUTERS**，發布於 ",
-      "images": [
-        "img/img1.png"
-      ],
-      "date": "2026-06-16",
-      "url": "./news_20260616_131928/index.html"
-    },
-    {
-      "dir": "news_20260616_123156",
-      "title": "Salesforce to buy AI agent platform Fin for about $3.6 billion",
-      "summary_short": "# Salesforce to buy AI agent platform Fin for about $3.6 billion## 📖 新聞導語本文報導來自 **REUTERS**，發布於 ",
-      "images": [
-        "img/img1.png"
-      ],
-      "date": "2026-06-16",
-      "url": "./news_20260616_123156/index.html"
-    },
-    {
-      "dir": "news_20260616_121728",
-      "title": "",
-      "summary_short": "# Salesforce to buy AI agent platform Fin for about $3.6 billion## 📖 新聞導語本文報導來自 **REUTERS**，發布於 ",
-      "images": [
-        "img/img1.png"
-      ],
-      "date": "2026-06-16",
-      "url": "./news_20260616_121728/index.html"
+      "time": "14:05:16",
+      "source": "AI News"
     },
     {
       "dir": "news_20260615_130600",
@@ -1716,6 +1684,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-06-16T19:29:12.401958",
-  "total_count": 185
+  "last_updated": "2026-06-16T20:53:15.507187",
+  "total_count": 187
 }
