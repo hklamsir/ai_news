@@ -1,6 +1,16 @@
 {
   "archives": [
     {
+      "dir": "news_20260616_131928",
+      "title": "Salesforce to buy AI agent platform Fin for about $3.6 billion",
+      "summary_short": "# Salesforce to buy AI agent platform Fin for about $3.6 billion## 📖 新聞導語本文報導來自 **REUTERS**，發布於 ",
+      "images": [
+        "img/img1.png"
+      ],
+      "date": "2026-06-16",
+      "url": "./news_20260616_131928/index.html"
+    },
+    {
       "dir": "news_20260616_123156",
       "title": "Salesforce to buy AI agent platform Fin for about $3.6 billion",
       "summary_short": "# Salesforce to buy AI agent platform Fin for about $3.6 billion## 📖 新聞導語本文報導來自 **REUTERS**，發布於 ",
@@ -1686,6 +1696,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-06-16T12:34:46.665324",
+  "last_updated": "2026-06-16T13:22:02.767348",
   "total_count": 185
 }
