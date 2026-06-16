@@ -1,141 +1,226 @@
 <!DOCTYPE html>
-<html lang="zh-TW">
+<html lang="zh-Hant">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI News | 迴圈工程：開發範式的全面升級</title>
+    <title>Loop Engineering 是什麼？一次解密 6 大組件，搞懂工程師為什麼不再寫提示詞 - AI News</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
     <style>
-:root {
-    --primary-blue: #00d4ff;
-    --primary-purple: #7b2cbf;
-    --accent-green: #00ff88;
-    --accent-orange: #ff9500;
-    --dark-bg: #0a0a0f;
-    --card-bg: #12121a;
-    --card-bg-light: #1a1a28;
-    --text-primary: #ffffff;
-    --text-secondary: #a0a0b0;
-    --gradient-1: linear-gradient(135deg, #00d4ff 0%, #7b2cbf 100%);
-    --gradient-2: linear-gradient(135deg, #00d4ff 0%, #00ff88 100%);
-    --glow-blue: 0 0 20px rgba(0, 212, 255, 0.5);
-    --glow-purple: 0 0 20px rgba(123, 44, 191, 0.5);
-}
-
-* { margin: 0; padding: 0; box-sizing: border-box; }
-html { scroll-behavior: smooth; }
-body { font-family: 'Noto Sans TC', sans-serif; background-color: var(--dark-bg); color: var(--text-primary); line-height: 1.8; overflow-x: hidden; }
-
-@keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-20px); } }
-@keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.6; } }
-@keyframes slideIn { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
-@keyframes codeRain { 0% { transform: translateY(-100%); opacity: 0; } 10% { opacity: 1; } 90% { opacity: 1; } 100% { transform: translateY(100vh); opacity: 0; } }
-
-.code-rain { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; overflow: hidden; }
-.code-char { position: absolute; color: var(--primary-blue); font-family: 'Courier New', monospace; font-size: 14px; opacity: 0; animation: codeRain 4s linear infinite; }
-
-.hero { position: relative; min-height: 80vh; display: flex; align-items: center; justify-content: center; padding: 80px 20px; background: linear-gradient(180deg, var(--dark-bg) 0%, #1a1a2e 100%); overflow: hidden; }
-.hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(ellipse at center, rgba(123, 44, 191, 0.15) 0%, transparent 70%); z-index: 1; }
-.hero-content { position: relative; z-index: 2; max-width: 1200px; text-align: center; animation: slideIn 1s ease-out; }
-.hero-badge { display: inline-block; padding: 12px 32px; background: var(--gradient-1); border-radius: 50px; font-size: 18px; font-weight: 700; margin-bottom: 24px; box-shadow: var(--glow-blue); letter-spacing: 1px; }
-.hero h1 { font-size: clamp(2rem, 5vw, 4rem); font-weight: 900; margin-bottom: 24px; background: var(--gradient-1); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; line-height: 1.2; }
-.hero-subtitle { font-size: clamp(1.2rem, 2.2vw, 1.6rem); color: var(--text-primary); max-width: 900px; margin: 0 auto 40px; line-height: 1.6; font-weight: 400; }
-.hero-images { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; margin-top: 60px; }
-.hero-image-card { position: relative; border-radius: 20px; overflow: hidden; aspect-ratio: 16/9; box-shadow: var(--glow-purple); transition: transform 0.3s ease, box-shadow 0.3s ease; }
-.hero-image-card:hover { transform: scale(1.02); box-shadow: 0 0 40px rgba(123, 44, 191, 0.7); }
-.hero-image-card img { width: 100%; height: 100%; object-fit: cover; }
-.scroll-indicator { position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%); animation: float 2s ease-in-out infinite; z-index: 2; }
-.scroll-indicator span { display: block; width: 30px; height: 50px; border: 2px solid var(--primary-blue); border-radius: 25px; position: relative; }
-.scroll-indicator span::before { content: ''; position: absolute; top: 8px; left: 50%; transform: translateX(-50%); width: 6px; height: 10px; background: var(--primary-blue); border-radius: 3px; animation: pulse 1.5s infinite; }
-
-section { padding: 80px 20px; position: relative; z-index: 1; }
-.content-section { background: var(--card-bg); padding: 60px 50px; border-radius: 24px; border: 1px solid rgba(0, 212, 255, 0.2); max-width: 1100px; margin: 0 auto; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3); }
-
-.content-section h3 { font-size: 1.6rem; margin: 40px 0 20px; color: var(--accent-green); }
-.content-section p { color: var(--text-secondary); line-height: 2; font-size: 1.08rem; margin: 15px 0; }
-.content-section ul { margin: 20px 0; padding-left: 30px; }
-.content-section li { margin: 10px 0; color: var(--text-secondary); }
-
-.meta-info { background: linear-gradient(135deg, rgba(0, 212, 255, 0.15) 0%, rgba(123, 44, 191, 0.15) 100%); padding: 30px; border-radius: 16px; margin-bottom: 40px; border-left: 5px solid var(--primary-blue); }
-.meta-info p { margin: 12px 0; color: var(--text-secondary); font-size: 1.05rem; }
-.meta-info strong { color: var(--primary-blue); font-weight: 600; }
-.meta-info a { color: var(--primary-blue); text-decoration: none; word-break: break-all; }
-
-.highlight-box { background: linear-gradient(135deg, rgba(0, 255, 136, 0.08) 0%, rgba(0, 212, 255, 0.08) 100%); padding: 30px; border-radius: 16px; border-left: 5px solid var(--accent-green); margin: 40px 0; }
-.highlight-box h4 { color: var(--accent-green); margin-bottom: 15px; font-size: 1.3rem; }
-.highlight-box p { color: var(--text-secondary); margin: 0; }
-
-footer { background: #050508; padding: 60px 20px; text-align: center; border-top: 1px solid rgba(255, 255, 255, 0.1); }
-footer p { color: var(--text-secondary); margin-bottom: 20px; }
-.footer-links { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; }
-.footer-links a { color: var(--primary-blue); text-decoration: none; transition: color 0.3s ease; }
-.footer-links a:hover { color: var(--text-primary); }
-
-@media (max-width: 768px) {
-    .content-section { padding: 40px 25px; }
-    .hero-images { grid-template-columns: 1fr; }
-    .hero h1 { font-size: 2rem; }
-    .hero-subtitle { font-size: 1.2rem; }
-}
+        :root { --primary-blue: #00d4ff; --primary-purple: #7b2cbf; --accent-green: #00ff88; --accent-orange: #ff9500; --accent-red: #ff4757; --dark-bg: #0a0a0f; --card-bg: #12121a; --card-bg-light: #1a1a28; --text-primary: #ffffff; --text-secondary: #a0a0b0; --gradient-1: linear-gradient(135deg, #00d4ff 0%, #7b2cbf 100%); --gradient-2: linear-gradient(135deg, #00d4ff 0%, #00ff88 100%); --glow-blue: 0 0 20px rgba(0, 212, 255, 0.5); --glow-purple: 0 0 20px rgba(123, 44, 191, 0.5); }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Noto Sans TC', sans-serif; background-color: var(--dark-bg); color: var(--text-primary); line-height: 1.8; overflow-x: hidden; }
+        @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-20px); } }
+        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.6; } }
+        @keyframes slideIn { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes codeRain { 0% { transform: translateY(-100%); opacity: 0; } 10% { opacity: 1; } 90% { opacity: 1; } 100% { transform: translateY(100vh); opacity: 0; } }
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); } }
+        .code-rain { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; overflow: hidden; }
+        .code-char { position: absolute; color: var(--primary-blue); font-family: 'Courier New', monospace; font-size: 14px; opacity: 0; animation: codeRain 4s linear infinite; }
+        .hero { position: relative; min-height: 80vh; display: flex; align-items: center; justify-content: center; padding: 80px 20px; background: linear-gradient(180deg, var(--dark-bg) 0%, #1a1a2e 100%); overflow: hidden; }
+        .hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(ellipse at center, rgba(123, 44, 191, 0.15) 0%, transparent 70%); z-index: 1; }
+        .hero-content { position: relative; z-index: 2; max-width: 1200px; text-align: center; animation: slideIn 1s ease-out; }
+        .hero-badge { display: inline-block; padding: 12px 32px; background: var(--gradient-1); border-radius: 50px; font-size: 18px; font-weight: 700; margin-bottom: 24px; box-shadow: var(--glow-blue); letter-spacing: 1px; }
+        .hero h1 { font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 900; margin-bottom: 24px; background: var(--gradient-1); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; line-height: 1.2; }
+        .hero-subtitle { font-size: clamp(1.2rem, 2.2vw, 1.5rem); color: var(--text-primary); max-width: 900px; margin: 0 auto 40px; line-height: 1.6; font-weight: 400; }
+        .hero-images { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; margin-top: 60px; }
+        .hero-image-card { position: relative; border-radius: 20px; overflow: hidden; aspect-ratio: 16/9; box-shadow: var(--glow-purple); transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .hero-image-card:hover { transform: scale(1.02); box-shadow: 0 0 40px rgba(123, 44, 191, 0.7); }
+        .hero-image-card img { width: 100%; height: 100%; object-fit: cover; }
+        .scroll-indicator { position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%); animation: float 2s ease-in-out infinite; z-index: 2; }
+        .scroll-indicator span { display: block; width: 30px; height: 50px; border: 2px solid var(--primary-blue); border-radius: 25px; position: relative; }
+        .scroll-indicator span::before { content: ''; position: absolute; top: 8px; left: 50%; transform: translateX(-50%); width: 6px; height: 10px; background: var(--primary-blue); border-radius: 3px; animation: pulse 1.5s infinite; }
+        section { padding: 80px 20px; position: relative; z-index: 1; }
+        .content-section { background: var(--card-bg); padding: 60px 50px; border-radius: 24px; border: 1px solid rgba(0, 212, 255, 0.2); max-width: 1100px; margin: 0 auto; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3); }
+        .content-section h3 { font-size: 1.6rem; margin: 40px 0 20px; color: var(--accent-green); }
+        .content-section p { color: var(--text-secondary); line-height: 2; font-size: 1.08rem; margin: 15px 0; }
+        .content-section ul { margin: 20px 0; padding-left: 30px; }
+        .content-section li { margin: 10px 0; color: var(--text-secondary); }
+        .meta-info { background: linear-gradient(135deg, rgba(0, 212, 255, 0.15) 0%, rgba(123, 44, 191, 0.15) 100%); padding: 30px; border-radius: 16px; margin-bottom: 40px; border-left: 5px solid var(--primary-blue); }
+        .meta-info p { margin: 12px 0; color: var(--text-secondary); font-size: 1.05rem; }
+        .meta-info strong { color: var(--primary-blue); font-weight: 600; }
+        .meta-info a { color: var(--primary-blue); text-decoration: none; word-break: break-all; }
+        .highlight-box { background: linear-gradient(135deg, rgba(0, 255, 136, 0.08) 0%, rgba(0, 212, 255, 0.08) 100%); padding: 30px; border-radius: 16px; border-left: 5px solid var(--accent-green); margin: 40px 0; }
+        .highlight-box h4 { color: var(--accent-green); margin-bottom: 15px; font-size: 1.3rem; }
+        .highlight-box p { color: var(--text-secondary); margin: 0; }
+        .alert-box { background: linear-gradient(135deg, rgba(255, 71, 87, 0.1) 0%, rgba(255, 149, 0, 0.1) 100%); padding: 25px 30px; border-radius: 16px; border-left: 5px solid var(--accent-red); margin: 30px 0; }
+        .alert-box h4 { color: var(--accent-red); margin-bottom: 12px; font-size: 1.15rem; }
+        .alert-box p { color: var(--text-secondary); margin: 8px 0; font-size: 1rem; }
+        .quote-box { background: linear-gradient(135deg, rgba(123, 44, 191, 0.15) 0%, rgba(0, 212, 255, 0.15) 100%); padding: 30px 40px; border-radius: 16px; border-left: 5px solid var(--primary-purple); margin: 40px 0; position: relative; }
+        .quote-box::before { content: '"'; position: absolute; top: 10px; left: 20px; font-size: 80px; color: var(--primary-purple); opacity: 0.3; font-family: Georgia, serif; }
+        .quote-box p { color: var(--text-primary); font-size: 1.2rem; font-style: italic; margin-bottom: 15px; }
+        .quote-box cite { color: var(--text-secondary); font-size: 0.95rem; }
+        .tech-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin: 40px 0; }
+        .tech-card { background: var(--card-bg-light); padding: 30px; border-radius: 16px; border: 1px solid rgba(0, 212, 255, 0.15); transition: transform 0.3s ease, box-shadow 0.3s ease; animation: fadeInUp 0.6s ease-out forwards; opacity: 0; }
+        .tech-card:nth-child(1) { animation-delay: 0.1s; }
+        .tech-card:nth-child(2) { animation-delay: 0.2s; }
+        .tech-card:nth-child(3) { animation-delay: 0.3s; }
+        .tech-card:nth-child(4) { animation-delay: 0.4s; }
+        .tech-card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0, 212, 255, 0.2); }
+        .tech-card-icon { font-size: 2.5rem; margin-bottom: 15px; }
+        .tech-card h4 { color: var(--primary-blue); margin-bottom: 12px; font-size: 1.2rem; }
+        .tech-card p { color: var(--text-secondary); font-size: 0.95rem; line-height: 1.7; }
+        .comparison-table { width: 100%; border-collapse: collapse; margin: 40px 0; border-radius: 16px; overflow: hidden; box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3); }
+        .comparison-table thead { background: linear-gradient(135deg, var(--primary-blue), var(--primary-purple)); }
+        .comparison-table th { padding: 18px 20px; text-align: left; font-weight: 600; font-size: 1.05rem; }
+        .comparison-table td { padding: 16px 20px; border-bottom: 1px solid rgba(255, 255, 255, 0.05); color: var(--text-secondary); }
+        .comparison-table tr:last-child td { border-bottom: none; }
+        .comparison-table tr:nth-child(even) { background: rgba(255, 255, 255, 0.02); }
+        .comparison-table .highlight-col { color: var(--accent-green); font-weight: 500; }
+        .timeline { position: relative; margin: 40px 0; padding-left: 40px; }
+        .timeline::before { content: ''; position: absolute; left: 15px; top: 0; bottom: 0; width: 2px; background: linear-gradient(180deg, var(--primary-blue), var(--primary-purple)); }
+        .timeline-item { position: relative; margin-bottom: 35px; padding: 20px 25px; background: var(--card-bg-light); border-radius: 12px; border: 1px solid rgba(0, 212, 255, 0.1); animation: fadeInUp 0.5s ease-out forwards; opacity: 0; }
+        .timeline-item:nth-child(1) { animation-delay: 0.1s; }
+        .timeline-item:nth-child(2) { animation-delay: 0.2s; }
+        .timeline-item:nth-child(3) { animation-delay: 0.3s; }
+        .timeline-item:nth-child(4) { animation-delay: 0.4s; }
+        .timeline-item:nth-child(5) { animation-delay: 0.5s; }
+        .timeline-item:nth-child(6) { animation-delay: 0.6s; }
+        .timeline-item::before { content: ''; position: absolute; left: -32px; top: 25px; width: 12px; height: 12px; background: var(--primary-blue); border-radius: 50%; box-shadow: var(--glow-blue); }
+        .timeline-date { color: var(--primary-blue); font-size: 0.9rem; font-weight: 600; margin-bottom: 8px; }
+        .timeline-title { color: var(--text-primary); font-size: 1.1rem; font-weight: 600; margin-bottom: 8px; }
+        .timeline-desc { color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6; }
+        footer { background: #050508; padding: 60px 20px; text-align: center; border-top: 1px solid rgba(255, 255, 255, 0.1); }
+        footer p { color: var(--text-secondary); margin-bottom: 20px; }
+        .footer-links { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; }
+        .footer-links a { color: var(--primary-blue); text-decoration: none; transition: color 0.3s ease; }
+        .footer-links a:hover { color: var(--text-primary); }
+        @media (max-width: 768px) { .content-section { padding: 40px 25px; } .hero-images { grid-template-columns: 1fr; } .hero h1 { font-size: 2rem; } .hero-subtitle { font-size: 1.2rem; } }
     </style>
 </head>
 <body>
     <div class="code-rain" id="codeRain"></div>
-    <div class="code-rain">
-        <span class="code-char" style="left: 10%; animation-duration: 5s;">01</span>
-        <span class="code-char" style="left: 30%; animation-duration: 4s;">AI</span>
-        <span class="code-char" style="left: 50%; animation-duration: 6s;">LOOP</span>
-        <span class="code-char" style="left: 70%; animation-duration: 3s;">CODE</span>
-        <span class="code-char" style="left: 90%; animation-duration: 5s;">DEV</span>
-    </div>
-
     <section class="hero">
         <div class="hero-content">
             <span class="hero-badge">📰 AI News 專題報道</span>
-            <h1>迴圈工程崛起：為何工程師不再依賴手動提示詞？</h1>
-            <p class="hero-subtitle">從語言指令到系統架構的典範轉移，自動化迴圈正重塑 AI 協作開發的未來標準。</p>
+            <h1>迴圈工程崛起：為何工程師<br>不再依賴手動提示詞？</h1>
+            <p class="hero-subtitle">從語言指令到系統架構的典範轉移，自動化迴圈正重塑 AI 協作開發的未來標準</p>
             <div class="hero-images">
                 <div class="hero-image-card">
-                    <img src="img/img1.png" alt="AI 迴圈工程概念圖">
+                    <img src="img/img1.png" alt="Loop Engineering 迴圈工程概念圖">
                 </div>
             </div>
         </div>
         <div class="scroll-indicator"><span></span></div>
     </section>
+    <section class="content-section">
 
-    <section>
-        <div class="content-section">
-            <div class="meta-info">
-                <p><strong>📺 資料來源</strong>：<a href="https://www.bnext.com.tw/article/91246/loop-engineering-from-prompting-to-designing-ai-coding-loops" target="_blank">https://www.bnext.com.tw/article/91246/loop-engineering-from-prompting-to-designing-ai-coding-loops</a></p>
-                <p><strong>📅 發布日期</strong>：2026-06-16</p>
-                <p><strong>🤖 處理方式</strong>：AI 智能摘要生成</p>
-            </div>
+        <div class="meta-info">
+            <p><strong>📺 資料來源</strong>：<a href="https://www.bnext.com.tw/article/91246/loop-engineering-from-prompting-to-designing-ai-coding-loops" target="_blank">BNEXT</a></p>
+            <p><strong>📅 發布日期</strong>：2026-06-15</p>
+            <p><strong>🤖 處理方式</strong>：AI 智能摘要生成</p>
+        </div>
 
-            <h3>🎯 開發典範的核心演進</h3>
-            <p>研究指出，隨著生成式 AI 程式輔助工具的快速成熟，軟體工程的工作模式已迎來根本性轉變。本次報導聚焦於業界前線工程師的實戰經驗，揭示開發重心已從單次指令的語言打磨，轉向自動化系統架構的設計。OpenAI 與 Anthropic 技術負責人一致強調，現代開發者不應繼續手動撰寫提示詞，而應轉向建構具備自我驅動能力的迴圈機制。</p>
-            <p>專家分析將此趨勢定義為「迴圈工程」，其本質是將原本由人類負責的提示設計任務，完全移交給一套可自主執行的軟體系統。此舉標誌著 AI 協作已跨越基礎指令交互階段，正式邁向高階工程自動化。開發者的核心職責轉變為定義目標、設定驗證閾值與優化系統反饋路徑。</p>
+        <h3>🎯 核心觀點</h3>
+        <p>2026 年站在 AI 寫程式工具前線的工程師，已從「一行一行下指令」轉向「設計會自己下指令的迴圈」。迴圈工程（Loop Engineering）把原本由人類負責的提示設計任務，移交給一套可自主執行的軟體系統。</p>
 
-            <h3>⚙️ 標準化機制與平台整合</h3>
-            <p>數據顯示，一套成熟的自動化迴圈通常遵循嚴謹的五階段作業流程。系統會依序執行需求探索、任務規劃、程式執行、結果驗證與循環迭代。透過標準化的驗證機制，系統僅在輸出成果通過測試標準後才會正式交付；若未達標，則自動重新啟動迴圈並修正偏差。此設計大幅降低了人工校對的頻率，確保交付物的穩定性。</p>
-            <p>目前，業界主流開發平台已將此架構列為基礎功能。例如 Claude Code 與 OpenAI Codex 等環境，皆內建自動化工作樹、子代理模組、技能擴充與長期記憶機制。這些工具鏈的整合，使開發者能夠直接調用成熟的迴圈元件，快速部署具備持續迭代能力的 AI 開發流程。</p>
-
-            <h3>⚠️ 部署風險與應對策略</h3>
-            <p>儘管自動化流程顯著提升研發產能，業界觀察仍明確指出導入過程中需警惕的三項核心挑戰。技術團隊必須建立對應的把關機制，以維持系統可靠性與程式碼品質。</p>
-            <ul>
-                <li><strong>非預期性提前結束</strong>：代理系統可能因狀態邏輯誤判而提前發送完成訊號，導致迴圈在半成品階段中斷，持續消耗運算資源與授權成本。</li>
-                <li><strong>技術理解落差</strong>：自動生成的程式碼交付速度若遠超開發者的消化能力，將迅速累積隱藏的維護成本與架構負債，影響後續迭代。</li>
-                <li><strong>獨立判斷力流失</strong>：長期依賴自動化迴圈易使工程師產生認知惰性，傾向全盤接受系統輸出，逐漸削弱核心的技術審查與除錯能力。</li>
-            </ul>
-            <p>針對上述隱憂，建議團隊在導入初期保留關鍵節點的人工驗證，並定期執行程式碼審計與知識同步。透過平衡自動化效率與人類技術判斷，方能確保長期開發健康度。</p>
-
-            <div class="highlight-box">
-                <h4>✨ 關鍵洞察</h4>
-                <p>本次技術轉型的核心在於開發思維的升級。從依賴個人語言表達的提示技巧，轉向倚重系統架構的迴圈設計，代表軟體工程正式邁向可驗證、可複用的高階自動化階段。未來，具備閉環反饋機制的 AI 協作系統，將成為企業建立研發競爭力的基礎設施。</p>
+        <div class="tech-card">
+            <div class="tech-card-icon">🔧</div>
+            <div class="tech-card-content">
+                <h4>從提示到迴圈</h4>
+                <p>提示工程師說「幫我寫一個函式」；迴圈工程師說「寫出來、測試、修到全部通過為止」。槓桿點往上移了一層——從「打字下提示」變成「設計那套會下提示的系統」。</p>
             </div>
         </div>
-    </section>
 
+        <div class="tech-card">
+            <div class="tech-card-icon">🔄</div>
+            <div class="tech-card-content">
+                <h4>五階段標準流程</h4>
+                <p>每個迴圈都走同樣五個階段：探索（Discover）→ 規劃（Plan）→ 執行（Execute）→ 驗證（Verify）→ 迭代（Iterate）。通過驗證就交付，沒通過就再跑一次。</p>
+            </div>
+        </div>
+
+        <div class="tech-card">
+            <div class="tech-card-icon">🛠️</div>
+            <div class="tech-card-content">
+                <h4>主流工具已內建</h4>
+                <p>Claude Code 官方已列出 /loop、/goal、worktree、skills、MCP、subagents 與 memory；OpenAI Codex 也有 automations、worktrees、skills、MCP、subagents 與記憶機制。</p>
+            </div>
+        </div>
+
+        <div class="tech-card">
+            <div class="tech-card-icon">⚠️</div>
+            <div class="tech-card-content">
+                <h4>三個潛在風險</h4>
+                <p>Ralph Wiglum 迴圈（無聲失敗）、理解債（comprehension debt）、認知投降（cognitive surrender）。迴圈越快交付你沒寫過的程式，你懂的和倉庫裡實際有的，落差就越大。</p>
+            </div>
+        </div>
+
+        <div class="highlight-box">
+            <h4>✨ 關鍵洞察</h4>
+            <p>先過四條件測試再決定要不要建；先讓一次手動執行穩定再包成迴圈；先設好那道客觀關卡再讓它自己跑。建你的迴圈，但要像一個打算繼續當工程師的人那樣建。</p>
+        </div>
+
+        <div class="quote-box">
+            <p>「你不該再去提示你的程式碼代理了。你應該設計會去提示代理的迴圈。」</p>
+            <cite>— Peter Steinberger（@steipete），OpenClaw 創作者，現於 OpenAI 任職</cite>
+        </div>
+
+        <h3>🔮 業界展望</h3>
+        <p>兩個人建出一模一樣的迴圈，可能得到完全相反的結果。一個用它在自己深刻理解的工作上跑得更快，另一個用它來逃避理解工作本身。迴圈分不出差別，你分得出。</p>
+
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-date">2022-2024</div>
+                <div class="timeline-title">提示工程時代</div>
+                <div class="timeline-desc">一行一行下指令，工程師親自控制每一步輸出</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">2025</div>
+                <div class="timeline-title">工具內建支援</div>
+                <div class="timeline-desc">主流平台陸續將迴圈機制內建為標準功能</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">2026</div>
+                <div class="timeline-title">典範轉移</div>
+                <div class="timeline-desc">工程師從「下指令」轉向「設計會下指令的系統」</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">2026</div>
+                <div class="timeline-title">主流工具成熟</div>
+                <div class="timeline-desc">Claude Code /loop、Codex automations 等功能全面普及</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">未來</div>
+                <div class="timeline-title">持續演進</div>
+                <div class="timeline-desc">具備閉環反饋機制的 AI 協作系統將成企業競爭力基礎</div>
+            </div>
+        </div>
+
+        <table class="comparison-table">
+            <thead>
+                <tr>
+                    <th>維度</th>
+                    <th>提示工程</th>
+                    <th>迴圈工程</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>核心能力</td>
+                    <td>語言表達</td>
+                    <td class="highlight-col">軟體系統設計</td>
+                </tr>
+                <tr>
+                    <td>工作模式</td>
+                    <td>單次指令</td>
+                    <td class="highlight-col">自動化持續迭代</td>
+                </tr>
+                <tr>
+                    <td>驗證方式</td>
+                    <td>人工檢查</td>
+                    <td class="highlight-col">系統自動判斷</td>
+                </tr>
+                <tr>
+                    <td>槓桿點</td>
+                    <td>單次輸出品質</td>
+                    <td class="highlight-col">可複用系統架構</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
     <footer>
-        <p>© 2026 AI News Archive | 由 AI 技術生成</p>
+        <p>© 2026 AI News Archive | 由 AI 技術生成 | 林SIR 監督</p>
         <div class="footer-links">
             <a href="../index.html">返回主頁</a>
             <a href="https://github.com/hklamsir/ai_news" target="_blank">GitHub</a>
@@ -143,44 +228,20 @@ footer p { color: var(--text-secondary); margin-bottom: 20px; }
         </div>
     </footer>
 
+
     <script>
-        function createCodeRain() {
-            const codeRain = document.getElementById('codeRain');
-            if (!codeRain) return;
-            const chars = '01 アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン';
-            for (let i = 0; i < 50; i++) {
-                const char = document.createElement('div');
-                char.className = 'code-char';
-                char.textContent = chars[Math.floor(Math.random() * chars.length)];
-                char.style.left = Math.random() * 100 + '%';
-                char.style.animationDelay = Math.random() * 4 + 's';
-                char.style.animationDuration = (Math.random() * 2 + 3) + 's';
-                codeRain.appendChild(char);
-            }
+        const codeRain = document.getElementById('codeRain');
+        const chars = '01アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン';
+        for (let i = 0; i < 50; i++) {
+            const char = document.createElement('span');
+            char.className = 'code-char';
+            char.textContent = chars[Math.floor(Math.random() * chars.length)];
+            char.style.left = Math.random() * 100 + '%';
+            char.style.animationDelay = Math.random() * 4 + 's';
+            char.style.animationDuration = (Math.random() * 3 + 3) + 's';
+            codeRain.appendChild(char);
         }
-
-        function handleScrollAnimation() {
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.style.opacity = '1';
-                        entry.target.style.transform = 'translateY(0)';
-                    }
-                });
-            }, { threshold: 0.1 });
-
-            document.querySelectorAll('.fade-in').forEach(el => {
-                el.style.opacity = '0';
-                el.style.transform = 'translateY(30px)';
-                el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-                observer.observe(el);
-            });
-        }
-
-        document.addEventListener('DOMContentLoaded', () => {
-            createCodeRain();
-            handleScrollAnimation();
-        });
     </script>
+
 </body>
 </html>
