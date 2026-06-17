@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260617_100200",
+      "title": "The AI layoff wave is becoming a powder keg | TechCrunch",
+      "summary": "科技公司破紀錄利潤背後 15萬人被裁與AI富豪崛起之矛盾",
+      "url": "./news_20260617_100200/index.html",
+      "date": "2026-06-17",
+      "time": "10:02:00",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260617_081600",
       "title": "SpaceX斥600億美元收購AI編碼Cursor！料最快第3季成事｜hket",
       "summary": "世紀IPO後首筆大型收購 xAI生態整合關鍵一步",
@@ -1702,6 +1711,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-06-17T08:17:21.555244",
-  "total_count": 189
+  "last_updated": "2026-06-17T10:05:58.952827",
+  "total_count": 190
 }
