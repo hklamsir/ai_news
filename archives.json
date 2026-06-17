@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260617_181900",
+      "title": "200 tokens/s 是生死線：沒有高速版的 AI 模型將被淘汰",
+      "summary": "AI 模型速度大戰 200 tokens/s 成生死門檻",
+      "url": "./news_20260617_181900/index.html",
+      "date": "2026-06-17",
+      "time": "18:19:00",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260617_100200",
       "title": "The AI layoff wave is becoming a powder keg | TechCrunch",
       "summary": "科技公司破紀錄利潤背後 15萬人被裁與AI富豪崛起之矛盾",
@@ -1711,6 +1720,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-06-17T10:05:58.952827",
-  "total_count": 190
+  "last_updated": "2026-06-17T18:21:05.109877",
+  "total_count": 191
 }
