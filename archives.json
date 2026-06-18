@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260618_172121",
+      "title": "從 GPU 主導到 CPU 回溫：Agentic AI 如何改寫企業資料中心配置？",
+      "summary": "Dell Technologies World 2026：Agentic AI 帶動 CPU 需求回升，83% 資料仍在地端",
+      "url": "./news_20260618_172121/index.html",
+      "date": "2026-06-18",
+      "time": "17:21:21",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260618_151739",
       "title": "不能只懂寫Code！Anthropic揭Vibe coding真相：比起coding，「本業知識」才是最大槓桿",
       "summary": "Anthropic七個月研究：專業知識決定AI任務成敗，工程師只領先非工程師5%",
@@ -1738,6 +1747,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-06-18T15:19:26.186686",
-  "total_count": 193
+  "last_updated": "2026-06-18T17:23:13.133580",
+  "total_count": 194
 }
