@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260618_151739",
+      "title": "不能只懂寫Code！Anthropic揭Vibe coding真相：比起coding，「本業知識」才是最大槓桿",
+      "summary": "Anthropic七個月研究：專業知識決定AI任務成敗，工程師只領先非工程師5%",
+      "url": "./news_20260618_151739/index.html",
+      "date": "2026-06-18",
+      "time": "15:17:39",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260618_150621",
       "title": "Only 16 percent of Americans think AI will have a positive impact on society, a new study shows | TechCrunch",
       "summary": "皮尤研究中心最新調查：44% 使用 AI 但僅 16% 相信正面影響，67% 不信政府監管",
@@ -1729,6 +1738,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-06-18T15:09:53.689970",
-  "total_count": 192
+  "last_updated": "2026-06-18T15:19:26.186686",
+  "total_count": 193
 }
