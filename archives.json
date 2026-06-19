@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260619_110700",
+      "title": "Probably raises $9M to build a more reliable kind of AI | TechCrunch",
+      "summary": "AI 創業公司透過「確定性驗證器」消除幻覺，目標達到 99.99% 準確率",
+      "url": "./news_20260619_110700/index.html",
+      "date": "2026-06-19",
+      "time": "11:07:00",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260618_172121",
       "title": "從 GPU 主導到 CPU 回溫：Agentic AI 如何改寫企業資料中心配置？",
       "summary": "Dell Technologies World 2026：Agentic AI 帶動 CPU 需求回升，83% 資料仍在地端",
@@ -1747,6 +1756,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-06-18T17:23:13.133580",
-  "total_count": 194
+  "last_updated": "2026-06-19T11:12:07.515866",
+  "total_count": 195
 }
