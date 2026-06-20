@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260620_130615",
+      "title": "Norway imposes broad restrictions on AI for elementary school kids - Engadget",
+      "summary": "按年齡分層監管，8 月底新學年實施",
+      "url": "./news_20260620_130615/index.html",
+      "date": "2026-06-20",
+      "time": "13:06:15",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260620_112809",
       "title": "Claude Code 都是誰在用？Anthropic 公開分析報告：非工程師暴增，專業知識反而更重要 - 電腦王阿達",
       "summary": "非工程師暴增，專業知識反而更重要",
@@ -1774,6 +1783,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-06-20T11:38:41.389665",
-  "total_count": 197
+  "last_updated": "2026-06-20T13:07:56.009117",
+  "total_count": 198
 }
