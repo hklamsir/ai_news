@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260620_112809",
+      "title": "Claude Code 都是誰在用？Anthropic 公開分析報告：非工程師暴增，專業知識反而更重要 - 電腦王阿達",
+      "summary": "非工程師暴增，專業知識反而更重要",
+      "url": "./news_20260620_112809/index.html",
+      "date": "2026-06-20",
+      "time": "11:28:09",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260619_115300",
       "title": "AI搜尋優化怎麼做？Ahrefs數據揭潛規則：schema標記沒用、YouTube最關鍵",
       "summary": "Schema 結構化標記幾乎無效，YouTube 提及次數相關係數 0.737 奪冠",
@@ -1765,6 +1774,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-06-19T11:55:39.418314",
-  "total_count": 196
+  "last_updated": "2026-06-20T11:28:14.928087",
+  "total_count": 197
 }
