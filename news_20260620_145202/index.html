@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NVIDIA 釋出僅 0.6B 語音辨識模型 Nemotron 3.5 ASR，純 CPU 就能即時轉錄 40 種語言 - AI News</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root { --primary-blue: #00d4ff; --primary-purple: #7b2cbf; --accent-green: #00ff88; --accent-orange: #ff9500; --accent-red: #ff4757; --dark-bg: #0a0a0f; --card-bg: #12121a; --card-bg-light: #1a1a28; --text-primary: #ffffff; --text-secondary: #a0a0b0; --gradient-1: linear-gradient(135deg, #00d4ff 0%, #7b2cbf 100%); --gradient-2: linear-gradient(135deg, #00d4ff 0%, #00ff88 100%); --glow-blue: 0 0 20px rgba(0, 212, 255, 0.5); --glow-purple: 0 0 20px rgba(123, 44, 191, 0.5); }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Noto Sans TC', sans-serif; background-color: var(--dark-bg); color: var(--text-primary); line-height: 1.8; overflow-x: hidden; }
+        @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-20px); } }
+        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.6; } }
+        @keyframes slideIn { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes codeRain { 0% { transform: translateY(-100%); opacity: 0; } 10% { opacity: 1; } 90% { opacity: 1; } 100% { transform: translateY(100vh); opacity: 0; } }
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); } }
+        .code-rain { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; overflow: hidden; }
+        .code-char { position: absolute; color: var(--primary-blue); font-family: 'Courier New', monospace; font-size: 14px; opacity: 0; animation: codeRain 4s linear infinite; }
+        .hero { position: relative; min-height: 80vh; display: flex; align-items: center; justify-content: center; padding: 80px 20px; background: linear-gradient(180deg, var(--dark-bg) 0%, #1a1a2e 100%); overflow: hidden; }
+        .hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(ellipse at center, rgba(123, 44, 191, 0.15) 0%, transparent 70%); z-index: 1; }
+        .hero-content { position: relative; z-index: 2; max-width: 1200px; text-align: center; animation: slideIn 1s ease-out; }
+        .hero-badge { display: inline-block; padding: 12px 32px; background: var(--gradient-1); border-radius: 50px; font-size: 18px; font-weight: 700; margin-bottom: 24px; box-shadow: var(--glow-blue); letter-spacing: 1px; }
+        .hero h1 { font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 900; margin-bottom: 24px; background: var(--gradient-1); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; line-height: 1.2; }
+        .hero-subtitle { font-size: clamp(1.2rem, 2.2vw, 1.5rem); color: var(--text-primary); max-width: 900px; margin: 0 auto 40px; line-height: 1.6; font-weight: 400; }
+        .hero-images { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; margin-top: 60px; }
+        .hero-image-card { position: relative; border-radius: 20px; overflow: hidden; aspect-ratio: 16/9; box-shadow: var(--glow-purple); transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .hero-image-card:hover { transform: scale(1.02); box-shadow: 0 0 40px rgba(123, 44, 191, 0.7); }
+        .hero-image-card img { width: 100%; height: 100%; object-fit: cover; }
+        .scroll-indicator { position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%); animation: float 2s ease-in-out infinite; z-index: 2; }
+        .scroll-indicator span { display: block; width: 30px; height: 50px; border: 2px solid var(--primary-blue); border-radius: 25px; position: relative; }
+        .scroll-indicator span::before { content: ''; position: absolute; top: 8px; left: 50%; transform: translateX(-50%); width: 6px; height: 10px; background: var(--primary-blue); border-radius: 3px; animation: pulse 1.5s infinite; }
+        section { padding: 80px 20px; position: relative; z-index: 1; }
+        .content-section { background: var(--card-bg); padding: 60px 50px; border-radius: 24px; border: 1px solid rgba(0, 212, 255, 0.2); max-width: 1100px; margin: 0 auto; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3); }
+        .content-section h3 { font-size: 1.6rem; margin: 40px 0 20px; color: var(--accent-green); }
+        .content-section p { color: var(--text-secondary); line-height: 2; font-size: 1.08rem; margin: 15px 0; }
+        .content-section ul { margin: 20px 0; padding-left: 30px; }
+        .content-section li { margin: 10px 0; color: var(--text-secondary); }
+        .meta-info { background: linear-gradient(135deg, rgba(0, 212, 255, 0.15) 0%, rgba(123, 44, 191, 0.15) 100%); padding: 30px; border-radius: 16px; margin-bottom: 40px; border-left: 5px solid var(--primary-blue); }
+        .meta-info p { margin: 12px 0; color: var(--text-secondary); font-size: 1.05rem; }
+        .meta-info strong { color: var(--primary-blue); font-weight: 600; }
+        .meta-info a { color: var(--primary-blue); text-decoration: none; word-break: break-all; }
+        .highlight-box { background: linear-gradient(135deg, rgba(0, 255, 136, 0.08) 0%, rgba(0, 212, 255, 0.08) 100%); padding: 30px; border-radius: 16px; border-left: 5px solid var(--accent-green); margin: 40px 0; }
+        .highlight-box h4 { color: var(--accent-green); margin-bottom: 15px; font-size: 1.3rem; }
+        .highlight-box p { color: var(--text-secondary); margin: 0; }
+        .alert-box { background: linear-gradient(135deg, rgba(255, 71, 87, 0.1) 0%, rgba(255, 149, 0, 0.1) 100%); padding: 25px 30px; border-radius: 16px; border-left: 5px solid var(--accent-red); margin: 30px 0; }
+        .alert-box h4 { color: var(--accent-red); margin-bottom: 12px; font-size: 1.15rem; }
+        .alert-box p { color: var(--text-secondary); margin: 8px 0; font-size: 1rem; }
+        .quote-box { background: linear-gradient(135deg, rgba(123, 44, 191, 0.15) 0%, rgba(0, 212, 255, 0.15) 100%); padding: 30px 40px; border-radius: 16px; border-left: 5px solid var(--primary-purple); margin: 40px 0; position: relative; }
+        .quote-box::before { content: '"'; position: absolute; top: 10px; left: 20px; font-size: 80px; color: var(--primary-purple); opacity: 0.3; font-family: Georgia, serif; }
+        .quote-box p { color: var(--text-primary); font-size: 1.2rem; font-style: italic; margin-bottom: 15px; }
+        .quote-box cite { color: var(--text-secondary); font-size: 0.95rem; }
+        .tech-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin: 40px 0; }
+        .tech-card { background: var(--card-bg-light); padding: 30px; border-radius: 16px; border: 1px solid rgba(0, 212, 255, 0.15); transition: transform 0.3s ease, box-shadow 0.3s ease; animation: fadeInUp 0.6s ease-out forwards; opacity: 0; }
+        .tech-card:nth-child(1) { animation-delay: 0.1s; }
+        .tech-card:nth-child(2) { animation-delay: 0.2s; }
+        .tech-card:nth-child(3) { animation-delay: 0.3s; }
+        .tech-card:nth-child(4) { animation-delay: 0.4s; }
+        .tech-card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0, 212, 255, 0.2); }
+        .tech-card-icon { font-size: 2.5rem; margin-bottom: 15px; }
+        .tech-card h4 { color: var(--primary-blue); margin-bottom: 12px; font-size: 1.2rem; }
+        .tech-card p { color: var(--text-secondary); font-size: 0.95rem; line-height: 1.7; }
+        .comparison-table { width: 100%; border-collapse: collapse; margin: 40px 0; border-radius: 16px; overflow: hidden; box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3); }
+        .comparison-table thead { background: linear-gradient(135deg, var(--primary-blue), var(--primary-purple)); }
+        .comparison-table th { padding: 18px 20px; text-align: left; font-weight: 600; font-size: 1.05rem; }
+        .comparison-table td { padding: 16px 20px; border-bottom: 1px solid rgba(255, 255, 255, 0.05); color: var(--text-secondary); }
+        .comparison-table tr:last-child td { border-bottom: none; }
+        .comparison-table tr:nth-child(even) { background: rgba(255, 255, 255, 0.02); }
+        .comparison-table .highlight-col { color: var(--accent-green); font-weight: 500; }
+        .timeline { position: relative; margin: 40px 0; padding-left: 40px; }
+        .timeline::before { content: ''; position: absolute; left: 15px; top: 0; bottom: 0; width: 2px; background: linear-gradient(180deg, var(--primary-blue), var(--primary-purple)); }
+        .timeline-item { position: relative; margin-bottom: 35px; padding: 20px 25px; background: var(--card-bg-light); border-radius: 12px; border: 1px solid rgba(0, 212, 255, 0.1); animation: fadeInUp 0.5s ease-out forwards; opacity: 0; }
+        .timeline-item:nth-child(1) { animation-delay: 0.1s; }
+        .timeline-item:nth-child(2) { animation-delay: 0.2s; }
+        .timeline-item:nth-child(3) { animation-delay: 0.3s; }
+        .timeline-item:nth-child(4) { animation-delay: 0.4s; }
+        .timeline-item:nth-child(5) { animation-delay: 0.5s; }
+        .timeline-item:nth-child(6) { animation-delay: 0.6s; }
+        .timeline-item::before { content: ''; position: absolute; left: -32px; top: 25px; width: 12px; height: 12px; background: var(--primary-blue); border-radius: 50%; box-shadow: var(--glow-blue); }
+        .timeline-date { color: var(--primary-blue); font-size: 0.9rem; font-weight: 600; margin-bottom: 8px; }
+        .timeline-title { color: var(--text-primary); font-size: 1.1rem; font-weight: 600; margin-bottom: 8px; }
+        .timeline-desc { color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6; }
+        footer { background: #050508; padding: 60px 20px; text-align: center; border-top: 1px solid rgba(255, 255, 255, 0.1); }
+        footer p { color: var(--text-secondary); margin-bottom: 20px; }
+        .footer-links { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; }
+        .footer-links a { color: var(--primary-blue); text-decoration: none; transition: color 0.3s ease; }
+        .footer-links a:hover { color: var(--text-primary); }
+        @media (max-width: 768px) { .content-section { padding: 40px 25px; } .hero-images { grid-template-columns: 1fr; } .hero h1 { font-size: 2rem; } .hero-subtitle { font-size: 1.2rem; } }
+    </style>
+</head>
+<body>
+    <div class="code-rain" id="codeRain"></div>
+    <section class="hero">
+        <div class="hero-content">
+            <span class="hero-badge">📰 AI News 專題報道</span>
+            <h1>NVIDIA  Nemotron 3.5 ASR<br>純 CPU 即時轉錄 40 種語言</h1>
+            <p class="hero-subtitle">600M 參數填補本地 Agent 語音環節</p>
+            <div class="hero-images">
+                <div class="hero-image-card">
+                    <img src="img/img1.png" alt="純 CPU 實時轉錄四十種語言">
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator"><span></span></div>
+    </section>
+    <section class="content-section">
+
+        <div class="meta-info">
+            <p><strong>📺 資料來源</strong>：<a href="https://www.koc.com.tw/archives/646558" target="_blank">KOC（電腦王阿達）</a></p>
+            <p><strong>📅 發布日期</strong>：2026-06-20</p>
+            <p><strong>🤖 處理方式</strong>：AI 智能摘要生成</p>
+        </div>
+
+        <h3>🎯 核心觀點</h3>
+        <p>NVIDIA 推出 600M 參數的 Nemotron 3.5 ASR 語音辨識模型，支援 40 種語言，純 CPU 即可即時轉錄。填補了本地 AI Agent 語音輸入環節的空白，讓完整本地 Agent pipeline 成為可能。</p>
+
+        <div class="tech-card">
+            <div class="tech-card-icon">⚙️</div>
+            <div class="tech-card-content">
+                <h4>技術架構：Cache-Aware FastConformer-RNNT</h4>
+                <p>24 層 FastConformer 編碼器搭配 RNNT 解碼器，快取自注意力與卷積激活狀態，每個音訊幀只處理一次，計算量與延遲同步下降。</p>
+            </div>
+        </div>
+
+        <div class="tech-card">
+            <div class="tech-card-icon">🌍</div>
+            <div class="tech-card-content">
+                <h4>40 種語言，三層品質</h4>
+                <p>透過 `target_lang` 指定語言（如 `zh-CN`），或設為 `auto` 自動偵測。自動偵測模式會在標點符號後輸出語言標籤，適合混合語言音訊。</p>
+            </div>
+        </div>
+
+        <div class="tech-card">
+            <div class="tech-card-icon">⚡</div>
+            <div class="tech-card-content">
+                <h4>延遲可調：att_context_size 參數</h4>
+                <p>一個旋鈕控制速度與準確率平衡。串流場景達 258 倍即時處理，短音訊片段詞錯率不退化。開發者可根據場景（即時字幕 vs 批次轉錄）自由切換。</p>
+            </div>
+        </div>
+
+        <div class="tech-card">
+            <div class="tech-card-icon">🔄</div>
+            <div class="tech-card-content">
+                <h4>對比 Whisper：各有優勢</h4>
+                <p>Nemotron 在串流場景全面勝出；Whisper 在嘈雜環境和帶口音音訊上穩健性更強。兩者定位互補，非取代關係。</p>
+            </div>
+        </div>
+
+        <div class="highlight-box">
+            <h4>📌 重點提示</h4>
+            <p>Nemotron 3.5 ASR 以 OpenMDW-1.1 授權開源，模型已上架 HuggingFace，可用於商業用途。配合 Nemotron 3 Nano（語言模型）和 Magpie TTS（語音合成），從語音輸入到輸出的完整本地 Agent pipeline 將成為可能。</p>
+        </div>
+
+        <div class="quote-box">
+            <p>「對於正在搭建本地 AI Agent 的開發者而言，這意味著語音輸入不再是一個需要依賴雲端 API 的環節。」</p>
+            <cite>— KOC 評測</cite>
+        </div>
+
+        <h3>🔮 業界展望</h3>
+        <p>本地 AI Agent 的最後一塊拼圖正在到位。語音輸入、本地推理、語音輸出——三個環節都有對應的開源方案，且全部可在消費級硬體上運行。這將大幅推動對資料隱私有嚴格要求的行業應用，如醫療、法律、金融等領域的本地 AI Assistant。</p>
+
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-date">6 月初</div>
+                <div class="timeline-title">Nemotron 3.5 ASR 低調上架</div>
+                <div class="timeline-desc">NVIDIA NeMo 團隊發布 600M 參數多語言語音辨識模型</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">同期</div>
+                <div class="timeline-title">英文版發布</div>
+                <div class="timeline-desc">`nemotron-speech-streaming-en-0.6b` 英文版先行發布</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">同期</div>
+                <div class="timeline-title">LiveKit 整合指南</div>
+                <div class="timeline-desc">發布即時語音 Agent pipeline 接入指南，包含本地提詞器範例</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">同期</div>
+                <div class="timeline-title">HuggingFace 上架</div>
+                <div class="timeline-desc">`nvidia/nemotron-3.5-asr-streaming-0.6b` 開源，可用於商業用途</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">進行中</div>
+                <div class="timeline-title">與 Whisper 基準測試對比</div>
+                <div class="timeline-desc">E2E Networks 在 NVIDIA L4 GPU 上進行 58 種配置測試</div>
+            </div>
+        </div>
+
+        <table class="comparison-table">
+            <thead>
+                <tr>
+                    <th>維度</th>
+                    <th>Nemotron 3.5 ASR</th>
+                    <th>Whisper large-v3-turbo</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>參數量</td>
+                    <td class="highlight-col">600M</td>
+                    <td>809M</td>
+                </tr>
+                <tr>
+                    <td>GPU 需求</td>
+                    <td class="highlight-col">純 CPU 可運行</td>
+                    <td>需要 GPU</td>
+                </tr>
+                <tr>
+                    <td>語言支援</td>
+                    <td class="highlight-col">40 種（單一模型）</td>
+                    <td>更多（但需多模型）</td>
+                </tr>
+                <tr>
+                    <td>串流延遲</td>
+                    <td class="highlight-col">258 倍即時，可調</td>
+                    <td>短音訊片段詞錯率退化 3.5%</td>
+                </tr>
+                <tr>
+                    <td>嘈雜/口音環境</td>
+                    <td>一般</td>
+                    <td class="highlight-col">較強</td>
+                </tr>
+                <tr>
+                    <td>開源授權</td>
+                    <td class="highlight-col">OpenMDW-1.1</td>
+                    <td>MIT</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+    <footer>
+        <p>© 2026 AI News Archive | 由 AI 技術生成 | 林SIR 監督</p>
+        <div class="footer-links">
+            <a href="../index.html">返回主頁</a>
+            <a href="https://github.com/hklamsir/ai_news" target="_blank">GitHub</a>
+            <a href="https://hklamsir.github.io/ai_news/" target="_blank">瀏覽所有專題</a>
+        </div>
+    </footer>
+
+
+    <script>
+        const codeRain = document.getElementById('codeRain');
+        const chars = '01アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン';
+        for (let i = 0; i < 50; i++) {
+            const char = document.createElement('span');
+            char.className = 'code-char';
+            char.textContent = chars[Math.floor(Math.random() * chars.length)];
+            char.style.left = Math.random() * 100 + '%';
+            char.style.animationDelay = Math.random() * 4 + 's';
+            char.style.animationDuration = (Math.random() * 3 + 3) + 's';
+            codeRain.appendChild(char);
+        }
+    </script>
+
+</body>
+</html>

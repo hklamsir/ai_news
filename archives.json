@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260620_145202",
+      "title": "NVIDIA Nemotron 3.5 ASR 純 CPU 即時轉錄 40 種語言",
+      "summary": "600M 參數填補本地 Agent 語音環節",
+      "url": "./news_20260620_145202/index.html",
+      "date": "2026-06-20",
+      "time": "14:52:02",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260620_130615",
       "title": "Norway imposes broad restrictions on AI for elementary school kids - Engadget",
       "summary": "按年齡分層監管，8 月底新學年實施",
@@ -1783,6 +1792,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-06-20T13:07:56.009117",
-  "total_count": 198
+  "last_updated": "2026-06-20T14:53:28.443242",
+  "total_count": 199
 }
