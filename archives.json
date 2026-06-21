@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260621_125200",
+      "title": "創意唔係生成，創意唔係諗新嘢咁簡單 | 學識AI EP4",
+      "summary": "學識AI EP4：AI時代的人類創意價值",
+      "url": "./news_20260621_125200/index.html",
+      "date": "2026-06-21",
+      "time": "12:52:00",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260621_103800",
       "title": "別再亂裝Skills了！我試用了100多個，真正離不開的只有這10個！",
       "summary": "Codex和Claude潛能充分發揮指南",
@@ -1810,6 +1819,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-06-21T11:57:05.603378",
-  "total_count": 201
+  "last_updated": "2026-06-21T12:54:32.627846",
+  "total_count": 202
 }
