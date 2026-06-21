@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260621_094200",
+      "title": "中國青年發明國產AI激光｢滅蚊神器｣爆紅　在海外爆紅賣270萬美元",
+      "summary": "TikTok播放7000萬次　Indiegogo眾籌270萬美元　70多國用戶追捧",
+      "url": "./news_20260621_094200/index.html",
+      "date": "2026-06-21",
+      "time": "09:42:00",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260620_145202",
       "title": "NVIDIA Nemotron 3.5 ASR 純 CPU 即時轉錄 40 種語言",
       "summary": "600M 參數填補本地 Agent 語音環節",
@@ -1792,6 +1801,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-06-20T14:53:28.443242",
-  "total_count": 199
+  "last_updated": "2026-06-21T09:51:09.302623",
+  "total_count": 200
 }
