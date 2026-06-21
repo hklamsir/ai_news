@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260621_145800",
+      "title": "什麼是循環工程Loop Engineering | Coding Agent | 子Agent | MCP協議",
+      "summary": "Coding Agent的未來：設計自動循環取代手動提示詞",
+      "url": "./news_20260621_145800/index.html",
+      "date": "2026-06-21",
+      "time": "14:58:00",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260621_131500",
       "title": "你不是不會寫 Prompt，是不會定義任務",
       "summary": "Gary Chen：定義任務才是AI時代的關鍵能力",
@@ -1828,6 +1837,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-06-21T13:18:23.002106",
-  "total_count": 203
+  "last_updated": "2026-06-21T15:02:12.844654",
+  "total_count": 204
 }
