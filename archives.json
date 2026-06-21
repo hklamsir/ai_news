@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260621_175400",
+      "title": "為什麼你該開始做產品給 AI 用了？瑞幸咖啡提供 MCP 只是炒作嗎？",
+      "summary": "瑞幸MCP開放背後的產品設計趨勢",
+      "url": "./news_20260621_175400/index.html",
+      "date": "2026-06-21",
+      "time": "17:54:00",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260621_145800",
       "title": "什麼是循環工程Loop Engineering | Coding Agent | 子Agent | MCP協議",
       "summary": "Coding Agent的未來：設計自動循環取代手動提示詞",
@@ -1837,6 +1846,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-06-21T15:02:12.844654",
-  "total_count": 204
+  "last_updated": "2026-06-21T17:58:04.673360",
+  "total_count": 205
 }
