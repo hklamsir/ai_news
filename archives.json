@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260621_103800",
+      "title": "別再亂裝Skills了！我試用了100多個，真正離不開的只有這10個！",
+      "summary": "Codex和Claude潛能充分發揮指南",
+      "url": "./news_20260621_103800/index.html",
+      "date": "2026-06-21",
+      "time": "10:38:00",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260621_094200",
       "title": "中國青年發明國產AI激光｢滅蚊神器｣爆紅　在海外爆紅賣270萬美元",
       "summary": "TikTok播放7000萬次　Indiegogo眾籌270萬美元　70多國用戶追捧",
@@ -1801,6 +1810,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-06-21T09:51:09.302623",
-  "total_count": 200
+  "last_updated": "2026-06-21T11:57:05.603378",
+  "total_count": 201
 }
