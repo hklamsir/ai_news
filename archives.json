@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260621_131500",
+      "title": "你不是不會寫 Prompt，是不會定義任務",
+      "summary": "Gary Chen：定義任務才是AI時代的關鍵能力",
+      "url": "./news_20260621_131500/index.html",
+      "date": "2026-06-21",
+      "time": "13:15:00",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260621_125200",
       "title": "創意唔係生成，創意唔係諗新嘢咁簡單 | 學識AI EP4",
       "summary": "學識AI EP4：AI時代的人類創意價值",
@@ -1819,6 +1828,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-06-21T12:54:32.627846",
-  "total_count": 202
+  "last_updated": "2026-06-21T13:18:23.002106",
+  "total_count": 203
 }
