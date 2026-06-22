@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260622_094604",
+      "title": "When Your Vendor Becomes Your Competitor: AI's $5.5B Confession",
+      "summary": "OpenAI 砸 40 億、Anthropic 砸 15 億親自做應用服務，獨立工程公司空間被鯨吞",
+      "url": "./news_20260622_094604/index.html",
+      "date": "2026-06-22",
+      "time": "09:46:04",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260622_084128",
       "title": "ChatGPT's market share slips below 50% for first time | TechCrunch",
       "summary": "Gemini 升至 27.7%、Claude 達 10.3% — AI 助理市場從一家獨大走向多元競爭",
@@ -1855,6 +1864,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-06-22T08:49:59.626354",
-  "total_count": 206
+  "last_updated": "2026-06-22T09:49:38.801744",
+  "total_count": 207
 }
