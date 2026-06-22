@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260622_084128",
+      "title": "ChatGPT's market share slips below 50% for first time | TechCrunch",
+      "summary": "Gemini 升至 27.7%、Claude 達 10.3% — AI 助理市場從一家獨大走向多元競爭",
+      "url": "./news_20260622_084128/index.html",
+      "date": "2026-06-22",
+      "time": "08:41:28",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260621_175400",
       "title": "為什麼你該開始做產品給 AI 用了？瑞幸咖啡提供 MCP 只是炒作嗎？",
       "summary": "瑞幸MCP開放背後的產品設計趨勢",
@@ -1846,6 +1855,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-06-21T17:58:04.673360",
-  "total_count": 205
+  "last_updated": "2026-06-22T08:49:59.626354",
+  "total_count": 206
 }
