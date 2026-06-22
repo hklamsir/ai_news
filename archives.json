@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260622_131318",
+      "title": "NVIDIA 推 0.6B 本地串流語音辨識模型 Nemotron 3.5 ASR 支援 40 種語言只要 CPU 就能運作",
+      "summary": "支援 40 種語言、WER 7.07%、延遲最低 80ms，可用 CPU 運行的本地串流語音辨識模型",
+      "url": "./news_20260622_131318/index.html",
+      "date": "2026-06-22",
+      "time": "13:13:18",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260622_094604",
       "title": "When Your Vendor Becomes Your Competitor: AI's $5.5B Confession",
       "summary": "OpenAI 砸 40 億、Anthropic 砸 15 億親自做應用服務，獨立工程公司空間被鯨吞",
@@ -1864,6 +1873,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-06-22T09:49:38.801744",
-  "total_count": 207
+  "last_updated": "2026-06-22T13:16:11.742792",
+  "total_count": 208
 }

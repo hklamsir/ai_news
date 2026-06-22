@@ -1,0 +1,7 @@
+{
+  "title": "NVIDIA 推 0.6B 本地串流語音辨識模型 Nemotron 3.5 ASR 支援 40 種語言只要 CPU 就能運作",
+  "youtube_url": null,
+  "date": "2026-06-21",
+  "summary_length": 1545,
+  "summary_short": "NVIDIA Nemotron 3.5 ASR 僅6億參數即可支援40種語言本地串流語音辨識，WER 7.07%低於Whisper，延遲僅80ms，可用CPU運行。"
+}
