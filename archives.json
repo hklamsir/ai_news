@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260622_204026",
+      "title": "免费三周狂烧 3 万亿 Token，Agnes 再升级：百万上下文 + 4K 生图，全免费！",
+      "summary": "免費開放三週 Token 量達 3.12 萬億，文本模型支援百萬 Token 上下文，圖片模型支援 4K 生圖",
+      "url": "./news_20260622_204026/index.html",
+      "date": "2026-06-22",
+      "time": "20:40:26",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260622_131318",
       "title": "NVIDIA 推 0.6B 本地串流語音辨識模型 Nemotron 3.5 ASR 支援 40 種語言只要 CPU 就能運作",
       "summary": "支援 40 種語言、WER 7.07%、延遲最低 80ms，可用 CPU 運行的本地串流語音辨識模型",
@@ -1873,6 +1882,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-06-22T13:16:11.742792",
-  "total_count": 208
+  "last_updated": "2026-06-22T20:44:33.191977",
+  "total_count": 209
 }
