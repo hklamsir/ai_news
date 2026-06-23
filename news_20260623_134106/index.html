@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI News｜六頂思考帽與AI Agent工作流程革命</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <style>
+:root {
+    --primary-blue: #00d4ff;
+    --primary-purple: #7b2cbf;
+    --accent-green: #00ff88;
+    --accent-orange: #ff9500;
+    --dark-bg: #0a0a0f;
+    --card-bg: #12121a;
+    --card-bg-light: #1a1a28;
+    --text-primary: #ffffff;
+    --text-secondary: #a0a0b0;
+    --gradient-1: linear-gradient(135deg, #00d4ff 0%, #7b2cbf 100%);
+    --gradient-2: linear-gradient(135deg, #00d4ff 0%, #00ff88 100%);
+    --glow-blue: 0 0 20px rgba(0, 212, 255, 0.5);
+    --glow-purple: 0 0 20px rgba(123, 44, 191, 0.5);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Noto Sans TC', sans-serif; background-color: var(--dark-bg); color: var(--text-primary); line-height: 1.8; overflow-x: hidden; }
+
+@keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-20px); } }
+@keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.6; } }
+@keyframes slideIn { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes codeRain { 0% { transform: translateY(-100%); opacity: 0; } 10% { opacity: 1; } 90% { opacity: 1; } 100% { transform: translateY(100vh); opacity: 0; } }
+
+.code-rain { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; overflow: hidden; }
+.code-char { position: absolute; color: var(--primary-blue); font-family: 'Courier New', monospace; font-size: 14px; opacity: 0; animation: codeRain 4s linear infinite; }
+
+.hero { position: relative; min-height: 80vh; display: flex; align-items: center; justify-content: center; padding: 80px 20px; background: linear-gradient(180deg, var(--dark-bg) 0%, #1a1a2e 100%); overflow: hidden; }
+.hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(ellipse at center, rgba(123, 44, 191, 0.15) 0%, transparent 70%); z-index: 1; }
+.hero-content { position: relative; z-index: 2; max-width: 1200px; text-align: center; animation: slideIn 1s ease-out; }
+.hero-badge { display: inline-block; padding: 12px 32px; background: var(--gradient-1); border-radius: 50px; font-size: 18px; font-weight: 700; margin-bottom: 24px; box-shadow: var(--glow-blue); letter-spacing: 1px; }
+.hero h1 { font-size: clamp(2rem, 5vw, 4rem); font-weight: 900; margin-bottom: 24px; background: var(--gradient-1); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; line-height: 1.2; }
+.hero-subtitle { font-size: clamp(1.2rem, 2.2vw, 1.6rem); color: var(--text-primary); max-width: 900px; margin: 0 auto 40px; line-height: 1.6; font-weight: 400; }
+.hero-images { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; margin-top: 60px; }
+.hero-image-card { position: relative; border-radius: 20px; overflow: hidden; aspect-ratio: 16/9; box-shadow: var(--glow-purple); transition: transform 0.3s ease, box-shadow 0.3s ease; }
+.hero-image-card:hover { transform: scale(1.02); box-shadow: 0 0 40px rgba(123, 44, 191, 0.7); }
+.hero-image-card img { width: 100%; height: 100%; object-fit: cover; }
+.scroll-indicator { position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%); animation: float 2s ease-in-out infinite; z-index: 2; }
+.scroll-indicator span { display: block; width: 30px; height: 50px; border: 2px solid var(--primary-blue); border-radius: 25px; position: relative; }
+.scroll-indicator span::before { content: ''; position: absolute; top: 8px; left: 50%; transform: translateX(-50%); width: 6px; height: 10px; background: var(--primary-blue); border-radius: 3px; animation: pulse 1.5s infinite; }
+
+section { padding: 80px 20px; position: relative; z-index: 1; }
+.content-section { background: var(--card-bg); padding: 60px 50px; border-radius: 24px; border: 1px solid rgba(0, 212, 255, 0.2); max-width: 1100px; margin: 0 auto; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3); }
+.content-section h3 { font-size: 1.6rem; margin: 40px 0 20px; color: var(--accent-green); }
+.content-section p { color: var(--text-secondary); line-height: 2; font-size: 1.08rem; margin: 15px 0; }
+.content-section ul { margin: 20px 0; padding-left: 30px; }
+.content-section li { margin: 10px 0; color: var(--text-secondary); }
+
+.tech-card { background: var(--card-bg-light); padding: 25px; border-radius: 16px; border: 1px solid rgba(0, 212, 255, 0.15); text-align: center; transition: transform 0.3s, box-shadow 0.3s; }
+.tech-card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0, 212, 255, 0.2); }
+.tech-card-icon { font-size: 2.5rem; margin-bottom: 15px; }
+.tech-card h4 { color: var(--primary-blue); margin-bottom: 12px; font-size: 1.2rem; }
+.tech-card p { color: var(--text-secondary); font-size: 0.95rem; line-height: 1.7; }
+
+.comparison-table { width: 100%; border-collapse: collapse; margin: 35px 0; background: var(--card-bg-light); border-radius: 16px; overflow: hidden; }
+.comparison-table th { background: linear-gradient(135deg, rgba(0, 212, 255, 0.2) 0%, rgba(123, 44, 191, 0.2) 100%); padding: 18px 15px; text-align: left; font-weight: 700; color: var(--primary-blue); font-size: 1rem; }
+.comparison-table td { padding: 16px 15px; border-bottom: 1px solid rgba(255, 255, 255, 0.08); color: var(--text-secondary); }
+.comparison-table tr:last-child td { border-bottom: none; }
+.comparison-table tr:hover { background: rgba(0, 212, 255, 0.05); }
+
+.timeline { position: relative; }
+.timeline-item { position: relative; margin-bottom: 30px; padding-left: 20px; border-left: 2px solid rgba(0, 212, 255, 0.3); }
+.timeline-item::before { content: ''; position: absolute; left: -7px; top: 5px; width: 12px; height: 12px; background: var(--primary-blue); border-radius: 50%; box-shadow: var(--glow-blue); }
+.timeline-item h4 { color: var(--primary-blue); margin-bottom: 8px; font-size: 1.1rem; }
+.timeline-item p { color: var(--text-secondary); font-size: 0.95rem; }
+
+.quote-box { background: linear-gradient(135deg, rgba(123, 44, 191, 0.1) 0%, rgba(0, 212, 255, 0.1) 100%); padding: 35px; border-radius: 16px; border: 2px solid rgba(123, 44, 191, 0.3); margin: 40px 0; position: relative; }
+.quote-box::before { content: '"'; position: absolute; top: 20px; left: 25px; font-size: 4rem; color: var(--primary-purple); opacity: 0.3; font-family: Georgia, serif; }
+.quote-box p { color: var(--text-primary); font-size: 1.1rem; font-style: italic; margin: 0; padding-left: 30px; line-height: 1.9; }
+.quote-box cite { display: block; margin-top: 20px; color: var(--primary-blue); font-size: 0.95rem; padding-left: 30px; }
+
+.highlight-box { background: linear-gradient(135deg, rgba(0, 255, 136, 0.08) 0%, rgba(0, 212, 255, 0.08) 100%); padding: 30px; border-radius: 16px; border-left: 5px solid var(--accent-green); margin: 40px 0; }
+.highlight-box h4 { color: var(--accent-green); margin-bottom: 15px; font-size: 1.3rem; }
+.highlight-box p { color: var(--text-secondary); margin: 0; }
+
+.meta-info { background: linear-gradient(135deg, rgba(0, 212, 255, 0.15) 0%, rgba(123, 44, 191, 0.15) 100%); padding: 30px; border-radius: 16px; margin-bottom: 40px; border-left: 5px solid var(--primary-blue); }
+.meta-info p { margin: 12px 0; color: var(--text-secondary); font-size: 1.05rem; }
+.meta-info strong { color: var(--primary-blue); font-weight: 600; }
+.meta-info a { color: var(--primary-blue); text-decoration: none; word-break: break-all; }
+
+footer { background: #050508; padding: 60px 20px; text-align: center; border-top: 1px solid rgba(255, 255, 255, 0.1); }
+footer p { color: var(--text-secondary); margin-bottom: 20px; }
+.footer-links { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; }
+.footer-links a { color: var(--primary-blue); text-decoration: none; transition: color 0.3s ease; }
+.footer-links a:hover { color: var(--text-primary); }
+
+@media (max-width: 768px) {
+    .content-section { padding: 40px 25px; }
+    .hero-images { grid-template-columns: 1fr; }
+    .hero h1 { font-size: 2rem; }
+    .hero-subtitle { font-size: 1.2rem; }
+}
+    </style>
+</head>
+<body>
+    <div class="code-rain" id="codeRain"></div>
+
+<div class="code-rain">
+    <div class="code-char" style="left: 5%; animation-delay: 0.5s;">AI_AGENT_SKILL</div>
+    <div class="code-char" style="left: 15%; animation-delay: 1.2s;">COGNITIVE_LOAD</div>
+    <div class="code-char" style="left: 25%; animation-delay: 0.8s;">DECISION_TREE</div>
+    <div class="code-char" style="left: 35%; animation-delay: 2.1s;">SYSTEM_PROMPT</div>
+    <div class="code-char" style="left: 45%; animation-delay: 0.3s;">WORKFLOW_OPT</div>
+    <div class="code-char" style="left: 55%; animation-delay: 1.7s;">THINKING_HATS</div>
+    <div class="code-char" style="left: 65%; animation-delay: 0.9s;">DATA_VERIF</div>
+    <div class="code-char" style="left: 75%; animation-delay: 1.4s;">LLM_CONTEXT</div>
+    <div class="code-char" style="left: 85%; animation-delay: 0.6s;">HUMAN_AUGMENT</div>
+    <div class="code-char" style="left: 95%; animation-delay: 1.9s;">KNOWLEDGE_RET</div>
+</div>
+
+<section class="hero">
+    <div class="hero-content">
+        <span class="hero-badge">📺 YouTube 專題</span>
+        <h1>打破知識吸收瓶頸：將《六頂思考帽》轉化為AI Agent標準操作流程</h1>
+        <p class="hero-subtitle">針對現代學習者面臨的記憶衰減與應用斷層，本次報告探討如何將經典思維框架結構化植入人工智慧工作流，實現從靜態閱讀到動態決策的躍進。</p>
+        <div class="hero-images">
+            <div class="hero-image-card">
+                <img src="img/img1.png" alt="新聞插圖">
+            </div>
+        </div>
+    </div>
+    <div class="scroll-indicator">
+        <span></span>
+    </div>
+</section>
+
+<section>
+    <div class="content-section">
+        
+        <div class="meta-info">
+            <p><strong>📺 資料來源</strong>：<a href="https://youtu.be/xwUk1PoQ6Ys" target="_blank">YouTube 專題解析</a></p>
+            <p><strong>📅 發布日期</strong>：2026-06-23</p>
+            <p><strong>⏱️ 內容時長</strong>：734 秒（約 12 分鐘）</p>
+            <p><strong>🤖 處理方式</strong>：AI 智能摘要與架構重組生成</p>
+        </div>
+
+        <p>在知識迭代呈現指數級增長的數位時代，傳統線性閱讀模式正面臨嚴峻挑戰。數據顯示，多數專業學習者在接觸新資訊後，若缺乏結構化複習與場景演練，知識留存率會在兩週內急遽下滑。研究指出，解決此痛點的核心在於「認知模組化」。透過將經典管理著作《六頂思考帽》的思維路徑拆解，並將其轉譯為AI Agent可執行的Skills檔案，學習者得以建立一套標準化的人機協作協議。</p>
+
+        <p>此方法論的核心價值在於釐清思考頻道的邊界。過去面對複雜議題時，大腦往往同時進行事實查核、風險評估與情感判斷，導致認知負載過載。本次專題分析確認，將混合思維切割為獨立運作區塊，能大幅提升決策效率與資訊吸收深度。</p>
+
+        <h3>🔍 核心技術模組解析</h3>
+        <div class="tech-cards" style="display:grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap:20px; margin: 40px 0;">
+            <div class="tech-card">
+                <div class="tech-card-icon">📐</div>
+                <h4>模組化思維轉譯</h4>
+                <p>將混雜的認知過程拆解為獨立運算頻道，有效降低大腦在多工處理時的資訊摩擦與決策疲勞。</p>
+            </div>
+            <div class="tech-card">
+                <div class="tech-card-icon">⚙️</div>
+                <h4>Agent Skills 架構</h4>
+                <p>將書面方法論轉寫為AI可讀取的標準化工作流程檔案，確保大型語言模型輸出符合專業邏輯。</p>
+            </div>
+            <div class="tech-card">
+                <div class="tech-card-icon">🧩</div>
+                <h4>動態情境模擬</h4>
+                <p>透過提示詞工程建立即時推演環境，讓理論框架可直接應用於真實商業與專案決策場景。</p>
+            </div>
+            <div class="tech-card">
+                <div class="tech-card-icon">🛡️</div>
+                <h4>人機權責界線</h4>
+                <p>明確劃定AI的運算範疇與人類的直覺保留區，確保科技擴充不取代核心價值判斷機制。</p>
+            </div>
+        </div>
+
+        <h3>🎩 思維頻道拆解與執行節點</h3>
+        <div class="timeline" style="margin: 30px 0; padding-left: 30px;">
+            <div class="timeline-item">
+                <h4>白色帽：客觀事實基底</h4>
+                <p>聚焦資料蒐集、數據驗證與現況盤點，排除所有主觀臆測，建立決策所需的資訊地基。</p>
+            </div>
+            <div class="timeline-item">
+                <h4>紅色帽：直覺與情感反饋</h4>
+                <p>提供非邏輯性的第一直覺與情緒反應表達空間，確保方案在執行時符合人性需求。</p>
+            </div>
+            <div class="timeline-item">
+                <h4>黑色帽：風險批判檢視</h4>
+                <p>以嚴謹的防禦性邏輯掃描潛在漏洞、法規衝突與執行障礙，提前佈置避險策略。</p>
+            </div>
+            <div class="timeline-item">
+                <h4>黃色帽：效益與價值發掘</h4>
+                <p>主動尋找方案的可行性與長期收益，將挑戰轉化為成長契機，強化執行動能。</p>
+            </div>
+            <div class="timeline-item">
+                <h4>綠色帽：替代方案創造</h4>
+                <p>跳脫既有框架限制，引入橫向思考與創新工具，針對瓶頸點提出突破性解法。</p>
+            </div>
+            <div class="timeline-item">
+                <h4>藍色帽：流程指揮與收斂</h4>
+                <p>擔任全局思考的導航系統，規劃思考順序、監控進度並引導團隊產出最終結論。</p>
+            </div>
+        </div>
+
+        <h3>📊 學習效能與決策模式對比</h3>
+        <table class="comparison-table">
+            <thead>
+                <tr>
+                    <th>評估維度</th>
+                    <th>傳統線性閱讀</th>
+                    <th>AI 輔助結構化學習</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>知識留存率</td>
+                    <td>偏低（依賴單次碎片化輸入）</td>
+                    <td>顯著提升（互動式驗證與反覆演練）</td>
+                </tr>
+                <tr>
+                    <td>實務應用轉化</td>
+                    <td>困難（缺乏場景對接機制）</td>
+                    <td>高效（內建標準化執行腳本）</td>
+                </tr>
+                <tr>
+                    <td>認知資源負載</td>
+                    <td>極高（同步處理多重資訊）</td>
+                    <td>最佳化（模組化分工卸載負重）</td>
+                </tr>
+                <tr>
+                    <td>決策盲點覆蓋</td>
+                    <td>依賴個人經驗，易有遺漏</td>
+                    <td>系統性掃描六維視角</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="quote-box">
+            <p>未來知識工作的分水線不在於記憶力，而在於將抽象框架轉譯為結構化提示詞的能力。人機協作的終極目標是讓AI擔任思維擴充與情境推演的教練，而人類必須堅守最終價值裁決權。</p>
+            <cite>— 數位學習與人工智慧整合專家觀察</cite>
+        </div>
+
+        <div class="highlight-box">
+            <h4>✨ 關鍵洞察</h4>
+            <p>將書面知識管理體系轉化為AI Agent的專屬Skills檔案，等同為生成式模型植入專業工作手冊。即便缺乏專屬Agent部署環境，使用者亦可透過大型語言模型的系統提示詞設定，將此架構直接套用，實現無縫接軌的個人化知識管理革命。</p>
+        </div>
+
+        <p>綜合本次分析，知識經濟的競爭優勢將持續向「結構化轉譯能力」傾斜。學習者若能掌握將經典理論模組化並導入AI輔助系統的方法，不僅能突破資訊過載的困境，更能建立具備自我迭代能力的決策中樞。產業界預期，隨著生成式模型理解力的深化，此類人機協作協議將成為標準化的職場軟實力。</p>
+
+    </div>
+</section>
+
+<footer>
+    <p>© 2026 AI News Archive | 由 AI 技術生成</p>
+    <div class="footer-links">
+        <a href="../index.html">返回主頁</a>
+        <a href="https://github.com/hklamsir/ai_news" target="_blank">GitHub</a>
+        <a href="https://hklamsir.github.io/ai_news/" target="_blank">瀏覽所有專題</a>
+    </div>
+</footer>
+
+
+    <script>
+        function createCodeRain() {
+            const codeRain = document.getElementById('codeRain');
+            if (!codeRain) return;
+            const chars = '01 アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン';
+            for (let i = 0; i < 50; i++) {
+                const char = document.createElement('div');
+                char.className = 'code-char';
+                char.textContent = chars[Math.floor(Math.random() * chars.length)];
+                char.style.left = Math.random() * 100 + '%';
+                char.style.animationDelay = Math.random() * 4 + 's';
+                char.style.animationDuration = (Math.random() * 2 + 3) + 's';
+                codeRain.appendChild(char);
+            }
+        }
+
+        function handleScrollAnimation() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('.fade-in').forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(30px)';
+                el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(el);
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            createCodeRain();
+            handleScrollAnimation();
+        });
+    </script>
+</body>
+</html>
