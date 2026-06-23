@@ -1,6 +1,16 @@
 {
   "archives": [
     {
+      "dir": "news_20260623_085052",
+      "title": "ChatGPT、Gemini 也能幫你檢查 Windows 11 電腦健康狀況！完整做法與提示詞一次看 - 電腦王阿達",
+      "summary_short": "# ChatGPT、Gemini 也能幫你檢查 Windows 11 電腦健康狀況！完整做法與提示詞一次看 - 電腦王阿達## 📖 新聞導語本文發布於 **KOC**，介紹如何利用 ChatG",
+      "images": [
+        "img/img1.png"
+      ],
+      "date": "2026-06-23",
+      "url": "./news_20260623_085052/index.html"
+    },
+    {
       "dir": "news_20260622_204026",
       "title": "免费三周狂烧 3 万亿 Token，Agnes 再升级：百万上下文 + 4K 生图，全免费！",
       "summary": "免費開放三週 Token 量達 3.12 萬億，文本模型支援百萬 Token 上下文，圖片模型支援 4K 生圖",
@@ -1882,6 +1892,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-06-22T20:44:33.191977",
+  "last_updated": "2026-06-23T09:01:27.116506",
   "total_count": 209
 }
