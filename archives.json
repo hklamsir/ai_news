@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260624_125918",
+      "title": "教育共享︱香港學校落實「AI+教育」的四大實踐路線圖",
+      "summary": "《中小學數字教育發展藍圖》出爐，從校本政策、教學架構、資源到教師培訓全面部署",
+      "url": "./news_20260624_125918/index.html",
+      "date": "2026-06-24",
+      "time": "12:59:18",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260624_100914",
       "title": "Why AI tokens will send your enterprise cloud bill sky-high again",
       "summary": "從 200 美元到數萬美元：Jevons 悖論正在 AI 算力市場真實上演",
@@ -1936,6 +1945,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-06-24T10:16:12.889344",
-  "total_count": 215
+  "last_updated": "2026-06-24T13:04:47.690257",
+  "total_count": 216
 }
