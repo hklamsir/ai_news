@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260624_100914",
+      "title": "Why AI tokens will send your enterprise cloud bill sky-high again",
+      "summary": "從 200 美元到數萬美元：Jevons 悖論正在 AI 算力市場真實上演",
+      "url": "./news_20260624_100914/index.html",
+      "date": "2026-06-24",
+      "time": "10:09:14",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260624_075545",
       "title": "SpaceX inks compute deal with Reflection AI, an open source AI lab | TechCrunch",
       "summary": "開源 AI 新創公司每月支付 1.5 億美元，取得 Nvidia GB300 晶片運算資源",
@@ -1927,6 +1936,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-06-24T08:06:42.518479",
-  "total_count": 214
+  "last_updated": "2026-06-24T10:16:12.889344",
+  "total_count": 215
 }
