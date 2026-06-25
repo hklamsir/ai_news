@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260625_155948",
+      "title": "AI最終贏家不是OpenAI或Anthropic？專家點名「這兩家公司」才是最大受益者",
+      "summary": "科技投資專家：Alphabet 與微軟的混合戰略才是 AI 競賽中最穩健的選擇",
+      "url": "./news_20260625_155948/index.html",
+      "date": "2026-06-25",
+      "time": "15:59:48",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260625_094700",
       "title": "Figma adds code layers, support for animations, more AI features in new update | TechCrunch",
       "summary": "設計與工程的界線進一步模糊",
@@ -1972,6 +1981,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-06-25T09:51:48.264455",
-  "total_count": 219
+  "last_updated": "2026-06-25T16:13:27.648724",
+  "total_count": 220
 }
