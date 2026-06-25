@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260625_094700",
+      "title": "Figma adds code layers, support for animations, more AI features in new update | TechCrunch",
+      "summary": "設計與工程的界線進一步模糊",
+      "url": "./news_20260625_094700/index.html",
+      "date": "2026-06-25",
+      "time": "09:47:00",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260625_085500",
       "title": "Jalapeño is the first AI chip from OpenAI and Broadcom - Engadget",
       "summary": "從設計到量產僅 9 個月的 AI 智慧處理器",
@@ -1963,6 +1972,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-06-25T09:03:05.464037",
-  "total_count": 218
+  "last_updated": "2026-06-25T09:51:48.264455",
+  "total_count": 219
 }
