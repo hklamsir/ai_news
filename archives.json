@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260626_084200",
+      "title": "Amazon 額外 130 億美元押注印度 AI 基建　總投資增至 480 億",
+      "summary": "總投資增至 480 億美元　AWS 數據中心覆蓋孟買與海德拉巴",
+      "url": "./news_20260626_084200/index.html",
+      "date": "2026-06-26",
+      "time": "08:42:00",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260626_080500",
       "title": "Apple 將跳過 M6 Pro 及 M6 Max 直接推出 M7",
       "summary": "史上最大幅度 Mac 晶片策略調整，以 AI 為核心的 M7 系列即將登場",
@@ -1999,6 +2008,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-06-26T08:05:22.169266",
-  "total_count": 222
+  "last_updated": "2026-06-26T08:43:45.656949",
+  "total_count": 223
 }
