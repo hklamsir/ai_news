@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260626_080500",
+      "title": "Apple 將跳過 M6 Pro 及 M6 Max 直接推出 M7",
+      "summary": "史上最大幅度 Mac 晶片策略調整，以 AI 為核心的 M7 系列即將登場",
+      "url": "./news_20260626_080500/index.html",
+      "date": "2026-06-26",
+      "time": "08:05:00",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260625_202224",
       "title": "Qwen-AgentWorld：通用代理的語言世界模型",
       "summary": "阿里雲 Qwen 團隊開源首個覆蓋七個統一領域的原生語言世界模型",
@@ -1990,6 +1999,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-06-25T20:29:14.246317",
-  "total_count": 221
+  "last_updated": "2026-06-26T08:05:22.169266",
+  "total_count": 222
 }
