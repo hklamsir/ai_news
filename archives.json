@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260626_214200",
+      "title": "消費科技為 AI 熱潮買單：Apple 漲價觸發全球科技股拋售潮",
+      "summary": "DRAM 價格急飆 98%　MacBook Neo 兩個月內加價至 699 美元",
+      "url": "./news_20260626_214200/index.html",
+      "date": "2026-06-26",
+      "time": "21:42:00",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260626_084200",
       "title": "Amazon 額外 130 億美元押注印度 AI 基建　總投資增至 480 億",
       "summary": "總投資增至 480 億美元　AWS 數據中心覆蓋孟買與海德拉巴",
@@ -2008,6 +2017,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-06-26T08:43:45.656949",
-  "total_count": 223
+  "last_updated": "2026-06-26T21:44:47.157660",
+  "total_count": 224
 }
