@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260627_103200",
+      "title": "Anthropic產能暴增8倍有代價！Claude Code主管揭管理痛點，AI如何讓團隊陷入「孤島」危機？",
+      "summary": "AI如何讓團隊陷入「孤島」危機？",
+      "url": "./news_20260627_103200/index.html",
+      "date": "2026-06-27",
+      "time": "10:32:00",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260626_214200",
       "title": "消費科技為 AI 熱潮買單：Apple 漲價觸發全球科技股拋售潮",
       "summary": "DRAM 價格急飆 98%　MacBook Neo 兩個月內加價至 699 美元",
@@ -2017,6 +2026,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-06-26T21:44:47.157660",
-  "total_count": 224
+  "last_updated": "2026-06-27T10:39:12.483182",
+  "total_count": 225
 }
