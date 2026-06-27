@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260627_161400",
+      "title": "AI代理全面接管工作？OpenAI：各部門近100%內容由Codex產生 | 鉅亨網 - 美股雷達",
+      "summary": "97.9% 員工透過 Codex 完成工作，AI 代理滲透企業日常營運",
+      "url": "./news_20260627_161400/index.html",
+      "date": "2026-06-27",
+      "time": "16:14:00",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260627_103200",
       "title": "Anthropic產能暴增8倍有代價！Claude Code主管揭管理痛點，AI如何讓團隊陷入「孤島」危機？",
       "summary": "AI如何讓團隊陷入「孤島」危機？",
@@ -2026,6 +2035,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-06-27T15:52:13.982442",
-  "total_count": 225
+  "last_updated": "2026-06-27T16:14:34.139501",
+  "total_count": 226
 }
