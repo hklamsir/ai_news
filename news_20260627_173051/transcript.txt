@@ -1,0 +1,542 @@
+ 
+Intel was kind enough to send me this
+Arc Pro B70. This is their response to
+other 32 GB GPUs designed specifically
+for local AI workloads. As I have said
+many times on this channel, right now 32
+GB is the minimum on a discrete GPU if
+you want to be able to run good models
+for local agents like the Qwen 3.6
+family. In this video, we will look at
+the hardware specs, how to get the B70
+up and running with llama.cpp and vLLM,
+and I will walk you through the
+benchmarks and the current software
+support and caveats so you know what to
+expect. I won't talk much about pricing
+as GPU prices can be a little bit of a
+lottery at the moment, but this card
+targets essentially the same audience as
+the AMD R9 7900 AI Pro, and you can find
+it for a similar price if not a little
+bit cheaper.
+So, first let's look at the specs. The
+Arc Pro B70 is built on the Battlemage
+Xe2 architecture using a 4 nanometer
+process, and it comes with 32 Xe cores.
+The important part for local inference
+is that each of these cores is paired
+with what Intel calls Xe Matrix
+Extensions. These are dedicated matrix
+cores which are Intel's equivalent to
+tensor cores on Nvidia cards or matrix
+cores or WMMA units on AMD GPUs. These
+engines accelerate the matrix
+multiplications that dominate LLM
+workloads. The hardware supports
+operations in formats like BF16, which
+is a 16-bit format optimized for machine
+learning that basically most modern
+models are trained in natively. It also
+supports other formats used to run
+quantized models natively like FP8,
+INT8, and INT4. Support for these
+formats is important as it allows you to
+run different quantizations natively and
+so much faster. So, when it comes to
+memory, which is usually the main
+bottleneck for LLMs, the B70 comes with
+32 GB of GDDR6
+and 608 GB/s
+of memory bandwidth. If we put this next
+to the AMD Radeon 9 700 that I tested
+recently, they are physically very
+similar since both give you 32 GB of
+VRAM and are around the 600 GB/s memory
+bandwidth.
+When dealing with non-Nvidia GPUs,
+software support becomes a very
+important consideration. On Nvidia, you
+have CUDA, which is the most mature
+ecosystem by far, and on AMD, you have
+ROCm, which is getting better and
+better. For Intel, the equivalent
+ecosystem is based on one API, and the
+framework we use to write and run
+compute kernels is called SYCL.
+Underneath that, the low-level interface
+talking to the driver is called Level
+Zero. Now, if an LLM inference engine
+like llama.cpp or vLLM wants to support
+Intel GPUs, they need to implement
+support for the SYCL backend. In
+practice, this means writing kernels in
+SYCL for all operations needed to
+implement a particular model
+architecture. As we usually do on this
+channel, we will start by looking at
+llama.cpp.
+The main benefit of llama.cpp is the
+unified ecosystem. If llama.cpp supports
+a model, you can run it on any of its
+backends, and it supports many model
+architectures and quantization formats
+out of the box. In contrast, vLLM is
+more complex. It can give you better
+performance, especially for higher
+levels of concurrency, but at the
+expense of compatibility, since many
+are not supported across all backends,
+as we will see later.
+Okay, let's see how to get the B70 up
+and running with llama.cpp and vLLM.
+Your main resource here is this
+repository, Intel B70 AI Toolboxes, that
+I created. And essentially, a toolbox,
+if you're not familiar with it and it's
+the first time on the channel, these are
+just Docker or Podman containers, but
+there is a layer on top created by
+toolbox, which essentially makes it
+seamless to use as if it were a
+local shell on your host operating
+system rather than being in a Docker
+container. It's got a lot of advantages,
+such as it's got access to your home
+directory by default,
+and the same network stack, and I find
+it's actually very, very simple to get
+up and running. If you want to know more
+about toolbox, that's the main project.
+Now, this is native on Fedora, and I'm
+actually going to be using Fedora in my
+demos, so that's your best bet if you
+want to follow exactly what I'm doing.
+If you're using Ubuntu or Arch Linux or
+some of the other distributions, I am
+told that toolbox doesn't work well. So,
+you might want to change to distrobox.
+So, all of the toolbox commands uh need
+to be changed to distrobox. If you look
+at these, I have essentially three
+toolboxes, two which are llama CPP
+toolboxes, one with the SQL backend, and
+one with the Vulcan backend. If you're
+not familiar with Vulcan, this is
+essentially a general API layer, and
+then each GPU manufacturer can implement
+uh their own driver for Vulcan, and this
+essentially exposes an API which is the
+same uh to access all of the uh
+different GPUs. So, this is for maximum
+compatibility, but then obviously we
+also have the SQL backend, and in
+theory, if you use the backend which is
+specific for your GPU type, uh you might
+be able to unlock better performance.
+So, we'll take a look at that. And then
+obviously I have the vLLM toolbox that
+I'm going to tell you a little bit more
+later. So, to get the toolboxes up and
+running, you can use toolbox or
+distrobox if you are on Ubuntu to
+essentially create that toolbox, to pull
+it down from Docker, and what's from
+Docker Hub. And what's important here is
+obviously this, which essentially maps
+your GPU inside the uh toolbox or
+container, and makes it available. Be
+careful that Vulcan has uh different
+requirements than SQL, so this is a
+different command line uh that you need
+to be using. After you've created it,
+you can just enter the toolbox.
+Now, this is not too difficult, but I
+thought to simplify it a few weeks ago
+by creating something called llama
+toolboxes cockpit. This is essentially a
+UI that allows you to do all the stuff
+that I described and to manage models
+and tool boxes in a very simple way.
+It does have support for the other
+architectures that I typically work
+with, but I've added Arc B70 support. To
+get this up and running, very simple,
+there is a single command you have to
+run and you need to have pipx installed.
+So I'm here on my server where I am
+SSH'd in and I can essentially install
+it with that command. Obviously here I
+had it already installed. So once it's
+it's installed, you can just run it with
+llama.cpp. And the first thing you have
+to do is to choose your backend, in my
+case Intel Arc B70, and you will see
+here the tool boxes which are available
+for that particular backend. Then let's
+say we want the sequel one, you can
+select it and you can click create or
+update. Incidentally, I tend to update
+tool boxes automatically with a job
+every time there is a new release of
+llama.cpp. So now the tool box has been
+created, I can select it
+and I can click enter and this drops me
+inside the tool box and I can check with
+the llama.cpp
+command list devices
+and I can see my GPU available with
+sequel. So this confirms everything is
+working. Now, if I want to load a model,
+I need to go on Hugging Face and
+download the model, but for the models
+that I typically use, I've implemented a
+model manager that does that already for
+you. I by default download all the
+models in your home directory and
+remember this is outside of the tool box
+in your main host Linux distribution.
+You can change that path if you want.
+And let's say I want Quinn 3.6 27
+billion parameter. I can select it and I
+can click download. This connects to our
+game face and shows me all of the
+quantization available. This is the uns
+lot quants. I've already got the
+Quinn 3.6 27 billion model, which is one
+of the best models currently available.
+They will fit on this GPU in
+Q4 KXL quantization. But if I wanted a
+different quant, I could just select it
+and this would download it automatically
+for me in this directory. You can see
+here the local models that I have
+already downloaded and these are the
+ones that I typically tend to use and
+benchmark. So let's say I want to run
+one of those models. I select my
+toolbox. I am inside the toolbox.
+I go into my models folder in my home
+directory and I look for the model that
+I want. In this case, I've got the
+Quinn 3.6 model and then I can just do
+llama server.
+Typically, you want flash attention and
+then you're going to pass the model and
+you can pass a context size that you
+prefer.
+And then typically for these models, you
+want the ginger templates. And there it
+is. You just press enter and this is
+going to load the model
+into memory. The model is now loaded and
+you can see that llama.cpp is listening
+on port
+8080 on localhost. Now, if you want to
+access this on your laptop, you need to
+forward that port with SSH and this is
+how I typically do that. Doublelift is
+the name of the server on which I'm
+running all of this. So now the port has
+been forwarded and I can So I can go in
+the browser on port 8080 and llama.cpp
+has a very nice UI. So I can say hello
+and obviously I get the model to respond
+to me. And you can see the speed of the
+model, tokens per second,
+and so on. Now if you want to see the
+GPU being utilized
+and the top is one of the best ways of
+looking at that. So you can see my
+Battlemage
+GPU here, which is device two.
+Actually, I'm going to make this
+a little bit smaller. And so if for
+example, I say right,
+that's now obviously using the GPU and
+you can see my GPU
+being utilized by
+llama server there.
+It's doing a lot of thinking. quantize
+3.6 spends quite a bit of time thinking.
+I don't think I am going to
+allow this to continue, but hopefully
+you get an idea of how to get the
+toolboxes up and running. Now you also
+have another option. Let's say you do
+not want to use toolbox. You don't want
+to use distrobox. You just want a
+container. I have added in the
+um
+llama cockpit a server mode. So in
+server mode, you can select your image,
+you can select whether you want to use
+podman or docker, and this completely
+bypasses
+toolbox or distrobox. You can give it a
+model you want to run. In my case,
+again,
+we're going to go for quantize 3.6. And
+by the way, this will support
+n t p multi-token prediction. So, I'm
+going to select that one. If you're not
+familiar with multi-token prediction,
+just check the video that I released
+probably just a few weeks ago
+on this, but it's a way of speeding up
+token generation. Anyway, this
+prepopulates all the stuff that I need,
+in this case also for
+MTP. And then I can just start the
+server. And as you can see, this in this
+case uses Podman. You could do the same
+with Docker,
+but you don't have to mess up with
+any of the toolbox or distrobox
+commands, and it should be the most
+compatible option on any Linux operating
+system.
+And it's going to come up, hopefully, in
+a second. And there it is. This is now
+up and running, and I can refresh this.
+And I can say again
+the same prompt as before, but one thing
+you might notice is that this is
+currently slower with MTP than it is
+without MTP. And now I suspect
+this is because the MTP support in cql
+is not very well implemented. Again, I
+haven't tried this. It's the first time
+I'm actually trying to run MTP on the
+B70, but I'm seeing this is much slower
+than I'm expecting.
+And again, it's probably because the cql
+backend has not been optimized with MTP
+yet.
+Okay, let's now take a look at the LLM.
+Here, I haven't implemented anything in
+the llama.cpp cockpit. Obviously, this
+is just for llama.cpp. So, to get VLLM
+up and running, you are simply going to
+need to use the toolbox or distrobox
+create command.
+And you just run it. Obviously, it's
+already loaded for me. So, you can then
+just enter
+that particular toolbox. Now, it's worth
+noting that this toolbox is based on LLM
+Scala, which is a fork that Intel
+maintains of vLLM ComfyUI and some of
+the other uh generative AI inference
+engines. And they essentially curate uh
+kernels and versions of vLLM with
+kernels that use the hardware and are
+optimized for these specific hardware.
+For example, they pushed an update in
+May uh specifically for the B70. And
+this have fork from Intel does show in
+the benchmarks. Again, later in the
+video, I will show you the benchmarks
+and you will see what it means when
+Intel gets their own engineers to fork
+vLLM and implement custom kernels that
+are really tailored to the architecture.
+Now, the downside
+is that this is not the most recent
+version of vLLM and some models like,
+for example, Gemma 4 are actually not
+supported here uh yet. You can see a
+list of all of the supported model. And
+honestly, some of them are obviously
+quite old. And the other caveat is that
+you don't have all of the different
+quantizations that you would typically
+find supported on Nvidia or even on AMD.
+For example, I wasn't able to get any of
+the AWQ
+uh quants to run, but you can run some
+of the GPTQ quant. So again, you have
+very good performance with uh the vllm
+fork from lm llm scaler, but you need to
+wait uh for some models and quants to be
+supported. Now, once you are in the
+toolbox, I made this as simple as
+possible. I give you a start vllm kind
+of UI. You can select a few models and
+yeah, this is a very small list of
+models that I have tested. I typically
+do llama 3.1 8B because it's a good
+model for benchmarking performance
+across different GPUs. You can select
+that model.
+Here are the parameters. Obviously, I
+only have one of these B70s, so I can't
+do any uh tensor parallelism, number of
+concurrent requests, context size. And
+one thing that's important right now, if
+I am not mistaken,
+uh you have to run these in eager mode.
+You basically cannot compile um CUDA
+graphs, so they're not stable. Anyway,
+once you have that, this is the command
+line of vllm and it starts vllm or the
+lm llm scaler fork of vllm and gets uh
+that loaded into memory and available.
+And at some point, you can see here
+all of the processes that are actually
+uh using the GPU and you can see the GPU
+uh that's starting to be to be used.
+That's now there up and running.
+Okay, let's now take a look at the
+benchmarks, which I know is the part
+that uh most of you are interested in
+when you're considering this card. Uh
+we're going to be starting from the
+llama.cpp benchmarks. I think I have a
+link here
+to the uh to the live benchmarks. So, as
+usual, we have the different backend, c
+call and Vulcan, the different models
+that I test like Gemma 4 and 1 3.5 and
+3.6 with some of the different
+quantizations.
+And we have prompt processing and token
+generation at the default context window
+and with a 16K context window. Now, I
+have to say that at the moment
+the SQL back-end implementation on this
+card has some memory utilization issues.
+So, on the equivalent R9 700, I am able
+to use a larger context, uh but on this
+card, I have noticed that if I go
+higher, uh I start having some issues,
+which means that that SQL back-end on
+Llama CPP, it is still not optimized uh
+to use the memory in the best possible
+way. So, that's why you only see 16K and
+not a larger context. Now, obviously,
+this uh
+gives you an idea of the types of
+performance you can get on models uh
+like 1 3.6 in Q4 quantization. Uh the uh
+731
+tokens per second in prompt processing
+is just about okay, and
+20 token per second in
+token generation is again, is okay, uh
+but obviously, you want to be uh
+comparing this to something like the
+equivalent AMD offering, the uh AI Pro
+R9 700. Now, you will see immediately,
+uh let's take the uh 1 3.6 model.
+Uh and you can see that in general, uh
+right now on Llama CPP, the performance
+gap is incredible. The same model, the
+same quantization here,
+you can see that big difference. Um even
+on the
+MoE model, mixture of expert model, here
+we are almost getting 3,000 tokens per
+second in prompt processing and here
+we're getting a third of that
+essentially. Now, this is not, I think,
+an issue with the hardware itself. I
+think the card is capable, as we'll see
+later in vLLM, with a with an LLM
+scaler, is capable to do so much better.
+But the problem, I believe, is that the
+um implementation
+in llama.cpp is not complete. So, this
+is inside the uh llama.cpp
+implementation and you can see that
+those um
+units, those matrix cores, those matrix
+units are currently not used. Uh and
+there is a to-do, uh but it looks like
+that in the sequel backend, uh this is
+an incomplete implementation, which
+essentially means the message is this
+can get so much better uh if somebody
+from llama.cpp or some developer can
+find uh the time to implement the
+specific instructions that are going to
+use those matrix cores. So, I also
+created this um to give you an idea of
+the performance difference, but I think
+it was already quite clear. So, in
+prompt processing, for some models,
+there is such a difference just because
+the hardware is better supported on the
+the AMD hardware is so much better
+supported on llama.cpp than on vLLM. So,
+you can see we have orders of magnitude
+um difference here. So, that's a bit
+disappointing, but again, there is hope.
+And then we can go and take a look at
+the VLLM benchmarks, which I think you
+can just access here. And VLLM is where
+you are going to see these shine a
+little bit more.
+So, on the right side we have the AI Pro
+and I'm just going to
+show you for the same model. So, the
+Llama 3.1 8 billion parameters,
+these reaches 2,054 tokens per second,
+while the AMD R9 700 is basically the
+same. I mean, with the Triton and the
+i-Tert attention, this is performing
+pretty similarly and that's what makes
+me think that the hardware, in terms of
+raw performance, can actually reach the
+same. Of course, what you see here on
+the left side, remember this is the fork
+of the LLM that the LLM Scaler project
+at Intel maintains. So, this is the best
+performance you can get and it really
+shows because if you look at the Qwen
+3.5 9 billion parameter model,
+these runs extremely extremely fast on
+the B70 2,236
+tokens per second and the R9 700 is not
+even close to that. And again, this is
+more, I think,
+an issue with the R9 700 support on
+VLLM, which is actually not as good for
+some models than the Intel LLM Scaler
+project. But I thought I would show you
+these because the two cards are probably
+able to give you very similar
+performance, but the software stack
+really matters.
+So, I want to see hopefully in the next
+few months
+everything improving on both the AMD
+card and the B70 card. And for the B70,
+what we want to see really is much
+better llama.cpp support because that
+opens up access to a much larger
+ecosystem of models.
+So, that's the current state of LLM
+inference on the Arc Pro B70. The Intel
+Scaler project also includes support for
+ComfyUI. So, if people are interested in
+seeing a dedicated video on image and
+video generation on this card, please
+let me know, for example, in the
+comments, and I will try to put that
+together. For people new to this
+channel, this is mostly a hobby project
+of mine, and it's very community-driven.
+So, if I see genuine interest and
+engagement from the community, say in
+the comments, I'll definitely spend some
+more time testing and optimizing
+performance on this card as I have done
+for other hardware that you can find on
+my channel. And again, the B70
+definitely looks like it's got a lot of
+potential. If you want to support my
+work, you can just buy me a coffee, and
+you find a link for that in the
+description. That's all for this video.
+See you next time.

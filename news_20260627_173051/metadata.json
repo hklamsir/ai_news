@@ -1,0 +1,8 @@
+{
+  "title": "Intel Arc Pro B70 (32GB) for Local LLMs - llama.cpp & vLLM Benchmarks",
+  "youtube_url": "https://youtu.be/MnGLqo5cuGQ",
+  "date": "2026-06-27",
+  "source_name": "Donato Capitella",
+  "summary_length": 1628,
+  "summary_short": "Intel Arc Pro B70 32GB 評測：硬體規格與 AMD R9 7900 AI Pro 相近，但軟體支援是關鍵。vLLM（LLM Scaler）表現亮眼，Qwen 3.5 9B 可達 2,236 tokens/s"
+}

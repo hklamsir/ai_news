@@ -1,0 +1,1 @@
+Intel Arc Pro B70 (32GB) for Local LLMs - llama.cpp & vLLM Benchmarks

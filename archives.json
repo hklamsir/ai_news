@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260627_173051",
+      "title": "Intel Arc Pro B70 (32GB) for Local LLMs - llama.cpp & vLLM Benchmarks",
+      "summary": "llama.cpp vs vLLM 效能比拼，Qwen 3.5 9B 可達 2,236 tokens/s",
+      "url": "./news_20260627_173051/index.html",
+      "date": "2026-06-27",
+      "time": "17:30:51",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260627_165234",
       "title": "This Retail GPU Works Great for Local AI! - Lon.TV 評測",
       "summary": "Gemma 4 26B 本地運行可達 30-40 tokens/s，LM Studio 評測",
@@ -2044,6 +2053,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-06-27T16:55:45.776259",
-  "total_count": 227
+  "last_updated": "2026-06-27T17:35:29.282497",
+  "total_count": 228
 }
