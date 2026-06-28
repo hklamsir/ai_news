@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asian AI startups launch Mythos-like models as Anthropic's export ban drags on - TechCrunch - AI News</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root { --primary-blue: #00d4ff; --primary-purple: #7b2cbf; --accent-green: #00ff88; --accent-orange: #ff9500; --accent-red: #ff4757; --dark-bg: #0a0a0f; --card-bg: #12121a; --card-bg-light: #1a1a28; --text-primary: #ffffff; --text-secondary: #a0a0b0; --gradient-1: linear-gradient(135deg, #00d4ff 0%, #7b2cbf 100%); --gradient-2: linear-gradient(135deg, #00d4ff 0%, #00ff88 100%); --glow-blue: 0 0 20px rgba(0, 212, 255, 0.5); --glow-purple: 0 0 20px rgba(123, 44, 191, 0.5); }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Noto Sans TC', sans-serif; background-color: var(--dark-bg); color: var(--text-primary); line-height: 1.8; overflow-x: hidden; }
+        @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-20px); } }
+        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.6; } }
+        @keyframes slideIn { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes codeRain { 0% { transform: translateY(-100%); opacity: 0; } 10% { opacity: 1; } 90% { opacity: 1; } 100% { transform: translateY(100vh); opacity: 0; } }
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); } }
+        .code-rain { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; overflow: hidden; }
+        .code-char { position: absolute; color: var(--primary-blue); font-family: 'Courier New', monospace; font-size: 14px; opacity: 0; animation: codeRain 4s linear infinite; }
+        .hero { position: relative; min-height: 80vh; display: flex; align-items: center; justify-content: center; padding: 80px 20px; background: linear-gradient(180deg, var(--dark-bg) 0%, #1a1a2e 100%); overflow: hidden; }
+        .hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(ellipse at center, rgba(123, 44, 191, 0.15) 0%, transparent 70%); z-index: 1; }
+        .hero-content { position: relative; z-index: 2; max-width: 1200px; text-align: center; animation: slideIn 1s ease-out; }
+        .hero-badge { display: inline-block; padding: 12px 32px; background: var(--gradient-1); border-radius: 50px; font-size: 18px; font-weight: 700; margin-bottom: 24px; box-shadow: var(--glow-blue); letter-spacing: 1px; }
+        .hero h1 { font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 900; margin-bottom: 24px; background: var(--gradient-1); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; line-height: 1.2; }
+        .hero-subtitle { font-size: clamp(1.2rem, 2.2vw, 1.5rem); color: var(--text-primary); max-width: 900px; margin: 0 auto 40px; line-height: 1.6; font-weight: 400; }
+        .hero-images { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; margin-top: 60px; }
+        .hero-image-card { position: relative; border-radius: 20px; overflow: hidden; aspect-ratio: 16/9; box-shadow: var(--glow-purple); transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .hero-image-card:hover { transform: scale(1.02); box-shadow: 0 0 40px rgba(123, 44, 191, 0.7); }
+        .hero-image-card img { width: 100%; height: 100%; object-fit: cover; }
+        .scroll-indicator { position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%); animation: float 2s ease-in-out infinite; z-index: 2; }
+        .scroll-indicator span { display: block; width: 30px; height: 50px; border: 2px solid var(--primary-blue); border-radius: 25px; position: relative; }
+        .scroll-indicator span::before { content: ''; position: absolute; top: 8px; left: 50%; transform: translateX(-50%); width: 6px; height: 10px; background: var(--primary-blue); border-radius: 3px; animation: pulse 1.5s infinite; }
+        section { padding: 80px 20px; position: relative; z-index: 1; }
+        .content-section { background: var(--card-bg); padding: 60px 50px; border-radius: 24px; border: 1px solid rgba(0, 212, 255, 0.2); max-width: 1100px; margin: 0 auto; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3); }
+        .content-section h3 { font-size: 1.6rem; margin: 40px 0 20px; color: var(--accent-green); }
+        .content-section p { color: var(--text-secondary); line-height: 2; font-size: 1.08rem; margin: 15px 0; }
+        .content-section ul { margin: 20px 0; padding-left: 30px; }
+        .content-section li { margin: 10px 0; color: var(--text-secondary); }
+        .meta-info { background: linear-gradient(135deg, rgba(0, 212, 255, 0.15) 0%, rgba(123, 44, 191, 0.15) 100%); padding: 30px; border-radius: 16px; margin-bottom: 40px; border-left: 5px solid var(--primary-blue); }
+        .meta-info p { margin: 12px 0; color: var(--text-secondary); font-size: 1.05rem; }
+        .meta-info strong { color: var(--primary-blue); font-weight: 600; }
+        .meta-info a { color: var(--primary-blue); text-decoration: none; word-break: break-all; }
+        .highlight-box { background: linear-gradient(135deg, rgba(0, 255, 136, 0.08) 0%, rgba(0, 212, 255, 0.08) 100%); padding: 30px; border-radius: 16px; border-left: 5px solid var(--accent-green); margin: 40px 0; }
+        .highlight-box h4 { color: var(--accent-green); margin-bottom: 15px; font-size: 1.3rem; }
+        .highlight-box p { color: var(--text-secondary); margin: 0; }
+        .alert-box { background: linear-gradient(135deg, rgba(255, 71, 87, 0.1) 0%, rgba(255, 149, 0, 0.1) 100%); padding: 25px 30px; border-radius: 16px; border-left: 5px solid var(--accent-red); margin: 30px 0; }
+        .alert-box h4 { color: var(--accent-red); margin-bottom: 12px; font-size: 1.15rem; }
+        .alert-box p { color: var(--text-secondary); margin: 8px 0; font-size: 1rem; }
+        .quote-box { background: linear-gradient(135deg, rgba(123, 44, 191, 0.15) 0%, rgba(0, 212, 255, 0.15) 100%); padding: 30px 40px; border-radius: 16px; border-left: 5px solid var(--primary-purple); margin: 40px 0; position: relative; }
+        .quote-box::before { content: '"'; position: absolute; top: 10px; left: 20px; font-size: 80px; color: var(--primary-purple); opacity: 0.3; font-family: Georgia, serif; }
+        .quote-box p { color: var(--text-primary); font-size: 1.2rem; font-style: italic; margin-bottom: 15px; }
+        .quote-box cite { color: var(--text-secondary); font-size: 0.95rem; }
+        .tech-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin: 40px 0; }
+        .tech-card { background: var(--card-bg-light); padding: 30px; border-radius: 16px; border: 1px solid rgba(0, 212, 255, 0.15); transition: transform 0.3s ease, box-shadow 0.3s ease; animation: fadeInUp 0.6s ease-out forwards; opacity: 0; }
+        .tech-card:nth-child(1) { animation-delay: 0.1s; }
+        .tech-card:nth-child(2) { animation-delay: 0.2s; }
+        .tech-card:nth-child(3) { animation-delay: 0.3s; }
+        .tech-card:nth-child(4) { animation-delay: 0.4s; }
+        .tech-card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0, 212, 255, 0.2); }
+        .tech-card-icon { font-size: 2.5rem; margin-bottom: 15px; }
+        .tech-card h4 { color: var(--primary-blue); margin-bottom: 12px; font-size: 1.2rem; }
+        .tech-card p { color: var(--text-secondary); font-size: 0.95rem; line-height: 1.7; }
+        .comparison-table { width: 100%; border-collapse: collapse; margin: 40px 0; border-radius: 16px; overflow: hidden; box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3); }
+        .comparison-table thead { background: linear-gradient(135deg, var(--primary-blue), var(--primary-purple)); }
+        .comparison-table th { padding: 18px 20px; text-align: left; font-weight: 600; font-size: 1.05rem; }
+        .comparison-table td { padding: 16px 20px; border-bottom: 1px solid rgba(255, 255, 255, 0.05); color: var(--text-secondary); }
+        .comparison-table tr:last-child td { border-bottom: none; }
+        .comparison-table tr:nth-child(even) { background: rgba(255, 255, 255, 0.02); }
+        .comparison-table .highlight-col { color: var(--accent-green); font-weight: 500; }
+        .timeline { position: relative; margin: 40px 0; padding-left: 40px; }
+        .timeline::before { content: ''; position: absolute; left: 15px; top: 0; bottom: 0; width: 2px; background: linear-gradient(180deg, var(--primary-blue), var(--primary-purple)); }
+        .timeline-item { position: relative; margin-bottom: 35px; padding: 20px 25px; background: var(--card-bg-light); border-radius: 12px; border: 1px solid rgba(0, 212, 255, 0.1); animation: fadeInUp 0.5s ease-out forwards; opacity: 0; }
+        .timeline-item:nth-child(1) { animation-delay: 0.1s; }
+        .timeline-item:nth-child(2) { animation-delay: 0.2s; }
+        .timeline-item:nth-child(3) { animation-delay: 0.3s; }
+        .timeline-item:nth-child(4) { animation-delay: 0.4s; }
+        .timeline-item:nth-child(5) { animation-delay: 0.5s; }
+        .timeline-item:nth-child(6) { animation-delay: 0.6s; }
+        .timeline-item::before { content: ''; position: absolute; left: -32px; top: 25px; width: 12px; height: 12px; background: var(--primary-blue); border-radius: 50%; box-shadow: var(--glow-blue); }
+        .timeline-date { color: var(--primary-blue); font-size: 0.9rem; font-weight: 600; margin-bottom: 8px; }
+        .timeline-title { color: var(--text-primary); font-size: 1.1rem; font-weight: 600; margin-bottom: 8px; }
+        .timeline-desc { color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6; }
+        footer { background: #050508; padding: 60px 20px; text-align: center; border-top: 1px solid rgba(255, 255, 255, 0.1); }
+        footer p { color: var(--text-secondary); margin-bottom: 20px; }
+        .footer-links { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; }
+        .footer-links a { color: var(--primary-blue); text-decoration: none; transition: color 0.3s ease; }
+        .footer-links a:hover { color: var(--text-primary); }
+        @media (max-width: 768px) { .content-section { padding: 40px 25px; } .hero-images { grid-template-columns: 1fr; } .hero h1 { font-size: 2rem; } .hero-subtitle { font-size: 1.2rem; } }
+    </style>
+</head>
+<body>
+    <div class="code-rain" id="codeRain"></div>
+    <section class="hero">
+        <div class="hero-content">
+            <span class="hero-badge">📰 AI News 專題報道</span>
+            <h1>Asian AI Startups 推出 Mythos-Like 模型<br>Anthropic 出口禁令持續發酵</h1>
+            <p class="hero-subtitle">美國禁令後亞洲新創填補市場空缺，本地化 AI 生態加速成形</p>
+            <div class="hero-images">
+                <div class="hero-image-card">
+                    <img src="img/img1.png" alt="Asian AI startups 應對美國出口禁令">
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator"><span></span></div>
+    </section>
+    <section class="content-section">
+
+        <div class="meta-info">
+            <p><strong>📺 資料來源</strong>：<a href="https://techcrunch.com/2026/06/27/asian-ai-startups-launch-mythos-like-models-as-anthropics-export-ban-drags-on/" target="_blank">TechCrunch</a></p>
+            <p><strong>📅 發布日期</strong>：2026-06-27</p>
+            <p><strong>🤖 處理方式</strong>：AI 智能摘要生成</p>
+        </div>
+
+        <h3>🎯 核心觀點</h3>
+        <p>美國政府對 Anthropic 最先進的 AI 模型實施出口禁令後，東京與北京的至少兩家新創公司迅速填補市場空缺。Sakana AI 推出「Fugu」協調模型、中國 360 發布網安 AI 工具，本地化 AI 生態正在亞洲加速成形。</p>
+
+        <div class="tech-card">
+            <div class="tech-card-icon">🐡</div>
+            <div class="tech-card-content">
+                <h4>Sakana AI 推出 Fugu：構建「集體智慧」防禦</h4>
+                <p>東京 Sakana AI 共同創辦人 David Ha 將 Fugu 定位為對抗單一供應商風險的策略，而非單純的市場瓜分。Fugu 專為協調多個模型的代理使用而設計，他稱之為「超越更大模型的下一個前沿」。「獲取頂尖模型可以在一夜之間消失，集體智慧是對抗這種權力集中的務實對沖。」</p>
+            </div>
+        </div>
+
+        <div class="tech-card">
+            <div class="tech-card-icon">🔒</div>
+            <div class="tech-card-content">
+                <h4>中國 360 發布網安 AI 工具，暗示戰略資產價值</h4>
+                <p>據 Reuters 報導，360 創辦人周鴻禕將漏洞發現 AI 稱為「國家戰略資產」，警告「單向透明」的風險。360 發布了兩款 AI 安全工具：Tulongfeng（自動發現軟件漏洞）與 Yitianzhen（自動化網絡防禦和事件響應），直接對標美國被禁的漏洞發現 AI 能力。</p>
+            </div>
+        </div>
+
+        <div class="tech-card">
+            <div class="tech-card-icon">📈</div>
+            <div class="tech-card-content">
+                <h4>Anthropic 的高速成長與出口禁令兩難</h4>
+                <p>Anthropic 本身正處於歷史性增長軌道，2026 年 5 月 ARR 已突破 470 億美元。但 FT 分析指出，Anthropic 在 2026 年的溝通中「風險」一詞出現了 336 次。Meta 前首席 AI 科學家 Yann LeCun 批評這是「荒謬的恐懼販賣」最終奏效。</p>
+            </div>
+        </div>
+
+        <div class="tech-card">
+            <div class="tech-card-icon">🌏</div>
+            <div class="tech-card-content">
+                <h4>部分禁令解除，市場空缺仍存</h4>
+                <p>Politico 報導指，美國政府已於 6 月 26 日部分解除對 Mythos 5 的出口禁令，開放給 100 多家「可信賴合作夥伴」，但 Fable 5 仍被封鎖。Sakana AI 發言人強調新產品發布「完全巧合」，但公司網站已開始以「先進能力，遠離出口管制」為口號宣傳。</p>
+            </div>
+        </div>
+
+        <div class="highlight-box">
+            <h4>📌 重點提示</h4>
+            <p>Sakana AI 的 Fugu 模型可協調多個模型的代理使用，被視為「超越更大模型的下一個前沿」。中國 360 的 Tulongfeng 和 Yitianzhen 則直接瞄準漏洞發現和網絡防禦的戰略市場。專家警告，長期而言美國企業的全球市場份額可能因此下滑。</p>
+        </div>
+
+        <div class="quote-box">
+            <p>「Access to top models can disappear overnight. Collective intelligence is the practical hedge against this concentration of power.」</p>
+            <cite>— David Ha,共同創辦人兼 CEO,Sakana AI</cite>
+        </div>
+
+        <h3>🔮 業界展望</h3>
+        <p>這波亞洲 AI 新創的崛起，暴露了依賴單一國家供應商的結構性風險。隨著出口管制成為新常態，本地化 AI 生態系統正在加速形成。對於亞洲企業和政府機構而言，「先進能力，遠離出口管制」的口號吸引力日增，這將催生更多區域性 AI 自主供應鏈，同時加劇全球 AI 地緣政治的競爭態勢。</p>
+
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-date">2026 年 6 月 12 日</div>
+                <div class="timeline-title">美國實施出口禁令</div>
+                <div class="timeline-desc">特朗普政府以國家安全為由，禁止非美國居民使用 Anthropic 的 Mythos 和 Fable 5 模型</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">2026 年 6 月中旬</div>
+                <div class="timeline-title">Sakana AI 發布 Fugu</div>
+                <div class="timeline-desc">東京 Sakana AI 推出協調模型 Fugu，定位為「集體智慧」對沖策略</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">2026 年 6 月中旬</div>
+                <div class="timeline-title">中國 360 發布安全 AI</div>
+                <div class="timeline-desc">360 發布 Tulongfeng 和 Yitianzhen，瞄準漏洞發現和網絡防禦市場</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">2026 年 6 月 26 日</div>
+                <div class="timeline-title">部分禁令解除</div>
+                <div class="timeline-desc">美國政府部分解除 Mythos 5 禁令，開放給 100 多家可信賴合作夥伴，Fable 5 仍被封鎖</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">2026 年 6 月 27 日</div>
+                <div class="timeline-title">TechCrunch 報導發布</div>
+                <div class="timeline-desc">亞洲新創填補市場空缺的報導引發業界關注</div>
+            </div>
+        </div>
+
+        <table class="comparison-table">
+            <thead>
+                <tr>
+                    <th>公司 / 模型</th>
+                    <th>類型</th>
+                    <th class="highlight-col">主要功能</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Sakana AI - Fugu</td>
+                    <td>協調模型（Orchestration Model）</td>
+                    <td class="highlight-col">整合多個模型代理使用，被視為「超越更大模型的下一個前沿」</td>
+                </tr>
+                <tr>
+                    <td>中國 360 - Tulongfeng</td>
+                    <td>網絡安全 AI</td>
+                    <td class="highlight-col">自動發現軟件漏洞，被稱為「國家戰略資產」</td>
+                </tr>
+                <tr>
+                    <td>中國 360 - Yitianzhen</td>
+                    <td>網絡防禦 AI</td>
+                    <td class="highlight-col">自動化網絡防禦和事件響應</td>
+                </tr>
+                <tr>
+                    <td>Anthropic - Mythos 5</td>
+                    <td>前沿模型（部分解除）</td>
+                    <td class="highlight-col">超強漏洞發現能力，已對 100+ 可信賴合作夥伴重新開放</td>
+                </tr>
+                <tr>
+                    <td>Anthropic - Fable 5</td>
+                    <td>前沿模型（仍被封鎖）</td>
+                    <td class="highlight-col">更嚴格限制版本，外國用戶仍無法訪問</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+    <footer>
+        <p>© 2026 AI News Archive | 由 AI 技術生成 | 林SIR 監督</p>
+        <div class="footer-links">
+            <a href="../index.html">返回主頁</a>
+            <a href="https://github.com/hklamsir/ai_news" target="_blank">GitHub</a>
+            <a href="https://hklamsir.github.io/ai_news/" target="_blank">瀏覽所有專題</a>
+        </div>
+    </footer>
+
+
+    <script>
+        const codeRain = document.getElementById('codeRain');
+        const chars = '01アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン';
+        for (let i = 0; i < 50; i++) {
+            const char = document.createElement('span');
+            char.className = 'code-char';
+            char.textContent = chars[Math.floor(Math.random() * chars.length)];
+            char.style.left = Math.random() * 100 + '%';
+            char.style.animationDelay = Math.random() * 4 + 's';
+            char.style.animationDuration = (Math.random() * 3 + 3) + 's';
+            codeRain.appendChild(char);
+        }
+    </script>
+
+</body>
+</html>
