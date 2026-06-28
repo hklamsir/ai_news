@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260628_224900",
+      "title": "Researchers Identify 3 Key Drivers Behind 'AI Psychosis' - Gizmodo",
+      "summary": "英德研究人員在 Nature 期刊識別出 AI 聊天機器人的語言對齊、過度個人化、奉承傾向三大特徵，對青少年及心理脆弱者危害最大",
+      "url": "./news_20260628_224900/index.html",
+      "date": "2026-06-28",
+      "time": "22:49:00",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260628_184200",
       "title": "自主學習VS過度依賴 中小學應用AI時面對甚麼挑戰？｜教學有心人",
       "summary": "教育局50萬撥款資助AI教育，但如何避免學生過度依賴、保持自主學習能力成核心課題",
@@ -2089,6 +2098,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-06-28T18:52:09.106963",
-  "total_count": 232
+  "last_updated": "2026-06-28T22:53:41.846796",
+  "total_count": 233
 }
