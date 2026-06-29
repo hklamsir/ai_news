@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260629_220744",
+      "title": "受Claude Mythos震撼 梁文鋒自掏200億元人民幣開啟AGI豪賭 | 鉅亨網 - A股港股",
+      "summary": "DeepSeek 受 Claude Mythos 震撼，74 億美元融資後再個人注資 200 億人民幣",
+      "url": "./news_20260629_220744/index.html",
+      "date": "2026-06-29",
+      "time": "22:07:44",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260629_185530",
       "title": "DS 開源推理加速框架 DSpark，推理速度最高提升 85%",
       "summary": "DeepSeek 聯合北京大學開源半自回歸推理加速框架，高併發吞吐量翻 4 倍",
@@ -2143,6 +2152,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-06-29T18:57:49.786934",
-  "total_count": 238
+  "last_updated": "2026-06-29T22:10:16.658570",
+  "total_count": 239
 }
