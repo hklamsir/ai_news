@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260629_083845",
+      "title": "Gemini 學習筆記本：打造個人化學習體驗，重新定位專屬學習系統",
+      "summary": "Google 把 Gemini 變成學習夥伴，不只是問答而是系統性追蹤學習進度",
+      "url": "./news_20260629_083845/index.html",
+      "date": "2026-06-29",
+      "time": "08:38:45",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260628_224900",
       "title": "Researchers Identify 3 Key Drivers Behind 'AI Psychosis' - Gizmodo",
       "summary": "英德研究人員在 Nature 期刊識別出 AI 聊天機器人的語言對齊、過度個人化、奉承傾向三大特徵，對青少年及心理脆弱者危害最大",
@@ -2098,6 +2107,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-06-28T22:53:41.846796",
-  "total_count": 233
+  "last_updated": "2026-06-29T08:52:13.293617",
+  "total_count": 234
 }
