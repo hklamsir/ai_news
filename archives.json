@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260629_105506",
+      "title": "英特爾前執行長坐鎮！美AI新創公司想分食艾司摩爾獨佔已久的光刻機蛋糕 | 鉅亨網 - 美股雷達",
+      "summary": "前英特爾執行長基辛格出任董事長！美國新創以 FEL 光源分食 EUV 市場大餅",
+      "url": "./news_20260629_105506/index.html",
+      "date": "2026-06-29",
+      "time": "10:55:06",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260629_094411",
       "title": "AI in Health: scholar brings clarity and caution to Pacific symposium – University of Auckland",
       "summary": "毛利族與太平洋島嶼社群的 AI 醫療挑戰：數據代表性不足與治理框架缺口",
@@ -2116,6 +2125,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-06-29T09:54:16.131552",
-  "total_count": 235
+  "last_updated": "2026-06-29T10:59:15.962371",
+  "total_count": 236
 }
