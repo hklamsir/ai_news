@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260629_185530",
+      "title": "DS 開源推理加速框架 DSpark，推理速度最高提升 85%",
+      "summary": "DeepSeek 聯合北京大學開源半自回歸推理加速框架，高併發吞吐量翻 4 倍",
+      "url": "./news_20260629_185530/index.html",
+      "date": "2026-06-29",
+      "time": "18:55:30",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260629_132540",
       "title": "AI年代：中大研L3式清除腎石AI機械人",
       "summary": "中文大學研發 L3 監督式自主 AI 手術機械人，首宗人體手術成功完成",
@@ -2134,6 +2143,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-06-29T14:24:02.749867",
-  "total_count": 237
+  "last_updated": "2026-06-29T18:57:49.786934",
+  "total_count": 238
 }
