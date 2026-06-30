@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260630_084051",
+      "title": "菜鳥白領首當其衝！前Google高管警告：未來硬能力是「人際連結」，坐辦公室不如當黑手",
+      "summary": "前 Google 高管莫·加多：2027-2028 年部分產業 30% 工作將消失",
+      "url": "./news_20260630_084051/index.html",
+      "date": "2026-06-30",
+      "time": "08:40:51",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260630_075711",
       "title": "TIDAL cracks down on AI music by cutting off monetization | TechCrunch",
       "summary": "7 月 15 日生效：AI 生成音樂將被標記且不得收取版稅",
@@ -2161,6 +2170,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-06-30T08:01:32.744087",
-  "total_count": 240
+  "last_updated": "2026-06-30T08:50:59.811701",
+  "total_count": 241
 }
