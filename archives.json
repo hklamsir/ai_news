@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260630_190727",
+      "title": "智啟 50 萬如何用得其所 《中小學數碼教育發展藍圖》首年 AI 入校攻略 專訪三間先行中小學",
+      "summary": "專訪三間先行中小學：硬軟分流、Local LLM、聚焦平台三大策略",
+      "url": "./news_20260630_190727/index.html",
+      "date": "2026-06-30",
+      "time": "19:07:27",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260630_150447",
       "title": "Windows 10 just very quietly got another year of free support - but why?",
       "summary": "Microsoft 悄悄延長 ESU 個人用戶免費更新至 2027 年 10 月",
@@ -2179,6 +2188,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-06-30T15:10:57.563266",
-  "total_count": 242
+  "last_updated": "2026-06-30T19:12:23.234685",
+  "total_count": 243
 }
