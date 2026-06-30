@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260630_075711",
+      "title": "TIDAL cracks down on AI music by cutting off monetization | TechCrunch",
+      "summary": "7 月 15 日生效：AI 生成音樂將被標記且不得收取版稅",
+      "url": "./news_20260630_075711/index.html",
+      "date": "2026-06-30",
+      "time": "07:57:11",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260629_220744",
       "title": "受Claude Mythos震撼 梁文鋒自掏200億元人民幣開啟AGI豪賭 | 鉅亨網 - A股港股",
       "summary": "DeepSeek 受 Claude Mythos 震撼，74 億美元融資後再個人注資 200 億人民幣",
@@ -2152,6 +2161,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-06-29T22:10:16.658570",
-  "total_count": 239
+  "last_updated": "2026-06-30T08:01:32.744087",
+  "total_count": 240
 }
