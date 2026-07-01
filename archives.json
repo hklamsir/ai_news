@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260701_192000",
+      "title": "未來 2 年，一半的 PM 將被淘汰？寓意科技執行長：比寫 PRD 更值錢的是「場景想像力」|經理人",
+      "summary": "比寫 PRD 更值錢的是「場景想像力」",
+      "url": "./news_20260701_192000/index.html",
+      "date": "2026-07-01",
+      "time": "19:20:00",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260701_171118",
       "title": "Meta不準工程師用Claude Code、Codex！擔心自家模型被「蒸餾」污染",
       "summary": "擔心自家模型被「蒸餾」污染",
@@ -2197,6 +2206,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-07-01T17:16:16.556859",
-  "total_count": 244
+  "last_updated": "2026-07-01T19:27:55.752238",
+  "total_count": 245
 }
