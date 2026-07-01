@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260701_171118",
+      "title": "Meta不準工程師用Claude Code、Codex！擔心自家模型被「蒸餾」污染",
+      "summary": "擔心自家模型被「蒸餾」污染",
+      "url": "./news_20260701_171118/index.html",
+      "date": "2026-07-01",
+      "time": "17:11:18",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260630_190727",
       "title": "智啟 50 萬如何用得其所 《中小學數碼教育發展藍圖》首年 AI 入校攻略 專訪三間先行中小學",
       "summary": "專訪三間先行中小學：硬軟分流、Local LLM、聚焦平台三大策略",
@@ -2188,6 +2197,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-06-30T19:12:23.234685",
-  "total_count": 243
+  "last_updated": "2026-07-01T17:16:16.556859",
+  "total_count": 244
 }
