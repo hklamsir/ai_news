@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260701_220200",
+      "title": "「AI馬克思主義」：中國如何應對人工智慧革命",
+      "summary": "從法庭判例到失業保險 中國的AI就業策略",
+      "url": "./news_20260701_220200/index.html",
+      "date": "2026-07-01",
+      "time": "22:02:00",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260701_213500",
       "title": "UN report says policymakers are struggling to keep up with pace of AI development - Engadget",
       "summary": "AI能力每數月翻倍 監管體系跟不上",
@@ -2242,6 +2251,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-07-01T21:35:56.228032",
-  "total_count": 249
+  "last_updated": "2026-07-01T22:07:13.792215",
+  "total_count": 250
 }
