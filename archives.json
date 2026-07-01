@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260701_212200",
+      "title": "優必選U1機械伴侶賣100萬：AI陪伴是科技革命還是孤獨生意？ | BusinessFocus",
+      "summary": "AI陪伴是科技革命還是孤獨生意？",
+      "url": "./news_20260701_212200/index.html",
+      "date": "2026-07-01",
+      "time": "21:22:00",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260701_210700",
       "title": "OpenClaw 推出官方手機 App　審批動作、語音交談、內容分享．手機作安全節點",
       "summary": "手機作安全節點",
@@ -2224,6 +2233,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-07-01T21:12:23.465745",
-  "total_count": 247
+  "last_updated": "2026-07-01T21:19:54.493658",
+  "total_count": 248
 }
