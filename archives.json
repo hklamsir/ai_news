@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260701_210700",
+      "title": "OpenClaw 推出官方手機 App　審批動作、語音交談、內容分享．手機作安全節點",
+      "summary": "手機作安全節點",
+      "url": "./news_20260701_210700/index.html",
+      "date": "2026-07-01",
+      "time": "21:07:00",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260701_204300",
       "title": "半小時痛失50萬！新型「真人+AI」洗腦騙局殺到 化身「假HKTVmall」陷阱 網民震驚：唔敢話唔中招｜Juicy叮",
       "summary": "化身假HKTVmall陷阱 網民震驚",
@@ -2215,6 +2224,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-07-01T20:48:44.466807",
-  "total_count": 246
+  "last_updated": "2026-07-01T21:12:23.465745",
+  "total_count": 247
 }
