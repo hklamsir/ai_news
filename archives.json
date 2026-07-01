@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260701_204300",
+      "title": "半小時痛失50萬！新型「真人+AI」洗腦騙局殺到 化身「假HKTVmall」陷阱 網民震驚：唔敢話唔中招｜Juicy叮",
+      "summary": "化身假HKTVmall陷阱 網民震驚",
+      "url": "./news_20260701_204300/index.html",
+      "date": "2026-07-01",
+      "time": "20:43:00",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260701_192000",
       "title": "未來 2 年，一半的 PM 將被淘汰？寓意科技執行長：比寫 PRD 更值錢的是「場景想像力」|經理人",
       "summary": "比寫 PRD 更值錢的是「場景想像力」",
@@ -2206,6 +2215,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-07-01T19:27:55.752238",
-  "total_count": 245
+  "last_updated": "2026-07-01T20:48:44.466807",
+  "total_count": 246
 }
