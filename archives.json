@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260701_213500",
+      "title": "UN report says policymakers are struggling to keep up with pace of AI development - Engadget",
+      "summary": "AI能力每數月翻倍 監管體系跟不上",
+      "url": "./news_20260701_213500/index.html",
+      "date": "2026-07-01",
+      "time": "21:35:00",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260701_212200",
       "title": "優必選U1機械伴侶賣100萬：AI陪伴是科技革命還是孤獨生意？ | BusinessFocus",
       "summary": "AI陪伴是科技革命還是孤獨生意？",
@@ -2233,6 +2242,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-07-01T21:19:54.493658",
-  "total_count": 248
+  "last_updated": "2026-07-01T21:35:56.228032",
+  "total_count": 249
 }
