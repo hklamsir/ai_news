@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260702_080000",
+      "title": "Google introduces a faster, cheaper image generator with Nano Banana 2 Lite | TechCrunch",
+      "summary": "專為高速、高吞吐量工作流程優化的 AI 圖像生成模型",
+      "url": "./news_20260702_080000/index.html",
+      "date": "2026-07-02",
+      "time": "08:00:00",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260701_220200",
       "title": "「AI馬克思主義」：中國如何應對人工智慧革命",
       "summary": "從法庭判例到失業保險 中國的AI就業策略",
@@ -2251,6 +2260,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-07-01T22:07:13.792215",
-  "total_count": 250
+  "last_updated": "2026-07-02T08:04:19.090446",
+  "total_count": 251
 }
