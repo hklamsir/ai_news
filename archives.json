@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260703_131313",
+      "title": "UNICEF 調查：全球 2,000 萬兒童已用 AI　學習速度比成人快 3 倍",
+      "summary": "學習速度比成人快三倍　 UNICEF 警告：兒童身處全球實驗",
+      "url": "./news_20260703_131313/index.html",
+      "date": "2026-07-03",
+      "time": "13:13:13",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260703_130047",
       "title": "AI狂潮｜月之暗面拆解Kimi模型突圍攻略　押注架構創新衝破大模型瓶頸",
       "summary": "押注架構創新　馬斯克點名稱讚　API收入佔7成",
@@ -2287,6 +2296,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-07-03T13:05:29.240837",
-  "total_count": 254
+  "last_updated": "2026-07-03T13:17:20.478593",
+  "total_count": 255
 }
