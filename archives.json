@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260703_130047",
+      "title": "AI狂潮｜月之暗面拆解Kimi模型突圍攻略　押注架構創新衝破大模型瓶頸",
+      "summary": "押注架構創新　馬斯克點名稱讚　API收入佔7成",
+      "url": "./news_20260703_130047/index.html",
+      "date": "2026-07-03",
+      "time": "13:00:47",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260703_101851",
       "title": "Cloudflare will filter out web crawlers that serve AI companies - Engadget",
       "summary": "混合用途爬蟲成攻擊目標　按使用收費新模式上路",
@@ -2278,6 +2287,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-07-03T10:26:26.288806",
-  "total_count": 253
+  "last_updated": "2026-07-03T13:05:29.240837",
+  "total_count": 254
 }
