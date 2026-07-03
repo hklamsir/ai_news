@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260703_101851",
+      "title": "Cloudflare will filter out web crawlers that serve AI companies - Engadget",
+      "summary": "混合用途爬蟲成攻擊目標　按使用收費新模式上路",
+      "url": "./news_20260703_101851/index.html",
+      "date": "2026-07-03",
+      "time": "10:18:51",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260702_162400",
       "title": "AI應用｜麥肯錫：AI撼動企業核心流程　 Computex 揭示行業4大發展關鍵",
       "summary": "麥肯錫：人機協作經濟機遇達每年25兆美元，企業核心地帶才是轉型勝敗關鍵",
@@ -2269,6 +2278,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-07-02T16:29:15.267378",
-  "total_count": 252
+  "last_updated": "2026-07-03T10:26:26.288806",
+  "total_count": 253
 }
