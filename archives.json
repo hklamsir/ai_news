@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260704_083800",
+      "title": "OpenAI 建議向美國政府提供 5% 股份　呼籲其他 AI 巨頭跟隨",
+      "summary": "以 OpenAI 8,520 億美元估值計算，5% 股權約值 426 億美元，建議同時涵蓋 Anthropic、Google、Meta 等主要 AI 企業",
+      "url": "./news_20260704_083800/index.html",
+      "date": "2026-07-04",
+      "time": "08:38:00",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260703_131313",
       "title": "UNICEF 調查：全球 2,000 萬兒童已用 AI　學習速度比成人快 3 倍",
       "summary": "學習速度比成人快三倍　 UNICEF 警告：兒童身處全球實驗",
@@ -2296,6 +2305,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-07-03T13:17:20.478593",
-  "total_count": 255
+  "last_updated": "2026-07-04T08:48:14.194432",
+  "total_count": 256
 }
