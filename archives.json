@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260705_104500",
+      "title": "Why AI Security Tools Still Need Your Engineers",
+      "summary": "發現不等於修復：VulnCheck 數據顯示僅 1% CVE 曾被實際攻擊",
+      "url": "./news_20260705_104500/index.html",
+      "date": "2026-07-05",
+      "time": "10:45:00",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260705_093500",
       "title": "Alibaba bans employees from using Claude Code due to security risk concerns.",
       "summary": "中國科技巨頭宣布禁用 Anthropic 編程工具，憂安全風險與用戶追蹤爭議",
@@ -2323,6 +2332,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-07-05T09:43:02.378155",
-  "total_count": 258
+  "last_updated": "2026-07-05T10:46:54.972179",
+  "total_count": 259
 }
