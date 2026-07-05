@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260705_093500",
+      "title": "Alibaba bans employees from using Claude Code due to security risk concerns.",
+      "summary": "中國科技巨頭宣布禁用 Anthropic 編程工具，憂安全風險與用戶追蹤爭議",
+      "url": "./news_20260705_093500/index.html",
+      "date": "2026-07-05",
+      "time": "09:35:00",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260704_090936",
       "title": "瀏覽器大戰轉向 AI 助理之爭　Perplexity Comet、Dia、Atlas 成新挑戰者",
       "summary": "2026 年瀏覽器之爭不再只是搜尋結果，而是哪家 AI 能代表用戶完成任務，Perplexity、The Browser Company、OpenAI 等相繼推出 AI 瀏覽器挑戰 Chrome 和 ",
@@ -2314,6 +2323,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-07-04T09:12:39.235057",
-  "total_count": 257
+  "last_updated": "2026-07-05T09:43:02.378155",
+  "total_count": 258
 }
