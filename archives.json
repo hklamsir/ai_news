@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260705_112500",
+      "title": "What is Mistral AI? Everything to know about the OpenAI competitor",
+      "summary": "法國 AI 新創從歐洲最大種子輪到 231.5 億美元估值，開放模型策略挑戰美國巨頭",
+      "url": "./news_20260705_112500/index.html",
+      "date": "2026-07-05",
+      "time": "11:25:00",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260705_104500",
       "title": "Why AI Security Tools Still Need Your Engineers",
       "summary": "發現不等於修復：VulnCheck 數據顯示僅 1% CVE 曾被實際攻擊",
@@ -2332,6 +2341,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-07-05T10:46:54.972179",
-  "total_count": 259
+  "last_updated": "2026-07-05T11:16:08.907524",
+  "total_count": 260
 }
