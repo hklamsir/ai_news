@@ -1,1 +1,1 @@
-Google Gemma 4 VS Qwen 3.6: I Ran Both Side by Side and Picked One
+Google Gemma 4 對決 Qwen 3.6：我並列測試兩者並選出一個

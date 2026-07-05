@@ -1,1 +1,1 @@
-Cloudflare will filter out web crawlers that serve AI companies - Engadget
+Cloudflare 將封鎖服務 AI 公司的網頁爬蟲 - Engadget
