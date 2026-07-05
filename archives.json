@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260706_075316",
+      "title": "AI 策略師開除半數 AI 代理人　揭露淪為「機器人保姆」的職場困境 - Business Insider Taiwan",
+      "summary": "AI 代理人本應消除繁瑣工作，但對於許多員工來說，結果反而創造了更多工作——他們成為了「機器人保姆」",
+      "url": "./news_20260706_075316/index.html",
+      "date": "2026-07-06",
+      "time": "07:53:16",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260705_121000",
       "title": "Mistral AI 是什麼？關於這個 OpenAI 競爭對手你需要知道的一切",
       "summary": "法國 AI 新創從歐洲最大種子輪到 231.5 億美元估值，開放模型策略挑戰美國巨頭",
@@ -2341,6 +2350,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-07-05T13:10:46.890952",
-  "total_count": 260
+  "last_updated": "2026-07-06T07:58:19.333189",
+  "total_count": 261
 }
