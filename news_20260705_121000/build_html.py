@@ -26,7 +26,7 @@ article_content = """
             <div class="tech-card-icon">🧠</div>
             <div class="tech-card-content">
                 <h4>主要模型</h4>
-                <p>Mistral 開發了涵蓋 LLM、多模態、推理、音頻及 OCR 的廣泛模型矩陣。包括 Mistral Small 4、「Les Ministraux」系列（針對邊緣設備優化）。部分模型開源，代码代理 Leanstral 亦已開源。</p>
+                <p>Mistral 開發了涵蓋 LLM、多模態、推理、音頻及 OCR 的廣泛模型矩陣。包括 Mistral Small 4、「Les Ministraux」系列（針對邊緣設備優化）。部分模型開源，代碼代理 Leanstral 亦已開源。</p>
             </div>
         </div>
 
@@ -136,7 +136,7 @@ metadata = {
 }
 
 success, errors = assemble_article(
-    article_dir='/home/lamsir/ai_news/news_20260705_112500',
+    article_dir='/home/lamsir/ai_news/news_20260705_121000',
     article_content=article_content,
     metadata=metadata
 )

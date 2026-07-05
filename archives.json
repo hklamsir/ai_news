@@ -1,12 +1,12 @@
 {
   "archives": [
     {
-      "dir": "news_20260705_112500",
+      "dir": "news_20260705_121000",
       "title": "What is Mistral AI? Everything to know about the OpenAI competitor",
       "summary": "法國 AI 新創從歐洲最大種子輪到 231.5 億美元估值，開放模型策略挑戰美國巨頭",
-      "url": "./news_20260705_112500/index.html",
+      "url": "./news_20260705_121000/index.html",
       "date": "2026-07-05",
-      "time": "11:25:00",
+      "time": "12:10:00",
       "source": "AI News"
     },
     {
@@ -2341,6 +2341,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-07-05T11:16:08.907524",
+  "last_updated": "2026-07-05T12:12:02.971227",
   "total_count": 260
 }
