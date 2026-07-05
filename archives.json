@@ -1406,7 +1406,7 @@
     },
     {
       "dir": "news_20260522_095855",
-      "title": "Mobile phishing is a bigger threat than email now - how to stay protected",
+      "title": "移動網絡釣魚現在比電子郵件威脅更大——如何自保",
       "summary": "根據 Verizon 2026 DBIR 報告，移動端網絡攻擊正在超越傳統電郵威脅。移動端釣魚點擊率比電郵高出 40%，企業必須重新審視安全培訓策略。",
       "url": "./news_20260522_095855/index.html",
       "date": "2026-05-22",
@@ -1460,7 +1460,7 @@
     },
     {
       "dir": "news_20260519_233240",
-      "title": "Hermes Agent Workspace",
+      "title": "Hermes 代理工作空間",
       "summary": "開源 AI 代理指揮中心｜零程式碼、零費用｜將 AI 變成會為你工作的員工",
       "url": "./news_20260519_233240/index.html",
       "date": "2026-05-19",
@@ -1595,7 +1595,7 @@
     },
     {
       "dir": "news_20260514_080632",
-      "title": "The Human Cost of 10x AI Productivity",
+      "title": "十倍 AI 生產力的人類代價",
       "summary": "當人工智能將生產力提升十倍，人類勞動力將面臨何種衝擊？本次報告深入探討技術躍進背後的社會代價與產業重構",
       "url": "./news_20260514_080632/index.html",
       "date": "2026-05-14",
@@ -1631,7 +1631,7 @@
     },
     {
       "dir": "news_20260511_095738",
-      "title": "Instagram（品牌名稱保留）",
+      "title": "Instagram",
       "summary": "{{SUBTITLE}}",
       "url": "./news_20260511_095738/index.html",
       "date": "2026-05-11",
@@ -1964,7 +1964,7 @@
     },
     {
       "dir": "news_20260417_113720",
-      "title": "Internet Protocol Version 8 (IPv8)",
+      "title": "網際網路協定第八版（IPv8）",
       "summary": "IETF 發布革命性網路協議草案！IPv8 不僅解決 IPv4 位址枯竭，更通過 Zone Server 統一平臺革新網路管理、安全與監控方式。",
       "url": "./news_20260417_113720/index.html",
       "date": "2026-04-17",
@@ -1973,7 +1973,7 @@
     },
     {
       "dir": "news_20260417_113452",
-      "title": "Internet Protocol Version 8 (IPv8)",
+      "title": "網際網路協定第八版（IPv8）",
       "summary": "最新科技新聞報道指出，人工智能領域迎來重要技術突破。研究人員表示，新技術將對產業發展產生深遠影響。",
       "url": "./news_20260417_113452/index.html",
       "date": "2026-04-17",
@@ -2027,7 +2027,7 @@
     },
     {
       "dir": "news_20260415_083154",
-      "title": "Rising AI Adoption Spurs Workforce Changes",
+      "title": "AI 採用率提升激發勞動力變革",
       "summary": "AI adoption 在職場加速普及，首次突破一半美國上班族使用 AI，企業層面亦持續上升。調查顯示 AI 既催生新職位，也顛覆既有工作模式，生產力提升之餘，員工對工作被取代的擔憂同步升溫。",
       "url": "./news_20260415_083154/index.html",
       "date": "2026-04-15",
@@ -2341,6 +2341,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-07-05T13:07:59.740471",
+  "last_updated": "2026-07-05T13:10:46.890952",
   "total_count": 260
 }
