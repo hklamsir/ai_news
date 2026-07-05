@@ -1631,7 +1631,7 @@
     },
     {
       "dir": "news_20260511_095738",
-      "title": "Instagram",
+      "title": "Instagram（品牌名稱保留）",
       "summary": "{{SUBTITLE}}",
       "url": "./news_20260511_095738/index.html",
       "date": "2026-05-11",
@@ -2341,6 +2341,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-07-05T12:45:08.875754",
+  "last_updated": "2026-07-05T13:07:59.740471",
   "total_count": 260
 }
