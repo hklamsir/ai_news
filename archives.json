@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260706_094505",
+      "title": "阿里，把 GLM-5.2 免費了 中國開源模型挑戰美國 AI 霸主地位",
+      "summary": "GLM-5.2 開源模型效能媲美 GPT-5.5，成本僅為六分之一",
+      "url": "./news_20260706_094505/index.html",
+      "date": "2026-07-06",
+      "time": "09:45:05",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260706_082829",
       "title": "Midjourney 要求好萊塢工作室 在法庭上披露 AI 使用方式",
       "summary": "AI 圖像生成器反擊版權訴訟，要求原告披露自身 AI 訓練方式",
@@ -2359,6 +2368,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-07-06T09:16:47.545089",
-  "total_count": 262
+  "last_updated": "2026-07-06T09:48:15.386396",
+  "total_count": 263
 }
