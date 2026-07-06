@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260706_082829",
+      "title": "Midjourney wants the Hollywood studios that sued it to show the court how they use AI - Engadget",
+      "summary": "AI 圖像生成器反擊版權訴訟，要求原告披露自身 AI 訓練方式",
+      "url": "./news_20260706_082829/index.html",
+      "date": "2026-07-06",
+      "time": "08:28:29",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260706_075316",
       "title": "AI 策略師開除半數 AI 代理人　揭露淪為「機器人保姆」的職場困境 - Business Insider Taiwan",
       "summary": "AI 代理人本應消除繁瑣工作，但對於許多員工來說，結果反而創造了更多工作——他們成為了「機器人保姆」",
@@ -2350,6 +2359,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-07-06T07:58:19.333189",
-  "total_count": 261
+  "last_updated": "2026-07-06T08:31:50.366260",
+  "total_count": 262
 }
