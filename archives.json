@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260707_134357",
+      "title": "調查丨57%受訪僱主指 日常AI工具帶來生產力提升",
+      "summary": "ManpowerGroup 香港調查：AI 工具已成為提升生產力首要槓桿，軟技能依然無可取代",
+      "url": "./news_20260707_134357/index.html",
+      "date": "2026-07-07",
+      "time": "13:43:57",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260707_130800",
       "title": "專訪科大副校郭毅可 建立「主權AI」拒絕數字殖民",
       "summary": "香港需要建立「主權AI」，以本地數據為基礎，避免數字殖民",
@@ -2404,6 +2413,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-07-07T13:11:16.909646",
-  "total_count": 267
+  "last_updated": "2026-07-07T13:49:01.925488",
+  "total_count": 268
 }
