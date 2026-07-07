@@ -2,7 +2,7 @@
   "archives": [
     {
       "dir": "news_20260707_083700",
-      "title": "If you use Google, you're training its AI. Here's how to opt out.",
+      "title": "使用 Google = 參與 AI 訓練！ 一篇教你如何退出",
       "summary": "Google 悄悄將用戶媒體檔案納入 AI 訓練，隱私設定拆分後需分開管理",
       "url": "./news_20260707_083700/index.html",
       "date": "2026-07-07",
@@ -2386,6 +2386,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-07-07T08:42:51.846738",
+  "last_updated": "2026-07-07T09:05:24.506790",
   "total_count": 265
 }
