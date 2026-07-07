@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260707_090800",
+      "title": "中國春水堂「AI 女伴」機械人 有體溫、表情、視覺及記憶功能",
+      "summary": "次世代 AI 仿真人形伴侶機械人 8 月開售，15,800 人民幣起",
+      "url": "./news_20260707_090800/index.html",
+      "date": "2026-07-07",
+      "time": "09:08:00",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260707_083700",
       "title": "使用 Google = 參與 AI 訓練！ 一篇教你如何退出",
       "summary": "Google 悄悄將用戶媒體檔案納入 AI 訓練，隱私設定拆分後需分開管理",
@@ -2386,6 +2395,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-07-07T09:05:24.506790",
-  "total_count": 265
+  "last_updated": "2026-07-07T09:11:11.618080",
+  "total_count": 266
 }
