@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260707_083700",
+      "title": "If you use Google, you're training its AI. Here's how to opt out.",
+      "summary": "Google 悄悄將用戶媒體檔案納入 AI 訓練，隱私設定拆分後需分開管理",
+      "url": "./news_20260707_083700/index.html",
+      "date": "2026-07-07",
+      "time": "08:37:00",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260706_132851",
       "title": "阿根廷擬準 AI 系統全自動營運公司 設立「非人類公司」新類別",
       "summary": "全球首個 AI 營運公司立法：米萊伊的願景與法律現實之間的差距",
@@ -2377,6 +2386,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-07-06T13:33:37.272499",
-  "total_count": 264
+  "last_updated": "2026-07-07T08:42:51.846738",
+  "total_count": 265
 }
