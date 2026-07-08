@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260708_134830",
+      "title": "Anthropic 將 Claude Cowork 從桌面擴展至手機與網頁",
+      "summary": "TechCrunch | 2026-07-07",
+      "url": "./news_20260708_134830/index.html",
+      "date": "2026-07-08",
+      "time": "13:48:30",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260708_121804",
       "title": "Fable 5 自我改進系統實戰： 14 步打造會「複利」的 AI 代理",
       "summary": "BLOCKTEMPO | 2026-07-08",
@@ -2422,6 +2431,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-07-08T12:21:36.951506",
-  "total_count": 269
+  "last_updated": "2026-07-08T13:53:28.490048",
+  "total_count": 270
 }
