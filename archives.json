@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260708_121804",
+      "title": "Fable 5 自我改進系統實戰： 14 步打造會「複利」的 AI 代理",
+      "summary": "BLOCKTEMPO | 2026-07-08",
+      "url": "./news_20260708_121804/index.html",
+      "date": "2026-07-08",
+      "time": "12:18:04",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260707_134357",
       "title": "調查丨57%受訪僱主指 日常AI工具帶來生產力提升",
       "summary": "ManpowerGroup 香港調查：AI 工具已成為提升生產力首要槓桿，軟技能依然無可取代",
@@ -2413,6 +2422,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-07-07T13:49:01.925488",
-  "total_count": 268
+  "last_updated": "2026-07-08T12:21:36.951506",
+  "total_count": 269
 }
