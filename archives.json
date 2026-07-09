@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260709_085100",
+      "title": "提示詞越寫越長反而害了你！ Anthropic工程師：Claude Code團隊砍掉8成系統提示，模型才真正發揮",
+      "summary": "Anthropic 工程師 Thariq Shihipar 在 AI Engineer World's Fair 分享與 Claude Fable 5 協作的經驗，核心觀點是：模型表現好不好，往往不只",
+      "url": "./news_20260709_085100/index.html",
+      "date": "2026-07-09",
+      "time": "08:51:00",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260709_083800",
       "title": "全球首例 AI 驅動勒索軟件攻擊 仍有人類幕後操控",
       "summary": "雲端安全公司 Sysdig 首次記錄到由 AI 代理完全自主執行的勒索軟件攻擊「JadePuffer」，AI 負責從偵察到加密的所有技術工作，但人類仍在背後操控目標選擇與基礎設施。",
@@ -2440,6 +2449,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-07-09T08:44:21.192208",
-  "total_count": 271
+  "last_updated": "2026-07-09T08:54:51.229197",
+  "total_count": 272
 }
