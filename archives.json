@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260709_083800",
+      "title": "全球首例 AI 驅動勒索軟件攻擊 仍有人類幕後操控",
+      "summary": "雲端安全公司 Sysdig 首次記錄到由 AI 代理完全自主執行的勒索軟件攻擊「JadePuffer」，AI 負責從偵察到加密的所有技術工作，但人類仍在背後操控目標選擇與基礎設施。",
+      "url": "./news_20260709_083800/index.html",
+      "date": "2026-07-09",
+      "time": "08:38:00",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260708_134830",
       "title": "Anthropic 將 Claude Cowork 從桌面擴展至手機與網頁",
       "summary": "Anthropic 宣布將 Claude Cowork 從桌面應用程式擴展至 iOS、Android 及網頁平台，讓 AI 代理不再需要綁定桌面裝置，可在設備間無縫切換，雲端後台持續運行。",
@@ -2431,6 +2440,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-07-08T16:15:15.846450",
-  "total_count": 270
+  "last_updated": "2026-07-09T08:44:21.192208",
+  "total_count": 271
 }
