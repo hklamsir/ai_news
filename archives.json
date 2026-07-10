@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260710_123000",
+      "title": "AI代理還不夠 Google大將紀懷新曝AI科技下一步 網路生態將大洗牌",
+      "summary": "Google DeepMind 副總裁紀懷新表示，過去 20 年由搜尋推薦系統撐起的兆美元網路經濟，即將被具備「思維鏈」推理能力的 AI 打破。AI 將從預測下一個 token 升級至預測下一個 id",
+      "url": "./news_20260710_123000/index.html",
+      "date": "2026-07-10",
+      "time": "12:30:00",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260710_092500",
       "title": "'I'm not a programmer' anymore Linus Torvalds 披露僅有的兩個工具",
       "summary": "Linux 之父林納斯·托沃茲在印度開源峰會 2026 上語出驚人：自己已不再親自寫程式，而是專注於管理人與專案方向。他現在只靠 Git 和 Email 兩個工具工作，與 AI 工具保持距離，強調「在",
@@ -2467,6 +2476,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-07-10T09:28:57.642497",
-  "total_count": 274
+  "last_updated": "2026-07-10T12:19:35.483272",
+  "total_count": 275
 }
