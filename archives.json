@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260710_090000",
+      "title": "「因為能登錄的帳號很多，就做了」 日本15歲高中生借ChatGPT一夜清空4.68萬個動畫帳號",
+      "summary": "日本一名15歲初中生利用ChatGPT協助編寫攻擊程式，在3至4小時內將46,812個動畫平台會員帳號集體退會，服務被迫停擺一個半月。這起案件暴露了AI工具正在拉低網路攻擊門檻的嚴峻趨勢。",
+      "url": "./news_20260710_090000/index.html",
+      "date": "2026-07-10",
+      "time": "09:00:00",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260709_085100",
       "title": "提示詞越寫越長反而害了你！ Anthropic工程師：Claude Code團隊砍掉8成系統提示，模型才真正發揮",
       "summary": "Anthropic 工程師 Thariq Shihipar 在 AI Engineer World's Fair 分享與 Claude Fable 5 協作的經驗，核心觀點是：模型表現好不好，往往不只",
@@ -2449,6 +2458,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-07-09T08:54:51.229197",
-  "total_count": 272
+  "last_updated": "2026-07-10T08:44:32.729880",
+  "total_count": 273
 }

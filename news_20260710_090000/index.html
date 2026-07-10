@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>「因為能登錄的帳號很多，就做了」：日本15歲高中生借ChatGPT一夜清空4.68萬個動畫帳號 - AI News</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root { --primary-blue: #00d4ff; --primary-purple: #7b2cbf; --accent-green: #00ff88; --accent-orange: #ff9500; --accent-red: #ff4757; --dark-bg: #0a0a0f; --card-bg: #12121a; --card-bg-light: #1a1a28; --text-primary: #ffffff; --text-secondary: #a0a0b0; --gradient-1: linear-gradient(135deg, #00d4ff 0%, #7b2cbf 100%); --gradient-2: linear-gradient(135deg, #00d4ff 0%, #00ff88 100%); --glow-blue: 0 0 20px rgba(0, 212, 255, 0.5); --glow-purple: 0 0 20px rgba(123, 44, 191, 0.5); }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Noto Sans TC', sans-serif; background-color: var(--dark-bg); color: var(--text-primary); line-height: 1.8; overflow-x: hidden; }
+        @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-20px); } }
+        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.6; } }
+        @keyframes slideIn { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes codeRain { 0% { transform: translateY(-100%); opacity: 0; } 10% { opacity: 1; } 90% { opacity: 1; } 100% { transform: translateY(100vh); opacity: 0; } }
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); } }
+        .code-rain { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; overflow: hidden; }
+        .code-char { position: absolute; color: var(--primary-blue); font-family: 'Courier New', monospace; font-size: 14px; opacity: 0; animation: codeRain 4s linear infinite; }
+        .hero { position: relative; min-height: 80vh; display: flex; align-items: center; justify-content: center; padding: 80px 20px; background: linear-gradient(180deg, var(--dark-bg) 0%, #1a1a2e 100%); overflow: hidden; }
+        .hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(ellipse at center, rgba(123, 44, 191, 0.15) 0%, transparent 70%); z-index: 1; }
+        .hero-content { position: relative; z-index: 2; max-width: 1200px; text-align: center; animation: slideIn 1s ease-out; }
+        .hero-badge { display: inline-block; padding: 12px 32px; background: var(--gradient-1); border-radius: 50px; font-size: 18px; font-weight: 700; margin-bottom: 24px; box-shadow: var(--glow-blue); letter-spacing: 1px; }
+        .hero h1 { font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 900; margin-bottom: 24px; background: var(--gradient-1); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; line-height: 1.2; }
+        .hero-subtitle { font-size: clamp(1.2rem, 2.2vw, 1.5rem); color: var(--text-primary); max-width: 900px; margin: 0 auto 40px; line-height: 1.6; font-weight: 400; }
+        .hero-images { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; margin-top: 60px; }
+        .hero-image-card { position: relative; border-radius: 20px; overflow: hidden; aspect-ratio: 16/9; box-shadow: var(--glow-purple); transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .hero-image-card:hover { transform: scale(1.02); box-shadow: 0 0 40px rgba(123, 44, 191, 0.7); }
+        .hero-image-card img { width: 100%; height: 100%; object-fit: cover; }
+        .scroll-indicator { position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%); animation: float 2s ease-in-out infinite; z-index: 2; }
+        .scroll-indicator span { display: block; width: 30px; height: 50px; border: 2px solid var(--primary-blue); border-radius: 25px; position: relative; }
+        .scroll-indicator span::before { content: ''; position: absolute; top: 8px; left: 50%; transform: translateX(-50%); width: 6px; height: 10px; background: var(--primary-blue); border-radius: 3px; animation: pulse 1.5s infinite; }
+        section { padding: 80px 20px; position: relative; z-index: 1; }
+        .content-section { background: var(--card-bg); padding: 60px 50px; border-radius: 24px; border: 1px solid rgba(0, 212, 255, 0.2); max-width: 1100px; margin: 0 auto; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3); }
+        .content-section h3 { font-size: 1.6rem; margin: 40px 0 20px; color: var(--accent-green); }
+        .content-section p { color: var(--text-secondary); line-height: 2; font-size: 1.08rem; margin: 15px 0; }
+        .content-section ul { margin: 20px 0; padding-left: 30px; }
+        .content-section li { margin: 10px 0; color: var(--text-secondary); }
+        .meta-info { background: linear-gradient(135deg, rgba(0, 212, 255, 0.15) 0%, rgba(123, 44, 191, 0.15) 100%); padding: 30px; border-radius: 16px; margin-bottom: 40px; border-left: 5px solid var(--primary-blue); }
+        .meta-info p { margin: 12px 0; color: var(--text-secondary); font-size: 1.05rem; }
+        .meta-info strong { color: var(--primary-blue); font-weight: 600; }
+        .meta-info a { color: var(--primary-blue); text-decoration: none; word-break: break-all; }
+        .highlight-box { background: linear-gradient(135deg, rgba(0, 255, 136, 0.08) 0%, rgba(0, 212, 255, 0.08) 100%); padding: 30px; border-radius: 16px; border-left: 5px solid var(--accent-green); margin: 40px 0; }
+        .highlight-box h4 { color: var(--accent-green); margin-bottom: 15px; font-size: 1.3rem; }
+        .highlight-box p { color: var(--text-secondary); margin: 0; }
+        .alert-box { background: linear-gradient(135deg, rgba(255, 71, 87, 0.1) 0%, rgba(255, 149, 0, 0.1) 100%); padding: 25px 30px; border-radius: 16px; border-left: 5px solid var(--accent-red); margin: 30px 0; }
+        .alert-box h4 { color: var(--accent-red); margin-bottom: 12px; font-size: 1.15rem; }
+        .alert-box p { color: var(--text-secondary); margin: 8px 0; font-size: 1rem; }
+        .quote-box { background: linear-gradient(135deg, rgba(123, 44, 191, 0.15) 0%, rgba(0, 212, 255, 0.15) 100%); padding: 30px 40px; border-radius: 16px; border-left: 5px solid var(--primary-purple); margin: 40px 0; position: relative; }
+        .quote-box::before { content: '"'; position: absolute; top: 10px; left: 20px; font-size: 80px; color: var(--primary-purple); opacity: 0.3; font-family: Georgia, serif; }
+        .quote-box p { color: var(--text-primary); font-size: 1.2rem; font-style: italic; margin-bottom: 15px; }
+        .quote-box cite { color: var(--text-secondary); font-size: 0.95rem; }
+        .tech-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin: 40px 0; }
+        .tech-card { background: var(--card-bg-light); padding: 30px; border-radius: 16px; border: 1px solid rgba(0, 212, 255, 0.15); transition: transform 0.3s ease, box-shadow 0.3s ease; animation: fadeInUp 0.6s ease-out forwards; opacity: 0; }
+        .tech-card:nth-child(1) { animation-delay: 0.1s; }
+        .tech-card:nth-child(2) { animation-delay: 0.2s; }
+        .tech-card:nth-child(3) { animation-delay: 0.3s; }
+        .tech-card:nth-child(4) { animation-delay: 0.4s; }
+        .tech-card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0, 212, 255, 0.2); }
+        .tech-card-icon { font-size: 2.5rem; margin-bottom: 15px; }
+        .tech-card h4 { color: var(--primary-blue); margin-bottom: 12px; font-size: 1.2rem; }
+        .tech-card p { color: var(--text-secondary); font-size: 0.95rem; line-height: 1.7; }
+        .comparison-table { width: 100%; border-collapse: collapse; margin: 40px 0; border-radius: 16px; overflow: hidden; box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3); }
+        .comparison-table thead { background: linear-gradient(135deg, var(--primary-blue), var(--primary-purple)); }
+        .comparison-table th { padding: 18px 20px; text-align: left; font-weight: 600; font-size: 1.05rem; }
+        .comparison-table td { padding: 16px 20px; border-bottom: 1px solid rgba(255, 255, 255, 0.05); color: var(--text-secondary); }
+        .comparison-table tr:last-child td { border-bottom: none; }
+        .comparison-table tr:nth-child(even) { background: rgba(255, 255, 255, 0.02); }
+        .comparison-table .highlight-col { color: var(--accent-green); font-weight: 500; }
+        .timeline { position: relative; margin: 40px 0; padding-left: 40px; }
+        .timeline::before { content: ''; position: absolute; left: 15px; top: 0; bottom: 0; width: 2px; background: linear-gradient(180deg, var(--primary-blue), var(--primary-purple)); }
+        .timeline-item { position: relative; margin-bottom: 35px; padding: 20px 25px; background: var(--card-bg-light); border-radius: 12px; border: 1px solid rgba(0, 212, 255, 0.1); animation: fadeInUp 0.5s ease-out forwards; opacity: 0; }
+        .timeline-item:nth-child(1) { animation-delay: 0.1s; }
+        .timeline-item:nth-child(2) { animation-delay: 0.2s; }
+        .timeline-item:nth-child(3) { animation-delay: 0.3s; }
+        .timeline-item:nth-child(4) { animation-delay: 0.4s; }
+        .timeline-item:nth-child(5) { animation-delay: 0.5s; }
+        .timeline-item:nth-child(6) { animation-delay: 0.6s; }
+        .timeline-item::before { content: ''; position: absolute; left: -32px; top: 25px; width: 12px; height: 12px; background: var(--primary-blue); border-radius: 50%; box-shadow: var(--glow-blue); }
+        .timeline-date { color: var(--primary-blue); font-size: 0.9rem; font-weight: 600; margin-bottom: 8px; }
+        .timeline-title { color: var(--text-primary); font-size: 1.1rem; font-weight: 600; margin-bottom: 8px; }
+        .timeline-desc { color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6; }
+        footer { background: #050508; padding: 60px 20px; text-align: center; border-top: 1px solid rgba(255, 255, 255, 0.1); }
+        footer p { color: var(--text-secondary); margin-bottom: 20px; }
+        .footer-links { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; }
+        .footer-links a { color: var(--primary-blue); text-decoration: none; transition: color 0.3s ease; }
+        .footer-links a:hover { color: var(--text-primary); }
+        @media (max-width: 768px) { .content-section { padding: 40px 25px; } .hero-images { grid-template-columns: 1fr; } .hero h1 { font-size: 2rem; } .hero-subtitle { font-size: 1.2rem; } }
+    </style>
+</head>
+<body>
+    <div class="code-rain" id="codeRain"></div>
+    <section class="hero">
+        <div class="hero-content">
+            <span class="hero-badge">📰 AI News 專題報道</span>
+            <h1>「因為能登錄的帳號很多，就做了」<br>日本15歲高中生借ChatGPT一夜清空4.68萬個動畫帳號</h1>
+            <p class="hero-subtitle">AI工具降低攻擊門檻：一名中學生的「技術好奇心」如何變成一場大規模網路攻擊</p>
+            <div class="hero-images">
+                <div class="hero-image-card">
+                    <img src="img/img1.png" alt="日本15歲高中生用ChatGPT清空動畫帳號示意圖">
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator"><span></span></div>
+    </section>
+    <section class="content-section">
+
+        <div class="meta-info">
+            <p><strong>📺 資料來源</strong>：<a href="https://mp.weixin.qq.com/s/Tl9g3li56NaK2vwSM4V1jA" target="_blank">微信公眾號「老李流放美利堅」</a></p>
+            <p><strong>📅 發布日期</strong>：2026-07-09</p>
+            <p><strong>🤖 處理方式</strong>：AI 智能摘要生成</p>
+        </div>
+
+        <h3>🎯 核心觀點</h3>
+        <p>日本一名15歲初中生利用ChatGPT協助編寫攻擊程式，在3至4小時內將46,812個動畫平台會員帳號集體退會，服務被迫停擺一個半月。這起案件暴露了AI工具正在拉低網路攻擊門檻的嚴峻趨勢。</p>
+
+        <div class="tech-card">
+            <div class="tech-card-icon">🔍</div>
+            <div class="tech-card-content">
+                <h4>發現漏洞與初步攻擊</h4>
+                <p>被告從小學四年級開始自學程式設計，擅長通信解析（抓包分析）。在研究萬代頻道網站時，他發現了一個不需要正常會員ID和密碼就能登錄的漏洞，並自己寫了一套訪問退會處理頁面的程式。</p>
+            </div>
+        </div>
+
+        <div class="tech-card">
+            <div class="tech-card-icon">🤖</div>
+            <div class="tech-card-content">
+                <h4>ChatGPT充當結對程式員</h4>
+                <p>自己寫的程式因為跑得太慢，於是請ChatGPT幫忙優化，最終用另一種程式語言重寫完成了攻擊程式。ChatGPT的角色更像是一個「幫忙優化慢代碼、幫忙換語言重寫」的結對程式員，沒有主動策劃攻擊。</p>
+            </div>
+        </div>
+
+        <div class="tech-card">
+            <div class="tech-card-icon">⚠️</div>
+            <div class="tech-card-content">
+                <h4>3至4小時清空4.68萬帳號</h4>
+                <p>整個攻擊在3至4小時內完成，46,812個帳號在用戶完全不知情的情況下被集體退會。運營公司緊急停止服務，11月6日宣布全面關停，直到12月19日才恢復，足足停擺一個半月。</p>
+            </div>
+        </div>
+
+        <div class="tech-card">
+            <div class="tech-card-icon">💀</div>
+            <div class="tech-card-content">
+                <h4>「因為能登錄的帳號很多，所以就做了」</h4>
+                <p>警方披露的供述令人不寒而慄：被告對被害企業「沒有恨意」，既無勒索信，也無政治訴求，純粹是「發現自己可以做得到」的念頭驅使。這種無明確動機的濫用，比任何勒索信都更難提前防範。</p>
+            </div>
+        </div>
+
+        <div class="highlight-box">
+            <h4>📌 重點提示</h4>
+            <p>2026年6月13日首次逮捕，7月4日再次被捕，7月6日東京都警正式公布案情。被告更換IP約30次繞開企業封鎖，但警方最終仍透過通信日誌追查到其身份。</p>
+        </div>
+
+        <div class="quote-box">
+            <p>「我只是發現自己能夠做到」，這大概是我們今年讀到過最可怕的攻擊者動機。</p>
+            <cite>— 安全從業者 @Securedotcom</cite>
+        </div>
+
+        <h3>🔮 業界展望</h3>
+        <p>這起案件暴露了一個值得警惕的趨勢：<strong>生成式AI把「半成品腳本」和「能在真實系統上穩定跑完四萬次的程式」之間的距離，縮短到了一個自學幾年的中學生就能跨過去的程度</strong>。</p>
+        <p>對於企業而言，退會、改密、改支付方式這類敏感業務操作，本身就應該有更嚴格的身份校驗和頻率控制。對於家長和學校而言，一個孩子展現出的技術天賦，如果沒人告訴他「未授權訪問就是違法」，這份天賦隨時可能滑向他自己都始料未及的方向。</p>
+
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-date">2025年11月4日</div>
+                <div class="timeline-title">攻擊發生</div>
+                <div class="timeline-desc">下午5點起，46,812個萬代頻道會員帳號開始被集體退會</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">2025年11月6日</div>
+                <div class="timeline-title">服務關停</div>
+                <div class="timeline-desc">萬代頻道緊急停止全部服務，最多約136萬帳戶資訊可能已被觸及</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">2025年12月19日</div>
+                <div class="timeline-title">服務恢復</div>
+                <div class="timeline-desc">萬代頻道恢復運營，服務停擺約一個半月</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">2026年6月13日</div>
+                <div class="timeline-title">首次逮捕</div>
+                <div class="timeline-desc">埼玉縣所澤市高一男生（15歲）因涉嫌違反《禁止不正當訪問法》被首次逮捕</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">2026年7月4日</div>
+                <div class="timeline-title">再次逮捕</div>
+                <div class="timeline-desc">因涉嫌偽計業務妨害被再次逮捕</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">2026年7月6日</div>
+                <div class="timeline-title">案情公布</div>
+                <div class="timeline-desc">東京都警對外正式公布案情，震驚全社會</div>
+            </div>
+        </div>
+
+        <table class="comparison-table">
+            <thead>
+                <tr>
+                    <th>項目</th>
+                    <th>傳統網路攻擊</th>
+                    <th>AI輔助攻擊（本案）</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>技術門檻</td>
+                    <td>需要精英駭客技能</td>
+                    <td class="highlight-col">自學幾年的中學生即可</td>
+                </tr>
+                <tr>
+                    <td>攻擊準備時間</td>
+                    <td>數週至數月</td>
+                    <td class="highlight-col">利用AI快速優化，數天內完成</td>
+                </tr>
+                <tr>
+                    <td>動機</td>
+                    <td>金錢、政治、復仇</td>
+                    <td class="highlight-col">「因為我能做到」——無明確動機</td>
+                </tr>
+                <tr>
+                    <td>防範難度</td>
+                    <td>可通過威脅情報預警</td>
+                    <td class="highlight-col">純技術問題無法提前預警</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+    <footer>
+        <p>© 2026 AI News Archive | 由 AI 技術生成 | 林SIR 監督</p>
+        <div class="footer-links">
+            <a href="../index.html">返回主頁</a>
+            <a href="https://github.com/hklamsir/ai_news" target="_blank">GitHub</a>
+            <a href="https://hklamsir.github.io/ai_news/" target="_blank">瀏覽所有專題</a>
+        </div>
+    </footer>
+
+
+    <script>
+        const codeRain = document.getElementById('codeRain');
+        const chars = '01アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン';
+        for (let i = 0; i < 50; i++) {
+            const char = document.createElement('span');
+            char.className = 'code-char';
+            char.textContent = chars[Math.floor(Math.random() * chars.length)];
+            char.style.left = Math.random() * 100 + '%';
+            char.style.animationDelay = Math.random() * 4 + 's';
+            char.style.animationDuration = (Math.random() * 3 + 3) + 's';
+            codeRain.appendChild(char);
+        }
+    </script>
+
+</body>
+</html>
