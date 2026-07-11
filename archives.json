@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260711_132800",
+      "title": "OpenAI發表GPT-5.6、ChatGPT Work！ 新模型效率大升級，三大版本與辦公代理一次看",
+      "summary": "OpenAI 正式發布 GPT-5.6 模型家族，一次推出三個版本（Sol、Luna、Terra），並同步推出企業級辦公代理 ChatGPT Work，正式向 Anthropic 的 Claude C",
+      "url": "./news_20260711_132800/index.html",
+      "date": "2026-07-11",
+      "time": "13:28:00",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260710_172000",
       "title": "傳統大學若放於 AI 時代 錯在哪裡？",
       "summary": "當答案不再稀缺，高等教育還應教甚麼？悉尼大學教育科技學教授 Danny Liu 指出，AI 世代全球大學最急切需要作出的改變，是不再將「學術研究產出」視為大學排名的核心基準。教學質素、學生能力發展、課",
@@ -2485,6 +2494,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-07-10T17:23:18.885923",
-  "total_count": 276
+  "last_updated": "2026-07-11T13:33:21.460319",
+  "total_count": 277
 }
