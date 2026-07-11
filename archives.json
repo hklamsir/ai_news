@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260711_201500",
+      "title": "Microsoft 全力押注 AI 驅動的 Windows 安全策略—— 對你有何影響",
+      "summary": "Microsoft 宣布全力採用 AI 技術來發現 Windows 漏洞並加快修補速度。新系統 MDASH 能在攻擊者利用零日漏洞前搶先找出問題，預計用戶未來將看到更頻繁的安全更新。",
+      "url": "./news_20260711_201500/index.html",
+      "date": "2026-07-11",
+      "time": "20:15:00",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260711_151500",
       "title": "5080 / 5070Ti Super vs AMD W7900 / W7800： 24G 顯卡 AI 時代還值得折騰嗎？",
       "summary": "一位科技 YouTuber 針對 AMD W7900/W7800 與 NVIDIA 5080/5070Ti Super 是否值得等待進行分析。觀點鮮明：AMD W7900 48G 純屬智商稅，5080",
@@ -2512,6 +2521,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-07-11T15:12:09.387307",
-  "total_count": 279
+  "last_updated": "2026-07-11T20:18:45.493455",
+  "total_count": 280
 }
