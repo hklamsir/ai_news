@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260711_151500",
+      "title": "5080 / 5070Ti Super vs AMD W7900 / W7800： 24G 顯卡 AI 時代還值得折騰嗎？",
+      "summary": "一位科技 YouTuber 針對 AMD W7900/W7800 與 NVIDIA 5080/5070Ti Super 是否值得等待進行分析。觀點鮮明：AMD W7900 48G 純屬智商稅，5080",
+      "url": "./news_20260711_151500/index.html",
+      "date": "2026-07-11",
+      "time": "15:15:00",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260711_140200",
       "title": "AI 做的網頁總是很醜？ 這專案收錄 73 個品牌 DESIGN.md，GitHub 爆紅摘 10 萬星",
       "summary": "一個名為「awesome-design-md」的 GitHub 專案，收錄了 73 個知名科技品牌的 DESIGN.md 設計規範文件，在 GitHub 上爆紅突破 10 萬顆星。這個專案解決了 AI",
@@ -2503,6 +2512,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-07-11T14:05:02.840559",
-  "total_count": 278
+  "last_updated": "2026-07-11T15:12:09.387307",
+  "total_count": 279
 }
