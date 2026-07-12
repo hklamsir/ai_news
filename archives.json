@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260712_091545",
+      "title": "研究指 Gen Z 使用 AI 工作感內疚 僱主卻將 AI 技能列為招聘重點",
+      "summary": "英國 51% 的 Gen Z 僱員使用 AI 完成工作時感到內疚，反映職場出現「需要使用 AI，卻不敢公開使用」的矛盾現象。",
+      "url": "./news_20260712_091545/index.html",
+      "date": "2026-07-12",
+      "time": "09:15:45",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260711_201500",
       "title": "Microsoft 全力押注 AI 驅動的 Windows 安全策略—— 對你有何影響",
       "summary": "Microsoft 宣布全力採用 AI 技術來發現 Windows 漏洞並加快修補速度。新系統 MDASH 能在攻擊者利用零日漏洞前搶先找出問題，預計用戶未來將看到更頻繁的安全更新。",
@@ -2521,6 +2530,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-07-11T20:18:45.493455",
-  "total_count": 280
+  "last_updated": "2026-07-12T09:20:35.972666",
+  "total_count": 281
 }
