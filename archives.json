@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260712_165232",
+      "title": "為什麼 AI 做的 App 一眼就被看穿？ 三大跡象揭開 Vibe Coding 的 UI/UX 盲點",
+      "summary": "《Business Insider》歸納出三大特徵，分析 AI 設計的應用程式最常露餡的地方，包括設計同質化、外觀精緻但功能不成熟、以及錯誤狀態被草草帶過。",
+      "url": "./news_20260712_165232/index.html",
+      "date": "2026-07-12",
+      "time": "16:52:32",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260712_112314",
       "title": "無相機的智能眼鏡？ Even Realities 押注生產力勝過記錄所有人",
       "summary": "Even Realities 推出 G2 智能眼鏡，刻意不做相機和喇叭，專注生產力應用，讓周圍的人無需擔心被拍攝，公司已達到獨角獸地位。",
@@ -2539,6 +2548,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-07-12T11:25:31.381828",
-  "total_count": 282
+  "last_updated": "2026-07-12T16:55:09.534741",
+  "total_count": 283
 }
