@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260714_113800",
+      "title": "Anthropic 在印度推出 Claude 定價本地化",
+      "summary": "Anthropic 在印度推出盧比計價的 Claude 訂閱方案，印度是僅次於美國的全球第二大市場，佔全球 Claude 使用量的 5.8%，定價本地化可降低用戶進入障礙。",
+      "url": "./news_20260714_113800/index.html",
+      "date": "2026-07-14",
+      "time": "11:38:00",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260713_083811",
       "title": "哪些 AI 工具值得付費？ 2026 年我持續訂閱的選擇",
       "summary": "進入 2026 年生成式 AI 第四年，作者親身測試各類 AI 工具後，整理出值得付費訂閱的選擇。代理式 AI（Agentic AI）在 2025 年崛起後，已將遊戲提升到全新層次。",
@@ -2566,6 +2575,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-07-13T08:42:21.057544",
-  "total_count": 285
+  "last_updated": "2026-07-14T11:39:58.160860",
+  "total_count": 286
 }
