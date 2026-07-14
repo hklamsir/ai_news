@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260714_133600",
+      "title": "Waze 推出全新 AI 功能更新",
+      "summary": "Google 旗下的 Waze 推出全新 AI 功能，包括 Gemini 驅動的個人化導航、對話式路況回報和摩托車專用模式，提升與 Apple Maps 等競爭對手的競爭力。",
+      "url": "./news_20260714_133600/index.html",
+      "date": "2026-07-14",
+      "time": "13:36:00",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260714_113800",
       "title": "Anthropic 在印度推出 Claude 定價本地化",
       "summary": "Anthropic 在印度推出盧比計價的 Claude 訂閱方案，印度是僅次於美國的全球第二大市場，佔全球 Claude 使用量的 5.8%，定價本地化可降低用戶進入障礙。",
@@ -2575,6 +2584,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-07-14T11:39:58.160860",
-  "total_count": 286
+  "last_updated": "2026-07-14T13:38:17.193836",
+  "total_count": 287
 }
