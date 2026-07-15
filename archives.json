@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260715_110200",
+      "title": "IBM 與 Red Hat 推出 Lightwell 以工業級 AI 防衛開源代碼安全",
+      "summary": "IBM 與 Red Hat 正式將 Project Lightwell 推向產品階段，推出 Lightwell Network 及 Lightwell Clearinghouse Premier，結合",
+      "url": "./news_20260715_110200/index.html",
+      "date": "2026-07-15",
+      "time": "11:02:00",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260714_133600",
       "title": "Waze 推出全新 AI 功能更新",
       "summary": "Google 旗下的 Waze 推出全新 AI 功能，包括 Gemini 驅動的個人化導航、對話式路況回報和摩托車專用模式，提升與 Apple Maps 等競爭對手的競爭力。",
@@ -2584,6 +2593,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-07-14T13:38:17.193836",
-  "total_count": 287
+  "last_updated": "2026-07-15T11:12:45.047602",
+  "total_count": 288
 }
