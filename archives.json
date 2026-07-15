@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260715_123100",
+      "title": "AI也有雙重人格？Anthropic拆解30萬則對話 揭AI「回話風格」，為何說英文的Claude比中文更刻薄？",
+      "summary": "Anthropic 用四條「價值軸線」量化分析超過 30 萬則 Claude.ai 對話，發現不同模型與語言下的行為傾向存在可測量的系統性差異。「中文比較客氣」的說法查無實據——中文側寫同時包含「安慰",
+      "url": "./news_20260715_123100/index.html",
+      "date": "2026-07-15",
+      "time": "12:31:00",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260715_122330",
       "title": "OpenAI 瀏覽器沒死， 只是搬到 ChatGPT 了",
       "summary": "OpenAI 正式推出重新設計的 ChatGPT 桌面應用程式，整合 ChatGPT、Codex 編碼助手、ChatGPT Work 生產力代理及內建網頁瀏覽器。Atlas 瀏覽器品牌終止，但功能分散",
@@ -2602,6 +2611,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-07-15T12:25:08.360610",
-  "total_count": 289
+  "last_updated": "2026-07-15T12:31:08.212019",
+  "total_count": 290
 }
