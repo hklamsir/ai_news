@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260715_122330",
+      "title": "OpenAI 瀏覽器沒死， 只是搬到 ChatGPT 了",
+      "summary": "OpenAI 正式推出重新設計的 ChatGPT 桌面應用程式，整合 ChatGPT、Codex 編碼助手、ChatGPT Work 生產力代理及內建網頁瀏覽器。Atlas 瀏覽器品牌終止，但功能分散",
+      "url": "./news_20260715_122330/index.html",
+      "date": "2026-07-15",
+      "time": "12:23:30",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260715_110200",
       "title": "IBM 與 Red Hat 推出 Lightwell 以工業級 AI 防衛開源代碼安全",
       "summary": "IBM 與 Red Hat 正式將 Project Lightwell 推向產品階段，推出 Lightwell Network 及 Lightwell Clearinghouse Premier，結合",
@@ -2593,6 +2602,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-07-15T11:12:45.047602",
-  "total_count": 288
+  "last_updated": "2026-07-15T12:25:08.360610",
+  "total_count": 289
 }
