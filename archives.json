@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260716_131600",
+      "title": "Anthropic 最新論文解析 Claude 大腦裡的全域工作間",
+      "summary": "Anthropic 研究團隊發表了一篇重要論文，證明大型語言模型內部存在一個類似人類意識的「全域工作空間」（Global Workspace）。這個空間位於模型的第 38 至 92 層，容量極小但卻是",
+      "url": "./news_20260716_131600/index.html",
+      "date": "2026-07-16",
+      "time": "13:16:00",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260716_102501",
       "title": "Microsoft 修補創紀錄安全漏洞數量 歸功於 AI 輔助發現",
       "summary": "Microsoft 本週發布了創紀錄數量的安全修補程式，一口氣修補了 570 個安全漏洞，其中包括 2 個正被積極利用的零日漏洞。公司表示這一切歸功於使用 AI 輔助發現程式碼漏洞。",
@@ -2620,6 +2629,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-07-16T10:29:35.237269",
-  "total_count": 291
+  "last_updated": "2026-07-16T14:19:53.154504",
+  "total_count": 292
 }
