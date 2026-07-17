@@ -10,6 +10,15 @@
       "source": "AI News"
     },
     {
+      "dir": "news_20260717_084547",
+      "title": "Moonshot AI 即將推出的 Kimi 3 被預期將縮小與 Anthropic Opus 4.8 的差距",
+      "summary": "中國 AI 實驗室 Moonshot AI 的最新 Kimi K3 模型，據報參數量達 2-3 兆，被預期與 Anthropic 的旗艦模型 Opus 4.8 並駕齊驅。",
+      "url": "./news_20260717_084547/index.html",
+      "date": "2026-07-17",
+      "time": "08:45:47",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260716_131600",
       "title": "Anthropic 最新論文解析 Claude 大腦裡的全域工作間",
       "summary": "Anthropic 研究團隊發表了一篇重要論文，證明大型語言模型內部存在一個類似人類意識的「全域工作空間」（Global Workspace）。這個空間位於模型的第 38 至 92 層，容量極小但卻是",
@@ -174,7 +183,7 @@
     {
       "dir": "news_20260710_092500",
       "title": "'I'm not a programmer' anymore Linus Torvalds 披露僅有的兩個工具",
-      "summary": "Linux 之父林納斯·托沃茲在印度開源峰會 2026 上語出驚人：自己已不再親自寫程式，而是專注於管理人與專案方向。他現在只靠 Git 和 Email 兩個工具工作，與 AI 工具保持距離，強調「在",
+      "summary": "Linux 之父林納斯·托沃茲在印度開源峯會 2026 上語出驚人：自己已不再親自寫程式，而是專注於管理人與專案方向。他現在只靠 Git 和 Email 兩個工具工作，與 AI 工具保持距離，強調「在",
       "url": "./news_20260710_092500/index.html",
       "date": "2026-07-10",
       "time": "09:25:00",
@@ -2638,6 +2647,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-07-17T11:50:21.969589",
-  "total_count": 293
+  "last_updated": "2026-07-17T12:17:31.603018",
+  "total_count": 294
 }
