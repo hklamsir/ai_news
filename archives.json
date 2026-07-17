@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260717_114731",
+      "title": "Linus Torvalds 強硬表態： 反對 AI 的程式設計師「不爽就 fork 啊」",
+      "summary": "Linux 之父 Linus Torvalds 明確表態支持在 Linux 核心開發中使用 AI 工具，並霸氣回應反對者：「不爽就 fork 啊！」",
+      "url": "./news_20260717_114731/index.html",
+      "date": "2026-07-17",
+      "time": "11:47:31",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260716_131600",
       "title": "Anthropic 最新論文解析 Claude 大腦裡的全域工作間",
       "summary": "Anthropic 研究團隊發表了一篇重要論文，證明大型語言模型內部存在一個類似人類意識的「全域工作空間」（Global Workspace）。這個空間位於模型的第 38 至 92 層，容量極小但卻是",
@@ -2629,6 +2638,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-07-17T08:50:39.286311",
-  "total_count": 292
+  "last_updated": "2026-07-17T11:50:21.969589",
+  "total_count": 293
 }
