@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260717_125000",
+      "title": "麵包悖論： 為什麼 Vibe coding 殺不死 SaaS 軟體業？",
+      "summary": "科技作家 Joan Westenberg 提出「麵包悖論」：AI 程式碼時代來臨，但企業仍寧願付費購買完整 SaaS 服務，而非自己用 AI 從頭建構——就像五千年來人類始終選擇買麵包而非自己烤。",
+      "url": "./news_20260717_125000/index.html",
+      "date": "2026-07-17",
+      "time": "12:50:00",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260717_114731",
       "title": "Linus Torvalds 強硬表態： 反對 AI 的程式設計師「不爽就 fork 啊」",
       "summary": "Linux 之父 Linus Torvalds 明確表態支持在 Linux 核心開發中使用 AI 工具，並霸氣回應反對者：「不爽就 fork 啊！」",
@@ -2647,6 +2656,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-07-17T12:17:31.603018",
-  "total_count": 294
+  "last_updated": "2026-07-17T12:31:11.651114",
+  "total_count": 295
 }
