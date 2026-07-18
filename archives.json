@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260718_114200",
+      "title": "「我僱用一名工程師 它叫Codex！」",
+      "summary": "日本北海道農夫冨安弘樹完全沒有農業或工程背景，卻透過 ChatGPT/Codex 打造出自動化溫室系統，管理 100 公頃、相當於 140 座足球場的農場，年營收 1 億日圓，成為 GPT-5.6 應",
+      "url": "./news_20260718_114200/index.html",
+      "date": "2026-07-18",
+      "time": "11:42:00",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260718_083820",
       "title": "Patreon 停止請求 AI 爬蟲 直接封鎖創作人內容訓練",
       "summary": "Patreon 放棄過去只靠 robots.txt「請求」AI 爬蟲不要抓取的被動做法，改與 Cloudflare 合作透過 AI Crawl Control 技術主動封鎖未經許可使用創作人內容訓練 ",
@@ -2674,6 +2683,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-07-18T08:40:49.152099",
-  "total_count": 297
+  "last_updated": "2026-07-18T11:34:18.991067",
+  "total_count": 298
 }
