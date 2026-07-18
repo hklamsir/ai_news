@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260718_083820",
+      "title": "Patreon 停止請求 AI 爬蟲 直接封鎖創作人內容訓練",
+      "summary": "Patreon 放棄過去只靠 robots.txt「請求」AI 爬蟲不要抓取的被動做法，改與 Cloudflare 合作透過 AI Crawl Control 技術主動封鎖未經許可使用創作人內容訓練 ",
+      "url": "./news_20260718_083820/index.html",
+      "date": "2026-07-18",
+      "time": "08:38:20",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260718_080346",
       "title": "一人用AI產出翻10倍 全公司卻沒跟上？",
       "summary": "Claude Code 負責人 Boris Cherny 觀察到「個人用 AI 產出提升 10 倍，但公司其他人沒跟上」的採用落差問題，並提出從第 0 階到第 4 階的 AI 採用階梯框架，幫助團隊定",
@@ -2665,6 +2674,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-07-18T08:13:18.675712",
-  "total_count": 296
+  "last_updated": "2026-07-18T08:40:49.152099",
+  "total_count": 297
 }
