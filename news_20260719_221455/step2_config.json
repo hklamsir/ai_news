@@ -1,6 +1,13 @@
 {
+  "dir_name": "news_20260719_232031",
+  "dir_path": "/home/lamsir/ai_news/news_20260719_232031",
   "title": "【商界心聲】中國AI治理方案的時代分量與香港角色 - 香港商報",
-  "text_overlay": "中國AI治理方案與香港角色",
-  "article_type": "商業_金融",
-  "image_prompt": "A senior Hong Kong trade official presents a digital hologram of AI governance framework to international delegates, with Shanghai skyline and global connectivity elements in the background."
+  "youtube_url": null,
+  "source_url": "",
+  "images": [
+    "img/img1.png"
+  ],
+  "category": "商業_金融",
+  "cover_text": "中國AI治理方案與香港角色",
+  "timestamp": "2026-07-19T23:21:33.417633"
 }
