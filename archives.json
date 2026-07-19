@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260719_221455",
+      "title": "【商界心聲】中國AI治理方案的 時代分量與香港角色",
+      "summary": "習近平在上海世界人工智能大會提出「開放共贏、反對封閉壟斷」的 AI 治理主張，宣布 5 年內向發展中國家提供 5000 個 AI 研修名額，並成立世界人工智能合作組織，為香港作為「超級聯繫人」提供新定",
+      "url": "./news_20260719_221455/index.html",
+      "date": "2026-07-19",
+      "time": "22:14:55",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260719_153850",
       "title": "中國強大新 AI 震驚投資人 觸發科技股拋售潮",
       "summary": "中國 AI 新創 Moonshot 發布 Kimi K3 模型，能力已逼近 OpenAI ChatGPT 與 Anthropic Claude，開源策略撼動矽谷 premium 訂閱模式，引發全球科技",
@@ -2692,6 +2701,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-07-19T15:43:57.002894",
-  "total_count": 299
+  "last_updated": "2026-07-19T23:13:23.216599",
+  "total_count": 300
 }
