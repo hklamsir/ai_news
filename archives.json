@@ -1,14 +1,22 @@
 {
   "archives": [
     {
+      "dir": "news_20260720_213700",
+      "title": "Hugging Face 遭遇 AI 網攻 AI 鑑識分析重建攻擊過程",
+      "summary": "Hugging Face 遭 AI Agent 主導的網路攻擊，攻擊者利用資料處理管道漏洞取得內部資料集與憑證，並在單一週末內橫向移動至多個內部叢集，留下超過 17,000 筆事件紀錄。Hugging",
+      "url": "./news_20260720_213700/index.html",
+      "date": "2026-07-20",
+      "time": "21:37:00",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260720_174300",
       "title": "73% 的科技職位招聘要求 AI 技能：如何展示你的能力",
-      "summary_short": "# 73% of tech job listings require AI skills now: How to show off yours## 📖 新聞導語根據科技招聘平台 **Dice*",
-      "images": [
-        "img/img1.png"
-      ],
+      "summary": "點擊查看完整報道",
+      "url": "./news_20260720_174300/index.html",
       "date": "2026-07-20",
-      "url": "./news_20260720_174300/index.html"
+      "time": "17:43:00",
+      "source": "AI News"
     },
     {
       "dir": "news_20260720_075923",
@@ -2720,6 +2728,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-07-20T17:50:40.210823",
-  "total_count": 301
+  "last_updated": "2026-07-20T21:47:27.815109",
+  "total_count": 303
 }
