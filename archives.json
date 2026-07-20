@@ -1,6 +1,16 @@
 {
   "archives": [
     {
+      "dir": "news_20260720_084553",
+      "title": "LM Studio Bionic：專為開放模型而生的 AI 代理",
+      "summary_short": "# Introducing LM Studio Bionic: the AI agent for open models## 📖 新聞導語**LM Studio** 於 **2026 年 7 ",
+      "images": [
+        "img/img1.png"
+      ],
+      "date": "2026-07-20",
+      "url": "./news_20260720_084553/index.html"
+    },
+    {
       "dir": "news_20260720_075923",
       "title": "LM Studio Bionic：專為開放模型而生的 AI 代理",
       "summary_short": "# Introducing LM Studio Bionic: the AI agent for open models## 📖 新聞導語**LM Studio** 於 **2026 年 7 ",
@@ -2711,6 +2721,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-07-20T08:04:02.857484",
+  "last_updated": "2026-07-20T08:47:05.538244",
   "total_count": 300
 }
