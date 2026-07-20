@@ -1,6 +1,16 @@
 {
   "archives": [
     {
+      "dir": "news_20260720_075923",
+      "title": "LM Studio Bionic：專為開放模型而生的 AI 代理",
+      "summary_short": "# Introducing LM Studio Bionic: the AI agent for open models## 📖 新聞導語**LM Studio** 於 **2026 年 7 ",
+      "images": [
+        "img/img1.png"
+      ],
+      "date": "2026-07-20",
+      "url": "./news_20260720_075923/index.html"
+    },
+    {
       "dir": "news_20260719_221455",
       "title": "【商界心聲】中國AI治理方案的 時代分量與香港角色",
       "summary": "習近平在上海世界人工智能大會提出「開放共贏、反對封閉壟斷」的 AI 治理主張，宣布 5 年內向發展中國家提供 5000 個 AI 研修名額，並成立世界人工智能合作組織，為香港作為「超級聯繫人」提供新定",
@@ -2701,6 +2711,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-07-19T23:13:23.216599",
+  "last_updated": "2026-07-20T08:04:02.857484",
   "total_count": 300
 }
