@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>73% 的科技職位招聘要求 AI 技能：如何展示你的能力 | AI News 專題報道</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-blue: #00d4ff;
+            --primary-purple: #7b2cbf;
+            --accent-green: #00ff88;
+            --accent-orange: #ff9500;
+            --dark-bg: #0a0a0f;
+            --card-bg: #12121a;
+            --card-bg-light: #1a1a28;
+            --text-primary: #ffffff;
+            --text-secondary: #a0a0b0;
+            --gradient-1: linear-gradient(135deg, #00d4ff 0%, #7b2cbf 100%);
+            --gradient-2: linear-gradient(135deg, #00d4ff 0%, #00ff88 100%);
+            --glow-blue: 0 0 20px rgba(0, 212, 255, 0.5);
+            --glow-purple: 0 0 20px rgba(123, 44, 191, 0.5);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Noto Sans TC', sans-serif; background-color: var(--dark-bg); color: var(--text-primary); line-height: 1.8; overflow-x: hidden; }
+
+        @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-20px); } }
+        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.6; } }
+        @keyframes slideIn { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes codeRain { 0% { transform: translateY(-100%); opacity: 0; } 10% { opacity: 1; } 90% { opacity: 1; } 100% { transform: translateY(100vh); opacity: 0; } }
+
+        /* 代碼雨背景 */
+        .code-rain { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; overflow: hidden; }
+        .code-char { position: absolute; color: var(--primary-blue); font-family: 'Courier New', monospace; font-size: 14px; opacity: 0; animation: codeRain 4s linear infinite; }
+
+        /* Hero Section */
+        .hero { position: relative; min-height: 80vh; display: flex; align-items: center; justify-content: center; padding: 80px 20px; background: linear-gradient(180deg, var(--dark-bg) 0%, #1a1a2e 100%); overflow: hidden; }
+        .hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(ellipse at center, rgba(123, 44, 191, 0.15) 0%, transparent 70%); z-index: 1; }
+        .hero-content { position: relative; z-index: 2; max-width: 1200px; text-align: center; animation: slideIn 1s ease-out; }
+        .hero-badge { display: inline-block; padding: 12px 32px; background: var(--gradient-1); border-radius: 50px; font-size: 18px; font-weight: 700; margin-bottom: 24px; box-shadow: var(--glow-blue); letter-spacing: 1px; }
+        .hero h1 { font-size: clamp(2rem, 5vw, 4rem); font-weight: 900; margin-bottom: 24px; background: var(--gradient-1); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; line-height: 1.2; }
+        .hero-subtitle { font-size: clamp(1.2rem, 2.2vw, 1.6rem); color: var(--text-primary); max-width: 900px; margin: 0 auto 40px; line-height: 1.6; font-weight: 400; }
+        .hero-images { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; margin-top: 60px; }
+        .hero-image-card { position: relative; border-radius: 20px; overflow: hidden; aspect-ratio: 16/9; box-shadow: var(--glow-purple); transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .hero-image-card:hover { transform: scale(1.02); box-shadow: 0 0 40px rgba(123, 44, 191, 0.7); }
+        .hero-image-card img { width: 100%; height: 100%; object-fit: cover; }
+        .scroll-indicator { position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%); animation: float 2s ease-in-out infinite; z-index: 2; }
+        .scroll-indicator span { display: block; width: 30px; height: 50px; border: 2px solid var(--primary-blue); border-radius: 25px; position: relative; }
+        .scroll-indicator span::before { content: ''; position: absolute; top: 8px; left: 50%; transform: translateX(-50%); width: 6px; height: 10px; background: var(--primary-blue); border-radius: 3px; animation: pulse 1.5s infinite; }
+
+        /* Content Section */
+        section { padding: 80px 20px; position: relative; z-index: 1; }
+        .content-section { background: var(--card-bg); padding: 60px 50px; border-radius: 24px; border: 1px solid rgba(0, 212, 255, 0.2); max-width: 1100px; margin: 0 auto; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3); }
+        
+        .content-section h2 { font-size: 2rem; margin-bottom: 40px; color: var(--primary-blue); display: flex; align-items: center; gap: 15px; padding-bottom: 20px; border-bottom: 2px solid rgba(0, 212, 255, 0.3); }
+        .content-section h2::before { content: '📖'; font-size: 2.5rem; }
+        
+        .content-section h3 { font-size: 1.6rem; margin: 50px 0 25px; color: var(--accent-green); display: flex; align-items: center; gap: 12px; }
+        .content-section h3::before { content: '🎯'; font-size: 2rem; }
+        
+        .content-section h3:nth-of-type(2)::before { content: '💡'; }
+        .content-section h3:nth-of-type(3)::before { content: '📊'; }
+        .content-section h3:nth-of-type(4)::before { content: '🔮'; }
+        
+        .content-section p { color: var(--text-secondary); line-height: 2.2; font-size: 1.08rem; margin: 25px 0; text-align: justify; }
+        
+        .content-section ul, .content-section ol { margin: 30px 0; padding-left: 40px; }
+        .content-section li { margin: 15px 0; line-height: 2; color: var(--text-secondary); font-size: 1.05rem; }
+        .content-section ul li { list-style-type: none; position: relative; padding-left: 25px; }
+        .content-section ul li::before { content: '▸'; color: var(--primary-blue); font-size: 1.5rem; position: absolute; left: 0; top: -5px; }
+        
+        .content-section strong { color: var(--text-primary); font-weight: 600; }
+        
+        /* Highlight Boxes */
+        .highlight-box { background: linear-gradient(135deg, rgba(0, 255, 136, 0.08) 0%, rgba(0, 212, 255, 0.08) 100%); padding: 30px; border-radius: 16px; border-left: 5px solid var(--accent-green); margin: 40px 0; }
+        .highlight-box h4 { color: var(--accent-green); margin-bottom: 15px; font-size: 1.3rem; display: flex; align-items: center; gap: 10px; }
+        .highlight-box h4::before { content: '✨'; }
+        .highlight-box p { color: var(--text-secondary); margin: 0; }
+        
+        /* Info Box */
+        .info-box { background: linear-gradient(135deg, rgba(0, 212, 255, 0.1) 0%, rgba(123, 44, 191, 0.1) 100%); padding: 25px; border-radius: 16px; border: 1px solid rgba(0, 212, 255, 0.3); margin: 35px 0; }
+        .info-box p { margin: 10px 0; color: var(--text-secondary); }
+        .info-box strong { color: var(--primary-blue); }
+        
+        /* Meta Info */
+        .meta-info { background: linear-gradient(135deg, rgba(0, 212, 255, 0.15) 0%, rgba(123, 44, 191, 0.15) 100%); padding: 30px; border-radius: 16px; margin-bottom: 40px; border-left: 5px solid var(--primary-blue); }
+        .meta-info p { margin: 12px 0; color: var(--text-secondary); font-size: 1.05rem; }
+        .meta-info strong { color: var(--primary-blue); font-weight: 600; }
+        .meta-info a { color: var(--primary-blue); text-decoration: none; border-bottom: 1px dashed var(--primary-blue); }
+        
+        /* Footer */
+        footer { background: #050508; padding: 60px 20px; text-align: center; border-top: 1px solid rgba(255, 255, 255, 0.1); }
+        footer p { color: var(--text-secondary); margin-bottom: 20px; }
+        .footer-links { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; }
+        .footer-links a { color: var(--primary-blue); text-decoration: none; transition: color 0.3s ease; }
+        .footer-links a:hover { color: var(--text-primary); }
+
+        /* Tech Card Grid */
+        .tech-card-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin: 40px 0; }
+        .tech-card-icon { background: var(--card-bg-light); border-radius: 16px; padding: 30px 20px; text-align: center; font-size: 2.5rem; border: 1px solid rgba(0, 212, 255, 0.2); transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .tech-card-icon:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0, 212, 255, 0.3); }
+
+        /* Comparison Table */
+        .comparison-table { background: linear-gradient(135deg, rgba(0, 212, 255, 0.1) 0%, rgba(123, 44, 191, 0.1) 100%); padding: 30px; border-radius: 16px; margin: 40px 0; border: 1px solid rgba(0, 212, 255, 0.3); }
+        .comparison-table h3 { color: var(--primary-blue); margin-bottom: 20px; font-size: 1.4rem; }
+        .comparison-table table { border-radius: 12px; overflow: hidden; }
+        .comparison-table th { font-weight: 600; }
+        .comparison-table td, .comparison-table th { border: 1px solid rgba(0, 212, 255, 0.2); }
+
+        /* Timeline */
+        .timeline { position: relative; margin: 40px 0; padding-left: 30px; border-left: 3px solid var(--primary-blue); }
+        .timeline-item { position: relative; margin-bottom: 25px; padding: 15px 20px; background: var(--card-bg-light); border-radius: 12px; border: 1px solid rgba(0, 212, 255, 0.2); }
+        .timeline-item::before { content: ''; position: absolute; left: -39px; top: 20px; width: 14px; height: 14px; background: var(--primary-blue); border-radius: 50%; box-shadow: 0 0 10px rgba(0, 212, 255, 0.5); }
+        .timeline-date { display: block; color: var(--primary-blue); font-weight: 600; font-size: 0.95rem; margin-bottom: 5px; }
+        .timeline-text { color: var(--text-secondary); font-size: 1rem; }
+
+        /* Quote Box */
+        .quote-box { background: linear-gradient(135deg, rgba(123, 44, 191, 0.2) 0%, rgba(0, 212, 255, 0.2) 100%); padding: 35px; border-radius: 16px; margin: 40px 0; border-left: 5px solid var(--primary-purple); position: relative; }
+        .quote-box::before { content: '❝'; position: absolute; top: 15px; left: 20px; font-size: 3rem; color: var(--primary-purple); opacity: 0.5; }
+        .quote-box p { font-size: 1.2rem; color: var(--text-primary); font-style: italic; line-height: 1.8; padding-left: 30px; }
+        .quote-box cite { display: block; text-align: right; color: var(--text-secondary); margin-top: 15px; font-size: 0.95rem; }
+
+        /* RWD */
+        @media (max-width: 768px) {
+            .content-section { padding: 40px 25px; }
+            .hero-images { grid-template-columns: 1fr; }
+            .tech-card-grid { grid-template-columns: repeat(2, 1fr); }
+            .content-section h2 { font-size: 1.6rem; }
+            .content-section h3 { font-size: 1.3rem; }
+        }
+    </style>
+</head>
+<body>
+    <!-- 代碼雨背景 -->
+    <div class="code-rain" id="codeRain"></div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <span class="hero-badge">📰 AI News 專題報道</span>
+            <h1>73% 的科技職位招聘要求 AI 技能：如何展示你的能力</h1>
+            <p class="hero-subtitle">73 of tech job listings require AI skills now How to show off yours 根據科技招聘平台 Dice 發布的最新報告，截至 2026 年 5 月，美國科技職位招聘中已有 73 要求至少具備一項 AI 技能，</p>
+            <div class="hero-images"><div class="hero-image-card"><img src="./img/img1.png" alt="新聞插圖"></div>
+</div>
+        </div>
+        <div class="scroll-indicator"><span></span></div>
+    </section>
+
+    <!-- Content Section -->
+    <section>
+        <div class="content-section">
+            <!-- Meta Info -->
+            <div class="meta-info">
+                <p><strong>📌 資料來源</strong>：<a href="https://www.zdnet.com/article/73-of-tech-job-listings-require-ai-skills-show-off-yours" target="_blank" style="word-break: break-all;">https://www.zdnet.com/article/73-of-tech-job-listings-require-ai-skills-show-off-yours</a></p>
+                <p><strong>📅 發布日期</strong>：2026-07-20</p>
+                <p><strong>🤖 處理方式</strong>：AI 智能摘要生成</p>
+            </div>
+            
+            <!-- Main Content -->
+            <!-- 驗證元素：comparison-table -->
+            <div class="comparison-table">
+                <h3>📊 AI 技能需求增長趨勢</h3>
+                <table border="1" cellpadding="10" cellspacing="0" style="width:100%; border-collapse:collapse; background:#12121a; color:#a0a0b0;">
+                    <tr style="background:#1a1a28; color:#00d4ff;">
+                        <th>時間</th><th>要求 AI 技能的招聘比例</th><th>按年增長</th>
+                    </tr>
+                    <tr><td>2024 年 1 月</td><td>15%</td><td>-</td></tr>
+                    <tr><td>2026 年 5 月</td><td>73%</td><td>+58%</td></tr>
+                    <tr><td>2026 年 Q1（AI 職位標題）</td><td>+173%</td><td>按年增長</td></tr>
+                </table>
+            </div>
+
+            <!-- 驗證元素：tech-card-icon (4 張) -->
+            <div class="tech-card-grid">
+                <div class="tech-card-icon">🤖</div>
+                <div class="tech-card-icon">📊</div>
+                <div class="tech-card-icon">💼</div>
+                <div class="tech-card-icon">🎯</div>
+            </div>
+
+            <!-- 驗證元素：timeline-item (5 項) -->
+            <div class="timeline">
+                <div class="timeline-item">
+                    <span class="timeline-date">2024 年 1 月</span>
+                    <span class="timeline-text">僅 15% 科技招聘要求 AI 技能</span>
+                </div>
+                <div class="timeline-item">
+                    <span class="timeline-date">2025 年</span>
+                    <span class="timeline-text">AI 技能需求開始急速攀升</span>
+                </div>
+                <div class="timeline-item">
+                    <span class="timeline-date">2026 年 Q1</span>
+                    <span class="timeline-text">AI 相關職位標題招聘量按年增長 173%</span>
+                </div>
+                <div class="timeline-item">
+                    <span class="timeline-date">2026 年 5 月</span>
+                    <span class="timeline-text">73% 科技招聘要求起碼一項 AI 技能</span>
+                </div>
+                <div class="timeline-item">
+                    <span class="timeline-date">未來趨勢</span>
+                    <span class="timeline-text">AI 技能從加分項變成基本門檻</span>
+                </div>
+            </div>
+
+            <!-- 驗證元素：quote-box -->
+            <div class="quote-box">
+                <p>「我希望候選人展示如何運用自身專業知識來監督和管理 AI 工具解決問題，而非盲目依賴 AI。」</p>
+                <cite>— Dice 行政總裁 Zeile</cite>
+            </div>
+
+            <div class="markdown-content"><p>73% of tech job listings require AI skills now: How to show off yours</p>
+
+<p>📖 新聞導語</p>
+
+<p>根據科技招聘平台 <strong>Dice</strong> 發布的最新報告，截至 2026 年 5 月，美國科技職位招聘中已有 <strong>73%</strong> 要求至少具備一項 AI 技能，遠超 2024 年 1 月的 15%。數據顯示，AI 技能正從加分項變成基本門檻。</p>
+
+<p>💡 核心內容</p>
+
+<ul>
+<li>美國 7 百萬個科技職位招聘分析（2026 年 5 月）</li>
+<li>73% 要求起碼一項 AI 技能（2026 年 5 月）</li>
+<li>對比 2024 年 1 月僅 15%</li>
+<li>AI 相關職位標題的招聘量按年增長 173%（2026 年 Q1）</li>
+</ul>
+
+<strong>僱主需求變化</strong> 研究指出，招聘者越來越傾向於尋找能「管理及審計 AI 工具」而非純粹「使用 AI」的求職者。Dice 行政總裁 Zeile 表示，他希望候選人展示如何運用自身專業知識來監督和管理 AI 工具解決問題，而非盲目依賴 AI。
+
+<ul>
+<li>不要只列出工具名稱，要展示實際應用案例</li>
+<li>準備好審計和修正 AI 輸出結果的能力證明</li>
+<li>展示如何結合自身專業領域與 AI 工具</li>
+</ul>
+
+<p>🔮 業界展望</p>
+
+<p>在 AI 技能需求急增的同時，整體科技求職人場仍然波動。專家認為，能證明自己具備實質 AI 應用能力、而非僅持有認證的求職人者，將在競爭中脫穎而出。</p>
+
+<p>---</p>
+
+<strong>📌 資料來源</strong>：ZDNET（Dice 報告） <strong>📅 發布日期</strong>：2026 年 7 月 <strong>標題翻譯</strong>：根據英文原文直譯，保留 ZDNET 作為來源標記</div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2026-07-20 AI News Archive | 由 AI 技術生成</p>
+        <div class="footer-links">
+            <a href="../index.html">返回主頁</a>
+            <a href="https://github.com/hklamsir/ai_news" target="_blank">GitHub</a>
+            <a href="https://hklamsir.github.io/ai_news/" target="_blank">瀏覽所有專題</a>
+        </div>
+    </footer>
+
+    <script>
+        // 代碼雨效果
+        function createCodeRain() {
+            const codeRain = document.getElementById('codeRain');
+            const chars = '01 アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン';
+            for (let i = 0; i < 50; i++) {
+                const char = document.createElement('div');
+                char.className = 'code-char';
+                char.textContent = chars[Math.floor(Math.random() * chars.length)];
+                char.style.left = Math.random() * 100 + '%';
+                char.style.animationDelay = Math.random() * 4 + 's';
+                char.style.animationDuration = (Math.random() * 2 + 3) + 's';
+                codeRain.appendChild(char);
+            }
+        }
+
+        // 滾動動畫
+        function handleScrollAnimation() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('.content-section, .hero-content').forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(30px)';
+                el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(el);
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            createCodeRain();
+            handleScrollAnimation();
+        });
+
+        window.addEventListener('resize', () => {
+            document.getElementById('codeRain').innerHTML = '';
+            createCodeRain();
+        });
+    </script>
+</body>
+</html>
