@@ -69,7 +69,8 @@
         .highlight-box p { color: var(--text-secondary); margin: 0; }
 
         /* Tech Card */
-        .tech-card { display: inline-block; width: calc(50% - 10px); background: var(--card-bg-light); border-radius: 12px; padding: 20px; margin: 10px 5px; border: 1px solid rgba(0, 212, 255, 0.2); }
+        .tech-card-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin: 30px 0; }
+        .tech-card { background: var(--card-bg-light); border-radius: 12px; padding: 20px; border: 1px solid rgba(0, 212, 255, 0.2); }
         .tech-card-icon { font-size: 2rem; margin-bottom: 10px; }
         .tech-card h4 { color: var(--primary-blue); margin-bottom: 8px; font-size: 1.1rem; }
         .tech-card p { color: var(--text-secondary); font-size: 0.95rem; margin: 0; }
@@ -101,6 +102,7 @@
             .hero-images { grid-template-columns: 1fr; }
             .hero h1 { font-size: 2rem; }
             .hero-subtitle { font-size: 1.2rem; }
+            .tech-card-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -136,25 +138,27 @@
             </div>
 
             <!-- Tech Cards -->
-            <div class="tech-card">
-                <div class="tech-card-icon">🤖</div>
-                <h4>AI 代理核心</h4>
-                <p>專精編碼與文檔處理</p>
-            </div>
-            <div class="tech-card">
-                <div class="tech-card-icon">🎤</div>
-                <h4>Voxtral 語音</h4>
-                <p>多語言即時轉錄，完全本地運行</p>
-            </div>
-            <div class="tech-card">
-                <div class="tech-card-icon">☁️</div>
-                <h4>彈性部署</h4>
-                <p>本地、LM Link 或 Secure Cloud</p>
-            </div>
-            <div class="tech-card">
-                <div class="tech-card-icon">🔒</div>
-                <h4>Zero Data Retention</h4>
-                <p>絕不使用用戶數據進行訓練</p>
+            <div class="tech-card-grid">
+                <div class="tech-card">
+                    <div class="tech-card-icon">🤖</div>
+                    <h4>AI 代理核心</h4>
+                    <p>專精編碼與文檔處理</p>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-card-icon">🎤</div>
+                    <h4>Voxtral 語音</h4>
+                    <p>多語言即時轉錄，完全本地運行</p>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-card-icon">☁️</div>
+                    <h4>彈性部署</h4>
+                    <p>本地、LM Link 或 Secure Cloud</p>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-card-icon">🔒</div>
+                    <h4>Zero Data Retention</h4>
+                    <p>絕不使用用戶數據進行訓練</p>
+                </div>
             </div>
 
             <!-- Comparison Table -->
