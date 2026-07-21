@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260721_080400",
+      "title": "YouTube 澄清 AI 垃圾內容 與令人不安影片的政策",
+      "summary": "YouTube 收緊 AI 垃圾內容管制，7 月 16 日更新政策，三類不真實內容嚴禁變現，包括模板化量產影片、情緒操控內容，以及用 AI 人物談論健康、金融等敏感議題。",
+      "url": "./news_20260721_080400/index.html",
+      "date": "2026-07-21",
+      "time": "08:04:00",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260720_213700",
       "title": "Hugging Face 遭遇 AI 網攻 AI 鑑識分析重建攻擊過程",
       "summary": "Hugging Face 遭 AI Agent 主導的網路攻擊，攻擊者利用資料處理管道漏洞取得內部資料集與憑證，並在單一週末內橫向移動至多個內部叢集，留下超過 17,000 筆事件紀錄。Hugging",
@@ -2728,6 +2737,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-07-20T21:47:27.815109",
-  "total_count": 303
+  "last_updated": "2026-07-21T08:18:52.676667",
+  "total_count": 304
 }
