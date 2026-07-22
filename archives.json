@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260722_084827",
+      "title": "Google NotebookLM 改名為 Gemini Notebook",
+      "summary": "Google 將深度研究工具 NotebookLM 改名為「Gemini Notebook」，品牌正式與 Gemini 系列 AI 工具統一，並新增原生程式碼執行能力，用戶規模已超過 3,000 萬人",
+      "url": "./news_20260722_084827/index.html",
+      "date": "2026-07-22",
+      "time": "08:48:27",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260721_105300",
       "title": "中國四足機械人 全球市佔七成 邁向工業實戰 AI大會採購額增25%",
       "summary": "工信部數據顯示上半年中國四足機械人全球市佔接近七成，人形機械人整機產品更超越全球總量一半；世界 AI 大會意向採購額按年增 25%，反映中國智能機械人產業正從「展示」走向「實景落地」。",
@@ -2746,6 +2755,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-07-21T10:58:55.328065",
-  "total_count": 305
+  "last_updated": "2026-07-22T08:52:59.380576",
+  "total_count": 306
 }
