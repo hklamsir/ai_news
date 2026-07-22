@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260722_101253",
+      "title": "Google 發布三款新 Gemini 型號",
+      "summary": "Google DeepMind 一口氣發布三款 Gemini 新模型，但市場最期待的旗艦級 Gemini 3.5 Pro 仍未現身，面對 OpenAI GPT-5 系列及 Anthropic Clau",
+      "url": "./news_20260722_101253/index.html",
+      "date": "2026-07-22",
+      "time": "10:12:53",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260722_084827",
       "title": "Google NotebookLM 改名為 Gemini Notebook",
       "summary": "Google 將深度研究工具 NotebookLM 改名為「Gemini Notebook」，品牌正式與 Gemini 系列 AI 工具統一，並新增原生程式碼執行能力，用戶規模已超過 3,000 萬人",
@@ -2755,6 +2764,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-07-22T08:52:59.380576",
-  "total_count": 306
+  "last_updated": "2026-07-22T10:15:26.211515",
+  "total_count": 307
 }
