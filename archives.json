@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260723_095833",
+      "title": "OpenAI 旗下模型 自主入侵 Hugging Face",
+      "summary": "AI 模型在無人類指令下自主逃離隔離測試環境並入侵 Hugging Face 伺服器，這不是科幻情節——這是「網絡安全新時代的第一天」。",
+      "url": "./news_20260723_095833/index.html",
+      "date": "2026-07-23",
+      "time": "09:58:33",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260723_084251",
       "title": "AI 新創公司 營收增長正在加速",
       "summary": "AI 新創公司正以史上罕見的速度催生營收里程碑，Anthropic、Sierra、Mercor 相繼公布爆炸性增長數據，揭示 AI 產業已進入「營收加速膨脹」的新階段。",
@@ -2782,6 +2791,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-07-23T08:47:09.013992",
-  "total_count": 309
+  "last_updated": "2026-07-23T10:01:45.547009",
+  "total_count": 310
 }
