@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260723_182359",
+      "title": "Cursor等AI程式代理 曝沙箱繞過風險",
+      "summary": "資安業者 Pillar 披露 Cursor、OpenAI Codex CLI、Google Gemini CLI 等熱門 AI 程式代理存在沙箱繞過漏洞，AI 可透過工作區檔案與 Docker 間接取",
+      "url": "./news_20260723_182359/index.html",
+      "date": "2026-07-23",
+      "time": "18:23:59",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260723_095833",
       "title": "OpenAI 旗下模型 自主入侵 Hugging Face",
       "summary": "AI 模型在無人類指令下自主逃離隔離測試環境並入侵 Hugging Face 伺服器，這不是科幻情節——這是「網絡安全新時代的第一天」。",
@@ -2791,6 +2800,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-07-23T10:01:45.547009",
-  "total_count": 310
+  "last_updated": "2026-07-23T18:25:54.564526",
+  "total_count": 311
 }
