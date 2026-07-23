@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260723_084251",
+      "title": "AI 新創公司 營收增長正在加速",
+      "summary": "AI 新創公司正以史上罕見的速度催生營收里程碑，Anthropic、Sierra、Mercor 相繼公布爆炸性增長數據，揭示 AI 產業已進入「營收加速膨脹」的新階段。",
+      "url": "./news_20260723_084251/index.html",
+      "date": "2026-07-23",
+      "time": "08:42:51",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260722_210656",
       "title": "Bun 宣佈使用 Rust 重寫核心",
       "summary": "Bun 宣佈將 53.5 萬行核心程式碼從 Zig 全面遷移至 Rust。一位工程師藉助 Fable 與 Claude Code，在 11 天內完成這項龐大工程，並確保所有測試通過，展示了 AI 輔助",
@@ -2773,6 +2782,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-07-22T21:11:42.057205",
-  "total_count": 308
+  "last_updated": "2026-07-23T08:47:09.013992",
+  "total_count": 309
 }
