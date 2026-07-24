@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260724_084100",
+      "title": "教育科技平台 Imagi 獲投 450 萬美元 教學生如何「Vibe Coding」",
+      "summary": "來自教師家族的 Dora Palfi 創辦 Imagi，專門幫助 K-12 學生和教師學習編程及 AI 技能，近日獲得 450 萬美元種子輪融資。",
+      "url": "./news_20260724_084100/index.html",
+      "date": "2026-07-24",
+      "time": "08:41:00",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260723_182359",
       "title": "Cursor等AI程式代理 曝沙箱繞過風險",
       "summary": "資安業者 Pillar 披露 Cursor、OpenAI Codex CLI、Google Gemini CLI 等熱門 AI 程式代理存在沙箱繞過漏洞，AI 可透過工作區檔案與 Docker 間接取",
@@ -2800,6 +2809,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-07-23T18:25:54.564526",
-  "total_count": 311
+  "last_updated": "2026-07-24T08:43:48.618532",
+  "total_count": 312
 }
