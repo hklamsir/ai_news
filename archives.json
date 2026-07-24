@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260724_140800",
+      "title": "AMD 銳龍 AI Max PRO 400 專業處理器即將上市 192GB 記憶體挑戰 AI 運算極限",
+      "summary": "AMD 提前完成 ROCm 7.14 開源計算平台適配，確保新品上市時開發者即可獲得完整軟體兼容性，用戶拿到設備即可直接開展專業運算，無需等待後續驅動補丁。",
+      "url": "./news_20260724_140800/index.html",
+      "date": "2026-07-24",
+      "time": "14:08:00",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260724_084100",
       "title": "教育科技平台 Imagi 獲投 450 萬美元 教學生如何「Vibe Coding」",
       "summary": "來自教師家族的 Dora Palfi 創辦 Imagi，專門幫助 K-12 學生和教師學習編程及 AI 技能，近日獲得 450 萬美元種子輪融資。",
@@ -2809,6 +2818,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-07-24T08:43:48.618532",
-  "total_count": 312
+  "last_updated": "2026-07-24T14:10:54.397577",
+  "total_count": 313
 }
