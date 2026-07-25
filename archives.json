@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260725_112716",
+      "title": "Light Flip 極簡折疊手機回歸",
+      "summary": "總部位於布魯克林的公司 Light 推出全新折疊手機 Light Flip，售價 299 美元，主打極簡主義——無電子郵件、無 App、功能極度精簡，配合 T9 數字鍵盤輸入法，讓用戶重新專注於通話的",
+      "url": "./news_20260725_112716/index.html",
+      "date": "2026-07-25",
+      "time": "11:27:16",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260725_103539",
       "title": "AI 晶片新創 Etched 逆勢突圍估值破百億",
       "summary": "由三位哈佛大學輟學生於 2022 年創立的 AI 晶片新創公司 Etched，成功完成 3 億美元 C 輪融資，估值一舉攀升至 103 億美元，投資陣容包括 Sequoia、Andreessen Ho",
@@ -2827,6 +2836,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-07-25T10:38:59.293784",
-  "total_count": 314
+  "last_updated": "2026-07-25T11:30:24.221394",
+  "total_count": 315
 }
