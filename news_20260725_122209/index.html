@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI如何幫業務銷售？Salesforce整理4種用法：追潛客、陪練商談、秒出報價單 | BNEXT - AI News</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root { --primary-blue: #00d4ff; --primary-purple: #7b2cbf; --accent-green: #00ff88; --accent-orange: #ff9500; --accent-red: #ff4757; --dark-bg: #0a0a0f; --card-bg: #12121a; --card-bg-light: #1a1a28; --text-primary: #ffffff; --text-secondary: #a0a0b0; --gradient-1: linear-gradient(135deg, #00d4ff 0%, #7b2cbf 100%); --gradient-2: linear-gradient(135deg, #00d4ff 0%, #00ff88 100%); --glow-blue: 0 0 20px rgba(0, 212, 255, 0.5); --glow-purple: 0 0 20px rgba(123, 44, 191, 0.5); }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Noto Sans TC', sans-serif; background-color: var(--dark-bg); color: var(--text-primary); line-height: 1.8; overflow-x: hidden; }
+        @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-20px); } }
+        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.6; } }
+        @keyframes slideIn { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes codeRain { 0% { transform: translateY(-100%); opacity: 0; } 10% { opacity: 1; } 90% { opacity: 1; } 100% { transform: translateY(100vh); opacity: 0; } }
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); } }
+        .code-rain { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; overflow: hidden; }
+        .code-char { position: absolute; color: var(--primary-blue); font-family: 'Courier New', monospace; font-size: 14px; opacity: 0; animation: codeRain 4s linear infinite; }
+        .hero { position: relative; min-height: 80vh; display: flex; align-items: center; justify-content: center; padding: 80px 20px; background: linear-gradient(180deg, var(--dark-bg) 0%, #1a1a2e 100%); overflow: hidden; }
+        .hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(ellipse at center, rgba(123, 44, 191, 0.15) 0%, transparent 70%); z-index: 1; }
+        .hero-content { position: relative; z-index: 2; max-width: 1200px; text-align: center; animation: slideIn 1s ease-out; }
+        .hero-badge { display: inline-block; padding: 12px 32px; background: var(--gradient-1); border-radius: 50px; font-size: 18px; font-weight: 700; margin-bottom: 24px; box-shadow: var(--glow-blue); letter-spacing: 1px; }
+        .hero h1 { font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 900; margin-bottom: 24px; background: var(--gradient-1); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; line-height: 1.2; }
+        .hero-subtitle { font-size: clamp(1.2rem, 2.2vw, 1.5rem); color: var(--text-primary); max-width: 900px; margin: 0 auto 40px; line-height: 1.6; font-weight: 400; }
+        .hero-images { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; margin-top: 60px; }
+        .hero-image-card { position: relative; border-radius: 20px; overflow: hidden; aspect-ratio: 16/9; box-shadow: var(--glow-purple); transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .hero-image-card:hover { transform: scale(1.02); box-shadow: 0 0 40px rgba(123, 44, 191, 0.7); }
+        .hero-image-card img { width: 100%; height: 100%; object-fit: cover; }
+        .scroll-indicator { position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%); animation: float 2s ease-in-out infinite; z-index: 2; }
+        .scroll-indicator span { display: block; width: 30px; height: 50px; border: 2px solid var(--primary-blue); border-radius: 25px; position: relative; }
+        .scroll-indicator span::before { content: ''; position: absolute; top: 8px; left: 50%; transform: translateX(-50%); width: 6px; height: 10px; background: var(--primary-blue); border-radius: 3px; animation: pulse 1.5s infinite; }
+        section { padding: 80px 20px; position: relative; z-index: 1; }
+        .content-section { background: var(--card-bg); padding: 60px 50px; border-radius: 24px; border: 1px solid rgba(0, 212, 255, 0.2); max-width: 1100px; margin: 0 auto; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3); }
+        .content-section h3 { font-size: 1.6rem; margin: 40px 0 20px; color: var(--accent-green); }
+        .content-section p { color: var(--text-secondary); line-height: 2; font-size: 1.08rem; margin: 15px 0; }
+        .content-section ul { margin: 20px 0; padding-left: 30px; }
+        .content-section li { margin: 10px 0; color: var(--text-secondary); }
+        .meta-info { background: linear-gradient(135deg, rgba(0, 212, 255, 0.15) 0%, rgba(123, 44, 191, 0.15) 100%); padding: 30px; border-radius: 16px; margin-bottom: 40px; border-left: 5px solid var(--primary-blue); }
+        .meta-info p { margin: 12px 0; color: var(--text-secondary); font-size: 1.05rem; }
+        .meta-info strong { color: var(--primary-blue); font-weight: 600; }
+        .meta-info a { color: var(--primary-blue); text-decoration: none; word-break: break-all; }
+        .highlight-box { background: linear-gradient(135deg, rgba(0, 255, 136, 0.08) 0%, rgba(0, 212, 255, 0.08) 100%); padding: 30px; border-radius: 16px; border-left: 5px solid var(--accent-green); margin: 40px 0; }
+        .highlight-box h4 { color: var(--accent-green); margin-bottom: 15px; font-size: 1.3rem; }
+        .highlight-box p { color: var(--text-secondary); margin: 0; }
+        .alert-box { background: linear-gradient(135deg, rgba(255, 71, 87, 0.1) 0%, rgba(255, 149, 0, 0.1) 100%); padding: 25px 30px; border-radius: 16px; border-left: 5px solid var(--accent-red); margin: 30px 0; }
+        .alert-box h4 { color: var(--accent-red); margin-bottom: 12px; font-size: 1.15rem; }
+        .alert-box p { color: var(--text-secondary); margin: 8px 0; font-size: 1rem; }
+        .quote-box { background: linear-gradient(135deg, rgba(123, 44, 191, 0.15) 0%, rgba(0, 212, 255, 0.15) 100%); padding: 30px 40px; border-radius: 16px; border-left: 5px solid var(--primary-purple); margin: 40px 0; position: relative; }
+        .quote-box::before { content: '"'; position: absolute; top: 10px; left: 20px; font-size: 80px; color: var(--primary-purple); opacity: 0.3; font-family: Georgia, serif; }
+        .quote-box p { color: var(--text-primary); font-size: 1.2rem; font-style: italic; margin-bottom: 15px; }
+        .quote-box cite { color: var(--text-secondary); font-size: 0.95rem; }
+        .tech-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin: 40px 0; }
+        .tech-card { background: var(--card-bg-light); padding: 30px; border-radius: 16px; border: 1px solid rgba(0, 212, 255, 0.15); transition: transform 0.3s ease, box-shadow 0.3s ease; animation: fadeInUp 0.6s ease-out forwards; opacity: 0; }
+        .tech-card:nth-child(1) { animation-delay: 0.1s; }
+        .tech-card:nth-child(2) { animation-delay: 0.2s; }
+        .tech-card:nth-child(3) { animation-delay: 0.3s; }
+        .tech-card:nth-child(4) { animation-delay: 0.4s; }
+        .tech-card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0, 212, 255, 0.2); }
+        .tech-card-icon { font-size: 2.5rem; margin-bottom: 15px; }
+        .tech-card h4 { color: var(--primary-blue); margin-bottom: 12px; font-size: 1.2rem; }
+        .tech-card p { color: var(--text-secondary); font-size: 0.95rem; line-height: 1.7; }
+        .comparison-table { width: 100%; border-collapse: collapse; margin: 40px 0; border-radius: 16px; overflow: hidden; box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3); }
+        .comparison-table thead { background: linear-gradient(135deg, var(--primary-blue), var(--primary-purple)); }
+        .comparison-table th { padding: 18px 20px; text-align: left; font-weight: 600; font-size: 1.05rem; }
+        .comparison-table td { padding: 16px 20px; border-bottom: 1px solid rgba(255, 255, 255, 0.05); color: var(--text-secondary); }
+        .comparison-table tr:last-child td { border-bottom: none; }
+        .comparison-table tr:nth-child(even) { background: rgba(255, 255, 255, 0.02); }
+        .comparison-table .highlight-col { color: var(--accent-green); font-weight: 500; }
+        .timeline { position: relative; margin: 40px 0; padding-left: 40px; }
+        .timeline::before { content: ''; position: absolute; left: 15px; top: 0; bottom: 0; width: 2px; background: linear-gradient(180deg, var(--primary-blue), var(--primary-purple)); }
+        .timeline-item { position: relative; margin-bottom: 35px; padding: 20px 25px; background: var(--card-bg-light); border-radius: 12px; border: 1px solid rgba(0, 212, 255, 0.1); animation: fadeInUp 0.5s ease-out forwards; opacity: 0; }
+        .timeline-item:nth-child(1) { animation-delay: 0.1s; }
+        .timeline-item:nth-child(2) { animation-delay: 0.2s; }
+        .timeline-item:nth-child(3) { animation-delay: 0.3s; }
+        .timeline-item:nth-child(4) { animation-delay: 0.4s; }
+        .timeline-item:nth-child(5) { animation-delay: 0.5s; }
+        .timeline-item:nth-child(6) { animation-delay: 0.6s; }
+        .timeline-item::before { content: ''; position: absolute; left: -32px; top: 25px; width: 12px; height: 12px; background: var(--primary-blue); border-radius: 50%; box-shadow: var(--glow-blue); }
+        .timeline-date { color: var(--primary-blue); font-size: 0.9rem; font-weight: 600; margin-bottom: 8px; }
+        .timeline-title { color: var(--text-primary); font-size: 1.1rem; font-weight: 600; margin-bottom: 8px; }
+        .timeline-desc { color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6; }
+        footer { background: #050508; padding: 60px 20px; text-align: center; border-top: 1px solid rgba(255, 255, 255, 0.1); }
+        footer p { color: var(--text-secondary); margin-bottom: 20px; }
+        .footer-links { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; }
+        .footer-links a { color: var(--primary-blue); text-decoration: none; transition: color 0.3s ease; }
+        .footer-links a:hover { color: var(--text-primary); }
+        @media (max-width: 768px) { .content-section { padding: 40px 25px; } .hero-images { grid-template-columns: 1fr; } .hero h1 { font-size: 2rem; } .hero-subtitle { font-size: 1.2rem; } }
+    </style>
+</head>
+<body>
+    <div class="code-rain" id="codeRain"></div>
+    <section class="hero">
+        <div class="hero-content">
+            <span class="hero-badge">📰 AI News 專題報道</span>
+            <h1>Salesforce AI<br>業務應用四大場景</h1>
+            <p class="hero-subtitle">追潛客、陪練習、快速報價、數據選品——但都需同一個前提：AI 必須讀到完整客戶資料</p>
+            <div class="hero-images">
+                <div class="hero-image-card">
+                    <img src="img/img1.png" alt="AI CRM 業務儀表板">
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator"><span></span></div>
+    </section>
+    <section class="content-section">
+
+        <div class="meta-info">
+            <p><strong>📺 資料來源</strong>：<a href="https://www.bnext.com.tw/article/91612/salesforce-ai-sales-use-cases" target="_blank">BNEXT（一天一AI）</a></p>
+            <p><strong>📅 發布日期</strong>：2026-07-24</p>
+            <p><strong>🤖 處理方式</strong>：AI 智能摘要生成</p>
+            <p><strong>📝 作者</strong>：韋惟珊</p>
+        </div>
+
+        <h3>🎯 核心觀點</h3>
+        <p>Salesforce 報告顯示，AI 在業務流程中最有感的四大場景：追蹤被忽略的潛在客戶、扮演 AI 教練陪練商談技巧、快速產出報價單、以及從數據找出高成交率品項。但這四件事要成立，都需要同一個前提——AI 必須能讀到同一份完整的客戶資料。</p>
+
+        <div class="tech-card">
+            <div class="tech-card-icon">🤖</div>
+            <div class="tech-card-content">
+                <h4>追蹤被忽略的潛在客戶</h4>
+                <p>業務員資源有限，總有一批潛在客戶「排不進聯絡日程」。AI 代理能讀取 CRM 和客戶互動紀錄，主動聯絡設定條件內的潛在客戶，根據對方的行為歷史撰寫開發信，等客戶回信、有望推進再交給真人業務接手。</p>
+            </div>
+        </div>
+
+        <div class="tech-card">
+            <div class="tech-card-icon">🎭</div>
+            <div class="tech-card-content">
+                <h4>AI 教練陪練商談技巧</h4>
+                <p>主管沒有時間陪每個人練習，但 AI 可以。當 AI 發現商機成熟、約了真人會議後，可以幫業務員做事前準備：摘要前期互動，並做角色扮演，例如事先演練客戶砍價場景，過程中即時給予回饋。</p>
+            </div>
+        </div>
+
+        <div class="tech-card">
+            <div class="tech-card-icon">⚡</div>
+            <div class="tech-card-content">
+                <h4>快速產出報價單</h4>
+                <p>傳統報價要查產品目錄、算折扣、送審核，繁瑣又費時。AI 可以幾秒內根據過往累積的產品資料、對話紀錄、折扣規則生成報價，業務員只需確認就能發給客戶。有時候客戶就愛選第一個交出報價的對象——AI 幫你搶得先機。</p>
+            </div>
+        </div>
+
+        <div class="tech-card">
+            <div class="tech-card-icon">📊</div>
+            <div class="tech-card-content">
+                <h4>從數據找出高成交率品項</h4>
+                <p>AI 分析銷售紀錄，挑出成交率高於平均的品項，告訴你哪類客戶容易買單。業務主管可以把這個洞察融入獎勵機制，讓 AI 建立報價單時同時顯示「多加這個商品、獎金有望加多少」，幫助業務改變推薦行為。</p>
+            </div>
+        </div>
+
+
+        <div class="highlight-box">
+            <h4>📌 四大有感場景</h4>
+            <ol>
+                <li>追蹤被忽略的潛在客戶（AI 主動出擊）</li>
+                <li>AI 教練陪練商談技巧（即時角色扮演與回饋）</li>
+                <li>快速產出報價單（幾秒內生成）</li>
+                <li>從數據找出高成交率品項（激勵業務主推）</li>
+            </ol>
+            <p><strong>共同前提：</strong>工具必須能讀到同一份客戶記憶，否則效果大打折扣。</p>
+        </div>
+
+        <div class="quote-box">
+            <p>「業務員對 AI 工具興趣缺缺的主因，往往是 AI 無法讀取完整的客戶資料。當 AI 能真正整合 CRM、產品目錄、報價規則於單一平台，將能大幅提升採用意願。」</p>
+            <cite>— Salesforce 報告摘要</cite>
+        </div>
+
+        <h3>🔮 業界展望</h3>
+        <p>Salesforce 的報告反映一個關鍵趨勢：業務 AI 的成敗不在於 AI 本身有多強大，而在於資料是否足夠整合。當企業建立統一的客戶資料平台，AI 才能真正發揮「業務助理」的角色，從根本改變銷售團隊的作業方式。</p>
+
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-date">業務痛點</div>
+                <div class="timeline-title">被忽略的潛在客戶</div>
+                <div class="timeline-desc">業務員資源有限，無法維繫所有潛在客戶，導致商機流失</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">AI 切入點 1</div>
+                <div class="timeline-title">自動追蹤潛客</div>
+                <div class="timeline-desc">AI 代理讀取 CRM，主動出擊撰寫開發信，節省業務員時間</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">AI 切入點 2</div>
+                <div class="timeline-title">陪練商談</div>
+                <div class="timeline-desc">AI 扮演客戶進行角色扮演，即時回饋業務員的談判技巧</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">AI 切入點 3</div>
+                <div class="timeline-title">快速報價</div>
+                <div class="timeline-desc">AI 整合產品資料、對話紀錄、折扣規則，幾秒內產出報價</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">關鍵前提</div>
+                <div class="timeline-title">整合單一平台</div>
+                <div class="timeline-desc">所有工具必須讀到同一份客戶資料，否則 AI 效果大打折扣</div>
+            </div>
+        </div>
+
+        <table class="comparison-table">
+            <thead>
+                <tr>
+                    <th>場景</th>
+                    <th>傳統做法</th>
+                    <th>AI 加持後</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>潛在客戶追蹤</td>
+                    <td>業務員手動聯絡，常有遺漏</td>
+                    <td class="highlight-col">AI 自動依條件篩選並主動出擊</td>
+                </tr>
+                <tr>
+                    <td>商談準備</td>
+                    <td>業務員自己演練，缺乏即時回饋</td>
+                    <td class="highlight-col">AI 扮演客戶，提供即時回饋</td>
+                </tr>
+                <tr>
+                    <td>報價單產出</td>
+                    <td>查目錄、算折扣、送審核，耗時數小時</td>
+                    <td class="highlight-col">AI 幾秒內生成，業務員只需確認</td>
+                </tr>
+                <tr>
+                    <td>成交率分析</td>
+                    <td>人工分析歷史數據，主觀判斷</td>
+                    <td class="highlight-col">AI 分析找出高成交率品項與客戶類型</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+    <footer>
+        <p>© 2026 AI News Archive | 由 AI 技術生成 | 林SIR 監督</p>
+        <div class="footer-links">
+            <a href="../index.html">返回主頁</a>
+            <a href="https://github.com/hklamsir/ai_news" target="_blank">GitHub</a>
+            <a href="https://hklamsir.github.io/ai_news/" target="_blank">瀏覽所有專題</a>
+        </div>
+    </footer>
+
+
+    <script>
+        const codeRain = document.getElementById('codeRain');
+        const chars = '01アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン';
+        for (let i = 0; i < 50; i++) {
+            const char = document.createElement('span');
+            char.className = 'code-char';
+            char.textContent = chars[Math.floor(Math.random() * chars.length)];
+            char.style.left = Math.random() * 100 + '%';
+            char.style.animationDelay = Math.random() * 4 + 's';
+            char.style.animationDuration = (Math.random() * 3 + 3) + 's';
+            codeRain.appendChild(char);
+        }
+    </script>
+
+</body>
+</html>
