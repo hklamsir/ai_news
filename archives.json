@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260725_103539",
+      "title": "AI 晶片新創 Etched 逆勢突圍估值破百億",
+      "summary": "由三位哈佛大學輟學生於 2022 年創立的 AI 晶片新創公司 Etched，成功完成 3 億美元 C 輪融資，估值一舉攀升至 103 億美元，投資陣容包括 Sequoia、Andreessen Ho",
+      "url": "./news_20260725_103539/index.html",
+      "date": "2026-07-25",
+      "time": "10:35:39",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260724_140800",
       "title": "AMD 銳龍 AI Max PRO 400 專業處理器即將上市 192GB 記憶體挑戰 AI 運算極限",
       "summary": "AMD 提前完成 ROCm 7.14 開源計算平台適配，確保新品上市時開發者即可獲得完整軟體兼容性，用戶拿到設備即可直接開展專業運算，無需等待後續驅動補丁。",
@@ -2818,6 +2827,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-07-24T14:10:54.397577",
-  "total_count": 313
+  "last_updated": "2026-07-25T10:38:59.293784",
+  "total_count": 314
 }
