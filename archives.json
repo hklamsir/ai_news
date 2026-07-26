@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260726_205300",
+      "title": "完全零手寫程式！ Cursor + Claude 15 天 開發 3D 遊戲奪 2.5 萬美元大獎",
+      "summary": "一位 9 年資深遊戲開發者完全不使用手寫程式，僅靠 Cursor + Claude 在 15 天內開發出 3D 多人遊戲，贏得 Cursor Vibe Jam 2026 大賽 2.5 萬美元冠軍，正式",
+      "url": "./news_20260726_205300/index.html",
+      "date": "2026-07-26",
+      "time": "20:53:00",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260726_124216",
       "title": "Google Gemini 距離 十億用戶僅一步之遙",
       "summary": "Google AI 助理 Gemini 每月活躍用戶已突破 9,500 萬，較去年同期增長 3 倍，正邁向成為 Google 第 8 個十億用戶產品。",
@@ -2872,6 +2881,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-07-26T12:45:27.646266",
-  "total_count": 319
+  "last_updated": "2026-07-26T20:54:18.391284",
+  "total_count": 320
 }
