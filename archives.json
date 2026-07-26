@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260726_124216",
+      "title": "Google Gemini 距離 十億用戶僅一步之遙",
+      "summary": "Google AI 助理 Gemini 每月活躍用戶已突破 9,500 萬，較去年同期增長 3 倍，正邁向成為 Google 第 8 個十億用戶產品。",
+      "url": "./news_20260726_124216/index.html",
+      "date": "2026-07-26",
+      "time": "12:42:16",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260725_131427",
       "title": "蘇姿豐：AI轉向推論 CPU需求增速超越GPU",
       "summary": "AMD 董事長蘇姿豐在年度 Advancing AI 活動中揭示：全球 AI 算力已有一半以上用於推論，代表 AI 正從模型訓練轉向實際部署階段。Agentic AI 的崛起正在重新拉升 CPU 需求",
@@ -2863,6 +2872,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-07-25T13:16:29.063402",
-  "total_count": 318
+  "last_updated": "2026-07-26T12:45:27.646266",
+  "total_count": 319
 }
