@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260727_104852",
+      "title": "Hugging Face CEO 呼籲 OpenAI 徹底透明： 史上首宗自主代理網絡攻擊",
+      "summary": "OpenAI 旗下模型入侵 Hugging Face 系統後，Hugging Face 行政總裁 Clem Delangue 親赴三藩市與「流氓代理」對話，並提出三大訴求：要求 OpenAI 公開入侵",
+      "url": "./news_20260727_104852/index.html",
+      "date": "2026-07-27",
+      "time": "10:48:52",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260727_092905",
       "title": "OpenAI Presence 企業 AI 代理， 工程師綁定交付模式",
       "summary": "OpenAI 推出「OpenAI Presence」託管式企業 AI 代理服務，由自家 Forward Deployed Engineers 直接主導部署，與傳統軟體銷售模式截然不同，標誌著 AI 企",
@@ -2908,6 +2917,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-07-27T09:30:45.229757",
-  "total_count": 323
+  "last_updated": "2026-07-27T10:50:38.110164",
+  "total_count": 324
 }
