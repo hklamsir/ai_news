@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260727_092905",
+      "title": "OpenAI Presence 企業 AI 代理， 工程師綁定交付模式",
+      "summary": "OpenAI 推出「OpenAI Presence」託管式企業 AI 代理服務，由自家 Forward Deployed Engineers 直接主導部署，與傳統軟體銷售模式截然不同，標誌著 AI 企",
+      "url": "./news_20260727_092905/index.html",
+      "date": "2026-07-27",
+      "time": "09:29:05",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260727_084002",
       "title": "中國 Kimi K3 網絡攻擊能力 遠落後美國對手，研究顯示",
       "summary": "英美聯合研究顯示，中國 Kimi K3 在網絡攻擊能力評估中總分僅 32.2%，遠低於美國頂尖模型平均 76.2%，且在 41 項任務中完全無法達成任意程式碼執行。",
@@ -2899,6 +2908,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-07-27T08:43:36.493321",
-  "total_count": 322
+  "last_updated": "2026-07-27T09:30:45.229757",
+  "total_count": 323
 }
