@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260728_082811",
+      "title": "研究顯示 Google AI 搜尋 正迅速成為用戶預設選擇",
+      "summary": "Google 的 AI 生成答案服務 AI Overviews 在短短一年內從覆蓋 15% 的搜尋查詢飆升至 43%，標誌著網路用戶獲取資訊方式的重大轉變。",
+      "url": "./news_20260728_082811/index.html",
+      "date": "2026-07-28",
+      "time": "08:28:11",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260728_080138",
       "title": "Satya Nadella 表示，只信任單一 AI 處理一切事物的公司可能無法生存",
       "summary": "Microsoft CEO Satya Nadella 警告企業：過度依賴單一 AI 實驗室的公司最終將無法生存。企業必須警惕向 AI 模型提供商分享的一切，包括數據和提示詞。",
@@ -2935,6 +2944,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-07-28T08:04:02.470924",
-  "total_count": 326
+  "last_updated": "2026-07-28T08:30:34.119864",
+  "total_count": 327
 }
