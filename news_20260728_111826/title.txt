@@ -1,0 +1,1 @@
+NVIDIA 發布 Nemotron-Labs-TwoTower：基於凍結自迴歸骨架的開源權重擴散語言模型
