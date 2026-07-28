@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260728_080138",
+      "title": "Satya Nadella 表示，只信任單一 AI 處理一切事物的公司可能無法生存",
+      "summary": "Microsoft CEO Satya Nadella 警告企業：過度依賴單一 AI 實驗室的公司最終將無法生存。企業必須警惕向 AI 模型提供商分享的一切，包括數據和提示詞。",
+      "url": "./news_20260728_080138/index.html",
+      "date": "2026-07-28",
+      "time": "08:01:38",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260727_143303",
       "title": "Nvidia、Palantir、Meta 聯署公開信， 反對倉促限制開源 AI 模型",
       "summary": "Nvidia、Palantir、Meta 等美國科技巨頭聯署公開信，警告特朗普政府不要對開源 AI 模型實施「倉促限制」。他們呼籲美國應構建自己的「強大開源生態系統」，強調限制開源 AI 只會將更多用",
@@ -2926,6 +2935,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-07-27T14:35:16.412265",
-  "total_count": 325
+  "last_updated": "2026-07-28T08:04:02.470924",
+  "total_count": 326
 }
