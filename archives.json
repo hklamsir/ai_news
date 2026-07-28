@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260728_134544",
+      "title": "AI 藥物發現：Insilico Medicine 在中國的突破與挑戰",
+      "summary": "Insilico Medicine 利用 AI 與中國實驗室研究相結合，將部分藥物開發候選物的生產時間縮短至約一年，九個月即可達到候選物提名，遠快於傳統方法的四年半。",
+      "url": "./news_20260728_134544/index.html",
+      "date": "2026-07-28",
+      "time": "13:45:44",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260728_111826",
       "title": "NVIDIA 發布 Nemotron-Labs-TwoTower： 基於凍結自迴歸骨架的開源權重擴散語言模型",
       "summary": "NVIDIA 發布的 Nemotron-Labs-TwoTower 是一款區塊式自迴歸擴散模型，透過雙塔架構將 AR 上下文能力與擴散生成相結合，保持 98.7% 品質的同時實現 2.42 倍吞吐量提",
@@ -2962,6 +2971,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-07-28T11:20:02.918175",
-  "total_count": 329
+  "last_updated": "2026-07-28T13:47:21.824174",
+  "total_count": 330
 }
