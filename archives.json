@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260729_224748",
+      "title": "AI Skills 怎麼寫？Matt Pocock grill-me 工作流 5 步拆解",
+      "summary": "AI 工具專家 Matt Pocock 分享 grill-me 工作流，核心是以「決策樹」方式讓 AI 系統性地挖掘使用者的隱含假設與盲點，而非直接代筆執行。整套系統分五站，從「拷問出共識」到「把規格",
+      "url": "./news_20260729_224748/index.html",
+      "date": "2026-07-29",
+      "time": "22:47:48",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260729_182328",
       "title": "NotebookLM 改名 Gemini Notebook： 功能升級與 App 差異一次看懂",
       "summary": "Google 旗下 AI 筆記工具 NotebookLM 改名為「Gemini Notebook」，雖然兩邊筆記本資料同步，但 Gemini Notebook 與 Gemini App 是功能不同的產",
@@ -2998,6 +3007,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-07-29T18:25:04.001288",
-  "total_count": 333
+  "last_updated": "2026-07-29T22:49:41.286963",
+  "total_count": 334
 }
