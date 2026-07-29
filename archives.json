@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260729_091508",
+      "title": "開源是對抗失控 AI 代理的答案？ Nvidia 新聯盟表示肯定",
+      "summary": "Nvidia 宣佈成立「開放安全 AI 聯盟」，以開源軟件為核心對抗失控 AI 代理，民主化 AI 安全工具的回應 Anthropic 的 Project Glasswing，業界「封閉 vs 開放」",
+      "url": "./news_20260729_091508/index.html",
+      "date": "2026-07-29",
+      "time": "09:15:08",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260729_084810",
       "title": "逾千名 OpenAI、Anthropic 員工 聯名致信 呼籲美國支持 減緩 AI 發展腳步",
       "summary": "逾 1,100 名來自 OpenAI、Anthropic、Google、Meta 的 AI 從業員聯名發表公開信，呼籲美國政府支持國際合作，開發能「刻意減緩前沿 AI 發展」的技術與治理工具，以應對快",
@@ -2980,6 +2989,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-07-29T08:52:01.847759",
-  "total_count": 331
+  "last_updated": "2026-07-29T09:19:06.999065",
+  "total_count": 332
 }
