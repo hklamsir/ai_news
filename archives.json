@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260730_082349",
+      "title": "梁文鋒四小时講話 为何被全網封殺",
+      "summary": "DeepSeek 創辦人梁文鋒的內部講話被全網封殺，展現中國 AI 創辦人最坦誠的戰略思考：剋制、開源、只盯 AGI 主線，用美國二十分之一的算力做出世界級成果。",
+      "url": "./news_20260730_082349/index.html",
+      "date": "2026-07-30",
+      "time": "08:23:49",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260729_224748",
       "title": "AI Skills 怎麼寫？Matt Pocock grill-me 工作流 5 步拆解",
       "summary": "AI 工具專家 Matt Pocock 分享 grill-me 工作流，核心是以「決策樹」方式讓 AI 系統性地挖掘使用者的隱含假設與盲點，而非直接代筆執行。整套系統分五站，從「拷問出共識」到「把規格",
@@ -3007,6 +3016,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-07-29T22:49:41.286963",
-  "total_count": 334
+  "last_updated": "2026-07-30T08:27:43.784488",
+  "total_count": 335
 }
