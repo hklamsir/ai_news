@@ -147,13 +147,13 @@ article_content = """
 """
 
 metadata = {
-    'title': '梁文锋四小时讲话为何被全网封杀',
-    'h1': '梁文锋四小时讲话<br>为何被全网封杀',
+    'title': '梁文鋒四小時講話為何被全網封殺',
+    'h1': '梁文鋒四小時講話<br>為何被全網封殺',
     'subtitle': 'DeepSeek 創辦人內部會議實錄：AGI、开源、克制與終局思維',
     'source_url': 'https://youtu.be/Fy6tKSHGEXQ',
     'source_name': 'Best Partners TV',
     'pub_date': '2026-07-30',
-    'img_alt': '梁文锋 DeepSeek AGI 讲话',
+    'img_alt': '梁文鋒 DeepSeek AGI 講話',
 }
 
 success, errors = assemble_article(
