@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meta Infra千億AI基建踩坑內幕 - AI News</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root { --primary-blue: #00d4ff; --primary-purple: #7b2cbf; --accent-green: #00ff88; --accent-orange: #ff9500; --accent-red: #ff4757; --dark-bg: #0a0a0f; --card-bg: #12121a; --card-bg-light: #1a1a28; --text-primary: #ffffff; --text-secondary: #a0a0b0; --gradient-1: linear-gradient(135deg, #00d4ff 0%, #7b2cbf 100%); --gradient-2: linear-gradient(135deg, #00d4ff 0%, #00ff88 100%); --glow-blue: 0 0 20px rgba(0, 212, 255, 0.5); --glow-purple: 0 0 20px rgba(123, 44, 191, 0.5); }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Noto Sans TC', sans-serif; background-color: var(--dark-bg); color: var(--text-primary); line-height: 1.8; overflow-x: hidden; }
+        @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-20px); } }
+        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.6; } }
+        @keyframes slideIn { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes codeRain { 0% { transform: translateY(-100%); opacity: 0; } 10% { opacity: 1; } 90% { opacity: 1; } 100% { transform: translateY(100vh); opacity: 0; } }
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); } }
+        .code-rain { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; overflow: hidden; }
+        .code-char { position: absolute; color: var(--primary-blue); font-family: 'Courier New', monospace; font-size: 14px; opacity: 0; animation: codeRain 4s linear infinite; }
+        .hero { position: relative; min-height: 80vh; display: flex; align-items: center; justify-content: center; padding: 80px 20px; background: linear-gradient(180deg, var(--dark-bg) 0%, #1a1a2e 100%); overflow: hidden; }
+        .hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(ellipse at center, rgba(123, 44, 191, 0.15) 0%, transparent 70%); z-index: 1; }
+        .hero-content { position: relative; z-index: 2; max-width: 1200px; text-align: center; animation: slideIn 1s ease-out; }
+        .hero-badge { display: inline-block; padding: 12px 32px; background: var(--gradient-1); border-radius: 50px; font-size: 18px; font-weight: 700; margin-bottom: 24px; box-shadow: var(--glow-blue); letter-spacing: 1px; }
+        .hero h1 { font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 900; margin-bottom: 24px; background: var(--gradient-1); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; line-height: 1.2; }
+        .hero-subtitle { font-size: clamp(1.2rem, 2.2vw, 1.5rem); color: var(--text-primary); max-width: 900px; margin: 0 auto 40px; line-height: 1.6; font-weight: 400; }
+        .hero-images { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; margin-top: 60px; }
+        .hero-image-card { position: relative; border-radius: 20px; overflow: hidden; aspect-ratio: 16/9; box-shadow: var(--glow-purple); transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .hero-image-card:hover { transform: scale(1.02); box-shadow: 0 0 40px rgba(123, 44, 191, 0.7); }
+        .hero-image-card img { width: 100%; height: 100%; object-fit: cover; }
+        .scroll-indicator { position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%); animation: float 2s ease-in-out infinite; z-index: 2; }
+        .scroll-indicator span { display: block; width: 30px; height: 50px; border: 2px solid var(--primary-blue); border-radius: 25px; position: relative; }
+        .scroll-indicator span::before { content: ''; position: absolute; top: 8px; left: 50%; transform: translateX(-50%); width: 6px; height: 10px; background: var(--primary-blue); border-radius: 3px; animation: pulse 1.5s infinite; }
+        section { padding: 80px 20px; position: relative; z-index: 1; }
+        .content-section { background: var(--card-bg); padding: 60px 50px; border-radius: 24px; border: 1px solid rgba(0, 212, 255, 0.2); max-width: 1100px; margin: 0 auto; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3); }
+        .content-section h3 { font-size: 1.6rem; margin: 40px 0 20px; color: var(--accent-green); }
+        .content-section p { color: var(--text-secondary); line-height: 2; font-size: 1.08rem; margin: 15px 0; }
+        .content-section ul { margin: 20px 0; padding-left: 30px; }
+        .content-section li { margin: 10px 0; color: var(--text-secondary); }
+        .meta-info { background: linear-gradient(135deg, rgba(0, 212, 255, 0.15) 0%, rgba(123, 44, 191, 0.15) 100%); padding: 30px; border-radius: 16px; margin-bottom: 40px; border-left: 5px solid var(--primary-blue); }
+        .meta-info p { margin: 12px 0; color: var(--text-secondary); font-size: 1.05rem; }
+        .meta-info strong { color: var(--primary-blue); font-weight: 600; }
+        .meta-info a { color: var(--primary-blue); text-decoration: none; word-break: break-all; }
+        .highlight-box { background: linear-gradient(135deg, rgba(0, 255, 136, 0.08) 0%, rgba(0, 212, 255, 0.08) 100%); padding: 30px; border-radius: 16px; border-left: 5px solid var(--accent-green); margin: 40px 0; }
+        .highlight-box h4 { color: var(--accent-green); margin-bottom: 15px; font-size: 1.3rem; }
+        .highlight-box p { color: var(--text-secondary); margin: 0; }
+        .alert-box { background: linear-gradient(135deg, rgba(255, 71, 87, 0.1) 0%, rgba(255, 149, 0, 0.1) 100%); padding: 25px 30px; border-radius: 16px; border-left: 5px solid var(--accent-red); margin: 30px 0; }
+        .alert-box h4 { color: var(--accent-red); margin-bottom: 12px; font-size: 1.15rem; }
+        .alert-box p { color: var(--text-secondary); margin: 8px 0; font-size: 1rem; }
+        .quote-box { background: linear-gradient(135deg, rgba(123, 44, 191, 0.15) 0%, rgba(0, 212, 255, 0.15) 100%); padding: 30px 40px; border-radius: 16px; border-left: 5px solid var(--primary-purple); margin: 40px 0; position: relative; }
+        .quote-box::before { content: '"'; position: absolute; top: 10px; left: 20px; font-size: 80px; color: var(--primary-purple); opacity: 0.3; font-family: Georgia, serif; }
+        .quote-box p { color: var(--text-primary); font-size: 1.2rem; font-style: italic; margin-bottom: 15px; }
+        .quote-box cite { color: var(--text-secondary); font-size: 0.95rem; }
+        .tech-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin: 40px 0; }
+        .tech-card { background: var(--card-bg-light); padding: 30px; border-radius: 16px; border: 1px solid rgba(0, 212, 255, 0.15); transition: transform 0.3s ease, box-shadow 0.3s ease; animation: fadeInUp 0.6s ease-out forwards; opacity: 0; }
+        .tech-card:nth-child(1) { animation-delay: 0.1s; }
+        .tech-card:nth-child(2) { animation-delay: 0.2s; }
+        .tech-card:nth-child(3) { animation-delay: 0.3s; }
+        .tech-card:nth-child(4) { animation-delay: 0.4s; }
+        .tech-card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0, 212, 255, 0.2); }
+        .tech-card-icon { font-size: 2.5rem; margin-bottom: 15px; }
+        .tech-card h4 { color: var(--primary-blue); margin-bottom: 12px; font-size: 1.2rem; }
+        .tech-card p { color: var(--text-secondary); font-size: 0.95rem; line-height: 1.7; }
+        .comparison-table { width: 100%; border-collapse: collapse; margin: 40px 0; border-radius: 16px; overflow: hidden; box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3); }
+        .comparison-table thead { background: linear-gradient(135deg, var(--primary-blue), var(--primary-purple)); }
+        .comparison-table th { padding: 18px 20px; text-align: left; font-weight: 600; font-size: 1.05rem; }
+        .comparison-table td { padding: 16px 20px; border-bottom: 1px solid rgba(255, 255, 255, 0.05); color: var(--text-secondary); }
+        .comparison-table tr:last-child td { border-bottom: none; }
+        .comparison-table tr:nth-child(even) { background: rgba(255, 255, 255, 0.02); }
+        .comparison-table .highlight-col { color: var(--accent-green); font-weight: 500; }
+        .timeline { position: relative; margin: 40px 0; padding-left: 40px; }
+        .timeline::before { content: ''; position: absolute; left: 15px; top: 0; bottom: 0; width: 2px; background: linear-gradient(180deg, var(--primary-blue), var(--primary-purple)); }
+        .timeline-item { position: relative; margin-bottom: 35px; padding: 20px 25px; background: var(--card-bg-light); border-radius: 12px; border: 1px solid rgba(0, 212, 255, 0.1); animation: fadeInUp 0.5s ease-out forwards; opacity: 0; }
+        .timeline-item:nth-child(1) { animation-delay: 0.1s; }
+        .timeline-item:nth-child(2) { animation-delay: 0.2s; }
+        .timeline-item:nth-child(3) { animation-delay: 0.3s; }
+        .timeline-item:nth-child(4) { animation-delay: 0.4s; }
+        .timeline-item:nth-child(5) { animation-delay: 0.5s; }
+        .timeline-item:nth-child(6) { animation-delay: 0.6s; }
+        .timeline-item::before { content: ''; position: absolute; left: -32px; top: 25px; width: 12px; height: 12px; background: var(--primary-blue); border-radius: 50%; box-shadow: var(--glow-blue); }
+        .timeline-date { color: var(--primary-blue); font-size: 0.9rem; font-weight: 600; margin-bottom: 8px; }
+        .timeline-title { color: var(--text-primary); font-size: 1.1rem; font-weight: 600; margin-bottom: 8px; }
+        .timeline-desc { color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6; }
+        footer { background: #050508; padding: 60px 20px; text-align: center; border-top: 1px solid rgba(255, 255, 255, 0.1); }
+        footer p { color: var(--text-secondary); margin-bottom: 20px; }
+        .footer-links { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; }
+        .footer-links a { color: var(--primary-blue); text-decoration: none; transition: color 0.3s ease; }
+        .footer-links a:hover { color: var(--text-primary); }
+        @media (max-width: 768px) { .content-section { padding: 40px 25px; } .hero-images { grid-template-columns: 1fr; } .hero h1 { font-size: 2rem; } .hero-subtitle { font-size: 1.2rem; } }
+    </style>
+</head>
+<body>
+    <div class="code-rain" id="codeRain"></div>
+    <section class="hero">
+        <div class="hero-content">
+            <span class="hero-badge">📰 AI News 專題報道</span>
+            <h1>Meta Infra<br>千億AI基建踩坑內幕</h1>
+            <p class="hero-subtitle">SemiAnalysis 四案例細數 Meta AI 基礎設施的系統性失敗</p>
+            <div class="hero-images">
+                <div class="hero-image-card">
+                    <img src="img/img1.png" alt="Meta AI 基礎設施失敗案例圖">
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator"><span></span></div>
+    </section>
+    <section class="content-section">
+
+        <div class="meta-info">
+            <p><strong>📺 資料來源</strong>：<a href="https://youtu.be/lffdUgPBABY" target="_blank">Best Partners TV</a></p>
+            <p><strong>📅 發布日期</strong>：2026-07-31</p>
+            <p><strong>🤖 處理方式</strong>：AI 智能摘要生成（字幕來源）</p>
+        </div>
+
+        <h3>🎯 核心觀點</h3>
+        <p>SemiAnalysis 以四個具體案例細數 Meta AI 在基礎設施方面踩過的坑——25 億美元芯片收購失敗、客製化伺服器設計錯誤、GB200 機櫃比競爭對手更差更貴，以及正在進行中的 AMD MI450 半血版決策失誤。誰在決定買什麼硬體、這些硬體是為誰的需求設計的，可能比誰在寫模型代碼更能決定一家公司能走多遠。</p>
+
+        <div class="tech-card">
+            <div class="tech-card-icon">💰</div>
+            <div class="tech-card-content">
+                <h4>案例一：Rivos 收購——25 億美元的組織排異反應</h4>
+                <p>Meta 花費超過 25 億美元收購 RISC-V 芯片創業公司 Rivos，看中 SIMT 核心 IP 和繞過博通自行管理芯片製造的 COT 能力。但收購完成後 Olympus 項目直接取消，替代項目 Phoebe 流片時間排到 2028 年。Meta 把 Rivos 工程師當「人頭池」拆分給各團隊，約 30% 的 Rivos 工程師在裁員中被解僱，聯合創始人已離職。</p>
+            </div>
+        </div>
+
+        <div class="tech-card">
+            <div class="tech-card-icon">🖥️</div>
+            <div class="tech-card-content">
+                <h4>案例二：Grand Teton 伺服器——軟硬體協同設計失敗</h4>
+                <p>Meta 自研 Grand Teton 比英偉達標準 HGX 多了一整個交換托架，目標是讓每台伺服器多塞 8 塊 SSD。但這個需求並非模型團隊提出，結果實際使用時遠低於預期。而且英偉達在 Hopper 這代已通過 ConnectX-7 網卡集成 PCIe 交換功能，額外交換托架變得多餘，最終 BOM 更貴、功耗更高、集成更複雜。</p>
+            </div>
+        </div>
+
+        <div class="tech-card">
+            <div class="tech-card-icon">🏗️</div>
+            <div class="tech-card-content">
+                <h4>案例三：Ariel GB200 機櫃——比競爭對手更差更貴</h4>
+                <p>Meta 把標準 1:2（Grace CPU:B200 GPU）改成 1:1，動機是推薦系統需要更高 CPU:GPU 配比，代價是單機架只有 36 顆 GPU，需走 NVL36x2 雙機架方案，交換機數量翻倍，網絡多一跳延遲。SemiAnalysis 估算 TCO 比標準配置高出 14%。在生成式 AI 旗艦系統的關鍵窗口期，大模型團隊拿到的是比競爭對手更差、更貴的基礎設施，估算決策讓 Meta 付出數十億美元代價。</p>
+            </div>
+        </div>
+
+        <div class="tech-card">
+            <div class="tech-card-icon">⚡</div>
+            <div class="tech-card-content">
+                <h4>案例四：AMD MI450 半血版——正在進行時的最大失誤</h4>
+                <p>AMD 的 MI450 是市場上製程最先進的 GPU（2 奈米、混合鍵合、12 棧 HBM），Meta 卻堅持要半血版，把 AMD 產品的核心價值主張完全磨平。這個決定是在 TBD Lab（Meta 前沿模型實驗室）成立之前就拍板的，TBD Lab 面對計算能力和 HBM 頻寬都嚴重縮水的系統毫無興趣，SemiAnalysis 甚至公開喊話 AMD 繞過 Meta 基礎設施團隊直接跟 TBD Lab 談。</p>
+            </div>
+        </div>
+
+        <div class="highlight-box">
+            <h4>📌 重點提示</h4>
+            <p>四個案例的共同模式：每個決策在某個團隊優化的某個狹窄指標上都說得通，但站在公司整體角度都是糟糕的選擇。SemiAnalysis 將病因歸結到組織文化——六個月績效評估 + 末位淘汰驅動短期主義，讓基礎設施這種重投資、長週期領域無法做長期戰略規劃。</p>
+        </div>
+
+        <div class="quote-box">
+            <p>「當基礎設施團隊開始替模型團隊定義需求的時候，可能就是整個組織需要停下來重新審視決策機制的時候了。」</p>
+            <cite>— SemiAnalysis</cite>
+        </div>
+
+        <h3>🔮 業界展望</h3>
+        <p>SemiAnalysis 認為 AI Infra 的目標從來不是交付最有技術辨識度的系統，而是在模型快速變化的前提下，持續交付最多的有效訓練進展和最低的單位推理成本。相比之下，國內阿里雲 HPN 網絡架構是正面對照——從大模型訓練負載實際特徵出發，與模型團隊緊密協作，選擇 RoCE 加白盒自研交換機路線，相關設計發表在 SIGCOMM 2024。</p>
+
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-date">2023 年</div>
+                <div class="timeline-title">Meta 收購 Rivos</div>
+                <div class="timeline-desc">超過 25 億美元收購 RISC-V 芯片創業公司，瞄準 SIMT 核心 IP 和 COT 能力</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">2021-2022 年</div>
+                <div class="timeline-title">Grand Teton 立項與發布</div>
+                <div class="timeline-desc">自研伺服器 Grand Teton 在 OCP 峯會發布，設計過於激進最終被取消</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">2024 年</div>
+                <div class="timeline-title">Ariel GB200 機櫃定型</div>
+                <div class="timeline-desc">Meta 堅持 1:1 CPU:GPU 配置，選擇比標準 NVL72 更貴的 NVL36x2 方案</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">2026 年初</div>
+                <div class="timeline-title">AMD MI450 半血版拍板</div>
+                <div class="timeline-desc">Meta 要求 AMD 提供計算晶片和 HBM 堆疊均減半的定制版，TBD Lab 未被諮詢</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">2026 年中</div>
+                <div class="timeline-title">SemiAnalysis 發文批評</div>
+                <div class="timeline-desc">以四個案例公開細數 Meta 基礎設施團隊的系統性問題，引發業界熱議</div>
+            </div>
+        </div>
+
+        <table class="comparison-table">
+            <thead>
+                <tr>
+                    <th>案例</th>
+                    <th>決策動機</th>
+                    <th>實際結果</th>
+                    <th>代價</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Rivos 收購</td>
+                    <td>獲得 SIMT IP + COT 能力</td>
+                    <td class="highlight-col">Olympus 取消，工程師被當人頭池拆散</td>
+                    <td>25 億美元 + 30% 收購工程師被裁</td>
+                </tr>
+                <tr>
+                    <td>Grand Teton</td>
+                    <td>更多本地直連存儲</td>
+                    <td class="highlight-col">模型團隊使用遠低於預期，設計取消</td>
+                    <td>BOM 更貴、功耗更高、集成更複雜</td>
+                </tr>
+                <tr>
+                    <td>Ariel GB200</td>
+                    <td>推薦系統需要更高 CPU 配比</td>
+                    <td class="highlight-col">NVL36x2 比標準 NVL72 TCO 高 14%</td>
+                    <td>數十億美元，多跳延遲，可靠性更差</td>
+                </tr>
+                <tr>
+                    <td>AMD MI450 半血版</td>
+                    <td>拉高 CPU:GPU 計算配比</td>
+                    <td class="highlight-col">TBD Lab 對縮水系統毫無興趣</td>
+                    <td>可能直接倒向英偉達 Rubin，AMD 出貨量受創</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+    <footer>
+        <p>© 2026 AI News Archive | 由 AI 技術生成 | 林SIR 監督</p>
+        <div class="footer-links">
+            <a href="../index.html">返回主頁</a>
+            <a href="https://github.com/hklamsir/ai_news" target="_blank">GitHub</a>
+            <a href="https://hklamsir.github.io/ai_news/" target="_blank">瀏覽所有專題</a>
+        </div>
+    </footer>
+
+
+    <script>
+        const codeRain = document.getElementById('codeRain');
+        const chars = '01アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン';
+        for (let i = 0; i < 50; i++) {
+            const char = document.createElement('span');
+            char.className = 'code-char';
+            char.textContent = chars[Math.floor(Math.random() * chars.length)];
+            char.style.left = Math.random() * 100 + '%';
+            char.style.animationDelay = Math.random() * 4 + 's';
+            char.style.animationDuration = (Math.random() * 3 + 3) + 's';
+            codeRain.appendChild(char);
+        }
+    </script>
+
+</body>
+</html>
