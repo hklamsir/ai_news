@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260731_104550",
+      "title": "Gemini Robotics 2 實現全身智能控制",
+      "summary": "Google DeepMind 發布 Gemini Robotics 2，首個能控制整個人形機器人——從雙腳到指尖——的視覺語言動作（VLA）模型。不再受限於桌面上半身操控，機器人可以走路、蹲下、伸手",
+      "url": "./news_20260731_104550/index.html",
+      "date": "2026-07-31",
+      "time": "10:45:50",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260731_084950",
       "title": "Meta Infra 千億AI基建踩坑內幕",
       "summary": "SemiAnalysis 以四個具體案例細數 Meta AI 在基礎設施方面踩過的坑——25 億美元芯片收購失敗、客製化伺服器設計錯誤、GB200 機櫃比競爭對手更差更貴，以及正在進行中的 AMD M",
@@ -3052,6 +3061,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-07-31T08:55:46.898631",
-  "total_count": 339
+  "last_updated": "2026-07-31T10:51:43.420679",
+  "total_count": 340
 }
