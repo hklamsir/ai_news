@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260801_111431",
+      "title": "OpenAI 發動價格戰迎戰中國對手 GPT-5.6 Luna 降價高達 80%",
+      "summary": "面對快速崛起且價格更具競爭力的中國對手，OpenAI 發動價格戰，將 GPT-5.6 模型系列降價最高 80%，以捍衛市場份額。",
+      "url": "./news_20260801_111431/index.html",
+      "date": "2026-08-01",
+      "time": "11:14:31",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260801_110440",
       "title": "MiniMax H3：原生 2K AI 影片與音頻生成",
       "summary": "MiniMax 正式發布 H3 模型，定價為前沿級多模態視頻生成模型，支援原生 2K 解析度輸出、最長 15 秒影片生成，以及內建音頻生成功能。",
@@ -3088,6 +3097,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-08-01T11:06:32.891232",
-  "total_count": 343
+  "last_updated": "2026-08-01T11:15:28.717595",
+  "total_count": 344
 }
