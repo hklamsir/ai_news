@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260801_110440",
+      "title": "MiniMax H3：原生 2K AI 影片與音頻生成",
+      "summary": "MiniMax 正式發布 H3 模型，定價為前沿級多模態視頻生成模型，支援原生 2K 解析度輸出、最長 15 秒影片生成，以及內建音頻生成功能。",
+      "url": "./news_20260801_110440/index.html",
+      "date": "2026-08-01",
+      "time": "11:04:40",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260801_105559",
       "title": "Token Saver：本地混合 RAG 開源 MCP 擴展",
       "summary": "Marktechpost AI 團隊發布 Token Saver，開源 MCP 擴展可將 PDF Token 消耗降低 92% 至 99%，確保資料永不離開本地設備。",
@@ -3079,6 +3088,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-08-01T10:57:52.440589",
-  "total_count": 342
+  "last_updated": "2026-08-01T11:06:32.891232",
+  "total_count": 343
 }
