@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260801_105559",
+      "title": "Token Saver：本地混合 RAG 開源 MCP 擴展",
+      "summary": "Marktechpost AI 團隊發布 Token Saver，開源 MCP 擴展可將 PDF Token 消耗降低 92% 至 99%，確保資料永不離開本地設備。",
+      "url": "./news_20260801_105559/index.html",
+      "date": "2026-08-01",
+      "time": "10:55:59",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260731_110321",
       "title": "政府推「全民AI」 斥 5000 萬辦逾 200 場活動",
       "summary": "香港政府斥資 5000 萬元推「全民AI」普及策略，創科局局長孫東表明這是首次以此規模作全民 AI 教育投資。在今明兩個財政年度辦逾 200 場活動，期望惠及 5 萬人次，從基層認知教育、專業人才轉化",
@@ -3070,6 +3079,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-07-31T11:13:13.441432",
-  "total_count": 341
+  "last_updated": "2026-08-01T10:57:52.440589",
+  "total_count": 342
 }
