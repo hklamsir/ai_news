@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260802_105900",
+      "title": "美國職場 AI 使用率 首破 50% 大關",
+      "summary": "Gallup 調查顯示 2026 年第一季度美國員工使用 AI 的比例首次突破 50% 大關，每日或每週使用 AI 的比例達到 28% 歷史新高，反映 AI 在職場的普及速度驚人。",
+      "url": "./news_20260802_105900/index.html",
+      "date": "2026-08-02",
+      "time": "10:59:00",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260801_172922",
       "title": "聯想 Yoga 9n 工作站曝光：全球首款 RTX Spark 二合一筆記本",
       "summary": "聯想發布 Yoga 9n 2-in-1 和 Pro 9n 兩款工作站，搭載 NVIDIA RTX Spark 超級晶片，配備 20核ARM + Blackwell GPU + 128GB統一內存 + ",
@@ -3115,6 +3124,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-08-01T17:31:26.240293",
-  "total_count": 346
+  "last_updated": "2026-08-02T11:02:40.273054",
+  "total_count": 347
 }
