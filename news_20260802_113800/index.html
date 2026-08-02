@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artificial Intelligencer: OpenAI explores AI devices with small models and new chip - AI News</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root { --primary-blue: #00d4ff; --primary-purple: #7b2cbf; --accent-green: #00ff88; --accent-orange: #ff9500; --accent-red: #ff4757; --dark-bg: #0a0a0f; --card-bg: #12121a; --card-bg-light: #1a1a28; --text-primary: #ffffff; --text-secondary: #a0a0b0; --gradient-1: linear-gradient(135deg, #00d4ff 0%, #7b2cbf 100%); --gradient-2: linear-gradient(135deg, #00d4ff 0%, #00ff88 100%); --glow-blue: 0 0 20px rgba(0, 212, 255, 0.5); --glow-purple: 0 0 20px rgba(123, 44, 191, 0.5); }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Noto Sans TC', sans-serif; background-color: var(--dark-bg); color: var(--text-primary); line-height: 1.8; overflow-x: hidden; }
+        @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-20px); } }
+        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.6; } }
+        @keyframes slideIn { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes codeRain { 0% { transform: translateY(-100%); opacity: 0; } 10% { opacity: 1; } 90% { opacity: 1; } 100% { transform: translateY(100vh); opacity: 0; } }
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); } }
+        .code-rain { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; overflow: hidden; }
+        .code-char { position: absolute; color: var(--primary-blue); font-family: 'Courier New', monospace; font-size: 14px; opacity: 0; animation: codeRain 4s linear infinite; }
+        .hero { position: relative; min-height: 80vh; display: flex; align-items: center; justify-content: center; padding: 80px 20px; background: linear-gradient(180deg, var(--dark-bg) 0%, #1a1a2e 100%); overflow: hidden; }
+        .hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(ellipse at center, rgba(123, 44, 191, 0.15) 0%, transparent 70%); z-index: 1; }
+        .hero-content { position: relative; z-index: 2; max-width: 1200px; text-align: center; animation: slideIn 1s ease-out; }
+        .hero-badge { display: inline-block; padding: 12px 32px; background: var(--gradient-1); border-radius: 50px; font-size: 18px; font-weight: 700; margin-bottom: 24px; box-shadow: var(--glow-blue); letter-spacing: 1px; }
+        .hero h1 { font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 900; margin-bottom: 24px; background: var(--gradient-1); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; line-height: 1.2; }
+        .hero-subtitle { font-size: clamp(1.2rem, 2.2vw, 1.5rem); color: var(--text-primary); max-width: 900px; margin: 0 auto 40px; line-height: 1.6; font-weight: 400; }
+        .hero-images { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; margin-top: 60px; }
+        .hero-image-card { position: relative; border-radius: 20px; overflow: hidden; aspect-ratio: 16/9; box-shadow: var(--glow-purple); transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .hero-image-card:hover { transform: scale(1.02); box-shadow: 0 0 40px rgba(123, 44, 191, 0.7); }
+        .hero-image-card img { width: 100%; height: 100%; object-fit: cover; }
+        .scroll-indicator { position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%); animation: float 2s ease-in-out infinite; z-index: 2; }
+        .scroll-indicator span { display: block; width: 30px; height: 50px; border: 2px solid var(--primary-blue); border-radius: 25px; position: relative; }
+        .scroll-indicator span::before { content: ''; position: absolute; top: 8px; left: 50%; transform: translateX(-50%); width: 6px; height: 10px; background: var(--primary-blue); border-radius: 3px; animation: pulse 1.5s infinite; }
+        section { padding: 80px 20px; position: relative; z-index: 1; }
+        .content-section { background: var(--card-bg); padding: 60px 50px; border-radius: 24px; border: 1px solid rgba(0, 212, 255, 0.2); max-width: 1100px; margin: 0 auto; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3); }
+        .content-section h3 { font-size: 1.6rem; margin: 40px 0 20px; color: var(--accent-green); }
+        .content-section p { color: var(--text-secondary); line-height: 2; font-size: 1.08rem; margin: 15px 0; }
+        .content-section ul { margin: 20px 0; padding-left: 30px; }
+        .content-section li { margin: 10px 0; color: var(--text-secondary); }
+        .meta-info { background: linear-gradient(135deg, rgba(0, 212, 255, 0.15) 0%, rgba(123, 44, 191, 0.15) 100%); padding: 30px; border-radius: 16px; margin-bottom: 40px; border-left: 5px solid var(--primary-blue); }
+        .meta-info p { margin: 12px 0; color: var(--text-secondary); font-size: 1.05rem; }
+        .meta-info strong { color: var(--primary-blue); font-weight: 600; }
+        .meta-info a { color: var(--primary-blue); text-decoration: none; word-break: break-all; }
+        .highlight-box { background: linear-gradient(135deg, rgba(0, 255, 136, 0.08) 0%, rgba(0, 212, 255, 0.08) 100%); padding: 30px; border-radius: 16px; border-left: 5px solid var(--accent-green); margin: 40px 0; }
+        .highlight-box h4 { color: var(--accent-green); margin-bottom: 15px; font-size: 1.3rem; }
+        .highlight-box p { color: var(--text-secondary); margin: 0; }
+        .alert-box { background: linear-gradient(135deg, rgba(255, 71, 87, 0.1) 0%, rgba(255, 149, 0, 0.1) 100%); padding: 25px 30px; border-radius: 16px; border-left: 5px solid var(--accent-red); margin: 30px 0; }
+        .alert-box h4 { color: var(--accent-red); margin-bottom: 12px; font-size: 1.15rem; }
+        .alert-box p { color: var(--text-secondary); margin: 8px 0; font-size: 1rem; }
+        .quote-box { background: linear-gradient(135deg, rgba(123, 44, 191, 0.15) 0%, rgba(0, 212, 255, 0.15) 100%); padding: 30px 40px; border-radius: 16px; border-left: 5px solid var(--primary-purple); margin: 40px 0; position: relative; }
+        .quote-box::before { content: '"'; position: absolute; top: 10px; left: 20px; font-size: 80px; color: var(--primary-purple); opacity: 0.3; font-family: Georgia, serif; }
+        .quote-box p { color: var(--text-primary); font-size: 1.2rem; font-style: italic; margin-bottom: 15px; }
+        .quote-box cite { color: var(--text-secondary); font-size: 0.95rem; }
+        .tech-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin: 40px 0; }
+        .tech-card { background: var(--card-bg-light); padding: 30px; border-radius: 16px; border: 1px solid rgba(0, 212, 255, 0.15); transition: transform 0.3s ease, box-shadow 0.3s ease; animation: fadeInUp 0.6s ease-out forwards; opacity: 0; }
+        .tech-card:nth-child(1) { animation-delay: 0.1s; }
+        .tech-card:nth-child(2) { animation-delay: 0.2s; }
+        .tech-card:nth-child(3) { animation-delay: 0.3s; }
+        .tech-card:nth-child(4) { animation-delay: 0.4s; }
+        .tech-card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0, 212, 255, 0.2); }
+        .tech-card-icon { font-size: 2.5rem; margin-bottom: 15px; }
+        .tech-card h4 { color: var(--primary-blue); margin-bottom: 12px; font-size: 1.2rem; }
+        .tech-card p { color: var(--text-secondary); font-size: 0.95rem; line-height: 1.7; }
+        .comparison-table { width: 100%; border-collapse: collapse; margin: 40px 0; border-radius: 16px; overflow: hidden; box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3); }
+        .comparison-table thead { background: linear-gradient(135deg, var(--primary-blue), var(--primary-purple)); }
+        .comparison-table th { padding: 18px 20px; text-align: left; font-weight: 600; font-size: 1.05rem; }
+        .comparison-table td { padding: 16px 20px; border-bottom: 1px solid rgba(255, 255, 255, 0.05); color: var(--text-secondary); }
+        .comparison-table tr:last-child td { border-bottom: none; }
+        .comparison-table tr:nth-child(even) { background: rgba(255, 255, 255, 0.02); }
+        .comparison-table .highlight-col { color: var(--accent-green); font-weight: 500; }
+        .timeline { position: relative; margin: 40px 0; padding-left: 40px; }
+        .timeline::before { content: ''; position: absolute; left: 15px; top: 0; bottom: 0; width: 2px; background: linear-gradient(180deg, var(--primary-blue), var(--primary-purple)); }
+        .timeline-item { position: relative; margin-bottom: 35px; padding: 20px 25px; background: var(--card-bg-light); border-radius: 12px; border: 1px solid rgba(0, 212, 255, 0.1); animation: fadeInUp 0.5s ease-out forwards; opacity: 0; }
+        .timeline-item:nth-child(1) { animation-delay: 0.1s; }
+        .timeline-item:nth-child(2) { animation-delay: 0.2s; }
+        .timeline-item:nth-child(3) { animation-delay: 0.3s; }
+        .timeline-item:nth-child(4) { animation-delay: 0.4s; }
+        .timeline-item:nth-child(5) { animation-delay: 0.5s; }
+        .timeline-item:nth-child(6) { animation-delay: 0.6s; }
+        .timeline-item::before { content: ''; position: absolute; left: -32px; top: 25px; width: 12px; height: 12px; background: var(--primary-blue); border-radius: 50%; box-shadow: var(--glow-blue); }
+        .timeline-date { color: var(--primary-blue); font-size: 0.9rem; font-weight: 600; margin-bottom: 8px; }
+        .timeline-title { color: var(--text-primary); font-size: 1.1rem; font-weight: 600; margin-bottom: 8px; }
+        .timeline-desc { color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6; }
+        footer { background: #050508; padding: 60px 20px; text-align: center; border-top: 1px solid rgba(255, 255, 255, 0.1); }
+        footer p { color: var(--text-secondary); margin-bottom: 20px; }
+        .footer-links { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; }
+        .footer-links a { color: var(--primary-blue); text-decoration: none; transition: color 0.3s ease; }
+        .footer-links a:hover { color: var(--text-primary); }
+        @media (max-width: 768px) { .content-section { padding: 40px 25px; } .hero-images { grid-template-columns: 1fr; } .hero h1 { font-size: 2rem; } .hero-subtitle { font-size: 1.2rem; } }
+    </style>
+</head>
+<body>
+    <div class="code-rain" id="codeRain"></div>
+    <section class="hero">
+        <div class="hero-content">
+            <span class="hero-badge">📰 AI News 專題報道</span>
+            <h1>OpenAI 進軍 AI 硬體<br>永遠開機式助理夢</h1>
+            <p class="hero-subtitle">Reuters 獨家：OpenAI 開發定制晶片，分階段推出環境式 AI 裝置</p>
+            <div class="hero-images">
+                <div class="hero-image-card">
+                    <img src="img/img1.png" alt="OpenAI AI 硬體裝置概念圖">
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator"><span></span></div>
+    </section>
+    <section class="content-section">
+
+        <div class="meta-info">
+            <p><strong>📺 資料來源</strong>：<a href="https://www.reuters.com/technology/artificial-intelligence/artificial-intelligencer-openai-explores-ai-devices-with-small-models-new-chip-2025-12-11/" target="_blank">Reuters</a></p>
+            <p><strong>📅 發布日期</strong>：2025-12-11</p>
+            <p><strong>🤖 處理方式</strong>：AI 智能摘要生成</p>
+        </div>
+
+        <h3>🎯 核心觀點</h3>
+        <p>OpenAI 正積極開發自家 AI 硬體裝置，瞄準「環境式 AI 運算」市場，計劃推出配備定制晶片的永遠開機式個人 AI 助理，與 Google、Meta 等科技巨頭正面交鋒。</p>
+
+        <div class="tech-card">
+            <div class="tech-card-icon">🤖</div>
+            <div class="tech-card-content">
+                <h4>OpenAI 進軍硬體領域</h4>
+                <p>OpenAI 正在開發 AI 硬體裝置，核心願景是打造一款「了解你一切」的個人助理。與傳統手機「開機或關機、在口袋或桌面」的被動模式不同，OpenAI 的目標是創造一種始終在場、主動感知環境的裝置，但同時提供明確、可見的指示，告知用戶裝置何時正在留意。</p>
+            </div>
+        </div>
+
+        <div class="tech-card">
+            <div class="tech-card-icon">💻</div>
+            <div class="tech-card-content">
+                <h4>定制晶片：關鍵突破</h4>
+                <p>要實現上述願景，OpenAI 需要一種全新晶片。現有的伺服器晶片（如 Nvidia 或其他廠商）是為平行運算工作負載優化，服務數百萬用戶。但個人 AI 裝置需要的是完全相反的處理器——專為單一用戶設計，嚴格的功率限制，並能即時運行精簡模型。OpenAI 正探索開發專為設備端推論優化的定制晶片。</p>
+            </div>
+        </div>
+
+        <div class="tech-card">
+            <div class="tech-card-icon">⚔️</div>
+            <div class="tech-card-content">
+                <h4>競爭態勢升溫</h4>
+                <p>AI 硬體戰場日漸火熱：Google 宣布與 Warby Parker 合作 2026 年推出 AI 智能眼鏡；Meta 收購了 Limitless，開發可記錄和摘要你一天生活的「AI 記憶」穿戴裝置。整個業界都在猜測 OpenAI 是否能重現當年 ChatGPT 的奇蹟，這次是在硬體領域。</p>
+            </div>
+        </div>
+
+        <div class="tech-card">
+            <div class="tech-card-icon">📅</div>
+            <div class="tech-card-content">
+                <h4>分階段推出策略</h4>
+                <p>這類裝置將分階段推出：第一階段是更輕巧、針對特定任務且基於雲端的裝置；第二階段是對隱私更敏感、永遠開機的裝置，但業內人士警告強大的設備端電腦可能需要數年時間才能成熟。</p>
+            </div>
+        </div>
+
+        <div class="highlight-box">
+            <h4>📌 重點提示</h4>
+            <p>永遠開機、被動感知環境的 AI 裝置將重新定義人機互動方式——從「用戶主動呼叫」轉變為「AI 主動理解情境」。誰能率先推出，誰就能定義下一個 AI 時代。</p>
+        </div>
+
+        <div class="quote-box">
+            <p>「Which tech giant pulls this off first, and whether consumers are actually ready for an always-on AI device, will define the next era of AI.」</p>
+            <cite>— Reuters</cite>
+        </div>
+
+        <h3>🔮 業界展望</h3>
+        <p>原型機已在內部流傳，整個產業都在屏息以待。專家指出，消費者是否真的準備好接受無時無刻不在的 AI 裝置，將是成敗的關鍵考驗。晶片定製化、功耗控制、隱私保障將是三大技術攻堅方向。</p>
+
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-date">2025 年中</div>
+                <div class="timeline-title">OpenAI 硬體計畫曝光</div>
+                <div class="timeline-desc">OpenAI 開始探索自家 AI 晶片與硬體裝置</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">2025 年 12 月</div>
+                <div class="timeline-title">Google x Warby Parker 合作</div>
+                <div class="timeline-desc">Google 宣布與 Warby Parker 合作 2026 年推出 AI 智能眼鏡</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">2025 年 12 月</div>
+                <div class="timeline-title">Meta 收購 Limitless</div>
+                <div class="timeline-desc">Meta 收購 Limitless，佈局「AI 記憶」穿戴裝置市場</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">2026 年（預計）</div>
+                <div class="timeline-title">輕量雲端 AI 裝置問世</div>
+                <div class="timeline-desc">第一階段輕量、任務導向的雲端 AI 裝置有望率先推出</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">2026 年後（預計）</div>
+                <div class="timeline-title">永遠開機裝置成熟</div>
+                <div class="timeline-desc">強大設備端 AI 電腦預計需要數年時間才能完全成熟</div>
+            </div>
+        </div>
+
+        <table class="comparison-table">
+            <thead>
+                <tr>
+                    <th>比較維度</th>
+                    <th>傳統伺服器晶片</th>
+                    <th>OpenAI 定制晶片目標</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>設計目標</td>
+                    <td>平行運算，服務數百萬用戶</td>
+                    <td class="highlight-col">單一用戶，設備端即時推論</td>
+                </tr>
+                <tr>
+                    <td>功率限制</td>
+                    <td>高功率伺服器環境</td>
+                    <td class="highlight-col">嚴格功率約束，行動裝置</td>
+                </tr>
+                <tr>
+                    <td>模型大小</td>
+                    <td>大型雲端模型</td>
+                    <td class="highlight-col">精簡模型，本地運行</td>
+                </tr>
+                <tr>
+                    <td>延遲要求</td>
+                    <td>可接受網路延遲</td>
+                    <td class="highlight-col">即時回應，離線可用</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+    <footer>
+        <p>© 2026 AI News Archive | 由 AI 技術生成 | 林SIR 監督</p>
+        <div class="footer-links">
+            <a href="../index.html">返回主頁</a>
+            <a href="https://github.com/hklamsir/ai_news" target="_blank">GitHub</a>
+            <a href="https://hklamsir.github.io/ai_news/" target="_blank">瀏覽所有專題</a>
+        </div>
+    </footer>
+
+
+    <script>
+        const codeRain = document.getElementById('codeRain');
+        const chars = '01アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン';
+        for (let i = 0; i < 50; i++) {
+            const char = document.createElement('span');
+            char.className = 'code-char';
+            char.textContent = chars[Math.floor(Math.random() * chars.length)];
+            char.style.left = Math.random() * 100 + '%';
+            char.style.animationDelay = Math.random() * 4 + 's';
+            char.style.animationDuration = (Math.random() * 3 + 3) + 's';
+            codeRain.appendChild(char);
+        }
+    </script>
+
+</body>
+</html>

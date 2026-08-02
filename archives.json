@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260802_113800",
+      "title": "OpenAI 進軍 AI 硬體 永遠開機式助理夢",
+      "summary": "OpenAI 正積極開發自家 AI 硬體裝置，瞄準「環境式 AI 運算」市場，計劃推出配備定制晶片的永遠開機式個人 AI 助理，與 Google、Meta 等科技巨頭正面交鋒。",
+      "url": "./news_20260802_113800/index.html",
+      "date": "2026-08-02",
+      "time": "11:38:00",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260802_105900",
       "title": "美國職場 AI 使用率 首破 50% 大關",
       "summary": "Gallup 調查顯示 2026 年第一季度美國員工使用 AI 的比例首次突破 50% 大關，每日或每週使用 AI 的比例達到 28% 歷史新高，反映 AI 在職場的普及速度驚人。",
@@ -3124,6 +3133,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-08-02T11:02:40.273054",
-  "total_count": 347
+  "last_updated": "2026-08-02T11:39:51.774657",
+  "total_count": 348
 }
