@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260803_202005",
+      "title": "DeepSeek V4-Flash 全球最低價 AI 模型誕生",
+      "summary": "DeepSeek V4-Flash 每次運行成本僅 3 美分，較 Anthropic Claude 便宜逾 100 倍，成為全球知名大型 AI 模型中最便宜的一款，正籌備潛在 IPO。",
+      "url": "./news_20260803_202005/index.html",
+      "date": "2026-08-03",
+      "time": "20:20:05",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260803_182631",
       "title": "Alibaba 發布 Qwen 3.8-Max 史上最大 AI 模型登場",
       "summary": "阿里巴巴發布史上最大 AI 模型 Qwen 3.8-Max，2.4 兆參數規模逼近 Moonshot Kimi K3，號稱在編碼、推理、多模態任務上可匹敵 ChatGPT 與 Claude，但尚未經獨",
@@ -3169,6 +3178,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-08-03T18:30:19.928814",
-  "total_count": 352
+  "last_updated": "2026-08-03T20:22:13.738943",
+  "total_count": 353
 }
