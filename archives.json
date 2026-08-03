@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260803_182631",
+      "title": "Alibaba 發布 Qwen 3.8-Max 史上最大 AI 模型登場",
+      "summary": "阿里巴巴發布史上最大 AI 模型 Qwen 3.8-Max，2.4 兆參數規模逼近 Moonshot Kimi K3，號稱在編碼、推理、多模態任務上可匹敵 ChatGPT 與 Claude，但尚未經獨",
+      "url": "./news_20260803_182631/index.html",
+      "date": "2026-08-03",
+      "time": "18:26:31",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260803_105556",
       "title": "Windows 安裝檔案愈來愈大？ AI 模型成罪魁禍首",
       "summary": "Windows 安裝檔案過去 10 年容量翻倍，罪魁禍首並非傳統因素，而是 Microsoft 為 Copilot+ PC 預載的 AI 模型——即使電腦沒有 NPU 也需下載這些約 3 GB 的代碼",
@@ -3160,6 +3169,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-08-03T15:25:12.192310",
-  "total_count": 351
+  "last_updated": "2026-08-03T18:30:19.928814",
+  "total_count": 352
 }
