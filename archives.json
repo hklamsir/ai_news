@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260803_103556",
+      "title": "Google 將其年齡驗證技術 推向全球 Android 開發者",
+      "summary": "Google 宣佈將其 Age Assurance 年齡驗證技術透過 Play Signal API 擴展至全球 Android 開發者，目標 2026 年底前覆蓋所有市場，目前已於巴西上線，澳洲、加",
+      "url": "./news_20260803_103556/index.html",
+      "date": "2026-08-03",
+      "time": "10:35:56",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260802_115100",
       "title": "2 美元貼紙 繞過 Meta 眼鏡防偷拍",
       "summary": "Meta 智能眼鏡的 LED 錄影指示燈本意是保障旁觀者隱私，但市面上出現一款不到 2 美元的「防窺貼紙」，聲稱能繞過此安全功能。實測證明這些便宜配件意外地有效，令 Meta 的防偷拍機制形同虛設。",
@@ -3142,6 +3151,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-08-02T11:49:58.714499",
-  "total_count": 349
+  "last_updated": "2026-08-03T10:37:26.140315",
+  "total_count": 350
 }
