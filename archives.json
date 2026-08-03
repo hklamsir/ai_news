@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260803_105556",
+      "title": "Windows 安裝檔案愈來愈大？ AI 模型成罪魁禍首",
+      "summary": "Windows 安裝檔案過去 10 年容量翻倍，罪魁禍首並非傳統因素，而是 Microsoft 為 Copilot+ PC 預載的 AI 模型——即使電腦沒有 NPU 也需下載這些約 3 GB 的代碼",
+      "url": "./news_20260803_105556/index.html",
+      "date": "2026-08-03",
+      "time": "10:55:56",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260803_103556",
       "title": "Google 將其年齡驗證技術 推向全球 Android 開發者",
       "summary": "Google 宣佈將其 Age Assurance 年齡驗證技術透過 Play Signal API 擴展至全球 Android 開發者，目標 2026 年底前覆蓋所有市場，目前已於巴西上線，澳洲、加",
@@ -3151,6 +3160,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-08-03T10:37:26.140315",
-  "total_count": 350
+  "last_updated": "2026-08-03T15:25:12.192310",
+  "total_count": 351
 }
