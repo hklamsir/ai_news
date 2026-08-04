@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260804_122540",
+      "title": "中國 DeepSeek 測試 AI「工具套件」 廉價 V4 模型震動硅谷",
+      "summary": "DeepSeek 推出「Harness」工具框架，招募開源開發者將大型語言模型轉化為自主 AI 代理，配合廉價 V4 Flash 模型再次撼動硅谷，顯示其正從基礎模型競爭升級至代理應用層的全面佈局。",
+      "url": "./news_20260804_122540/index.html",
+      "date": "2026-08-04",
+      "time": "12:25:40",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260803_202005",
       "title": "DeepSeek V4-Flash 全球最低價 AI 模型誕生",
       "summary": "DeepSeek V4-Flash 每次運行成本僅 3 美分，較 Anthropic Claude 便宜逾 100 倍，成為全球知名大型 AI 模型中最便宜的一款，正籌備潛在 IPO。",
@@ -3178,6 +3187,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-08-03T20:22:13.738943",
-  "total_count": 353
+  "last_updated": "2026-08-04T12:33:19.571844",
+  "total_count": 354
 }
