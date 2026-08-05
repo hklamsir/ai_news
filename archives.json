@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260805_110629",
+      "title": "Red Hat, NVIDIA, IBM back project turning AI policy into code",
+      "summary": "Red Hat 成立開源專案 asago，旨在將 AI 治理政策自動轉化為可部署的生產代碼，獲 NVIDIA、IBM、微軟、MIT、Alan Turing Institute 等重量級成員支持。",
+      "url": "./news_20260805_110629/index.html",
+      "date": "2026-08-05",
+      "time": "11:06:29",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260804_140657",
       "title": "Google 斥 320 億美元部署 AI 代理網軍 安全軍備競賽升級",
       "summary": "Google 母公司 Alphabet 斥資 320 億美元收購網絡安全公司 Wiz，部署 AI 代理網軍作網絡防禦作戰，標誌着網絡安全軍備競賽的重大升級——威脅來襲時，機器將以人類無法企及的速度進行",
@@ -3214,6 +3223,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-08-04T14:09:34.962604",
-  "total_count": 357
+  "last_updated": "2026-08-05T11:14:36.310021",
+  "total_count": 358
 }
