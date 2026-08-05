@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260805_124724",
+      "title": "AI is finding bugs faster than humans can fix them",
+      "summary": "AI 漏洞檢測工具正在以閃電般的速度發現安全漏洞，但同時用來修復漏洞的 AI 卻在引入更多新問題——學術研究發現 LLM 引入的新漏洞是人類開發者的 9 倍，形成一個危險的檢測與修復不對稱鴻溝。",
+      "url": "./news_20260805_124724/index.html",
+      "date": "2026-08-05",
+      "time": "12:47:24",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260805_110629",
       "title": "Red Hat, NVIDIA, IBM back project turning AI policy into code",
       "summary": "Red Hat 成立開源專案 asago，旨在將 AI 治理政策自動轉化為可部署的生產代碼，獲 NVIDIA、IBM、微軟、MIT、Alan Turing Institute 等重量級成員支持。",
@@ -3223,6 +3232,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-08-05T11:14:36.310021",
-  "total_count": 358
+  "last_updated": "2026-08-05T12:50:24.233293",
+  "total_count": 359
 }
