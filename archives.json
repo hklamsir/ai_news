@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260805_135028",
+      "title": "對阿里新模型 Qwen3.8-Max 的真實評價",
+      "summary": "阿里巴巴發布 Qwen3.8-Max，一位 AI Maker 在真實任務場景中測試後，給出了令人信服的使用感受：國產模型與頭部閉源模型的差距已經非常小，他願意將 Qwen3.8-Max 作為主力模型使",
+      "url": "./news_20260805_135028/index.html",
+      "date": "2026-08-05",
+      "time": "13:50:28",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260805_124724",
       "title": "AI is finding bugs faster than humans can fix them",
       "summary": "AI 漏洞檢測工具正在以閃電般的速度發現安全漏洞，但同時用來修復漏洞的 AI 卻在引入更多新問題——學術研究發現 LLM 引入的新漏洞是人類開發者的 9 倍，形成一個危險的檢測與修復不對稱鴻溝。",
@@ -3232,6 +3241,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-08-05T12:50:24.233293",
-  "total_count": 359
+  "last_updated": "2026-08-05T13:53:51.859254",
+  "total_count": 360
 }
