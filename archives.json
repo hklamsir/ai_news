@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260806_094036",
+      "title": "中國 AI 初創操縱排名 短暫超越 Nvidia 旋即被踢",
+      "summary": "中國物理 AI 初創公司 Spirit AI 的 Spirit v1.6 模型短暫登上 RoboArena 榜首超越 Nvidia，隨即被踢出排名。基準測試方在發現「基準作弊」證據後改革評測方法論，凸",
+      "url": "./news_20260806_094036/index.html",
+      "date": "2026-08-06",
+      "time": "09:40:36",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260806_092755",
       "title": "AI 數據中心競賽 累積 1 萬億美元租賃負擔",
       "summary": "全球五大科技巨頭的數據中心租賃承諾已累積至約 1 萬億美元，Oracle 的未確認租賃承諾更高達 2,600 億美元，約為已確認負債的 7 倍，引發市場對集中風險的憂慮。",
@@ -3259,6 +3268,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-08-06T09:27:58.726598",
-  "total_count": 362
+  "last_updated": "2026-08-06T09:40:40.108842",
+  "total_count": 363
 }
