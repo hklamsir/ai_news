@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260807_122900",
+      "title": "OpenAI 解除 ChatGPT 免費用戶文字上限",
+      "summary": "OpenAI 解除 ChatGPT 免費及 Go 帳戶的文字訊息使用上限，並推出 GPT-5.6 Luna 作為免費用戶的新預設模型，同時為 Plus 和 Pro 訂戶帶來升級版的 GPT-5.6 S",
+      "url": "./news_20260807_122900/index.html",
+      "date": "2026-08-07",
+      "time": "12:29:00",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260807_120000",
       "title": "DeepSeek 斥資 2080 萬美元 參與 Unitree 上海 IPO",
       "summary": "中國 AI 新創 DeepSeek 斥資 2080 萬美元參與人形機器人公司 Unitree 的上海 IPO 戰略配售，取得 2.31% 股份並簽署聯合開發協議，瞄準人形機器人「機器人大腦」這一關鍵瓶",
@@ -3286,6 +3295,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-08-07T11:48:05.875021",
-  "total_count": 365
+  "last_updated": "2026-08-07T12:27:06.173495",
+  "total_count": 366
 }
