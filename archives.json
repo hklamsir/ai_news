@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260807_222200",
+      "title": "個人AI代理 「Gemini Spark」上線！",
+      "summary": "Google 推出全天候個人 AI 代理 Gemini Spark，已在台灣上線。這款 24 小時不打烊的代理使用 Gemini 3.6 Flash 模型，專為 Google AI Pro 訂戶設計，",
+      "url": "./news_20260807_222200/index.html",
+      "date": "2026-08-07",
+      "time": "22:22:00",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260807_185100",
       "title": "Suno 推出音訊浮水印 打擊 AI 音樂詐騙",
       "summary": "AI 音樂生成平台 Suno 宣佈將為平台上創建的歌曲加入音訊浮水印及設定下載限制，正值平台面臨多宗版權訴訟、三大唱片公司聯手施壓之際。浮水印可讓其他平台識別歌曲是否由 Suno 生成，即使經過 MP",
@@ -3313,6 +3322,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-08-07T18:31:04.412328",
-  "total_count": 368
+  "last_updated": "2026-08-07T22:25:23.596672",
+  "total_count": 369
 }
