@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260807_143000",
+      "title": "AI 修補軟體漏洞 74% 失敗",
+      "summary": "1Password 安全研究團隊 Off-By-1-Labs 發布研究，測試 LLM 對 6 個真實漏洞生成修補程式，結果顯示僅 26% 真正可用、21% 改變應用行為、53.9% 完全失敗。總失敗率",
+      "url": "./news_20260807_143000/index.html",
+      "date": "2026-08-07",
+      "time": "14:30:00",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260807_122900",
       "title": "OpenAI 解除 ChatGPT 免費用戶文字上限",
       "summary": "OpenAI 解除 ChatGPT 免費及 Go 帳戶的文字訊息使用上限，並推出 GPT-5.6 Luna 作為免費用戶的新預設模型，同時為 Plus 和 Pro 訂戶帶來升級版的 GPT-5.6 S",
@@ -3295,6 +3304,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-08-07T12:27:06.173495",
-  "total_count": 366
+  "last_updated": "2026-08-07T14:28:30.021099",
+  "total_count": 367
 }
