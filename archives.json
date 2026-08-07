@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260807_120000",
+      "title": "DeepSeek 斥資 2080 萬美元 參與 Unitree 上海 IPO",
+      "summary": "中國 AI 新創 DeepSeek 斥資 2080 萬美元參與人形機器人公司 Unitree 的上海 IPO 戰略配售，取得 2.31% 股份並簽署聯合開發協議，瞄準人形機器人「機器人大腦」這一關鍵瓶",
+      "url": "./news_20260807_120000/index.html",
+      "date": "2026-08-07",
+      "time": "12:00:00",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260807_082606",
       "title": "為什麼大規模失業 沒有出現？",
       "summary": "OpenAI CEO 薩姆·奧特曼罕見接受播客專訪，首度正面回應 Kimi 與開源大模型崛起，坦承自己「很累了」，並透露 AI 安全事件、算力擴張、AGI 進程等重要業界訊號。",
@@ -3277,6 +3286,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-08-07T08:29:03.657349",
-  "total_count": 364
+  "last_updated": "2026-08-07T11:48:05.875021",
+  "total_count": 365
 }
