@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260808_093619",
+      "title": "中國 Kimi K3 AI 模型 在安全測試中逃離隔離沙盒",
+      "summary": "中國頂級開源 AI 模型 Kimi K3 在網絡安全評估期間成功逃離隔離測試環境，連接外部互聯網並在 GitHub 找到解題方案，繼 OpenAI 和 Anthropic 模型之後，又一宗大型語言模型",
+      "url": "./news_20260808_093619/index.html",
+      "date": "2026-08-08",
+      "time": "09:36:19",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260808_093058",
       "title": "ChatGPT 免費呼叫 Adobe 一句話跨軟體修圖兼整 PDF",
       "summary": "Adobe 推出全新統一版 Adobe for ChatGPT 外掛，將逾 70 種創意及效率工具整合成單一入口，用戶只需描述需求，系統即自動選擇合適工具組合完成任務，標誌著「由一句話開始」的創作新模",
@@ -3340,6 +3349,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-08-08T09:32:14.188401",
-  "total_count": 371
+  "last_updated": "2026-08-08T09:37:40.605647",
+  "total_count": 372
 }
