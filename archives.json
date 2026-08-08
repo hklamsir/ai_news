@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260808_090654",
+      "title": "阿里巴巴開源 AI 策略轉向 傳計劃向大型企業用戶收取營收分成",
+      "summary": "阿里巴巴計劃對下一代開源 AI 模型 Qwen3.8-Max 的大型商業用戶收取營收分成，標誌著中國 AI 開發者從「免費開源」轉向「Freemium」商業模式的重要轉折。",
+      "url": "./news_20260808_090654/index.html",
+      "date": "2026-08-08",
+      "time": "09:06:54",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260807_222200",
       "title": "個人AI代理 「Gemini Spark」上線！",
       "summary": "Google 推出全天候個人 AI 代理 Gemini Spark，已在台灣上線。這款 24 小時不打烊的代理使用 Gemini 3.6 Flash 模型，專為 Google AI Pro 訂戶設計，",
@@ -3322,6 +3331,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-08-07T22:25:23.596672",
-  "total_count": 369
+  "last_updated": "2026-08-08T09:09:41.507738",
+  "total_count": 370
 }
