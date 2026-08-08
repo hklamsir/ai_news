@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260808_093058",
+      "title": "ChatGPT 免費呼叫 Adobe 一句話跨軟體修圖兼整 PDF",
+      "summary": "Adobe 推出全新統一版 Adobe for ChatGPT 外掛，將逾 70 種創意及效率工具整合成單一入口，用戶只需描述需求，系統即自動選擇合適工具組合完成任務，標誌著「由一句話開始」的創作新模",
+      "url": "./news_20260808_093058/index.html",
+      "date": "2026-08-08",
+      "time": "09:30:58",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260808_090654",
       "title": "阿里巴巴開源 AI 策略轉向 傳計劃向大型企業用戶收取營收分成",
       "summary": "阿里巴巴計劃對下一代開源 AI 模型 Qwen3.8-Max 的大型商業用戶收取營收分成，標誌著中國 AI 開發者從「免費開源」轉向「Freemium」商業模式的重要轉折。",
@@ -3331,6 +3340,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-08-08T09:09:41.507738",
-  "total_count": 370
+  "last_updated": "2026-08-08T09:32:14.188401",
+  "total_count": 371
 }
