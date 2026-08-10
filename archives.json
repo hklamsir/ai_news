@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260810_113552",
+      "title": "阿里 Qwen 正式駁入 Apple 生態 中國大陸 Mac 用戶率先使用",
+      "summary": "Apple 確認合資格中國大陸 Mac 用戶可將阿里巴巴千問 (Qwen) AI 服務連接至 Siri 及寫作工具，成為 Qwen 正式進駐 Apple 產品生態的第一步，歷時近 22 個月的規管審批",
+      "url": "./news_20260810_113552/index.html",
+      "date": "2026-08-10",
+      "time": "11:35:52",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260810_091340",
       "title": "AI is now making new viruses",
       "summary": "AI 系統 Evo 成功生成約 70 萬種病毒候選，其中 16 種在實驗室培育成活病毒，部分繁殖速度甚至超越自然病毒。這項突破為基因療法帶來希望，卻也引發生物武器風險的嚴重擔憂。",
@@ -3412,6 +3421,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-08-10T09:15:40.019593",
-  "total_count": 379
+  "last_updated": "2026-08-10T11:38:06.410315",
+  "total_count": 380
 }
