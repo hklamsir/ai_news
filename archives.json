@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260811_182455",
+      "title": "Gemini 已無力回天 但 Google Cloud 強勢增長",
+      "summary": "Semianalysis 報道指出 Google Gemini AI 模型已落後競爭對手，但 Google Cloud Platform（GCP）卻強勢增長，季度營收增長達 82%，TPU 銷售成為新",
+      "url": "./news_20260811_182455/index.html",
+      "date": "2026-08-11",
+      "time": "18:24:55",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260811_100854",
       "title": "中國官媒批評 AI 術語濫用英文 稱「Token」與「Agent」動搖科技話語權",
       "summary": "中國官媒人民網發表評論，批評英文 AI 術語 Token、Agent 氾濫，警告這將威脅國家科技話語權，呼籲推廣「詞元」、「智慧體」等標準中文譯名。",
@@ -3457,6 +3466,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-08-11T10:11:06.650661",
-  "total_count": 384
+  "last_updated": "2026-08-11T18:27:06.803396",
+  "total_count": 385
 }
