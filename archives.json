@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260811_100854",
+      "title": "中國官媒批評 AI 術語濫用英文 稱「Token」與「Agent」動搖科技話語權",
+      "summary": "中國官媒人民網發表評論，批評英文 AI 術語 Token、Agent 氾濫，警告這將威脅國家科技話語權，呼籲推廣「詞元」、「智慧體」等標準中文譯名。",
+      "url": "./news_20260811_100854/index.html",
+      "date": "2026-08-11",
+      "time": "10:08:54",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260811_100040",
       "title": "微軟秋季發布 Maia 300 AI 晶片 與台積電協商量產 30 萬顆",
       "summary": "微軟計劃於 2026 年秋季發布 Maia 300 AI 晶片，正與台積電協商在 2027 年量產超過 30 萬顆晶片，目標減少對 Nvidia 晶片的依賴，追趕 Google 和 Amazon 在自",
@@ -3448,6 +3457,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-08-11T10:02:37.942151",
-  "total_count": 383
+  "last_updated": "2026-08-11T10:11:06.650661",
+  "total_count": 384
 }
