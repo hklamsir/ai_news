@@ -64,6 +64,15 @@
       "source": "AI News"
     },
     {
+      "dir": "news_20260810_084308",
+      "title": "Meta Muse Glimmer： 本地 AI 代理 進入消費級 GPU 時代",
+      "summary": "「Meta is releasing Muse Glimmer under an Apache 2.0 licence for local AI agents that can run on a co",
+      "url": "./news_20260810_084308/index.html",
+      "date": "2026-08-10",
+      "time": "08:43:08",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260810_083819",
       "title": "物理 AI 的邊界：西門子說 人類不能缺席",
       "summary": "西門子 Simcenter PhysicsAI 速度快傳統模擬達 1,000 倍，但在安全關鍵零件的認證上，人類驗證環節必須保留。",
@@ -3475,6 +3484,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-08-12T08:40:15.221285",
-  "total_count": 386
+  "last_updated": "2026-08-12T08:45:15.943741",
+  "total_count": 387
 }
