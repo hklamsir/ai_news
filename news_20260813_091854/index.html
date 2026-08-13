@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Claude Code vs. Codex 評測比較 | AI News 專題報道</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-blue: #00d4ff;
+            --primary-purple: #7b2cbf;
+            --accent-green: #00ff88;
+            --accent-orange: #ff9500;
+            --dark-bg: #0a0a0f;
+            --card-bg: #12121a;
+            --card-bg-light: #1a1a28;
+            --text-primary: #ffffff;
+            --text-secondary: #a0a0b0;
+            --gradient-1: linear-gradient(135deg, #00d4ff 0%, #7b2cbf 100%);
+            --gradient-2: linear-gradient(135deg, #00d4ff 0%, #00ff88 100%);
+            --glow-blue: 0 0 20px rgba(0, 212, 255, 0.5);
+            --glow-purple: 0 0 20px rgba(123, 44, 191, 0.5);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Noto Sans TC', sans-serif; background-color: var(--dark-bg); color: var(--text-primary); line-height: 1.8; overflow-x: hidden; }
+
+        @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-20px); } }
+        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.6; } }
+        @keyframes slideIn { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes codeRain { 0% { transform: translateY(-100%); opacity: 0; } 10% { opacity: 1; } 90% { opacity: 1; } 100% { transform: translateY(100vh); opacity: 0; } }
+
+        .code-rain { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; overflow: hidden; }
+        .code-char { position: absolute; color: var(--primary-blue); font-family: 'Courier New', monospace; font-size: 14px; opacity: 0; animation: codeRain 4s linear infinite; }
+
+        .hero { position: relative; min-height: 80vh; display: flex; align-items: center; justify-content: center; padding: 80px 20px; background: linear-gradient(180deg, var(--dark-bg) 0%, #1a1a2e 100%); overflow: hidden; }
+        .hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(ellipse at center, rgba(123, 44, 191, 0.15) 0%, transparent 70%); z-index: 1; }
+        .hero-content { position: relative; z-index: 2; max-width: 1200px; text-align: center; animation: slideIn 1s ease-out; }
+        .hero-badge { display: inline-block; padding: 12px 32px; background: var(--gradient-1); border-radius: 50px; font-size: 18px; font-weight: 700; margin-bottom: 24px; box-shadow: var(--glow-blue); letter-spacing: 1px; }
+        .hero h1 { font-size: clamp(2rem, 5vw, 4rem); font-weight: 900; margin-bottom: 24px; background: var(--gradient-1); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; line-height: 1.2; }
+        .hero-subtitle { font-size: clamp(1.2rem, 2.2vw, 1.6rem); color: var(--text-primary); max-width: 900px; margin: 0 auto 40px; line-height: 1.6; font-weight: 400; }
+        .hero-images { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; margin-top: 60px; }
+        .hero-image-card { position: relative; border-radius: 20px; overflow: hidden; aspect-ratio: 16/9; box-shadow: var(--glow-purple); transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .hero-image-card:hover { transform: scale(1.02); box-shadow: 0 0 40px rgba(123, 44, 191, 0.7); }
+        .hero-image-card img { width: 100%; height: 100%; object-fit: cover; }
+        .scroll-indicator { position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%); animation: float 2s ease-in-out infinite; z-index: 2; }
+        .scroll-indicator span { display: block; width: 30px; height: 50px; border: 2px solid var(--primary-blue); border-radius: 25px; position: relative; }
+        .scroll-indicator span::before { content: ''; position: absolute; top: 8px; left: 50%; transform: translateX(-50%); width: 6px; height: 10px; background: var(--primary-blue); border-radius: 3px; animation: pulse 1.5s infinite; }
+
+        section { padding: 80px 20px; position: relative; z-index: 1; }
+        .content-section { background: var(--card-bg); padding: 60px 50px; border-radius: 24px; border: 1px solid rgba(0, 212, 255, 0.2); max-width: 1100px; margin: 0 auto; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3); }
+        
+        .content-section h2 { font-size: 2rem; margin-bottom: 40px; color: var(--primary-blue); display: flex; align-items: center; gap: 15px; padding-bottom: 20px; border-bottom: 2px solid rgba(0, 212, 255, 0.3); }
+        .content-section h2::before { content: '📖'; font-size: 2.5rem; }
+        .content-section h3 { font-size: 1.6rem; margin: 50px 0 25px; color: var(--accent-green); display: flex; align-items: center; gap: 12px; }
+        .content-section h3::before { content: '🎯'; font-size: 2rem; }
+        .content-section h3:nth-of-type(2)::before { content: '💡'; }
+        .content-section h3:nth-of-type(3)::before { content: '📊'; }
+        .content-section h3:nth-of-type(4)::before { content: '🔮'; }
+        .content-section p { color: var(--text-secondary); line-height: 2.2; font-size: 1.08rem; margin: 25px 0; text-align: justify; }
+        .content-section ul, .content-section ol { margin: 30px 0; padding-left: 40px; }
+        .content-section li { margin: 15px 0; line-height: 2; color: var(--text-secondary); font-size: 1.05rem; }
+        .content-section ul li { list-style-type: none; position: relative; padding-left: 25px; }
+        .content-section ul li::before { content: '▸'; color: var(--primary-blue); font-size: 1.5rem; position: absolute; left: 0; top: -5px; }
+        .content-section strong { color: var(--text-primary); font-weight: 600; }
+
+        .highlight-box { background: linear-gradient(135deg, rgba(0, 255, 136, 0.08) 0%, rgba(0, 212, 255, 0.08) 100%); padding: 30px; border-radius: 16px; border-left: 5px solid var(--accent-green); margin: 40px 0; }
+        .highlight-box h4 { color: var(--accent-green); margin-bottom: 15px; font-size: 1.3rem; display: flex; align-items: center; gap: 10px; }
+        .highlight-box h4::before { content: '✨'; }
+        .highlight-box p { color: var(--text-secondary); margin: 0; }
+
+        .info-box { background: linear-gradient(135deg, rgba(0, 212, 255, 0.1) 0%, rgba(123, 44, 191, 0.1) 100%); padding: 25px; border-radius: 16px; border: 1px solid rgba(0, 212, 255, 0.3); margin: 35px 0; }
+        .info-box p { margin: 10px 0; color: var(--text-secondary); }
+        .info-box strong { color: var(--primary-blue); }
+
+        .meta-info { background: linear-gradient(135deg, rgba(0, 212, 255, 0.15) 0%, rgba(123, 44, 191, 0.15) 100%); padding: 30px; border-radius: 16px; margin-bottom: 40px; border-left: 5px solid var(--primary-blue); }
+        .meta-info p { margin: 12px 0; color: var(--text-secondary); font-size: 1.05rem; }
+        .meta-info strong { color: var(--primary-blue); font-weight: 600; }
+        .meta-info a { color: var(--primary-blue); text-decoration: none; border-bottom: 1px dashed var(--primary-blue); }
+
+        /* Tech Card Icons */
+        .tech-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin: 40px 0; }
+        .tech-card-icon { background: var(--card-bg-light); border-radius: 16px; padding: 25px; text-align: center; border: 1px solid rgba(0, 212, 255, 0.2); transition: all 0.3s ease; }
+        .tech-card-icon:hover { transform: translateY(-5px); border-color: var(--primary-blue); box-shadow: var(--glow-blue); }
+        .tech-card-icon .icon { font-size: 2.5rem; margin-bottom: 15px; }
+        .tech-card-icon h4 { color: var(--text-primary); font-size: 1.1rem; margin-bottom: 10px; }
+        .tech-card-icon p { color: var(--text-secondary); font-size: 0.9rem; }
+
+        /* Comparison Table */
+        .comparison-table { width: 100%; border-collapse: collapse; margin: 40px 0; border-radius: 16px; overflow: hidden; }
+        .comparison-table th { background: var(--gradient-1); padding: 18px 20px; text-align: left; font-weight: 700; font-size: 1.1rem; }
+        .comparison-table td { padding: 16px 20px; border-bottom: 1px solid rgba(255, 255, 255, 0.1); color: var(--text-secondary); }
+        .comparison-table tr:hover td { background: rgba(0, 212, 255, 0.05); }
+        .comparison-table tr:last-child td { border-bottom: none; }
+
+        /* Timeline */
+        .timeline { position: relative; padding-left: 40px; margin: 40px 0; }
+        .timeline::before { content: ''; position: absolute; left: 10px; top: 0; bottom: 0; width: 2px; background: var(--gradient-1); }
+        .timeline-item { position: relative; margin-bottom: 35px; }
+        .timeline-item::before { content: ''; position: absolute; left: -36px; top: 5px; width: 14px; height: 14px; background: var(--primary-blue); border-radius: 50%; box-shadow: var(--glow-blue); }
+        .timeline-item h4 { color: var(--text-primary); font-size: 1.2rem; margin-bottom: 10px; }
+        .timeline-item p { color: var(--text-secondary); font-size: 1rem; margin: 0; }
+
+        /* Quote Box */
+        .quote-box { background: linear-gradient(135deg, rgba(123, 44, 191, 0.15) 0%, rgba(0, 212, 255, 0.15) 100%); padding: 35px; border-radius: 16px; border-left: 5px solid var(--primary-purple); margin: 40px 0; position: relative; }
+        .quote-box::before { content: '"'; position: absolute; top: 10px; left: 20px; font-size: 5rem; color: var(--primary-purple); opacity: 0.3; line-height: 1; }
+        .quote-box p { color: var(--text-primary); font-size: 1.2rem; font-style: italic; margin-bottom: 15px; position: relative; z-index: 1; }
+        .quote-box cite { color: var(--text-secondary); font-size: 1rem; display: block; text-align: right; }
+
+        footer { background: #050508; padding: 60px 20px; text-align: center; border-top: 1px solid rgba(255, 255, 255, 0.1); }
+        footer p { color: var(--text-secondary); margin-bottom: 20px; }
+        .footer-links { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; }
+        .footer-links a { color: var(--primary-blue); text-decoration: none; transition: color 0.3s ease; }
+        .footer-links a:hover { color: var(--text-primary); }
+
+        @media (max-width: 768px) {
+            .content-section { padding: 40px 25px; }
+            .hero-images { grid-template-columns: 1fr; }
+            .content-section h2 { font-size: 1.6rem; }
+            .content-section h3 { font-size: 1.3rem; }
+            .tech-cards { grid-template-columns: 1fr 1fr; }
+            .comparison-table { font-size: 0.9rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="code-rain" id="codeRain"></div>
+
+    <section class="hero">
+        <div class="hero-content">
+            <span class="hero-badge">📰 AI News 專題報道</span>
+            <h1>Claude Code vs. Codex：兩大 AI 編碼工具評測比較</h1>
+            <p class="hero-subtitle">ZDNET 記者 David Gewirtz 深入比較 Claude Code 與 Codex，解析 AI 編碼工具的最新發展與未來趨勢</p>
+            <div class="hero-images"><div class="hero-image-card"><img src="./img/img1.png" alt="AI 編碼工具比較"></div></div>
+        </div>
+        <div class="scroll-indicator"><span></span></div>
+    </section>
+
+    <section>
+        <div class="content-section">
+            <div class="meta-info">
+                <p><strong>📌 資料來源</strong>：<a href="https://www.zdnet.com/article/claude-code-vs-codex-ai-coding-tools" target="_blank">ZDNET</a></p>
+                <p><strong>📅 發布日期</strong>：2026-08-13</p>
+                <p><strong>✍️ 作者</strong>：David Gewirtz</p>
+                <p><strong>🤖 處理方式</strong>：AI 智能摘要</p>
+            </div>
+
+            <h2>新聞導語</h2>
+            <p>Chatbot 回答問題，而 Agent 執行任務。當你要求 ChatGPT 寫一段代碼，它只會在文字框返回代碼；但 Codex 會真正幫你建立所有軟件組件、測試並使其運作。兩大 AI 編碼工具究竟有何差異？本文為你深入分析。</p>
+
+            <h3>核心功能對比</h3>
+            <div class="tech-cards">
+                <div class="tech-card-icon">
+                    <div class="icon">📁</div>
+                    <h4>文件處理</h4>
+                    <p>處理現有項目、修改文件、批量編輯</p>
+                </div>
+                <div class="tech-card-icon">
+                    <div class="icon">💻</div>
+                    <h4>命令執行</h4>
+                    <p>執行電腦命令、運行測試、安裝依賴</p>
+                </div>
+                <div class="tech-card-icon">
+                    <div class="icon">🐛</div>
+                    <h4>錯誤修復</h4>
+                    <p>找出並修復錯誤、調試、代碼審查</p>
+                </div>
+                <div class="tech-card-icon">
+                    <div class="icon">🤖</div>
+                    <h4>自主運行</h4>
+                    <p>長時間自主運行、減少人工干預</p>
+                </div>
+            </div>
+
+            <h3>詳細功能比較</h3>
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>功能</th>
+                        <th>Claude Code</th>
+                        <th>Codex</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>主要介面</strong></td>
+                        <td>終端（Terminal）</td>
+                        <td>VS Code 內嵌</td>
+                    </tr>
+                    <tr>
+                        <td><strong>顏色標記</strong></td>
+                        <td>✅ 支援</td>
+                        <td>❌ 不支援</td>
+                    </tr>
+                    <tr>
+                        <td><strong>分頁功能</strong></td>
+                        <td>✅ 支援</td>
+                        <td>❌ 不支援</td>
+                    </tr>
+                    <tr>
+                        <td><strong>測試調試</strong></td>
+                        <td>需配合其他工具</td>
+                        <td>深度整合 VS Code</td>
+                    </tr>
+                    <tr>
+                        <td><strong>多項目並行</strong></td>
+                        <td>✅ 支援</td>
+                        <td>✅ 支援</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>發展時間線</h3>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <h4>早期：智能補全時代</h4>
+                    <p>AI 編碼工具最初只提供代碼補全功能，幫助開發者快速寫作片段代碼。</p>
+                </div>
+                <div class="timeline-item">
+                    <h4>中期：AI Chat 助手</h4>
+                    <p>ChatGPT 等工具可以通過對話生成完整代碼區塊，但仍限於文字輸出。</p>
+                </div>
+                <div class="timeline-item">
+                    <h4>現在：Agent 執行時代</h4>
+                    <p>Claude Code、Codex 等工具進化為真正的 Agent，能執行命令、建立完整系統。</p>
+                </div>
+                <div class="timeline-item">
+                    <h4>未來：無縫協作</h4>
+                    <p>AI 編碼工具將更深度整合開發環境，支援更複雜的軟件工程任務。</p>
+                </div>
+                <div class="timeline-item">
+                    <h4>願景：全自動開發</h4>
+                    <p>從需求到部署，AI 將承擔更多軟件開發環節，人類專注於創意與決策。</p>
+                </div>
+            </div>
+
+            <div class="quote-box">
+                <p>對我來說，這幾乎比寫代碼更自然。即使我從打孔卡時代就開始編碼，我也曾擔任過產品經理和工程經理，所以指定項目和管理團隊對我來說是第二天性。</p>
+                <cite>— David Gewirtz, ZDNET</cite>
+            </div>
+
+            <div class="highlight-box">
+                <h4>業界觀察</h4>
+                <p>AI 編碼工具已從「智能代碼補全」進化到「直接幫你建完整系統」。作者形容這更像在「指定項目並管理團隊」，而非傳統意義的寫代碼。選擇哪個工具取決於你的工作流程和偏好——兩者各有優勢，資深開發者甚至可能兩者都用。</p>
+            </div>
+
+            <h3>使用建議</h3>
+            <ul>
+                <li>如果你偏好終端操作、需要顏色標記和分頁功能，選擇 <strong>Claude Code</strong></li>
+                <li>如果你深度使用 VS Code、需要良好測試調試體驗，選擇 <strong>Codex</strong></li>
+                <li>兩者都能處理複雜項目，長期來看可能會同時使用兩個工具</li>
+                <li>桌面應用程式仍需改善——希望 Anthropic 和 OpenAI 加入分頁和自訂功能</li>
+            </ul>
+
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2026 AI News Archive | 由 AI 技術生成</p>
+        <div class="footer-links">
+            <a href="../index.html">返回主頁</a>
+            <a href="https://github.com/hklamsir/ai_news" target="_blank">GitHub</a>
+            <a href="https://hklamsir.github.io/ai_news/" target="_blank">瀏覽所有專題</a>
+        </div>
+    </footer>
+
+    <script>
+        function createCodeRain() {
+            const codeRain = document.getElementById('codeRain');
+            const chars = '01アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン';
+            for (let i = 0; i < 50; i++) {
+                const char = document.createElement('div');
+                char.className = 'code-char';
+                char.textContent = chars[Math.floor(Math.random() * chars.length)];
+                char.style.left = Math.random() * 100 + '%';
+                char.style.animationDelay = Math.random() * 4 + 's';
+                char.style.animationDuration = (Math.random() * 2 + 3) + 's';
+                codeRain.appendChild(char);
+            }
+        }
+
+        function handleScrollAnimation() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('.content-section, .hero-content').forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(30px)';
+                el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(el);
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            createCodeRain();
+            handleScrollAnimation();
+        });
+
+        window.addEventListener('resize', () => {
+            document.getElementById('codeRain').innerHTML = '';
+            createCodeRain();
+        });
+    </script>
+</body>
+</html>
