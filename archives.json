@@ -1,6 +1,16 @@
 {
   "archives": [
     {
+      "dir": "news_20260813_101302",
+      "title": "Facebook officially rolls out its stand-alone Creator Studio app with AI tools for creators | TechCrunch",
+      "summary_short": "# Facebook officially rolls out its stand-alone Creator Studio app with AI tools for creators | Tech",
+      "images": [
+        "img/img1.png"
+      ],
+      "date": "2026-08-13",
+      "url": "./news_20260813_101302/index.html"
+    },
+    {
       "dir": "news_20260813_091854",
       "title": "Claude Code vs. Codex: Why I use both and how to choose one (if you must)",
       "summary_short": "# Claude Code vs. Codex: Why I use both and how to choose one (if you must)## 📖 新聞導語本文報導來自 **ZDN",
@@ -3494,6 +3504,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-08-13T09:20:04.442757",
+  "last_updated": "2026-08-13T10:15:52.421053",
   "total_count": 387
 }
