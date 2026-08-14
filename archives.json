@@ -1,24 +1,31 @@
 {
   "archives": [
     {
+      "dir": "news_20260814_213543",
+      "title": "NVIDIA 的 5000 億美元新計劃： 風險高但策略高明",
+      "summary": "NVIDIA 夥拍大型金融機構投入 5000 億美元建設 AI 資料中心，並以自有資金擔保老化 GPU 價值，創造「錯誤方向」風險，但成功讓他人分擔資本與風險。",
+      "url": "./news_20260814_213543/index.html",
+      "date": "2026-08-14",
+      "time": "21:35:43",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260813_101302",
-      "title": "Facebook officially rolls out its stand-alone Creator Studio app with AI tools for creators | TechCrunch",
-      "summary_short": "# Facebook officially rolls out its stand-alone Creator Studio app with AI tools for creators | Tech",
-      "images": [
-        "img/img1.png"
-      ],
+      "title": "Facebook 推出獨立 Creator Studio App：AI 工具助力創作者",
+      "summary": "點擊查看完整報道",
+      "url": "./news_20260813_101302/index.html",
       "date": "2026-08-13",
-      "url": "./news_20260813_101302/index.html"
+      "time": "10:13:02",
+      "source": "AI News"
     },
     {
       "dir": "news_20260813_091854",
-      "title": "Claude Code vs. Codex: Why I use both and how to choose one (if you must)",
-      "summary_short": "# Claude Code vs. Codex: Why I use both and how to choose one (if you must)## 📖 新聞導語本文報導來自 **ZDN",
-      "images": [
-        "img/img1.png"
-      ],
+      "title": "Claude Code vs. Codex：兩大 AI 編碼工具評測比較",
+      "summary": "點擊查看完整報道",
+      "url": "./news_20260813_091854/index.html",
       "date": "2026-08-13",
-      "url": "./news_20260813_091854/index.html"
+      "time": "09:18:54",
+      "source": "AI News"
     },
     {
       "dir": "news_20260811_182455",
@@ -3504,6 +3511,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-08-13T10:15:52.421053",
-  "total_count": 387
+  "last_updated": "2026-08-14T21:39:05.859991",
+  "total_count": 390
 }
