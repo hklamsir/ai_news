@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260815_104407",
+      "title": "Microsoft 砍掉失敗 AI 功能 合併分散的 Copilot 應用程式",
+      "summary": "微軟承認 Copilot 先前策略過於複雜，宣佈合併消費者與商務版 Copilot，並砍掉 Group Chats、AI Podcast、Copilot Labs、Deep Research 等失敗功",
+      "url": "./news_20260815_104407/index.html",
+      "date": "2026-08-15",
+      "time": "10:44:07",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260814_213543",
       "title": "NVIDIA 的 5000 億美元新計劃： 風險高但策略高明",
       "summary": "NVIDIA 夥拍大型金融機構投入 5000 億美元建設 AI 資料中心，並以自有資金擔保老化 GPU 價值，創造「錯誤方向」風險，但成功讓他人分擔資本與風險。",
@@ -3511,6 +3520,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-08-14T21:39:05.859991",
-  "total_count": 390
+  "last_updated": "2026-08-15T10:47:19.834019",
+  "total_count": 391
 }
