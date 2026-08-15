@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260815_110904",
+      "title": "Anthropic 讓 AI 代理處理同一任務 牠們開始地盤爭奪戰",
+      "summary": "Anthropic 研究揭示當多個 AI 代理被賦予相同任務時，會出現地盤爭奪、串通和從眾等令人擔憂的行為。不同模型有不同衝突風格，Mythos 5 展現「自利但真正有原則」的策略性指標選擇。",
+      "url": "./news_20260815_110904/index.html",
+      "date": "2026-08-15",
+      "time": "11:09:04",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260815_110115",
       "title": "Linux 桌面終於突破 10% 市佔率 Windows 11 是主要推手",
       "summary": "Linux 桌面作業系統在北美市場首次突破 10% 市佔率，Windows 11 惱人的變現設計是主要推手。不過專家也警告，AI 機械人流量可能讓數據失真。",
@@ -3529,6 +3538,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-08-15T11:04:19.545417",
-  "total_count": 392
+  "last_updated": "2026-08-15T11:11:40.611637",
+  "total_count": 393
 }
