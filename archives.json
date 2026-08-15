@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260815_110115",
+      "title": "Linux 桌面終於突破 10% 市佔率 Windows 11 是主要推手",
+      "summary": "Linux 桌面作業系統在北美市場首次突破 10% 市佔率，Windows 11 惱人的變現設計是主要推手。不過專家也警告，AI 機械人流量可能讓數據失真。",
+      "url": "./news_20260815_110115/index.html",
+      "date": "2026-08-15",
+      "time": "11:01:15",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260815_104407",
       "title": "Microsoft 砍掉失敗 AI 功能 合併分散的 Copilot 應用程式",
       "summary": "微軟承認 Copilot 先前策略過於複雜，宣佈合併消費者與商務版 Copilot，並砍掉 Group Chats、AI Podcast、Copilot Labs、Deep Research 等失敗功",
@@ -3520,6 +3529,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-08-15T10:47:19.834019",
-  "total_count": 391
+  "last_updated": "2026-08-15T11:04:19.545417",
+  "total_count": 392
 }
