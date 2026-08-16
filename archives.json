@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260816_103841",
+      "title": "Microsoft 8 月修補 421 漏洞 確認 Lazarus 組織利用零日攻擊",
+      "summary": "Microsoft 發布 8 月 Patch Tuesday，修補 421 個漏洞，其中一個由北韓 Lazarus 組織利用的零日漏洞 CVE-2026-68820 已確認在野被主動利用，攻擊者透過 ",
+      "url": "./news_20260816_103841/index.html",
+      "date": "2026-08-16",
+      "time": "10:38:41",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260815_141237",
       "title": "AI 搶配音員飯碗 21% 從業者去年已失業",
       "summary": "人工智能正威脅逾 200 萬名專業配音員生計。NAVA 調查顯示 21% 受訪配音員過去一年因合成語音失去工作，巴西演員 Fabio Azevedo 的聲音更被用作訓練 AI，最終取代自己。",
@@ -3547,6 +3556,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-08-15T14:14:48.444841",
-  "total_count": 394
+  "last_updated": "2026-08-16T10:42:50.621386",
+  "total_count": 395
 }
