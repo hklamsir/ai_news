@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260816_213029",
+      "title": "中國AI又突圍！ 阿里千問半年下載破30億",
+      "summary": "阿里巴巴旗下 AI 模型「千問」（Qwen）過去半年全球累計下載量突破 30 億次，超越 Meta（2.27 億次）及 Google（4.18 億次），成為全球最受歡迎的开源 AI 模型之一。",
+      "url": "./news_20260816_213029/index.html",
+      "date": "2026-08-16",
+      "time": "21:30:29",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260816_103841",
       "title": "Microsoft 8 月修補 421 漏洞 確認 Lazarus 組織利用零日攻擊",
       "summary": "Microsoft 發布 8 月 Patch Tuesday，修補 421 個漏洞，其中一個由北韓 Lazarus 組織利用的零日漏洞 CVE-2026-68820 已確認在野被主動利用，攻擊者透過 ",
@@ -3556,6 +3565,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-08-16T10:42:50.621386",
-  "total_count": 395
+  "last_updated": "2026-08-16T21:32:28.578610",
+  "total_count": 396
 }
