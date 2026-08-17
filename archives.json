@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260817_135200",
+      "title": "AI 年代：傾訴有危有機 5分鐘可改道德準則",
+      "summary": "著名神經科學家、港大心理學系教授 Benjamin Becker 警告，與 AI 對話僅 5 分鐘即可改變道德準則，AI 傾訴有危有機，社會需「立即行動」思考如何善用，避免 10 年後成為社會災難。",
+      "url": "./news_20260817_135200/index.html",
+      "date": "2026-08-17",
+      "time": "13:52:00",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260817_115156",
       "title": "Anthropic CEO 稱 AI 反彈是信任危機",
       "summary": "Anthropic CEO Dario Amodei 回應投資人 Gavin Baker 的批評，強調美國社會對 AI 的反感根本上是「信任危機」，而非因為他對 AI 風險的警告。他同時承認 AI 行",
@@ -3583,6 +3592,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-08-17T11:54:12.256225",
-  "total_count": 398
+  "last_updated": "2026-08-17T13:52:02.355782",
+  "total_count": 399
 }
