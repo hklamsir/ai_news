@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260817_115156",
+      "title": "Anthropic CEO 稱 AI 反彈是信任危機",
+      "summary": "Anthropic CEO Dario Amodei 回應投資人 Gavin Baker 的批評，強調美國社會對 AI 的反感根本上是「信任危機」，而非因為他對 AI 風險的警告。他同時承認 AI 行",
+      "url": "./news_20260817_115156/index.html",
+      "date": "2026-08-17",
+      "time": "11:51:56",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260817_083056",
       "title": "Gemini 圖片轉 Canva 5 步驟教學",
       "summary": "Google Gemini 整合 Canva Magic Layers 功能，讓用戶可將 AI 生成的圖片一鍵轉為可編輯的 Canva 設計稿，輕鬆修改文字、換色、調整版面。",
@@ -3574,6 +3583,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-08-17T08:34:00.032310",
-  "total_count": 397
+  "last_updated": "2026-08-17T11:54:12.256225",
+  "total_count": 398
 }
