@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260818_080301",
+      "title": "Stripe 將以逾 70 億美元 收購 AI 閘道新創 OpenRouter",
+      "summary": "支付巨頭 Stripe 以逾 70 億美元收購 AI 閘道新創 OpenRouter，創下年內最大 AI 領域收購案之一，顯示大型科技公司正積極佈局 AI 基礎設施。",
+      "url": "./news_20260818_080301/index.html",
+      "date": "2026-08-18",
+      "time": "08:03:01",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260817_135200",
       "title": "AI 年代：傾訴有危有機 5分鐘可改道德準則",
       "summary": "著名神經科學家、港大心理學系教授 Benjamin Becker 警告，與 AI 對話僅 5 分鐘即可改變道德準則，AI 傾訴有危有機，社會需「立即行動」思考如何善用，避免 10 年後成為社會災難。",
@@ -3592,6 +3601,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-08-17T13:52:02.355782",
-  "total_count": 399
+  "last_updated": "2026-08-18T08:06:23.364476",
+  "total_count": 400
 }
