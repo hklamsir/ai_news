@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260818_212450",
+      "title": "阿里巴巴 Qzen3.8-27B 亮相 消費級手提電腦 AI 只需 17GB 記憶體",
+      "summary": "阿里巴巴發布專為消費級手提電腦設計的輕量 AI 模型 Qwen3.8-27B，17GB 記憶體即可運行，正式與 Meta 在開放權重 AI 市場正面交鋒。",
+      "url": "./news_20260818_212450/index.html",
+      "date": "2026-08-18",
+      "time": "21:24:50",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260818_092301",
       "title": "Google Workspace 預設讓 Gemini 讀取公司數據",
       "summary": "Google Workspace 預設讓 Gemini 有權存取所有企業內部數據，若不及時關閉，員工的 AI 助理將自動獲得查看 Gmail、Docs、Calendar、Chat 等公司資料的權限，存",
@@ -3610,6 +3619,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-08-18T09:24:38.803519",
-  "total_count": 401
+  "last_updated": "2026-08-18T21:26:25.454470",
+  "total_count": 402
 }
