@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260818_092301",
+      "title": "Google Workspace 預設讓 Gemini 讀取公司數據",
+      "summary": "Google Workspace 預設讓 Gemini 有權存取所有企業內部數據，若不及時關閉，員工的 AI 助理將自動獲得查看 Gmail、Docs、Calendar、Chat 等公司資料的權限，存",
+      "url": "./news_20260818_092301/index.html",
+      "date": "2026-08-18",
+      "time": "09:23:01",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260818_080301",
       "title": "Stripe 將以逾 70 億美元 收購 AI 閘道新創 OpenRouter",
       "summary": "支付巨頭 Stripe 以逾 70 億美元收購 AI 閘道新創 OpenRouter，創下年內最大 AI 領域收購案之一，顯示大型科技公司正積極佈局 AI 基礎設施。",
@@ -3601,6 +3610,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-08-18T08:06:23.364476",
-  "total_count": 400
+  "last_updated": "2026-08-18T09:24:38.803519",
+  "total_count": 401
 }
