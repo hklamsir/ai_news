@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260819_092827",
+      "title": "才過一年 微軟即將移除 Excel 裡的「=Copilot」函數",
+      "summary": "微軟宣佈將於 2026 年 9 月 14 日移除 Excel 中的 =COPILOT() 函數，這個僅推出約一年的預覽功能，在從未正式公開發布的情況下即將走入歷史。",
+      "url": "./news_20260819_092827/index.html",
+      "date": "2026-08-19",
+      "time": "09:28:27",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260818_212450",
       "title": "阿里巴巴 Qzen3.8-27B 亮相 消費級手提電腦 AI 只需 17GB 記憶體",
       "summary": "阿里巴巴發布專為消費級手提電腦設計的輕量 AI 模型 Qwen3.8-27B，17GB 記憶體即可運行，正式與 Meta 在開放權重 AI 市場正面交鋒。",
@@ -3619,6 +3628,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-08-18T21:26:25.454470",
-  "total_count": 402
+  "last_updated": "2026-08-19T09:31:15.244990",
+  "total_count": 403
 }
