@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260819_100108",
+      "title": "AI Agent 採用 過去一年 增長近 3 倍",
+      "summary": "根據 Salesforce《2026 Agentic Enterprise Index》報告，企業部署的 AI Agent 數量過去一年增長近 3 倍，從實驗階段進入實際生產部署，並開始帶來可衡量的投",
+      "url": "./news_20260819_100108/index.html",
+      "date": "2026-08-19",
+      "time": "10:01:08",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260819_092827",
       "title": "才過一年 微軟即將移除 Excel 裡的「=Copilot」函數",
       "summary": "微軟宣佈將於 2026 年 9 月 14 日移除 Excel 中的 =COPILOT() 函數，這個僅推出約一年的預覽功能，在從未正式公開發布的情況下即將走入歷史。",
@@ -3628,6 +3637,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-08-19T09:31:15.244990",
-  "total_count": 403
+  "last_updated": "2026-08-19T10:01:52.384898",
+  "total_count": 404
 }
