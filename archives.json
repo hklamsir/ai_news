@@ -3662,8 +3662,17 @@
       "date": "2026-04-01",
       "time": "00:00:00",
       "source": "AI News"
+    },
+    {
+      "dir": "news_20260820_1018",
+      "title": "我推薦的六款 拒絕 AI 的 Linux 發行版",
+      "summary": "ZDNET 資深作者 Jack Wallen 精選六款明確拒絕或極不可能整合 AI 的 Linux 發行版，反映開源社群對 AI 技術無節制滲透的反思與抵抗——用户仍可自行安裝，但系統核心不會預設 A",
+      "url": "./news_20260820_1018/index.html",
+      "date": "2026-04-01",
+      "time": "00:00:00",
+      "source": "AI News"
     }
   ],
-  "last_updated": "2026-08-20T09:34:54.306115",
-  "total_count": 407
+  "last_updated": "2026-08-20T10:07:57.602026",
+  "total_count": 408
 }
