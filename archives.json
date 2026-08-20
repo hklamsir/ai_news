@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260820_080258",
+      "title": "Google 在 Search 和 Gemini 推出全新 AI 學習工具",
+      "summary": "Google 全面升級 Search 與 Gemini 的學習功能，推出 AI 互動視覺圖表、3D 模擬、Lens 解題及 Gemini Live 研究報告等工具，欲將 Gemini 打造成學生的首選",
+      "url": "./news_20260820_080258/index.html",
+      "date": "2026-08-20",
+      "time": "08:02:58",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260819_180430",
       "title": "Claude 浮水印 看不見 卻可能被驗出",
       "summary": "Anthropic 為 Claude 加入「文字浮水印」機制，透過改變模型「選字的習慣」嵌入可被偵測的痕跡。這項技術源自 Google DeepMind 的 SynthID-Text，但存在諸多限制—",
@@ -3646,6 +3655,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-08-19T18:05:13.148722",
-  "total_count": 405
+  "last_updated": "2026-08-20T08:04:46.409034",
+  "total_count": 406
 }
