@@ -3637,6 +3637,15 @@
       "source": "AI News"
     },
     {
+      "dir": "news_20260820_0933",
+      "title": "如何避免 Claude 在 你的內容中加入浮水印",
+      "summary": "Anthropic 為遵守歐盟《AI Act》第 50 條，在 Claude 生成內容中加入不可見浮水印，引發用戶反彈。ZDNET 分析指出，依賴第三方「去浮水印」工具並非出路，真正方法只有一個——自",
+      "url": "./news_20260820_0933/index.html",
+      "date": "2026-04-01",
+      "time": "00:00:00",
+      "source": "AI News"
+    },
+    {
       "dir": "20260406_1732",
       "title": "新手學 AI 一定要知道的 20 件事",
       "summary": "點擊查看完整報道",
@@ -3655,6 +3664,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-08-20T08:04:46.409034",
-  "total_count": 406
+  "last_updated": "2026-08-20T09:34:54.306115",
+  "total_count": 407
 }
