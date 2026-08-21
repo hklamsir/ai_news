@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260821_080200",
+      "title": "Binance 開放 AI 代理交易 但如何監管仍主要由用戶自行把關",
+      "summary": "全球最大加密貨幣交易所 Binance 推出「Agent OS」平台，讓 AI 代理程式能代替用戶分析市場並執行交易，掀開 AI 自主交易新時代。",
+      "url": "./news_20260821_080200/index.html",
+      "date": "2026-08-20",
+      "time": "00:00:00",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260819_092827",
       "title": "才過一年 微軟即將移除 Excel 裡的「=Copilot」函數",
       "summary": "微軟宣佈將於 2026 年 9 月 14 日移除 Excel 中的 =COPILOT() 函數，這個僅推出約一年的預覽功能，在從未正式公開發布的情況下即將走入歷史。",
@@ -3673,6 +3682,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-08-20T20:33:01.762278",
-  "total_count": 408
+  "last_updated": "2026-08-21T08:03:58.078158",
+  "total_count": 409
 }
