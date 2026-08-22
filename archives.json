@@ -10,6 +10,15 @@
       "source": "AI News"
     },
     {
+      "dir": "news_20260822_154500",
+      "title": "Cursor 推出代碼託管平台 Origin",
+      "summary": "Cursor 推出自家代碼託管平台 Origin，除具備 Repo、PR、Code Review、Merge 等完整功能，更將 AI Agent 直接嵌入代碼託管與協作流程。Cursor 的目標並非要",
+      "url": "./news_20260822_154500/index.html",
+      "date": "2026-08-22",
+      "time": "00:00:00",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260822_110000",
       "title": "ChatGPT 新增 Apple Messages 插件",
       "summary": "OpenAI 推出 ChatGPT Apple Messages 插件，讓 iMessage 用戶可以將訊息收件箱連接至 ChatGPT，讓 AI 代為排序、分析、編輯訊息，甚至直接代發訊息，標誌着 ",
@@ -3718,6 +3727,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-08-22T12:44:40.390726",
-  "total_count": 413
+  "last_updated": "2026-08-22T15:49:09.975004",
+  "total_count": 414
 }
