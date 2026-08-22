@@ -10,6 +10,15 @@
       "source": "AI News"
     },
     {
+      "dir": "news_20260822_110000",
+      "title": "ChatGPT 新增 Apple Messages 插件",
+      "summary": "OpenAI 推出 ChatGPT Apple Messages 插件，讓 iMessage 用戶可以將訊息收件箱連接至 ChatGPT，讓 AI 代為排序、分析、編輯訊息，甚至直接代發訊息，標誌着 ",
+      "url": "./news_20260822_110000/index.html",
+      "date": "2026-08-20",
+      "time": "00:00:00",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260821_080200",
       "title": "Binance 開放 AI 代理交易 但如何監管仍主要由用戶自行把關",
       "summary": "全球最大加密貨幣交易所 Binance 推出「Agent OS」平台，讓 AI 代理程式能代替用戶分析市場並執行交易，掀開 AI 自主交易新時代。",
@@ -3709,6 +3718,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-08-22T10:19:50.898406",
-  "total_count": 412
+  "last_updated": "2026-08-22T12:44:40.390726",
+  "total_count": 413
 }
