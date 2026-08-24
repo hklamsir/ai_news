@@ -1,6 +1,16 @@
 {
   "archives": [
     {
+      "dir": "news_20260824_105733",
+      "title": "Linux 之父也說讚！Linus Torvalds 與 AI 協作搞定 Intel 顯示卡地獄級 debug - 電腦王阿達",
+      "summary_short": "# Linux 之父也說讚！Linus Torvalds 與 AI 協作搞定 Intel 顯示卡地獄級 debug - 電腦王阿達## 📖 新聞導語本文報導來自 **KOCPC**，發布於 *",
+      "images": [
+        "img/img1.png"
+      ],
+      "date": "2026-08-24",
+      "url": "./news_20260824_105733/index.html"
+    },
+    {
       "dir": "news_20260823_115700",
       "title": "75% 開發者偏愛 Claude Code 調查揭示背後原因",
       "summary": "138 位開發者調查顯示，75% 偏愛 Claude Code，揭示 AI 編程工具選擇的關鍵因素不僅是代碼質量，還包括成本、工作流程整合與生態系統。",
@@ -3745,6 +3755,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-08-23T17:37:49.129823",
+  "last_updated": "2026-08-24T10:57:43.947971",
   "total_count": 416
 }
