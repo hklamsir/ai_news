@@ -1,24 +1,22 @@
 {
   "archives": [
     {
-      "dir": "news_20260824_214001",
-      "title": "Inherent, founded by DeepMind alumni, says its AI 'teammate' just outperformed Anthropic and OpenAI at replicating research | TechCrunch",
-      "summary_short": "# Inherent, founded by DeepMind alumni, says its AI 'teammate' just outperformed Anthropic and OpenA",
-      "images": [
-        "img/img1.png"
-      ],
+      "dir": "news_20260824_105733",
+      "title": "Linux 之父也說讚！ Linus Torvalds 與 AI 協作搞定 Intel 顯示卡地獄級 debug",
+      "summary": "Linux 之父 Linus Torvalds 首次在真實核心開發中大規模使用 AI 工具，成功修補了一個困擾 Intel Battlemage G21 顯示卡用戶兩年的黑畫面問題。整個 debug ",
+      "url": "./news_20260824_105733/index.html",
       "date": "2026-08-24",
-      "url": "./news_20260824_214001/index.html"
+      "time": "10:33:00",
+      "source": "AI News"
     },
     {
-      "dir": "news_20260824_105733",
-      "title": "Linux 之父也說讚！Linus Torvalds 與 AI 協作搞定 Intel 顯示卡地獄級 debug - 電腦王阿達",
-      "summary_short": "# Linux 之父也說讚！Linus Torvalds 與 AI 協作搞定 Intel 顯示卡地獄級 debug - 電腦王阿達## 📖 新聞導語本文報導來自 **KOCPC**，發布於 *",
-      "images": [
-        "img/img1.png"
-      ],
+      "dir": "news_20260824_214001",
+      "title": "Inherent：DeepMind 校友創立的 AI 新創如何擊敗 Anthropic 與 OpenAI",
+      "summary": "倫敦 AI 新創 Inherent Labs 由 Google DeepMind 前員工創立，僅成立數週即以 5,000 萬美元種子輪完成 stealth 模式。旗下 AI 代理 Faraday 在無",
+      "url": "./news_20260824_214001/index.html",
       "date": "2026-08-24",
-      "url": "./news_20260824_105733/index.html"
+      "time": "00:00:00",
+      "source": "AI News"
     },
     {
       "dir": "news_20260823_115700",
@@ -3765,6 +3763,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-08-24T21:40:33.801479",
-  "total_count": 416
+  "last_updated": "2026-08-24T23:47:11.332107",
+  "total_count": 418
 }
