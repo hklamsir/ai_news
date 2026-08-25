@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260825_193918",
+      "title": "Googlebook 筆電即將登場！ 能否避開 Copilot+ PC 的失敗命運？",
+      "summary": "Google 即將推出睽違十一年的新款筆記型電腦——Googlebook，融合 Android 與 ChromeOS，代號「Aluminum OS」，以 Gemini AI 為系統核心。目標與 Mic",
+      "url": "./news_20260825_193918/index.html",
+      "date": "2026-08-25",
+      "time": "19:18:00",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260825_131405",
       "title": "工程師的痛！ 80% 開發者認為 AI 編碼工具令人上癮",
       "summary": "根據 Coddy Tech 對 305 名開發者的調查，80% 認為使用 AI 編碼工具「更像是一種依賴，而非優勢」。AI 編程工具雖提升產出效率，卻也帶來新型態的過勞與工作與生活失衡問題。",
@@ -3772,6 +3781,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-08-25T14:06:35.038076",
-  "total_count": 419
+  "last_updated": "2026-08-25T19:41:39.249087",
+  "total_count": 420
 }
