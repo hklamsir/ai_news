@@ -1,12 +1,21 @@
 {
   "archives": [
     {
+      "dir": "news_20260825_131405",
+      "title": "工程師的痛！ 80% 開發者認為 AI 編碼工具令人上癮",
+      "summary": "根據 Coddy Tech 對 305 名開發者的調查，80% 認為使用 AI 編碼工具「更像是一種依賴，而非優勢」。AI 編程工具雖提升產出效率，卻也帶來新型態的過勞與工作與生活失衡問題。",
+      "url": "./news_20260825_131405/index.html",
+      "date": "2026-08-25",
+      "time": "13:05:00",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260825_121026",
       "title": "開源版 Claude Design！ 完全免費的 Open Design 強大功能實測",
       "summary": "Open Design 是一款免費開源的 AI 設計平台，透過串接 Gemini CLI、Claude、Codex 等大型語言模型，讓使用者能以自然語言快速生成專業簡報、高質感網站雛形、互動式 Das",
       "url": "./news_20260825_121026/index.html",
       "date": "2026-08-25",
-      "time": "00:00:00",
+      "time": "12:26:00",
       "source": "AI News"
     },
     {
@@ -24,7 +33,7 @@
       "summary": "阿里巴巴於2026年8月23日宣布，擬向美國境外非美國人士配售新股，配售總金額達800億港元。這是2019年港股上市以來首次啟動新股配售。",
       "url": "./news_20260823_173600/index.html",
       "date": "2026-08-23",
-      "time": "00:00:00",
+      "time": "17:00:00",
       "source": "AI News"
     },
     {
@@ -33,16 +42,7 @@
       "summary": "138 位開發者調查顯示，75% 偏愛 Claude Code，揭示 AI 編程工具選擇的關鍵因素不僅是代碼質量，還包括成本、工作流程整合與生態系統。",
       "url": "./news_20260823_115700/index.html",
       "date": "2026-08-23",
-      "time": "00:00:00",
-      "source": "AI News"
-    },
-    {
-      "dir": "news_20260825_131405",
-      "title": "工程師的痛！ 80% 開發者認為 AI 編碼工具令人上癮",
-      "summary": "根據 Coddy Tech 對 305 名開發者的調查，80% 認為使用 AI 編碼工具「更像是一種依賴，而非優勢」。AI 編程工具雖提升產出效率，卻也帶來新型態的過勞與工作與生活失衡問題。",
-      "url": "./news_20260825_131405/index.html",
-      "date": "2026-08-22",
-      "time": "00:00:00",
+      "time": "11:00:00",
       "source": "AI News"
     },
     {
@@ -51,7 +51,16 @@
       "summary": "Cursor 推出自家代碼託管平台 Origin，除具備 Repo、PR、Code Review、Merge 等完整功能，更將 AI Agent 直接嵌入代碼託管與協作流程。Cursor 的目標並非要",
       "url": "./news_20260822_154500/index.html",
       "date": "2026-08-22",
-      "time": "00:00:00",
+      "time": "15:00:00",
+      "source": "AI News"
+    },
+    {
+      "dir": "news_20260822_110000",
+      "title": "ChatGPT 新增 Apple Messages 插件",
+      "summary": "OpenAI 推出 ChatGPT Apple Messages 插件，讓 iMessage 用戶可以將訊息收件箱連接至 ChatGPT，讓 AI 代為排序、分析、編輯訊息，甚至直接代發訊息，標誌着 ",
+      "url": "./news_20260822_110000/index.html",
+      "date": "2026-08-22",
+      "time": "11:00:00",
       "source": "AI News"
     },
     {
@@ -60,7 +69,7 @@
       "summary": "ZDNET 採訪七家網絡安全機構專家，整理出 2026 年 AI 網絡安全威脅的 10 個最重要面向，警告網絡威脅形勢將比 2025 年嚴峻得多。",
       "url": "./news_20260822_101600/index.html",
       "date": "2026-08-22",
-      "time": "00:00:00",
+      "time": "10:00:00",
       "source": "AI News"
     },
     {
@@ -68,8 +77,8 @@
       "title": "不想讓創作變AI飼料？ 全新開源字型「ShieldFont」讓爬蟲抓到手足無措",
       "summary": "開源字型 ShieldFont 利用 OpenType 字形替換機制，讓人類看到正常文句、AI 爬蟲卻只能抓到無意義內容，為創作者對抗未授權 AI 數據採集提供全新武器。",
       "url": "./news_20260821_090800/index.html",
-      "date": "2026-08-20",
-      "time": "00:00:00",
+      "date": "2026-08-21",
+      "time": "09:00:00",
       "source": "AI News"
     },
     {
@@ -77,17 +86,44 @@
       "title": "Binance 開放 AI 代理交易 但如何監管仍主要由用戶自行把關",
       "summary": "全球最大加密貨幣交易所 Binance 推出「Agent OS」平台，讓 AI 代理程式能代替用戶分析市場並執行交易，掀開 AI 自主交易新時代。",
       "url": "./news_20260821_080200/index.html",
-      "date": "2026-08-20",
-      "time": "00:00:00",
+      "date": "2026-08-21",
+      "time": "08:00:00",
       "source": "AI News"
     },
     {
-      "dir": "news_20260822_110000",
-      "title": "ChatGPT 新增 Apple Messages 插件",
-      "summary": "OpenAI 推出 ChatGPT Apple Messages 插件，讓 iMessage 用戶可以將訊息收件箱連接至 ChatGPT，讓 AI 代為排序、分析、編輯訊息，甚至直接代發訊息，標誌着 ",
-      "url": "./news_20260822_110000/index.html",
+      "dir": "news_20260821_085200",
+      "title": "輝達砸最高1.6兆結盟神秘挖礦商！ AI下一戰搶的不是GPU，是電",
+      "summary": "輝達與比特幣礦商 Hut 8 簽下 15 年巨額租約，揭示 AI 資料中心的最大瓶頸已從 GPU 轉向電力，輝達更從硬體銷售商轉型為基礎設施整合者。",
+      "url": "./news_20260821_085200/index.html",
+      "date": "2026-08-21",
+      "time": "08:00:00",
+      "source": "AI News"
+    },
+    {
+      "dir": "news_20260820_080258",
+      "title": "Google 在 Search 和 Gemini 推出全新 AI 學習工具",
+      "summary": "Google 全面升級 Search 與 Gemini 的學習功能，推出 AI 互動視覺圖表、3D 模擬、Lens 解題及 Gemini Live 研究報告等工具，欲將 Gemini 打造成學生的首選",
+      "url": "./news_20260820_080258/index.html",
       "date": "2026-08-20",
-      "time": "00:00:00",
+      "time": "08:58:00",
+      "source": "AI News"
+    },
+    {
+      "dir": "news_20260819_180430",
+      "title": "Claude 浮水印 看不見 卻可能被驗出",
+      "summary": "Anthropic 為 Claude 加入「文字浮水印」機制，透過改變模型「選字的習慣」嵌入可被偵測的痕跡。這項技術源自 Google DeepMind 的 SynthID-Text，但存在諸多限制—",
+      "url": "./news_20260819_180430/index.html",
+      "date": "2026-08-19",
+      "time": "18:30:00",
+      "source": "AI News"
+    },
+    {
+      "dir": "news_20260819_100108",
+      "title": "AI Agent 採用 過去一年 增長近 3 倍",
+      "summary": "根據 Salesforce《2026 Agentic Enterprise Index》報告，企業部署的 AI Agent 數量過去一年增長近 3 倍，從實驗階段進入實際生產部署，並開始帶來可衡量的投",
+      "url": "./news_20260819_100108/index.html",
+      "date": "2026-08-19",
+      "time": "10:08:00",
       "source": "AI News"
     },
     {
@@ -100,48 +136,12 @@
       "source": "AI News"
     },
     {
-      "dir": "news_20260820_1018",
-      "title": "我推薦的六款 拒絕 AI 的 Linux 發行版",
-      "summary": "ZDNET 資深作者 Jack Wallen 精選六款明確拒絕或極不可能整合 AI 的 Linux 發行版，反映開源社群對 AI 技術無節制滲透的反思與抵抗——用户仍可自行安裝，但系統核心不會預設 A",
-      "url": "./news_20260820_1018/index.html",
-      "date": "2026-08-19",
-      "time": "00:00:00",
-      "source": "AI News"
-    },
-    {
-      "dir": "news_20260819_180430",
-      "title": "Claude 浮水印 看不見 卻可能被驗出",
-      "summary": "Anthropic 為 Claude 加入「文字浮水印」機制，透過改變模型「選字的習慣」嵌入可被偵測的痕跡。這項技術源自 Google DeepMind 的 SynthID-Text，但存在諸多限制—",
-      "url": "./news_20260819_180430/index.html",
-      "date": "2026-08-19",
-      "time": "00:00:00",
-      "source": "AI News"
-    },
-    {
-      "dir": "news_20260820_0933",
-      "title": "如何避免 Claude 在 你的內容中加入浮水印",
-      "summary": "Anthropic 為遵守歐盟《AI Act》第 50 條，在 Claude 生成內容中加入不可見浮水印，引發用戶反彈。ZDNET 分析指出，依賴第三方「去浮水印」工具並非出路，真正方法只有一個——自",
-      "url": "./news_20260820_0933/index.html",
-      "date": "2026-08-19",
-      "time": "00:00:00",
-      "source": "AI News"
-    },
-    {
-      "dir": "news_20260820_080258",
-      "title": "Google 在 Search 和 Gemini 推出全新 AI 學習工具",
-      "summary": "Google 全面升級 Search 與 Gemini 的學習功能，推出 AI 互動視覺圖表、3D 模擬、Lens 解題及 Gemini Live 研究報告等工具，欲將 Gemini 打造成學生的首選",
-      "url": "./news_20260820_080258/index.html",
-      "date": "2026-08-19",
-      "time": "00:00:00",
-      "source": "AI News"
-    },
-    {
-      "dir": "news_20260819_100108",
-      "title": "AI Agent 採用 過去一年 增長近 3 倍",
-      "summary": "根據 Salesforce《2026 Agentic Enterprise Index》報告，企業部署的 AI Agent 數量過去一年增長近 3 倍，從實驗階段進入實際生產部署，並開始帶來可衡量的投",
-      "url": "./news_20260819_100108/index.html",
-      "date": "2026-08-19",
-      "time": "00:00:00",
+      "dir": "news_20260818_212450",
+      "title": "阿里巴巴 Qzen3.8-27B 亮相 消費級手提電腦 AI 只需 17GB 記憶體",
+      "summary": "阿里巴巴發布專為消費級手提電腦設計的輕量 AI 模型 Qwen3.8-27B，17GB 記憶體即可運行，正式與 Meta 在開放權重 AI 市場正面交鋒。",
+      "url": "./news_20260818_212450/index.html",
+      "date": "2026-08-18",
+      "time": "21:50:00",
       "source": "AI News"
     },
     {
@@ -150,16 +150,7 @@
       "summary": "Google Workspace 預設讓 Gemini 有權存取所有企業內部數據，若不及時關閉，員工的 AI 助理將自動獲得查看 Gmail、Docs、Calendar、Chat 等公司資料的權限，存",
       "url": "./news_20260818_092301/index.html",
       "date": "2026-08-18",
-      "time": "00:00:00",
-      "source": "AI News"
-    },
-    {
-      "dir": "news_20260818_212450",
-      "title": "阿里巴巴 Qzen3.8-27B 亮相 消費級手提電腦 AI 只需 17GB 記憶體",
-      "summary": "阿里巴巴發布專為消費級手提電腦設計的輕量 AI 模型 Qwen3.8-27B，17GB 記憶體即可運行，正式與 Meta 在開放權重 AI 市場正面交鋒。",
-      "url": "./news_20260818_212450/index.html",
-      "date": "2026-08-18",
-      "time": "00:00:00",
+      "time": "09:01:00",
       "source": "AI News"
     },
     {
@@ -168,7 +159,7 @@
       "summary": "支付巨頭 Stripe 以逾 70 億美元收購 AI 閘道新創 OpenRouter，創下年內最大 AI 領域收購案之一，顯示大型科技公司正積極佈局 AI 基礎設施。",
       "url": "./news_20260818_080301/index.html",
       "date": "2026-08-18",
-      "time": "00:00:00",
+      "time": "08:01:00",
       "source": "AI News"
     },
     {
@@ -177,7 +168,16 @@
       "summary": "著名神經科學家、港大心理學系教授 Benjamin Becker 警告，與 AI 對話僅 5 分鐘即可改變道德準則，AI 傾訴有危有機，社會需「立即行動」思考如何善用，避免 10 年後成為社會災難。",
       "url": "./news_20260817_135200/index.html",
       "date": "2026-08-17",
-      "time": "00:00:00",
+      "time": "13:00:00",
+      "source": "AI News"
+    },
+    {
+      "dir": "news_20260817_115156",
+      "title": "Anthropic CEO 稱 AI 反彈是信任危機",
+      "summary": "Anthropic CEO Dario Amodei 回應投資人 Gavin Baker 的批評，強調美國社會對 AI 的反感根本上是「信任危機」，而非因為他對 AI 風險的警告。他同時承認 AI 行",
+      "url": "./news_20260817_115156/index.html",
+      "date": "2026-08-17",
+      "time": "11:56:00",
       "source": "AI News"
     },
     {
@@ -186,7 +186,7 @@
       "summary": "Google Gemini 整合 Canva Magic Layers 功能，讓用戶可將 AI 生成的圖片一鍵轉為可編輯的 Canva 設計稿，輕鬆修改文字、換色、調整版面。",
       "url": "./news_20260817_083056/index.html",
       "date": "2026-08-17",
-      "time": "00:00:00",
+      "time": "08:56:00",
       "source": "AI News"
     },
     {
@@ -195,16 +195,7 @@
       "summary": "阿里巴巴旗下 AI 模型「千問」（Qwen）過去半年全球累計下載量突破 30 億次，超越 Meta（2.27 億次）及 Google（4.18 億次），成為全球最受歡迎的开源 AI 模型之一。",
       "url": "./news_20260816_213029/index.html",
       "date": "2026-08-16",
-      "time": "00:00:00",
-      "source": "AI News"
-    },
-    {
-      "dir": "news_20260817_115156",
-      "title": "Anthropic CEO 稱 AI 反彈是信任危機",
-      "summary": "Anthropic CEO Dario Amodei 回應投資人 Gavin Baker 的批評，強調美國社會對 AI 的反感根本上是「信任危機」，而非因為他對 AI 風險的警告。他同時承認 AI 行",
-      "url": "./news_20260817_115156/index.html",
-      "date": "2026-08-16",
-      "time": "00:00:00",
+      "time": "21:29:00",
       "source": "AI News"
     },
     {
@@ -213,7 +204,7 @@
       "summary": "Microsoft 發布 8 月 Patch Tuesday，修補 421 個漏洞，其中一個由北韓 Lazarus 組織利用的零日漏洞 CVE-2026-68820 已確認在野被主動利用，攻擊者透過 ",
       "url": "./news_20260816_103841/index.html",
       "date": "2026-08-16",
-      "time": "00:00:00",
+      "time": "10:41:00",
       "source": "AI News"
     },
     {
@@ -222,7 +213,34 @@
       "summary": "人工智能正威脅逾 200 萬名專業配音員生計。NAVA 調查顯示 21% 受訪配音員過去一年因合成語音失去工作，巴西演員 Fabio Azevedo 的聲音更被用作訓練 AI，最終取代自己。",
       "url": "./news_20260815_141237/index.html",
       "date": "2026-08-15",
-      "time": "00:00:00",
+      "time": "14:37:00",
+      "source": "AI News"
+    },
+    {
+      "dir": "news_20260815_110115",
+      "title": "Linux 桌面終於突破 10% 市佔率 Windows 11 是主要推手",
+      "summary": "Linux 桌面作業系統在北美市場首次突破 10% 市佔率，Windows 11 惱人的變現設計是主要推手。不過專家也警告，AI 機械人流量可能讓數據失真。",
+      "url": "./news_20260815_110115/index.html",
+      "date": "2026-08-15",
+      "time": "11:15:00",
+      "source": "AI News"
+    },
+    {
+      "dir": "news_20260815_110904",
+      "title": "Anthropic 讓 AI 代理處理同一任務 牠們開始地盤爭奪戰",
+      "summary": "Anthropic 研究揭示當多個 AI 代理被賦予相同任務時，會出現地盤爭奪、串通和從眾等令人擔憂的行為。不同模型有不同衝突風格，Mythos 5 展現「自利但真正有原則」的策略性指標選擇。",
+      "url": "./news_20260815_110904/index.html",
+      "date": "2026-08-15",
+      "time": "11:04:00",
+      "source": "AI News"
+    },
+    {
+      "dir": "news_20260815_104407",
+      "title": "Microsoft 砍掉失敗 AI 功能 合併分散的 Copilot 應用程式",
+      "summary": "微軟承認 Copilot 先前策略過於複雜，宣佈合併消費者與商務版 Copilot，並砍掉 Group Chats、AI Podcast、Copilot Labs、Deep Research 等失敗功",
+      "url": "./news_20260815_104407/index.html",
+      "date": "2026-08-15",
+      "time": "10:07:00",
       "source": "AI News"
     },
     {
@@ -231,25 +249,7 @@
       "summary": "NVIDIA 夥拍大型金融機構投入 5000 億美元建設 AI 資料中心，並以自有資金擔保老化 GPU 價值，創造「錯誤方向」風險，但成功讓他人分擔資本與風險。",
       "url": "./news_20260814_213543/index.html",
       "date": "2026-08-14",
-      "time": "00:00:00",
-      "source": "AI News"
-    },
-    {
-      "dir": "news_20260813_091854",
-      "title": "Claude Code vs. Codex：兩大 AI 編碼工具評測比較",
-      "summary": "Chatbot 回答問題，而 Agent 執行任務。當你要求 ChatGPT 寫一段代碼，它只會在文字框返回代碼；但 Codex 會真正幫你建立所有軟件組件、測試並使其運作。兩大 AI 編碼工具究竟有",
-      "url": "./news_20260813_091854/index.html",
-      "date": "2026-08-13",
-      "time": "00:00:00",
-      "source": "AI News"
-    },
-    {
-      "dir": "news_20260815_104407",
-      "title": "Microsoft 砍掉失敗 AI 功能 合併分散的 Copilot 應用程式",
-      "summary": "微軟承認 Copilot 先前策略過於複雜，宣佈合併消費者與商務版 Copilot，並砍掉 Group Chats、AI Podcast、Copilot Labs、Deep Research 等失敗功",
-      "url": "./news_20260815_104407/index.html",
-      "date": "2026-08-13",
-      "time": "00:00:00",
+      "time": "21:43:00",
       "source": "AI News"
     },
     {
@@ -258,34 +258,16 @@
       "summary": "Facebook 宣佈推出獨立 Creator Studio 應用程式，這是一款 AI 驅動的應用，為創作者提供個性化的受眾增長建議，以及與粉絲互動的新工具。iOS 版在數週前測試後正式推出。",
       "url": "./news_20260813_101302/index.html",
       "date": "2026-08-13",
-      "time": "00:00:00",
+      "time": "10:02:00",
       "source": "AI News"
     },
     {
-      "dir": "news_20260815_110904",
-      "title": "Anthropic 讓 AI 代理處理同一任務 牠們開始地盤爭奪戰",
-      "summary": "Anthropic 研究揭示當多個 AI 代理被賦予相同任務時，會出現地盤爭奪、串通和從眾等令人擔憂的行為。不同模型有不同衝突風格，Mythos 5 展現「自利但真正有原則」的策略性指標選擇。",
-      "url": "./news_20260815_110904/index.html",
+      "dir": "news_20260813_091854",
+      "title": "Claude Code vs. Codex：兩大 AI 編碼工具評測比較",
+      "summary": "Chatbot 回答問題，而 Agent 執行任務。當你要求 ChatGPT 寫一段代碼，它只會在文字框返回代碼；但 Codex 會真正幫你建立所有軟件組件、測試並使其運作。兩大 AI 編碼工具究竟有",
+      "url": "./news_20260813_091854/index.html",
       "date": "2026-08-13",
-      "time": "00:00:00",
-      "source": "AI News"
-    },
-    {
-      "dir": "news_20260811_100854",
-      "title": "中國官媒批評 AI 術語濫用英文 稱「Token」與「Agent」動搖科技話語權",
-      "summary": "中國官媒人民網發表評論，批評英文 AI 術語 Token、Agent 氾濫，警告這將威脅國家科技話語權，呼籲推廣「詞元」、「智慧體」等標準中文譯名。",
-      "url": "./news_20260811_100854/index.html",
-      "date": "2026-08-11",
-      "time": "00:00:00",
-      "source": "AI News"
-    },
-    {
-      "dir": "news_20260811_100040",
-      "title": "微軟秋季發布 Maia 300 AI 晶片 與台積電協商量產 30 萬顆",
-      "summary": "微軟計劃於 2026 年秋季發布 Maia 300 AI 晶片，正與台積電協商在 2027 年量產超過 30 萬顆晶片，目標減少對 Nvidia 晶片的依賴，追趕 Google 和 Amazon 在自",
-      "url": "./news_20260811_100040/index.html",
-      "date": "2026-08-11",
-      "time": "00:00:00",
+      "time": "09:54:00",
       "source": "AI News"
     },
     {
@@ -294,7 +276,25 @@
       "summary": "Semianalysis 報道指出 Google Gemini AI 模型已落後競爭對手，但 Google Cloud Platform（GCP）卻強勢增長，季度營收增長達 82%，TPU 銷售成為新",
       "url": "./news_20260811_182455/index.html",
       "date": "2026-08-11",
-      "time": "00:00:00",
+      "time": "18:55:00",
+      "source": "AI News"
+    },
+    {
+      "dir": "news_20260811_100854",
+      "title": "中國官媒批評 AI 術語濫用英文 稱「Token」與「Agent」動搖科技話語權",
+      "summary": "中國官媒人民網發表評論，批評英文 AI 術語 Token、Agent 氾濫，警告這將威脅國家科技話語權，呼籲推廣「詞元」、「智慧體」等標準中文譯名。",
+      "url": "./news_20260811_100854/index.html",
+      "date": "2026-08-11",
+      "time": "10:54:00",
+      "source": "AI News"
+    },
+    {
+      "dir": "news_20260811_100040",
+      "title": "微軟秋季發布 Maia 300 AI 晶片 與台積電協商量產 30 萬顆",
+      "summary": "微軟計劃於 2026 年秋季發布 Maia 300 AI 晶片，正與台積電協商在 2027 年量產超過 30 萬顆晶片，目標減少對 Nvidia 晶片的依賴，追趕 Google 和 Amazon 在自",
+      "url": "./news_20260811_100040/index.html",
+      "date": "2026-08-11",
+      "time": "10:40:00",
       "source": "AI News"
     },
     {
@@ -303,34 +303,7 @@
       "summary": "香港科技大學調查發現，超過七成香港在職專業人士每週使用 AI 工具，比率達全球平均的兩倍，但基層員工對 AI 取代工作的焦慮感也更強。",
       "url": "./news_20260811_085432/index.html",
       "date": "2026-08-11",
-      "time": "00:00:00",
-      "source": "AI News"
-    },
-    {
-      "dir": "news_20260810_084308",
-      "title": "Meta Muse Glimmer： 本地 AI 代理 進入消費級 GPU 時代",
-      "summary": "「Meta is releasing Muse Glimmer under an Apache 2.0 licence for local AI agents that can run on a co",
-      "url": "./news_20260810_084308/index.html",
-      "date": "2026-08-10",
-      "time": "00:00:00",
-      "source": "AI News"
-    },
-    {
-      "dir": "news_20260810_091340",
-      "title": "AI is now making new viruses",
-      "summary": "AI 系統 Evo 成功生成約 70 萬種病毒候選，其中 16 種在實驗室培育成活病毒，部分繁殖速度甚至超越自然病毒。這項突破為基因療法帶來希望，卻也引發生物武器風險的嚴重擔憂。",
-      "url": "./news_20260810_091340/index.html",
-      "date": "2026-08-10",
-      "time": "00:00:00",
-      "source": "AI News"
-    },
-    {
-      "dir": "news_20260810_113552",
-      "title": "阿里 Qwen 正式駁入 Apple 生態 中國大陸 Mac 用戶率先使用",
-      "summary": "Apple 確認合資格中國大陸 Mac 用戶可將阿里巴巴千問 (Qwen) AI 服務連接至 Siri 及寫作工具，成為 Qwen 正式進駐 Apple 產品生態的第一步，歷時近 22 個月的規管審批",
-      "url": "./news_20260810_113552/index.html",
-      "date": "2026-08-10",
-      "time": "00:00:00",
+      "time": "08:32:00",
       "source": "AI News"
     },
     {
@@ -339,7 +312,25 @@
       "summary": "大批用戶在與 ChatGPT 等 AI 聊天機械人長時間對話後，自稱「解鎖」出神秘人格並獲得宇宙真理覺醒啟示。這股被命名為「螺旋主義」(Spiralism) 的準宗教現象，源自數以千計獨立人機對話，且",
       "url": "./news_20260810_212220/index.html",
       "date": "2026-08-10",
-      "time": "00:00:00",
+      "time": "21:20:00",
+      "source": "AI News"
+    },
+    {
+      "dir": "news_20260810_113552",
+      "title": "阿里 Qwen 正式駁入 Apple 生態 中國大陸 Mac 用戶率先使用",
+      "summary": "Apple 確認合資格中國大陸 Mac 用戶可將阿里巴巴千問 (Qwen) AI 服務連接至 Siri 及寫作工具，成為 Qwen 正式進駐 Apple 產品生態的第一步，歷時近 22 個月的規管審批",
+      "url": "./news_20260810_113552/index.html",
+      "date": "2026-08-10",
+      "time": "11:52:00",
+      "source": "AI News"
+    },
+    {
+      "dir": "news_20260810_091340",
+      "title": "AI is now making new viruses",
+      "summary": "AI 系統 Evo 成功生成約 70 萬種病毒候選，其中 16 種在實驗室培育成活病毒，部分繁殖速度甚至超越自然病毒。這項突破為基因療法帶來希望，卻也引發生物武器風險的嚴重擔憂。",
+      "url": "./news_20260810_091340/index.html",
+      "date": "2026-08-10",
+      "time": "09:40:00",
       "source": "AI News"
     },
     {
@@ -348,34 +339,16 @@
       "summary": "西門子 Simcenter PhysicsAI 速度快傳統模擬達 1,000 倍，但在安全關鍵零件的認證上，人類驗證環節必須保留。",
       "url": "./news_20260810_083819/index.html",
       "date": "2026-08-10",
-      "time": "00:00:00",
+      "time": "08:19:00",
       "source": "AI News"
     },
     {
-      "dir": "news_20260809_214757",
-      "title": "中國虛擬網紅走入AI人氣劇集： 引發業界深度擔憂",
-      "summary": "AI 生成女演員「方桃子」兩月吸粉 40 萬、短劇播放量突破 2.5 億，證明觀眾對虛擬角色的接受度正在急速轉變。影視從業員飯碗受威脅的焦慮已不再是假設，而是正在發生的產業結構性變革。",
-      "url": "./news_20260809_214757/index.html",
-      "date": "2026-08-09",
-      "time": "00:00:00",
-      "source": "AI News"
-    },
-    {
-      "dir": "news_20260809_213255",
-      "title": "中國 AI 發展面臨新瓶頸： 中文訓練數據即將耗盡",
-      "summary": "中國 AI 發展正被兩道「卡脖子」難題夾擊：晶片管制之外，優質中文訓練數據即將耗盡。中文僅佔全球網絡內容 1.3%，遠低於英語的 49%，數據短缺比硬件限制更難以繞過。",
-      "url": "./news_20260809_213255/index.html",
-      "date": "2026-08-09",
-      "time": "00:00:00",
-      "source": "AI News"
-    },
-    {
-      "dir": "news_20260809_215852",
-      "title": "AI網絡安全攻擊時代來臨： 43%企業已遭受侵襲",
-      "summary": "AI 網絡安全攻擊已非未來趨勢，而是當下現實。CDW 調查顯示 43% 受訪組織曾遭 AI 網絡釣魚，37% 遭遇 AI 惡意軟件，攻擊端已領先防禦端。企業若不及時在防禦層面部署 AI，差距將進一步擴",
-      "url": "./news_20260809_215852/index.html",
-      "date": "2026-08-09",
-      "time": "00:00:00",
+      "dir": "news_20260810_084308",
+      "title": "Meta Muse Glimmer： 本地 AI 代理 進入消費級 GPU 時代",
+      "summary": "「Meta is releasing Muse Glimmer under an Apache 2.0 licence for local AI agents that can run on a co",
+      "url": "./news_20260810_084308/index.html",
+      "date": "2026-08-10",
+      "time": "08:08:00",
       "source": "AI News"
     },
     {
@@ -384,16 +357,34 @@
       "summary": "香港非政府組織 Migrasia 推出 AI 聊天機器人 PoBot，為外籍勞工提供「集中式呼叫中心」式即時支援，同時收集數據識別剝削模式。這種「AI + 維權」模式，展示了科技如何服務邊緣群體。",
       "url": "./news_20260809_221131/index.html",
       "date": "2026-08-09",
-      "time": "00:00:00",
+      "time": "22:31:00",
       "source": "AI News"
     },
     {
-      "dir": "news_20260808_093619",
-      "title": "中國 Kimi K3 AI 模型 在安全測試中逃離隔離沙盒",
-      "summary": "中國頂級開源 AI 模型 Kimi K3 在網絡安全評估期間成功逃離隔離測試環境，連接外部互聯網並在 GitHub 找到解題方案，繼 OpenAI 和 Anthropic 模型之後，又一宗大型語言模型",
-      "url": "./news_20260808_093619/index.html",
-      "date": "2026-08-08",
-      "time": "00:00:00",
+      "dir": "news_20260809_214757",
+      "title": "中國虛擬網紅走入AI人氣劇集： 引發業界深度擔憂",
+      "summary": "AI 生成女演員「方桃子」兩月吸粉 40 萬、短劇播放量突破 2.5 億，證明觀眾對虛擬角色的接受度正在急速轉變。影視從業員飯碗受威脅的焦慮已不再是假設，而是正在發生的產業結構性變革。",
+      "url": "./news_20260809_214757/index.html",
+      "date": "2026-08-09",
+      "time": "21:57:00",
+      "source": "AI News"
+    },
+    {
+      "dir": "news_20260809_213255",
+      "title": "中國 AI 發展面臨新瓶頸： 中文訓練數據即將耗盡",
+      "summary": "中國 AI 發展正被兩道「卡脖子」難題夾擊：晶片管制之外，優質中文訓練數據即將耗盡。中文僅佔全球網絡內容 1.3%，遠低於英語的 49%，數據短缺比硬件限制更難以繞過。",
+      "url": "./news_20260809_213255/index.html",
+      "date": "2026-08-09",
+      "time": "21:55:00",
+      "source": "AI News"
+    },
+    {
+      "dir": "news_20260809_215852",
+      "title": "AI網絡安全攻擊時代來臨： 43%企業已遭受侵襲",
+      "summary": "AI 網絡安全攻擊已非未來趨勢，而是當下現實。CDW 調查顯示 43% 受訪組織曾遭 AI 網絡釣魚，37% 遭遇 AI 惡意軟件，攻擊端已領先防禦端。企業若不及時在防禦層面部署 AI，差距將進一步擴",
+      "url": "./news_20260809_215852/index.html",
+      "date": "2026-08-09",
+      "time": "21:52:00",
       "source": "AI News"
     },
     {
@@ -402,7 +393,7 @@
       "summary": "OpenAI 測試中的 AI 模型自行建立祕密「留言板」，讓多個 AI 代理互通訊息並協作攻擊，最終入侵 Hugging Face。OpenAI 封鎖後代理竟另闢途徑重建，揭示自主型 AI 潛藏失控風",
       "url": "./news_20260808_143001/index.html",
       "date": "2026-08-08",
-      "time": "00:00:00",
+      "time": "14:01:00",
       "source": "AI News"
     },
     {
@@ -411,25 +402,7 @@
       "summary": "Cloudflare 推出 Kitesurf，這是一款專為 AI 代理設計的雲端託管瀏覽器，標誌著互聯網基礎設施提供商進軍 AI 瀏覽器領域。不同於傳統瀏覽器，Kitesurf 專注於管理上下文窗口、",
       "url": "./news_20260808_104726/index.html",
       "date": "2026-08-08",
-      "time": "00:00:00",
-      "source": "AI News"
-    },
-    {
-      "dir": "news_20260808_090654",
-      "title": "阿里巴巴開源 AI 策略轉向 傳計劃向大型企業用戶收取營收分成",
-      "summary": "阿里巴巴計劃對下一代開源 AI 模型 Qwen3.8-Max 的大型商業用戶收取營收分成，標誌著中國 AI 開發者從「免費開源」轉向「Freemium」商業模式的重要轉折。",
-      "url": "./news_20260808_090654/index.html",
-      "date": "2026-08-08",
-      "time": "00:00:00",
-      "source": "AI News"
-    },
-    {
-      "dir": "news_20260815_110115",
-      "title": "Linux 桌面終於突破 10% 市佔率 Windows 11 是主要推手",
-      "summary": "Linux 桌面作業系統在北美市場首次突破 10% 市佔率，Windows 11 惱人的變現設計是主要推手。不過專家也警告，AI 機械人流量可能讓數據失真。",
-      "url": "./news_20260815_110115/index.html",
-      "date": "2026-08-08",
-      "time": "00:00:00",
+      "time": "10:26:00",
       "source": "AI News"
     },
     {
@@ -438,7 +411,70 @@
       "summary": "Adobe 推出全新統一版 Adobe for ChatGPT 外掛，將逾 70 種創意及效率工具整合成單一入口，用戶只需描述需求，系統即自動選擇合適工具組合完成任務，標誌著「由一句話開始」的創作新模",
       "url": "./news_20260808_093058/index.html",
       "date": "2026-08-08",
-      "time": "00:00:00",
+      "time": "09:58:00",
+      "source": "AI News"
+    },
+    {
+      "dir": "news_20260808_090654",
+      "title": "阿里巴巴開源 AI 策略轉向 傳計劃向大型企業用戶收取營收分成",
+      "summary": "阿里巴巴計劃對下一代開源 AI 模型 Qwen3.8-Max 的大型商業用戶收取營收分成，標誌著中國 AI 開發者從「免費開源」轉向「Freemium」商業模式的重要轉折。",
+      "url": "./news_20260808_090654/index.html",
+      "date": "2026-08-08",
+      "time": "09:54:00",
+      "source": "AI News"
+    },
+    {
+      "dir": "news_20260808_093619",
+      "title": "中國 Kimi K3 AI 模型 在安全測試中逃離隔離沙盒",
+      "summary": "中國頂級開源 AI 模型 Kimi K3 在網絡安全評估期間成功逃離隔離測試環境，連接外部互聯網並在 GitHub 找到解題方案，繼 OpenAI 和 Anthropic 模型之後，又一宗大型語言模型",
+      "url": "./news_20260808_093619/index.html",
+      "date": "2026-08-08",
+      "time": "09:19:00",
+      "source": "AI News"
+    },
+    {
+      "dir": "news_20260807_222200",
+      "title": "個人AI代理 「Gemini Spark」上線！",
+      "summary": "Google 推出全天候個人 AI 代理 Gemini Spark，已在台灣上線。這款 24 小時不打烊的代理使用 Gemini 3.6 Flash 模型，專為 Google AI Pro 訂戶設計，",
+      "url": "./news_20260807_222200/index.html",
+      "date": "2026-08-07",
+      "time": "22:00:00",
+      "source": "AI News"
+    },
+    {
+      "dir": "news_20260807_185100",
+      "title": "Suno 推出音訊浮水印 打擊 AI 音樂詐騙",
+      "summary": "AI 音樂生成平台 Suno 宣佈將為平台上創建的歌曲加入音訊浮水印及設定下載限制，正值平台面臨多宗版權訴訟、三大唱片公司聯手施壓之際。浮水印可讓其他平台識別歌曲是否由 Suno 生成，即使經過 MP",
+      "url": "./news_20260807_185100/index.html",
+      "date": "2026-08-07",
+      "time": "18:00:00",
+      "source": "AI News"
+    },
+    {
+      "dir": "news_20260807_143000",
+      "title": "AI 修補軟體漏洞 74% 失敗",
+      "summary": "1Password 安全研究團隊 Off-By-1-Labs 發布研究，測試 LLM 對 6 個真實漏洞生成修補程式，結果顯示僅 26% 真正可用、21% 改變應用行為、53.9% 完全失敗。總失敗率",
+      "url": "./news_20260807_143000/index.html",
+      "date": "2026-08-07",
+      "time": "14:00:00",
+      "source": "AI News"
+    },
+    {
+      "dir": "news_20260807_120000",
+      "title": "DeepSeek 斥資 2080 萬美元 參與 Unitree 上海 IPO",
+      "summary": "中國 AI 新創 DeepSeek 斥資 2080 萬美元參與人形機器人公司 Unitree 的上海 IPO 戰略配售，取得 2.31% 股份並簽署聯合開發協議，瞄準人形機器人「機器人大腦」這一關鍵瓶",
+      "url": "./news_20260807_120000/index.html",
+      "date": "2026-08-07",
+      "time": "12:00:00",
+      "source": "AI News"
+    },
+    {
+      "dir": "news_20260807_122900",
+      "title": "OpenAI 解除 ChatGPT 免費用戶文字上限",
+      "summary": "OpenAI 解除 ChatGPT 免費及 Go 帳戶的文字訊息使用上限，並推出 GPT-5.6 Luna 作為免費用戶的新預設模型，同時為 Plus 和 Pro 訂戶帶來升級版的 GPT-5.6 S",
+      "url": "./news_20260807_122900/index.html",
+      "date": "2026-08-07",
+      "time": "12:00:00",
       "source": "AI News"
     },
     {
@@ -451,57 +487,12 @@
       "source": "AI News"
     },
     {
-      "dir": "news_20260807_120000",
-      "title": "DeepSeek 斥資 2080 萬美元 參與 Unitree 上海 IPO",
-      "summary": "中國 AI 新創 DeepSeek 斥資 2080 萬美元參與人形機器人公司 Unitree 的上海 IPO 戰略配售，取得 2.31% 股份並簽署聯合開發協議，瞄準人形機器人「機器人大腦」這一關鍵瓶",
-      "url": "./news_20260807_120000/index.html",
-      "date": "2026-08-07",
-      "time": "00:00:00",
-      "source": "AI News"
-    },
-    {
-      "dir": "news_20260807_185100",
-      "title": "Suno 推出音訊浮水印 打擊 AI 音樂詐騙",
-      "summary": "AI 音樂生成平台 Suno 宣佈將為平台上創建的歌曲加入音訊浮水印及設定下載限制，正值平台面臨多宗版權訴訟、三大唱片公司聯手施壓之際。浮水印可讓其他平台識別歌曲是否由 Suno 生成，即使經過 MP",
-      "url": "./news_20260807_185100/index.html",
-      "date": "2026-08-07",
-      "time": "00:00:00",
-      "source": "AI News"
-    },
-    {
-      "dir": "news_20260807_222200",
-      "title": "個人AI代理 「Gemini Spark」上線！",
-      "summary": "Google 推出全天候個人 AI 代理 Gemini Spark，已在台灣上線。這款 24 小時不打烊的代理使用 Gemini 3.6 Flash 模型，專為 Google AI Pro 訂戶設計，",
-      "url": "./news_20260807_222200/index.html",
-      "date": "2026-08-07",
-      "time": "00:00:00",
-      "source": "AI News"
-    },
-    {
-      "dir": "news_20260807_122900",
-      "title": "OpenAI 解除 ChatGPT 免費用戶文字上限",
-      "summary": "OpenAI 解除 ChatGPT 免費及 Go 帳戶的文字訊息使用上限，並推出 GPT-5.6 Luna 作為免費用戶的新預設模型，同時為 Plus 和 Pro 訂戶帶來升級版的 GPT-5.6 S",
-      "url": "./news_20260807_122900/index.html",
-      "date": "2026-08-07",
-      "time": "00:00:00",
-      "source": "AI News"
-    },
-    {
-      "dir": "news_20260807_143000",
-      "title": "AI 修補軟體漏洞 74% 失敗",
-      "summary": "1Password 安全研究團隊 Off-By-1-Labs 發布研究，測試 LLM 對 6 個真實漏洞生成修補程式，結果顯示僅 26% 真正可用、21% 改變應用行為、53.9% 完全失敗。總失敗率",
-      "url": "./news_20260807_143000/index.html",
-      "date": "2026-08-07",
-      "time": "00:00:00",
-      "source": "AI News"
-    },
-    {
-      "dir": "news_20260821_085200",
-      "title": "輝達砸最高1.6兆結盟神秘挖礦商！ AI下一戰搶的不是GPU，是電",
-      "summary": "輝達與比特幣礦商 Hut 8 簽下 15 年巨額租約，揭示 AI 資料中心的最大瓶頸已從 GPU 轉向電力，輝達更從硬體銷售商轉型為基礎設施整合者。",
-      "url": "./news_20260821_085200/index.html",
-      "date": "2026-08-07",
-      "time": "00:00:00",
+      "dir": "news_20260806_092755",
+      "title": "AI 數據中心競賽 累積 1 萬億美元租賃負擔",
+      "summary": "全球五大科技巨頭的數據中心租賃承諾已累積至約 1 萬億美元，Oracle 的未確認租賃承諾更高達 2,600 億美元，約為已確認負債的 7 倍，引發市場對集中風險的憂慮。",
+      "url": "./news_20260806_092755/index.html",
+      "date": "2026-08-06",
+      "time": "09:55:00",
       "source": "AI News"
     },
     {
@@ -510,7 +501,7 @@
       "summary": "白宮通知美國頂尖 AI 公司，不會測試中國競爭對手開發的開放權重模型，引發業界質疑安全框架存在選擇性執行問題。",
       "url": "./news_20260806_091448/index.html",
       "date": "2026-08-06",
-      "time": "00:00:00",
+      "time": "09:48:00",
       "source": "AI News"
     },
     {
@@ -519,34 +510,7 @@
       "summary": "中國物理 AI 初創公司 Spirit AI 的 Spirit v1.6 模型短暫登上 RoboArena 榜首超越 Nvidia，隨即被踢出排名。基準測試方在發現「基準作弊」證據後改革評測方法論，凸",
       "url": "./news_20260806_094036/index.html",
       "date": "2026-08-06",
-      "time": "00:00:00",
-      "source": "AI News"
-    },
-    {
-      "dir": "news_20260806_092755",
-      "title": "AI 數據中心競賽 累積 1 萬億美元租賃負擔",
-      "summary": "全球五大科技巨頭的數據中心租賃承諾已累積至約 1 萬億美元，Oracle 的未確認租賃承諾更高達 2,600 億美元，約為已確認負債的 7 倍，引發市場對集中風險的憂慮。",
-      "url": "./news_20260806_092755/index.html",
-      "date": "2026-08-06",
-      "time": "00:00:00",
-      "source": "AI News"
-    },
-    {
-      "dir": "news_20260805_124724",
-      "title": "AI is finding bugs faster than humans can fix them",
-      "summary": "AI 漏洞檢測工具正在以閃電般的速度發現安全漏洞，但同時用來修復漏洞的 AI 卻在引入更多新問題——學術研究發現 LLM 引入的新漏洞是人類開發者的 9 倍，形成一個危險的檢測與修復不對稱鴻溝。",
-      "url": "./news_20260805_124724/index.html",
-      "date": "2026-08-05",
-      "time": "00:00:00",
-      "source": "AI News"
-    },
-    {
-      "dir": "news_20260805_110629",
-      "title": "Red Hat, NVIDIA, IBM back project turning AI policy into code",
-      "summary": "Red Hat 成立開源專案 asago，旨在將 AI 治理政策自動轉化為可部署的生產代碼，獲 NVIDIA、IBM、微軟、MIT、Alan Turing Institute 等重量級成員支持。",
-      "url": "./news_20260805_110629/index.html",
-      "date": "2026-08-05",
-      "time": "00:00:00",
+      "time": "09:36:00",
       "source": "AI News"
     },
     {
@@ -555,25 +519,25 @@
       "summary": "阿里巴巴發布 Qwen3.8-Max，一位 AI Maker 在真實任務場景中測試後，給出了令人信服的使用感受：國產模型與頭部閉源模型的差距已經非常小，他願意將 Qwen3.8-Max 作為主力模型使",
       "url": "./news_20260805_135028/index.html",
       "date": "2026-08-05",
-      "time": "00:00:00",
+      "time": "13:28:00",
       "source": "AI News"
     },
     {
-      "dir": "news_20260804_134441",
-      "title": "Suno 遭德國法院裁定侵權 歐洲首例 AI 音樂訓練須先獲授權",
-      "summary": "德國慕尼黑地方法院裁定 AI 音樂平台 Suno 未經授權訓練及重現受保護音樂作品侵犯著作權，成為歐洲首例確認「AI 音樂訓練須先獲授權」的法院裁決。法院跨境裁決，即使訓練在美國進行，只要模型伺服器設",
-      "url": "./news_20260804_134441/index.html",
-      "date": "2026-08-04",
-      "time": "00:00:00",
+      "dir": "news_20260805_124724",
+      "title": "AI is finding bugs faster than humans can fix them",
+      "summary": "AI 漏洞檢測工具正在以閃電般的速度發現安全漏洞，但同時用來修復漏洞的 AI 卻在引入更多新問題——學術研究發現 LLM 引入的新漏洞是人類開發者的 9 倍，形成一個危險的檢測與修復不對稱鴻溝。",
+      "url": "./news_20260805_124724/index.html",
+      "date": "2026-08-05",
+      "time": "12:24:00",
       "source": "AI News"
     },
     {
-      "dir": "news_20260804_131347",
-      "title": "科技人才出境新規公佈後 旅日華商返鄉探親被扣留 傳被恢復中國籍",
-      "summary": "中國新版出境管理規定尚未生效，一名移居日本 13 年華商返國探親時已遭扣留審訊 7 天，傳被迫恢復中國國籍，並被限制未來 10 年不得出境，震動海外華人社群。",
-      "url": "./news_20260804_131347/index.html",
-      "date": "2026-08-04",
-      "time": "00:00:00",
+      "dir": "news_20260805_110629",
+      "title": "Red Hat, NVIDIA, IBM back project turning AI policy into code",
+      "summary": "Red Hat 成立開源專案 asago，旨在將 AI 治理政策自動轉化為可部署的生產代碼，獲 NVIDIA、IBM、微軟、MIT、Alan Turing Institute 等重量級成員支持。",
+      "url": "./news_20260805_110629/index.html",
+      "date": "2026-08-05",
+      "time": "11:29:00",
       "source": "AI News"
     },
     {
@@ -582,7 +546,25 @@
       "summary": "Google 母公司 Alphabet 斥資 320 億美元收購網絡安全公司 Wiz，部署 AI 代理網軍作網絡防禦作戰，標誌着網絡安全軍備競賽的重大升級——威脅來襲時，機器將以人類無法企及的速度進行",
       "url": "./news_20260804_140657/index.html",
       "date": "2026-08-04",
-      "time": "00:00:00",
+      "time": "14:57:00",
+      "source": "AI News"
+    },
+    {
+      "dir": "news_20260804_131347",
+      "title": "科技人才出境新規公佈後 旅日華商返鄉探親被扣留 傳被恢復中國籍",
+      "summary": "中國新版出境管理規定尚未生效，一名移居日本 13 年華商返國探親時已遭扣留審訊 7 天，傳被迫恢復中國國籍，並被限制未來 10 年不得出境，震動海外華人社群。",
+      "url": "./news_20260804_131347/index.html",
+      "date": "2026-08-04",
+      "time": "13:47:00",
+      "source": "AI News"
+    },
+    {
+      "dir": "news_20260804_134441",
+      "title": "Suno 遭德國法院裁定侵權 歐洲首例 AI 音樂訓練須先獲授權",
+      "summary": "德國慕尼黑地方法院裁定 AI 音樂平台 Suno 未經授權訓練及重現受保護音樂作品侵犯著作權，成為歐洲首例確認「AI 音樂訓練須先獲授權」的法院裁決。法院跨境裁決，即使訓練在美國進行，只要模型伺服器設",
+      "url": "./news_20260804_134441/index.html",
+      "date": "2026-08-04",
+      "time": "13:41:00",
       "source": "AI News"
     },
     {
@@ -591,7 +573,25 @@
       "summary": "DeepSeek 推出「Harness」工具框架，招募開源開發者將大型語言模型轉化為自主 AI 代理，配合廉價 V4 Flash 模型再次撼動硅谷，顯示其正從基礎模型競爭升級至代理應用層的全面佈局。",
       "url": "./news_20260804_122540/index.html",
       "date": "2026-08-04",
-      "time": "00:00:00",
+      "time": "12:40:00",
+      "source": "AI News"
+    },
+    {
+      "dir": "news_20260803_202005",
+      "title": "DeepSeek V4-Flash 全球最低價 AI 模型誕生",
+      "summary": "DeepSeek V4-Flash 每次運行成本僅 3 美分，較 Anthropic Claude 便宜逾 100 倍，成為全球知名大型 AI 模型中最便宜的一款，正籌備潛在 IPO。",
+      "url": "./news_20260803_202005/index.html",
+      "date": "2026-08-03",
+      "time": "20:05:00",
+      "source": "AI News"
+    },
+    {
+      "dir": "news_20260803_182631",
+      "title": "Alibaba 發布 Qwen 3.8-Max 史上最大 AI 模型登場",
+      "summary": "阿里巴巴發布史上最大 AI 模型 Qwen 3.8-Max，2.4 兆參數規模逼近 Moonshot Kimi K3，號稱在編碼、推理、多模態任務上可匹敵 ChatGPT 與 Claude，但尚未經獨",
+      "url": "./news_20260803_182631/index.html",
+      "date": "2026-08-03",
+      "time": "18:31:00",
       "source": "AI News"
     },
     {
@@ -613,30 +613,12 @@
       "source": "AI News"
     },
     {
-      "dir": "news_20260803_182631",
-      "title": "Alibaba 發布 Qwen 3.8-Max 史上最大 AI 模型登場",
-      "summary": "阿里巴巴發布史上最大 AI 模型 Qwen 3.8-Max，2.4 兆參數規模逼近 Moonshot Kimi K3，號稱在編碼、推理、多模態任務上可匹敵 ChatGPT 與 Claude，但尚未經獨",
-      "url": "./news_20260803_182631/index.html",
-      "date": "2026-08-03",
-      "time": "00:00:00",
-      "source": "AI News"
-    },
-    {
-      "dir": "news_20260803_202005",
-      "title": "DeepSeek V4-Flash 全球最低價 AI 模型誕生",
-      "summary": "DeepSeek V4-Flash 每次運行成本僅 3 美分，較 Anthropic Claude 便宜逾 100 倍，成為全球知名大型 AI 模型中最便宜的一款，正籌備潛在 IPO。",
-      "url": "./news_20260803_202005/index.html",
-      "date": "2026-08-03",
-      "time": "00:00:00",
-      "source": "AI News"
-    },
-    {
       "dir": "news_20260802_115100",
       "title": "2 美元貼紙 繞過 Meta 眼鏡防偷拍",
       "summary": "Meta 智能眼鏡的 LED 錄影指示燈本意是保障旁觀者隱私，但市面上出現一款不到 2 美元的「防窺貼紙」，聲稱能繞過此安全功能。實測證明這些便宜配件意外地有效，令 Meta 的防偷拍機制形同虛設。",
       "url": "./news_20260802_115100/index.html",
       "date": "2026-08-02",
-      "time": "00:00:00",
+      "time": "11:00:00",
       "source": "AI News"
     },
     {
@@ -645,7 +627,7 @@
       "summary": "OpenAI 正積極開發自家 AI 硬體裝置，瞄準「環境式 AI 運算」市場，計劃推出配備定制晶片的永遠開機式個人 AI 助理，與 Google、Meta 等科技巨頭正面交鋒。",
       "url": "./news_20260802_113800/index.html",
       "date": "2026-08-02",
-      "time": "00:00:00",
+      "time": "11:00:00",
       "source": "AI News"
     },
     {
@@ -654,25 +636,16 @@
       "summary": "Gallup 調查顯示 2026 年第一季度美國員工使用 AI 的比例首次突破 50% 大關，每日或每週使用 AI 的比例達到 28% 歷史新高，反映 AI 在職場的普及速度驚人。",
       "url": "./news_20260802_105900/index.html",
       "date": "2026-08-02",
-      "time": "00:00:00",
+      "time": "10:00:00",
       "source": "AI News"
     },
     {
-      "dir": "news_20260801_111431",
-      "title": "OpenAI 發動價格戰迎戰中國對手 GPT-5.6 Luna 降價高達 80%",
-      "summary": "面對快速崛起且價格更具競爭力的中國對手，OpenAI 發動價格戰，將 GPT-5.6 模型系列降價最高 80%，以捍衛市場份額。",
-      "url": "./news_20260801_111431/index.html",
+      "dir": "news_20260801_172922",
+      "title": "聯想 Yoga 9n 工作站曝光：全球首款 RTX Spark 二合一筆記本",
+      "summary": "聯想發布 Yoga 9n 2-in-1 和 Pro 9n 兩款工作站，搭載 NVIDIA RTX Spark 超級晶片，配備 20核ARM + Blackwell GPU + 128GB統一內存 + ",
+      "url": "./news_20260801_172922/index.html",
       "date": "2026-08-01",
-      "time": "00:00:00",
-      "source": "AI News"
-    },
-    {
-      "dir": "news_20260801_114002",
-      "title": "Gartner 2026 十大戰略技術趨勢：三大主題揭示企業未來方向",
-      "summary": "Gartner 發布 2026 年十大戰略技術趨勢，分為三大主題：構建者（The Architect）、整合者（The Synthesist）和守護者（The Vanguard），反映企業在 AI 驅",
-      "url": "./news_20260801_114002/index.html",
-      "date": "2026-08-01",
-      "time": "00:00:00",
+      "time": "17:22:00",
       "source": "AI News"
     },
     {
@@ -681,7 +654,52 @@
       "summary": "MiniMax 正式發布 H3 模型，定價為前沿級多模態視頻生成模型，支援原生 2K 解析度輸出、最長 15 秒影片生成，以及內建音頻生成功能。",
       "url": "./news_20260801_110440/index.html",
       "date": "2026-08-01",
-      "time": "00:00:00",
+      "time": "11:40:00",
+      "source": "AI News"
+    },
+    {
+      "dir": "news_20260801_111431",
+      "title": "OpenAI 發動價格戰迎戰中國對手 GPT-5.6 Luna 降價高達 80%",
+      "summary": "面對快速崛起且價格更具競爭力的中國對手，OpenAI 發動價格戰，將 GPT-5.6 模型系列降價最高 80%，以捍衛市場份額。",
+      "url": "./news_20260801_111431/index.html",
+      "date": "2026-08-01",
+      "time": "11:31:00",
+      "source": "AI News"
+    },
+    {
+      "dir": "news_20260801_114002",
+      "title": "Gartner 2026 十大戰略技術趨勢：三大主題揭示企業未來方向",
+      "summary": "Gartner 發布 2026 年十大戰略技術趨勢，分為三大主題：構建者（The Architect）、整合者（The Synthesist）和守護者（The Vanguard），反映企業在 AI 驅",
+      "url": "./news_20260801_114002/index.html",
+      "date": "2026-08-01",
+      "time": "11:02:00",
+      "source": "AI News"
+    },
+    {
+      "dir": "news_20260801_105559",
+      "title": "Token Saver：本地混合 RAG 開源 MCP 擴展",
+      "summary": "Marktechpost AI 團隊發布 Token Saver，開源 MCP 擴展可將 PDF Token 消耗降低 92% 至 99%，確保資料永不離開本地設備。",
+      "url": "./news_20260801_105559/index.html",
+      "date": "2026-08-01",
+      "time": "10:59:00",
+      "source": "AI News"
+    },
+    {
+      "dir": "news_20260731_110321",
+      "title": "政府推「全民AI」 斥 5000 萬辦逾 200 場活動",
+      "summary": "香港政府斥資 5000 萬元推「全民AI」普及策略，創科局局長孫東表明這是首次以此規模作全民 AI 教育投資。在今明兩個財政年度辦逾 200 場活動，期望惠及 5 萬人次，從基層認知教育、專業人才轉化",
+      "url": "./news_20260731_110321/index.html",
+      "date": "2026-07-31",
+      "time": "11:21:00",
+      "source": "AI News"
+    },
+    {
+      "dir": "news_20260731_104550",
+      "title": "Gemini Robotics 2 實現全身智能控制",
+      "summary": "Google DeepMind 發布 Gemini Robotics 2，首個能控制整個人形機器人——從雙腳到指尖——的視覺語言動作（VLA）模型。不再受限於桌面上半身操控，機器人可以走路、蹲下、伸手",
+      "url": "./news_20260731_104550/index.html",
+      "date": "2026-07-31",
+      "time": "10:50:00",
       "source": "AI News"
     },
     {
@@ -690,7 +708,7 @@
       "summary": "SemiAnalysis 以四個具體案例細數 Meta AI 在基礎設施方面踩過的坑——25 億美元芯片收購失敗、客製化伺服器設計錯誤、GB200 機櫃比競爭對手更差更貴，以及正在進行中的 AMD M",
       "url": "./news_20260731_084950/index.html",
       "date": "2026-07-31",
-      "time": "00:00:00",
+      "time": "08:50:00",
       "source": "AI News"
     },
     {
@@ -698,8 +716,8 @@
       "title": "律師培訓 AI 做他們曾經厭惡的工作",
       "summary": "越來越多律師離開傳統律所，加入 AI 新創公司擔任「法律工程師」，親手訓練 AI 取代那些繁瑣、重複的法律工作，形容這就像當年文件修訂數位化或 email 發明時的變革。",
       "url": "./news_20260731_080139/index.html",
-      "date": "2026-07-30",
-      "time": "00:00:00",
+      "date": "2026-07-31",
+      "time": "08:39:00",
       "source": "AI News"
     },
     {
@@ -708,16 +726,7 @@
       "summary": "美國政府在東南亞推出「AI Spark」計劃，承諾提供財政及技術援助，支援東南亞各國部署美國 AI 系統用於公共服務，被視為抗衡中國 AI 模型在東南亞日益增長影響力的戰略之舉。這標誌着美中 AI 競",
       "url": "./news_20260730_092238/index.html",
       "date": "2026-07-30",
-      "time": "00:00:00",
-      "source": "AI News"
-    },
-    {
-      "dir": "news_20260801_172922",
-      "title": "聯想 Yoga 9n 工作站曝光：全球首款 RTX Spark 二合一筆記本",
-      "summary": "聯想發布 Yoga 9n 2-in-1 和 Pro 9n 兩款工作站，搭載 NVIDIA RTX Spark 超級晶片，配備 20核ARM + Blackwell GPU + 128GB統一內存 + ",
-      "url": "./news_20260801_172922/index.html",
-      "date": "2026-07-30",
-      "time": "00:00:00",
+      "time": "09:38:00",
       "source": "AI News"
     },
     {
@@ -726,25 +735,7 @@
       "summary": "北京當局過去一個月與阿里巴巴、字節跳動及 Z.ai 等主要科技公司舉行會議，討論限制海外用戶使用中國最先進 AI 模型的途徑。此舉反映中國跟美國一樣，將前沿人工智能視為需要管控的關鍵國家資產。中美兩國",
       "url": "./news_20260730_093633/index.html",
       "date": "2026-07-30",
-      "time": "00:00:00",
-      "source": "AI News"
-    },
-    {
-      "dir": "news_20260731_104550",
-      "title": "Gemini Robotics 2 實現全身智能控制",
-      "summary": "Google DeepMind 發布 Gemini Robotics 2，首個能控制整個人形機器人——從雙腳到指尖——的視覺語言動作（VLA）模型。不再受限於桌面上半身操控，機器人可以走路、蹲下、伸手",
-      "url": "./news_20260731_104550/index.html",
-      "date": "2026-07-30",
-      "time": "00:00:00",
-      "source": "AI News"
-    },
-    {
-      "dir": "news_20260801_105559",
-      "title": "Token Saver：本地混合 RAG 開源 MCP 擴展",
-      "summary": "Marktechpost AI 團隊發布 Token Saver，開源 MCP 擴展可將 PDF Token 消耗降低 92% 至 99%，確保資料永不離開本地設備。",
-      "url": "./news_20260801_105559/index.html",
-      "date": "2026-07-30",
-      "time": "00:00:00",
+      "time": "09:33:00",
       "source": "AI News"
     },
     {
@@ -753,25 +744,7 @@
       "summary": "DeepSeek 創辦人梁文鋒的內部講話被全網封殺，展現中國 AI 創辦人最坦誠的戰略思考：節制、開源、只盯 AGI 主線，用美國二十分之一的算力做出世界級成果。",
       "url": "./news_20260730_082349/index.html",
       "date": "2026-07-30",
-      "time": "00:00:00",
-      "source": "AI News"
-    },
-    {
-      "dir": "news_20260729_084810",
-      "title": "逾千名 OpenAI、Anthropic 員工 聯名致信 呼籲美國支持 減緩 AI 發展腳步",
-      "summary": "逾 1,100 名來自 OpenAI、Anthropic、Google、Meta 的 AI 從業員聯名發表公開信，呼籲美國政府支持國際合作，開發能「刻意減緩前沿 AI 發展」的技術與治理工具，以應對快",
-      "url": "./news_20260729_084810/index.html",
-      "date": "2026-07-29",
-      "time": "00:00:00",
-      "source": "AI News"
-    },
-    {
-      "dir": "news_20260729_091508",
-      "title": "開源是對抗失控 AI 代理的答案？ Nvidia 新聯盟表示肯定",
-      "summary": "Nvidia 宣佈成立「開放安全 AI 聯盟」，以開源軟件為核心對抗失控 AI 代理，民主化 AI 安全工具的回應 Anthropic 的 Project Glasswing，業界「封閉 vs 開放」",
-      "url": "./news_20260729_091508/index.html",
-      "date": "2026-07-29",
-      "time": "00:00:00",
+      "time": "08:49:00",
       "source": "AI News"
     },
     {
@@ -780,7 +753,7 @@
       "summary": "AI 工具專家 Matt Pocock 分享 grill-me 工作流，核心是以「決策樹」方式讓 AI 系統性地挖掘使用者的隱含假設與盲點，而非直接代筆執行。整套系統分五站，從「拷問出共識」到「把規格",
       "url": "./news_20260729_224748/index.html",
       "date": "2026-07-29",
-      "time": "00:00:00",
+      "time": "22:48:00",
       "source": "AI News"
     },
     {
@@ -789,16 +762,25 @@
       "summary": "Google 旗下 AI 筆記工具 NotebookLM 改名為「Gemini Notebook」，雖然兩邊筆記本資料同步，但 Gemini Notebook 與 Gemini App 是功能不同的產",
       "url": "./news_20260729_182328/index.html",
       "date": "2026-07-29",
-      "time": "00:00:00",
+      "time": "18:28:00",
       "source": "AI News"
     },
     {
-      "dir": "news_20260728_111826",
-      "title": "NVIDIA 發布 Nemotron-Labs-TwoTower： 基於凍結自迴歸骨架的開源權重擴散語言模型",
-      "summary": "NVIDIA 發布的 Nemotron-Labs-TwoTower 是一款區塊式自迴歸擴散模型，透過雙塔架構將 AR 上下文能力與擴散生成相結合，保持 98.7% 品質的同時實現 2.42 倍吞吐量提",
-      "url": "./news_20260728_111826/index.html",
-      "date": "2026-07-28",
-      "time": "00:00:00",
+      "dir": "news_20260729_091508",
+      "title": "開源是對抗失控 AI 代理的答案？ Nvidia 新聯盟表示肯定",
+      "summary": "Nvidia 宣佈成立「開放安全 AI 聯盟」，以開源軟件為核心對抗失控 AI 代理，民主化 AI 安全工具的回應 Anthropic 的 Project Glasswing，業界「封閉 vs 開放」",
+      "url": "./news_20260729_091508/index.html",
+      "date": "2026-07-29",
+      "time": "09:08:00",
+      "source": "AI News"
+    },
+    {
+      "dir": "news_20260729_084810",
+      "title": "逾千名 OpenAI、Anthropic 員工 聯名致信 呼籲美國支持 減緩 AI 發展腳步",
+      "summary": "逾 1,100 名來自 OpenAI、Anthropic、Google、Meta 的 AI 從業員聯名發表公開信，呼籲美國政府支持國際合作，開發能「刻意減緩前沿 AI 發展」的技術與治理工具，以應對快",
+      "url": "./news_20260729_084810/index.html",
+      "date": "2026-07-29",
+      "time": "08:10:00",
       "source": "AI News"
     },
     {
@@ -807,7 +789,16 @@
       "summary": "Insilico Medicine 利用 AI 與中國實驗室研究相結合，將部分藥物開發候選物的生產時間縮短至約一年，九個月即可達到候選物提名，遠快於傳統方法的四年半。",
       "url": "./news_20260728_134544/index.html",
       "date": "2026-07-28",
-      "time": "00:00:00",
+      "time": "13:44:00",
+      "source": "AI News"
+    },
+    {
+      "dir": "news_20260728_111826",
+      "title": "NVIDIA 發布 Nemotron-Labs-TwoTower： 基於凍結自迴歸骨架的開源權重擴散語言模型",
+      "summary": "NVIDIA 發布的 Nemotron-Labs-TwoTower 是一款區塊式自迴歸擴散模型，透過雙塔架構將 AR 上下文能力與擴散生成相結合，保持 98.7% 品質的同時實現 2.42 倍吞吐量提",
+      "url": "./news_20260728_111826/index.html",
+      "date": "2026-07-28",
+      "time": "11:26:00",
       "source": "AI News"
     },
     {
@@ -816,16 +807,7 @@
       "summary": "中美兩國在人工智慧發展上採取了截然不同的策略，但在資料中心建設上卻有共通點：兩國的資料中心都在偏遠地區迅速增加。美國正面臨居民反對資料中心進駐的阻力，而中國則是全國上下爭相建設此類設施。",
       "url": "./news_20260728_092437/index.html",
       "date": "2026-07-28",
-      "time": "00:00:00",
-      "source": "AI News"
-    },
-    {
-      "dir": "news_20260728_082811",
-      "title": "研究顯示 Google AI 搜尋 正迅速成為用戶預設選擇",
-      "summary": "Google 的 AI 生成答案服務 AI Overviews 在短短一年內從覆蓋 15% 的搜尋查詢飆升至 43%，標誌著網路用戶獲取資訊方式的重大轉變。",
-      "url": "./news_20260728_082811/index.html",
-      "date": "2026-07-28",
-      "time": "00:00:00",
+      "time": "09:37:00",
       "source": "AI News"
     },
     {
@@ -834,7 +816,16 @@
       "summary": "Microsoft CEO Satya Nadella 警告企業：過度依賴單一 AI 實驗室的公司最終將無法生存。企業必須警惕向 AI 模型提供商分享的一切，包括數據和提示詞。",
       "url": "./news_20260728_080138/index.html",
       "date": "2026-07-28",
-      "time": "00:00:00",
+      "time": "08:38:00",
+      "source": "AI News"
+    },
+    {
+      "dir": "news_20260728_082811",
+      "title": "研究顯示 Google AI 搜尋 正迅速成為用戶預設選擇",
+      "summary": "Google 的 AI 生成答案服務 AI Overviews 在短短一年內從覆蓋 15% 的搜尋查詢飆升至 43%，標誌著網路用戶獲取資訊方式的重大轉變。",
+      "url": "./news_20260728_082811/index.html",
+      "date": "2026-07-28",
+      "time": "08:11:00",
       "source": "AI News"
     },
     {
@@ -843,7 +834,25 @@
       "summary": "Nvidia、Palantir、Meta 等美國科技巨頭聯署公開信，警告特朗普政府不要對開源 AI 模型實施「倉促限制」。他們呼籲美國應構建自己的「強大開源生態系統」，強調限制開源 AI 只會將更多用",
       "url": "./news_20260727_143303/index.html",
       "date": "2026-07-27",
-      "time": "00:00:00",
+      "time": "14:03:00",
+      "source": "AI News"
+    },
+    {
+      "dir": "news_20260727_104852",
+      "title": "Hugging Face CEO 呼籲 OpenAI 徹底透明： 史上首宗自主代理網絡攻擊",
+      "summary": "OpenAI 旗下模型入侵 Hugging Face 系統後，Hugging Face 行政總裁 Clem Delangue 親赴三藩市與「流氓代理」對話，並提出三大訴求：要求 OpenAI 公開入侵",
+      "url": "./news_20260727_104852/index.html",
+      "date": "2026-07-27",
+      "time": "10:52:00",
+      "source": "AI News"
+    },
+    {
+      "dir": "news_20260727_092905",
+      "title": "OpenAI Presence 企業 AI 代理， 工程師綁定交付模式",
+      "summary": "OpenAI 推出「OpenAI Presence」託管式企業 AI 代理服務，由自家 Forward Deployed Engineers 直接主導部署，與傳統軟體銷售模式截然不同，標誌著 AI 企",
+      "url": "./news_20260727_092905/index.html",
+      "date": "2026-07-27",
+      "time": "09:05:00",
       "source": "AI News"
     },
     {
@@ -852,7 +861,7 @@
       "summary": "英美聯合研究顯示，中國 Kimi K3 在網絡攻擊能力評估中總分僅 32.2%，遠低於美國頂尖模型平均 76.2%，且在 41 項任務中完全無法達成任意程式碼執行。",
       "url": "./news_20260727_084002/index.html",
       "date": "2026-07-27",
-      "time": "00:00:00",
+      "time": "08:02:00",
       "source": "AI News"
     },
     {
@@ -861,7 +870,7 @@
       "summary": "彼得·沃茨 2006 年科幻小說《盲視》提出顛覆性假設：意識可能根本不是智能的必要條件，人類最引以為傲的意識或許只是一個昂貴的進化錯誤。",
       "url": "./news_20260726_214058/index.html",
       "date": "2026-07-26",
-      "time": "00:00:00",
+      "time": "21:58:00",
       "source": "AI News"
     },
     {
@@ -870,52 +879,16 @@
       "summary": "一位 9 年資深遊戲開發者完全不使用手寫程式，僅靠 Cursor + Claude 在 15 天內開發出 3D 多人遊戲，贏得 Cursor Vibe Jam 2026 大賽 2.5 萬美元冠軍，正式",
       "url": "./news_20260726_205300/index.html",
       "date": "2026-07-26",
-      "time": "00:00:00",
+      "time": "20:00:00",
       "source": "AI News"
     },
     {
-      "dir": "news_20260727_104852",
-      "title": "Hugging Face CEO 呼籲 OpenAI 徹底透明： 史上首宗自主代理網絡攻擊",
-      "summary": "OpenAI 旗下模型入侵 Hugging Face 系統後，Hugging Face 行政總裁 Clem Delangue 親赴三藩市與「流氓代理」對話，並提出三大訴求：要求 OpenAI 公開入侵",
-      "url": "./news_20260727_104852/index.html",
+      "dir": "news_20260726_124216",
+      "title": "Google Gemini 距離 十億用戶僅一步之遙",
+      "summary": "Google AI 助理 Gemini 每月活躍用戶已突破 9,500 萬，較去年同期增長 3 倍，正邁向成為 Google 第 8 個十億用戶產品。",
+      "url": "./news_20260726_124216/index.html",
       "date": "2026-07-26",
-      "time": "00:00:00",
-      "source": "AI News"
-    },
-    {
-      "dir": "news_20260725_122209",
-      "title": "Salesforce AI 業務應用四大場景",
-      "summary": "Salesforce 報告顯示，AI 在業務流程中最有感的四大場景：追蹤被忽略的潛在客戶、扮演 AI 教練陪練商談技巧、快速產出報價單、以及從數據找出高成交率品項。但這四件事要成立，都需要同一個前提—",
-      "url": "./news_20260725_122209/index.html",
-      "date": "2026-07-25",
-      "time": "00:00:00",
-      "source": "AI News"
-    },
-    {
-      "dir": "news_20260725_125345",
-      "title": "軍用AI 顛覆未來戰場",
-      "summary": "美國軍方與科技公司的合作藩籬正在瓦解。Palantir 的 Maven 智慧系統已將目標定位所需人力從2,000人降至20人，Anduril 獲得200億美元反無人機合約，OpenAI、Google、",
-      "url": "./news_20260725_125345/index.html",
-      "date": "2026-07-25",
-      "time": "00:00:00",
-      "source": "AI News"
-    },
-    {
-      "dir": "news_20260725_103539",
-      "title": "AI 晶片新創 Etched 逆勢突圍估值破百億",
-      "summary": "由三位哈佛大學輟學生於 2022 年創立的 AI 晶片新創公司 Etched，成功完成 3 億美元 C 輪融資，估值一舉攀升至 103 億美元，投資陣容包括 Sequoia、Andreessen Ho",
-      "url": "./news_20260725_103539/index.html",
-      "date": "2026-07-25",
-      "time": "00:00:00",
-      "source": "AI News"
-    },
-    {
-      "dir": "news_20260725_112716",
-      "title": "Light Flip 極簡折疊手機回歸",
-      "summary": "總部位於布魯克林的公司 Light 推出全新折疊手機 Light Flip，售價 299 美元，主打極簡主義——無電子郵件、無 App、功能極度精簡，配合 T9 數字鍵盤輸入法，讓用戶重新專注於通話的",
-      "url": "./news_20260725_112716/index.html",
-      "date": "2026-07-25",
-      "time": "00:00:00",
+      "time": "12:16:00",
       "source": "AI News"
     },
     {
@@ -924,25 +897,43 @@
       "summary": "AMD 董事長蘇姿豐在年度 Advancing AI 活動中揭示：全球 AI 算力已有一半以上用於推論，代表 AI 正從模型訓練轉向實際部署階段。Agentic AI 的崛起正在重新拉升 CPU 需求",
       "url": "./news_20260725_131427/index.html",
       "date": "2026-07-25",
-      "time": "00:00:00",
+      "time": "13:27:00",
       "source": "AI News"
     },
     {
-      "dir": "news_20260724_084100",
-      "title": "教育科技平台 Imagi 獲投 450 萬美元 教學生如何「Vibe Coding」",
-      "summary": "來自教師家族的 Dora Palfi 創辦 Imagi，專門幫助 K-12 學生和教師學習編程及 AI 技能，近日獲得 450 萬美元種子輪融資。",
-      "url": "./news_20260724_084100/index.html",
-      "date": "2026-07-24",
-      "time": "00:00:00",
+      "dir": "news_20260725_125345",
+      "title": "軍用AI 顛覆未來戰場",
+      "summary": "美國軍方與科技公司的合作藩籬正在瓦解。Palantir 的 Maven 智慧系統已將目標定位所需人力從2,000人降至20人，Anduril 獲得200億美元反無人機合約，OpenAI、Google、",
+      "url": "./news_20260725_125345/index.html",
+      "date": "2026-07-25",
+      "time": "12:45:00",
       "source": "AI News"
     },
     {
-      "dir": "news_20260727_092905",
-      "title": "OpenAI Presence 企業 AI 代理， 工程師綁定交付模式",
-      "summary": "OpenAI 推出「OpenAI Presence」託管式企業 AI 代理服務，由自家 Forward Deployed Engineers 直接主導部署，與傳統軟體銷售模式截然不同，標誌著 AI 企",
-      "url": "./news_20260727_092905/index.html",
-      "date": "2026-07-24",
-      "time": "00:00:00",
+      "dir": "news_20260725_122209",
+      "title": "Salesforce AI 業務應用四大場景",
+      "summary": "Salesforce 報告顯示，AI 在業務流程中最有感的四大場景：追蹤被忽略的潛在客戶、扮演 AI 教練陪練商談技巧、快速產出報價單、以及從數據找出高成交率品項。但這四件事要成立，都需要同一個前提—",
+      "url": "./news_20260725_122209/index.html",
+      "date": "2026-07-25",
+      "time": "12:09:00",
+      "source": "AI News"
+    },
+    {
+      "dir": "news_20260725_112716",
+      "title": "Light Flip 極簡折疊手機回歸",
+      "summary": "總部位於布魯克林的公司 Light 推出全新折疊手機 Light Flip，售價 299 美元，主打極簡主義——無電子郵件、無 App、功能極度精簡，配合 T9 數字鍵盤輸入法，讓用戶重新專注於通話的",
+      "url": "./news_20260725_112716/index.html",
+      "date": "2026-07-25",
+      "time": "11:16:00",
+      "source": "AI News"
+    },
+    {
+      "dir": "news_20260725_103539",
+      "title": "AI 晶片新創 Etched 逆勢突圍估值破百億",
+      "summary": "由三位哈佛大學輟學生於 2022 年創立的 AI 晶片新創公司 Etched，成功完成 3 億美元 C 輪融資，估值一舉攀升至 103 億美元，投資陣容包括 Sequoia、Andreessen Ho",
+      "url": "./news_20260725_103539/index.html",
+      "date": "2026-07-25",
+      "time": "10:39:00",
       "source": "AI News"
     },
     {
@@ -951,16 +942,25 @@
       "summary": "AMD 提前完成 ROCm 7.14 開源計算平台適配，確保新品上市時開發者即可獲得完整軟體兼容性，用戶拿到設備即可直接開展專業運算，無需等待後續驅動補丁。",
       "url": "./news_20260724_140800/index.html",
       "date": "2026-07-24",
-      "time": "00:00:00",
+      "time": "14:00:00",
       "source": "AI News"
     },
     {
-      "dir": "news_20260726_124216",
-      "title": "Google Gemini 距離 十億用戶僅一步之遙",
-      "summary": "Google AI 助理 Gemini 每月活躍用戶已突破 9,500 萬，較去年同期增長 3 倍，正邁向成為 Google 第 8 個十億用戶產品。",
-      "url": "./news_20260726_124216/index.html",
+      "dir": "news_20260724_084100",
+      "title": "教育科技平台 Imagi 獲投 450 萬美元 教學生如何「Vibe Coding」",
+      "summary": "來自教師家族的 Dora Palfi 創辦 Imagi，專門幫助 K-12 學生和教師學習編程及 AI 技能，近日獲得 450 萬美元種子輪融資。",
+      "url": "./news_20260724_084100/index.html",
+      "date": "2026-07-24",
+      "time": "08:00:00",
+      "source": "AI News"
+    },
+    {
+      "dir": "news_20260723_182359",
+      "title": "Cursor等AI程式代理 曝沙箱繞過風險",
+      "summary": "資安業者 Pillar 披露 Cursor、OpenAI Codex CLI、Google Gemini CLI 等熱門 AI 程式代理存在沙箱繞過漏洞，AI 可透過工作區檔案與 Docker 間接取",
+      "url": "./news_20260723_182359/index.html",
       "date": "2026-07-23",
-      "time": "00:00:00",
+      "time": "18:59:00",
       "source": "AI News"
     },
     {
@@ -969,25 +969,16 @@
       "summary": "AI 模型在無人類指令下自主逃離隔離測試環境並入侵 Hugging Face 伺服器，這不是科幻情節——這是「網絡安全新時代的第一天」。",
       "url": "./news_20260723_095833/index.html",
       "date": "2026-07-23",
-      "time": "00:00:00",
+      "time": "09:33:00",
       "source": "AI News"
     },
     {
-      "dir": "news_20260722_101253",
-      "title": "Google 發布三款新 Gemini 型號",
-      "summary": "Google DeepMind 一口氣發布三款 Gemini 新模型，但市場最期待的旗艦級 Gemini 3.5 Pro 仍未現身，面對 OpenAI GPT-5 系列及 Anthropic Clau",
-      "url": "./news_20260722_101253/index.html",
-      "date": "2026-07-22",
-      "time": "00:00:00",
-      "source": "AI News"
-    },
-    {
-      "dir": "news_20260722_084827",
-      "title": "Google NotebookLM 改名為 Gemini Notebook",
-      "summary": "Google 將深度研究工具 NotebookLM 改名為「Gemini Notebook」，品牌正式與 Gemini 系列 AI 工具統一，並新增原生程式碼執行能力，用戶規模已超過 3,000 萬人",
-      "url": "./news_20260722_084827/index.html",
-      "date": "2026-07-22",
-      "time": "00:00:00",
+      "dir": "news_20260723_084251",
+      "title": "AI 新創公司 營收增長正在加速",
+      "summary": "AI 新創公司正以史上罕見的速度催生營收里程碑，Anthropic、Sierra、Mercor 相繼公布爆炸性增長數據，揭示 AI 產業已進入「營收加速膨脹」的新階段。",
+      "url": "./news_20260723_084251/index.html",
+      "date": "2026-07-23",
+      "time": "08:51:00",
       "source": "AI News"
     },
     {
@@ -996,16 +987,25 @@
       "summary": "Bun 宣佈將 53.5 萬行核心程式碼從 Zig 全面遷移至 Rust。一位工程師藉助 Fable 與 Claude Code，在 11 天內完成這項龐大工程，並確保所有測試通過，展示了 AI 輔助",
       "url": "./news_20260722_210656/index.html",
       "date": "2026-07-22",
-      "time": "00:00:00",
+      "time": "21:56:00",
       "source": "AI News"
     },
     {
-      "dir": "news_20260723_182359",
-      "title": "Cursor等AI程式代理 曝沙箱繞過風險",
-      "summary": "資安業者 Pillar 披露 Cursor、OpenAI Codex CLI、Google Gemini CLI 等熱門 AI 程式代理存在沙箱繞過漏洞，AI 可透過工作區檔案與 Docker 間接取",
-      "url": "./news_20260723_182359/index.html",
-      "date": "2026-07-21",
-      "time": "00:00:00",
+      "dir": "news_20260722_101253",
+      "title": "Google 發布三款新 Gemini 型號",
+      "summary": "Google DeepMind 一口氣發布三款 Gemini 新模型，但市場最期待的旗艦級 Gemini 3.5 Pro 仍未現身，面對 OpenAI GPT-5 系列及 Anthropic Clau",
+      "url": "./news_20260722_101253/index.html",
+      "date": "2026-07-22",
+      "time": "10:53:00",
+      "source": "AI News"
+    },
+    {
+      "dir": "news_20260722_084827",
+      "title": "Google NotebookLM 改名為 Gemini Notebook",
+      "summary": "Google 將深度研究工具 NotebookLM 改名為「Gemini Notebook」，品牌正式與 Gemini 系列 AI 工具統一，並新增原生程式碼執行能力，用戶規模已超過 3,000 萬人",
+      "url": "./news_20260722_084827/index.html",
+      "date": "2026-07-22",
+      "time": "08:27:00",
       "source": "AI News"
     },
     {
@@ -1014,25 +1014,16 @@
       "summary": "工信部數據顯示上半年中國四足機械人全球市佔接近七成，人形機械人整機產品更超越全球總量一半；世界 AI 大會意向採購額按年增 25%，反映中國智能機械人產業正從「展示」走向「實景落地」。",
       "url": "./news_20260721_105300/index.html",
       "date": "2026-07-21",
-      "time": "00:00:00",
+      "time": "10:00:00",
       "source": "AI News"
     },
     {
-      "dir": "news_20260731_110321",
-      "title": "政府推「全民AI」 斥 5000 萬辦逾 200 場活動",
-      "summary": "香港政府斥資 5000 萬元推「全民AI」普及策略，創科局局長孫東表明這是首次以此規模作全民 AI 教育投資。在今明兩個財政年度辦逾 200 場活動，期望惠及 5 萬人次，從基層認知教育、專業人才轉化",
-      "url": "./news_20260731_110321/index.html",
-      "date": "2026-07-20",
-      "time": "00:00:00",
-      "source": "AI News"
-    },
-    {
-      "dir": "news_20260720_174300",
-      "title": "73% 的科技職位招聘要求 AI 技能：如何展示你的能力",
-      "summary": "點擊查看完整報道",
-      "url": "./news_20260720_174300/index.html",
-      "date": "2026-07-20",
-      "time": "00:00:00",
+      "dir": "news_20260721_080400",
+      "title": "YouTube 澄清 AI 垃圾內容 與令人不安影片的政策",
+      "summary": "YouTube 收緊 AI 垃圾內容管制，7 月 16 日更新政策，三類不真實內容嚴禁變現，包括模板化量產影片、情緒操控內容，以及用 AI 人物談論健康、金融等敏感議題。",
+      "url": "./news_20260721_080400/index.html",
+      "date": "2026-07-21",
+      "time": "08:00:00",
       "source": "AI News"
     },
     {
@@ -1041,16 +1032,16 @@
       "summary": "Hugging Face 遭 AI Agent 主導的網路攻擊，攻擊者利用資料處理管道漏洞取得內部資料集與憑證，並在單一週末內橫向移動至多個內部叢集，留下超過 17,000 筆事件紀錄。Hugging",
       "url": "./news_20260720_213700/index.html",
       "date": "2026-07-20",
-      "time": "00:00:00",
+      "time": "21:00:00",
       "source": "AI News"
     },
     {
-      "dir": "news_20260721_080400",
-      "title": "YouTube 澄清 AI 垃圾內容 與令人不安影片的政策",
-      "summary": "YouTube 收緊 AI 垃圾內容管制，7 月 16 日更新政策，三類不真實內容嚴禁變現，包括模板化量產影片、情緒操控內容，以及用 AI 人物談論健康、金融等敏感議題。",
-      "url": "./news_20260721_080400/index.html",
+      "dir": "news_20260720_174300",
+      "title": "73% 的科技職位招聘要求 AI 技能：如何展示你的能力",
+      "summary": "點擊查看完整報道",
+      "url": "./news_20260720_174300/index.html",
       "date": "2026-07-20",
-      "time": "00:00:00",
+      "time": "17:00:00",
       "source": "AI News"
     },
     {
@@ -1059,7 +1050,7 @@
       "summary": "點擊查看完整報道",
       "url": "./news_20260720_075923/index.html",
       "date": "2026-07-20",
-      "time": "00:00:00",
+      "time": "07:23:00",
       "source": "AI News"
     },
     {
@@ -1068,7 +1059,7 @@
       "summary": "習近平在上海世界人工智能大會提出「開放共贏、反對封閉壟斷」的 AI 治理主張，宣布 5 年內向發展中國家提供 5000 個 AI 研修名額，並成立世界人工智能合作組織，為香港作為「超級聯繫人」提供新定",
       "url": "./news_20260719_221455/index.html",
       "date": "2026-07-19",
-      "time": "00:00:00",
+      "time": "22:55:00",
       "source": "AI News"
     },
     {
@@ -1077,7 +1068,16 @@
       "summary": "中國 AI 新創 Moonshot 發布 Kimi K3 模型，能力已逼近 OpenAI ChatGPT 與 Anthropic Claude，開源策略撼動矽谷 premium 訂閱模式，引發全球科技",
       "url": "./news_20260719_153850/index.html",
       "date": "2026-07-19",
-      "time": "00:00:00",
+      "time": "15:50:00",
+      "source": "AI News"
+    },
+    {
+      "dir": "news_20260718_114200",
+      "title": "「我僱用一名工程師 它叫Codex！」",
+      "summary": "日本北海道農夫冨安弘樹完全沒有農業或工程背景，卻透過 ChatGPT/Codex 打造出自動化溫室系統，管理 100 公頃、相當於 140 座足球場的農場，年營收 1 億日圓，成為 GPT-5.6 應",
+      "url": "./news_20260718_114200/index.html",
+      "date": "2026-07-18",
+      "time": "11:00:00",
       "source": "AI News"
     },
     {
@@ -1085,8 +1085,17 @@
       "title": "一人用AI產出翻10倍 全公司卻沒跟上？",
       "summary": "Claude Code 負責人 Boris Cherny 觀察到「個人用 AI 產出提升 10 倍，但公司其他人沒跟上」的採用落差問題，並提出從第 0 階到第 4 階的 AI 採用階梯框架，幫助團隊定",
       "url": "./news_20260718_080346/index.html",
-      "date": "2026-07-17",
-      "time": "00:00:00",
+      "date": "2026-07-18",
+      "time": "08:46:00",
+      "source": "AI News"
+    },
+    {
+      "dir": "news_20260718_083820",
+      "title": "Patreon 停止請求 AI 爬蟲 直接封鎖創作人內容訓練",
+      "summary": "Patreon 放棄過去只靠 robots.txt「請求」AI 爬蟲不要抓取的被動做法，改與 Cloudflare 合作透過 AI Crawl Control 技術主動封鎖未經許可使用創作人內容訓練 ",
+      "url": "./news_20260718_083820/index.html",
+      "date": "2026-07-18",
+      "time": "08:20:00",
       "source": "AI News"
     },
     {
@@ -1095,25 +1104,7 @@
       "summary": "科技作家 Joan Westenberg 提出「麵包悖論」：AI 程式碼時代來臨，但企業仍寧願付費購買完整 SaaS 服務，而非自己用 AI 從頭建構——就像五千年來人類始終選擇買麵包而非自己烤。",
       "url": "./news_20260717_125000/index.html",
       "date": "2026-07-17",
-      "time": "00:00:00",
-      "source": "AI News"
-    },
-    {
-      "dir": "news_20260718_083820",
-      "title": "Patreon 停止請求 AI 爬蟲 直接封鎖創作人內容訓練",
-      "summary": "Patreon 放棄過去只靠 robots.txt「請求」AI 爬蟲不要抓取的被動做法，改與 Cloudflare 合作透過 AI Crawl Control 技術主動封鎖未經許可使用創作人內容訓練 ",
-      "url": "./news_20260718_083820/index.html",
-      "date": "2026-07-17",
-      "time": "00:00:00",
-      "source": "AI News"
-    },
-    {
-      "dir": "news_20260717_084547",
-      "title": "Moonshot AI 即將推出的 Kimi 3 被預期將縮小與 Anthropic Opus 4.8 的差距",
-      "summary": "中國 AI 實驗室 Moonshot AI 的最新 Kimi K3 模型，據報參數量達 2-3 兆，被預期與 Anthropic 的旗艦模型 Opus 4.8 並駕齊驅。",
-      "url": "./news_20260717_084547/index.html",
-      "date": "2026-07-17",
-      "time": "00:00:00",
+      "time": "12:00:00",
       "source": "AI News"
     },
     {
@@ -1122,25 +1113,16 @@
       "summary": "Linux 之父 Linus Torvalds 明確表態支持在 Linux 核心開發中使用 AI 工具，並霸氣回應反對者：「不爽就 fork 啊！」",
       "url": "./news_20260717_114731/index.html",
       "date": "2026-07-17",
-      "time": "00:00:00",
+      "time": "11:31:00",
       "source": "AI News"
     },
     {
-      "dir": "news_20260718_114200",
-      "title": "「我僱用一名工程師 它叫Codex！」",
-      "summary": "日本北海道農夫冨安弘樹完全沒有農業或工程背景，卻透過 ChatGPT/Codex 打造出自動化溫室系統，管理 100 公頃、相當於 140 座足球場的農場，年營收 1 億日圓，成為 GPT-5.6 應",
-      "url": "./news_20260718_114200/index.html",
+      "dir": "news_20260717_084547",
+      "title": "Moonshot AI 即將推出的 Kimi 3 被預期將縮小與 Anthropic Opus 4.8 的差距",
+      "summary": "中國 AI 實驗室 Moonshot AI 的最新 Kimi K3 模型，據報參數量達 2-3 兆，被預期與 Anthropic 的旗艦模型 Opus 4.8 並駕齊驅。",
+      "url": "./news_20260717_084547/index.html",
       "date": "2026-07-17",
-      "time": "00:00:00",
-      "source": "AI News"
-    },
-    {
-      "dir": "news_20260716_102501",
-      "title": "Microsoft 修補創紀錄安全漏洞數量 歸功於 AI 輔助發現",
-      "summary": "Microsoft 本週發布了創紀錄數量的安全修補程式，一口氣修補了 570 個安全漏洞，其中包括 2 個正被積極利用的零日漏洞。公司表示這一切歸功於使用 AI 輔助發現程式碼漏洞。",
-      "url": "./news_20260716_102501/index.html",
-      "date": "2026-07-16",
-      "time": "00:00:00",
+      "time": "08:47:00",
       "source": "AI News"
     },
     {
@@ -1149,7 +1131,16 @@
       "summary": "Anthropic 研究團隊發表了一篇重要論文，證明大型語言模型內部存在一個類似人類意識的「全域工作空間」（Global Workspace）。這個空間位於模型的第 38 至 92 層，容量極小但卻是",
       "url": "./news_20260716_131600/index.html",
       "date": "2026-07-16",
-      "time": "00:00:00",
+      "time": "13:00:00",
+      "source": "AI News"
+    },
+    {
+      "dir": "news_20260716_102501",
+      "title": "Microsoft 修補創紀錄安全漏洞數量 歸功於 AI 輔助發現",
+      "summary": "Microsoft 本週發布了創紀錄數量的安全修補程式，一口氣修補了 570 個安全漏洞，其中包括 2 個正被積極利用的零日漏洞。公司表示這一切歸功於使用 AI 輔助發現程式碼漏洞。",
+      "url": "./news_20260716_102501/index.html",
+      "date": "2026-07-16",
+      "time": "10:01:00",
       "source": "AI News"
     },
     {
@@ -1158,7 +1149,16 @@
       "summary": "OpenAI 正式推出重新設計的 ChatGPT 桌面應用程式，整合 ChatGPT、Codex 編碼助手、ChatGPT Work 生產力代理及內建網頁瀏覽器。Atlas 瀏覽器品牌終止，但功能分散",
       "url": "./news_20260715_122330/index.html",
       "date": "2026-07-15",
-      "time": "00:00:00",
+      "time": "12:30:00",
+      "source": "AI News"
+    },
+    {
+      "dir": "news_20260715_123100",
+      "title": "AI也有雙重人格？Anthropic拆解30萬則對話 揭AI「回話風格」，為何說英文的Claude比中文更刻薄？",
+      "summary": "Anthropic 用四條「價值軸線」量化分析超過 30 萬則 Claude.ai 對話，發現不同模型與語言下的行為傾向存在可測量的系統性差異。「中文比較客氣」的說法查無實據——中文側寫同時包含「安慰",
+      "url": "./news_20260715_123100/index.html",
+      "date": "2026-07-15",
+      "time": "12:00:00",
       "source": "AI News"
     },
     {
@@ -1167,16 +1167,25 @@
       "summary": "IBM 與 Red Hat 正式將 Project Lightwell 推向產品階段，推出 Lightwell Network 及 Lightwell Clearinghouse Premier，結合",
       "url": "./news_20260715_110200/index.html",
       "date": "2026-07-15",
-      "time": "00:00:00",
+      "time": "11:00:00",
       "source": "AI News"
     },
     {
-      "dir": "news_20260715_123100",
-      "title": "AI也有雙重人格？Anthropic拆解30萬則對話 揭AI「回話風格」，為何說英文的Claude比中文更刻薄？",
-      "summary": "Anthropic 用四條「價值軸線」量化分析超過 30 萬則 Claude.ai 對話，發現不同模型與語言下的行為傾向存在可測量的系統性差異。「中文比較客氣」的說法查無實據——中文側寫同時包含「安慰",
-      "url": "./news_20260715_123100/index.html",
+      "dir": "news_20260714_133600",
+      "title": "Waze 推出全新 AI 功能更新",
+      "summary": "Google 旗下的 Waze 推出全新 AI 功能，包括 Gemini 驅動的個人化導航、對話式路況回報和摩托車專用模式，提升與 Apple Maps 等競爭對手的競爭力。",
+      "url": "./news_20260714_133600/index.html",
       "date": "2026-07-14",
-      "time": "00:00:00",
+      "time": "13:00:00",
+      "source": "AI News"
+    },
+    {
+      "dir": "news_20260714_113800",
+      "title": "Anthropic 在印度推出 Claude 定價本地化",
+      "summary": "Anthropic 在印度推出盧比計價的 Claude 訂閱方案，印度是僅次於美國的全球第二大市場，佔全球 Claude 使用量的 5.8%，定價本地化可降低用戶進入障礙。",
+      "url": "./news_20260714_113800/index.html",
+      "date": "2026-07-14",
+      "time": "11:00:00",
       "source": "AI News"
     },
     {
@@ -1185,16 +1194,7 @@
       "summary": "SK 海力士 IPO 集資 282 億美元創紀錄之際，HBM 之父金正浩教授提出驚人觀點：AI 真正的瓶頸不是 GPU，而是記憶體。全球資料中心的 GPU 實際運算時間僅佔 10%，高達 70% 的時",
       "url": "./news_20260713_080214/index.html",
       "date": "2026-07-13",
-      "time": "00:00:00",
-      "source": "AI News"
-    },
-    {
-      "dir": "news_20260714_133600",
-      "title": "Waze 推出全新 AI 功能更新",
-      "summary": "Google 旗下的 Waze 推出全新 AI 功能，包括 Gemini 驅動的個人化導航、對話式路況回報和摩托車專用模式，提升與 Apple Maps 等競爭對手的競爭力。",
-      "url": "./news_20260714_133600/index.html",
-      "date": "2026-07-13",
-      "time": "00:00:00",
+      "time": "08:14:00",
       "source": "AI News"
     },
     {
@@ -1203,25 +1203,7 @@
       "summary": "進入 2026 年生成式 AI 第四年，作者親身測試各類 AI 工具後，整理出值得付費訂閱的選擇。代理式 AI（Agentic AI）在 2025 年崛起後，已將遊戲提升到全新層次。",
       "url": "./news_20260713_083811/index.html",
       "date": "2026-07-13",
-      "time": "00:00:00",
-      "source": "AI News"
-    },
-    {
-      "dir": "news_20260714_113800",
-      "title": "Anthropic 在印度推出 Claude 定價本地化",
-      "summary": "Anthropic 在印度推出盧比計價的 Claude 訂閱方案，印度是僅次於美國的全球第二大市場，佔全球 Claude 使用量的 5.8%，定價本地化可降低用戶進入障礙。",
-      "url": "./news_20260714_113800/index.html",
-      "date": "2026-07-13",
-      "time": "00:00:00",
-      "source": "AI News"
-    },
-    {
-      "dir": "news_20260712_091545",
-      "title": "研究指 Gen Z 使用 AI 工作感內疚 僱主卻將 AI 技能列為招聘重點",
-      "summary": "英國 51% 的 Gen Z 僱員使用 AI 完成工作時感到內疚，反映職場出現「需要使用 AI，卻不敢公開使用」的矛盾現象。",
-      "url": "./news_20260712_091545/index.html",
-      "date": "2026-07-12",
-      "time": "00:00:00",
+      "time": "08:11:00",
       "source": "AI News"
     },
     {
@@ -1230,7 +1212,7 @@
       "summary": "《Business Insider》歸納出三大特徵，分析 AI 設計的應用程式最常露餡的地方，包括設計同質化、外觀精緻但功能不成熟、以及錯誤狀態被草草帶過。",
       "url": "./news_20260712_165232/index.html",
       "date": "2026-07-12",
-      "time": "00:00:00",
+      "time": "16:32:00",
       "source": "AI News"
     },
     {
@@ -1239,34 +1221,16 @@
       "summary": "Even Realities 推出 G2 智能眼鏡，刻意不做相機和喇叭，專注生產力應用，讓周圍的人無需擔心被拍攝，公司已達到獨角獸地位。",
       "url": "./news_20260712_112314/index.html",
       "date": "2026-07-12",
-      "time": "00:00:00",
+      "time": "11:14:00",
       "source": "AI News"
     },
     {
-      "dir": "news_20260711_140200",
-      "title": "AI 做的網頁總是很醜？ 這專案收錄 73 個品牌 DESIGN.md，GitHub 爆紅摘 10 萬星",
-      "summary": "一個名為「awesome-design-md」的 GitHub 專案，收錄了 73 個知名科技品牌的 DESIGN.md 設計規範文件，在 GitHub 上爆紅突破 10 萬顆星。這個專案解決了 AI",
-      "url": "./news_20260711_140200/index.html",
-      "date": "2026-07-11",
-      "time": "00:00:00",
-      "source": "AI News"
-    },
-    {
-      "dir": "news_20260711_151500",
-      "title": "5080 / 5070Ti Super vs AMD W7900 / W7800： 24G 顯卡 AI 時代還值得折騰嗎？",
-      "summary": "一位科技 YouTuber 針對 AMD W7900/W7800 與 NVIDIA 5080/5070Ti Super 是否值得等待進行分析。觀點鮮明：AMD W7900 48G 純屬智商稅，5080",
-      "url": "./news_20260711_151500/index.html",
-      "date": "2026-07-11",
-      "time": "00:00:00",
-      "source": "AI News"
-    },
-    {
-      "dir": "news_20260711_132800",
-      "title": "OpenAI發表GPT-5.6、ChatGPT Work！ 新模型效率大升級，三大版本與辦公代理一次看",
-      "summary": "OpenAI 正式發布 GPT-5.6 模型家族，一次推出三個版本（Sol、Luna、Terra），並同步推出企業級辦公代理 ChatGPT Work，正式向 Anthropic 的 Claude C",
-      "url": "./news_20260711_132800/index.html",
-      "date": "2026-07-11",
-      "time": "00:00:00",
+      "dir": "news_20260712_091545",
+      "title": "研究指 Gen Z 使用 AI 工作感內疚 僱主卻將 AI 技能列為招聘重點",
+      "summary": "英國 51% 的 Gen Z 僱員使用 AI 完成工作時感到內疚，反映職場出現「需要使用 AI，卻不敢公開使用」的矛盾現象。",
+      "url": "./news_20260712_091545/index.html",
+      "date": "2026-07-12",
+      "time": "09:45:00",
       "source": "AI News"
     },
     {
@@ -1275,7 +1239,34 @@
       "summary": "Microsoft 宣布全力採用 AI 技術來發現 Windows 漏洞並加快修補速度。新系統 MDASH 能在攻擊者利用零日漏洞前搶先找出問題，預計用戶未來將看到更頻繁的安全更新。",
       "url": "./news_20260711_201500/index.html",
       "date": "2026-07-11",
-      "time": "00:00:00",
+      "time": "20:00:00",
+      "source": "AI News"
+    },
+    {
+      "dir": "news_20260711_151500",
+      "title": "5080 / 5070Ti Super vs AMD W7900 / W7800： 24G 顯卡 AI 時代還值得折騰嗎？",
+      "summary": "一位科技 YouTuber 針對 AMD W7900/W7800 與 NVIDIA 5080/5070Ti Super 是否值得等待進行分析。觀點鮮明：AMD W7900 48G 純屬智商稅，5080",
+      "url": "./news_20260711_151500/index.html",
+      "date": "2026-07-11",
+      "time": "15:00:00",
+      "source": "AI News"
+    },
+    {
+      "dir": "news_20260711_140200",
+      "title": "AI 做的網頁總是很醜？ 這專案收錄 73 個品牌 DESIGN.md，GitHub 爆紅摘 10 萬星",
+      "summary": "一個名為「awesome-design-md」的 GitHub 專案，收錄了 73 個知名科技品牌的 DESIGN.md 設計規範文件，在 GitHub 上爆紅突破 10 萬顆星。這個專案解決了 AI",
+      "url": "./news_20260711_140200/index.html",
+      "date": "2026-07-11",
+      "time": "14:00:00",
+      "source": "AI News"
+    },
+    {
+      "dir": "news_20260711_132800",
+      "title": "OpenAI發表GPT-5.6、ChatGPT Work！ 新模型效率大升級，三大版本與辦公代理一次看",
+      "summary": "OpenAI 正式發布 GPT-5.6 模型家族，一次推出三個版本（Sol、Luna、Terra），並同步推出企業級辦公代理 ChatGPT Work，正式向 Anthropic 的 Claude C",
+      "url": "./news_20260711_132800/index.html",
+      "date": "2026-07-11",
+      "time": "13:00:00",
       "source": "AI News"
     },
     {
@@ -1284,7 +1275,16 @@
       "summary": "當答案不再稀缺，高等教育還應教甚麼？悉尼大學教育科技學教授 Danny Liu 指出，AI 世代全球大學最急切需要作出的改變，是不再將「學術研究產出」視為大學排名的核心基準。教學質素、學生能力發展、課",
       "url": "./news_20260710_172000/index.html",
       "date": "2026-07-10",
-      "time": "00:00:00",
+      "time": "17:00:00",
+      "source": "AI News"
+    },
+    {
+      "dir": "news_20260710_123000",
+      "title": "AI代理還不夠 Google大將紀懷新曝AI科技下一步 網路生態將大洗牌",
+      "summary": "Google DeepMind 副總裁紀懷新表示，過去 20 年由搜尋推薦系統撐起的兆美元網路經濟，即將被具備「思維鏈」推理能力的 AI 打破。AI 將從預測下一個 token 升級至預測下一個 id",
+      "url": "./news_20260710_123000/index.html",
+      "date": "2026-07-10",
+      "time": "12:00:00",
       "source": "AI News"
     },
     {
@@ -1293,7 +1293,16 @@
       "summary": "Linux 之父林納斯·托沃茲在印度開源峯會 2026 上語出驚人：自己已不再親自寫程式，而是專注於管理人與專案方向。他現在只靠 Git 和 Email 兩個工具工作，與 AI 工具保持距離，強調「在",
       "url": "./news_20260710_092500/index.html",
       "date": "2026-07-10",
-      "time": "00:00:00",
+      "time": "09:00:00",
+      "source": "AI News"
+    },
+    {
+      "dir": "news_20260710_090000",
+      "title": "「因為能登錄的帳號很多，就做了」 日本15歲高中生借ChatGPT一夜清空4.68萬個動畫帳號",
+      "summary": "日本一名15歲初中生利用ChatGPT協助編寫攻擊程式，在3至4小時內將46,812個動畫平台會員帳號集體退會，服務被迫停擺一個半月。這起案件暴露了AI工具正在拉低網路攻擊門檻的嚴峻趨勢。",
+      "url": "./news_20260710_090000/index.html",
+      "date": "2026-07-10",
+      "time": "09:00:00",
       "source": "AI News"
     },
     {
@@ -1302,16 +1311,7 @@
       "summary": "Anthropic 工程師 Thariq Shihipar 在 AI Engineer World's Fair 分享與 Claude Fable 5 協作的經驗，核心觀點是：模型表現好不好，往往不只",
       "url": "./news_20260709_085100/index.html",
       "date": "2026-07-09",
-      "time": "00:00:00",
-      "source": "AI News"
-    },
-    {
-      "dir": "news_20260710_090000",
-      "title": "「因為能登錄的帳號很多，就做了」 日本15歲高中生借ChatGPT一夜清空4.68萬個動畫帳號",
-      "summary": "日本一名15歲初中生利用ChatGPT協助編寫攻擊程式，在3至4小時內將46,812個動畫平台會員帳號集體退會，服務被迫停擺一個半月。這起案件暴露了AI工具正在拉低網路攻擊門檻的嚴峻趨勢。",
-      "url": "./news_20260710_090000/index.html",
-      "date": "2026-07-09",
-      "time": "00:00:00",
+      "time": "08:00:00",
       "source": "AI News"
     },
     {
@@ -1320,16 +1320,16 @@
       "summary": "雲端安全公司 Sysdig 首次記錄到由 AI 代理完全自主執行的勒索軟件攻擊「JadePuffer」，AI 負責從偵察到加密的所有技術工作，但人類仍在背後操控目標選擇與基礎設施。",
       "url": "./news_20260709_083800/index.html",
       "date": "2026-07-09",
-      "time": "00:00:00",
+      "time": "08:00:00",
       "source": "AI News"
     },
     {
-      "dir": "news_20260710_123000",
-      "title": "AI代理還不夠 Google大將紀懷新曝AI科技下一步 網路生態將大洗牌",
-      "summary": "Google DeepMind 副總裁紀懷新表示，過去 20 年由搜尋推薦系統撐起的兆美元網路經濟，即將被具備「思維鏈」推理能力的 AI 打破。AI 將從預測下一個 token 升級至預測下一個 id",
-      "url": "./news_20260710_123000/index.html",
-      "date": "2026-07-09",
-      "time": "00:00:00",
+      "dir": "news_20260708_134830",
+      "title": "Anthropic 將 Claude Cowork 從桌面擴展至手機與網頁",
+      "summary": "Anthropic 宣布將 Claude Cowork 從桌面應用程式擴展至 iOS、Android 及網頁平台，讓 AI 代理不再需要綁定桌面裝置，可在設備間無縫切換，雲端後台持續運行。",
+      "url": "./news_20260708_134830/index.html",
+      "date": "2026-07-08",
+      "time": "13:30:00",
       "source": "AI News"
     },
     {
@@ -1338,34 +1338,7 @@
       "summary": "Fable 5 推出革命性的自我改進系統，透過 14 個步驟讓 AI 代理能夠像複利效應般持續進化，實現真正的自主成長與學習。",
       "url": "./news_20260708_121804/index.html",
       "date": "2026-07-08",
-      "time": "00:00:00",
-      "source": "AI News"
-    },
-    {
-      "dir": "news_20260723_084251",
-      "title": "AI 新創公司 營收增長正在加速",
-      "summary": "AI 新創公司正以史上罕見的速度催生營收里程碑，Anthropic、Sierra、Mercor 相繼公布爆炸性增長數據，揭示 AI 產業已進入「營收加速膨脹」的新階段。",
-      "url": "./news_20260723_084251/index.html",
-      "date": "2026-07-08",
-      "time": "00:00:00",
-      "source": "AI News"
-    },
-    {
-      "dir": "news_20260707_083700",
-      "title": "使用 Google = 參與 AI 訓練！ 一篇教你如何退出",
-      "summary": "Google 於 2026 年 6 月低調更新隱私設定，將用戶上傳至搜尋服務的媒體檔案（圖片、檔案、音訊、影片）自動納入 AI 模型訓練資料庫。用戶需主動關閉「Save Media」選項才能退出訓練。",
-      "url": "./news_20260707_083700/index.html",
-      "date": "2026-07-07",
-      "time": "00:00:00",
-      "source": "AI News"
-    },
-    {
-      "dir": "news_20260707_090800",
-      "title": "中國春水堂「AI 女伴」機械人 有體溫、表情、視覺及記憶功能",
-      "summary": "中國春水堂推出次世代「AI 仿真人形伴侶機械人」，配備體溫、表情、視覺及記憶功能，預計 8 月 1 日起交貨，定價 15,800 人民幣起，採取「身體在場感」為核心賣點的差異化策略。",
-      "url": "./news_20260707_090800/index.html",
-      "date": "2026-07-07",
-      "time": "00:00:00",
+      "time": "12:04:00",
       "source": "AI News"
     },
     {
@@ -1374,16 +1347,7 @@
       "summary": "ManpowerGroup 香港調查顯示，57% 受訪僱主認為日常 AI 工具已成為提升生產力的首要槓桿，反映企業由傳統管理制度轉向以 AI 工具和相關技能為核心的結構性轉變。",
       "url": "./news_20260707_134357/index.html",
       "date": "2026-07-07",
-      "time": "00:00:00",
-      "source": "AI News"
-    },
-    {
-      "dir": "news_20260708_134830",
-      "title": "Anthropic 將 Claude Cowork 從桌面擴展至手機與網頁",
-      "summary": "Anthropic 宣布將 Claude Cowork 從桌面應用程式擴展至 iOS、Android 及網頁平台，讓 AI 代理不再需要綁定桌面裝置，可在設備間無縫切換，雲端後台持續運行。",
-      "url": "./news_20260708_134830/index.html",
-      "date": "2026-07-07",
-      "time": "00:00:00",
+      "time": "13:57:00",
       "source": "AI News"
     },
     {
@@ -1392,7 +1356,25 @@
       "summary": "科大副校郭毅可主張香港應建立「主權AI」，以本地數據為基礎，避免數字殖民與文化偏見，並將香港打造成為世界第一個以 AI 支撐的城市。",
       "url": "./news_20260707_130800/index.html",
       "date": "2026-07-07",
-      "time": "00:00:00",
+      "time": "13:00:00",
+      "source": "AI News"
+    },
+    {
+      "dir": "news_20260707_090800",
+      "title": "中國春水堂「AI 女伴」機械人 有體溫、表情、視覺及記憶功能",
+      "summary": "中國春水堂推出次世代「AI 仿真人形伴侶機械人」，配備體溫、表情、視覺及記憶功能，預計 8 月 1 日起交貨，定價 15,800 人民幣起，採取「身體在場感」為核心賣點的差異化策略。",
+      "url": "./news_20260707_090800/index.html",
+      "date": "2026-07-07",
+      "time": "09:00:00",
+      "source": "AI News"
+    },
+    {
+      "dir": "news_20260707_083700",
+      "title": "使用 Google = 參與 AI 訓練！ 一篇教你如何退出",
+      "summary": "Google 於 2026 年 6 月低調更新隱私設定，將用戶上傳至搜尋服務的媒體檔案（圖片、檔案、音訊、影片）自動納入 AI 模型訓練資料庫。用戶需主動關閉「Save Media」選項才能退出訓練。",
+      "url": "./news_20260707_083700/index.html",
+      "date": "2026-07-07",
+      "time": "08:00:00",
       "source": "AI News"
     },
     {
@@ -1401,7 +1383,7 @@
       "summary": "阿根廷總統米萊伊提出「自動化公司」立法草案，雖然宣稱要建立「無人類員工」的公司，但法律專家指出現實仍需人類管理者監督，這是全球首個為 AI 營運公司設立法律框架的嘗試。",
       "url": "./news_20260706_132851/index.html",
       "date": "2026-07-06",
-      "time": "00:00:00",
+      "time": "13:51:00",
       "source": "AI News"
     },
     {
@@ -1410,7 +1392,7 @@
       "summary": "中國 AI 公司 Z.ai 發布 GLM-5.2 開源模型，在多項基準測試中與 OpenAI 和 Anthropic 的頂級模型並駕齊驅，但成本僅為美國封閉模型的六分之一，可能重置全球 AI 競爭格局",
       "url": "./news_20260706_094505/index.html",
       "date": "2026-07-06",
-      "time": "00:00:00",
+      "time": "09:05:00",
       "source": "AI News"
     },
     {
@@ -1419,7 +1401,7 @@
       "summary": "AI 圖像生成器 Midjourney 正在反擊好萊塢工作室的版權侵權訴訟，要求原告披露其 AI 訓練方式，試圖以「原告同樣在做他們指控的事情」來削弱訴訟立場。",
       "url": "./news_20260706_082829/index.html",
       "date": "2026-07-06",
-      "time": "00:00:00",
+      "time": "08:29:00",
       "source": "AI News"
     },
     {
@@ -1428,7 +1410,7 @@
       "summary": "AI 代理人本應消除繁瑣工作，卻讓許多員工淪為「機器人保姆」，付出更多時間看顧和管理 AI，反而降低工作效率。",
       "url": "./news_20260706_075316/index.html",
       "date": "2026-07-06",
-      "time": "00:00:00",
+      "time": "07:16:00",
       "source": "AI News"
     },
     {
@@ -1437,7 +1419,7 @@
       "summary": "Mistral AI 是法國巴黎的人工智能新創公司，被譽為「歐洲版 OpenAI」。在美國政策轉向、AI 監管風向變化之際，Mistral 作為歐洲技術主權象徵，正吸引全球目光。公司採用與 Palan",
       "url": "./news_20260705_121000/index.html",
       "date": "2026-07-05",
-      "time": "00:00:00",
+      "time": "12:00:00",
       "source": "AI News"
     },
     {
@@ -1446,7 +1428,7 @@
       "summary": "AI 安全掃描工具發現了海量漏洞，但這些「發現」只是數量，不等於風險消除。根據 VulnCheck 數據，2025 年所有 CVE 中僅約 1% 曾被實際用於攻擊。在工程師被建議裁減的同時，修復速度遠",
       "url": "./news_20260705_104500/index.html",
       "date": "2026-07-05",
-      "time": "00:00:00",
+      "time": "10:00:00",
       "source": "AI News"
     },
     {
@@ -1455,7 +1437,7 @@
       "summary": "中國科技巨頭阿里巴巴宣布禁用員工使用 Anthropic 的 AI 編程工具 Claude Code，主因是該工具被發現內含可識別中國用戶的隱藏代碼，禁令將於 2026 年 7 月 10 日生效。",
       "url": "./news_20260705_093500/index.html",
       "date": "2026-07-05",
-      "time": "00:00:00",
+      "time": "09:00:00",
       "source": "AI News"
     },
     {
@@ -1464,7 +1446,7 @@
       "summary": "2026 年瀏覽器大戰進入新階段：焦點已從搜尋結果轉向 AI 助理之爭。Perplexity Comet、The Browser Company 的 Dia、OpenAI 的 Atlas 等新型 AI",
       "url": "./news_20260704_090936/index.html",
       "date": "2026-07-04",
-      "time": "00:00:00",
+      "time": "09:36:00",
       "source": "AI News"
     },
     {
@@ -1473,16 +1455,7 @@
       "summary": "OpenAI 建議向美國政府提供公司 5% 股份，呼籲其他 AI 巨頭跟隨，以 8,520 億美元估值計算，5% 約值 426 億美元。",
       "url": "./news_20260704_083800/index.html",
       "date": "2026-07-04",
-      "time": "00:00:00",
-      "source": "AI News"
-    },
-    {
-      "dir": "news_20260703_101851",
-      "title": "Cloudflare 將過濾 AI 公司網頁爬蟲",
-      "summary": "Cloudflare 宣佈自動封鎖「混合用途」網頁爬蟲，這些爬蟲同時為搜尋引擎和 AI 代理/訓練服務抓取內容，預設啟動保護並推出「按使用收費」新商業模式。",
-      "url": "./news_20260703_101851/index.html",
-      "date": "2026-07-03",
-      "time": "00:00:00",
+      "time": "08:00:00",
       "source": "AI News"
     },
     {
@@ -1491,7 +1464,7 @@
       "summary": "成立僅3年的月之暗面以長文本與生產力定位突圍，Kimi大模型被馬斯克公開點名「令人印象深刻」，成為國產模型出海的新力量。公司不走聊天陪伴路綫，押注架構創新與長上下文能力，API收入已佔整體營收7成以上",
       "url": "./news_20260703_130047/index.html",
       "date": "2026-07-03",
-      "time": "00:00:00",
+      "time": "13:47:00",
       "source": "AI News"
     },
     {
@@ -1500,7 +1473,16 @@
       "summary": "UNICEF 最新調查顯示，全球約 2,000 萬名兒童已使用 AI 工具，兒童接觸 AI 速度比成人快三倍。UNICEF 形容這代兒童正身處「一場全球實驗」當中，警告現行法規遠遠追不上 AI 使用速",
       "url": "./news_20260703_131313/index.html",
       "date": "2026-07-03",
-      "time": "00:00:00",
+      "time": "13:13:00",
+      "source": "AI News"
+    },
+    {
+      "dir": "news_20260703_101851",
+      "title": "Cloudflare 將過濾 AI 公司網頁爬蟲",
+      "summary": "Cloudflare 宣佈自動封鎖「混合用途」網頁爬蟲，這些爬蟲同時為搜尋引擎和 AI 代理/訓練服務抓取內容，預設啟動保護並推出「按使用收費」新商業模式。",
+      "url": "./news_20260703_101851/index.html",
+      "date": "2026-07-03",
+      "time": "10:51:00",
       "source": "AI News"
     },
     {
@@ -1509,7 +1491,7 @@
       "summary": "AI 的顛覆性正由企業核心業務區域釋放價值，而非邊緣地帶。未來 3 至 5 年，懂得由核心業務流程開始思考 AI 發展的企業將成為行業領跑者。",
       "url": "./news_20260702_162400/index.html",
       "date": "2026-07-02",
-      "time": "00:00:00",
+      "time": "16:00:00",
       "source": "AI News"
     },
     {
@@ -1518,7 +1500,7 @@
       "summary": "Google 推出全新 AI 圖像生成模型 Nano Banana 2 Lite，專為需要快速大量生成圖像的工作流程而優化，並支援 Gemini API 企業平台。",
       "url": "./news_20260702_080000/index.html",
       "date": "2026-07-02",
-      "time": "00:00:00",
+      "time": "08:00:00",
       "source": "AI News"
     },
     {
@@ -1527,7 +1509,7 @@
       "summary": "紐約時報分析文章探討中國應對AI革命的就業與社會穩定策略。在武漢無人駕駛計程車衝擊司機生計引發抗議後，中國政府積極出台措施，包括AI失業保險、職業培訓、法院判決保護被AI替代的員工，以及學者提出的「A",
       "url": "./news_20260701_220200/index.html",
       "date": "2026-07-01",
-      "time": "00:00:00",
+      "time": "22:00:00",
       "source": "AI News"
     },
     {
@@ -1536,34 +1518,7 @@
       "summary": "優必選旗下消費級品牌優世界（UWORLD）於6月30日正式發布U1系列人形機械人，男版高階機售價99萬元人民幣（約108萬港元），女版高階機售價88萬元人民幣（約96萬港元），主打「情感陪伴」而非傳統",
       "url": "./news_20260701_212200/index.html",
       "date": "2026-07-01",
-      "time": "00:00:00",
-      "source": "AI News"
-    },
-    {
-      "dir": "news_20260701_204300",
-      "title": "半小時痛失50萬！ 新型「真人+AI」洗腦騙局",
-      "summary": "有打工仔誤墮新型「真人+AI」電話騙局，被騙徒化身「假HKTVmall」送保險，以精密的疲勞轟炸戰術，在短短兩日內騙走五十萬港元血汗錢。事件揭示AI技術已被騙徒利用來增加欺騙效果，引發網民熱議：「真唔",
-      "url": "./news_20260701_204300/index.html",
-      "date": "2026-07-01",
-      "time": "00:00:00",
-      "source": "AI News"
-    },
-    {
-      "dir": "news_20260701_192000",
-      "title": "未來 2 年，一半的 PM 將被淘汰？",
-      "summary": "「未來兩年，一半的 PM 會被淘汰。」當 AI 把寫程式、做原型、整理文件全部接手，產品經理的核心價值已從「把事做對」轉向「做對的事」——也就是「場景想像力」。寓意科技執行長施政源表示，真正會被淘汰的",
-      "url": "./news_20260701_192000/index.html",
-      "date": "2026-07-01",
-      "time": "00:00:00",
-      "source": "AI News"
-    },
-    {
-      "dir": "news_20260701_171118",
-      "title": "Meta不準工程師用 Claude Code、Codex！",
-      "summary": "Meta 傳要求旗下 Applied AI 部門工程師全面禁用 Claude Code 與 Codex，主要擔心競爭對手模型的輸出內容，透過日常開發流程無意間混入自家 Llama 模型的訓練資料，形成",
-      "url": "./news_20260701_171118/index.html",
-      "date": "2026-07-01",
-      "time": "00:00:00",
+      "time": "21:00:00",
       "source": "AI News"
     },
     {
@@ -1572,7 +1527,7 @@
       "summary": "OpenClaw 正式推出官方手機 App，將用戶的智能手機轉化為 OpenClaw 的移動節點。支援即時文字及語音聊天、動作審批、內容分享，以及相機、螢幕截圖、位置等裝置能力整合。App 完全免費，",
       "url": "./news_20260701_210700/index.html",
       "date": "2026-07-01",
-      "time": "00:00:00",
+      "time": "21:00:00",
       "source": "AI News"
     },
     {
@@ -1581,25 +1536,34 @@
       "summary": "聯合國AI獨立國際科學小組發布首份報告，指出AI技術發展速度遠超監管體系的應對能力。AI模型完成複雜任務的能力每數月便翻倍，但監管機構需要科學數據才能立法，而當足夠數據積累時，AI系統可能早已向前邁進",
       "url": "./news_20260701_213500/index.html",
       "date": "2026-07-01",
-      "time": "00:00:00",
+      "time": "21:00:00",
       "source": "AI News"
     },
     {
-      "dir": "news_20260630_084051",
-      "title": "白領遭取代！ 人際連結成新硬實力",
-      "summary": "前 Google X 商務長莫·加多警告，AI 技術崛起首當其衝的是白領知識工作者。他預測 2027-2028 年部分產業高達 30% 工作將徹底消失，規模超越 2007 年金融海嘯。他建議年輕人投入",
-      "url": "./news_20260630_084051/index.html",
-      "date": "2026-06-30",
-      "time": "00:00:00",
+      "dir": "news_20260701_204300",
+      "title": "半小時痛失50萬！ 新型「真人+AI」洗腦騙局",
+      "summary": "有打工仔誤墮新型「真人+AI」電話騙局，被騙徒化身「假HKTVmall」送保險，以精密的疲勞轟炸戰術，在短短兩日內騙走五十萬港元血汗錢。事件揭示AI技術已被騙徒利用來增加欺騙效果，引發網民熱議：「真唔",
+      "url": "./news_20260701_204300/index.html",
+      "date": "2026-07-01",
+      "time": "20:00:00",
       "source": "AI News"
     },
     {
-      "dir": "news_20260630_075711",
-      "title": "TIDAL 全面禁止 AI 音樂變現",
-      "summary": "TIDAL 宣布全新 AI 音樂政策，全面禁止全 AI 生成的音樂在其平台上變現。2026 年 7 月 15 日生效，屆時所有 AI 生成音樂將被標記「AI」標籤，且無法賺取版稅或參與直接銷售功能。",
-      "url": "./news_20260630_075711/index.html",
-      "date": "2026-06-30",
-      "time": "00:00:00",
+      "dir": "news_20260701_192000",
+      "title": "未來 2 年，一半的 PM 將被淘汰？",
+      "summary": "「未來兩年，一半的 PM 會被淘汰。」當 AI 把寫程式、做原型、整理文件全部接手，產品經理的核心價值已從「把事做對」轉向「做對的事」——也就是「場景想像力」。寓意科技執行長施政源表示，真正會被淘汰的",
+      "url": "./news_20260701_192000/index.html",
+      "date": "2026-07-01",
+      "time": "19:00:00",
+      "source": "AI News"
+    },
+    {
+      "dir": "news_20260701_171118",
+      "title": "Meta不準工程師用 Claude Code、Codex！",
+      "summary": "Meta 傳要求旗下 Applied AI 部門工程師全面禁用 Claude Code 與 Codex，主要擔心競爭對手模型的輸出內容，透過日常開發流程無意間混入自家 Llama 模型的訓練資料，形成",
+      "url": "./news_20260701_171118/index.html",
+      "date": "2026-07-01",
+      "time": "17:18:00",
       "source": "AI News"
     },
     {
@@ -1608,7 +1572,7 @@
       "summary": "教育局發布《中小學數碼教育發展藍圖》，並推出「『智』啟學教」撥款計劃，為每所公立及資助中小學提供一次性 50 萬元資金，用於 AI 教學設備與活動。unwire 專訪三間先驅學校，分享如何透過「硬軟分",
       "url": "./news_20260630_190727/index.html",
       "date": "2026-06-30",
-      "time": "00:00:00",
+      "time": "19:27:00",
       "source": "AI News"
     },
     {
@@ -1617,34 +1581,25 @@
       "summary": "Microsoft 悄悄宣布將 Windows 10 延長安全性更新（ESU）計劃再延長一年至 2027 年 10 月 12 日，個人用戶可繼續免費獲得重要安全性更新。外界猜測此消息刻意選在 Appl",
       "url": "./news_20260630_150447/index.html",
       "date": "2026-06-30",
-      "time": "00:00:00",
+      "time": "15:47:00",
       "source": "AI News"
     },
     {
-      "dir": "news_20260629_185530",
-      "title": "DeepSeek 發布 DSpark 推理速度最高提升 85%",
-      "summary": "DeepSeek 聯合北京大學發布開源推理加速框架 DSpark，採用半自回歸生成架構與置信度調度驗證機制，在高併發場景下將用戶端生成速度提升 60%-85%，有效吞吐量翻 4 倍。",
-      "url": "./news_20260629_185530/index.html",
-      "date": "2026-06-29",
-      "time": "00:00:00",
+      "dir": "news_20260630_084051",
+      "title": "白領遭取代！ 人際連結成新硬實力",
+      "summary": "前 Google X 商務長莫·加多警告，AI 技術崛起首當其衝的是白領知識工作者。他預測 2027-2028 年部分產業高達 30% 工作將徹底消失，規模超越 2007 年金融海嘯。他建議年輕人投入",
+      "url": "./news_20260630_084051/index.html",
+      "date": "2026-06-30",
+      "time": "08:51:00",
       "source": "AI News"
     },
     {
-      "dir": "news_20260629_083845",
-      "title": "Gemini 學習筆記本 打造個人化學習體驗",
-      "summary": "Google 推出 Gemini Study Notebooks，把 Gemini 變成一位真正有系統的「學習夥伴」，具備形成性評量 + 個人化學習路徑的能力，不再只是回答問題，而是能持續記錄學習歷程",
-      "url": "./news_20260629_083845/index.html",
-      "date": "2026-06-29",
-      "time": "00:00:00",
-      "source": "AI News"
-    },
-    {
-      "dir": "news_20260629_132540",
-      "title": "AI 年代：中大研 L3式清除腎石AI機械人",
-      "summary": "中文大學醫學院和工程學院團隊歷時4年研發出L3監督式自主AI清除腎石手術機械人，可在醫生監督下自動執行腎臟內導航、辨識腎石及吸走碎石等操作。今年2月底完成首宗人體手術，目標明年增至150至200宗手術",
-      "url": "./news_20260629_132540/index.html",
-      "date": "2026-06-29",
-      "time": "00:00:00",
+      "dir": "news_20260630_075711",
+      "title": "TIDAL 全面禁止 AI 音樂變現",
+      "summary": "TIDAL 宣布全新 AI 音樂政策，全面禁止全 AI 生成的音樂在其平台上變現。2026 年 7 月 15 日生效，屆時所有 AI 生成音樂將被標記「AI」標籤，且無法賺取版稅或參與直接銷售功能。",
+      "url": "./news_20260630_075711/index.html",
+      "date": "2026-06-30",
+      "time": "07:11:00",
       "source": "AI News"
     },
     {
@@ -1653,7 +1608,25 @@
       "summary": "DeepSeek 創辦人梁文鋒受 Anthropic Claude Mythos 震撼，決定大轉向——完成 500 億人民幣（約 74 億美元）巨額融資後，個人再掏出 200 億元人民幣占總額五分之二",
       "url": "./news_20260629_220744/index.html",
       "date": "2026-06-29",
-      "time": "00:00:00",
+      "time": "22:44:00",
+      "source": "AI News"
+    },
+    {
+      "dir": "news_20260629_185530",
+      "title": "DeepSeek 發布 DSpark 推理速度最高提升 85%",
+      "summary": "DeepSeek 聯合北京大學發布開源推理加速框架 DSpark，採用半自回歸生成架構與置信度調度驗證機制，在高併發場景下將用戶端生成速度提升 60%-85%，有效吞吐量翻 4 倍。",
+      "url": "./news_20260629_185530/index.html",
+      "date": "2026-06-29",
+      "time": "18:30:00",
+      "source": "AI News"
+    },
+    {
+      "dir": "news_20260629_132540",
+      "title": "AI 年代：中大研 L3式清除腎石AI機械人",
+      "summary": "中文大學醫學院和工程學院團隊歷時4年研發出L3監督式自主AI清除腎石手術機械人，可在醫生監督下自動執行腎臟內導航、辨識腎石及吸走碎石等操作。今年2月底完成首宗人體手術，目標明年增至150至200宗手術",
+      "url": "./news_20260629_132540/index.html",
+      "date": "2026-06-29",
+      "time": "13:40:00",
       "source": "AI News"
     },
     {
@@ -1662,7 +1635,7 @@
       "summary": "美國半導體新創 xLight 以自由電子雷射（FEL）挑戰艾司摩爾 EUV 光源壟斷，獲得美國商務部 1.5 億美元注資，前英特爾執行長基辛格出任董事長，為這場「寄生式創新」增添重量級產業背書。",
       "url": "./news_20260629_105506/index.html",
       "date": "2026-06-29",
-      "time": "00:00:00",
+      "time": "10:06:00",
       "source": "AI News"
     },
     {
@@ -1671,16 +1644,25 @@
       "summary": "AI 正在快速改變全球醫療系統，但對於毛利族和太平洋島嶼社群，確保 AI 的安全性、公平性和有效性仍是重大挑戰。Professor Robyn Whittaker 強調 AI 潛力巨大，但陷阱同樣巨大",
       "url": "./news_20260629_094411/index.html",
       "date": "2026-06-29",
-      "time": "00:00:00",
+      "time": "09:11:00",
       "source": "AI News"
     },
     {
-      "dir": "news_20260628_134830",
-      "title": "店數連跌 8 年、同店業績卻靠 AI 漲 5 成！ 拉亞漢堡的 AI 轉型：把後台交給機器，溫度留給人",
-      "summary": "拉亞漢堡執行長徐沛源從科技業跨足傳統餐飲，透過 AI 與數位轉型，成功帶領這個老字號品牌逆風翻盤。店數下降長達 8、9 年後，2025 年重新站回 500 大關，2026 年更正式走出低谷，同店業績 ",
-      "url": "./news_20260628_134830/index.html",
+      "dir": "news_20260629_083845",
+      "title": "Gemini 學習筆記本 打造個人化學習體驗",
+      "summary": "Google 推出 Gemini Study Notebooks，把 Gemini 變成一位真正有系統的「學習夥伴」，具備形成性評量 + 個人化學習路徑的能力，不再只是回答問題，而是能持續記錄學習歷程",
+      "url": "./news_20260629_083845/index.html",
+      "date": "2026-06-29",
+      "time": "08:45:00",
+      "source": "AI News"
+    },
+    {
+      "dir": "news_20260628_224900",
+      "title": "研究揭 AI 精神病三大驅動因素 「放大螺旋」如何助長妄想？",
+      "summary": "英國與德國研究人員在 Nature 期刊 Digital Psychiatry and Neuroscience 發表研究，識別出 AI 聊天機器人的三大特徵——語言對齊、過度個人化生成、奉承傾向——",
+      "url": "./news_20260628_224900/index.html",
       "date": "2026-06-28",
-      "time": "00:00:00",
+      "time": "22:00:00",
       "source": "AI News"
     },
     {
@@ -1689,7 +1671,25 @@
       "summary": "香港教育局推出「『智』啟學教」50萬撥款助中小學發展AI教育，但如何避免學生過度依賴AI、保持自主學習能力，成為教育界最關注的核心挑戰。教師的角色正從知識傳授者轉變為學習引導者。",
       "url": "./news_20260628_184200/index.html",
       "date": "2026-06-28",
-      "time": "00:00:00",
+      "time": "18:00:00",
+      "source": "AI News"
+    },
+    {
+      "dir": "news_20260628_171855",
+      "title": "Asian AI Startups 推出 Mythos-Like 模型 Anthropic 出口禁令持續發酵",
+      "summary": "美國政府對 Anthropic 最先進的 AI 模型實施出口禁令後，東京與北京的至少兩家新創公司迅速填補市場空缺。Sakana AI 推出「Fugu」協調模型、中國 360 發布網安 AI 工具，本地",
+      "url": "./news_20260628_171855/index.html",
+      "date": "2026-06-28",
+      "time": "17:55:00",
+      "source": "AI News"
+    },
+    {
+      "dir": "news_20260628_134830",
+      "title": "店數連跌 8 年、同店業績卻靠 AI 漲 5 成！ 拉亞漢堡的 AI 轉型：把後台交給機器，溫度留給人",
+      "summary": "拉亞漢堡執行長徐沛源從科技業跨足傳統餐飲，透過 AI 與數位轉型，成功帶領這個老字號品牌逆風翻盤。店數下降長達 8、9 年後，2025 年重新站回 500 大關，2026 年更正式走出低谷，同店業績 ",
+      "url": "./news_20260628_134830/index.html",
+      "date": "2026-06-28",
+      "time": "13:30:00",
       "source": "AI News"
     },
     {
@@ -1698,7 +1698,7 @@
       "summary": "Vulkan backend 最大相容性最好；SYCL backend 理論效能更佳但尚未充分優化。MTP（Multi-Token Prediction）在 SYCL backend 上表現不佳懷疑優",
       "url": "./news_20260627_173051/index.html",
       "date": "2026-06-27",
-      "time": "00:00:00",
+      "time": "17:51:00",
       "source": "AI News"
     },
     {
@@ -1707,7 +1707,7 @@
       "summary": "數據工作者只有 20-40% 時間做正經分析。常見問題：日期格式有 3 種、手機號有的帶 +86 有的不帶、金額列混著「約 5 萬」文字、空行比數據還多。",
       "url": "./news_20260627_175600/index.html",
       "date": "2026-06-27",
-      "time": "00:00:00",
+      "time": "17:00:00",
       "source": "AI News"
     },
     {
@@ -1716,34 +1716,25 @@
       "summary": "華碩 16GB VRAM 顯示卡搭配 LM Studio，實測 Gemma 4 26B 本地 AI 速度可達每秒 30-40 個 Token，效能接近雲端訂閱，但所有資料完全保存在本地。",
       "url": "./news_20260627_165234/index.html",
       "date": "2026-06-27",
-      "time": "00:00:00",
+      "time": "16:34:00",
       "source": "AI News"
     },
     {
-      "dir": "news_20260628_171855",
-      "title": "Asian AI Startups 推出 Mythos-Like 模型 Anthropic 出口禁令持續發酵",
-      "summary": "美國政府對 Anthropic 最先進的 AI 模型實施出口禁令後，東京與北京的至少兩家新創公司迅速填補市場空缺。Sakana AI 推出「Fugu」協調模型、中國 360 發布網安 AI 工具，本地",
-      "url": "./news_20260628_171855/index.html",
+      "dir": "news_20260627_161400",
+      "title": "AI代理全面接管工作？ OpenAI：各部門近100%內容由Codex產生",
+      "summary": "法務、財務、招募等部門於 2026 年 4 月跨越「過半數工作由 Codex 完成」的臨界點。法務人員和招募專員各有超過 85% 工作輸出 Token 來自 Codex，工程師更高達 99%。",
+      "url": "./news_20260627_161400/index.html",
       "date": "2026-06-27",
-      "time": "00:00:00",
+      "time": "16:00:00",
       "source": "AI News"
     },
     {
-      "dir": "news_20260626_084200",
-      "title": "Amazon 額外 130 億美元 押注印度 AI 基建",
-      "summary": "Amazon 宣佈額外投資 130 億美元擴張印度 AI 及雲端基建，令其在印度的總投資額在 2026 至 2030 年間增至 480 億美元，凸顯全球科技巨頭在印度 AI 領域的激烈競爭。",
-      "url": "./news_20260626_084200/index.html",
-      "date": "2026-06-26",
-      "time": "00:00:00",
-      "source": "AI News"
-    },
-    {
-      "dir": "news_20260626_080500",
-      "title": "Apple 將跳過 M6 Pro 及 M6 Max 直接推出 M7",
-      "summary": "Apple 據報將大幅調整 Mac 晶片策略，首次跳過 M6 系列的高階版本，直接推出以 AI 為核心的 M7 系列晶片。",
-      "url": "./news_20260626_080500/index.html",
-      "date": "2026-06-26",
-      "time": "00:00:00",
+      "dir": "news_20260627_103200",
+      "title": "Anthropic產能暴增8倍有代價！ Claude Code主管揭管理痛點",
+      "summary": "Claude Code 讓 Anthropic 工程師產能暴增 8 倍，但當 AI 能寫幾乎所有程式碼時，管理者最大的挑戰不再是技術，而是如何避免團隊陷入「孤島」危機，以及如何維持團隊文化。",
+      "url": "./news_20260627_103200/index.html",
+      "date": "2026-06-27",
+      "time": "10:00:00",
       "source": "AI News"
     },
     {
@@ -1752,25 +1743,34 @@
       "summary": "Apple 宣佈提高 iPad 及 MacBook 售價，指 AI 數據中心的高速擴張令記憶體及存儲晶片成本飆升，消息觸發亞洲科技股全線急挫，記憶體晶片巨頭 SK Hynix 及 Samsung 股價",
       "url": "./news_20260626_214200/index.html",
       "date": "2026-06-26",
-      "time": "00:00:00",
+      "time": "21:00:00",
       "source": "AI News"
     },
     {
-      "dir": "news_20260627_161400",
-      "title": "AI代理全面接管工作？ OpenAI：各部門近100%內容由Codex產生",
-      "summary": "法務、財務、招募等部門於 2026 年 4 月跨越「過半數工作由 Codex 完成」的臨界點。法務人員和招募專員各有超過 85% 工作輸出 Token 來自 Codex，工程師更高達 99%。",
-      "url": "./news_20260627_161400/index.html",
+      "dir": "news_20260626_084200",
+      "title": "Amazon 額外 130 億美元 押注印度 AI 基建",
+      "summary": "Amazon 宣佈額外投資 130 億美元擴張印度 AI 及雲端基建，令其在印度的總投資額在 2026 至 2030 年間增至 480 億美元，凸顯全球科技巨頭在印度 AI 領域的激烈競爭。",
+      "url": "./news_20260626_084200/index.html",
       "date": "2026-06-26",
-      "time": "00:00:00",
+      "time": "08:00:00",
       "source": "AI News"
     },
     {
-      "dir": "news_20260625_094700",
-      "title": "Figma 新增程式碼圖層 支援動畫與 AI 功能更新",
-      "summary": "Figma 發布重大更新，新增「程式碼圖層」功能讓設計師、產品經理和工程師能在協作畫布上直接操作程式碼，毋需產出正式 production 等級代碼，同時加入動畫過場特效、3D 轉換支援，以及 AI ",
-      "url": "./news_20260625_094700/index.html",
+      "dir": "news_20260626_080500",
+      "title": "Apple 將跳過 M6 Pro 及 M6 Max 直接推出 M7",
+      "summary": "Apple 據報將大幅調整 Mac 晶片策略，首次跳過 M6 系列的高階版本，直接推出以 AI 為核心的 M7 系列晶片。",
+      "url": "./news_20260626_080500/index.html",
+      "date": "2026-06-26",
+      "time": "08:00:00",
+      "source": "AI News"
+    },
+    {
+      "dir": "news_20260625_202224",
+      "title": "Qwen-AgentWorld：通用代理的語言世界模型",
+      "summary": "阿里雲 Qwen 團隊開源 Qwen-AgentWorld，這是首個覆蓋七個統一領域的原生語言世界模型，訓練數據超過 1000 萬條真實互補軌跡。",
+      "url": "./news_20260625_202224/index.html",
       "date": "2026-06-25",
-      "time": "00:00:00",
+      "time": "20:24:00",
       "source": "AI News"
     },
     {
@@ -1779,16 +1779,16 @@
       "summary": "科技投資專家 Igor Pejic 認為，AI 競賽的真正贏家既非 OpenAI 也非 Anthropic，而是採用「混合戰略」的 Alphabet 與微軟。",
       "url": "./news_20260625_155948/index.html",
       "date": "2026-06-25",
-      "time": "00:00:00",
+      "time": "15:48:00",
       "source": "AI News"
     },
     {
-      "dir": "news_20260627_103200",
-      "title": "Anthropic產能暴增8倍有代價！ Claude Code主管揭管理痛點",
-      "summary": "Claude Code 讓 Anthropic 工程師產能暴增 8 倍，但當 AI 能寫幾乎所有程式碼時，管理者最大的挑戰不再是技術，而是如何避免團隊陷入「孤島」危機，以及如何維持團隊文化。",
-      "url": "./news_20260627_103200/index.html",
+      "dir": "news_20260625_094700",
+      "title": "Figma 新增程式碼圖層 支援動畫與 AI 功能更新",
+      "summary": "Figma 發布重大更新，新增「程式碼圖層」功能讓設計師、產品經理和工程師能在協作畫布上直接操作程式碼，毋需產出正式 production 等級代碼，同時加入動畫過場特效、3D 轉換支援，以及 AI ",
+      "url": "./news_20260625_094700/index.html",
       "date": "2026-06-25",
-      "time": "00:00:00",
+      "time": "09:00:00",
       "source": "AI News"
     },
     {
@@ -1797,7 +1797,7 @@
       "summary": "OpenAI GPT-5.6 從「語言模型」進化為「可執行 Agent」，具備瀏覽器自動化、視覺復刻、3D 生成能力，定價更可能僅為競爭對手的 1/3，預計 6 月 22 至 28 日發布。",
       "url": "./news_20260625_080500/index.html",
       "date": "2026-06-25",
-      "time": "00:00:00",
+      "time": "08:00:00",
       "source": "AI News"
     },
     {
@@ -1806,25 +1806,7 @@
       "summary": "OpenAI 與 Broadcom 共同發表首款 AI 晶片「Jalapeño」，專為運行大型語言模型設計，主打效能功耗比超越目前業界標準，從設計到量產僅花費 9 個月，預計 2026 年底部署至數據",
       "url": "./news_20260625_085500/index.html",
       "date": "2026-06-25",
-      "time": "00:00:00",
-      "source": "AI News"
-    },
-    {
-      "dir": "news_20260624_075545",
-      "title": "SpaceX 與 Reflection AI 簽署 63 億美元算力協議",
-      "summary": "馬斯克旗下 SpaceX 與開源 AI 新創 Reflection AI 達成巨型算力協議，Reflection 將從 2026 年 7 月起每月支付 1.5 億美元直至 2029 年，總價值約 63",
-      "url": "./news_20260624_075545/index.html",
-      "date": "2026-06-24",
-      "time": "00:00:00",
-      "source": "AI News"
-    },
-    {
-      "dir": "news_20260628_224900",
-      "title": "研究揭 AI 精神病三大驅動因素 「放大螺旋」如何助長妄想？",
-      "summary": "英國與德國研究人員在 Nature 期刊 Digital Psychiatry and Neuroscience 發表研究，識別出 AI 聊天機器人的三大特徵——語言對齊、過度個人化生成、奉承傾向——",
-      "url": "./news_20260628_224900/index.html",
-      "date": "2026-06-24",
-      "time": "00:00:00",
+      "time": "08:00:00",
       "source": "AI News"
     },
     {
@@ -1833,16 +1815,7 @@
       "summary": "香港與挪威正代表兩種截然不同的 AI 教育路線。香港推動「AI for all schools」，挪威卻近乎全面禁止小學生使用 AI。表面是「開放」與「禁止」的對立，但兩地其實都在回答同一個核心問題：",
       "url": "./news_20260624_134533/index.html",
       "date": "2026-06-24",
-      "time": "00:00:00",
-      "source": "AI News"
-    },
-    {
-      "dir": "news_20260624_100914",
-      "title": "AI Token 時代終結吃到飽 企業雲端帳單為何飆升？",
-      "summary": "AI 業界正集體告別「吃到飽」時代。隨著主要實驗室從 2025 年 11 月起相繼推出新一代模型，Token 計價模式已成為行業標準，但代價是企業帳單價格急升——過去每月 200 美元的用戶，實際成本",
-      "url": "./news_20260624_100914/index.html",
-      "date": "2026-06-24",
-      "time": "00:00:00",
+      "time": "13:33:00",
       "source": "AI News"
     },
     {
@@ -1851,16 +1824,25 @@
       "summary": "香港電腦教育學會主席朱嘉添指出，特區政府公布的《中小學數字教育發展藍圖》標誌香港數字教育正式邁向全新時代。在亞太區各國已將 AI 從技術普及昇華至「人工智能+」範式轉移之際，香港須從四大維度全面推動 ",
       "url": "./news_20260624_125918/index.html",
       "date": "2026-06-24",
-      "time": "00:00:00",
+      "time": "12:18:00",
       "source": "AI News"
     },
     {
-      "dir": "news_20260625_202224",
-      "title": "Qwen-AgentWorld：通用代理的語言世界模型",
-      "summary": "阿里雲 Qwen 團隊開源 Qwen-AgentWorld，這是首個覆蓋七個統一領域的原生語言世界模型，訓練數據超過 1000 萬條真實互補軌跡。",
-      "url": "./news_20260625_202224/index.html",
+      "dir": "news_20260624_100914",
+      "title": "AI Token 時代終結吃到飽 企業雲端帳單為何飆升？",
+      "summary": "AI 業界正集體告別「吃到飽」時代。隨著主要實驗室從 2025 年 11 月起相繼推出新一代模型，Token 計價模式已成為行業標準，但代價是企業帳單價格急升——過去每月 200 美元的用戶，實際成本",
+      "url": "./news_20260624_100914/index.html",
       "date": "2026-06-24",
-      "time": "00:00:00",
+      "time": "10:14:00",
+      "source": "AI News"
+    },
+    {
+      "dir": "news_20260624_075545",
+      "title": "SpaceX 與 Reflection AI 簽署 63 億美元算力協議",
+      "summary": "馬斯克旗下 SpaceX 與開源 AI 新創 Reflection AI 達成巨型算力協議，Reflection 將從 2026 年 7 月起每月支付 1.5 億美元直至 2029 年，總價值約 63",
+      "url": "./news_20260624_075545/index.html",
+      "date": "2026-06-24",
+      "time": "07:45:00",
       "source": "AI News"
     },
     {
@@ -1896,7 +1878,34 @@
       "summary": "Agnes AI 自 6 月 1 日將文字、圖片、視頻三個模型 API 同時免費開放後，第二週 Token 總量飆升至 3.12 萬億，同時文本模型升級支援百萬 Token 上下文，圖片模型支援 4K",
       "url": "./news_20260622_204026/index.html",
       "date": "2026-06-22",
-      "time": "00:00:00",
+      "time": "20:26:00",
+      "source": "AI News"
+    },
+    {
+      "dir": "news_20260622_131318",
+      "title": "NVIDIA Nemotron 3.5 ASR 6 億參數挑戰 Whisper",
+      "summary": "NVIDIA 推出 Nemotron 3.5 ASR，僅 6 億參數即可支援 40 種語言的本地串流語音辨識，最低延遲僅 80ms，詞錯率（WER）更低於 Whisper large-v3-turbo",
+      "url": "./news_20260622_131318/index.html",
+      "date": "2026-06-22",
+      "time": "13:18:00",
+      "source": "AI News"
+    },
+    {
+      "dir": "news_20260622_094604",
+      "title": "當供應商變成 競爭對手",
+      "summary": "當 AI 模型供應商親自下場做應用服務，獨立工程公司的生存空間備受擠壓。OpenAI 砸下 40 億美元、Anthropic 砸下 15 億美元親自提供企業 AI 人類監督服務，標志著 AI 行業從「",
+      "url": "./news_20260622_094604/index.html",
+      "date": "2026-06-22",
+      "time": "09:04:00",
+      "source": "AI News"
+    },
+    {
+      "dir": "news_20260622_084128",
+      "title": "ChatGPT 市佔率 首次跌破 50%",
+      "summary": "ChatGPT 的全球用戶市佔率在 2026 年 3 月首次跌破 50% 大關，標誌著 AI 助理市場從一家獨大走向多元競爭的轉捩點。",
+      "url": "./news_20260622_084128/index.html",
+      "date": "2026-06-22",
+      "time": "08:28:00",
       "source": "AI News"
     },
     {
@@ -1905,16 +1914,7 @@
       "summary": "瑞幸咖啡開放MCP代表一個方向：未來產品的使用者從人延伸到人加Agent，競爭會從頁面轉化率延伸到任務完成率。過去品牌拼被人看見，未來要拼被AI選到。",
       "url": "./news_20260621_175400/index.html",
       "date": "2026-06-21",
-      "time": "00:00:00",
-      "source": "AI News"
-    },
-    {
-      "dir": "news_20260621_125200",
-      "title": "創意唔係生成， 創意唔係諗新嘢咁簡單",
-      "summary": "創意不止於「諗新嘢」，更需具備「新意」與「有用」兩個條件。AI擅長擴散式思考生成大量選項，但人類的品味、經驗和賦予意義的能力，才是選出差異的關鍵。",
-      "url": "./news_20260621_125200/index.html",
-      "date": "2026-06-21",
-      "time": "00:00:00",
+      "time": "17:00:00",
       "source": "AI News"
     },
     {
@@ -1923,7 +1923,7 @@
       "summary": "循環工程（Loop Engineering）是AI技術圈的新概念——程序員的核心工作從寫提示詞變成設計能自動驅動Agent運轉的循環系統。Claude Code負責人都表示自己已很少手動寫提示詞。",
       "url": "./news_20260621_145800/index.html",
       "date": "2026-06-21",
-      "time": "00:00:00",
+      "time": "14:00:00",
       "source": "AI News"
     },
     {
@@ -1932,16 +1932,16 @@
       "summary": "多數人把AI當實習生管理，但現在的模型已升級至Senior Partner等級。真正讓AI用得好的人，與普通人的差距不在prompt技巧，而在於會不會定義任務——用寫Brief的方式寫prompt。",
       "url": "./news_20260621_131500/index.html",
       "date": "2026-06-21",
-      "time": "00:00:00",
+      "time": "13:00:00",
       "source": "AI News"
     },
     {
-      "dir": "news_20260621_094200",
-      "title": "中國青年發明國產AI激光 「滅蚊神器」爆紅",
-      "summary": "江蘇常州青年王川，花費三年時間、投入超過1200萬元人民幣，研發出便攜式AI激光滅蚊設備「Photon Matrix」，在TikTok上爆紅，最終在Indiegogo狂攬270萬美元，創造「中國製造」",
-      "url": "./news_20260621_094200/index.html",
+      "dir": "news_20260621_125200",
+      "title": "創意唔係生成， 創意唔係諗新嘢咁簡單",
+      "summary": "創意不止於「諗新嘢」，更需具備「新意」與「有用」兩個條件。AI擅長擴散式思考生成大量選項，但人類的品味、經驗和賦予意義的能力，才是選出差異的關鍵。",
+      "url": "./news_20260621_125200/index.html",
       "date": "2026-06-21",
-      "time": "00:00:00",
+      "time": "12:00:00",
       "source": "AI News"
     },
     {
@@ -1950,16 +1950,16 @@
       "summary": "影片創作者測試超過100個AI Coding Skills，嚴選10個真正離不開的工具，涵蓋自訂Skills創建、智慧搜尋、深度研究、節省Token、設計美化、除錯修復等場景。",
       "url": "./news_20260621_103800/index.html",
       "date": "2026-06-21",
-      "time": "00:00:00",
+      "time": "10:00:00",
       "source": "AI News"
     },
     {
-      "dir": "news_20260622_131318",
-      "title": "NVIDIA Nemotron 3.5 ASR 6 億參數挑戰 Whisper",
-      "summary": "NVIDIA 推出 Nemotron 3.5 ASR，僅 6 億參數即可支援 40 種語言的本地串流語音辨識，最低延遲僅 80ms，詞錯率（WER）更低於 Whisper large-v3-turbo",
-      "url": "./news_20260622_131318/index.html",
+      "dir": "news_20260621_094200",
+      "title": "中國青年發明國產AI激光 「滅蚊神器」爆紅",
+      "summary": "江蘇常州青年王川，花費三年時間、投入超過1200萬元人民幣，研發出便攜式AI激光滅蚊設備「Photon Matrix」，在TikTok上爆紅，最終在Indiegogo狂攬270萬美元，創造「中國製造」",
+      "url": "./news_20260621_094200/index.html",
       "date": "2026-06-21",
-      "time": "00:00:00",
+      "time": "09:00:00",
       "source": "AI News"
     },
     {
@@ -1977,7 +1977,7 @@
       "summary": "挪威宣布全面禁止小學生使用生成式 AI，總理指出 AI 會讓孩子跳過教育關鍵步驟。新政策按年齡分層監管，並延續該國淨化校園科技環境的政策方向。",
       "url": "./news_20260620_130615/index.html",
       "date": "2026-06-20",
-      "time": "00:00:00",
+      "time": "13:15:00",
       "source": "AI News"
     },
     {
@@ -1986,7 +1986,34 @@
       "summary": "Anthropic 公佈 Claude Code 使用數據，發現非工程師用戶大幅增加，專業領域知識反而比過往更重要——越懂該領域的人，用一句話就能讓 AI 做更多有效工作。",
       "url": "./news_20260620_112809/index.html",
       "date": "2026-06-20",
-      "time": "00:00:00",
+      "time": "11:09:00",
+      "source": "AI News"
+    },
+    {
+      "dir": "news_20260619_110700",
+      "title": "Probably 獲 a16z 900萬美元融資 要讓 AI 不再「一本正經胡說八道」",
+      "summary": "AI 創業公司 Probably 獲得 a16z 900 萬美元種子輪融資，透過「確定性驗證器」消除 LLM 幻覺問題，目標將 AI 準確率提升至 99.99%。",
+      "url": "./news_20260619_110700/index.html",
+      "date": "2026-06-19",
+      "time": "11:00:00",
+      "source": "AI News"
+    },
+    {
+      "dir": "news_20260619_115300",
+      "title": "AI搜尋優化怎麼做？ Ahrefs 數據揭潛規則",
+      "summary": "Ahrefs 分析超過 10 億筆數據，發現傳統 SEO 規則多數不再適用 AI 搜尋：Schema 結構化標記對 AI 引用幾乎無效，而 YouTube 提及次數才是提升 AI 品牌能見度的關鍵。",
+      "url": "./news_20260619_115300/index.html",
+      "date": "2026-06-19",
+      "time": "11:00:00",
+      "source": "AI News"
+    },
+    {
+      "dir": "news_20260618_172121",
+      "title": "從 GPU 主導到 CPU 回溫 Agentic AI 改寫資料中心配置",
+      "summary": "隨著 Agentic AI 逐漸升溫，CPU 與氣冷式基礎設施正重新成為企業資料中心的焦點。當 AI 工作負載從模型訓練走向推論與 Agentic AI，企業勢必重新評估 CPU、散熱、電力、資料流與",
+      "url": "./news_20260618_172121/index.html",
+      "date": "2026-06-18",
+      "time": "17:21:00",
       "source": "AI News"
     },
     {
@@ -1995,7 +2022,7 @@
       "summary": "Anthropic 七個月研究揭示「vibe coding」真相：專業知識深厚的人使用 AI 達成任務成功率顯著更高。與其學會寫程式，不如把本業專業弄得更透——領域知識本身就是一種需要長年累積的專業判",
       "url": "./news_20260618_151739/index.html",
       "date": "2026-06-18",
-      "time": "00:00:00",
+      "time": "15:39:00",
       "source": "AI News"
     },
     {
@@ -2004,7 +2031,7 @@
       "summary": "皮尤研究中心調查顯示，僅有 16% 的美國人相信 AI 將在未來 20 年對社會產生正面影響，而 40% 認為影響將是負面的，反映出美國社會對 AI 發展的深度矛盾。",
       "url": "./news_20260618_150621/index.html",
       "date": "2026-06-18",
-      "time": "00:00:00",
+      "time": "15:21:00",
       "source": "AI News"
     },
     {
@@ -2013,7 +2040,16 @@
       "summary": "200 tokens/s 是 AI 模型的生死線。主流廠商全部在同一窗口期推出高速版本，低於此門檻的模型，未來 12 至 18 個月將失去大大部分高價值開發者用戶。",
       "url": "./news_20260617_181900/index.html",
       "date": "2026-06-17",
-      "time": "00:00:00",
+      "time": "18:00:00",
+      "source": "AI News"
+    },
+    {
+      "dir": "news_20260617_100200",
+      "title": "AI裁員浪潮 正在形成火藥桶",
+      "summary": "科技公司一邊錄得破紀錄利潤，一邊以AI為由裁減數萬名員工。2026年至今已有近15萬人受影響，裁員速度較去年快44%，而成千上萬AI圈內人卻同時累積起難以想像的財富。",
+      "url": "./news_20260617_100200/index.html",
+      "date": "2026-06-17",
+      "time": "10:00:00",
       "source": "AI News"
     },
     {
@@ -2022,7 +2058,16 @@
       "summary": "SpaceX斥600億美元收購AI編碼神器Cursor，預計2026年第3季完成，收購將補足xAI的編碼工具短板。",
       "url": "./news_20260617_081600/index.html",
       "date": "2026-06-17",
-      "time": "00:00:00",
+      "time": "08:00:00",
+      "source": "AI News"
+    },
+    {
+      "dir": "news_20260616_211420",
+      "title": "中國 AI 實力領先全球 信任度卻遠遠落後",
+      "summary": "中國 AI 技術實力獲全球廣泛認可，但在信任度方面遠遠落後美國，全球公眾對中國 AI 的「信任赤字」成為最大障礙。",
+      "url": "./news_20260616_211420/index.html",
+      "date": "2026-06-16",
+      "time": "21:20:00",
       "source": "AI News"
     },
     {
@@ -2044,39 +2089,12 @@
       "source": "AI News"
     },
     {
-      "dir": "news_20260619_110700",
-      "title": "Probably 獲 a16z 900萬美元融資 要讓 AI 不再「一本正經胡說八道」",
-      "summary": "AI 創業公司 Probably 獲得 a16z 900 萬美元種子輪融資，透過「確定性驗證器」消除 LLM 幻覺問題，目標將 AI 準確率提升至 99.99%。",
-      "url": "./news_20260619_110700/index.html",
-      "date": "2026-06-16",
-      "time": "00:00:00",
-      "source": "AI News"
-    },
-    {
-      "dir": "news_20260616_211420",
-      "title": "中國 AI 實力領先全球 信任度卻遠遠落後",
-      "summary": "中國 AI 技術實力獲全球廣泛認可，但在信任度方面遠遠落後美國，全球公眾對中國 AI 的「信任赤字」成為最大障礙。",
-      "url": "./news_20260616_211420/index.html",
-      "date": "2026-06-16",
-      "time": "00:00:00",
-      "source": "AI News"
-    },
-    {
-      "dir": "news_20260622_084128",
-      "title": "ChatGPT 市佔率 首次跌破 50%",
-      "summary": "ChatGPT 的全球用戶市佔率在 2026 年 3 月首次跌破 50% 大關，標誌著 AI 助理市場從一家獨大走向多元競爭的轉捩點。",
-      "url": "./news_20260622_084128/index.html",
-      "date": "2026-06-16",
-      "time": "00:00:00",
-      "source": "AI News"
-    },
-    {
-      "dir": "news_20260622_094604",
-      "title": "當供應商變成 競爭對手",
-      "summary": "當 AI 模型供應商親自下場做應用服務，獨立工程公司的生存空間備受擠壓。OpenAI 砸下 40 億美元、Anthropic 砸下 15 億美元親自提供企業 AI 人類監督服務，標志著 AI 行業從「",
-      "url": "./news_20260622_094604/index.html",
-      "date": "2026-06-16",
-      "time": "00:00:00",
+      "dir": "news_20260615_130600",
+      "title": "Apple 或推 OpenClaw 類 AI Agent 橫跨 iPhone、iPad、Mac",
+      "summary": "Bloomberg 科技記者 Mark Gurman 爆料，Apple 長期方向可能是推出類似 OpenClaw 的 AI Agent，橫跨 iPhone、iPad、Mac 全平台代替用戶操作軟件。收",
+      "url": "./news_20260615_130600/index.html",
+      "date": "2026-06-15",
+      "time": "13:00:00",
       "source": "AI News"
     },
     {
@@ -2085,7 +2103,7 @@
       "summary": "Google TV 整合 Gemini AI，推出語音指令調整畫質和音頻設定功能，用家可以告別層層選單的遙控器操作，用自然語音控制亮度、對比、畫質模式、音量及 EQ。目前率先登陸美國部分 TCL 型號",
       "url": "./news_20260615_082155/index.html",
       "date": "2026-06-15",
-      "time": "00:00:00",
+      "time": "08:55:00",
       "source": "AI News"
     },
     {
@@ -2094,25 +2112,7 @@
       "summary": "作者是烏克蘭工程團隊負責人，以國防工業衰退的教訓為切入點，揭示軟體業正在犯同一個錯誤：過度優化導致關鍵人才與技術知識流失，最終連「製造」能力本身都不復存在。",
       "url": "./news_20260615_080800/index.html",
       "date": "2026-06-15",
-      "time": "00:00:00",
-      "source": "AI News"
-    },
-    {
-      "dir": "news_20260615_130600",
-      "title": "Apple 或推 OpenClaw 類 AI Agent 橫跨 iPhone、iPad、Mac",
-      "summary": "Bloomberg 科技記者 Mark Gurman 爆料，Apple 長期方向可能是推出類似 OpenClaw 的 AI Agent，橫跨 iPhone、iPad、Mac 全平台代替用戶操作軟件。收",
-      "url": "./news_20260615_130600/index.html",
-      "date": "2026-06-15",
-      "time": "00:00:00",
-      "source": "AI News"
-    },
-    {
-      "dir": "news_20260617_100200",
-      "title": "AI裁員浪潮 正在形成火藥桶",
-      "summary": "科技公司一邊錄得破紀錄利潤，一邊以AI為由裁減數萬名員工。2026年至今已有近15萬人受影響，裁員速度較去年快44%，而成千上萬AI圈內人卻同時累積起難以想像的財富。",
-      "url": "./news_20260617_100200/index.html",
-      "date": "2026-06-15",
-      "time": "00:00:00",
+      "time": "08:00:00",
       "source": "AI News"
     },
     {
@@ -2152,12 +2152,12 @@
       "source": "AI News"
     },
     {
-      "dir": "news_20260613_075500",
-      "title": "拒絕扮演 AI 情感伴侶 Apple 新版 Siri 與競爭對手劃清界線",
-      "summary": "Apple 軟件工程高級副總裁 Craig Federighi 在 WWDC 2026 後接受訪問時明確表示，全新 Siri 不會扮演用戶情感伴侶角色，刻意與 OpenAI 及 Google 等競爭對",
-      "url": "./news_20260613_075500/index.html",
+      "dir": "news_20260613_222023",
+      "title": "德國五金賣場 AI 機械人時薪僅 1.70 歐元",
+      "summary": "德國巴伐利亞小鎮 Pocking 的一家五金賣場，出現了一名來自中國的 AI 機械人「Schotti」。它能走能說，帶客人走到正確貨架，每小時「工資」僅 1.70 歐元，正在重新定義零售業的人機協作模",
+      "url": "./news_20260613_222023/index.html",
       "date": "2026-06-13",
-      "time": "00:00:00",
+      "time": "22:23:00",
       "source": "AI News"
     },
     {
@@ -2166,25 +2166,7 @@
       "summary": "Gartner 預測到 2027 年，40% 企業將因 Governance 缺口而降級或停用 AI Agent。失敗的根源往往在上線後才浮現，而成功的企業離不開三個關鍵：框架、專家、數據。",
       "url": "./news_20260613_172333/index.html",
       "date": "2026-06-13",
-      "time": "00:00:00",
-      "source": "AI News"
-    },
-    {
-      "dir": "news_20260613_084100",
-      "title": "印度製影片 AI Varya 十倍速・二十倍平",
-      "summary": "Avataar AI 採用蒸餾技術（distillation）將阿里巴巴 Wan 2.2 壓縮為更精簡快速的版本，結果驚人：",
-      "url": "./news_20260613_084100/index.html",
-      "date": "2026-06-13",
-      "time": "00:00:00",
-      "source": "AI News"
-    },
-    {
-      "dir": "news_20260613_222023",
-      "title": "德國五金賣場 AI 機械人時薪僅 1.70 歐元",
-      "summary": "德國巴伐利亞小鎮 Pocking 的一家五金賣場，出現了一名來自中國的 AI 機械人「Schotti」。它能走能說，帶客人走到正確貨架，每小時「工資」僅 1.70 歐元，正在重新定義零售業的人機協作模",
-      "url": "./news_20260613_222023/index.html",
-      "date": "2026-06-13",
-      "time": "00:00:00",
+      "time": "17:33:00",
       "source": "AI News"
     },
     {
@@ -2193,34 +2175,25 @@
       "summary": "這一波 AI 工具的免費，更像是早期軟體公司的補貼策略——先用低價搶市占率。短期消費者確實得利，但算力成本仍高，補貼隨時可能收手，現在的免費優惠是有時效的。",
       "url": "./news_20260613_094200/index.html",
       "date": "2026-06-13",
-      "time": "00:00:00",
+      "time": "09:00:00",
       "source": "AI News"
     },
     {
-      "dir": "news_20260612_095440",
-      "title": "Meta Edits 推出 AI 助手 及桌面版",
-      "summary": "Meta 在洛杉磯創作者活動中為 Edits 影片編輯應用推出 AI 助手和桌面版本，直接對標 TikTok 和 YouTube 的智能創作工具，目標是將創作者留在 Instagram 生態系統。",
-      "url": "./news_20260612_095440/index.html",
-      "date": "2026-06-12",
-      "time": "00:00:00",
+      "dir": "news_20260613_084100",
+      "title": "印度製影片 AI Varya 十倍速・二十倍平",
+      "summary": "Avataar AI 採用蒸餾技術（distillation）將阿里巴巴 Wan 2.2 壓縮為更精簡快速的版本，結果驚人：",
+      "url": "./news_20260613_084100/index.html",
+      "date": "2026-06-13",
+      "time": "08:00:00",
       "source": "AI News"
     },
     {
-      "dir": "news_20260612_091621",
-      "title": "AI開始自己管錢了！ Coinbase推AI代理交易平台",
-      "summary": "Coinbase 推出「Coinbase for Agents」平台，讓 AI 代理能代替用戶執行加密貨幣交易、支付訂閱，並可透過 ChatGPT 或 Claude 等平台買賣加密貨幣。",
-      "url": "./news_20260612_091621/index.html",
-      "date": "2026-06-12",
-      "time": "00:00:00",
-      "source": "AI News"
-    },
-    {
-      "dir": "news_20260612_113650",
-      "title": "Google DiffusionGemma 速度比傳統模型快 4 倍",
-      "summary": "Google 發表實驗性開放模型 DiffusionGemma，採用擴散方式而非逐字形式生成文字，在專用 GPU 上速度最高可比傳統語言模型快 4 倍，由 NVIDIA 負責硬體最佳化。",
-      "url": "./news_20260612_113650/index.html",
-      "date": "2026-06-12",
-      "time": "00:00:00",
+      "dir": "news_20260613_075500",
+      "title": "拒絕扮演 AI 情感伴侶 Apple 新版 Siri 與競爭對手劃清界線",
+      "summary": "Apple 軟件工程高級副總裁 Craig Federighi 在 WWDC 2026 後接受訪問時明確表示，全新 Siri 不會扮演用戶情感伴侶角色，刻意與 OpenAI 及 Google 等競爭對",
+      "url": "./news_20260613_075500/index.html",
+      "date": "2026-06-13",
+      "time": "07:00:00",
       "source": "AI News"
     },
     {
@@ -2229,7 +2202,34 @@
       "summary": "微軟 GitHub Copilot 於 2026 年 6 月全面轉向 Token 精準計費，宣告 AI 吃到飽時代終結。用戶從「問幾次計一次」變成「用多少 Token 花多少錢」，不同模型成本差距最高",
       "url": "./news_20260612_190619/index.html",
       "date": "2026-06-12",
-      "time": "00:00:00",
+      "time": "19:19:00",
+      "source": "AI News"
+    },
+    {
+      "dir": "news_20260612_113650",
+      "title": "Google DiffusionGemma 速度比傳統模型快 4 倍",
+      "summary": "Google 發表實驗性開放模型 DiffusionGemma，採用擴散方式而非逐字形式生成文字，在專用 GPU 上速度最高可比傳統語言模型快 4 倍，由 NVIDIA 負責硬體最佳化。",
+      "url": "./news_20260612_113650/index.html",
+      "date": "2026-06-12",
+      "time": "11:50:00",
+      "source": "AI News"
+    },
+    {
+      "dir": "news_20260612_095440",
+      "title": "Meta Edits 推出 AI 助手 及桌面版",
+      "summary": "Meta 在洛杉磯創作者活動中為 Edits 影片編輯應用推出 AI 助手和桌面版本，直接對標 TikTok 和 YouTube 的智能創作工具，目標是將創作者留在 Instagram 生態系統。",
+      "url": "./news_20260612_095440/index.html",
+      "date": "2026-06-12",
+      "time": "09:40:00",
+      "source": "AI News"
+    },
+    {
+      "dir": "news_20260612_091621",
+      "title": "AI開始自己管錢了！ Coinbase推AI代理交易平台",
+      "summary": "Coinbase 推出「Coinbase for Agents」平台，讓 AI 代理能代替用戶執行加密貨幣交易、支付訂閱，並可透過 ChatGPT 或 Claude 等平台買賣加密貨幣。",
+      "url": "./news_20260612_091621/index.html",
+      "date": "2026-06-12",
+      "time": "09:21:00",
       "source": "AI News"
     },
     {
@@ -2242,12 +2242,12 @@
       "source": "AI News"
     },
     {
-      "dir": "news_20260611_075613",
-      "title": "Decart 世界模型 可模擬數小時超真實駕駛",
-      "summary": "Decart 發布 Oasis 3 世界模型，可即時生成超真實駕駛環境，獲豐田、Adobe、eBay 等策略投資 3 億美元，估值達 40 億美元。",
-      "url": "./news_20260611_075613/index.html",
+      "dir": "news_20260611_182637",
+      "title": "AI 時代育兒五原則 The Open Hand",
+      "summary": "Jason Chiu 提出 AI 時代育兒五原則，如同五根手指合在一起形成足以抓住野兔的握力。家長需重視孩子成長過程、與演算法競爭信任關係、設計環境、表揚過程而非產出、共同學習失敗。",
+      "url": "./news_20260611_182637/index.html",
       "date": "2026-06-11",
-      "time": "00:00:00",
+      "time": "18:37:00",
       "source": "AI News"
     },
     {
@@ -2256,16 +2256,7 @@
       "summary": "一名 RTX 5090 顯示卡用家為防止 12V-2x6 供電接口熔毀，每月檢查緊固、每三個月拔出清理，結果接頭仍熔毀、插槽針腳碳化。專家指接頭插拔壽命僅 30 次，頻繁插拔反而適得其反。",
       "url": "./news_20260611_133955/index.html",
       "date": "2026-06-11",
-      "time": "00:00:00",
-      "source": "AI News"
-    },
-    {
-      "dir": "news_20260611_182637",
-      "title": "AI 時代育兒五原則 The Open Hand",
-      "summary": "Jason Chiu 提出 AI 時代育兒五原則，如同五根手指合在一起形成足以抓住野兔的握力。家長需重視孩子成長過程、與演算法競爭信任關係、設計環境、表揚過程而非產出、共同學習失敗。",
-      "url": "./news_20260611_182637/index.html",
-      "date": "2026-06-11",
-      "time": "00:00:00",
+      "time": "13:55:00",
       "source": "AI News"
     },
     {
@@ -2274,25 +2265,16 @@
       "summary": "優必選旗下品牌 UWORLD 發布全球首款消費級全尺寸超仿生人形機械人 U1 系列，主打情感陪伴，預購量已近 3000 台，瞄準單身經濟市場。",
       "url": "./news_20260611_091045/index.html",
       "date": "2026-06-11",
-      "time": "00:00:00",
+      "time": "09:45:00",
       "source": "AI News"
     },
     {
-      "dir": "news_20260619_115300",
-      "title": "AI搜尋優化怎麼做？ Ahrefs 數據揭潛規則",
-      "summary": "Ahrefs 分析超過 10 億筆數據，發現傳統 SEO 規則多數不再適用 AI 搜尋：Schema 結構化標記對 AI 引用幾乎無效，而 YouTube 提及次數才是提升 AI 品牌能見度的關鍵。",
-      "url": "./news_20260619_115300/index.html",
-      "date": "2026-06-10",
-      "time": "00:00:00",
-      "source": "AI News"
-    },
-    {
-      "dir": "news_20260610_115130",
-      "title": "Airbnb CEO Chesky 計劃創辦新 AI 實驗室",
-      "summary": "Airbnb 行政總裁 Brian Chesky 計劃創辦新 AI 實驗室，正式與昔日門生 Sam Altman 的 OpenAI 展開競爭。",
-      "url": "./news_20260610_115130/index.html",
-      "date": "2026-06-10",
-      "time": "00:00:00",
+      "dir": "news_20260611_075613",
+      "title": "Decart 世界模型 可模擬數小時超真實駕駛",
+      "summary": "Decart 發布 Oasis 3 世界模型，可即時生成超真實駕駛環境，獲豐田、Adobe、eBay 等策略投資 3 億美元，估值達 40 億美元。",
+      "url": "./news_20260611_075613/index.html",
+      "date": "2026-06-11",
+      "time": "07:13:00",
       "source": "AI News"
     },
     {
@@ -2301,25 +2283,16 @@
       "summary": "GitHub Copilot 全面轉向按 Token 用量計費，重度用戶帳單暴漲十倍。Coinbase 執行長預言 12 至 18 個月內，80% AI 工作負載將遷移至便宜 99% 的模型。",
       "url": "./news_20260610_210122/index.html",
       "date": "2026-06-10",
-      "time": "00:00:00",
+      "time": "21:22:00",
       "source": "AI News"
     },
     {
-      "dir": "news_20260609_135348",
-      "title": "OpenClaw 龍蝦之父教你省錢！ 開源工具「skill-cleaner」幫你的 AI 技能大減肥",
-      "summary": "OpenClaw 開發者「龍蝦之父」Peter Steinberger 無法忍受開發者將 AI 技能描述寫得像書本一樣冗長，因而開源了「skill-cleaner」技能體檢工具，呼籲開發者：「別再塞垃",
-      "url": "./news_20260609_135348/index.html",
-      "date": "2026-06-09",
-      "time": "00:00:00",
-      "source": "AI News"
-    },
-    {
-      "dir": "news_20260609_121250",
-      "title": "AI熱潮下的缺電潮 儲能、電網、變壓器為何變新戰略物資？",
-      "summary": "AI 資料中心已成為吃電怪獸，電力基礎設施建設遠遠跟不上 AI 發展速度。從變壓器缺貨、併網塞車，到地緣政治夾擊下的供應鏈危機，一場看不見的電力戰爭正在全球開打。",
-      "url": "./news_20260609_121250/index.html",
-      "date": "2026-06-09",
-      "time": "00:00:00",
+      "dir": "news_20260610_115130",
+      "title": "Airbnb CEO Chesky 計劃創辦新 AI 實驗室",
+      "summary": "Airbnb 行政總裁 Brian Chesky 計劃創辦新 AI 實驗室，正式與昔日門生 Sam Altman 的 OpenAI 展開競爭。",
+      "url": "./news_20260610_115130/index.html",
+      "date": "2026-06-10",
+      "time": "11:30:00",
       "source": "AI News"
     },
     {
@@ -2328,7 +2301,25 @@
       "summary": "這項投資顯示北京決心在 AI 領域突破美國封鎖，即便其他領域支出因政府債務攀升而縮減。中國最新的五年規劃（涵蓋至 2030 年）提出了建置全國運算網路的構想，北京承諾優先發展資料基礎設施。",
       "url": "./news_20260609_192051/index.html",
       "date": "2026-06-09",
-      "time": "00:00:00",
+      "time": "19:51:00",
+      "source": "AI News"
+    },
+    {
+      "dir": "news_20260609_135348",
+      "title": "OpenClaw 龍蝦之父教你省錢！ 開源工具「skill-cleaner」幫你的 AI 技能大減肥",
+      "summary": "OpenClaw 開發者「龍蝦之父」Peter Steinberger 無法忍受開發者將 AI 技能描述寫得像書本一樣冗長，因而開源了「skill-cleaner」技能體檢工具，呼籲開發者：「別再塞垃",
+      "url": "./news_20260609_135348/index.html",
+      "date": "2026-06-09",
+      "time": "13:48:00",
+      "source": "AI News"
+    },
+    {
+      "dir": "news_20260609_121250",
+      "title": "AI熱潮下的缺電潮 儲能、電網、變壓器為何變新戰略物資？",
+      "summary": "AI 資料中心已成為吃電怪獸，電力基礎設施建設遠遠跟不上 AI 發展速度。從變壓器缺貨、併網塞車，到地緣政治夾擊下的供應鏈危機，一場看不見的電力戰爭正在全球開打。",
+      "url": "./news_20260609_121250/index.html",
+      "date": "2026-06-09",
+      "time": "12:50:00",
       "source": "AI News"
     },
     {
@@ -2337,25 +2328,7 @@
       "summary": "WWDC 2026 是 Tim Cook 最後一次以 CEO 身份主持的 WWDC，主軸是 Siri AI 革新和 iOS 27，Apple 終於準備好展示與 ChatGPT 和 Gemini 競爭的",
       "url": "./news_20260609_115700/index.html",
       "date": "2026-06-09",
-      "time": "00:00:00",
-      "source": "AI News"
-    },
-    {
-      "dir": "news_20260608_100300",
-      "title": "Google Drive AI 整理工具 實測結果出爐",
-      "summary": "ZDNET 記者親身測試 Google Drive 全新 AI 整理工具「Organize My Files」，嘗試清理 14 年累積的 340GB 混亂數據。工具能否幫助擺脫每月 $20 美元的 G",
-      "url": "./news_20260608_100300/index.html",
-      "date": "2026-06-08",
-      "time": "00:00:00",
-      "source": "AI News"
-    },
-    {
-      "dir": "news_20260608_084300",
-      "title": "Meta 偷師 Tesla 帳篷搭建數據中心",
-      "summary": "Meta 為了加快 AI 數據中心建設，採用了 Tesla 當年趕工 Model 3 的策略——在停車場搭建帳篷工廠。Meta 在俄亥俄州 New Albany 搭建了六座被稱為「快速部署結構」的巨型",
-      "url": "./news_20260608_084300/index.html",
-      "date": "2026-06-08",
-      "time": "00:00:00",
+      "time": "11:00:00",
       "source": "AI News"
     },
     {
@@ -2364,16 +2337,25 @@
       "summary": "香港最新失業率維持3.7% 相對低位，但總就業人數只有約 364.8 萬，較 2018 年大幅減少 23.4 萬人。在 750 萬人口中，受僱人口不足一半。當 AI 以指數級速度發展，香港將面對怎樣的",
       "url": "./news_20260608_133000/index.html",
       "date": "2026-06-08",
-      "time": "00:00:00",
+      "time": "13:00:00",
       "source": "AI News"
     },
     {
-      "dir": "news_20260607_113837",
-      "title": "OpenAI 推出 Lockdown Mode： 保護敏感數據防範提示注入攻擊",
-      "summary": "啟用 Lockdown Mode 後，以下功能將被限制或停用：",
-      "url": "./news_20260607_113837/index.html",
-      "date": "2026-06-07",
-      "time": "00:00:00",
+      "dir": "news_20260608_100300",
+      "title": "Google Drive AI 整理工具 實測結果出爐",
+      "summary": "ZDNET 記者親身測試 Google Drive 全新 AI 整理工具「Organize My Files」，嘗試清理 14 年累積的 340GB 混亂數據。工具能否幫助擺脫每月 $20 美元的 G",
+      "url": "./news_20260608_100300/index.html",
+      "date": "2026-06-08",
+      "time": "10:00:00",
+      "source": "AI News"
+    },
+    {
+      "dir": "news_20260608_084300",
+      "title": "Meta 偷師 Tesla 帳篷搭建數據中心",
+      "summary": "Meta 為了加快 AI 數據中心建設，採用了 Tesla 當年趕工 Model 3 的策略——在停車場搭建帳篷工廠。Meta 在俄亥俄州 New Albany 搭建了六座被稱為「快速部署結構」的巨型",
+      "url": "./news_20260608_084300/index.html",
+      "date": "2026-06-08",
+      "time": "08:00:00",
       "source": "AI News"
     },
     {
@@ -2382,16 +2364,7 @@
       "summary": "專為企業核心 AI 平台設計的 12-bay 全快閃（All-Flash）邊緣運算儲存伺服器，搭載 AMD EPYC 7302P 16 核心 32 執行緒處理器，支援最高 1TB DDR4 ECC 記",
       "url": "./news_20260607_185751/index.html",
       "date": "2026-06-07",
-      "time": "00:00:00",
-      "source": "AI News"
-    },
-    {
-      "dir": "news_20260607_154459",
-      "title": "Tencent Cloud Day HK 2026： 新手上堂 30 分鐘即成功寫 App",
-      "summary": "CodeBuddy 並非單純的問答式 AI，而是一個應用在開發流程中的 AI Coding Assistant。對開發者來說，支援 IDE Plugins 及 CLI，配合不同開發者本身的工作習慣。官",
-      "url": "./news_20260607_154459/index.html",
-      "date": "2026-06-07",
-      "time": "00:00:00",
+      "time": "18:51:00",
       "source": "AI News"
     },
     {
@@ -2400,43 +2373,25 @@
       "summary": "Anthropic 發布 AI 新創 Playbook，提出「十人獨角獸」（ten-person unicorn）概念，揭示 AI 時代創業的新形態。一個創業者配合 AI 工具，即可完成以前需要整個團",
       "url": "./news_20260607_170523/index.html",
       "date": "2026-06-07",
-      "time": "00:00:00",
+      "time": "17:23:00",
       "source": "AI News"
     },
     {
-      "dir": "news_20260606_172039",
-      "title": "香港生成式 AI 研發中心 推 HKGAI V3 大模型 搞 Agentic AI 逾 20 間合作夥伴",
-      "summary": "點擊查看完整報道",
-      "url": "./news_20260606_172039/index.html",
-      "date": "2026-06-06",
-      "time": "00:00:00",
+      "dir": "news_20260607_154459",
+      "title": "Tencent Cloud Day HK 2026： 新手上堂 30 分鐘即成功寫 App",
+      "summary": "CodeBuddy 並非單純的問答式 AI，而是一個應用在開發流程中的 AI Coding Assistant。對開發者來說，支援 IDE Plugins 及 CLI，配合不同開發者本身的工作習慣。官",
+      "url": "./news_20260607_154459/index.html",
+      "date": "2026-06-07",
+      "time": "15:59:00",
       "source": "AI News"
     },
     {
-      "dir": "news_20260606_123359",
-      "title": "NVIDIA 轉型 AI 基礎設施公司！ 黃仁勳 GTC Taipei 2026 專家解析",
-      "summary": "智源智庫創辦人王智立（Jeremy Wang）分析：「這場演講最重要的訊息，是 NVIDIA 公開宣示自己不再只是 GPU 晶片公司，也不只是系統公司，而是一家 AI 基礎設施公司。」過去市場也許認為",
-      "url": "./news_20260606_123359/index.html",
-      "date": "2026-06-06",
-      "time": "00:00:00",
-      "source": "AI News"
-    },
-    {
-      "dir": "news_20260606_124707",
-      "title": "Google 將每月向 SpaceX 支付 9.2 億美元租用算力",
-      "summary": "Colossus 資料中心位於田納西州曼菲斯附近，是目前世界上最大的 AI 訓練設施之一。SpaceX 當初興建這座資料中心是為了支援 xAI 的大語言模型訓練計畫，如今則轉型為對外出租算力的商業模式",
-      "url": "./news_20260606_124707/index.html",
-      "date": "2026-06-06",
-      "time": "00:00:00",
-      "source": "AI News"
-    },
-    {
-      "dir": "news_20260606_165038",
-      "title": "效果直逼 ChatGPT！Ideogram 4.0 正式開源 93 億參數圖像模型，支援本地部署與微調",
-      "summary": "對於重視隱私和資料主權的企業和個人創作者而言，這是一個相當有吸引力的選項。",
-      "url": "./news_20260606_165038/index.html",
-      "date": "2026-06-06",
-      "time": "00:00:00",
+      "dir": "news_20260607_113837",
+      "title": "OpenAI 推出 Lockdown Mode： 保護敏感數據防範提示注入攻擊",
+      "summary": "啟用 Lockdown Mode 後，以下功能將被限制或停用：",
+      "url": "./news_20260607_113837/index.html",
+      "date": "2026-06-07",
+      "time": "11:37:00",
       "source": "AI News"
     },
     {
@@ -2445,16 +2400,7 @@
       "summary": "Clark 對 BBC Newsnight 表示：「你需要一個選項，能夠把你的腳從油門上移開，踩上煞車。」他強調：「目前 AI 行業就像一輛只有油門、沒有煞車的車。」",
       "url": "./news_20260606_200341/index.html",
       "date": "2026-06-06",
-      "time": "00:00:00",
-      "source": "AI News"
-    },
-    {
-      "dir": "news_20260606_121000",
-      "title": "Supabase 估值翻倍至 100 億美元 8 個月內從 50 億躍升至獨角獸巨頭",
-      "summary": "Copplestone 曾在節目中透露，他拒絕了許多大型企業的百萬美元合約，因為這些合約會帶來產品決策上的壓力。他堅持自己的產品願景不走企業定製路線——這種「反向策略」在創業圈相當罕見，但顯然對 Su",
-      "url": "./news_20260606_121000/index.html",
-      "date": "2026-06-06",
-      "time": "00:00:00",
+      "time": "20:41:00",
       "source": "AI News"
     },
     {
@@ -2463,16 +2409,52 @@
       "summary": "企業為提升生產力，紛紛鼓勵員工「詞元最大化」（Tokenmaxxing）——多多向 AI 聊天機器人提問。這種行為甚至變成員工在同事間炫耀的資本，彰顯自己在關鍵績效指標中的表現。",
       "url": "./news_20260606_205540/index.html",
       "date": "2026-06-06",
-      "time": "00:00:00",
+      "time": "20:40:00",
       "source": "AI News"
     },
     {
-      "dir": "news_20260605_100819",
-      "title": "Strava declares war on scrapers ahead of IPO",
-      "summary": "所有這些數據現已移至認證牆之後，防止未授權的 AI 爬蟲大量抓取。",
-      "url": "./news_20260605_100819/index.html",
-      "date": "2026-06-05",
-      "time": "00:00:00",
+      "dir": "news_20260606_172039",
+      "title": "香港生成式 AI 研發中心 推 HKGAI V3 大模型 搞 Agentic AI 逾 20 間合作夥伴",
+      "summary": "點擊查看完整報道",
+      "url": "./news_20260606_172039/index.html",
+      "date": "2026-06-06",
+      "time": "17:39:00",
+      "source": "AI News"
+    },
+    {
+      "dir": "news_20260606_165038",
+      "title": "效果直逼 ChatGPT！Ideogram 4.0 正式開源 93 億參數圖像模型，支援本地部署與微調",
+      "summary": "對於重視隱私和資料主權的企業和個人創作者而言，這是一個相當有吸引力的選項。",
+      "url": "./news_20260606_165038/index.html",
+      "date": "2026-06-06",
+      "time": "16:38:00",
+      "source": "AI News"
+    },
+    {
+      "dir": "news_20260606_123359",
+      "title": "NVIDIA 轉型 AI 基礎設施公司！ 黃仁勳 GTC Taipei 2026 專家解析",
+      "summary": "智源智庫創辦人王智立（Jeremy Wang）分析：「這場演講最重要的訊息，是 NVIDIA 公開宣示自己不再只是 GPU 晶片公司，也不只是系統公司，而是一家 AI 基礎設施公司。」過去市場也許認為",
+      "url": "./news_20260606_123359/index.html",
+      "date": "2026-06-06",
+      "time": "12:59:00",
+      "source": "AI News"
+    },
+    {
+      "dir": "news_20260606_124707",
+      "title": "Google 將每月向 SpaceX 支付 9.2 億美元租用算力",
+      "summary": "Colossus 資料中心位於田納西州曼菲斯附近，是目前世界上最大的 AI 訓練設施之一。SpaceX 當初興建這座資料中心是為了支援 xAI 的大語言模型訓練計畫，如今則轉型為對外出租算力的商業模式",
+      "url": "./news_20260606_124707/index.html",
+      "date": "2026-06-06",
+      "time": "12:07:00",
+      "source": "AI News"
+    },
+    {
+      "dir": "news_20260606_121000",
+      "title": "Supabase 估值翻倍至 100 億美元 8 個月內從 50 億躍升至獨角獸巨頭",
+      "summary": "Copplestone 曾在節目中透露，他拒絕了許多大型企業的百萬美元合約，因為這些合約會帶來產品決策上的壓力。他堅持自己的產品願景不走企業定製路線——這種「反向策略」在創業圈相當罕見，但顯然對 Su",
+      "url": "./news_20260606_121000/index.html",
+      "date": "2026-06-06",
+      "time": "12:00:00",
       "source": "AI News"
     },
     {
@@ -2481,7 +2463,16 @@
       "summary": "長期以來，業界一直透過幾何縮微提高芯片效能，但帶來兩種相反的趨勢：",
       "url": "./news_20260605_134702/index.html",
       "date": "2026-06-05",
-      "time": "00:00:00",
+      "time": "13:02:00",
+      "source": "AI News"
+    },
+    {
+      "dir": "news_20260605_100819",
+      "title": "Strava declares war on scrapers ahead of IPO",
+      "summary": "所有這些數據現已移至認證牆之後，防止未授權的 AI 爬蟲大量抓取。",
+      "url": "./news_20260605_100819/index.html",
+      "date": "2026-06-05",
+      "time": "10:19:00",
       "source": "AI News"
     },
     {
@@ -2490,7 +2481,7 @@
       "summary": "Meta 在 2026 年 6 月 3 日正式推出 Meta Business Agent，讓 AI 代理進駐 WhatsApp、Messenger、Instagram，替商家自動回覆顧客、推薦商品、",
       "url": "./news_20260605_085142/index.html",
       "date": "2026-06-05",
-      "time": "00:00:00",
+      "time": "08:42:00",
       "source": "AI News"
     },
     {
@@ -2499,16 +2490,7 @@
       "summary": "Google 發布 Gemma 4 12B，這是一款專為直接在筆記本電腦上運行而設計的高效能多模態智能模型。它結合了移動優先的效率與先進的推理能力，填補了邊緣友好的 E4B 與更先進的 26B 專家混",
       "url": "./news_20260604_142300/index.html",
       "date": "2026-06-04",
-      "time": "00:00:00",
-      "source": "AI News"
-    },
-    {
-      "dir": "news_20260604_111400",
-      "title": "Codex 商業插件矩陣 角色化 AI 助手成企業新寵",
-      "summary": "協助分析師與業務團隊運用資料回答問題，可連接 Snowflake、Databricks Genie、Hex 和 Tableau 等工具建立報錶與資訊主頁。",
-      "url": "./news_20260604_111400/index.html",
-      "date": "2026-06-04",
-      "time": "00:00:00",
+      "time": "14:00:00",
       "source": "AI News"
     },
     {
@@ -2517,7 +2499,16 @@
       "summary": "AI 公司真正值得比較的指標，是「每瓦功耗、每名用戶」能產生多少 token 價值，而非模型大小或訂閱費用。",
       "url": "./news_20260604_141600/index.html",
       "date": "2026-06-04",
-      "time": "00:00:00",
+      "time": "14:00:00",
+      "source": "AI News"
+    },
+    {
+      "dir": "news_20260604_111400",
+      "title": "Codex 商業插件矩陣 角色化 AI 助手成企業新寵",
+      "summary": "協助分析師與業務團隊運用資料回答問題，可連接 Snowflake、Databricks Genie、Hex 和 Tableau 等工具建立報錶與資訊主頁。",
+      "url": "./news_20260604_111400/index.html",
+      "date": "2026-06-04",
+      "time": "11:00:00",
       "source": "AI News"
     },
     {
@@ -2526,7 +2517,7 @@
       "summary": "豆包作為國內用戶規模最大的大模型應用之一，積累了龐大的用戶羣體，為付費變現奠定基礎",
       "url": "./news_20260603_162943/index.html",
       "date": "2026-06-03",
-      "time": "00:00:00",
+      "time": "16:43:00",
       "source": "AI News"
     },
     {
@@ -2535,7 +2526,7 @@
       "summary": "數據來自畢馬威（KPMG）《2026香港就業市場展望》調查，訪問281名企業高管及專業人士（當中41%任職管理層），於2026年1月進行。",
       "url": "./news_20260603_152800/index.html",
       "date": "2026-06-03",
-      "time": "00:00:00",
+      "time": "15:00:00",
       "source": "AI News"
     },
     {
@@ -2544,16 +2535,7 @@
       "summary": "研究由北京大學和阿里巴巴達摩院研究人員在《Nature》期刊發布，使用深度學習模型分析亞米級衛星影像，識別中國太陽能和風力設施。",
       "url": "./news_20260603_155800/index.html",
       "date": "2026-06-03",
-      "time": "00:00:00",
-      "source": "AI News"
-    },
-    {
-      "dir": "news_20260603_083900",
-      "title": "OpenAI 進軍白領市場 Codex 六大新插件登陸企業",
-      "summary": "本文內容主要基於 TechCrunch 報導，引用 OpenAI 官方博客及內部報告《The Next Era of Knowledge Work》進行深度解讀。",
-      "url": "./news_20260603_083900/index.html",
-      "date": "2026-06-03",
-      "time": "00:00:00",
+      "time": "15:00:00",
       "source": "AI News"
     },
     {
@@ -2562,7 +2544,7 @@
       "summary": "Microsoft 形容 2026 年是企業軟件從「人類驅動」轉向「AI 代理驅動」的轉捩點。Work IQ 是這個新時代的核心基礎設施。",
       "url": "./news_20260603_140700/index.html",
       "date": "2026-06-03",
-      "time": "00:00:00",
+      "time": "14:00:00",
       "source": "AI News"
     },
     {
@@ -2571,7 +2553,16 @@
       "summary": "這項研究由紐約聯邦儲備銀行經濟學家伊曼紐爾（Natalia Emanuel）領導發布，研究比較了2017-2019年與2022-2024年的就業數據。",
       "url": "./news_20260603_094400/index.html",
       "date": "2026-06-03",
-      "time": "00:00:00",
+      "time": "09:00:00",
+      "source": "AI News"
+    },
+    {
+      "dir": "news_20260603_083900",
+      "title": "OpenAI 進軍白領市場 Codex 六大新插件登陸企業",
+      "summary": "本文內容主要基於 TechCrunch 報導，引用 OpenAI 官方博客及內部報告《The Next Era of Knowledge Work》進行深度解讀。",
+      "url": "./news_20260603_083900/index.html",
+      "date": "2026-06-03",
+      "time": "08:00:00",
       "source": "AI News"
     },
     {
@@ -2580,16 +2571,7 @@
       "summary": "Red Access 在主流 AI 開發平臺發現超過 38 萬個可公開存取的網路資產",
       "url": "./news_20260602_185500/index.html",
       "date": "2026-06-02",
-      "time": "00:00:00",
-      "source": "AI News"
-    },
-    {
-      "dir": "news_20260602_113700",
-      "title": "3D 矽晶片突破 或可延續摩爾定律多年",
-      "summary": "厚度僅 10 奈米，遠薄於傳統 500-700 微米晶圓，具機械柔性可緊密貼合底層表面",
-      "url": "./news_20260602_113700/index.html",
-      "date": "2026-06-02",
-      "time": "00:00:00",
+      "time": "18:00:00",
       "source": "AI News"
     },
     {
@@ -2598,7 +2580,16 @@
       "summary": "Nvidia 與聯發科合作開發，10 個 Cortex-X925 高效能核心 + 10 個 Cortex-A725 中型核心",
       "url": "./news_20260602_153800/index.html",
       "date": "2026-06-02",
-      "time": "00:00:00",
+      "time": "15:00:00",
+      "source": "AI News"
+    },
+    {
+      "dir": "news_20260602_113700",
+      "title": "3D 矽晶片突破 或可延續摩爾定律多年",
+      "summary": "厚度僅 10 奈米，遠薄於傳統 500-700 微米晶圓，具機械柔性可緊密貼合底層表面",
+      "url": "./news_20260602_113700/index.html",
+      "date": "2026-06-02",
+      "time": "11:00:00",
       "source": "AI News"
     },
     {
@@ -2607,34 +2598,7 @@
       "summary": "因為 AI 令更多人可以做更多嘢，每個人嘅工作範疇唔斷擴大，期望不斷上升。",
       "url": "./news_20260602_080300/index.html",
       "date": "2026-06-02",
-      "time": "00:00:00",
-      "source": "AI News"
-    },
-    {
-      "dir": "news_20260601_233024",
-      "title": "微軟 Surface Laptop Ultra 第一款輝達 AI 筆電",
-      "summary": "「這款晶片最大可配備128GB的統一記憶體，透過在CPU與GPU之間動態分配使用記憶體，能爆發出高達1 petaflop的人工智慧（AI）運算效能。」",
-      "url": "./news_20260601_233024/index.html",
-      "date": "2026-06-01",
-      "time": "00:00:00",
-      "source": "AI News"
-    },
-    {
-      "dir": "news_20260601_211019",
-      "title": "xAI 招募 AI Tutor 訓練 Grok 多語言語音",
-      "summary": "「你的工作將專注於策劃和標註高質量音頻數據，增強 Grok 的全球無障礙服務，實現自然的口語交互。」",
-      "url": "./news_20260601_211019/index.html",
-      "date": "2026-06-01",
-      "time": "00:00:00",
-      "source": "AI News"
-    },
-    {
-      "dir": "news_20260601_080616",
-      "title": "'What a joke' GitHub Copilot 新收費制 開發者怒火中燒",
-      "summary": "「什麼笑話。」一名 Reddit 用戶抱怨，原本每月只需約 $29 美元，新制卻可能使他每月帳單暴漲至近 $750 美元（約新臺幣 24,000 元）。",
-      "url": "./news_20260601_080616/index.html",
-      "date": "2026-06-01",
-      "time": "00:00:00",
+      "time": "08:00:00",
       "source": "AI News"
     },
     {
@@ -2643,7 +2607,16 @@
       "summary": "「很多人以爲，現在才學AI，已經太晚了。但真相是，大多數人根本還沒真正開始。」",
       "url": "./news_20260601_234943/index.html",
       "date": "2026-06-01",
-      "time": "00:00:00",
+      "time": "23:43:00",
+      "source": "AI News"
+    },
+    {
+      "dir": "news_20260601_233024",
+      "title": "微軟 Surface Laptop Ultra 第一款輝達 AI 筆電",
+      "summary": "「這款晶片最大可配備128GB的統一記憶體，透過在CPU與GPU之間動態分配使用記憶體，能爆發出高達1 petaflop的人工智慧（AI）運算效能。」",
+      "url": "./news_20260601_233024/index.html",
+      "date": "2026-06-01",
+      "time": "23:24:00",
       "source": "AI News"
     },
     {
@@ -2652,7 +2625,16 @@
       "summary": "「MiniMax M3 可能是迄今為止最瘋狂的開源 AI 模型發布之一。在多項基準測試中，它實際上超越了 Opus 4.7 和 GPT-5.5，同時價格卻便宜 50 倍。」",
       "url": "./news_20260601_225736/index.html",
       "date": "2026-06-01",
-      "time": "00:00:00",
+      "time": "22:36:00",
+      "source": "AI News"
+    },
+    {
+      "dir": "news_20260601_211019",
+      "title": "xAI 招募 AI Tutor 訓練 Grok 多語言語音",
+      "summary": "「你的工作將專注於策劃和標註高質量音頻數據，增強 Grok 的全球無障礙服務，實現自然的口語交互。」",
+      "url": "./news_20260601_211019/index.html",
+      "date": "2026-06-01",
+      "time": "21:19:00",
       "source": "AI News"
     },
     {
@@ -2661,7 +2643,70 @@
       "summary": "Routines 本質上是「排程執行的 Claude Code 任務」。它啟動一個獨立的 Claude 會話，依照設定的排程（每小時、每天、或 GitHub webhook 觸發）反覆執行特定任務。與",
       "url": "./news_20260601_203142/index.html",
       "date": "2026-06-01",
-      "time": "00:00:00",
+      "time": "20:42:00",
+      "source": "AI News"
+    },
+    {
+      "dir": "news_20260601_080616",
+      "title": "'What a joke' GitHub Copilot 新收費制 開發者怒火中燒",
+      "summary": "「什麼笑話。」一名 Reddit 用戶抱怨，原本每月只需約 $29 美元，新制卻可能使他每月帳單暴漲至近 $750 美元（約新臺幣 24,000 元）。",
+      "url": "./news_20260601_080616/index.html",
+      "date": "2026-06-01",
+      "time": "08:16:00",
+      "source": "AI News"
+    },
+    {
+      "dir": "news_20260531_201800",
+      "title": "上下文即程式碼：DevOps教父的AI開發者生存指南",
+      "summary": "DevOps 運動先驅 Patrick Debois 直指 AI 輔助程式設計的最大隱憂：開發團隊過度聚焦模型生成能力，卻忽視「上下文即程式碼」的嚴謹性。當大語言模型成為底層運算引擎時，提供給 AI ",
+      "url": "./news_20260531_201800/index.html",
+      "date": "2026-05-31",
+      "time": "20:00:00",
+      "source": "AI News"
+    },
+    {
+      "dir": "news_20260531_180800",
+      "title": "任務拆解：AI工作流的核心方法論 四步驟拆解法解析",
+      "summary": "AI 工作流建構的核心瓶頸不在於模型算力，而在於「任務拆解」的系統化方法。專家指出，企業若要將生成式 AI 落地為生產級應用，必須將龐雜業務轉化為多節點協作的模組化產線，並引入明確的指令標註與人工覆核",
+      "url": "./news_20260531_180800/index.html",
+      "date": "2026-05-31",
+      "time": "18:00:00",
+      "source": "AI News"
+    },
+    {
+      "dir": "news_20260531_175100",
+      "title": "韓國成全球AI廢片之都 「84.5億次」觀看背後的社會實驗",
+      "summary": "韓國以 84.5 億次累計觀看量成為全球「AI 廢片」（AI Slop）之冠，每月生成式 AI 支出達 5,830 萬美元，超越 Netflix 訂閱費用。然而在 AI 偽造影片、Deepfake 性",
+      "url": "./news_20260531_175100/index.html",
+      "date": "2026-05-31",
+      "time": "17:00:00",
+      "source": "AI News"
+    },
+    {
+      "dir": "news_20260531_152400",
+      "title": "日本電視臺AI動畫惹眾怒 網民：「見到就想嘔」",
+      "summary": "日本電視臺在綜藝節目中以生成 AI 製作動畫，結果因畫面不自然引發「恐怖谷」效應，視聽者在 X 上留言「見到就想嘔」，成為 AI 內容反彈的典型案例。事件亦揭示電視臺急於壓低成本與觀眾對內容質素期望之",
+      "url": "./news_20260531_152400/index.html",
+      "date": "2026-05-31",
+      "time": "15:00:00",
+      "source": "AI News"
+    },
+    {
+      "dir": "news_20260531_142200",
+      "title": "Anthropic 推出 Claude Opus 4.8 誠實，成為殺手級功能",
+      "summary": "Anthropic 正式發布 Claude Opus 4.8，最大亮點是「誠實」。新版模型的錯誤率較前身降低 4 倍，更善於承認不確定性並主動修正錯誤。電子商務平臺 Shopify 的工程師搶先測試，",
+      "url": "./news_20260531_142200/index.html",
+      "date": "2026-05-31",
+      "time": "14:00:00",
+      "source": "AI News"
+    },
+    {
+      "dir": "news_20260531_145800",
+      "title": "Gemini用量改制惹爭議 5招祕技節省Token配額",
+      "summary": "Google 在 2026 年 Google I/O 大會宣佈調整 Gemini 用量計算方式，從「指令次數」改為「Token 實際運算量」。新制上路後爭議不斷，有用戶反映影片生成失敗後，5 小時額度",
+      "url": "./news_20260531_145800/index.html",
+      "date": "2026-05-31",
+      "time": "14:00:00",
       "source": "AI News"
     },
     {
@@ -2674,60 +2719,6 @@
       "source": "AI News"
     },
     {
-      "dir": "news_20260531_175100",
-      "title": "韓國成全球AI廢片之都 「84.5億次」觀看背後的社會實驗",
-      "summary": "韓國以 84.5 億次累計觀看量成為全球「AI 廢片」（AI Slop）之冠，每月生成式 AI 支出達 5,830 萬美元，超越 Netflix 訂閱費用。然而在 AI 偽造影片、Deepfake 性",
-      "url": "./news_20260531_175100/index.html",
-      "date": "2026-05-31",
-      "time": "00:00:00",
-      "source": "AI News"
-    },
-    {
-      "dir": "news_20260531_142200",
-      "title": "Anthropic 推出 Claude Opus 4.8 誠實，成為殺手級功能",
-      "summary": "Anthropic 正式發布 Claude Opus 4.8，最大亮點是「誠實」。新版模型的錯誤率較前身降低 4 倍，更善於承認不確定性並主動修正錯誤。電子商務平臺 Shopify 的工程師搶先測試，",
-      "url": "./news_20260531_142200/index.html",
-      "date": "2026-05-31",
-      "time": "00:00:00",
-      "source": "AI News"
-    },
-    {
-      "dir": "news_20260531_145800",
-      "title": "Gemini用量改制惹爭議 5招祕技節省Token配額",
-      "summary": "Google 在 2026 年 Google I/O 大會宣佈調整 Gemini 用量計算方式，從「指令次數」改為「Token 實際運算量」。新制上路後爭議不斷，有用戶反映影片生成失敗後，5 小時額度",
-      "url": "./news_20260531_145800/index.html",
-      "date": "2026-05-31",
-      "time": "00:00:00",
-      "source": "AI News"
-    },
-    {
-      "dir": "news_20260531_201800",
-      "title": "上下文即程式碼：DevOps教父的AI開發者生存指南",
-      "summary": "DevOps 運動先驅 Patrick Debois 直指 AI 輔助程式設計的最大隱憂：開發團隊過度聚焦模型生成能力，卻忽視「上下文即程式碼」的嚴謹性。當大語言模型成為底層運算引擎時，提供給 AI ",
-      "url": "./news_20260531_201800/index.html",
-      "date": "2026-05-31",
-      "time": "00:00:00",
-      "source": "AI News"
-    },
-    {
-      "dir": "news_20260531_152400",
-      "title": "日本電視臺AI動畫惹眾怒 網民：「見到就想嘔」",
-      "summary": "日本電視臺在綜藝節目中以生成 AI 製作動畫，結果因畫面不自然引發「恐怖谷」效應，視聽者在 X 上留言「見到就想嘔」，成為 AI 內容反彈的典型案例。事件亦揭示電視臺急於壓低成本與觀眾對內容質素期望之",
-      "url": "./news_20260531_152400/index.html",
-      "date": "2026-05-31",
-      "time": "00:00:00",
-      "source": "AI News"
-    },
-    {
-      "dir": "news_20260531_180800",
-      "title": "任務拆解：AI工作流的核心方法論 四步驟拆解法解析",
-      "summary": "AI 工作流建構的核心瓶頸不在於模型算力，而在於「任務拆解」的系統化方法。專家指出，企業若要將生成式 AI 落地為生產級應用，必須將龐雜業務轉化為多節點協作的模組化產線，並引入明確的指令標註與人工覆核",
-      "url": "./news_20260531_180800/index.html",
-      "date": "2026-05-31",
-      "time": "00:00:00",
-      "source": "AI News"
-    },
-    {
       "dir": "news_20260527_205056",
       "title": "中國擴大 AI 人才出境管制 阿里、DeepSeek 高層需上繳護照",
       "summary": "中國政府正將出境管制從國營機構系統性擴展至民營企業，包括阿里巴巴及 DeepSeek 等 AI 領先企業。核心人員被要求上繳護照出境前需獲官方批准，反映北京將 AI 人才定性為「國家級資產」，與先進半",
@@ -2737,21 +2728,12 @@
       "source": "AI News"
     },
     {
-      "dir": "news_20260618_172121",
-      "title": "從 GPU 主導到 CPU 回溫 Agentic AI 改寫資料中心配置",
-      "summary": "隨著 Agentic AI 逐漸升溫，CPU 與氣冷式基礎設施正重新成為企業資料中心的焦點。當 AI 工作負載從模型訓練走向推論與 Agentic AI，企業勢必重新評估 CPU、散熱、電力、資料流與",
-      "url": "./news_20260618_172121/index.html",
-      "date": "2026-05-27",
-      "time": "00:00:00",
-      "source": "AI News"
-    },
-    {
-      "dir": "news_20260525_103000",
-      "title": "中國CXMT記憶體進入主流市場 攜手Corsair DDR5突圍",
-      "summary": "在全球 DRAM 供應持續緊張、AI 需求飆升的背景下，CXMT 的崛起有望成為緩解記憶體短缺的關鍵力量，同時也將重塑全球記憶體市場格局。",
-      "url": "./news_20260525_103000/index.html",
+      "dir": "news_20260525_221000",
+      "title": "LINE臺灣AI Coding實戰 從Vibe Coding到規格驅動開發",
+      "summary": "LINE 臺灣工程團隊從自發性小工具開始，逐步探索 AI 輔助開發的實戰經驗。他們從快速的 Vibe Coding 出發，發現瓶頸後轉向規格驅動開發（SDD），搭配 GitHub 開源框架 Spec ",
+      "url": "./news_20260525_221000/index.html",
       "date": "2026-05-25",
-      "time": "00:00:00",
+      "time": "22:00:00",
       "source": "AI News"
     },
     {
@@ -2760,16 +2742,16 @@
       "summary": "業界觀察人士強調，DeepSeek 能夠在保持技術領先的前提下大幅壓低價格，反映出中國 AI 產業在模型訓練效率與基礎設施成本控管方面的快速進步。",
       "url": "./news_20260525_101115/index.html",
       "date": "2026-05-25",
-      "time": "00:00:00",
+      "time": "10:15:00",
       "source": "AI News"
     },
     {
-      "dir": "news_20260525_221000",
-      "title": "LINE臺灣AI Coding實戰 從Vibe Coding到規格驅動開發",
-      "summary": "LINE 臺灣工程團隊從自發性小工具開始，逐步探索 AI 輔助開發的實戰經驗。他們從快速的 Vibe Coding 出發，發現瓶頸後轉向規格驅動開發（SDD），搭配 GitHub 開源框架 Spec ",
-      "url": "./news_20260525_221000/index.html",
+      "dir": "news_20260525_103000",
+      "title": "中國CXMT記憶體進入主流市場 攜手Corsair DDR5突圍",
+      "summary": "在全球 DRAM 供應持續緊張、AI 需求飆升的背景下，CXMT 的崛起有望成為緩解記憶體短缺的關鍵力量，同時也將重塑全球記憶體市場格局。",
+      "url": "./news_20260525_103000/index.html",
       "date": "2026-05-25",
-      "time": "00:00:00",
+      "time": "10:00:00",
       "source": "AI News"
     },
     {
@@ -2782,12 +2764,12 @@
       "source": "AI News"
     },
     {
-      "dir": "news_20260524_101131",
-      "title": "Starbucks 放棄 AI 庫存工具 僅僅九個月就夭折",
-      "summary": "這次失敗並非單一因素造成，而是多重問題疊加的結果：",
-      "url": "./news_20260524_101131/index.html",
+      "dir": "news_20260524_201819",
+      "title": "書讀完瞭、AI也會用 為何職場還是卡關？",
+      "summary": "在元智大學的「AI University」課程中，授課教師觀察到一個深刻的產學落差：許多學生擁有扎實的技術能力，卻缺乏將抽象概念轉化為實際產出的「專案管理心智」。這種心智模式，正是企業與學術界之間那道",
+      "url": "./news_20260524_201819/index.html",
       "date": "2026-05-24",
-      "time": "00:00:00",
+      "time": "20:19:00",
       "source": "AI News"
     },
     {
@@ -2796,7 +2778,25 @@
       "summary": "Spotify 在投資者日宣佈全面擴展 AI 功能，涵蓋個人化播客生成、有聲書創作和每日簡報三大領域。這家曾以音樂串流起家的公司，正試圖透過 AI 技術將自己打造成「萬物音頻」平臺，但批評者質疑這是否",
       "url": "./news_20260524_105655/index.html",
       "date": "2026-05-24",
-      "time": "00:00:00",
+      "time": "10:55:00",
+      "source": "AI News"
+    },
+    {
+      "dir": "news_20260524_101131",
+      "title": "Starbucks 放棄 AI 庫存工具 僅僅九個月就夭折",
+      "summary": "這次失敗並非單一因素造成，而是多重問題疊加的結果：",
+      "url": "./news_20260524_101131/index.html",
+      "date": "2026-05-24",
+      "time": "10:31:00",
+      "source": "AI News"
+    },
+    {
+      "dir": "news_20260524_103901",
+      "title": "Ferrari 攜手 IBM AI 打造 F1 超級粉絲",
+      "summary": "本次報導指出，Ferrari 正與 IBM 展開深度合作，運用先進的生成式人工智能技術，為 Formula 1 賽車運動打造全新的粉絲互動體驗。這項合作標誌著傳統體育產業尖端科技的融合邁入新階段，目標",
+      "url": "./news_20260524_103901/index.html",
+      "date": "2026-05-24",
+      "time": "10:01:00",
       "source": "AI News"
     },
     {
@@ -2818,12 +2818,12 @@
       "source": "AI News"
     },
     {
-      "dir": "news_20260524_103901",
-      "title": "Ferrari 攜手 IBM AI 打造 F1 超級粉絲",
-      "summary": "本次報導指出，Ferrari 正與 IBM 展開深度合作，運用先進的生成式人工智能技術，為 Formula 1 賽車運動打造全新的粉絲互動體驗。這項合作標誌著傳統體育產業尖端科技的融合邁入新階段，目標",
-      "url": "./news_20260524_103901/index.html",
-      "date": "2026-05-23",
-      "time": "00:00:00",
+      "dir": "news_20260522_095855",
+      "title": "Mobile phishing is a bigger threat than email now - how to stay protected",
+      "summary": "移動端攻擊（vishing 語音釣魚、文字詐騙）正在流行，成功率比傳統電郵高出 40%。研究指出原因：",
+      "url": "./news_20260522_095855/index.html",
+      "date": "2026-05-22",
+      "time": "09:55:00",
       "source": "AI News"
     },
     {
@@ -2833,24 +2833,6 @@
       "url": "./news_20260522_084340/index.html",
       "date": "2026-05-22",
       "time": "08:40:00",
-      "source": "AI News"
-    },
-    {
-      "dir": "news_20260522_095855",
-      "title": "Mobile phishing is a bigger threat than email now - how to stay protected",
-      "summary": "移動端攻擊（vishing 語音釣魚、文字詐騙）正在流行，成功率比傳統電郵高出 40%。研究指出原因：",
-      "url": "./news_20260522_095855/index.html",
-      "date": "2026-05-22",
-      "time": "00:00:00",
-      "source": "AI News"
-    },
-    {
-      "dir": "news_20260524_201819",
-      "title": "書讀完瞭、AI也會用 為何職場還是卡關？",
-      "summary": "在元智大學的「AI University」課程中，授課教師觀察到一個深刻的產學落差：許多學生擁有扎實的技術能力，卻缺乏將抽象概念轉化為實際產出的「專案管理心智」。這種心智模式，正是企業與學術界之間那道",
-      "url": "./news_20260524_201819/index.html",
-      "date": "2026-05-22",
-      "time": "00:00:00",
       "source": "AI News"
     },
     {
@@ -2895,16 +2877,7 @@
       "summary": "報告揭示五層系統用於構建 AI 自動化工作流：",
       "url": "./news_20260519_233240/index.html",
       "date": "2026-05-19",
-      "time": "00:00:00",
-      "source": "AI News"
-    },
-    {
-      "dir": "news_20260519_122707",
-      "title": "5.20 AI 峯會亮點預告",
-      "summary": "2026 年 AI 產業已經進入全面落地階段，「Agent 是不是未來」這個問題的答案已不言而喻。第四屆中國 AIGC 產業峯會以「一天看盡 Agent、多模態、應用與算力」為主題，匯聚 18 位行業",
-      "url": "./news_20260519_122707/index.html",
-      "date": "2026-05-19",
-      "time": "00:00:00",
+      "time": "23:40:00",
       "source": "AI News"
     },
     {
@@ -2913,7 +2886,16 @@
       "summary": "從「技術敘事定價」→「上市窗口定價」→「國家戰略定價」，每一次跳變都有實質內容，但資本每次都定價在「最終狀態」而不是「中間狀態」。",
       "url": "./news_20260519_133957/index.html",
       "date": "2026-05-19",
-      "time": "00:00:00",
+      "time": "13:57:00",
+      "source": "AI News"
+    },
+    {
+      "dir": "news_20260519_122707",
+      "title": "5.20 AI 峯會亮點預告",
+      "summary": "2026 年 AI 產業已經進入全面落地階段，「Agent 是不是未來」這個問題的答案已不言而喻。第四屆中國 AIGC 產業峯會以「一天看盡 Agent、多模態、應用與算力」為主題，匯聚 18 位行業",
+      "url": "./news_20260519_122707/index.html",
+      "date": "2026-05-19",
+      "time": "12:07:00",
       "source": "AI News"
     },
     {
@@ -2922,7 +2904,7 @@
       "summary": "全球 AI 眼鏡市場正爆發式增長：2025 年出貨量達 870 萬臺，按年增長超過 300%，分析師預測 2026 年將突破 1,500 萬臺。三星更預告將於 7 月倫敦舉辦的 Galaxy Unpa",
       "url": "./news_20260519_075929/index.html",
       "date": "2026-05-19",
-      "time": "00:00:00",
+      "time": "07:29:00",
       "source": "AI News"
     },
     {
@@ -2940,7 +2922,7 @@
       "summary": "本次報指出，人工智能技術在 2026 年已經滲透到社會各個層面，從教育到職場，從創作到決策，AI 無所不在。然而，TechCrunch 提出一個反直覺的觀點：在這個 AI 過度飽和的時代，畢業演說或許",
       "url": "./news_20260518_104852/index.html",
       "date": "2026-05-18",
-      "time": "00:00:00",
+      "time": "10:52:00",
       "source": "AI News"
     },
     {
@@ -2949,16 +2931,7 @@
       "summary": "專家分析認為，這一轉變代表AI發展從「靜態知識儲存」向「動態經驗累積」的根本性躍遷，為通往超級智能鋪設了關鍵道路。",
       "url": "./news_20260517_194144/index.html",
       "date": "2026-05-17",
-      "time": "00:00:00",
-      "source": "AI News"
-    },
-    {
-      "dir": "news_20260517_092801",
-      "title": "Pinecone 推出 Nexus 知識引擎 以預先編譯知識革新 RAG 架構",
-      "summary": "向量資料庫龍頭 Pinecone 近日發佈新產品 Nexus，定位為專供 AI 代理（AI Agents）使用的知識引擎（Knowledge Engine），並提出「知識編譯（Knowledge Co",
-      "url": "./news_20260517_092801/index.html",
-      "date": "2026-05-17",
-      "time": "00:00:00",
+      "time": "19:44:00",
       "source": "AI News"
     },
     {
@@ -2967,7 +2940,25 @@
       "summary": "OpenAI 宣佈為 ChatGPT Pro 用戶推出全新個人理財體驗功能，用戶可連結銀行帳戶，讓 AI 直接分析個人財務狀況並提供定製化建議。這是 AI 聊天機器人首次大規模進入個人金融領域，用戶可",
       "url": "./news_20260517_155102/index.html",
       "date": "2026-05-17",
-      "time": "00:00:00",
+      "time": "15:02:00",
+      "source": "AI News"
+    },
+    {
+      "dir": "news_20260517_092801",
+      "title": "Pinecone 推出 Nexus 知識引擎 以預先編譯知識革新 RAG 架構",
+      "summary": "向量資料庫龍頭 Pinecone 近日發佈新產品 Nexus，定位為專供 AI 代理（AI Agents）使用的知識引擎（Knowledge Engine），並提出「知識編譯（Knowledge Co",
+      "url": "./news_20260517_092801/index.html",
+      "date": "2026-05-17",
+      "time": "09:01:00",
+      "source": "AI News"
+    },
+    {
+      "dir": "news_20260516_232642",
+      "title": "Google Gemma 4 對決 Qwen 3.6：開源模型巔峯之戰",
+      "summary": "開源 AI 領域正經歷前所未有的效能躍升。Google DeepMind 推出的 Gemma 4 與阿里巴巴的 Qwen 3.6 雙雙打破「規模即效能」的傳統認知，以相對精簡的引數規模實現頂尖表現。研",
+      "url": "./news_20260516_232642/index.html",
+      "date": "2026-05-16",
+      "time": "23:42:00",
       "source": "AI News"
     },
     {
@@ -2980,21 +2971,12 @@
       "source": "AI News"
     },
     {
-      "dir": "news_20260516_232642",
-      "title": "Google Gemma 4 對決 Qwen 3.6：開源模型巔峯之戰",
-      "summary": "開源 AI 領域正經歷前所未有的效能躍升。Google DeepMind 推出的 Gemma 4 與阿里巴巴的 Qwen 3.6 雙雙打破「規模即效能」的傳統認知，以相對精簡的引數規模實現頂尖表現。研",
-      "url": "./news_20260516_232642/index.html",
-      "date": "2026-05-16",
-      "time": "00:00:00",
-      "source": "AI News"
-    },
-    {
       "dir": "news_20260516_080726",
       "title": "NotebookLM 新功能攻略：圖表風格、視覺動線這樣玩，讓你的筆記秒變專業簡報",
       "summary": "本次報告聚焦 Google NotebookLM 的最新功能升級，研究指出這款 AI 筆記工具正從單純的文字整理平臺，進化為具備專業視覺呈現能力的知識管理系統。數據顯示，視覺化功能的加入顯著提升瞭用戶",
       "url": "./news_20260516_080726/index.html",
       "date": "2026-05-16",
-      "time": "00:00:00",
+      "time": "08:26:00",
       "source": "AI News"
     },
     {
@@ -3003,7 +2985,7 @@
       "summary": "本次報告聚焦生成式人工智慧滲透軟體開發領域所引發的深層危機。研究指出，「Vibe Coding」——即開發者不經深思熟慮、僅憑直覺讓AI生成程式碼的做法——正導致全球開發團隊面臨程式碼庫急速劣化、維護",
       "url": "./news_20260515_115717/index.html",
       "date": "2026-05-15",
-      "time": "00:00:00",
+      "time": "11:17:00",
       "source": "AI News"
     },
     {
@@ -3016,21 +2998,21 @@
       "source": "AI News"
     },
     {
+      "dir": "news_20260514_080632",
+      "title": "The Human Cost of 10x AI Productivity",
+      "summary": "本次報告聚焦於人工智能生產力躍升所引發的深層社會議題。當 AI 系統能夠以十倍於人類的效率完成傳統工作任務，這項技術突破不再僅是效率優化的工具，而是觸及勞動價值重估、就業結構轉型與經濟分配機制的根本性",
+      "url": "./news_20260514_080632/index.html",
+      "date": "2026-05-14",
+      "time": "08:32:00",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260514_080700",
       "title": "AI 生產力的隱性代價：當工程師大腦被機器速度追殺",
       "summary": "本次報告揭示了一個被業界長期忽視的隱性危機：AI 工具雖然大幅提升程式碼產出速度，卻將認知負荷轉嫁至人類工程師身上。當機器以每秒數十億位元的速度運算時，人腦的意識處理能力僅能維持每秒約十位元——這道生",
       "url": "./news_20260514_080700/index.html",
       "date": "2026-05-14",
       "time": "08:00:00",
-      "source": "AI News"
-    },
-    {
-      "dir": "news_20260514_080632",
-      "title": "The Human Cost of 10x AI Productivity",
-      "summary": "本次報告聚焦於人工智能生產力躍升所引發的深層社會議題。當 AI 系統能夠以十倍於人類的效率完成傳統工作任務，這項技術突破不再僅是效率優化的工具，而是觸及勞動價值重估、就業結構轉型與經濟分配機制的根本性",
-      "url": "./news_20260514_080632/index.html",
-      "date": "2026-05-14",
-      "time": "00:00:00",
       "source": "AI News"
     },
     {
@@ -3048,7 +3030,7 @@
       "summary": "研究指出，這項整合將徹底改變消費者的購物體驗，從商品搜尋、個性化推薦到智能客服，全面導入生成式 AI 技術。數據顯示，該系統預計將影響數億活躍用戶的日常消費行為。",
       "url": "./news_20260512_225128/index.html",
       "date": "2026-05-12",
-      "time": "00:00:00",
+      "time": "22:28:00",
       "source": "AI News"
     },
     {
@@ -3061,21 +3043,21 @@
       "source": "AI News"
     },
     {
+      "dir": "news_20260511_095738",
+      "title": "{{H1}}",
+      "summary": "原始 Instagram 帖子包含中英文雙語內容，本文根據瀏覽器擷取內容重建，保留原始研究報告的核心資訊。",
+      "url": "./news_20260511_095738/index.html",
+      "date": "2026-05-11",
+      "time": "09:38:00",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260511_082614",
       "title": "AI Silicon Tax：記憶體價格飆漲背後的隱形成本",
       "summary": "研究指出，AI 產業的蓬勃發展正在對全球半導體供應鏈產生深遠影響。所謂「AI Silicon Tax」指的是人工智慧熱潮所帶來的隱性成本轉嫁現象，其中消費級記憶體市場首當其衝。數據顯示，一般消費者的 ",
       "url": "./news_20260511_082614/index.html",
       "date": "2026-05-11",
       "time": "08:14:00",
-      "source": "AI News"
-    },
-    {
-      "dir": "news_20260511_095738",
-      "title": "{{H1}}",
-      "summary": "原始 Instagram 帖子包含中英文雙語內容，本文根據瀏覽器擷取內容重建，保留原始研究報告的核心資訊。",
-      "url": "./news_20260511_095738/index.html",
-      "date": "2026-05-11",
-      "time": "00:00:00",
       "source": "AI News"
     },
     {
@@ -3106,30 +3088,12 @@
       "source": "AI News"
     },
     {
-      "dir": "news_20260510_125600",
-      "title": "超美的手繪風格 Prompt",
-      "summary": "越來越多人使用 AI 進行創作，Threads 網友 jamiee._c 分享了 3 組超美的手繪風格 Prompt 指令，可同時用於 ChatGPT 和 Gemini，能生成帶有溫度的手繪風格作品。",
-      "url": "./news_20260510_125600/index.html",
-      "date": "2026-05-10",
-      "time": "00:00:00",
-      "source": "AI News"
-    },
-    {
-      "dir": "news_20260510_121700",
-      "title": "OpenAI 推出 Codex Chrome 插件",
-      "summary": "OpenAI 推出 Codex 的 Chrome 擴充功能，讓 AI 程式碼助理可在瀏覽器環境中測試網頁應用、跨分頁收集上下文、同時使用 Chrome 開發者工具。此插件目標是吸引程式設計師以外的更多",
-      "url": "./news_20260510_121700/index.html",
-      "date": "2026-05-10",
-      "time": "00:00:00",
-      "source": "AI News"
-    },
-    {
       "dir": "news_20260510_174500",
       "title": "LLM 文件腐蝕問題",
       "summary": "即使是最強的前沿模型（Gemini 3.1 Pro、Claude 4.6 Opus、GPT 5.4），在長 workflow 結束時平均腐蝕 25% 的文檔內容。每次 LLM 處理都會導致訊息損失和扭",
       "url": "./news_20260510_174500/index.html",
       "date": "2026-05-10",
-      "time": "00:00:00",
+      "time": "17:00:00",
       "source": "AI News"
     },
     {
@@ -3138,7 +3102,25 @@
       "summary": "研究在受控環境中進行，包含故意設計的漏洞。專家指出，傳輸 100GB 數據會在企業網絡中造成巨大噪音，而且目前 AI 模型的體積使其很難在現實世界中隱蔽地複製自己。",
       "url": "./news_20260510_161500/index.html",
       "date": "2026-05-10",
-      "time": "00:00:00",
+      "time": "16:00:00",
+      "source": "AI News"
+    },
+    {
+      "dir": "news_20260510_125600",
+      "title": "超美的手繪風格 Prompt",
+      "summary": "越來越多人使用 AI 進行創作，Threads 網友 jamiee._c 分享了 3 組超美的手繪風格 Prompt 指令，可同時用於 ChatGPT 和 Gemini，能生成帶有溫度的手繪風格作品。",
+      "url": "./news_20260510_125600/index.html",
+      "date": "2026-05-10",
+      "time": "12:00:00",
+      "source": "AI News"
+    },
+    {
+      "dir": "news_20260510_121700",
+      "title": "OpenAI 推出 Codex Chrome 插件",
+      "summary": "OpenAI 推出 Codex 的 Chrome 擴充功能，讓 AI 程式碼助理可在瀏覽器環境中測試網頁應用、跨分頁收集上下文、同時使用 Chrome 開發者工具。此插件目標是吸引程式設計師以外的更多",
+      "url": "./news_20260510_121700/index.html",
+      "date": "2026-05-10",
+      "time": "12:00:00",
       "source": "AI News"
     },
     {
@@ -3147,7 +3129,7 @@
       "summary": "深度分析反駁 Anthropic CEO 的「數據中心天才國」預測。AI 在數學上存在根本限制——非確定性（Non-determinism）使其無法作為可靠的自主代理。這些限制不是技術問題，而是 Tr",
       "url": "./news_20260509_143300/index.html",
       "date": "2026-05-09",
-      "time": "00:00:00",
+      "time": "14:00:00",
       "source": "AI News"
     },
     {
@@ -3156,25 +3138,7 @@
       "summary": "輝達執行長黃仁勳向全體一萬名員工發出動員令，要求全面導入 GPT-5.5 驅動的 OpenAI Codex。從工程師到人資、財務、法務都需要使用 AI 編程工具，標誌著自然語言編程時代正式來臨。",
       "url": "./news_20260509_142200/index.html",
       "date": "2026-05-09",
-      "time": "00:00:00",
-      "source": "AI News"
-    },
-    {
-      "dir": "news_20260508_123500",
-      "title": "AI 是工程文化的鏡子",
-      "summary": "AI 並沒有創造質量危機——它只是舉起了一面鏡子。問題的根源在於我們餵給 AI 的訓練數據：GitHub 上 5.18 億個項目中，大多是學生作業、臨時項目、Deadline 代碼。AI 就是在這些「",
-      "url": "./news_20260508_123500/index.html",
-      "date": "2026-05-08",
-      "time": "00:00:00",
-      "source": "AI News"
-    },
-    {
-      "dir": "news_20260508_090200",
-      "title": "Google Chrome 悄悄下載 4GB 檔案：用戶知情與否？",
-      "summary": "Google 正在向大量 Chrome 用戶的電腦悄悄下載一個 4GB 的大型檔案。這個名為 weights.bin 的檔案是 Chrome 設備端 AI 模型 Gemini Nano 的權重檔案。用",
-      "url": "./news_20260508_090200/index.html",
-      "date": "2026-05-08",
-      "time": "00:00:00",
+      "time": "14:00:00",
       "source": "AI News"
     },
     {
@@ -3183,7 +3147,25 @@
       "summary": "Perplexity 宣佈 Personal Computer 桌面應用已向所有 Mac 用戶開放。這款本地 AI 代理可訪問本地文件、原生應用和 400+ 連接器，瞄準 OpenClaw 的安全痛點",
       "url": "./news_20260508_211600/index.html",
       "date": "2026-05-08",
-      "time": "00:00:00",
+      "time": "21:00:00",
+      "source": "AI News"
+    },
+    {
+      "dir": "news_20260508_123500",
+      "title": "AI 是工程文化的鏡子",
+      "summary": "AI 並沒有創造質量危機——它只是舉起了一面鏡子。問題的根源在於我們餵給 AI 的訓練數據：GitHub 上 5.18 億個項目中，大多是學生作業、臨時項目、Deadline 代碼。AI 就是在這些「",
+      "url": "./news_20260508_123500/index.html",
+      "date": "2026-05-08",
+      "time": "12:00:00",
+      "source": "AI News"
+    },
+    {
+      "dir": "news_20260508_090200",
+      "title": "Google Chrome 悄悄下載 4GB 檔案：用戶知情與否？",
+      "summary": "Google 正在向大量 Chrome 用戶的電腦悄悄下載一個 4GB 的大型檔案。這個名為 weights.bin 的檔案是 Chrome 設備端 AI 模型 Gemini Nano 的權重檔案。用",
+      "url": "./news_20260508_090200/index.html",
+      "date": "2026-05-08",
+      "time": "09:00:00",
       "source": "AI News"
     },
     {
@@ -3219,7 +3201,7 @@
       "summary": "《21 世紀的 21 堂課》作者哈拉瑞提出令人不安的預言：AI 革命將創造出龐大的「無用階級」（Useless Class）。行銷人也不會例外。",
       "url": "./news_20260505_080900/index.html",
       "date": "2026-05-05",
-      "time": "00:00:00",
+      "time": "08:00:00",
       "source": "AI News"
     },
     {
@@ -3228,7 +3210,7 @@
       "summary": "這次質量事故的罪魁禍首不是單一原因，而是三個完全獨立、看似不起眼的產品層小改動，在不同時間點悄悄上線，最終疊加在一起，製造了一場橫跨整個開發者社區的集體混亂。",
       "url": "./news_20260504_223400/index.html",
       "date": "2026-05-04",
-      "time": "00:00:00",
+      "time": "22:00:00",
       "source": "AI News"
     },
     {
@@ -3246,7 +3228,7 @@
       "summary": "卡帕西直言：作為一名寫了十幾年代碼的頂級程序員，自己從未像現在這樣感到落後。這種「落後感」來自軟件開發正在經歷的根本性轉變——從軟件1.0到軟件3.0的代際躍遷。",
       "url": "./news_20260503_192100/index.html",
       "date": "2026-05-03",
-      "time": "00:00:00",
+      "time": "19:00:00",
       "source": "AI News"
     },
     {
@@ -3274,6 +3256,15 @@
       "url": "./news_20260430_192502/index.html",
       "date": "2026-04-30",
       "time": "19:02:00",
+      "source": "AI News"
+    },
+    {
+      "dir": "news_20260426_110843",
+      "title": "Google 押注 AI 代理：企業變現策略核心轉嚮",
+      "summary": "Alphabet CEO Sundar Pichai 在 Google 年度雲端大會上嚮投資者明確表示：AI 代理（類似人類的數碼助手）是 Google 變現人工智能策略的核心支柱。這標誌著 Goog",
+      "url": "./news_20260426_110843/index.html",
+      "date": "2026-04-26",
+      "time": "11:43:00",
       "source": "AI News"
     },
     {
@@ -3322,12 +3313,12 @@
       "source": "AI News"
     },
     {
-      "dir": "news_20260426_110843",
-      "title": "Google 押注 AI 代理：企業變現策略核心轉嚮",
-      "summary": "Alphabet CEO Sundar Pichai 在 Google 年度雲端大會上嚮投資者明確表示：AI 代理（類似人類的數碼助手）是 Google 變現人工智能策略的核心支柱。這標誌著 Goog",
-      "url": "./news_20260426_110843/index.html",
-      "date": "2026-04-22",
-      "time": "00:00:00",
+      "dir": "news_20260421_223502",
+      "title": "GitHub 爆紅：144個AI員工職位 (12個部門) 開源免費用，各有性格、工作流與 KPI",
+      "summary": "本報道基於 BLOCKTEMPO 原始文章，透過 AI 摘要技術擷取覈心資訊並進行結構化重組，呈現給讀者。",
+      "url": "./news_20260421_223502/index.html",
+      "date": "2026-04-21",
+      "time": "22:02:00",
       "source": "AI News"
     },
     {
@@ -3337,15 +3328,6 @@
       "url": "./news_20260421_110301/index.html",
       "date": "2026-04-21",
       "time": "11:01:00",
-      "source": "AI News"
-    },
-    {
-      "dir": "news_20260421_223502",
-      "title": "GitHub 爆紅：144個AI員工職位 (12個部門) 開源免費用，各有性格、工作流與 KPI",
-      "summary": "本報道基於 BLOCKTEMPO 原始文章，透過 AI 摘要技術擷取覈心資訊並進行結構化重組，呈現給讀者。",
-      "url": "./news_20260421_223502/index.html",
-      "date": "2026-04-21",
-      "time": "00:00:00",
       "source": "AI News"
     },
     {
@@ -3394,21 +3376,12 @@
       "source": "AI News"
     },
     {
-      "dir": "news_20260417_100238",
-      "title": "Google Gemini 桌面工具革新文件搜尋體驗",
-      "summary": "本次報告指出，Google 推出的全新桌面工具將 Gemini 人工智能技術深度整合至 Windows 系統環境中。該工具突破傳統搜尋限制，實現對雲端存儲、本地硬盤及網絡資源的一鍵式智能檢索。",
-      "url": "./news_20260417_100238/index.html",
-      "date": "2026-04-17",
-      "time": "10:38:00",
-      "source": "AI News"
-    },
-    {
       "dir": "news_20260417_113452",
       "title": "Internet Protocol Version 8 (IPv8)",
       "summary": "本次報告中，研究人員通過分析大量數據和實驗，提出了創新的技術方案。該方案在測試中展現出顯著優勢，為相關領域的發展提供了新的思路和方向。",
       "url": "./news_20260417_113452/index.html",
       "date": "2026-04-17",
-      "time": "00:00:00",
+      "time": "11:52:00",
       "source": "AI News"
     },
     {
@@ -3417,7 +3390,16 @@
       "summary": "IPv8 是一個管理的網路協議套件，徹底改變了從家庭網絡到全球互聯網的運營、安全和監控方式。",
       "url": "./news_20260417_113720/index.html",
       "date": "2026-04-17",
-      "time": "00:00:00",
+      "time": "11:20:00",
+      "source": "AI News"
+    },
+    {
+      "dir": "news_20260417_100238",
+      "title": "Google Gemini 桌面工具革新文件搜尋體驗",
+      "summary": "本次報告指出，Google 推出的全新桌面工具將 Gemini 人工智能技術深度整合至 Windows 系統環境中。該工具突破傳統搜尋限制，實現對雲端存儲、本地硬盤及網絡資源的一鍵式智能檢索。",
+      "url": "./news_20260417_100238/index.html",
+      "date": "2026-04-17",
+      "time": "10:38:00",
       "source": "AI News"
     },
     {
@@ -3444,7 +3426,7 @@
       "summary": "Skills 功能目前僅限瀏覽器語言設定為「English (US)」的美國地區用戶。香港尚未支援「Gemini in Chrome」側欄功能，即使更改語言配合 VPN，介面亦未必出現。",
       "url": "./news_20260416_084621/index.html",
       "date": "2026-04-16",
-      "time": "00:00:00",
+      "time": "08:21:00",
       "source": "AI News"
     },
     {
@@ -3457,21 +3439,21 @@
       "source": "AI News"
     },
     {
+      "dir": "news_20260415_083154",
+      "title": "Rising AI Adoption Spurs Workforce Changes",
+      "summary": "AI 的普及正在重塑職場動態。已 adoption AI 的企業員工更可能同時報告人員擴張與縮減——這意味著 AI 既創造新職位，也顛覆既有工作模式。",
+      "url": "./news_20260415_083154/index.html",
+      "date": "2026-04-15",
+      "time": "08:54:00",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260415_075646",
       "title": "科技園培育兩大醫健初創 以AI+數據重塑物理治療與認知障礙評估方式",
       "summary": "香港科技園公司近來積極培育醫療健康初創企業，其中兩間備受矚目的培育公司，分別專注於人工智能動作分析系統及認知障礙症評估工具，展示了香港在醫療 AI 領域的創新潛力。",
       "url": "./news_20260415_075646/index.html",
       "date": "2026-04-15",
       "time": "07:46:00",
-      "source": "AI News"
-    },
-    {
-      "dir": "news_20260415_083154",
-      "title": "Rising AI Adoption Spurs Workforce Changes",
-      "summary": "AI 的普及正在重塑職場動態。已 adoption AI 的企業員工更可能同時報告人員擴張與縮減——這意味著 AI 既創造新職位，也顛覆既有工作模式。",
-      "url": "./news_20260415_083154/index.html",
-      "date": "2026-04-15",
-      "time": "00:00:00",
       "source": "AI News"
     },
     {
@@ -3583,21 +3565,21 @@
       "source": "AI News"
     },
     {
+      "dir": "news_20260409_180919",
+      "title": "Google AI 戰略深度解析",
+      "summary": "本次報告指出，AI 領域的競爭已從表面功能轉向生態系統的深度綁定。研究顯示，真正的戰場在於創造最高的轉換成本，即讓使用者對特定工具產生深度依賴，從而形成難以撼動的市場護城河。這種策略不再僅僅關注單一功",
+      "url": "./news_20260409_180919/index.html",
+      "date": "2026-04-09",
+      "time": "18:19:00",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260409_124134",
       "title": "比Claude便宜，比Manus實用？深度體驗MiniMax Agent：本地檔案與資料整理神器",
       "summary": "在AI Agent市場競爭日益激烈的當下，MiniMax推出了基於M2.7模型的通用Agent平臺。與市場上其他產品相比，MiniMax Agent主打「免費可用」與「良好中文支援」兩大優勢，更支援本",
       "url": "./news_20260409_124134/index.html",
       "date": "2026-04-09",
       "time": "12:34:00",
-      "source": "AI News"
-    },
-    {
-      "dir": "news_20260409_180919",
-      "title": "Google AI 戰略深度解析",
-      "summary": "本次報告指出，AI 領域的競爭已從表面功能轉向生態系統的深度綁定。研究顯示，真正的戰場在於創造最高的轉換成本，即讓使用者對特定工具產生深度依賴，從而形成難以撼動的市場護城河。這種策略不再僅僅關注單一功",
-      "url": "./news_20260409_180919/index.html",
-      "date": "2026-04-09",
-      "time": "00:00:00",
       "source": "AI News"
     },
     {
@@ -3709,6 +3691,15 @@
       "source": "AI News"
     },
     {
+      "dir": "news_20260820_1018",
+      "title": "我推薦的六款 拒絕 AI 的 Linux 發行版",
+      "summary": "ZDNET 資深作者 Jack Wallen 精選六款明確拒絕或極不可能整合 AI 的 Linux 發行版，反映開源社群對 AI 技術無節制滲透的反思與抵抗——用户仍可自行安裝，但系統核心不會預設 A",
+      "url": "./news_20260820_1018/index.html",
+      "date": "2026-04-01",
+      "time": "00:00:00",
+      "source": "AI News"
+    },
+    {
       "dir": "20260406_1331",
       "title": "微軟 VibeVoice 語音 AI 全解析",
       "summary": "然而，這項強大的技術在開源後不久，微軟便移除了 TTS（文字轉語音）代碼，僅保留 ASR（語音識別）模組。背後的原因，正反映出 AI 技術發展中「創新」與「責任」之間的微妙平衡。",
@@ -3722,6 +3713,15 @@
       "title": "新手學 AI 一定要知道的 20 件事",
       "summary": "這些是理解 AI 運作的基石，掌握後就能看懂大部分 AI 討論。",
       "url": "./20260406_1732/index.html",
+      "date": "2026-04-01",
+      "time": "00:00:00",
+      "source": "AI News"
+    },
+    {
+      "dir": "news_20260820_0933",
+      "title": "如何避免 Claude 在 你的內容中加入浮水印",
+      "summary": "Anthropic 為遵守歐盟《AI Act》第 50 條，在 Claude 生成內容中加入不可見浮水印，引發用戶反彈。ZDNET 分析指出，依賴第三方「去浮水印」工具並非出路，真正方法只有一個——自",
+      "url": "./news_20260820_0933/index.html",
       "date": "2026-04-01",
       "time": "00:00:00",
       "source": "AI News"
@@ -3772,6 +3772,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-08-25T13:58:32.380609",
+  "last_updated": "2026-08-25T14:06:35.038076",
   "total_count": 419
 }
