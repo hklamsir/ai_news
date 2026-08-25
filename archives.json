@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260825_121026",
+      "title": "開源版 Claude Design！ 完全免費的 Open Design 強大功能實測",
+      "summary": "Open Design 是一款免費開源的 AI 設計平台，透過串接 Gemini CLI、Claude、Codex 等大型語言模型，讓使用者能以自然語言快速生成專業簡報、高質感網站雛形、互動式 Das",
+      "url": "./news_20260825_121026/index.html",
+      "date": "2026-08-25",
+      "time": "00:00:00",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260824_105733",
       "title": "Linux 之父也說讚！ Linus Torvalds 與 AI 協作搞定 Intel 顯示卡地獄級 debug",
       "summary": "Linux 之父 Linus Torvalds 首次在真實核心開發中大規模使用 AI 工具，成功修補了一個困擾 Intel Battlemage G21 顯示卡用戶兩年的黑畫面問題。整個 debug ",
@@ -3763,6 +3772,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-08-24T23:47:11.332107",
-  "total_count": 418
+  "last_updated": "2026-08-25T12:12:33.859724",
+  "total_count": 419
 }
