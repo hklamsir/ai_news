@@ -1,6 +1,16 @@
 {
   "archives": [
     {
+      "dir": "news_20260826_185724",
+      "title": "AI Agent 幫主人搶健身班竟取消他人預約？Claude 驅動工具發現 API 漏洞　安全風險惹關注 | ezone",
+      "summary_short": "# AI Agent 幫主人搶健身班竟取消他人預約？Claude 驅動工具發現 API 漏洞　安全風險惹關注 | ezone## 📖 新聞導語本文報導來自 **EZONE**，發布於 **20",
+      "images": [
+        "img/img1.png"
+      ],
+      "date": "2026-08-26",
+      "url": "./news_20260826_185724/index.html"
+    },
+    {
       "dir": "news_20260826_135603",
       "title": "【AI+9988】阿里巴巴推「千問辦公」QwenWork 國際版！AI智能體搶攻海外|香港經濟日報",
       "summary_short": "# 【AI+9988】阿里巴巴推「千問辦公」QwenWork 國際版！AI智能體搶攻海外|香港經濟日報## 📖 新聞導語本文報導來自 **INEWS**，發布於 **2026-08-26**。",
@@ -3800,6 +3810,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-08-26T13:56:23.026164",
+  "last_updated": "2026-08-26T18:57:34.584963",
   "total_count": 421
 }
