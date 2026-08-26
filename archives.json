@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260826_101136",
+      "title": "Perplexity 推出便攜式本地 AI 代理 為何它是遊戲規則改變者",
+      "summary": "Perplexity 推出便攜式本地 AI 代理，強調數據永不離開設備、零推理費用，兼具私隱保障與成本效益，但硬件需求門檻極高。",
+      "url": "./news_20260826_101136/index.html",
+      "date": "2026-08-26",
+      "time": "10:36:00",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260825_193918",
       "title": "Googlebook 筆電即將登場！ 能否避開 Copilot+ PC 的失敗命運？",
       "summary": "Google 即將推出睽違十一年的新款筆記型電腦——Googlebook，融合 Android 與 ChromeOS，代號「Aluminum OS」，以 Gemini AI 為系統核心。目標與 Mic",
@@ -3781,6 +3790,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-08-25T19:41:39.249087",
-  "total_count": 420
+  "last_updated": "2026-08-26T10:12:49.796591",
+  "total_count": 421
 }
