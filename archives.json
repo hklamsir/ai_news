@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260827_092115",
+      "title": "Apple M5 Ultra 發布：史上最強晶片 AI 效能較 M3 Ultra 快 4 倍",
+      "summary": "Apple 發布全新 Mac Mini 及 Mac Studio，搭載 M6、M5 Max 及 M5 Ultra 晶片，其中 M5 Ultra 採用四晶片架構，AI 效能較 M3 Ultra 快達 4",
+      "url": "./news_20260827_092115/index.html",
+      "date": "2026-08-27",
+      "time": "09:15:00",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260827_080121",
       "title": "Google Gemini 3.5 Transcribe 發布 將隨性發言轉為結構化文本",
       "summary": "Google 發布 Gemini 3.5 Transcribe 語音轉文字模型，能將用戶的隨性發言自動整理成結構化文本，並支援超過 85 種語言，未來更可在 Chrome 任何網頁欄位中使用語音輸入。",
@@ -3817,6 +3826,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-08-27T08:03:34.315439",
-  "total_count": 424
+  "last_updated": "2026-08-27T09:22:35.130246",
+  "total_count": 425
 }
