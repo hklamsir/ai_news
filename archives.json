@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260828_164010",
+      "title": "輝達傳砸 129 億美元 併購 Hugging Face",
+      "summary": "輝達傳以 129 億美元收購開源 AI 平台 Hugging Face，若交易完成，將是 AI 領域史上最大規模收購案之一，但也引發平台中立性的質疑。",
+      "url": "./news_20260828_164010/index.html",
+      "date": "2026-08-28",
+      "time": "16:10:00",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260828_101443",
       "title": "a16z 公布全球百大 AI 工具 Lovable、Replit 上榜揭示 Vibe Coding 新時代",
       "summary": "a16z 發布第5版《100大生成式AI消費應用程式》報告，揭露全球生成式 AI 應用生態正逐步趨於穩定，市場進入相對成熟階段。",
@@ -3835,6 +3844,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-08-28T10:16:46.343252",
-  "total_count": 426
+  "last_updated": "2026-08-28T16:45:17.463497",
+  "total_count": 427
 }
