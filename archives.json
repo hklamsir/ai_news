@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260828_101443",
+      "title": "a16z 公布全球百大 AI 工具 Lovable、Replit 上榜揭示 Vibe Coding 新時代",
+      "summary": "a16z 發布第5版《100大生成式AI消費應用程式》報告，揭露全球生成式 AI 應用生態正逐步趨於穩定，市場進入相對成熟階段。",
+      "url": "./news_20260828_101443/index.html",
+      "date": "2026-08-28",
+      "time": "10:43:00",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260827_092115",
       "title": "Apple M5 Ultra 發布：史上最強晶片 AI 效能較 M3 Ultra 快 4 倍",
       "summary": "Apple 發布全新 Mac Mini 及 Mac Studio，搭載 M6、M5 Max 及 M5 Ultra 晶片，其中 M5 Ultra 採用四晶片架構，AI 效能較 M3 Ultra 快達 4",
@@ -3826,6 +3835,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-08-27T09:22:35.130246",
-  "total_count": 425
+  "last_updated": "2026-08-28T10:16:46.343252",
+  "total_count": 426
 }
