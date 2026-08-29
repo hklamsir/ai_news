@@ -1,15 +1,6 @@
 {
   "archives": [
     {
-      "dir": "news_20260829_105446",
-      "title": "3 surveys deliver the same uncomfortable truth about adopting agentic AI",
-      "summary": "3 surveys deliver the same uncomfortable truth about adopting agentic AI",
-      "url": "./news_20260829_105446/index.html",
-      "date": "2026-08-29",
-      "time": "10:46:00",
-      "source": "AI News"
-    },
-    {
       "dir": "news_20260829_105444",
       "title": "三份調查，揭開企業採用代理式 AI 的最大困境",
       "summary": "三份來自德勤、畢馬威和埃森哲的研究報告同時指出：企業在採用代理式 AI 的浪潮中「走得很快」，但在重塑營運模式與治理問責機制上「走得非常慢」——這個巨大鴻溝，正是目前企業面對的最大挑戰。",
@@ -3862,6 +3853,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-08-29T11:25:50.444423",
-  "total_count": 429
+  "last_updated": "2026-08-29T11:34:50.422312",
+  "total_count": 428
 }
