@@ -1,21 +1,30 @@
 {
   "archives": [
     {
+      "dir": "news_20260829_172250",
+      "title": "騰訊開源混元 Hy4 模型，7,700 億參數、價格漲超 4 倍",
+      "summary": "騰訊開源混元 Hy4 模型，7,700 億參數、價格漲超 4 倍",
+      "url": "./news_20260829_172250/index.html",
+      "date": "2026-08-29",
+      "time": "17:50:00",
+      "source": "AI News"
+    },
+    {
+      "dir": "news_20260829_172430",
+      "title": "騰訊開源混元 Hy4 模型 7,700 億參數、價格漲超 4 倍",
+      "summary": "騰訊發布並開源旗艦模型「混元 Hy4 preview」，總參數 7,700 億、上下文 100 萬，規模是前代 2.6 倍，但 OpenRouter 輸入價格暴增 4.6 倍，備受市場關注。",
+      "url": "./news_20260829_172430/index.html",
+      "date": "2026-08-29",
+      "time": "17:30:00",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260829_122458",
       "title": "91% 專業人士：企業在 AI 價值交付上仍遠遠落後",
       "summary": "18 個月前員工熱衷嘗試 AI，今天專業人士不斷消耗 tokens，老闆們則擔心 IT 帳單不斷上升。僅 35% 員工認為公司 AI 策略在日常工作中可見。",
       "url": "./news_20260829_122458/index.html",
       "date": "2026-08-29",
       "time": "12:58:00",
-      "source": "AI News"
-    },
-    {
-      "dir": "news_20260829_122507",
-      "title": "91% of professionals say their firm still falls short on AI - how to fix that",
-      "summary": "91% of professionals say their firm still falls short on AI - how to fix that",
-      "url": "./news_20260829_122507/index.html",
-      "date": "2026-08-29",
-      "time": "12:07:00",
       "source": "AI News"
     },
     {
@@ -3871,6 +3880,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-08-29T12:31:27.627785",
-  "total_count": 430
+  "last_updated": "2026-08-29T17:25:53.948704",
+  "total_count": 431
 }
