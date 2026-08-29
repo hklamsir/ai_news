@@ -1,6 +1,24 @@
 {
   "archives": [
     {
+      "dir": "news_20260829_105446",
+      "title": "3 surveys deliver the same uncomfortable truth about adopting agentic AI",
+      "summary": "3 surveys deliver the same uncomfortable truth about adopting agentic AI",
+      "url": "./news_20260829_105446/index.html",
+      "date": "2026-08-29",
+      "time": "10:46:00",
+      "source": "AI News"
+    },
+    {
+      "dir": "news_20260829_105444",
+      "title": "三份調查，揭開企業採用代理式 AI 的最大困境",
+      "summary": "三份來自德勤、畢馬威和埃森哲的研究報告同時指出：企業在採用代理式 AI 的浪潮中「走得很快」，但在重塑營運模式與治理問責機制上「走得非常慢」——這個巨大鴻溝，正是目前企業面對的最大挑戰。",
+      "url": "./news_20260829_105444/index.html",
+      "date": "2026-08-29",
+      "time": "10:44:00",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260828_164010",
       "title": "輝達傳砸 129 億美元 併購 Hugging Face",
       "summary": "輝達傳以 129 億美元收購開源 AI 平台 Hugging Face，若交易完成，將是 AI 領域史上最大規模收購案之一，但也引發平台中立性的質疑。",
@@ -3844,6 +3862,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-08-28T16:45:17.463497",
-  "total_count": 427
+  "last_updated": "2026-08-29T10:58:36.544232",
+  "total_count": 429
 }
