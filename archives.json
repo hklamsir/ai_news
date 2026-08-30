@@ -1,6 +1,16 @@
 {
   "archives": [
     {
+      "dir": "news_20260830_140952",
+      "title": "Blue Origin 用 AI 代理數日造出月球硬件 傳統需時數年",
+      "summary_short": "本文報導來自 UNWIRE，發布於 2026-08-30。",
+      "images": [
+        "img/img1.png"
+      ],
+      "date": "2026-08-30",
+      "url": "./news_20260830_140952/index.html"
+    },
+    {
       "dir": "news_20260830_120139",
       "title": "Google推出Gemini Omni 1.1 Flash 靠「回看10秒」無縫延伸場景",
       "summary": "Google Gemini Omni 1.1 Flash 推出「場景延伸」與「首尾影格插補」功能，上下文窗口從 1 秒擴展至 10 秒，解決 AI 影片生成走鐘失真的痛點。",
@@ -3871,6 +3881,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-08-30T12:48:37.898998",
+  "last_updated": "2026-08-30T14:15:43.095311",
   "total_count": 430
 }
