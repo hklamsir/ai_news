@@ -1,22 +1,21 @@
 {
   "archives": [
     {
-      "dir": "news_20260830_123508",
-      "title": "Salesforce 與 Anthropic 宣布推出 Claudeforce：No.1 AI 結合 No.1 AI CRM",
-      "summary_short": "本文報導來自 SALESFORCE，發布於 2026-08-30。",
-      "images": [
-        "img/img1.png"
-      ],
-      "date": "2026-08-30",
-      "url": "./news_20260830_123508/index.html"
-    },
-    {
       "dir": "news_20260830_120139",
       "title": "Google推出Gemini Omni 1.1 Flash 靠「回看10秒」無縫延伸場景",
       "summary": "Google Gemini Omni 1.1 Flash 推出「場景延伸」與「首尾影格插補」功能，上下文窗口從 1 秒擴展至 10 秒，解決 AI 影片生成走鐘失真的痛點。",
       "url": "./news_20260830_120139/index.html",
       "date": "2026-08-30",
       "time": "12:39:00",
+      "source": "AI News"
+    },
+    {
+      "dir": "news_20260830_123508",
+      "title": "Claudeforce 登場：No.1 AI 結合 No.1 AI CRM，Salesforce 與 Anthropic 重塑企業智能版圖",
+      "summary": "點擊查看完整報道",
+      "url": "./news_20260830_123508/index.html",
+      "date": "2026-08-30",
+      "time": "12:08:00",
       "source": "AI News"
     },
     {
@@ -3872,6 +3871,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-08-30T12:39:38.054562",
-  "total_count": 429
+  "last_updated": "2026-08-30T12:48:37.898998",
+  "total_count": 430
 }
