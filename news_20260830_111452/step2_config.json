@@ -1,0 +1,14 @@
+{
+  "dir_name": "news_20260830_111452",
+  "dir_path": "/home/lamsir/ai_news/news_20260830_111452",
+  "title": "Nvidia’s AI advantage is moving beyond the GPU | TechCrunch",
+  "youtube_url": null,
+  "source_url": "",
+  "images": [
+    "img/img1.png"
+  ],
+  "category": "科學研究",
+  "cover_text": "Nvidia’s AI adv",
+  "model_used": "qwen-image-3.0-pro",
+  "timestamp": "2026-08-30T11:16:38.674916"
+}
