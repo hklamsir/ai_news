@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260830_120139",
+      "title": "Google推出Gemini Omni 1.1 Flash 靠「回看10秒」無縫延伸場景",
+      "summary": "Google Gemini Omni 1.1 Flash 推出「場景延伸」與「首尾影格插補」功能，上下文窗口從 1 秒擴展至 10 秒，解決 AI 影片生成走鐘失真的痛點。",
+      "url": "./news_20260830_120139/index.html",
+      "date": "2026-08-30",
+      "time": "12:39:00",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260830_111452",
       "title": "Nvidia 的 AI 優勢正從 GPU 向外延伸",
       "summary": "隨著 Nvidia 最新財報公布，投資者開始重新審視這家晶片巨頭的競爭力來源。數據顯示，當 AI 運算需求邁向千兆瓦（gigawatt）等級，單一資料中心內部的協調複雜度正以倍數成長。業界觀察指出，N",
@@ -3853,6 +3862,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-08-30T11:52:30.708281",
-  "total_count": 428
+  "last_updated": "2026-08-30T12:10:45.324435",
+  "total_count": 429
 }
