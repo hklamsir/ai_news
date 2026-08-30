@@ -2,13 +2,12 @@
   "archives": [
     {
       "dir": "news_20260830_111452",
-      "title": "Nvidia’s AI advantage is moving beyond the GPU | TechCrunch",
-      "summary_short": "# Nvidia’s AI advantage is moving beyond the GPU | TechCrunch## 📖 新聞導語本文報導來自 **TECHCRUNCH**，發布於 ",
-      "images": [
-        "img/img1.png"
-      ],
+      "title": "Nvidia 的 AI 優勢正從 GPU 向外延伸",
+      "summary": "隨著 Nvidia 最新財報公布，投資者開始重新審視這家晶片巨頭的競爭力來源。數據顯示，當 AI 運算需求邁向千兆瓦（gigawatt）等級，單一資料中心內部的協調複雜度正以倍數成長。業界觀察指出，N",
+      "url": "./news_20260830_111452/index.html",
       "date": "2026-08-30",
-      "url": "./news_20260830_111452/index.html"
+      "time": "11:52:00",
+      "source": "AI News"
     },
     {
       "dir": "news_20260829_172430",
@@ -3467,30 +3466,12 @@
       "source": "AI News"
     },
     {
-      "dir": "news_20260418_182050",
-      "title": "AI大裁員時代：年輕人的求生逆襲！",
-      "summary": "近期，多家知名科技企業相繼宣佈大規模裁員計劃，涉及員工數量動輒上千甚至上萬。然而，與以往經濟危機時期不同的是，這些企業在宣佈裁員後股價往往不跌反升，投資者將其解讀為「提升效率」的正面訊號。",
-      "url": "./news_20260418_182050/index.html",
-      "date": "2026-04-18",
-      "time": "18:50:00",
-      "source": "AI News"
-    },
-    {
       "dir": "news_20260418_183243",
       "title": "AI大裁員時代: 年輕人的求生逆襲！",
       "summary": "儘管AI在短期內不會完全取代人類工作，但其對初級職位的衝擊已經顯現，迫使年輕人尋求新的生存之道。",
       "url": "./news_20260418_183243/index.html",
       "date": "2026-04-18",
       "time": "18:43:00",
-      "source": "AI News"
-    },
-    {
-      "dir": "news_20260417_113452",
-      "title": "Internet Protocol Version 8 (IPv8)",
-      "summary": "本次報告中，研究人員通過分析大量數據和實驗，提出了創新的技術方案。該方案在測試中展現出顯著優勢，為相關領域的發展提供了新的思路和方向。",
-      "url": "./news_20260417_113452/index.html",
-      "date": "2026-04-17",
-      "time": "11:52:00",
       "source": "AI News"
     },
     {
@@ -3791,15 +3772,6 @@
       "source": "AI News"
     },
     {
-      "dir": "news_20260407_143852",
-      "title": "AI 突破：能耗降低 100 倍同時提升準確率",
-      "summary": "AI breakthrough cuts energy use by 100x while boosting accuracy | ScienceDaily",
-      "url": "./news_20260407_143852/index.html",
-      "date": "2026-04-07",
-      "time": "14:52:00",
-      "source": "AI News"
-    },
-    {
       "dir": "news_20260820_1018",
       "title": "我推薦的六款 拒絕 AI 的 Linux 發行版",
       "summary": "ZDNET 資深作者 Jack Wallen 精選六款明確拒絕或極不可能整合 AI 的 Linux 發行版，反映開源社群對 AI 技術無節制滲透的反思與抵抗——用户仍可自行安裝，但系統核心不會預設 A",
@@ -3881,6 +3853,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-08-30T11:16:42.860506",
-  "total_count": 430
+  "last_updated": "2026-08-30T11:52:30.708281",
+  "total_count": 428
 }
