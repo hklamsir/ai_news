@@ -3,12 +3,11 @@
     {
       "dir": "news_20260830_140952",
       "title": "Blue Origin 用 AI 代理數日造出月球硬件 傳統需時數年",
-      "summary_short": "本文報導來自 UNWIRE，發布於 2026-08-30。",
-      "images": [
-        "img/img1.png"
-      ],
+      "summary": "太空公司 Blue Origin 宣布，利用 Amazon Web Services 的代理式 AI 技術，成功開發出全球首件由 AI 代理設計的月球硬件 TEAREx（Thermal Energy ",
+      "url": "./news_20260830_140952/index.html",
       "date": "2026-08-30",
-      "url": "./news_20260830_140952/index.html"
+      "time": "14:52:00",
+      "source": "AI News"
     },
     {
       "dir": "news_20260830_120139",
@@ -21,8 +20,8 @@
     },
     {
       "dir": "news_20260830_123508",
-      "title": "Claudeforce 登場：No.1 AI 結合 No.1 AI CRM，Salesforce 與 Anthropic 重塑企業智能版圖",
-      "summary": "點擊查看完整報道",
+      "title": "Salesforce 與 Anthropic 宣布推出 Claudeforce：No.1 AI 結合 No.1 AI CRM",
+      "summary": "2026 年 8 月 26 日，Salesforce 與 Anthropic 宣布達成戰略合作，攜手推出 Claudeforce。這項合作將 Anthropic 的 Claude 智能推理能力，與 S",
       "url": "./news_20260830_123508/index.html",
       "date": "2026-08-30",
       "time": "12:08:00",
@@ -3881,6 +3880,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-08-30T14:15:43.095311",
-  "total_count": 430
+  "last_updated": "2026-08-30T14:16:34.536626",
+  "total_count": 431
 }
