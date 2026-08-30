@@ -1,6 +1,16 @@
 {
   "archives": [
     {
+      "dir": "news_20260830_152613",
+      "title": "中國AI 「GLM-5.3」兌現承諾開源效能直逼Claude 與GPT 旗艦",
+      "summary_short": "本文報導來自 UNWIRE，發布於 2026-08-30。",
+      "images": [
+        "img/img1.png"
+      ],
+      "date": "2026-08-30",
+      "url": "./news_20260830_152613/index.html"
+    },
+    {
       "dir": "news_20260830_140952",
       "title": "Blue Origin 用 AI 代理數日造出月球硬件 傳統需時數年",
       "summary": "太空公司 Blue Origin 宣布，利用 Amazon Web Services 的代理式 AI 技術，成功開發出全球首件由 AI 代理設計的月球硬件 TEAREx（Thermal Energy ",
@@ -3880,6 +3890,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-08-30T14:16:34.536626",
+  "last_updated": "2026-08-30T15:30:23.046944",
   "total_count": 431
 }
