@@ -2,13 +2,12 @@
   "archives": [
     {
       "dir": "news_20260830_152613",
-      "title": "中國AI 「GLM-5.3」兌現承諾開源效能直逼Claude 與GPT 旗艦",
-      "summary_short": "本文報導來自 UNWIRE，發布於 2026-08-30。",
-      "images": [
-        "img/img1.png"
-      ],
+      "title": "中國 AI 「GLM-5.3」兌現承諾開源 效能直逼 Claude 與 GPT 旗艦",
+      "summary": "中國 AI 企業 Z.ai 於香港時間 2026 年 8 月 29 日凌晨，將旗下 AI 模型 GLM-5.3 正式開源，兌現早前「完成安全評估後即開源」的承諾。第三方評測機構 Artificial ",
+      "url": "./news_20260830_152613/index.html",
       "date": "2026-08-30",
-      "url": "./news_20260830_152613/index.html"
+      "time": "15:13:00",
+      "source": "AI News"
     },
     {
       "dir": "news_20260830_140952",
@@ -3890,6 +3889,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-08-30T15:30:23.046944",
-  "total_count": 431
+  "last_updated": "2026-08-30T15:31:36.097902",
+  "total_count": 432
 }
