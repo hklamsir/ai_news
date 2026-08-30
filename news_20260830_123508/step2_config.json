@@ -1,0 +1,14 @@
+{
+  "dir_name": "news_20260830_123508",
+  "dir_path": "/home/lamsir/ai_news/news_20260830_123508",
+  "title": "Salesforce 與 Anthropic 宣布推出 Claudeforce：No.1 AI 結合 No.1 AI CRM",
+  "youtube_url": null,
+  "source_url": "",
+  "images": [
+    "img/img1.png"
+  ],
+  "category": "科學研究",
+  "cover_text": "推出最強AI結合最強CRM",
+  "model_used": "qwen-image-3.0",
+  "timestamp": "2026-08-30T12:36:37.729991"
+}
