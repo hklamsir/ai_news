@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260831_080637",
+      "title": "懶人福音！ChatGPT Work 新增 「代操網站」功能",
+      "summary": "OpenAI 為 ChatGPT Work 推出「瀏覽器代操」功能，能自動登入網站代為完成19種常見任務，讓使用者雙手彻底解放。",
+      "url": "./news_20260831_080637/index.html",
+      "date": "2026-08-31",
+      "time": "08:37:00",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260830_152613",
       "title": "中國 AI 「GLM-5.3」兌現承諾開源 效能直逼 Claude 與 GPT 旗艦",
       "summary": "中國 AI 企業 Z.ai 於香港時間 2026 年 8 月 29 日凌晨，將旗下 AI 模型 GLM-5.3 正式開源，兌現早前「完成安全評估後即開源」的承諾。第三方評測機構 Artificial ",
@@ -3889,6 +3898,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-08-30T15:31:36.097902",
-  "total_count": 432
+  "last_updated": "2026-08-31T08:15:48.835854",
+  "total_count": 433
 }
