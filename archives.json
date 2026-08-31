@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260831_091935",
+      "title": "連 AI 成本管理供應商 也失控！",
+      "summary": "AI Agent 支出失控問題日益嚴重。StackGen 報告顯示，過去一年至少有 9 起事件中，AI Agent 使用有效憑證自行刪除公司系統資料及資料庫，造成無法挽回的損失。更令人諷刺的是，就連 ",
+      "url": "./news_20260831_091935/index.html",
+      "date": "2026-08-31",
+      "time": "09:35:00",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260831_080637",
       "title": "懶人福音！ChatGPT Work 新增 「代操網站」功能",
       "summary": "OpenAI 為 ChatGPT Work 推出「瀏覽器代操」功能，能自動登入網站代為完成19種常見任務，讓使用者雙手彻底解放。",
@@ -3898,6 +3907,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-08-31T08:15:48.835854",
-  "total_count": 433
+  "last_updated": "2026-08-31T09:25:30.088853",
+  "total_count": 434
 }
