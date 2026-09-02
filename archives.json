@@ -1,6 +1,16 @@
 {
   "archives": [
     {
+      "dir": "news_20260902_091944",
+      "title": "AI蜜月期結束了？調查揭Z世代用最兇卻「最討厭AI」，為何X世代老鳥反而是最大擁護者？|數位時代 BusinessNext",
+      "summary_short": "本文報導來自 BNEXT，發布於 2026-09-02。",
+      "images": [
+        "img/img1.png"
+      ],
+      "date": "2026-09-02",
+      "url": "./news_20260902_091944/index.html"
+    },
+    {
       "dir": "news_20260831_171046",
       "title": "AI 雙巨頭掃貨 Mac mini 與 Mac Studio！",
       "summary": "AI 運算需求持續飆升，兩大 AI 巨頭 OpenAI 與 Anthropic 同步大量採購 Apple 的 Mac mini 與 Mac Studio 桌上型電腦，作為本地端 AI 推論與開發工作站",
@@ -3916,6 +3926,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-08-31T17:17:47.546783",
+  "last_updated": "2026-09-02T09:23:41.701766",
   "total_count": 435
 }
