@@ -2,13 +2,12 @@
   "archives": [
     {
       "dir": "news_20260902_091944",
-      "title": "AI蜜月期結束了？調查揭Z世代用最兇卻「最討厭AI」，為何X世代老鳥反而是最大擁護者？|數位時代 BusinessNext",
-      "summary_short": "本文報導來自 BNEXT，發布於 2026-09-02。",
-      "images": [
-        "img/img1.png"
-      ],
+      "title": "AI蜜月期結束了？調查揭Z世代用最兇卻「最討厭AI」 為何X世代老鳥反而是最大擁護者？",
+      "summary": "Glassdoor 2026 職場 AI 態度報告發現，Z 世代是最常使用 AI 工具的一代，但對雇主導入 AI 的正面評價僅 33%，遠低於 X 世代的 47%，反而成為最批判的一代。",
+      "url": "./news_20260902_091944/index.html",
       "date": "2026-09-02",
-      "url": "./news_20260902_091944/index.html"
+      "time": "09:44:00",
+      "source": "AI News"
     },
     {
       "dir": "news_20260831_171046",
@@ -3926,6 +3925,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-09-02T09:23:41.701766",
-  "total_count": 435
+  "last_updated": "2026-09-02T09:25:33.384116",
+  "total_count": 436
 }
