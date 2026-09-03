@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260903_185100",
+      "title": "Google 發布 Gemini 3.8 Flash 六週內第三次更新，推理與編碼能力再升級",
+      "summary": "Google 發布 Gemini 3.8 Flash，六週內第三次更新，維持低價同時將推理與編碼能力推向接近前沿模型水準，並推出資安專用 Flash Cyber 版本。",
+      "url": "./news_20260903_185100/index.html",
+      "date": "2026-09-03",
+      "time": "18:00:00",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260903_080200",
       "title": "Meta 新 AI 轉錄模型 可區分多名說話者與多種語言",
       "summary": "Meta 發布 Muse Voice Transcribe 模型，可即時區分超過 20 名說話者並無縫切換多種語言，支援語碼切換轉錄。",
@@ -3988,6 +3997,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-09-03T11:50:34.973506",
-  "total_count": 443
+  "last_updated": "2026-09-03T18:43:03.091847",
+  "total_count": 444
 }
