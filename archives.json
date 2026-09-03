@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260903_212600",
+      "title": "AI Token 價格創新低 施壓 OpenAI 與 Anthropic",
+      "summary": "AI Token 價格創下歷史新低，每百萬 Token 跌至 97 美分，不足夏季峰值的一半。OpenAI 與 Anthropic 等前沿實驗室面臨定價壓力，開源模型崛起是主要驅動因素。",
+      "url": "./news_20260903_212600/index.html",
+      "date": "2026-09-03",
+      "time": "21:00:00",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260903_185100",
       "title": "Google 發布 Gemini 3.8 Flash 六週內第三次更新，推理與編碼能力再升級",
       "summary": "Google 發布 Gemini 3.8 Flash，六週內第三次更新，維持低價同時將推理與編碼能力推向接近前沿模型水準，並推出資安專用 Flash Cyber 版本。",
@@ -3997,6 +4006,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-09-03T18:43:03.091847",
-  "total_count": 444
+  "last_updated": "2026-09-03T21:24:01.684915",
+  "total_count": 445
 }
