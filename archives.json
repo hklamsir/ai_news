@@ -1,15 +1,6 @@
 {
   "archives": [
     {
-      "dir": "news_20260904_080841",
-      "title": "TechCrunch 新創與科技新聞",
-      "summary": "TechCrunch 是全球最具影響力的科技新聞網站之一，專注於新創公司、科技趨勢及早期投資報導，為科技生態圈的核心資訊樞紐。",
-      "url": "./news_20260904_080841/index.html",
-      "date": "2026-09-04",
-      "time": "08:41:00",
-      "source": "AI News"
-    },
-    {
       "dir": "news_20260903_212600",
       "title": "AI Token 價格創新低 施壓 OpenAI 與 Anthropic",
       "summary": "AI Token 價格創下歷史新低，每百萬 Token 跌至 97 美分，不足夏季峰值的一半。OpenAI 與 Anthropic 等前沿實驗室面臨定價壓力，開源模型崛起是主要驅動因素。",
@@ -4015,6 +4006,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-09-04T08:10:31.288668",
-  "total_count": 446
+  "last_updated": "2026-09-04T08:40:37.021417",
+  "total_count": 445
 }
