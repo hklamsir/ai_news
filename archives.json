@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260904_091200",
+      "title": "vibe coding 熱潮過後 除錯宿醉隨之而來",
+      "summary": "vibe coding 熱潮退去後，開發者發現 AI 生成代碼的「除錯宿醉」才是真正的挑戰。雖然 AI 能大幅縮短開發時間，但複雜性的增加意味著除錯工作的增加，真正的軟體工程責任仍在人類身上。",
+      "url": "./news_20260904_091200/index.html",
+      "date": "2026-09-04",
+      "time": "09:00:00",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260904_085410",
       "title": "寫 Code 神器登場！ Meta Muse Code 穩定版釋出",
       "summary": "Meta 旗下智慧程式碼工具 Muse Code 正式邁入穩定版，大幅強化 Multi-Agent 複雜軟體工程任務處理能力，首度導入跨對話即時通訊、Workflow 工作流及安全回退機制。",
@@ -4015,6 +4024,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-09-04T08:55:46.807650",
-  "total_count": 446
+  "last_updated": "2026-09-04T09:09:48.112828",
+  "total_count": 447
 }
