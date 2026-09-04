@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260904_085410",
+      "title": "寫 Code 神器登場！ Meta Muse Code 穩定版釋出",
+      "summary": "Meta 旗下智慧程式碼工具 Muse Code 正式邁入穩定版，大幅強化 Multi-Agent 複雜軟體工程任務處理能力，首度導入跨對話即時通訊、Workflow 工作流及安全回退機制。",
+      "url": "./news_20260904_085410/index.html",
+      "date": "2026-09-04",
+      "time": "08:10:00",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260903_212600",
       "title": "AI Token 價格創新低 施壓 OpenAI 與 Anthropic",
       "summary": "AI Token 價格創下歷史新低，每百萬 Token 跌至 97 美分，不足夏季峰值的一半。OpenAI 與 Anthropic 等前沿實驗室面臨定價壓力，開源模型崛起是主要驅動因素。",
@@ -4006,6 +4015,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-09-04T08:40:37.021417",
-  "total_count": 445
+  "last_updated": "2026-09-04T08:55:46.807650",
+  "total_count": 446
 }
