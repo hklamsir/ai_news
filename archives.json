@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260905_130940",
+      "title": "token預算暴衝怎麼辦？ AI獨角獸揭4招省錢心法",
+      "summary": "AI Coding 工具大幅加速軟體開發效率，但企業帳單也以驚人速度膨脹。Databricks 分享 4 招成本管理方法，可將每個 Session 的 Token 數量降低近 50%。",
+      "url": "./news_20260905_130940/index.html",
+      "date": "2026-09-05",
+      "time": "13:40:00",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260905_124038",
       "title": "OpenAI 推出 Astra 其強大（且備受爭議）的新模型",
       "summary": "OpenAI 發布全新模型 Astra，採用「不透明遞迴」爭議技術隱藏決策過程，引發 AI 安全擔憂。",
@@ -4033,6 +4042,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-09-05T12:41:48.921386",
-  "total_count": 448
+  "last_updated": "2026-09-05T13:58:17.680959",
+  "total_count": 449
 }
