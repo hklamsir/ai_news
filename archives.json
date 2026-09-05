@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260905_124038",
+      "title": "OpenAI 推出 Astra 其強大（且備受爭議）的新模型",
+      "summary": "OpenAI 發布全新模型 Astra，採用「不透明遞迴」爭議技術隱藏決策過程，引發 AI 安全擔憂。",
+      "url": "./news_20260905_124038/index.html",
+      "date": "2026-09-05",
+      "time": "12:38:00",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260904_091200",
       "title": "vibe coding 熱潮過後 除錯宿醉隨之而來",
       "summary": "vibe coding 熱潮退去後，開發者發現 AI 生成代碼的「除錯宿醉」才是真正的挑戰。雖然 AI 能大幅縮短開發時間，但複雜性的增加意味著除錯工作的增加，真正的軟體工程責任仍在人類身上。",
@@ -4024,6 +4033,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-09-04T09:09:48.112828",
-  "total_count": 447
+  "last_updated": "2026-09-05T12:41:48.921386",
+  "total_count": 448
 }
