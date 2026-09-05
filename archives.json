@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260905_173010",
+      "title": "騰訊推出WorkBuddy國際版 巴士實測四款AI工具",
+      "summary": "騰訊舉辦「Agent Day」香港站，派出專為活動改裝的雙層 AI 巴士全港巡遊，讓公眾體驗 WorkBuddy 國際版、Miora、JOOX 及混元 Hy4 四款 AI 工具，主打「人機雙寫」提升工",
+      "url": "./news_20260905_173010/index.html",
+      "date": "2026-09-05",
+      "time": "17:10:00",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260905_130940",
       "title": "token預算暴衝怎麼辦？ AI獨角獸揭4招省錢心法",
       "summary": "AI Coding 工具大幅加速軟體開發效率，但企業帳單也以驚人速度膨脹。Databricks 分享 4 招成本管理方法，可將每個 Session 的 Token 數量降低近 50%。",
@@ -4042,6 +4051,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-09-05T13:58:17.680959",
-  "total_count": 449
+  "last_updated": "2026-09-05T17:28:53.694920",
+  "total_count": 450
 }
