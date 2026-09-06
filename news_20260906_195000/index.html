@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI News 專題：免費雲端 Linux 環境 Cloud Shell 深入評估</title>
+    <style>
+        :root {
+            --primary-blue: #00d4ff;
+            --primary-purple: #7b2cbf;
+            --accent-green: #00ff88;
+            --accent-orange: #ff9500;
+            --dark-bg: #0a0a0f;
+            --card-bg: #12121a;
+            --card-bg-light: #1a1a28;
+            --text-primary: #ffffff;
+            --text-secondary: #a0a0b0;
+            --gradient-1: linear-gradient(135deg, #00d4ff 0%, #7b2cbf 100%);
+            --gradient-2: linear-gradient(135deg, #00d4ff 0%, #00ff88 100%);
+            --glow-blue: 0 0 20px rgba(0, 212, 255, 0.5);
+            --glow-purple: 0 0 20px rgba(123, 44, 191, 0.5);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Noto Sans TC', sans-serif; background-color: var(--dark-bg); color: var(--text-primary); line-height: 1.8; overflow-x: hidden; }
+
+        @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-20px); } }
+        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.6; } }
+        @keyframes slideIn { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes codeRain { 0% { transform: translateY(-100%); opacity: 0; } 10% { opacity: 1; } 90% { opacity: 1; } 100% { transform: translateY(100vh); opacity: 0; } }
+
+        .code-rain { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; overflow: hidden; }
+        .code-char { position: absolute; color: var(--primary-blue); font-family: 'Courier New', monospace; font-size: 14px; opacity: 0; animation: codeRain 4s linear infinite; }
+
+        .hero { position: relative; min-height: 80vh; display: flex; align-items: center; justify-content: center; padding: 80px 20px; background: linear-gradient(180deg, var(--dark-bg) 0%, #1a1a2e 100%); overflow: hidden; }
+        .hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(ellipse at center, rgba(123, 44, 191, 0.15) 0%, transparent 70%); z-index: 1; }
+        .hero-content { position: relative; z-index: 2; max-width: 1200px; text-align: center; animation: slideIn 1s ease-out; }
+        .hero-badge { display: inline-block; padding: 12px 32px; background: var(--gradient-1); border-radius: 50px; font-size: 18px; font-weight: 700; margin-bottom: 24px; box-shadow: var(--glow-blue); letter-spacing: 1px; }
+        .hero h1 { font-size: clamp(2rem, 5vw, 4rem); font-weight: 900; margin-bottom: 24px; background: var(--gradient-1); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; line-height: 1.2; }
+        .hero-subtitle { font-size: clamp(1.2rem, 2.2vw, 1.6rem); color: var(--text-primary); max-width: 900px; margin: 0 auto 40px; line-height: 1.6; font-weight: 400; }
+        .hero-images { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; margin-top: 60px; }
+        .hero-image-card { position: relative; border-radius: 20px; overflow: hidden; aspect-ratio: 16/9; box-shadow: var(--glow-purple); transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .hero-image-card:hover { transform: scale(1.02); box-shadow: 0 0 40px rgba(123, 44, 191, 0.7); }
+        .hero-image-card img { width: 100%; height: 100%; object-fit: cover; }
+        .scroll-indicator { position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%); animation: float 2s ease-in-out infinite; z-index: 2; }
+        .scroll-indicator span { display: block; width: 30px; height: 50px; border: 2px solid var(--primary-blue); border-radius: 25px; position: relative; }
+        .scroll-indicator span::before { content: ''; position: absolute; top: 8px; left: 50%; transform: translateX(-50%); width: 6px; height: 10px; background: var(--primary-blue); border-radius: 3px; animation: pulse 1.5s infinite; }
+
+        section { padding: 80px 20px; position: relative; z-index: 1; }
+        .content-section { background: var(--card-bg); padding: 60px 50px; border-radius: 24px; border: 1px solid rgba(0, 212, 255, 0.2); max-width: 1100px; margin: 0 auto; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3); }
+
+        .content-section h3 { font-size: 1.6rem; margin: 40px 0 20px; color: var(--accent-green); }
+        .content-section p { color: var(--text-secondary); line-height: 2; font-size: 1.08rem; margin: 15px 0; }
+        .content-section ul { margin: 20px 0; padding-left: 30px; }
+        .content-section li { margin: 10px 0; color: var(--text-secondary); }
+
+        .meta-info { background: linear-gradient(135deg, rgba(0, 212, 255, 0.15) 0%, rgba(123, 44, 191, 0.15) 100%); padding: 30px; border-radius: 16px; margin-bottom: 40px; border-left: 5px solid var(--primary-blue); }
+        .meta-info p { margin: 12px 0; color: var(--text-secondary); font-size: 1.05rem; }
+        .meta-info strong { color: var(--primary-blue); font-weight: 600; }
+        .meta-info a { color: var(--primary-blue); text-decoration: none; word-break: break-all; }
+
+        .highlight-box { background: linear-gradient(135deg, rgba(0, 255, 136, 0.08) 0%, rgba(0, 212, 255, 0.08) 100%); padding: 30px; border-radius: 16px; border-left: 5px solid var(--accent-green); margin: 40px 0; }
+        .highlight-box h4 { color: var(--accent-green); margin-bottom: 15px; font-size: 1.3rem; }
+        .highlight-box p { color: var(--text-secondary); margin: 0; }
+
+        .tech-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; margin: 40px 0; }
+        .tech-card { background: var(--card-bg-light); padding: 24px; border-radius: 16px; border: 1px solid rgba(0, 212, 255, 0.2); transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .tech-card:hover { transform: translateY(-4px); box-shadow: 0 8px 30px rgba(0, 212, 255, 0.15); }
+        .tech-card-icon { font-size: 2rem; margin-bottom: 16px; }
+        .tech-card h4 { color: var(--primary-blue); margin-bottom: 12px; font-size: 1.1rem; }
+        .tech-card p { color: var(--text-secondary); font-size: 0.95rem; line-height: 1.7; }
+
+        .comparison-table-wrap { width: 100%; overflow-x: auto; margin: 35px 0; }
+        .comparison-table { width: 100%; border-collapse: collapse; background: var(--card-bg-light); border-radius: 16px; overflow: hidden; min-width: 600px; }
+        .comparison-table tr:first-child { background: rgba(0, 212, 255, 0.15); }
+        .comparison-table th { padding: 16px 20px; text-align: left; font-weight: 700; color: var(--primary-blue); font-size: 1rem; }
+        .comparison-table td { padding: 14px 20px; color: var(--text-secondary); font-size: 0.95rem; border-bottom: 1px solid rgba(255, 255, 255, 0.06); }
+        .comparison-table tr:last-child td { border-bottom: none; }
+        .comparison-table td:first-child { color: var(--text-primary); font-weight: 600; }
+
+        .timeline-vertical { margin: 40px 0; padding-left: 0; list-style: none; }
+        .timeline-item { position: relative; margin-bottom: 28px; padding-left: 28px; border-left: 2px solid rgba(0, 212, 255, 0.3); }
+        .timeline-item:last-child { margin-bottom: 0; border-left-color: transparent; }
+        .timeline-item::before { content: ''; position: absolute; left: -6px; top: 6px; width: 12px; height: 12px; border-radius: 50%; background: var(--primary-blue); box-shadow: var(--glow-blue); }
+        .timeline-item h4 { color: var(--primary-blue); margin-bottom: 8px; font-size: 1.05rem; }
+        .timeline-item p { color: var(--text-secondary); font-size: 0.95rem; line-height: 1.7; }
+
+        .quote-box { background: linear-gradient(135deg, rgba(123, 44, 191, 0.1) 0%, rgba(0, 212, 255, 0.1) 100%); padding: 35px; border-radius: 16px; border: 2px solid rgba(123, 44, 191, 0.3); margin: 40px 0; position: relative; }
+        .quote-box::before { content: '\201C'; position: absolute; top: 10px; left: 20px; font-size: 4rem; color: rgba(123, 44, 191, 0.4); font-family: serif; line-height: 1; }
+        .quote-box p { color: var(--text-primary); font-size: 1.1rem; font-style: italic; padding-left: 30px; line-height: 1.9; }
+        .quote-box cite { display: block; margin-top: 20px; color: var(--primary-blue); font-size: 0.95rem; padding-left: 30px; font-style: normal; }
+
+        footer { background: #050508; padding: 60px 20px; text-align: center; border-top: 1px solid rgba(255, 255, 255, 0.1); }
+        footer p { color: var(--text-secondary); margin-bottom: 20px; }
+        .footer-links { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; }
+        .footer-links a { color: var(--primary-blue); text-decoration: none; transition: color 0.3s ease; }
+        .footer-links a:hover { color: var(--text-primary); }
+
+        @media (max-width: 768px) {
+            .content-section { padding: 40px 25px; }
+            .hero-images { grid-template-columns: 1fr; }
+            .hero h1 { font-size: 2rem; }
+            .hero-subtitle { font-size: 1.2rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="code-rain" id="codeRain"></div>
+
+    <section class="hero">
+        <div class="hero-content">
+            <span class="hero-badge">📰 AI News 專題報道</span>
+            <h1>免費雲端 Linux 環境：16G 記憶體、免刷卡、瀏覽器即開即用</h1>
+            <p class="hero-subtitle">評估報告顯示，Google Cloud 提供的 Cloud Shell 免費 Linux 環境，具備 4 核心 CPU、16GB 記憶體與 10GB 硬碟空間，無需信用卡即可啟用，為資訊科技學習者提供接近業界實務的操作場域。</p>
+            <div class="hero-images">
+                <div class="hero-image-card">
+                    <img src="img/img1.png" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator"><span></span></div>
+    </section>
+
+    <section class="content-section">
+        <div class="meta-info">
+            <p><strong>📺 資料來源</strong>：<a href="https://www.youtube.com/" target="_blank">YouTube 頻道（AI News）</a></p>
+            <p><strong>📅 發布日期</strong>：2026-09-06</p>
+            <p><strong>🤖 處理方式</strong>：AI 智能摘要生成</p>
+        </div>
+
+        <h3>🎯 核心規格與免費啟用方式</h3>
+        <p>本次評估報告針對資訊科技轉職學習者常用的免費實作環境進行分析，結果顯示 Google Cloud 提供的 Cloud Shell 免費 Linux 環境，配備 4 核心 CPU、16GB 記憶體與 10GB 硬碟空間，且啟用流程無需任何信用卡資訊。使用者只需透過瀏覽器登入 GCP Console，即可在 Windows 或 macOS 上進入完整的 Linux 終端機，完全免去本機安裝的步驟。</p>
+        <p>研究進一步指出，該環境已預先安裝多種程式語言、容器與版本控管工具，能支援程式開發、網路測試與系統管理練習。專家分析認為，此類免付費的實作平台，有效降低了初學者進入資訊產業的門檻，同時為自學者與轉職者提供接近業界實務的操作場域。</p>
+        <div class="highlight-box">
+            <h4>✨ 關鍵洞察</h4>
+            <p>Cloud Shell 免費提供 4 核心 CPU、16GB 記憶體與 10GB 儲存空間，且全程無需信用卡，僅需瀏覽器登入即可啟用，大幅降低初學者進入 Linux 環境的門檻。</p>
+        </div>
+
+        <h3>💡 預裝工具與實作場景</h3>
+        <p>根據數據資料，該環境已預先配置多項常用工具，涵蓋 Linux 基本指令、程式語言、網路指令與文字編輯器。其中 cd、ls、mkdir 等基礎指令可直接執行，方便進行檔案與權限管理。程式語言方面，Python、Java 與 Node.js 均已安裝，學習者撰寫程式後可立刻執行，無需額外設定。</p>
+        <p>網路測試指令如 ping、curl 可用來檢查主機連線與 API 回應。此外，Docker、Kubernetes、Git 與 Terraform 等進階工具也已就緒，代表容器化、版本控管與基礎架構即程式碼（IaC）等業界常用技術已備妥，學習者不需自行安裝。</p>
+        <div class="tech-grid">
+            <div class="tech-card">
+                <div class="tech-card-icon">🐍</div>
+                <h4>程式語言環境</h4>
+                <p>預裝 Python、Java 與 Node.js 等主流語言，學習者可直接撰寫並執行程式，無需額外安裝。</p>
+            </div>
+            <div class="tech-card">
+                <div class="tech-card-icon">🐳</div>
+                <h4>容器與編排</h4>
+                <p>內建 Docker 與 Kubernetes，支援容器化應用開發與測試，貼近雲端原生開發流程。</p>
+            </div>
+            <div class="tech-card">
+                <div class="tech-card-icon">🔀</div>
+                <h4>版本控管與 IaC</h4>
+                <p>Git 與 Terraform 等工具已就緒，方便學習者進行程式碼版本管理與基礎架構即程式碼練習。</p>
+            </div>
+            <div class="tech-card">
+                <div class="tech-card-icon">🌐</div>
+                <h4>網路與系統管理</h4>
+                <p>提供 ping、curl 等指令，可測試主機與 API，並支援系統管理與效能查詢。</p>
+            </div>
+        </div>
+
+        <h3>📋 操作流程與實際體驗</h3>
+        <p>業界觀察顯示，該環境的檔案上傳與下載機制相當簡便，使用者可將程式檔或圖片上傳至雲端，也能將雲端檔案下載至本機。除了終端機內的文字編輯器，圖形化編輯介面進一步降低了指令操作門檻。在實際操作中，學習者可編輯 Node.js 程式，並透過 8080 通訊埠預覽網頁，確認執行結果後以 Ctrl+C 停止服務，完整模擬開發與除錯流程。</p>
+        <ul class="timeline-vertical">
+            <li class="timeline-item">
+                <h4>登入 GCP Console</h4>
+                <p>使用瀏覽器開啟 Google Cloud Platform 主控台，登入帳號。</p>
+            </li>
+            <li class="timeline-item">
+                <h4>啟用 Cloud Shell</h4>
+                <p>點選「啟用 Cloud Shell」按鈕，同意服務條款並完成授權。</p>
+            </li>
+            <li class="timeline-item">
+                <h4>開啟終端機操作</h4>
+                <p>終端機即時開啟，可直接執行 cd、ls、mkdir 等基本 Linux 指令。</p>
+            </li>
+            <li class="timeline-item">
+                <h4>撰寫與執行程式</h4>
+                <p>利用預裝的 Python、Node.js 等環境，編寫程式碼並立即執行。</p>
+            </li>
+            <li class="timeline-item">
+                <h4>網頁預覽與除錯</h4>
+                <p>使用 8080 通訊埠預覽網頁，確認執行結果後停止服務，模擬開發除錯流程。</p>
+            </li>
+        </ul>
+
+        <h3>⚠️ 資源限制與注意事項</h3>
+        <p>專家分析提醒，此免費環境仍存在一定資源限制。高負載任務可能因連線逾時而觸發重啟，執行中的暫存資料將被清空。對外 IP 為浮動位址，使用者可透過 curl ifconfig.me 指令查詢當前 IP。每次重新進入環境時，需要重新安裝套件，但家目錄中的檔案會保留，除非長期未登入導致帳戶清理。</p>
+        <p>環境重置雖然帶來不便，卻能確保系統狀態乾淨，避免錯誤設定持續累積。專家建議，學習者可將安裝指令整理成指令碼，以便在重建環境時快速恢復所需工具。</p>
+        <div class="comparison-table-wrap">
+            <table class="comparison-table">
+                <tr><th>維度</th><th>Cloud Shell 免費環境</th><th>本機虛擬機</th></tr>
+                <tr><td>硬體規格</td><td>4 核心 CPU、16GB 記憶體、10GB 儲存</td><td>依本機硬體配置而定</td></tr>
+                <tr><td>安裝需求</td><td>僅需瀏覽器，無需本機安裝</td><td>需安裝虛擬化軟體及作業系統</td></tr>
+                <tr><td>費用</td><td>完全免費，無需信用卡</td><td>可能需支付軟體授權或硬體成本</td></tr>
+                <tr><td>持久性</td><td>家目錄保留但連線逾時重啟，需重新安裝套件</td><td>本機資料持久保存</td></tr>
+                <tr><td>適用場景</td><td>學習、輕中度開發與測試</td><td>高負載、長期專案開發</td></tr>
+            </table>
+        </div>
+
+        <h3>🔮 未來展望與學習建議</h3>
+        <p>業界觀察認為，免費雲端 Linux 環境的普及，將進一步降低資訊教育與轉職訓練的硬體門檻。隨著雲端原生與 DevOps 工具持續成為主流，此類免安裝、可即時操作的沙盒環境，可能成為學校與企業新手培訓的標準配套。</p>
+        <div class="quote-box">
+            <p>免費雲端 Linux 環境的普及，將進一步降低資訊教育與轉職訓練的硬體門檻。未來隨雲端原生與 DevOps 工具持續主流化，此類沙盒環境可能成為新手培訓的標準配套。</p>
+            <cite>── 業界觀察分析</cite>
+        </div>
+        <p>專家建議，學習者應善用環境乾淨重置的特性，以自動化指令碼管理安裝流程，並將程式碼儲存於版本控管系統。若平臺未來能延長工作階段或強化持久化能力，將有助於拓展至更複雜的開發測試情境。</p>
+    </section>
+
+    <footer>
+        <p>© 2026 AI News Archive | 由 AI 技術生成</p>
+        <div class="footer-links">
+            <a href="../index.html">返回主頁</a>
+            <a href="https://github.com/hklamsir/ai_news" target="_blank">GitHub</a>
+            <a href="https://hklamsir.github.io/ai_news/" target="_blank">瀏覽所有專題</a>
+        </div>
+    </footer>
+
+    <script>
+        (function() {
+            const container = document.getElementById('codeRain');
+            const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789<>/{}[]=+-*/';
+            const columns = Math.floor(window.innerWidth / 20);
+            for (let i = 0; i < columns * 2; i++) {
+                const span = document.createElement('span');
+                span.className = 'code-char';
+                span.style.left = Math.random() * 100 + '%';
+                span.style.top = Math.random() * -100 + '%';
+                span.style.animationDuration = Math.random() * 3 + 2 + 's';
+                span.style.animationDelay = Math.random() * 5 + 's';
+                span.textContent = characters[Math.floor(Math.random() * characters.length)];
+                container.appendChild(span);
+            }
+            setInterval(() => {
+                const items = container.querySelectorAll('.code-char');
+                items.forEach(item => {
+                    if (Math.random() < 0.1) {
+                        item.textContent = characters[Math.floor(Math.random() * characters.length)];
+                    }
+                });
+            }, 500);
+        })();
+    </script>
+</body>
+</html>
