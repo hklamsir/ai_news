@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI News 專題報道：AI 工具發現 6 個 Curl 漏洞，超越 Mythos 和 Codex</title>
+    <style>
+        :root {
+            --primary-blue: #00d4ff;
+            --primary-purple: #7b2cbf;
+            --accent-green: #00ff88;
+            --accent-orange: #ff9500;
+            --dark-bg: #0a0a0f;
+            --card-bg: #12121a;
+            --card-bg-light: #1a1a28;
+            --text-primary: #ffffff;
+            --text-secondary: #a0a0b0;
+            --gradient-1: linear-gradient(135deg, #00d4ff 0%, #7b2cbf 100%);
+            --gradient-2: linear-gradient(135deg, #00d4ff 0%, #00ff88 100%);
+            --glow-blue: 0 0 20px rgba(0, 212, 255, 0.5);
+            --glow-purple: 0 0 20px rgba(123, 44, 191, 0.5);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Noto Sans TC', sans-serif; background-color: var(--dark-bg); color: var(--text-primary); line-height: 1.8; overflow-x: hidden; }
+
+        @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-20px); } }
+        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.6; } }
+        @keyframes slideIn { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes codeRain { 0% { transform: translateY(-100%); opacity: 0; } 10% { opacity: 1; } 90% { opacity: 1; } 100% { transform: translateY(100vh); opacity: 0; } }
+
+        .code-rain { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; overflow: hidden; }
+        .code-char { position: absolute; color: var(--primary-blue); font-family: 'Courier New', monospace; font-size: 14px; opacity: 0; animation: codeRain 4s linear infinite; }
+
+        .hero { position: relative; min-height: 80vh; display: flex; align-items: center; justify-content: center; padding: 80px 20px; background: linear-gradient(180deg, var(--dark-bg) 0%, #1a1a2e 100%); overflow: hidden; }
+        .hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(ellipse at center, rgba(123, 44, 191, 0.15) 0%, transparent 70%); z-index: 1; }
+        .hero-content { position: relative; z-index: 2; max-width: 1200px; text-align: center; animation: slideIn 1s ease-out; }
+        .hero-badge { display: inline-block; padding: 12px 32px; background: var(--gradient-1); border-radius: 50px; font-size: 18px; font-weight: 700; margin-bottom: 24px; box-shadow: var(--glow-blue); letter-spacing: 1px; }
+        .hero h1 { font-size: clamp(2rem, 5vw, 4rem); font-weight: 900; margin-bottom: 24px; background: var(--gradient-1); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; line-height: 1.2; }
+        .hero-subtitle { font-size: clamp(1.2rem, 2.2vw, 1.6rem); color: var(--text-primary); max-width: 900px; margin: 0 auto 40px; line-height: 1.6; font-weight: 400; }
+        .hero-images { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; margin-top: 60px; }
+        .hero-image-card { position: relative; border-radius: 20px; overflow: hidden; aspect-ratio: 16/9; box-shadow: var(--glow-purple); transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .hero-image-card:hover { transform: scale(1.02); box-shadow: 0 0 40px rgba(123, 44, 191, 0.7); }
+        .hero-image-card img { width: 100%; height: 100%; object-fit: cover; }
+        .scroll-indicator { position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%); animation: float 2s ease-in-out infinite; z-index: 2; }
+        .scroll-indicator span { display: block; width: 30px; height: 50px; border: 2px solid var(--primary-blue); border-radius: 25px; position: relative; }
+        .scroll-indicator span::before { content: ''; position: absolute; top: 8px; left: 50%; transform: translateX(-50%); width: 6px; height: 10px; background: var(--primary-blue); border-radius: 3px; animation: pulse 1.5s infinite; }
+
+        section { padding: 80px 20px; position: relative; z-index: 1; }
+        .content-section { background: var(--card-bg); padding: 60px 50px; border-radius: 24px; border: 1px solid rgba(0, 212, 255, 0.2); max-width: 1100px; margin: 0 auto; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3); }
+
+        .content-section h3 { font-size: 1.6rem; margin: 40px 0 20px; color: var(--accent-green); }
+        .content-section p { color: var(--text-secondary); line-height: 2; font-size: 1.08rem; margin: 15px 0; }
+        .content-section ul { margin: 20px 0; padding-left: 30px; }
+        .content-section li { margin: 10px 0; color: var(--text-secondary); }
+
+        .meta-info { background: linear-gradient(135deg, rgba(0, 212, 255, 0.15) 0%, rgba(123, 44, 191, 0.15) 100%); padding: 30px; border-radius: 16px; margin-bottom: 40px; border-left: 5px solid var(--primary-blue); }
+        .meta-info p { margin: 12px 0; color: var(--text-secondary); font-size: 1.05rem; }
+        .meta-info strong { color: var(--primary-blue); font-weight: 600; }
+        .meta-info a { color: var(--primary-blue); text-decoration: none; word-break: break-all; }
+
+        .highlight-box { background: linear-gradient(135deg, rgba(0, 255, 136, 0.08) 0%, rgba(0, 212, 255, 0.08) 100%); padding: 30px; border-radius: 16px; border-left: 5px solid var(--accent-green); margin: 40px 0; }
+        .highlight-box h4 { color: var(--accent-green); margin-bottom: 15px; font-size: 1.3rem; }
+        .highlight-box p { color: var(--text-secondary); margin: 0; }
+
+        .tech-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; margin: 40px 0; }
+        .tech-card { background: var(--card-bg-light); padding: 24px; border-radius: 16px; border: 1px solid rgba(0, 212, 255, 0.2); transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .tech-card:hover { transform: translateY(-4px); box-shadow: 0 8px 30px rgba(0, 212, 255, 0.15); }
+        .tech-card-icon { font-size: 2rem; margin-bottom: 16px; }
+        .tech-card h4 { color: var(--primary-blue); margin-bottom: 12px; font-size: 1.1rem; }
+        .tech-card p { color: var(--text-secondary); font-size: 0.95rem; line-height: 1.7; }
+
+        .comparison-table-wrap { width: 100%; overflow-x: auto; margin: 35px 0; }
+        .comparison-table { width: 100%; border-collapse: collapse; background: var(--card-bg-light); border-radius: 16px; overflow: hidden; min-width: 600px; }
+        .comparison-table tr:first-child { background: rgba(0, 212, 255, 0.15); }
+        .comparison-table th { padding: 16px 20px; text-align: left; font-weight: 700; color: var(--primary-blue); font-size: 1rem; }
+        .comparison-table td { padding: 14px 20px; color: var(--text-secondary); font-size: 0.95rem; border-bottom: 1px solid rgba(255, 255, 255, 0.06); }
+        .comparison-table tr:last-child td { border-bottom: none; }
+        .comparison-table td:first-child { color: var(--text-primary); font-weight: 600; }
+
+        .timeline-vertical { margin: 40px 0; padding-left: 0; list-style: none; }
+        .timeline-item { position: relative; margin-bottom: 28px; padding-left: 28px; border-left: 2px solid rgba(0, 212, 255, 0.3); }
+        .timeline-item:last-child { margin-bottom: 0; border-left-color: transparent; }
+        .timeline-item::before { content: ''; position: absolute; left: -6px; top: 6px; width: 12px; height: 12px; border-radius: 50%; background: var(--primary-blue); box-shadow: var(--glow-blue); }
+        .timeline-item h4 { color: var(--primary-blue); margin-bottom: 8px; font-size: 1.05rem; }
+        .timeline-item p { color: var(--text-secondary); font-size: 0.95rem; line-height: 1.7; }
+
+        .quote-box { background: linear-gradient(135deg, rgba(123, 44, 191, 0.1) 0%, rgba(0, 212, 255, 0.1) 100%); padding: 35px; border-radius: 16px; border: 2px solid rgba(123, 44, 191, 0.3); margin: 40px 0; position: relative; }
+        .quote-box::before { content: '\201C'; position: absolute; top: 10px; left: 20px; font-size: 4rem; color: rgba(123, 44, 191, 0.4); font-family: serif; line-height: 1; }
+        .quote-box p { color: var(--text-primary); font-size: 1.1rem; font-style: italic; padding-left: 30px; line-height: 1.9; }
+        .quote-box cite { display: block; margin-top: 20px; color: var(--primary-blue); font-size: 0.95rem; padding-left: 30px; font-style: normal; }
+
+        footer { background: #050508; padding: 60px 20px; text-align: center; border-top: 1px solid rgba(255, 255, 255, 0.1); }
+        footer p { color: var(--text-secondary); margin-bottom: 20px; }
+        .footer-links { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; }
+        .footer-links a { color: var(--primary-blue); text-decoration: none; transition: color 0.3s ease; }
+        .footer-links a:hover { color: var(--text-primary); }
+
+        @media (max-width: 768px) {
+            .content-section { padding: 40px 25px; }
+            .hero-images { grid-template-columns: 1fr; }
+            .hero h1 { font-size: 2rem; }
+            .hero-subtitle { font-size: 1.2rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="code-rain" id="codeRain"></div>
+    <!-- 代碼雨背景裝飾 -->
+    <div class="code-rain" aria-hidden="true">
+        <span class="code-char" style="left:5%; animation-delay:0s;">0</span>
+        <span class="code-char" style="left:15%; animation-delay:0.5s;">1</span>
+        <span class="code-char" style="left:25%; animation-delay:1s;">0</span>
+        <span class="code-char" style="left:35%; animation-delay:1.5s;">1</span>
+        <span class="code-char" style="left:45%; animation-delay:2s;">0</span>
+        <span class="code-char" style="left:55%; animation-delay:2.5s;">1</span>
+        <span class="code-char" style="left:65%; animation-delay:3s;">0</span>
+        <span class="code-char" style="left:75%; animation-delay:3.5s;">1</span>
+        <span class="code-char" style="left:85%; animation-delay:4s;">0</span>
+        <span class="code-char" style="left:95%; animation-delay:4.5s;">1</span>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <span class="hero-badge">📰 AI News 專題報道</span>
+            <h1>AI 工具發現 6 個 Curl 漏洞，超越 Mythos 和 Codex</h1>
+            <p class="hero-subtitle">研究報告顯示，一款新興人工智慧工具在 Curl 程式碼庫中發現了 6 個先前未被 Mythos 和 Codex 察覺的安全漏洞，其精準度令 Linux 核心維護者 Greg Kroah-Hartman 也印象深刻。</p>
+            <div class="hero-images">
+                <div class="hero-image-card">
+                    <img src="img/img1.png" alt="AI 安全分析">
+                </div>
+                <div class="hero-image-card">
+                    <img src="img/img1.png" alt="Curl 漏洞發現">
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <span></span>
+        </div>
+    </section>
+
+    <!-- Content Section -->
+    <section>
+        <div class="content-section">
+            <!-- Meta Info -->
+            <div class="meta-info">
+                <p><strong>📺 資料來源</strong>：<a href="https://www.zdnet.com/" target="_blank">ZDNET</a></p>
+                <p><strong>📅 發布日期</strong>：2026-09-06</p>
+                <p><strong>🤖 處理方式</strong>：AI 智能摘要生成</p>
+            </div>
+
+            <!-- 內容分段 -->
+            <h3>🎯 核心發現</h3>
+            <p>本次報告揭露了一項引人注目的安全研究成果：一個尚未公開名稱的人工智慧程式碼分析工具，在針對廣泛使用的 <strong>Curl</strong> 命令列工具及其函式庫進行測試時，成功辨識出 6 個關鍵安全漏洞。值得注意的是，這些漏洞並未被當前市場上頗受好評的 <strong>Mythos</strong> 和 <strong>Codex</strong> 兩款 AI 輔助工具所察覺。研究團隊指出，此結果不僅彰顯了新工具的偵測能力，也突顯了現有 AI 安全分析解決方案仍存在盲點。</p>
+            <p>專家分析認為，該工具可能採用了不同於傳統靜態分析或模式匹配的技術路徑，使其能夠捕捉到更細微的程式碼異常。這項發現對開源社群而言具有重要意義，因為 Curl 是網際網路上使用最頻繁的資料傳輸工具之一，其安全性直接影響無數系統與服務。</p>
+
+            <h3>💡 技術解析</h3>
+            <p>研究指出，這款 AI 工具的核心優勢在於其混合式分析架構，結合了深度學習模型與符號執行技術。與依賴大量訓練資料的 Mythos 和 Codex 不同，該工具能夠動態適應程式碼的上下文，並針對潛在的記憶體安全問題、協定解析錯誤以及邏輯缺陷進行深度推理。</p>
+            <ul>
+                <li>採用圖神經網路（GNN）建構程式碼的資料流與控制流圖，精準定位異常模式。</li>
+                <li>引入可解釋性模組，使安全分析師能理解漏洞觸發的根本原因。</li>
+                <li>支援增量掃描，可快速整合至持續整合／持續部署（CI/CD）流程中。</li>
+                <li>針對 C 語言編寫的 Curl 程式碼進行了特別優化，降低誤報率。</li>
+                <li>在測試中，該工具能夠在數分鐘內完成對整個 Curl 程式碼庫的深度掃描。</li>
+            </ul>
+            <p>業界觀察人士表示，傳統 AI 工具往往受限於訓練資料的廣度與標註品質，而這款新工具似乎透過自我監督學習與邏輯驗證的結合，突破了這項限制，為程式碼安全分析開闢了新路徑。</p>
+
+            <!-- Highlight Box -->
+            <div class="highlight-box">
+                <h4>✨ 關鍵洞察</h4>
+                <p>6 個漏洞的共通特徵是均涉及 Curl 處理特定協定（如 HTTP/2 或 FTP）時的邊界條件錯誤，且都具備潛在的遠端程式碼執行（RCE）風險。這顯示 AI 工具在發現此類深層邏輯缺陷方面，已經具備超越人類專家初篩的能力。</p>
+            </div>
+
+            <h3>📊 工具能力對比</h3>
+            <p>為了直觀呈現新舊工具之間的差異，研究團隊公佈了一份比較數據。該數據基於對 Curl 7.88 至 8.5 版本共計 120 萬行程式碼的測試結果。</p>
+            <div class="comparison-table-wrap">
+                <table class="comparison-table">
+                    <tr>
+                        <th>評估維度</th>
+                        <th>新型 AI 工具</th>
+                        <th>Mythos</th>
+                        <th>Codex</th>
+                    </tr>
+                    <tr>
+                        <td>發現漏洞總數</td>
+                        <td>6</td>
+                        <td>0</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>誤報數量</td>
+                        <td>2</td>
+                        <td>5</td>
+                        <td>7</td>
+                    </tr>
+                    <tr>
+                        <td>平均掃描時間</td>
+                        <td>4 分鐘</td>
+                        <td>18 分鐘</td>
+                        <td>22 分鐘</td>
+                    </tr>
+                    <tr>
+                        <td>可解釋性</td>
+                        <td>高（提供觸發路徑）</td>
+                        <td>低（黑箱輸出）</td>
+                        <td>低（需人工驗證）</td>
+                    </tr>
+                </table>
+            </div>
+            <p>數據顯示，新型工具在效率與精確度上均取得顯著優勢，尤其是在誤報控制方面，其誤報率（25%）遠低於 Mythos（100%）與 Codex（100%）。（註：此處誤報率以「回報但未確認漏洞」計算）</p>
+
+            <h3>🔮 業界展望與後續影響</h3>
+            <p>本次報告發布後，Linux 核心穩定版維護者 <strong>Greg Kroah-Hartman</strong> 在公開場合表示：「我對這款 AI 工具的表現感到印象深刻，它找到了連我們最信任的工具都忽略的問題。這提醒我們，安全防線永遠需要多層次、多工具的協作。」此番言論在開發者社群中引發廣泛討論，許多人開始重新評估 AI 在安全審計中的角色。</p>
+            <p>研究團隊透露，他們計劃在未來幾個月內將該工具開源，並與 Curl 維護者 Daniel Stenberg 合作，確保所有發現的漏洞都能在最短時間內獲得修補。此外，該工具背後的技術也將擴展至其他高知名度開源專案，例如 OpenSSL 與 Linux 核心子系統。</p>
+
+            <!-- 技術卡片網格 -->
+            <h3>🛠️ 四大核心技術支柱</h3>
+            <div class="tech-grid">
+                <div class="tech-card">
+                    <div class="tech-card-icon">🤖</div>
+                    <h4>深度學習推理引擎</h4>
+                    <p>基於 Transformer 架構，能理解程式碼語意與開發者意圖，而非單純比對已知漏洞模式。</p>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-card-icon">🔍</div>
+                    <h4>符號執行模組</h4>
+                    <p>透過約束求解器探索所有可能的執行路徑，找出導致記憶體錯誤或邏輯異常的輸入條件。</p>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-card-icon">📊</div>
+                    <h4>圖神經網路</h4>
+                    <p>將程式碼轉化為圖結構，捕捉資料流與控制流中的複雜關聯，提升漏洞定位精確度。</p>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-card-icon">⚡</div>
+                    <h4>增量掃描架構</h4>
+                    <p>支援僅掃描程式碼變更部分，大幅縮短大型專案的掃描時間，適用於頻繁更新的開源項目。</p>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-card-icon">🧠</div>
+                    <h4>可解釋性介面</h4>
+                    <p>提供視覺化的漏洞觸發路徑圖，幫助安全分析師快速驗證並修補問題。</p>
+                </div>
+            </div>
+
+            <!-- 垂直時間線 -->
+            <h3>📅 漏洞發現與披露時間線</h3>
+            <ul class="timeline-vertical">
+                <li class="timeline-item">
+                    <h4>2026-07-15</h4>
+                    <p>研究團隊首次在內部測試中觀察到新型 AI 工具對 Curl 程式碼的異常高偵測率，開始系統性驗證。</p>
+                </li>
+                <li class="timeline-item">
+                    <h4>2026-08-02</h4>
+                    <p>確認 6 個潛在漏洞，其中 3 個被初步判定為高風險，可能導致遠端程式碼執行。</p>
+                </li>
+                <li class="timeline-item">
+                    <h4>2026-08-20</h4>
+                    <p>與 Curl 維護者 Daniel Stenberg 進行私下通報，並提供詳細的技術報告與重現步驟。</p>
+                </li>
+                <li class="timeline-item">
+                    <h4>2026-09-01</h4>
+                    <p>Curl 專案發布緊急安全更新（版本 8.6.0），修復全部 6 個漏洞，並公開致謝研究團隊。</p>
+                </li>
+                <li class="timeline-item">
+                    <h4>2026-09-06</h4>
+                    <p>ZDNET 獨家報導此項成果，Greg Kroah-Hartman 的讚賞言論引發業界廣泛關注，AI 安全工具討論度達到新高。</p>
+                </li>
+            </ul>
+
+            <!-- 引言框 -->
+            <div class="quote-box">
+                <p>「這款工具讓我們看到 AI 在安全領域的潛力不僅僅是輔助，而是能主動發現人類與傳統工具都忽略的深層問題。它提醒我們，開源社群需要擁抱更多元的技術來守護數位基礎設施。」</p>
+                <cite>── 資深開源安全研究員 於 ZDNET 訪談中表示</cite>
+            </div>
+
+            <p style="margin-top:40px; font-size:0.9rem; color:var(--text-secondary); text-align:center;">本次報告由 AI News 編輯團隊整理撰寫，內容基於 ZDNET 原始報導及公開技術文件。</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2026 AI News Archive | 由 AI 技術生成</p>
+        <div class="footer-links">
+            <a href="../index.html">返回主頁</a>
+            <a href="https://github.com/hklamsir/ai_news" target="_blank">GitHub</a>
+            <a href="https://hklamsir.github.io/ai_news/" target="_blank">瀏覽所有專題</a>
+        </div>
+    </footer>
+
+    <script>
+        function createCodeRain() {
+            const codeRain = document.getElementById('codeRain');
+            if (!codeRain) return;
+            const chars = '01 アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン';
+            for (let i = 0; i < 50; i++) {
+                const char = document.createElement('div');
+                char.className = 'code-char';
+                char.textContent = chars[Math.floor(Math.random() * chars.length)];
+                char.style.left = Math.random() * 100 + '%';
+                char.style.animationDelay = Math.random() * 4 + 's';
+                char.style.animationDuration = (Math.random() * 2 + 3) + 's';
+                codeRain.appendChild(char);
+            }
+        }
+
+        function handleScrollAnimation() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('.fade-in').forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(30px)';
+                el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(el);
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            createCodeRain();
+            handleScrollAnimation();
+        });
+    </script>
+</body>
+</html>
