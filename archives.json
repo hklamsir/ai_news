@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260906_195000",
+      "title": "免費雲端 Linux 環境：16G 記憶體、免刷卡、瀏覽器即開即用",
+      "summary": "本次評估報告針對資訊科技轉職學習者常用的免費實作環境進行分析，結果顯示 Google Cloud 提供的 Cloud Shell 免費 Linux 環境，配備 4 核心 CPU、16GB 記憶體與 1",
+      "url": "./news_20260906_195000/index.html",
+      "date": "2026-09-06",
+      "time": "19:00:00",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260906_160000",
       "title": "ChatGPT 變現力驚人！廣告上線不到 200 天狂賺 320 億元",
       "summary": "OpenAI 於 2026 年 8 月 31 日正式宣布，旗下生成式對話服務 ChatGPT 所推出的廣告業務「ChatGPT Ads」年化換算營收（Run-rate Revenue）已突破 10 億",
@@ -4087,6 +4096,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-09-06T16:29:38.897265",
-  "total_count": 454
+  "last_updated": "2026-09-06T19:54:34.563638",
+  "total_count": 455
 }
