@@ -1,6 +1,14 @@
 {
   "archives": [
     {
+      "dir": "ai_news_k5wbx8wj",
+      "title": "ChatGPT 變現力驚人！廣告上線不到 200 天狂賺 320 億元　官方曝廣告位置這樣放 | T客邦",
+      "summary_short": "本文報導來自 T客邦，發布於 2026-09-06，內容轉載自 cnBeta。",
+      "images": [],
+      "date": "2026-09-06",
+      "url": "./ai_news_k5wbx8wj/index.html"
+    },
+    {
       "dir": "news_20260906_091500",
       "title": "AI 工具發現 6 個 Curl 漏洞，超越 Mythos 和 Codex",
       "summary": "專家分析認為，該工具可能採用了不同於傳統靜態分析或模式匹配的技術路徑，使其能夠捕捉到更細微的程式碼異常。這項發現對開源社群而言具有重要意義，因為 Curl 是網際網路上使用最頻繁的資料傳輸工具之一，其",
@@ -4069,6 +4077,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-09-06T09:37:20.052562",
+  "last_updated": "2026-09-06T16:05:34.536515",
   "total_count": 452
 }
