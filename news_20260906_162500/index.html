@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>本地 AI 電腦怎麼買？NVIDIA、Mac、VRAM 一次講懂 | AI News</title>
+    <style>
+        :root {
+            --primary-blue: #00d4ff;
+            --primary-purple: #7b2cbf;
+            --accent-green: #00ff88;
+            --accent-orange: #ff9500;
+            --dark-bg: #0a0a0f;
+            --card-bg: #12121a;
+            --card-bg-light: #1a1a28;
+            --text-primary: #ffffff;
+            --text-secondary: #a0a0b0;
+            --gradient-1: linear-gradient(135deg, #00d4ff 0%, #7b2cbf 100%);
+            --gradient-2: linear-gradient(135deg, #00d4ff 0%, #00ff88 100%);
+            --glow-blue: 0 0 20px rgba(0, 212, 255, 0.5);
+            --glow-purple: 0 0 20px rgba(123, 44, 191, 0.5);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Noto Sans TC', sans-serif; background-color: var(--dark-bg); color: var(--text-primary); line-height: 1.8; overflow-x: hidden; }
+
+        @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-20px); } }
+        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.6; } }
+        @keyframes slideIn { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes codeRain { 0% { transform: translateY(-100%); opacity: 0; } 10% { opacity: 1; } 90% { opacity: 1; } 100% { transform: translateY(100vh); opacity: 0; } }
+
+        .code-rain { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; overflow: hidden; }
+        .code-char { position: absolute; color: var(--primary-blue); font-family: 'Courier New', monospace; font-size: 14px; opacity: 0; animation: codeRain 4s linear infinite; }
+
+        .hero { position: relative; min-height: 80vh; display: flex; align-items: center; justify-content: center; padding: 80px 20px; background: linear-gradient(180deg, var(--dark-bg) 0%, #1a1a2e 100%); overflow: hidden; }
+        .hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(ellipse at center, rgba(123, 44, 191, 0.15) 0%, transparent 70%); z-index: 1; }
+        .hero-content { position: relative; z-index: 2; max-width: 1200px; text-align: center; animation: slideIn 1s ease-out; }
+        .hero-badge { display: inline-block; padding: 12px 32px; background: var(--gradient-1); border-radius: 50px; font-size: 18px; font-weight: 700; margin-bottom: 24px; box-shadow: var(--glow-blue); letter-spacing: 1px; }
+        .hero h1 { font-size: clamp(2rem, 5vw, 4rem); font-weight: 900; margin-bottom: 24px; background: var(--gradient-1); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; line-height: 1.2; }
+        .hero-subtitle { font-size: clamp(1.2rem, 2.2vw, 1.6rem); color: var(--text-primary); max-width: 900px; margin: 0 auto 40px; line-height: 1.6; font-weight: 400; }
+        .hero-images { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; margin-top: 60px; }
+        .hero-image-card { position: relative; border-radius: 20px; overflow: hidden; aspect-ratio: 16/9; box-shadow: var(--glow-purple); transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .hero-image-card:hover { transform: scale(1.02); box-shadow: 0 0 40px rgba(123, 44, 191, 0.7); }
+        .hero-image-card img { width: 100%; height: 100%; object-fit: cover; }
+        .scroll-indicator { position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%); animation: float 2s ease-in-out infinite; z-index: 2; }
+        .scroll-indicator span { display: block; width: 30px; height: 50px; border: 2px solid var(--primary-blue); border-radius: 25px; position: relative; }
+        .scroll-indicator span::before { content: ''; position: absolute; top: 8px; left: 50%; transform: translateX(-50%); width: 6px; height: 10px; background: var(--primary-blue); border-radius: 3px; animation: pulse 1.5s infinite; }
+
+        section { padding: 80px 20px; position: relative; z-index: 1; }
+        .content-section { background: var(--card-bg); padding: 60px 50px; border-radius: 24px; border: 1px solid rgba(0, 212, 255, 0.2); max-width: 1100px; margin: 0 auto; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3); }
+
+        .content-section h3 { font-size: 1.6rem; margin: 40px 0 20px; color: var(--accent-green); }
+        .content-section p { color: var(--text-secondary); line-height: 2; font-size: 1.08rem; margin: 15px 0; }
+        .content-section ul { margin: 20px 0; padding-left: 30px; }
+        .content-section li { margin: 10px 0; color: var(--text-secondary); }
+
+        .meta-info { background: linear-gradient(135deg, rgba(0, 212, 255, 0.15) 0%, rgba(123, 44, 191, 0.15) 100%); padding: 30px; border-radius: 16px; margin-bottom: 40px; border-left: 5px solid var(--primary-blue); }
+        .meta-info p { margin: 12px 0; color: var(--text-secondary); font-size: 1.05rem; }
+        .meta-info strong { color: var(--primary-blue); font-weight: 600; }
+        .meta-info a { color: var(--primary-blue); text-decoration: none; word-break: break-all; }
+
+        .highlight-box { background: linear-gradient(135deg, rgba(0, 255, 136, 0.08) 0%, rgba(0, 212, 255, 0.08) 100%); padding: 30px; border-radius: 16px; border-left: 5px solid var(--accent-green); margin: 40px 0; }
+        .highlight-box h4 { color: var(--accent-green); margin-bottom: 15px; font-size: 1.3rem; }
+        .highlight-box p { color: var(--text-secondary); margin: 0; }
+
+        .tech-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; margin: 40px 0; }
+        .tech-card { background: var(--card-bg-light); padding: 24px; border-radius: 16px; border: 1px solid rgba(0, 212, 255, 0.2); transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .tech-card:hover { transform: translateY(-4px); box-shadow: 0 8px 30px rgba(0, 212, 255, 0.15); }
+        .tech-card-icon { font-size: 2rem; margin-bottom: 16px; }
+        .tech-card h4 { color: var(--primary-blue); margin-bottom: 12px; font-size: 1.1rem; }
+        .tech-card p { color: var(--text-secondary); font-size: 0.95rem; line-height: 1.7; }
+
+        .comparison-table-wrap { width: 100%; overflow-x: auto; margin: 35px 0; }
+        .comparison-table { width: 100%; border-collapse: collapse; background: var(--card-bg-light); border-radius: 16px; overflow: hidden; min-width: 600px; }
+        .comparison-table tr:first-child { background: rgba(0, 212, 255, 0.15); }
+        .comparison-table th { padding: 16px 20px; text-align: left; font-weight: 700; color: var(--primary-blue); font-size: 1rem; }
+        .comparison-table td { padding: 14px 20px; color: var(--text-secondary); font-size: 0.95rem; border-bottom: 1px solid rgba(255, 255, 255, 0.06); }
+        .comparison-table tr:last-child td { border-bottom: none; }
+        .comparison-table td:first-child { color: var(--text-primary); font-weight: 600; }
+
+        .timeline-vertical { margin: 40px 0; padding-left: 0; list-style: none; }
+        .timeline-item { position: relative; margin-bottom: 28px; padding-left: 28px; border-left: 2px solid rgba(0, 212, 255, 0.3); }
+        .timeline-item:last-child { margin-bottom: 0; border-left-color: transparent; }
+        .timeline-item::before { content: ''; position: absolute; left: -6px; top: 6px; width: 12px; height: 12px; border-radius: 50%; background: var(--primary-blue); box-shadow: var(--glow-blue); }
+        .timeline-item h4 { color: var(--primary-blue); margin-bottom: 8px; font-size: 1.05rem; }
+        .timeline-item p { color: var(--text-secondary); font-size: 0.95rem; line-height: 1.7; }
+
+        .quote-box { background: linear-gradient(135deg, rgba(123, 44, 191, 0.1) 0%, rgba(0, 212, 255, 0.1) 100%); padding: 35px; border-radius: 16px; border: 2px solid rgba(123, 44, 191, 0.3); margin: 40px 0; position: relative; }
+        .quote-box::before { content: '\201C'; position: absolute; top: 10px; left: 20px; font-size: 4rem; color: rgba(123, 44, 191, 0.4); font-family: serif; line-height: 1; }
+        .quote-box p { color: var(--text-primary); font-size: 1.1rem; font-style: italic; padding-left: 30px; line-height: 1.9; }
+        .quote-box cite { display: block; margin-top: 20px; color: var(--primary-blue); font-size: 0.95rem; padding-left: 30px; font-style: normal; }
+
+        footer { background: #050508; padding: 60px 20px; text-align: center; border-top: 1px solid rgba(255, 255, 255, 0.1); }
+        footer p { color: var(--text-secondary); margin-bottom: 20px; }
+        .footer-links { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; }
+        .footer-links a { color: var(--primary-blue); text-decoration: none; transition: color 0.3s ease; }
+        .footer-links a:hover { color: var(--text-primary); }
+
+        @media (max-width: 768px) {
+            .content-section { padding: 40px 25px; }
+            .hero-images { grid-template-columns: 1fr; }
+            .hero h1 { font-size: 2rem; }
+            .hero-subtitle { font-size: 1.2rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="code-rain" id="codeRain"></div>
+    <div class="code-rain" aria-hidden="true">
+        <span class="code-char" style="left:5%; animation-delay:0s;">0</span>
+        <span class="code-char" style="left:15%; animation-delay:0.5s;">1</span>
+        <span class="code-char" style="left:25%; animation-delay:1s;">0</span>
+        <span class="code-char" style="left:35%; animation-delay:1.5s;">1</span>
+        <span class="code-char" style="left:45%; animation-delay:2s;">0</span>
+        <span class="code-char" style="left:55%; animation-delay:2.5s;">1</span>
+        <span class="code-char" style="left:65%; animation-delay:3s;">0</span>
+        <span class="code-char" style="left:75%; animation-delay:3.5s;">1</span>
+        <span class="code-char" style="left:85%; animation-delay:4s;">0</span>
+        <span class="code-char" style="left:95%; animation-delay:4.5s;">1</span>
+    </div>
+
+    <section class="hero">
+        <div class="hero-content">
+            <span class="hero-badge">📺 YouTube 影片摘要</span>
+            <h1>本地 AI 電腦怎麼買？NVIDIA、Mac、VRAM 一次講懂</h1>
+            <p class="hero-subtitle">隨著開源語言、圖片及影音生成模型快速發展，愈來愈多使用者有意將 AI 模型部署於本地電腦。本影片深入探討如何選購適合本地 AI 的電腦，涵蓋 NVIDIA、AMD 及 Apple 等平臺的比較。</p>
+            <div class="hero-images">
+                <div class="hero-image-card">
+                    <img src="img/img1.png" alt="本地 AI 電腦">
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <span></span>
+        </div>
+    </section>
+
+    <section>
+        <div class="content-section">
+            <div class="meta-info">
+                <p><strong>📺 影片來源</strong>：<a href="https://youtu.be/I6QKkuS2oyo" target="_blank">YouTube</a></p>
+                <p><strong>📅 發布日期</strong>：2026-09-06</p>
+                <p><strong>⏱️ 影片時長</strong>：876 秒（約 14.6 分鐘）</p>
+                <p><strong>🤖 處理方式</strong>：AI 智能摘要生成</p>
+            </div>
+
+            <h3>🎯 核心觀點：VRAM 才是關鍵</h3>
+            <p>本次報告的最大重點，在於顛覆傳統遊戲電腦選購時先看顯示卡速度的思維。AI 模型若要順暢執行，首先必須能被完整載入顯示記憶體（VRAM）。若模型與相關工作流程所需記憶體超過 VRAM 容量，即使顯示卡算力再強，使用者仍須妥協。</p>
+            <p><strong>24GB VRAM 適合作為全用途起點</strong>，自該容量起，語言模型、程式編寫 Agent、圖片生成乃至部分影音生成工作流較能避免反覆調整配置的困擾。</p>
+
+            <div class="highlight-box">
+                <h4>✨ 五大重點摘要</h4>
+                <p>1. VRAM 容量決定模型能否順利載入，24GB 為全用途起點<br>
+                2. NVIDIA CUDA 軟體生態最成熟，新模型優先支援<br>
+                3. Apple 統一記憶體適合大型語言模型<br>
+                4. 影音生成對 VRAM 要求更高，16GB 需量化犧牲品質<br>
+                5. 系統 RAM 至少 64GB，SSD 容量需充裕</p>
+            </div>
+
+            <h3>💡 三大平臺比較</h3>
+            <div class="comparison-table-wrap">
+                <table class="comparison-table">
+                    <tr>
+                        <th>平臺</th>
+                        <th>NVIDIA RTX</th>
+                        <th>AMD ROCm</th>
+                        <th>Apple M 系列</th>
+                    </tr>
+                    <tr>
+                        <td>VRAM 容量</td>
+                        <td>24-32GB（3090/4090/5090）</td>
+                        <td>16-24GB</td>
+                        <td>最高 192GB（共享記憶體）</td>
+                    </tr>
+                    <tr>
+                        <td>軟體生態</td>
+                        <td>⭐⭐⭐⭐⭐ CUDA 最成熟</td>
+                        <td>⭐⭐⭐ 支援漸趨完整</td>
+                        <td>⭐⭐⭐ Metal 生態落後</td>
+                    </tr>
+                    <tr>
+                        <td>適合用途</td>
+                        <td>全功能、AI 開發首選</td>
+                        <td>預算導向、需主動確認相容性</td>
+                        <td>大型語言模型、文字生成</td>
+                    </tr>
+                    <tr>
+                        <td>影音生成</td>
+                        <td>⭐⭐⭐⭐⭐ 完全支援</td>
+                        <td>⭐⭐⭐ 部分支援</td>
+                        <td>⭐⭐ 適配落後</td>
+                    </tr>
+                </table>
+            </div>
+
+            <h3>🛠️ 硬體配置建議</h3>
+            <div class="tech-grid">
+                <div class="tech-card">
+                    <div class="tech-card-icon">🎮</div>
+                    <h4>顯示卡 VRAM</h4>
+                    <p>至少 24GB VRAM（如 RTX 3090/4090），新一代 RTX 5090 達 32GB，額外容量對長上下文有顯著助益。</p>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-card-icon">💾</div>
+                    <h4>系統記憶體</h4>
+                    <p>建議 64GB RAM，以容納瀏覽器、IDE、Agent 等多工負載，並提供模型 offload 所需空間。</p>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-card-icon">💿</div>
+                    <h4>儲存空間</h4>
+                    <p>大容量 SSD（1TB+），因模型動輒數十 GB 且會持續累積，需充裕空間加快初始載入速度。</p>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-card-icon">🤖</div>
+                    <h4>AI 框架支援</h4>
+                    <p>NVIDIA CUDA 生態最完整，多數新模型與工具優先支援；AMD ROCm 需主動確認相容性。</p>
+                </div>
+            </div>
+
+            <h3>📊 影音生成 VRAM 需求</h3>
+            <p>影音生成工作流對 VRAM 的需求更加嚴苛：</p>
+            <ul>
+                <li><strong>Wan 2.2</strong>（720p 文字生成影音）：以 24GB VRAM 為基準</li>
+                <li><strong>MiniMax H3</strong>：原始部署以多 GPU 為主，消費級顯示卡多依賴量化與 offload</li>
+                <li><strong>16GB VRAM</strong>：雖能「成功執行」，但未必等於「適合每日工作」</li>
+                <li><strong>量化代價</strong>：可能犧牲模型品質或能力</li>
+            </ul>
+
+            <h3>📅 選購決策流程</h3>
+            <ul class="timeline-vertical">
+                <li class="timeline-item">
+                    <h4>Step 1：釐清用途</h4>
+                    <p>主要為語言模型？圖片生成？還是影音生成？用途決定硬體需求。</p>
+                </li>
+                <li class="timeline-item">
+                    <h4>Step 2：確定 VRAM 需求</h4>
+                    <p>語言模型为主：16-24GB 即可；需涵蓋影音生成：24GB 起跳。</p>
+                </li>
+                <li class="timeline-item">
+                    <h4>Step 3：選擇平臺</h4>
+                    <p>追求全功能首選 NVIDIA；預算導向可考慮 AMD；大型語言模型可選 Apple。</p>
+                </li>
+                <li class="timeline-item">
+                    <h4>Step 4：配置配套硬體</h4>
+                    <p>64GB+ 系統 RAM、1TB+ SSD，確保多工與模型存放無後顧之憂。</p>
+                </li>
+                <li class="timeline-item">
+                    <h4>Step 5：持續關注技術發展</h4>
+                    <p>消費級 GPU 記憶體容量持續提升，量化技術不斷優化，本地 AI 部署門檻將持續下降。</p>
+                </li>
+            </ul>
+
+            <div class="quote-box">
+                <p>「影響本地 AI 體驗的關鍵並非單純顯示卡運算速度，而是顯示記憶體（VRAM）容量是否足夠承載模型與相關工作流程。」</p>
+                <cite>── 本地 AI 電腦購買指南核心觀點</cite>
+            </div>
+
+            <h3>🔮 業界展望</h3>
+            <p>短期內 NVIDIA 因 CUDA 生態成熟與新模型快速支援，仍將是追求全功能使用者的首選；AMD 若能持續完善 ROCm 相容性並維持價格優勢，有機會吸引預算導向使用者。Apple 則在高容量共享記憶體的大型語言模型部署上具獨特利基。長期而言，消費級 GPU 記憶體容量提升與量化技術最佳化，將使本地 AI 部署門檻持續下降。</p>
+
+            <p style="margin-top:40px; font-size:0.9rem; color:var(--text-secondary); text-align:center;">本次摘要由 AI News 編輯團隊整理，內容基於 YouTube 影片字幕。</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2026 AI News Archive | 由 AI 技術生成</p>
+        <div class="footer-links">
+            <a href="../index.html">返回主頁</a>
+            <a href="https://github.com/hklamsir/ai_news" target="_blank">GitHub</a>
+            <a href="https://hklamsir.github.io/ai_news/" target="_blank">瀏覽所有專題</a>
+        </div>
+    </footer>
+
+    <script>
+        function createCodeRain() {
+            const codeRain = document.getElementById('codeRain');
+            if (!codeRain) return;
+            const chars = '01 アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン';
+            for (let i = 0; i < 50; i++) {
+                const char = document.createElement('div');
+                char.className = 'code-char';
+                char.style.left = (Math.random() * 100) + '%';
+                char.style.animationDelay = (Math.random() * 4) + 's';
+                char.style.animationDuration = (3 + Math.random() * 3) + 's';
+                char.textContent = chars[Math.floor(Math.random() * chars.length)];
+                codeRain.appendChild(char);
+            }
+        }
+        createCodeRain();
+    </script>
+</body>
+</html>
