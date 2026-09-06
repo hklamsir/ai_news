@@ -1,20 +1,22 @@
 {
   "archives": [
     {
-      "dir": "ai_news_jf0t2rv6",
-      "title": "OpenAI 證實「wiki 事件」，表示正在「制定框架」以提升資訊揭露透明度 - TechCrunch",
-      "summary_short": "本文報導來自 TechCrunch，發布於 2026-09-05，作者 Anthony Ha。",
-      "images": [],
+      "dir": "news_20260906_091500",
+      "title": "AI 工具發現 6 個 Curl 漏洞，超越 Mythos 和 Codex",
+      "summary": "專家分析認為，該工具可能採用了不同於傳統靜態分析或模式匹配的技術路徑，使其能夠捕捉到更細微的程式碼異常。這項發現對開源社群而言具有重要意義，因為 Curl 是網際網路上使用最頻繁的資料傳輸工具之一，其",
+      "url": "./news_20260906_091500/index.html",
       "date": "2026-09-06",
-      "url": "./ai_news_jf0t2rv6/index.html"
+      "time": "09:00:00",
+      "source": "AI News"
     },
     {
-      "dir": "ai_news_k734oi1y",
-      "title": "這款 AI 工具找到 6 個 Mythos 和 Codex 遺漏的 Curl 漏洞——連 Greg KH 都印象深刻 - ZDNET",
-      "summary_short": "本文報導來自 ZDNET，發布於 2026-09-06。",
-      "images": [],
+      "dir": "news_20260906_093000",
+      "title": "OpenAI 證實「wiki 事件」，表示正在「制定框架」以提升資訊揭露透明度 - TechCrunch",
+      "summary": "OpenAI 證實「wiki 事件」，表示正在「制定框架」以提升資訊揭露透明度",
+      "url": "./news_20260906_093000/index.html",
       "date": "2026-09-06",
-      "url": "./ai_news_k734oi1y/index.html"
+      "time": "09:00:00",
+      "source": "AI News"
     },
     {
       "dir": "news_20260905_173010",
@@ -4067,6 +4069,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-09-06T09:32:08.472637",
-  "total_count": 450
+  "last_updated": "2026-09-06T09:37:20.052562",
+  "total_count": 452
 }
