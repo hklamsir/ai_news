@@ -1,6 +1,14 @@
 {
   "archives": [
     {
+      "dir": "ai_news_k734oi1y",
+      "title": "這款 AI 工具找到 6 個 Mythos 和 Codex 遺漏的 Curl 漏洞——連 Greg KH 都印象深刻 - ZDNET",
+      "summary_short": "本文報導來自 ZDNET，發布於 2026-09-06。",
+      "images": [],
+      "date": "2026-09-06",
+      "url": "./ai_news_k734oi1y/index.html"
+    },
+    {
       "dir": "news_20260905_173010",
       "title": "騰訊推出WorkBuddy國際版 巴士實測四款AI工具",
       "summary": "騰訊舉辦「Agent Day」香港站，派出專為活動改裝的雙層 AI 巴士全港巡遊，讓公眾體驗 WorkBuddy 國際版、Miora、JOOX 及混元 Hy4 四款 AI 工具，主打「人機雙寫」提升工",
@@ -4051,6 +4059,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-09-05T17:28:53.694920",
+  "last_updated": "2026-09-06T09:18:27.764581",
   "total_count": 450
 }
