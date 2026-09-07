@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google 電子書整合 Gemini Notebook | AI News 專題報道</title>
+    <style>
+        :root {
+            --primary-blue: #00d4ff;
+            --primary-purple: #7b2cbf;
+            --accent-green: #00ff88;
+            --accent-orange: #ff9500;
+            --dark-bg: #0a0a0f;
+            --card-bg: #12121a;
+            --card-bg-light: #1a1a28;
+            --text-primary: #ffffff;
+            --text-secondary: #a0a0b0;
+            --gradient-1: linear-gradient(135deg, #00d4ff 0%, #7b2cbf 100%);
+            --gradient-2: linear-gradient(135deg, #00d4ff 0%, #00ff88 100%);
+            --glow-blue: 0 0 20px rgba(0, 212, 255, 0.5);
+            --glow-purple: 0 0 20px rgba(123, 44, 191, 0.5);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Noto Sans TC', sans-serif; background-color: var(--dark-bg); color: var(--text-primary); line-height: 1.8; overflow-x: hidden; }
+
+        @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-20px); } }
+        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.6; } }
+        @keyframes slideIn { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes codeRain { 0% { transform: translateY(-100%); opacity: 0; } 10% { opacity: 1; } 90% { opacity: 1; } 100% { transform: translateY(100vh); opacity: 0; } }
+
+        .code-rain { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; overflow: hidden; }
+        .code-char { position: absolute; color: var(--primary-blue); font-family: 'Courier New', monospace; font-size: 14px; opacity: 0; animation: codeRain 4s linear infinite; }
+
+        .hero { position: relative; min-height: 80vh; display: flex; align-items: center; justify-content: center; padding: 80px 20px; background: linear-gradient(180deg, var(--dark-bg) 0%, #1a1a2e 100%); overflow: hidden; }
+        .hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(ellipse at center, rgba(123, 44, 191, 0.15) 0%, transparent 70%); z-index: 1; }
+        .hero-content { position: relative; z-index: 2; max-width: 1200px; text-align: center; animation: slideIn 1s ease-out; }
+        .hero-badge { display: inline-block; padding: 12px 32px; background: var(--gradient-1); border-radius: 50px; font-size: 18px; font-weight: 700; margin-bottom: 24px; box-shadow: var(--glow-blue); letter-spacing: 1px; }
+        .hero h1 { font-size: clamp(2rem, 5vw, 4rem); font-weight: 900; margin-bottom: 24px; background: var(--gradient-1); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; line-height: 1.2; }
+        .hero-subtitle { font-size: clamp(1.2rem, 2.2vw, 1.6rem); color: var(--text-primary); max-width: 900px; margin: 0 auto 40px; line-height: 1.6; font-weight: 400; }
+        .hero-images { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; margin-top: 60px; }
+        .hero-image-card { position: relative; border-radius: 20px; overflow: hidden; aspect-ratio: 16/9; box-shadow: var(--glow-purple); transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .hero-image-card:hover { transform: scale(1.02); box-shadow: 0 0 40px rgba(123, 44, 191, 0.7); }
+        .hero-image-card img { width: 100%; height: 100%; object-fit: cover; }
+        .scroll-indicator { position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%); animation: float 2s ease-in-out infinite; z-index: 2; }
+        .scroll-indicator span { display: block; width: 30px; height: 50px; border: 2px solid var(--primary-blue); border-radius: 25px; position: relative; }
+        .scroll-indicator span::before { content: ''; position: absolute; top: 8px; left: 50%; transform: translateX(-50%); width: 6px; height: 10px; background: var(--primary-blue); border-radius: 3px; animation: pulse 1.5s infinite; }
+
+        section { padding: 80px 20px; position: relative; z-index: 1; }
+        .content-section { background: var(--card-bg); padding: 60px 50px; border-radius: 24px; border: 1px solid rgba(0, 212, 255, 0.2); max-width: 1100px; margin: 0 auto; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3); }
+
+        .content-section h3 { font-size: 1.6rem; margin: 40px 0 20px; color: var(--accent-green); }
+        .content-section p { color: var(--text-secondary); line-height: 2; font-size: 1.08rem; margin: 15px 0; }
+        .content-section ul { margin: 20px 0; padding-left: 30px; }
+        .content-section li { margin: 10px 0; color: var(--text-secondary); }
+
+        .meta-info { background: linear-gradient(135deg, rgba(0, 212, 255, 0.15) 0%, rgba(123, 44, 191, 0.15) 100%); padding: 30px; border-radius: 16px; margin-bottom: 40px; border-left: 5px solid var(--primary-blue); }
+        .meta-info p { margin: 12px 0; color: var(--text-secondary); font-size: 1.05rem; }
+        .meta-info strong { color: var(--primary-blue); font-weight: 600; }
+        .meta-info a { color: var(--primary-blue); text-decoration: none; word-break: break-all; }
+
+        .highlight-box { background: linear-gradient(135deg, rgba(0, 255, 136, 0.08) 0%, rgba(0, 212, 255, 0.08) 100%); padding: 30px; border-radius: 16px; border-left: 5px solid var(--accent-green); margin: 40px 0; }
+        .highlight-box h4 { color: var(--accent-green); margin-bottom: 15px; font-size: 1.3rem; }
+        .highlight-box p { color: var(--text-secondary); margin: 0; }
+
+        .tech-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; margin: 40px 0; }
+        .tech-card { background: var(--card-bg-light); padding: 24px; border-radius: 16px; border: 1px solid rgba(0, 212, 255, 0.2); transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .tech-card:hover { transform: translateY(-4px); box-shadow: 0 8px 30px rgba(0, 212, 255, 0.15); }
+        .tech-card-icon { font-size: 2rem; margin-bottom: 16px; }
+        .tech-card h4 { color: var(--primary-blue); margin-bottom: 12px; font-size: 1.1rem; }
+        .tech-card p { color: var(--text-secondary); font-size: 0.95rem; line-height: 1.7; }
+
+        .comparison-table-wrap { width: 100%; overflow-x: auto; margin: 35px 0; }
+        .comparison-table { width: 100%; border-collapse: collapse; background: var(--card-bg-light); border-radius: 16px; overflow: hidden; min-width: 600px; }
+        .comparison-table tr:first-child { background: rgba(0, 212, 255, 0.15); }
+        .comparison-table th { padding: 16px 20px; text-align: left; font-weight: 700; color: var(--primary-blue); font-size: 1rem; }
+        .comparison-table td { padding: 14px 20px; color: var(--text-secondary); font-size: 0.95rem; border-bottom: 1px solid rgba(255, 255, 255, 0.06); }
+        .comparison-table tr:last-child td { border-bottom: none; }
+        .comparison-table td:first-child { color: var(--text-primary); font-weight: 600; }
+
+        .timeline-vertical { margin: 40px 0; padding-left: 0; list-style: none; }
+        .timeline-item { position: relative; margin-bottom: 28px; padding-left: 28px; border-left: 2px solid rgba(0, 212, 255, 0.3); }
+        .timeline-item:last-child { margin-bottom: 0; border-left-color: transparent; }
+        .timeline-item::before { content: ''; position: absolute; left: -6px; top: 6px; width: 12px; height: 12px; border-radius: 50%; background: var(--primary-blue); box-shadow: var(--glow-blue); }
+        .timeline-item h4 { color: var(--primary-blue); margin-bottom: 8px; font-size: 1.05rem; }
+        .timeline-item p { color: var(--text-secondary); font-size: 0.95rem; line-height: 1.7; }
+
+        .quote-box { background: linear-gradient(135deg, rgba(123, 44, 191, 0.1) 0%, rgba(0, 212, 255, 0.1) 100%); padding: 35px; border-radius: 16px; border: 2px solid rgba(123, 44, 191, 0.3); margin: 40px 0; position: relative; }
+        .quote-box::before { content: '\201C'; position: absolute; top: 10px; left: 20px; font-size: 4rem; color: rgba(123, 44, 191, 0.4); font-family: serif; line-height: 1; }
+        .quote-box p { color: var(--text-primary); font-size: 1.1rem; font-style: italic; padding-left: 30px; line-height: 1.9; }
+        .quote-box cite { display: block; margin-top: 20px; color: var(--primary-blue); font-size: 0.95rem; padding-left: 30px; font-style: normal; }
+
+        footer { background: #050508; padding: 60px 20px; text-align: center; border-top: 1px solid rgba(255, 255, 255, 0.1); position: relative; z-index: 1; }
+        footer p { color: var(--text-secondary); margin-bottom: 20px; }
+        .footer-links { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; }
+        .footer-links a { color: var(--primary-blue); text-decoration: none; transition: color 0.3s ease; }
+        .footer-links a:hover { color: var(--text-primary); }
+
+        @media (max-width: 768px) {
+            .content-section { padding: 40px 25px; }
+            .hero-images { grid-template-columns: 1fr; }
+            .hero h1 { font-size: 2rem; }
+            .hero-subtitle { font-size: 1.2rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="code-rain" id="codeRain"></div>
+
+    <!-- 代碼雨背景 -->
+    <div class="code-rain" aria-hidden="true">
+        <span class="code-char" style="left:5%; animation-delay:0s;">0 1 1 0 1 0 1 1</span>
+        <span class="code-char" style="left:15%; animation-delay:0.8s;">1 0 1 1 0 0 1 0</span>
+        <span class="code-char" style="left:25%; animation-delay:1.6s;">0 1 0 1 1 0 1 1</span>
+        <span class="code-char" style="left:35%; animation-delay:0.4s;">1 1 0 1 0 1 0 0</span>
+        <span class="code-char" style="left:45%; animation-delay:1.2s;">0 0 1 0 1 1 0 1</span>
+        <span class="code-char" style="left:55%; animation-delay:0.2s;">1 0 0 1 1 0 1 0</span>
+        <span class="code-char" style="left:65%; animation-delay:1.0s;">0 1 1 0 0 1 1 0</span>
+        <span class="code-char" style="left:75%; animation-delay:1.8s;">1 1 0 0 1 0 0 1</span>
+        <span class="code-char" style="left:85%; animation-delay:0.6s;">0 0 1 1 0 1 0 0</span>
+        <span class="code-char" style="left:92%; animation-delay:1.4s;">1 0 1 0 0 1 1 0</span>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <span class="hero-badge">📰 AI News 專題報道</span>
+            <h1>Google 電子書搬進 Gemini Notebook<br>買過的書直接問 AI</h1>
+            <p class="hero-subtitle">Google 正式推出 Expert Intelligence 功能，首波將超過十萬本電子書整合至 AI 筆記本工具，讓使用者能針對已購買的書籍內容進行智能提問與多元應用。</p>
+            <div class="hero-images">
+                <div class="hero-image-card">
+                    <img src="https://picsum.photos/seed/gemini-books/800/450" alt="Google Gemini Notebook 電子書整合示意圖">
+                </div>
+                <div class="hero-image-card">
+                    <img src="https://picsum.photos/seed/ai-reading/800/450" alt="AI 智能閱讀與書籍互動概念圖">
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <span></span>
+        </div>
+    </section>
+
+    <!-- Content Section -->
+    <section>
+        <div class="content-section">
+
+            <!-- Meta Info -->
+            <div class="meta-info">
+                <p><strong>📺 資料來源</strong>：<a href="https://www.bnext.com.tw/" target="_blank" rel="noopener">數位時代（FC）</a></p>
+                <p><strong>📅 發布日期</strong>：2026-09-07</p>
+                <p><strong>🤖 處理方式</strong>：AI 智能摘要生成</p>
+            </div>
+
+            <!-- 第一節：核心觀點 -->
+            <h3>🎯 核心觀點</h3>
+            <p>Google 於美國時間 8 月 27 日正式發表「Expert Intelligence」功能，本次報告指出，首波重點在於將 Google Play 圖書平台上的電子書，直接匯入 Gemini Notebook 作為可互動的資料來源。這項整合讓使用者得以針對已購買的書籍內容進行提問，並獲得精準解答。</p>
+            <p>數據顯示，首波支援的書籍數量超過十萬本，合作出版社涵蓋企鵝蘭登書屋、麥克米倫、Bloomsbury 以及 O'Reilly Media 等國際知名出版機構。業界觀察認為，此舉標誌著 AI 筆記本工具從被動的資料整理，正式邁向主動的知識互動模式。</p>
+
+            <!-- 第二節：功能解析 -->
+            <h3>💡 重點解析</h3>
+            <p>Gemini Notebook 的前身是 NotebookLM，於 2026 年 7 月 16 日正式更名。在書籍匯入後，使用者不只能針對內容提出具體問題，還可要求系統將整本書轉化為多種形式：</p>
+            <ul>
+                <li><strong>資訊圖表（Infographics）</strong>：將書籍核心概念視覺化呈現，利於快速掌握重點。</li>
+                <li><strong>語音摘要（Audio Overviews）</strong>：以語音形式輸出書籍摘要，方便在通勤或運動時聆聽。</li>
+                <li><strong>測驗題（Quizzes）</strong>：根據書籍內容生成互動式測驗，強化學習效果。</li>
+            </ul>
+            <p>研究指出，此功能最突出的創新在於「資料混用」的應用場景。使用者可以將書籍內容與其他資料來源結合，讓 AI 進行跨領域的推理與建議。</p>
+
+            <!-- 第三節：應用場景 -->
+            <h3>🔍 應用場景分析</h3>
+            <p>專家分析指出，資料混用為使用者帶來了極大的靈活性。舉例而言，管理者在思考如何向團隊成員提供有效回饋時，可將管理學著作匯入筆記本中，與 AI 共同發想具體的對策方案。另一方面，家長也能將飲食相關書籍與家中現有食材結合，讓 AI 規劃出符合健康原則的菜單。</p>
+            <p>這些案例顯示，電子書不再是靜態的閱讀素材，而是可以被啟動、被整合、被應用的動態知識庫。Gemini Notebook 將書籍從「閱讀對象」轉變為「思考夥伴」。</p>
+
+            <div class="highlight-box">
+                <h4>✨ 關鍵洞察</h4>
+                <p>本次報告強調，Expert Intelligence 的核心價值不在於書籍的數位化，而在於讓 AI 能夠理解、消化並重新組織書籍內容，並與使用者的實際情境產生連結，真正實現「知識即服務」的願景。</p>
+            </div>
+
+            <!-- 第四節：版權控制機制 -->
+            <h3>🔒 版權控制機制</h3>
+            <p>在數位版權管理方面，Google 採取了相當嚴格的管控措施。使用者若要在 Gemini Notebook 中與書籍互動，必須在 Google Play 圖書平台上「真正擁有」該書。當使用者將筆記本分享給其他協作者時，未購買該書的人將無法顯示書中的具體內容。</p>
+            <p>這項機制確保了出版社與作者的權益，同時也為數位內容的 AI 整合樹立了一個重要的版權保護典範。研究指出，此舉有助於提升出版業者對於 AI 技術合作的接受度。</p>
+
+            <!-- 技術卡片網格 -->
+            <div class="tech-grid">
+                <div class="tech-card">
+                    <div class="tech-card-icon">📚</div>
+                    <h4>書籍匯入</h4>
+                    <p>將 Google Play 圖書中已購買的電子書直接匯入 Gemini Notebook，作為 AI 互動的知識來源。</p>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-card-icon">📊</div>
+                    <h4>資訊圖表生成</h4>
+                    <p>將整本書的核心內容轉化為視覺化圖表，讓使用者快速掌握重點脈絡。</p>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-card-icon">🎧</div>
+                    <h4>語音摘要輸出</h4>
+                    <p>以 Audio Overviews 形式將書籍內容轉為語音摘要，拓展知識吸收的情境。</p>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-card-icon">📝</div>
+                    <h4>互動測驗生成</h4>
+                    <p>根據書籍內容自動生成測驗題，幫助使用者檢驗學習成果。</p>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-card-icon">🔄</div>
+                    <h4>資料混用</h4>
+                    <p>讓書籍內容與其他資料來源交叉運用，創造跨領域的智能應用場景。</p>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-card-icon">🛡️</div>
+                    <h4>版權驗證</h4>
+                    <p>嚴格驗證使用者是否真正擁有書籍，確保數位內容的合法使用。</p>
+                </div>
+            </div>
+
+            <!-- 對比表格 -->
+            <div class="comparison-table-wrap">
+                <table class="comparison-table">
+                    <tr>
+                        <th>維度</th>
+                        <th>傳統電子書閱讀</th>
+                        <th>Gemini Notebook 整合</th>
+                    </tr>
+                    <tr>
+                        <td>互動方式</td>
+                        <td>被動閱讀、搜尋關鍵字</td>
+                        <td>主動提問、跨資料推理</td>
+                    </tr>
+                    <tr>
+                        <td>知識轉化</td>
+                        <td>需自行整理筆記</td>
+                        <td>自動生成圖表、語音、測驗</td>
+                    </tr>
+                    <tr>
+                        <td>資料整合</td>
+                        <td>單一書籍內容</td>
+                        <td>書籍與其他資料來源混用</td>
+                    </tr>
+                    <tr>
+                        <td>版權管理</td>
+                        <td>平台綁定閱讀</td>
+                        <td>購買驗證後方可 AI 互動</td>
+                    </tr>
+                    <tr>
+                        <td>應用場景</td>
+                        <td>個人閱讀與學習</td>
+                        <td>工作決策、生活規劃、教育</td>
+                    </tr>
+                </table>
+            </div>
+
+            <!-- 第五節：未來展望 -->
+            <h3>🔮 未來展望</h3>
+            <p>Google 明確表示，Expert Intelligence 是一項跨產品線的長期計畫。整合電子書僅是第一步，未來該功能將延伸至 Gemini App 與 Google 搜尋的 AI Mode，使更多使用者能夠在不同的產品情境中體驗這項技術。</p>
+            <p>在資料來源方面，Google 計畫進一步擴展至第三方訂閱內容、商業研究報告，甚至是專業教科書。業界觀察認為，這將大幅拓展 Expert Intelligence 的應用邊界，並可能重塑數位內容產業與 AI 技術合作的生態格局。</p>
+
+            <!-- 垂直時間線 -->
+            <ul class="timeline-vertical">
+                <li class="timeline-item">
+                    <h4>2026 年 7 月 16 日 — NotebookLM 更名</h4>
+                    <p>Google 將旗下 AI 筆記本工具 NotebookLM 正式更名為 Gemini Notebook，為後續功能整合奠定品牌基礎。</p>
+                </li>
+                <li class="timeline-item">
+                    <h4>2026 年 8 月 27 日 — Expert Intelligence 發布</h4>
+                    <p>Google 正式推出 Expert Intelligence 功能，首波亮點為 Google Play 圖書電子書的匯入與 AI 互動。</p>
+                </li>
+                <li class="timeline-item">
+                    <h4>首波上線 — 超過十萬本書籍</h4>
+                    <p>首波支援逾十萬本電子書，涵蓋企鵝蘭登書屋、麥克米倫、Bloomsbury 與 O'Reilly Media 等出版社。</p>
+                </li>
+                <li class="timeline-item">
+                    <h4>資料混用 — 創新應用場景</h4>
+                    <p>使用者可將書籍內容與其他資料來源結合，實現跨領域的智能推理與實務應用。</p>
+                </li>
+                <li class="timeline-item">
+                    <h4>版權控制 — 購買驗證機制</h4>
+                    <p>嚴格驗證使用者對書籍的所有權，未購書者無法透過分享查看書籍內容。</p>
+                </li>
+                <li class="timeline-item">
+                    <h4>未來規劃 — 跨產品線擴展</h4>
+                    <p>功能將延伸至 Gemini App 與 Google 搜尋 AI Mode，資料來源亦將拓展至商業報告與專業教科書。</p>
+                </li>
+            </ul>
+
+            <!-- 引言框 -->
+            <div class="quote-box">
+                <p>Expert Intelligence 的目標，是讓每一本你擁有的書，都成為一個可以對話、可以應用的知識引擎。這不只是閱讀方式的改變，更是人與知識互動模式的根本性進化。</p>
+                <cite>── 業界觀察評論</cite>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2026 AI News Archive | 由 AI 技術生成</p>
+        <div class="footer-links">
+            <a href="../index.html">返回主頁</a>
+            <a href="https://github.com/hklamsir/ai_news" target="_blank" rel="noopener">GitHub</a>
+            <a href="https://hklamsir.github.io/ai_news/" target="_blank" rel="noopener">瀏覽所有專題</a>
+        </div>
+    </footer>
+
+
+    <script>
+        function createCodeRain() {
+            const codeRain = document.getElementById('codeRain');
+            if (!codeRain) return;
+            const chars = '01 アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン';
+            for (let i = 0; i < 50; i++) {
+                const char = document.createElement('div');
+                char.className = 'code-char';
+                char.textContent = chars[Math.floor(Math.random() * chars.length)];
+                char.style.left = Math.random() * 100 + '%';
+                char.style.animationDelay = Math.random() * 4 + 's';
+                char.style.animationDuration = (Math.random() * 2 + 3) + 's';
+                codeRain.appendChild(char);
+            }
+        }
+
+        function handleScrollAnimation() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('.fade-in').forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(30px)';
+                el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(el);
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            createCodeRain();
+            handleScrollAnimation();
+        });
+    </script>
+</body>
+</html>
