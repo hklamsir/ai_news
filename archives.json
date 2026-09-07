@@ -1,6 +1,14 @@
 {
   "archives": [
     {
+      "dir": "ai_news_4mrexnm_",
+      "title": "買過的書直接問AI！Google 電子書搬進Gemini Notebook - 未來商務",
+      "summary_short": "Google 於美國時間8月27日推出「Expert Intelligence」功能，首波亮點是讓使用者能將 Google Play 圖書中購買的電子書，直接匯入 AI 筆記本 Gemini Notebook 作為資料來源並進行提問。",
+      "images": [],
+      "date": "2026-09-07",
+      "url": "./ai_news_4mrexnm_/index.html"
+    },
+    {
       "dir": "news_20260906_195000",
       "title": "免費雲端 Linux 環境：16G 記憶體、免刷卡、瀏覽器即開即用",
       "summary": "本次評估報告針對資訊科技轉職學習者常用的免費實作環境進行分析，結果顯示 Google Cloud 提供的 Cloud Shell 免費 Linux 環境，配備 4 核心 CPU、16GB 記憶體與 1",
@@ -4096,6 +4104,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-09-06T19:54:34.563638",
+  "last_updated": "2026-09-07T08:18:33.446182",
   "total_count": 455
 }
