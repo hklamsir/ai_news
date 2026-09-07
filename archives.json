@@ -1,6 +1,14 @@
 {
   "archives": [
     {
+      "dir": "news_20260907_090045",
+      "title": "微軟也扛不住AI高成本？員工一個月竟刷掉90萬台幣Token，官方祭出限速令 | T客邦",
+      "summary_short": "面對生成式 AI 帶來的龐大運算成本壓力，微軟近期正式展開內部 AI 資源管控行動。",
+      "images": [],
+      "date": "2026-09-07",
+      "url": "./news_20260907_090045/index.html"
+    },
+    {
       "dir": "ai_news_4mrexnm_",
       "title": "買過的書直接問AI！Google 電子書搬進Gemini Notebook - 未來商務",
       "summary_short": "Google 於美國時間8月27日推出「Expert Intelligence」功能，首波亮點是讓使用者能將 Google Play 圖書中購買的電子書，直接匯入 AI 筆記本 Gemini Notebook 作為資料來源並進行提問。",
@@ -4104,6 +4112,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-09-07T08:18:33.446182",
+  "last_updated": "2026-09-07T09:00:50.067072",
   "total_count": 455
 }
