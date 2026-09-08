@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260908_150000",
+      "title": "用ChatGPT-6 Astra和Seedance 2.5 製作超真實AI影片的簡單方法",
+      "summary": "日本 AI 創作者 HAL2400 展示如何結合 ChatGPT-6 Astra 與 Seedance 2.5，製作出逼真到難以與實拍區分的 AI 短片。",
+      "url": "./news_20260908_150000/index.html",
+      "date": "2026-09-08",
+      "time": "15:00:00",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260908_141300",
       "title": "GPT-6 Astra變強後 Skill檔反而該大掃除！",
       "summary": "GPT-6 Astra 上線後，Codex 工程師建議趁機幫 skill 檔和 AGENTS.md 做大掃除，刪除過時、冗長或互相衝突的指令，否則只會拖慢模型效率。",
@@ -4123,6 +4132,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-09-08T14:16:48.240053",
-  "total_count": 458
+  "last_updated": "2026-09-08T14:58:42.345588",
+  "total_count": 459
 }
