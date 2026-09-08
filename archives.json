@@ -1,20 +1,31 @@
 {
   "archives": [
     {
-      "dir": "news_20260907_090045",
-      "title": "微軟也扛不住AI高成本？員工一個月竟刷掉90萬台幣Token，官方祭出限速令 | T客邦",
-      "summary_short": "面對生成式 AI 帶來的龐大運算成本壓力，微軟近期正式展開內部 AI 資源管控行動。",
-      "images": [],
-      "date": "2026-09-07",
-      "url": "./news_20260907_090045/index.html"
+      "dir": "news_20260908_141300",
+      "title": "GPT-6 Astra變強後 Skill檔反而該大掃除！",
+      "summary": "GPT-6 Astra 上線後，Codex 工程師建議趁機幫 skill 檔和 AGENTS.md 做大掃除，刪除過時、冗長或互相衝突的指令，否則只會拖慢模型效率。",
+      "url": "./news_20260908_141300/index.html",
+      "date": "2026-09-08",
+      "time": "14:00:00",
+      "source": "AI News"
     },
     {
-      "dir": "ai_news_4mrexnm_",
-      "title": "買過的書直接問AI！Google 電子書搬進Gemini Notebook - 未來商務",
-      "summary_short": "Google 於美國時間8月27日推出「Expert Intelligence」功能，首波亮點是讓使用者能將 Google Play 圖書中購買的電子書，直接匯入 AI 筆記本 Gemini Notebook 作為資料來源並進行提問。",
-      "images": [],
+      "dir": "news_20260907_090045",
+      "title": "微軟內部 AI 算力支出引發管控新政策",
+      "summary": "面對生成式 AI 技術在企業內部快速普及所帶來的鉅額運算成本，微軟近期展開了一項內部資源使用調查。根據外媒取得的內部數據，管理層發現少數員工在短期內大量消耗 AI 算力，其中一名員工在 28 天內消耗",
+      "url": "./news_20260907_090045/index.html",
       "date": "2026-09-07",
-      "url": "./ai_news_4mrexnm_/index.html"
+      "time": "09:45:00",
+      "source": "AI News"
+    },
+    {
+      "dir": "news_20260907_081853",
+      "title": "Google 電子書搬進 Gemini Notebook 買過的書直接問 AI",
+      "summary": "Google 於美國時間 8 月 27 日正式發表「Expert Intelligence」功能，本次報告指出，首波重點在於將 Google Play 圖書平台上的電子書，直接匯入 Gemini No",
+      "url": "./news_20260907_081853/index.html",
+      "date": "2026-09-07",
+      "time": "08:53:00",
+      "source": "AI News"
     },
     {
       "dir": "news_20260906_195000",
@@ -4112,6 +4123,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-09-07T09:00:50.067072",
-  "total_count": 455
+  "last_updated": "2026-09-08T14:16:48.240053",
+  "total_count": 458
 }
