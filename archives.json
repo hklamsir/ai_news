@@ -1,6 +1,15 @@
 {
   "archives": [
     {
+      "dir": "news_20260908_153500",
+      "title": "Agentic AI落地紅利與隱憂： 企業如何築牢安全防線？",
+      "summary": "Agentic AI 正從「對話問答」演進至「自主執行」，企業在享受紅利的同時，必須正視「賦予 AI 行動力」所帶來的全新風險邊界，並從架構底層構建安全防線。",
+      "url": "./news_20260908_153500/index.html",
+      "date": "2026-09-08",
+      "time": "15:00:00",
+      "source": "AI News"
+    },
+    {
       "dir": "news_20260908_150000",
       "title": "用ChatGPT-6 Astra和Seedance 2.5 製作超真實AI影片的簡單方法",
       "summary": "日本 AI 創作者 HAL2400 展示如何結合 ChatGPT-6 Astra 與 Seedance 2.5，製作出逼真到難以與實拍區分的 AI 短片。",
@@ -4132,6 +4141,6 @@
       "source": "AI News"
     }
   ],
-  "last_updated": "2026-09-08T14:58:42.345588",
-  "total_count": 459
+  "last_updated": "2026-09-08T15:35:36.200090",
+  "total_count": 460
 }
